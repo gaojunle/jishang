@@ -1,0 +1,227 @@
+@import "./flexible";
+@import "./common";
+
+$gold-color:#aa8e68;
+html, body {
+  min-height: 100%;
+  font-family: "Microsoft YaHei";
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  font-size: 15px;
+  background: #f4f4f4;
+}
+
+.hide {
+  display: none;
+}
+
+.icon {
+  display: inline-block;
+  width: px2rem(30);
+  vertical-align: middle;
+}
+
+.lingqu {
+  .lq-item {
+    position: relative;
+    .bg-img {
+      width: 100%;
+      height: px2rem(323);
+    }
+    .desc {
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+      line-height: 1.333;
+      position: absolute;
+      left: px2rem(27);
+      bottom: px2rem(30);
+    }
+  }
+}
+
+.lq-detail {
+  padding: 0px px2rem(16) px2rem(110);
+  .title {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.349;
+    text-align: center;
+    padding: px2rem(20);
+    border-bottom: 1px dotted #cccccc;
+  }
+  .info {
+    .info-item {
+      border-bottom: 1px dotted #cccccc;
+      > h3 {
+        padding: px2rem(30) 0px;
+        font-size: 16px;
+        .icon {
+          width: px2rem(30);
+          margin: 0px px2rem(25);
+        }
+      }
+      > p {
+        color: rgb(108, 105, 105);
+        line-height: 1.6;
+        text-align: left;
+        margin-left: px2rem(80);
+        margin-bottom: px2rem(25);
+      }
+      .search{
+        color: #ff4a4d;
+      }
+    }
+  }
+}
+
+.check-info {
+  background: white;
+  padding: px2rem(60) px2rem(30);
+  .title {
+    font-size: 24px;
+  }
+  .tip {
+    font-size: 14px;
+    padding: px2rem(20) 0px px2rem(30);
+  }
+  form {
+    > p {
+      border-bottom: 1px solid #dddddd;
+    }
+    input {
+      outline: none;
+      -webkit-appearance: none;
+      border: none;
+      font-size: 16px;
+      padding: px2rem(24) px2rem(0);
+      width: 100%;
+      color: #222;
+      &[ name='mobile' ] {
+        width: px2rem(460);
+      }
+      &.btn-login {
+        margin-top: px2rem(40);
+        background: $gold-color;
+        color: white;
+        border-radius: px2rem(12);
+        &.active {
+          background: $gold-color;
+          color: white;
+        }
+      }
+    }
+
+    .get-code{
+      position: relative;
+    }
+    .btn-get-code {
+      position: absolute;
+      right: 0px;
+      top: px2rem(16);
+      display: inline-block;
+      padding: px2rem(10) px2rem(20);
+      color: #bababa;
+      border: 1px solid #d4d4d4;
+      border-radius: px2rem(8);
+      &.active {
+        border: 1px solid #009add;
+        color: #00a0e9;
+      }
+    }
+  }
+}
+
+.now-lq {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  padding: px2rem(16) px2rem(46);
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+  background: white;
+  a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    height: px2rem(74);
+    line-height: px2rem(74);
+    background: $gold-color;
+    color: white;
+    border-radius: px2rem(12);
+  }
+}
+
+.quan-box {
+  padding: px2rem(0) px2rem(20);
+  > a {
+    margin: px2rem(10) 0px;
+  }
+}
+
+.quan-detail {
+  height: 100%;
+  background: $gold-color;
+  padding: px2rem(50);
+
+}
+
+.pop-js {
+  background: white;
+  text-align: center;
+  padding: px2rem(40) 0px;
+  border-radius: px2rem(14);
+
+  .type {
+    width: px2rem(80);
+    height: px2rem(80);
+    line-height: px2rem(80);
+    text-align: center;
+    border-radius: 100%;
+    background: #f0f0f0;
+    margin: 0px auto;
+    padding: px2rem(15);
+    img {
+      width: px2rem(60);
+    }
+  }
+  .txt {
+    font-size: 13px;
+    padding: px2rem(34);
+  }
+  .pop-btn-box {
+    padding: px2rem(20) px2rem(20) 0px;
+    .btn {
+      display: inline-block;
+      width: 40%;
+      height: px2rem(70);
+      line-height: px2rem(70);
+      text-align: center;
+      border-radius: px2rem(10);
+      margin: 0px 2%;
+    }
+    .btn-close {
+      color: #000;
+      background: white;
+      border: 1px solid #dcdcdc;
+    }
+    .btn-go {
+      color: white;
+      background: $gold-color;
+      border: 1px solid $gold-color;
+    }
+  }
+}
+
+/*校验*/
+form .error {
+  display: block;
+  font-size: 12px;
+  color: #ea5c5c;
+}

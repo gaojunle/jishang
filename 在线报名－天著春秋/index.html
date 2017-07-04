@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>在线报名－天著春秋</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="wraper">
+    <div class="logo"><img src="./img/logo.png" alt=""></div>
+    <p>业主开放日报名 2017.4.28-29</p>
+    <form action="">
+        <table>
+            <tr>
+                <td class="exp">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+                <td><input type="text" class="ipt" name="name"></td>
+            </tr>
+            <tr>
+                <td class="exp">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</td>
+                <td><input type="tel" class="ipt" name="phone"></td>
+            </tr>
+            <tr>
+                <td class="exp">楼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</td>
+                <td><input type="tel" class="ipt" name="louhao"></td>
+            </tr>
+            <tr>
+                <td class="exp">房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</td>
+                <td><input type="tel" class="ipt" name="fanghao"></td>
+            </tr>
+            <tr>
+                <td>预约时段</td>
+                <td>
+                    <select name="peonum">
+                        <option value="0"></option>
+                        <option value="1">28日上午</option>
+                        <option value="2">28日下午</option>
+                        <option value="3">29日上午</option>
+                        <option value="4">29日下午</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>到访人数</td>
+                <td>
+                    <select name="peonum">
+                        <option value="0"></option>
+                        <option value="1">1人</option>
+                        <option value="2">2人</option>
+                        <option value="3">3人</option>
+                    </select>
+                </td>
+                <td><img src="" alt=""></td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="addr-box t-center">
+        <p class="enroll"><a href="#" class="btn-enroll js-enroll">我要报名</a></p>
+        <p class="number"><span>010-</span>68826666</p>
+        <p class="addr">北京市石景山区金顶山路刘娘府北街5号院 （八大处公园西南800米）</p>
+    </div>
+</div>
+
+<div class="pop-box">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <img class="pop-bg" src="./img/pop-box.png" alt="">
+            <div class="pop-txt success">
+                <img src="./img/pop-suc.png" alt="">
+            </div>
+            <div class="pop-txt fail hide">
+                <img src="./img/pop-fail.png" alt="">
+                <p class="fail-msg">此时段预约已满，请您选择其他时段，谢谢！</p>
+            </div>
+        </div>
+        <div class="close js-pop-close"><img src="./img/close.png" alt=""></div>
+    </div>
+</div>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script>
+    jQuery(function ($) {
+        $('.js-enroll').click(function () {
+            $('.pop-box').fadeIn();
+
+            //TODO 测试显示失败，开发时请根据情况切换；
+            setTimeout(function () {
+                $('.pop-box .fail').removeClass('hide')
+                $('.pop-box .success').addClass('hide')
+            }, 2000);
+
+            return false;
+        });
+        $('.js-pop-close').click(function () {
+            $('.pop-box').fadeOut();
+            $('.pop-box .fail').addClass('hide')
+            $('.pop-box .success').removeClass('hide')
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import "../flexible";
+@import "../reset.css";
+@import "../weui.min.css";
+@import "//at.alicdn.com/t/font_u5ko7wbksu1sjor.css";
+
+.triangle-up {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  z-index: 100;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333;
+  margin-left: -4px;
+}
+
+.container, .page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-box {
+  .nav-img {
+    width: 100%;
+    a, img {
+      position: relative;
+      width: 100%;
+      height: px2rem(320);
+    }
+    .to {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: px2rem(70);
+      line-height: px2rem(70);
+      background: rgba(0, 0, 0, .4);
+      color: white;
+      .main {
+        font-size: 15px;
+        margin: 2px px2rem(16);
+      }
+    }
+    .login-bar {
+      background: white;
+      padding: px2rem(16);
+      font-size: 14px;
+      .go-btn {
+        float: right;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        border-radius: 10px;
+        background: #1bb0a5;
+      }
+    }
+  }
+}
+
+.weui-navbar {
+  .weui-navbar__item {
+    padding: 8px 0px;
+    border-bottom: 1px solid white;
+    background: white;
+    .tup {
+      display: none;
+    }
+  }
+  .weui-bar__item_on {
+    border-bottom: 1px solid #586c94;
+    background: #fafafa;
+    .tup {
+      display: inline-block;
+    }
+  }
+
+}
+
+.art-list {
+  border-top: 1px solid #e5e5e5;
+}
+
+.weui-media-box {
+  padding: px2rem(20) px2rem(30);
+  background: white;
+  box-sizing: border-box;
+  .weui-media-box__hd {
+    width: px2rem(160);
+    height: px2rem(160);
+    line-height: px2rem(160);
+  }
+  .weui-media-box__desc {
+    line-height: px2rem(32);
+  }
+}
+
+.weui-navbar + .weui-tab__panel {
+  padding-top: 40px;
+  .weui-panel__bd {
+    display: none;
+  }
+}
+
+.weui-media-box_appmsg .weui-media-box__thumb {
+  vertical-align: middle;
+}
+
+.weui-tabbar {
+  position: fixed;
+}
+
+.weui-tabbar__icon > i, i.weui-tabbar__icon {
+  font-size: 20px;
+}

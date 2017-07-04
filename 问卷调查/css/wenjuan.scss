@@ -1,0 +1,112 @@
+@import "./flexible";
+@import "./common";
+
+html, body {
+  min-height: 100%;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  color: #4a566b;
+  font-size: 18px;
+  background: #cfd0d3;
+  padding: px2rem(80) px2rem(36);
+}
+
+.hide {
+  display: none;
+}
+
+.wraper {
+  text-align: center;
+  background: white;
+  line-height: 1.6;
+  .logo {
+    text-align: center;
+    padding-top: px2rem(96);
+    padding-bottom: px2rem(24);
+    img {
+      width: px2rem(325);
+    }
+  }
+
+  .sel-box {
+    text-align: left;
+    padding-left: px2rem(90);
+    padding-top: px2rem(50);
+    .sels {
+      padding-top: px2rem(20);
+      padding-left: px2rem(90);
+      input[type="radio"] {
+        vertical-align: text-bottom;
+        margin-right: px2rem(10);
+      }
+    }
+    .must-ico {
+      color: $cRed;
+      margin-left: - px2rem(20);
+      margin-right: px2rem(10);
+    }
+  }
+  .optional-txt {
+    text-align: left;
+    width: px2rem(490);
+    margin: 0px auto;
+    padding: px2rem(55) 0px;
+    .title {
+      padding-bottom: px2rem(12);
+    }
+    textarea {
+      width: 100%;
+      outline: none;
+      resize: none;
+      border: 1px solid #d0d1d4;
+      padding: px2rem(10);
+      box-sizing: border-box;
+      border-radius: 0px;
+    }
+  }
+}
+
+.addr-box {
+  height: px2rem(426);
+  box-sizing: border-box;;
+  .enroll {
+    padding: px2rem(62) 0px px2rem(34);
+    .btn-enroll {
+      border-radius: px2rem(44);
+      background-color: rgb(74, 86, 107);
+      width: px2rem(444);
+      height: px2rem(88);
+      line-height: px2rem(88);
+      text-align: center;
+      font-size: 19px;
+      color: white;
+    }
+  }
+  > p {
+    width: px2rem(448);
+    margin: px2rem(10) auto;
+  }
+  .number {
+    font-size: 18px;
+    font-family: "Lucida Calligraphy";
+    color: rgb(74, 86, 107);
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1.333;
+    text-align: center;
+    -moz-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+    -webkit-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+    -ms-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+  }
+  .addr {
+    font-size: 12px;
+    font-family: "PingFangSC";
+    color: rgb(74, 86, 107);
+    text-transform: uppercase;
+    line-height: 1.4;
+    text-align: center;
+  }
+}

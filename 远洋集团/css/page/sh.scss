@@ -1,0 +1,257 @@
+@import "../flexible";
+@import "../reset.css";
+@import "../weui.min.css";
+@import "//at.alicdn.com/t/font_gy3w1lf3bxei2j4i.css";
+
+html, body {
+  height: 100%;
+}
+
+.triangle-up {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  z-index: 100;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333;
+  margin-left: -4px;
+}
+
+.container, .page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-box {
+  .nav-img {
+    width: 100%;
+    a, img {
+      position: relative;
+      width: 100%;
+      height: px2rem(320);
+    }
+    .to {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: px2rem(70);
+      line-height: px2rem(70);
+      background: rgba(0, 0, 0, .4);
+      color: white;
+      .main {
+        font-size: 15px;
+        margin: 2px px2rem(16);
+      }
+    }
+    .login-bar {
+      background: white;
+      padding: px2rem(16);
+      font-size: 14px;
+      .go-btn {
+        float: right;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        border-radius: 10px;
+        background: #1bb0a5;
+      }
+    }
+  }
+}
+
+.weui-navbar {
+  .weui-navbar__item {
+    padding: 8px 0px;
+    border-bottom: 1px solid white;
+    background: white;
+    .tup {
+      display: none;
+    }
+  }
+  .weui-bar__item_on {
+    border-bottom: 1px solid #586c94;
+    background: #fafafa;
+    .tup {
+      display: inline-block;
+    }
+  }
+
+}
+
+.art-list {
+  border-top: 1px solid #e5e5e5;
+}
+
+.weui-media-box {
+  padding: px2rem(20) px2rem(30);
+  background: white;
+  box-sizing: border-box;
+  .weui-media-box__hd {
+    width: px2rem(160);
+    height: px2rem(160);
+    line-height: px2rem(160);
+  }
+  .weui-media-box__desc {
+    line-height: px2rem(32);
+  }
+}
+
+.weui-navbar + .weui-tab__panel {
+  padding-top: 40px;
+  .weui-panel__bd {
+    display: none;
+  }
+}
+
+.weui-media-box_appmsg .weui-media-box__thumb {
+  vertical-align: middle;
+}
+
+.weui-tabbar {
+  position: fixed;
+}
+
+.weui-tabbar__icon > i, i.weui-tabbar__icon {
+  font-size: 20px;
+}
+
+/*youhui*/
+.list-kaquan {
+  padding: px2rem(20);
+  a {
+    display: inline-block;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    /*height: px2rem(200);*/
+    margin-bottom: px2rem(20);
+    border-radius: px2rem(6);
+  }
+}
+
+.sh-detail {
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: px2rem(40) px2rem(20);
+  padding-bottom: 100px;
+  font-size: 13px;
+  background: white;
+  color: #333333;
+  .tip {
+    background: #fafafa;
+    text-align: center;
+    padding: px2rem(70) px2rem(0);
+    border-radius: 5px;
+    border-bottom: 1px dotted #cccccc;
+    margin-bottom: 5px;
+    .title-icon {
+      img {
+        width: px2rem(86);
+        height: px2rem(86);
+      }
+    }
+    h3 {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  }
+  .info {
+    background: #fafafa;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: #999;
+    line-height: 1.8;
+    padding: px2rem(30);
+    h4 {
+      margin-top: px2rem(10);
+    }
+    .quanyi {
+      margin-top: px2rem(8);
+      h3 {
+        margin-bottom: px2rem(10);
+      }
+      .iconfont {
+        font-size: 16px;
+        margin-right: px2rem(10);
+        &.level-1 {
+          color: #cccccc;
+        }
+        &.level-2 {
+          color: #c2b080;
+        }
+        &.level-3 {
+          color: #ccc107;
+        }
+      }
+    }
+  }
+}
+
+.lingqu-box {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  background: white;
+  .btn-box-lingqu {
+    padding: px2rem(40);
+    &.received {
+      display: none;
+    }
+  }
+}
+
+.quan-box {
+  position: relative;
+  min-height: 80%;
+  padding: px2rem(30);
+  .weui-media-box {
+    margin-bottom: px2rem(30);
+    border-radius: px2rem(8);
+    align-items: flex-start;
+    position: relative;
+    .weui-media-box__desc {
+      font-size: 12px;
+    }
+    .count {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      font-size: 26px;
+      color: orange;
+      .rmb {
+        font-size: 14px;
+      }
+    }
+  }
+  .quan-other {
+    width: px2rem(690);
+    position: absolute;
+    padding: px2rem(10);
+    bottom: 0px;
+    border-top: 1px solid #cccccc;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    .nomore {
+      color: #999;
+      margin-right: px2rem(60);
+    }
+    a {
+      color: orange;
+    }
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+@import url(./reset.css);
+/*common*/
+/*popBox*/
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none; }
+  .pop-box .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10001; }
+  .pop-box .pop-wraper {
+    position: absolute;
+    width: px2rem(630);
+    height: px2rem(500);
+    left: 50%;
+    margin-left: -px2rem(315);
+    top: 50%;
+    margin-top: -px2rem(350);
+    z-index: 10002; }
+    .pop-box .pop-wraper .pop-content {
+      position: relative;
+      text-align: center; }
+      .pop-box .pop-wraper .pop-content .pop-bg {
+        width: px2rem(500);
+        border-radius: px2rem(5); }
+      .pop-box .pop-wraper .pop-content .pop-txt {
+        position: absolute;
+        width: 100%;
+        top: px2rem(90); }
+        .pop-box .pop-wraper .pop-content .pop-txt img {
+          height: px2rem(80); }
+        .pop-box .pop-wraper .pop-content .pop-txt .title span {
+          display: inline-block;
+          border: 1px solid #4a566b;
+          border-radius: 50%;
+          width: px2rem(80);
+          height: px2rem(80);
+          line-height: px2rem(80);
+          text-align: center;
+          font-size: px2rem(62);
+          font-weight: bold;
+          font-family: DFKai-SB;
+          margin: 0px px2rem(5); }
+        .pop-box .pop-wraper .pop-content .pop-txt .msg {
+          width: px2rem(460);
+          margin: px2rem(20) auto; }
+      .pop-box .pop-wraper .pop-content .txt-success {
+        color: #38bb38; }
+        .pop-box .pop-wraper .pop-content .txt-success .title > span {
+          border: 1px solid #38bb38; }
+      .pop-box .pop-wraper .pop-content .txt-error {
+        color: #ff3844; }
+        .pop-box .pop-wraper .pop-content .txt-error .title > span {
+          border: 1px solid #ff3844; }
+      .pop-box .pop-wraper .pop-content .txt-info {
+        color: #00a0e9; }
+        .pop-box .pop-wraper .pop-content .txt-info .title > span {
+          border: 1px solid #00a0e9; }
+      .pop-box .pop-wraper .pop-content .txt-warn {
+        color: #e99431; }
+        .pop-box .pop-wraper .pop-content .txt-warn .title > span {
+          border: 1px solid #e99431; }
+    .pop-box .pop-wraper .close {
+      text-align: center;
+      padding-top: px2rem(50); }
+      .pop-box .pop-wraper .close img {
+        width: px2rem(62); }
+
+/*# sourceMappingURL=common.css.map */

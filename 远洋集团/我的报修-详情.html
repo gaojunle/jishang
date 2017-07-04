@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>远洋天著春秋服务平台</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="./css/page/wodebaoxiu.css">
+</head>
+<body>
+<div class="baoxiu-detail">
+    <div class="weui-cells__title">报修详情</div>
+    <div class="detail weui-panel__bd">
+        <p class="weui-panel__hd"><span class="label">服务时间：</span>2017年05月12号 16时</p>
+        <p class="weui-panel__hd"><span class="label">服务地点：</span>XX省XX市XX小区XX单元</p>
+        <p class="weui-panel__hd"><span class="label">联系电话：</span>1351111xxxx</p>
+        <p class="weui-panel__hd"><span class="label">提交时间：</span>2017年05月10号 16时</p>
+        <p class="weui-panel__hd"><span class="label">服务状态：</span><span class="status">未处理</span></p>
+    </div>
+    <form action="#" class="pingjia">
+        <div class="weui-cells__title">服务评价:</div>
+        <div class="weui-panel__bd">
+            <p class="weui-cell favs">
+                <i class="iconfont icon-favorite on"></i>
+                <i class="iconfont icon-favorite"></i>
+                <i class="iconfont icon-favorite"></i>
+                <i class="iconfont icon-favorite"></i>
+                <i class="iconfont icon-favorite"></i>
+            </p>
+            <textarea class="weui-textarea weui-panel__hd js-txt" placeholder="请输入评价内容" rows="3"></textarea>
+        </div>
+        <div class="submit">
+            <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">提交评价</a>
+        </div>
+    </form>
+</div>
+<script src="./js/lib/jquery-2.1.4.min.js"></script>
+<script src="./js/lib/jquery.validate.js"></script>
+<script src="./js/lib/jquery-weui.min.js"></script>
+<script>
+    jQuery(function ($) {
+        $('.favs').on('click', '.icon-favorite', function () {
+            $(this).prevAll().andSelf().addClass('on');
+            $(this).nextAll().removeClass('on');
+        });
+
+        $('#showTooltips').click(function () {
+            /* $.ajax('url/api/submitRecommend', {
+             starts: $('.favs .on').length,
+             txt: $('.js-txt').val()
+             }.done(function () {
+             //TODO 显示成功弹层，
+             });*/
+
+            alert('后台处理提交内容，ajax提交')
+            $.alert("评价成功", "", function () {
+                //点击确认后的回调函数
+                location.href = '我的报修.html'
+            });
+        })
+    })
+</script>
+</body>
+</html>

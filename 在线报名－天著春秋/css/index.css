@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/*
+    @author xiao
+    @des: APP端基础方法
+    @使用心得:
+        -适配方案参考淘宝开源库lib.flexible
+        -布局rem动态适配
+        -字体dpr动态适配
+        -和文字相关的布局用px写死比较好。。。因为用rem会和没有用rem布局的字体有错位
+        -目前市面上有三种代表的适配方案：
+            1. 直接750设计稿除以2适配所有机型，布局采用百分比：代表网站 拉勾网
+            2. 动态改变html font-size基准，所有元素以rem适配：代表网站 小米网
+            3. 动态改变html font-size基准，所有除字体相关元素以外的rem适配，字体只按分辨率适配：代表网站 淘宝网
+ */
+/**
+ * 基本思想描述：
+ * 多屏适配布局问题
+ * 移动端布局，为了适配各种大屏手机，目前最好用的方案莫过于使用相对单位rem。
+ * 基于rem的原理，我们要做的就是: 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。
+ * 这里我们提取了一个公式(rem表示基准值)
+ * rem = document.documentElement.clientWidth * dpr / 10
+ * 说明：
+ * 1）乘以dpr，是因为页面有可能为了实现1px border页面会缩放(scale) 1/dpr 倍(如果没有，dpr=1)。
+ * 2）除以10，是为了取整，方便计算(理论上可以是任何值)
+ * 所以就像下面这样，html的font-size可能会：
+ * iPhone3gs: 320px / 10 = 32px
+ * iPhone4/5: 320px * 2 / 10 = 64px
+ * iPhone6: 375px * 2 / 10 = 75px
+ * iPhone6plus: 414 * 3 / 10 = 124.2px
+ */
+/*
+    px转换成rem
+ */
+/*
+    默认已iPhone6的750为基准开发
+    font-size 不推荐转换成rem
+    原因：我们不希望文本在Retina屏幕下变小，
+    另外，我们希望在大屏手机上看到更多文本，
+    以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。
+    注意设计稿是2x屏幕, 所以1x屏幕需要除以2
+ */
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  color: #4a566b;
+  font-size: 14px; }
+
+.hide {
+  display: none; }
+
+.wraper {
+  text-align: center; }
+  .wraper .logo {
+    text-align: center;
+    padding-top: 1.28rem;
+    padding-bottom: 0.32rem; }
+    .wraper .logo img {
+      width: 4.33333rem; }
+  .wraper form {
+    border: 1px solid #6e7889;
+    border-radius: 0.06667rem;
+    width: 8.42667rem;
+    margin: 0.93333rem auto 0px; }
+    .wraper form td {
+      height: 1.06667rem;
+      text-align: left;
+      border-bottom: 1px solid #c8ccd2;
+      overflow: hidden; }
+    .wraper form td:nth-of-type(1) {
+      padding: 0px 0.48rem;
+      width: 33%; }
+    .wraper form td.exp {
+      /*letter-spacing: px2rem(40);*/ }
+    .wraper form .ipt {
+      border: none;
+      padding-left: 0.13333rem;
+      width: 100%;
+      height: 100%; }
+    .wraper form select {
+      border: none;
+      width: 90%;
+      height: 100%;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding-right: 14px;
+      color: #555555;
+      background-image: none;
+      border: 0px solid transparent;
+      background: none;
+      background: url("../img/arrow.png") no-repeat scroll right center transparent;
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  .wraper .addr-box {
+    height: 5.68rem;
+    box-sizing: border-box; }
+    .wraper .addr-box .enroll {
+      padding: 0.82667rem 0px 0.45333rem; }
+      .wraper .addr-box .enroll .btn-enroll {
+        border-radius: 0.58667rem;
+        background-color: #4a566b;
+        width: 5.92rem;
+        height: 1.17333rem;
+        line-height: 1.17333rem;
+        text-align: center;
+        font-size: 19px;
+        color: white; }
+    .wraper .addr-box > p {
+      width: 5.97333rem;
+      margin: 0.13333rem auto; }
+    .wraper .addr-box .number {
+      font-size: 18px;
+      font-family: "Lucida Calligraphy";
+      color: #4a566b;
+      font-style: italic;
+      text-transform: uppercase;
+      line-height: 1.333;
+      text-align: center;
+      -moz-transform: matrix(1.37402, 0, 0, 1.37402, 0, 0);
+      -webkit-transform: matrix(1.37402, 0, 0, 1.37402, 0, 0);
+      -ms-transform: matrix(1.37402, 0, 0, 1.37402, 0, 0); }
+    .wraper .addr-box .addr {
+      font-size: 12px;
+      font-family: "PingFangSC";
+      color: #4a566b;
+      text-transform: uppercase;
+      line-height: 1.4;
+      text-align: center; }
+  .wraper .addr-box {
+    background: url("../img/addr.png") no-repeat;
+    background-size: cover; }
+
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none; }
+  .pop-box .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10001; }
+  .pop-box .pop-wraper {
+    position: absolute;
+    width: 8.4rem;
+    height: 6.66667rem;
+    left: 50%;
+    margin-left: -4.2rem;
+    top: 50%;
+    margin-top: -4.66667rem;
+    z-index: 10002; }
+    .pop-box .pop-wraper .pop-content {
+      position: relative;
+      text-align: center; }
+      .pop-box .pop-wraper .pop-content .pop-bg {
+        width: 6.66667rem;
+        border-radius: 0.06667rem; }
+      .pop-box .pop-wraper .pop-content .pop-txt {
+        position: absolute;
+        width: 100%;
+        top: 1.6rem; }
+        .pop-box .pop-wraper .pop-content .pop-txt img {
+          height: 1.06667rem; }
+        .pop-box .pop-wraper .pop-content .pop-txt .fail-msg {
+          width: 6.13333rem;
+          margin: 0.26667rem auto;
+          color: #ff3844; }
+    .pop-box .pop-wraper .close {
+      text-align: center;
+      padding-top: 0.66667rem; }
+      .pop-box .pop-wraper .close img {
+        width: 0.82667rem; }
+
+/*# sourceMappingURL=index.css.map */

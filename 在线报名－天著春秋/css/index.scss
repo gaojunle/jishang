@@ -1,0 +1,170 @@
+@import "./flexible";
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  color: #4a566b;
+  font-size: 14px;
+}
+
+.hide {
+  display: none;
+}
+
+.wraper {
+  text-align: center;
+  .logo {
+    text-align: center;
+    padding-top: px2rem(96);
+    padding-bottom: px2rem(24);
+    img {
+      width: px2rem(325);
+    }
+  }
+  form {
+    border: 1px solid #6e7889;
+    border-radius: px2rem(5);
+    width: px2rem(632);
+    margin: px2rem(70) auto 0px;
+    td {
+      height: px2rem(80);
+      text-align: left;
+      border-bottom: 1px solid #c8ccd2;
+      overflow: hidden;
+    }
+    td:nth-of-type(1) {
+      padding: 0px px2rem(36);
+      width: 33%;
+    }
+    td.exp{
+      /*letter-spacing: px2rem(40);*/
+    }
+    .ipt {
+      border: none;
+      padding-left: px2rem(10);
+      width: 100%;
+      height: 100%;
+    }
+    select {
+      border: none;
+      width: 90%;
+      height: 100%;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding-right: 14px;
+      color: #555555;
+      background-image: none;
+      border: 0px solid transparent;
+      background: none;
+      background: url("../img/arrow.png") no-repeat scroll right center transparent;
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+  }
+  .addr-box {
+    height: px2rem(426);
+    box-sizing: border-box;
+    .enroll {
+      padding: px2rem(62) 0px px2rem(34);
+      .btn-enroll {
+        border-radius: px2rem(44);
+        background-color: rgb(74, 86, 107);
+        width: px2rem(444);
+        height: px2rem(88);
+        line-height: px2rem(88);
+        text-align: center;
+        font-size: 19px;
+        color: white;
+      }
+    }
+    > p {
+      width: px2rem(448);
+      margin: px2rem(10) auto;
+    }
+    .number {
+      font-size: 18px;
+      font-family: "Lucida Calligraphy";
+      color: rgb(74, 86, 107);
+      font-style: italic;
+      text-transform: uppercase;
+      line-height: 1.333;
+      text-align: center;
+      -moz-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+      -webkit-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+      -ms-transform: matrix(1.37402043606294, 0, 0, 1.37402043606294, 0, 0);
+    }
+    .addr {
+      font-size: 12px;
+      font-family: "PingFangSC";
+      color: rgb(74, 86, 107);
+      text-transform: uppercase;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  .addr-box {
+    background: url("../img/addr.png") no-repeat;
+    background-size: cover;
+  }
+}
+
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    z-index: 10001;
+  }
+  .pop-wraper {
+    position: absolute;
+    width: px2rem(630);
+    height: px2rem(500);
+    left: 50%;
+    margin-left: - px2rem(315);
+    top: 50%;
+    margin-top: - px2rem(350);
+    z-index: 10002;
+    .pop-content {
+      position: relative;
+      text-align: center;
+      .pop-bg {
+        width: px2rem(500);
+        border-radius: px2rem(5);
+      }
+      .pop-txt {
+        position: absolute;
+        width: 100%;
+        top: px2rem(120);
+        img {
+          height: px2rem(80);
+        }
+        .fail-msg {
+          width: px2rem(460);
+          margin: px2rem(20) auto;
+          color: #ff3844;
+        }
+      }
+    }
+    .close {
+      text-align: center;
+      padding-top: px2rem(50);
+      img {
+        width: px2rem(62);
+      }
+    }
+  }
+}

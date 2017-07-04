@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>远洋天著春秋服务平台-我的券包</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="./css/page/sh.css">
+</head>
+<body>
+<div class="sh-detail">
+    <div class="tip">
+        <p class="title-icon"><img src="./img/sh/h.png" alt=""></p>
+        <h3>华住酒店399元住店礼包</h3>
+    </div>
+    <div class="info">
+        <h4>［注意事项］</h4>
+        <p>1、每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户</p>
+        <p>2、每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户每位滴滴出行用户</p>
+        <h4>［商家简介］</h4>
+        <p>
+            我们不仅在大连职介行业获得“AA”诚信称号，获得老百姓信得过的口碑；还在大连家庭服务行业协会中连年被评为诚信服务会员单位。坚持以人为本的宗旨，用真诚服务于求职者，用热情服务于用工单位。全力贯彻落实《劳动法》及配套法规，遵循劳动就业、社会保障等方面的法规和政策。我们坚守“诚实、守信”的原则为您提供服务，我们坚信“人正则立，品正则兴。”我们的服务口号是：千分之一的希望，百分之百的努力。
+            我们好大姐现在是一家集猎头服务；</p>
+        <div class="quanyi">
+            <h3>权益对象</h3>
+            <p><i class="iconfont icon-huiyuan level-1"></i>普通会员</p>
+            <p><i class="iconfont icon-huiyuan level-2"></i>白银会员</p>
+            <p><i class="iconfont icon-huiyuan level-3"></i>黄金会员</p>
+        </div>
+    </div>
+</div>
+<div class="lingqu-box">
+    <p class="btn-box-lingqu">
+        <a href="javascript:;" class="weui-btn weui-btn_primary">立即领取</a>
+    </p>
+    <p class="btn-box-lingqu received">
+        <a href="javascript:;" class="weui-btn weui-btn_disabled weui-btn_default">已领取</a>
+    </p>
+</div>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/page/util.js"></script>
+<script src="js/lib/jquery-weui.min.js"></script>
+<script>
+    jQuery(function ($) {
+        if (location.href.indexOf('flag=1') > -1) {
+            $('.btn-box-lingqu').hide().filter('.received').show();
+        }
+        $('.btn-box-lingqu .weui-btn_primary').click(function () {
+            $.alert({
+                title: '领取成功',
+                text: '您领取的福利券可在我的券包中查看',
+                onOK: function () {
+                    location.href = '生活-我的券包.html'
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

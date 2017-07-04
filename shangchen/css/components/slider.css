@@ -1,0 +1,34 @@
+.slideBox {
+}
+
+.slideBox .hd {
+    height: 48px;
+    line-height: 48px;
+    background: #f2f2f2;
+    text-align: center;
+    background: #f2f2f2;
+    border: 1px solid #e8e8e8;
+    position: relative;
+}
+
+.slideBox .hd ul {
+}
+
+.slideBox .hd ul li {
+    float: left;
+    width: 180px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.slideBox .hd ul li.on {
+    height: 43px;
+    background: white;
+    border-top: 5px solid #f4d05e;
+    border-bottom: 1px solid white;
+}
+
+.slideBox .bd {
+
+}

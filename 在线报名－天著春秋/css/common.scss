@@ -1,0 +1,106 @@
+@import "./reset.css";
+/*common*/
+$cRed: #ff3844;
+/*popBox*/
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    z-index: 10001;
+  }
+  .pop-wraper {
+    position: absolute;
+    width: px2rem(630);
+    height: px2rem(500);
+    left: 50%;
+    margin-left: - px2rem(315);
+    top: 50%;
+    margin-top: - px2rem(350);
+    z-index: 10002;
+    .pop-content {
+      position: relative;
+      text-align: center;
+      .pop-bg {
+        width: px2rem(500);
+        border-radius: px2rem(5);
+      }
+      .pop-txt {
+        position: absolute;
+        width: 100%;
+        top: px2rem(90);
+        img {
+          height: px2rem(80);
+        }
+        .title {
+          span {
+            display: inline-block;
+            border: 1px solid rgb(74, 86, 107);
+            border-radius: 50%;
+            width: px2rem(80);
+            height: px2rem(80);
+            line-height: px2rem(80);
+            text-align: center;
+            font-size: px2rem(62);
+            font-weight: bold;
+            font-family: DFKai-SB;
+            margin: 0px px2rem(5);
+          }
+        }
+        .msg {
+          width: px2rem(460);
+          margin: px2rem(20) auto;
+        }
+      }
+      .txt-success {
+        color: #38bb38;
+        .title {
+          > span {
+            border: 1px solid #38bb38;
+          }
+        }
+      }
+      .txt-error {
+        color: $cRed;
+        .title {
+          > span {
+            border: 1px solid $cRed;
+          }
+        }
+      }
+      .txt-info {
+        color: #00a0e9;
+        .title {
+          > span {
+            border: 1px solid #00a0e9;
+          }
+        }
+      }
+      .txt-warn {
+        color: #e99431;
+        .title {
+          > span {
+            border: 1px solid #e99431;
+          }
+        }
+      }
+    }
+    .close {
+      text-align: center;
+      padding-top: px2rem(50);
+      img {
+        width: px2rem(62);
+      }
+    }
+  }
+}
