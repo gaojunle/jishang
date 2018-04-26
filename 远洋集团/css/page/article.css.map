@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AACA;;;;;;;;;;;;GAYG;AAEH;;;;;;;;;;;;;;;GAeG;AAEH;;GAEG;AAWH;;;;;;;GAOG;AAaH;;GAEG;AClEK,yBAAc;AACd,4BAAiB;AAEzB,UAAW;EACT,UAAU,EAAE,KAAK;;AAIjB,oBAAO;EACL,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;AAEjB,mBAAM;EACJ,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAO;EACd,yBAAM;IACJ,aAAa,EAAE,UAAU;EAE3B,+BAAY;IACV,KAAK,EAAE,OAAO",
-"sources": ["../../../%E8%BF%9C%E6%B4%8B%E9%9B%86%E5%9B%A2/css/flexible.scss","../../../%E8%BF%9C%E6%B4%8B%E9%9B%86%E5%9B%A2/css/page/article.scss"],
-"names": [],
-"file": "article.css"
-}
