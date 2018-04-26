@@ -1,0 +1,61 @@
+@import url(../lib/reset.css);
+@import url(../lib/art-dialog.css);
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: white; }
+
+.slogan {
+  text-align: center;
+  padding: 0.93333rem 0rem; }
+  .slogan img {
+    height: 3.2rem; }
+
+.sub-info {
+  padding: 0px 1.33333rem; }
+  .sub-info .item {
+    position: relative;
+    padding-top: 0.53333rem;
+    padding-bottom: 0.13333rem;
+    padding-left: 0.53333rem;
+    border-bottom: 1px solid rgba(143, 143, 143, 0.5); }
+    .sub-info .item > input {
+      border: none;
+      height: 100%;
+      width: 6rem;
+      padding-left: 0.18667rem;
+      font-size: 0.32rem; }
+    .sub-info .item:before {
+      content: ' ';
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.66667rem;
+      position: absolute;
+      left: 0px;
+      top: 0.4rem; }
+    .sub-info .item.uname:before {
+      background: url("../../img/lottery/icon-user.png") 1px 0px no-repeat;
+      background-size: 0.53333rem 0.53333rem; }
+    .sub-info .item.uphone:before {
+      background: url("../../img/lottery/icon-phone.png") 1px 0px no-repeat;
+      background-size: 0.42667rem 0.61333rem; }
+    .sub-info .item.uaddr:before {
+      background: url("../../img/lottery/icon-addr.png") 1px 0px no-repeat;
+      background-size: 0.61333rem 0.61333rem; }
+  .sub-info .btn-box {
+    text-align: center;
+    padding-top: 1.06667rem; }
+    .sub-info .btn-box .btn-submit {
+      display: inline-block;
+      width: 7.24rem;
+      height: 0.86667rem;
+      line-height: 0.86667rem;
+      text-align: center;
+      background: #ff8400;
+      font-size: 0.37333rem;
+      color: white;
+      border-radius: 0.13333rem;
+      border: none; }
+
+/*# sourceMappingURL=getBanus.css.map */

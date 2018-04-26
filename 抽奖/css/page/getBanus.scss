@@ -1,0 +1,85 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/art-dialog.css";
+
+$fontGray: #8f8f8f;
+$lineGray: rgba(143, 143, 143, .5);
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: white;
+}
+
+.slogan {
+  text-align: center;
+  padding: px2rem(70) px2rem(0);
+  img {
+    height: px2rem(240);
+  }
+}
+
+.sub-info {
+  padding: 0px px2rem(100);
+  .item {
+    position: relative;
+    padding-top: px2rem(40);
+    padding-bottom: px2rem(10);
+    padding-left: px2rem(40);
+    border-bottom: 1px solid $lineGray;
+
+    > input {
+      border: none;
+      height: 100%;
+      width: px2rem(450);
+      padding-left: px2rem(14);
+      font-size: px2rem(24);
+    }
+
+    &:before {
+      content: ' ';
+      display: inline-block;
+      width: px2rem(45);
+      height: px2rem(50);
+      position: absolute;
+      left: 0px;
+      top: px2rem(30);
+    }
+    &.uname {
+      &:before {
+        background: url("../../img/lottery/icon-user.png") 1px 0px no-repeat;
+        background-size: px2rem(40) px2rem(40);
+      }
+    }
+    &.uphone {
+      &:before {
+        background: url("../../img/lottery/icon-phone.png") 1px 0px no-repeat;
+        background-size: px2rem(32) px2rem(46);
+      }
+    }
+    &.uaddr {
+      &:before {
+        background: url("../../img/lottery/icon-addr.png") 1px 0px no-repeat;
+        background-size: px2rem(46) px2rem(46);
+      }
+    }
+  }
+  .btn-box {
+    text-align: center;
+    padding-top: px2rem(80);
+    .btn-submit {
+      display: inline-block;
+      width: px2rem(543);
+      height: px2rem(65);
+      line-height: px2rem(65);
+      text-align: center;
+      background: #ff8400;
+      font-size: px2rem(28);
+      color: white;
+      border-radius: px2rem(10);
+      border: none;
+    }
+  }
+}

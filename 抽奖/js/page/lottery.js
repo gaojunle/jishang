@@ -92,7 +92,7 @@ var App = {
         $(".btn-lottery").click(function () {
             new lottery({
                 index: Math.random() * ($(".l-util").length) | 0, //转盘开始位置，目前是随机数
-                prize: 0//奖位置，从0开始
+                prize: 7//奖位置，从0开始
             });
         });
 
