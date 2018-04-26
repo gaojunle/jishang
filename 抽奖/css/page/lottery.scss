@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "../lib/flexible";
 @import "../lib/reset.css";
+@import "../lib/art-dialog.css";
 
 $fontGray: #8f8f8f;
 $lineGray: rgba(143, 143, 143, .5);
@@ -65,9 +66,9 @@ html, body {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: center;
-            justify-content: center;
+        justify-content: center;
         -ms-flex-align: center;
-            align-items: center;
+        align-items: center;
         width: px2rem(124);
         height: px2rem(124);
         background: #d4d4d4;
@@ -88,9 +89,9 @@ html, body {
         border-radius: 0.2rem;
         background: #fcd435;
         -ms-flex-pack: center;
-            justify-content: center;
+        justify-content: center;
         -ms-flex-align: center;
-            align-items: center;
+        align-items: center;
         > img {
           width: px2rem(230);
           vertical-align: middle;
@@ -106,7 +107,7 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 
   .tip, .list {
     background: #fff9e4;
@@ -131,7 +132,7 @@ html, body {
   }
   .list {
     -ms-flex: 1;
-        flex: 1;
+    flex: 1;
     margin-left: px2rem(12);
     padding: px2rem(6) px2rem(15);
     position: relative;
@@ -152,7 +153,7 @@ html, body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   a {
     display: inline-block;
     width: px2rem(320);
@@ -163,5 +164,90 @@ html, body {
     color: white;
     font-size: px2rem(30);
     border-radius: px2rem(8);
+  }
+}
+
+.ui-dialog {
+  background: transparent;
+  .pop-box {
+    position: relative;
+    border-radius: px2rem(10);
+    background: white;
+    overflow: hidden;
+    .pop-close {
+      position: absolute;
+      width: px2rem(35);
+      height: px2rem(35);
+      right: px2rem(14);
+      top: px2rem(14);
+    }
+    &.partake {
+      width: px2rem(515);
+      height: px2rem(275);
+      vertical-align: middle;
+      display: table-cell;
+      overflow: hidden;
+      text-align: center;
+      color: $fontGray;
+
+      > p {
+        width: 100%;
+      }
+    }
+
+    &.rule-box {
+      width: px2rem(627);
+      padding: px2rem(40) px2rem(30);
+      box-sizing: border-box;
+      color: $fontGray;
+      font-size: px2rem(24);
+      .mtitle {
+        font-size: px2rem(28);
+        text-align: center;
+        padding: px2rem(24);
+        padding-bottom: px2rem(4);
+        border-bottom: $lineGray;
+      }
+      .title {
+        padding: px2rem(26);
+        padding-top: px2rem(20);
+      }
+      .info {
+        > p {
+          text-indent: 1.6em;
+          line-height: 1.6;
+        }
+      }
+    }
+    &.banus-box, &.no-banus-box {
+      width: px2rem(627);
+      box-sizing: border-box;
+      color: white;
+      font-size: px2rem(28);
+      text-align: center;
+      background: #ff8400;
+      .title {
+        font-size: px2rem(36);
+        padding-top: px2rem(60);
+        padding-bottom: px2rem(10);
+      }
+      .banus-img {
+        padding: px2rem(80) 0px;
+        background: url("../../img/lottery/banus-bg.png") 0px 0px no-repeat;
+        background-size: 100% 100%;
+
+        > img {
+          width: px2rem(211);
+        }
+      }
+      .btn-see {
+        height: px2rem(104);
+        line-height: px2rem(104);
+        text-align: center;
+        color: #ff8400;
+        font-size: px2rem(32);
+        background: white;
+      }
+    }
   }
 }

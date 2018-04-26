@@ -87,12 +87,51 @@ var App = {
     },
 
     bindEvent: function () {
+        var that = this;
+
         $(".btn-lottery").click(function () {
             new lottery({
                 index: Math.random() * ($(".l-util").length) | 0, //转盘开始位置，目前是随机数
                 prize: 0//奖位置，从0开始
             });
         });
+
+        //规则
+        $('.js-rule').click(function () {
+            that.dialog = new dialog({
+                content: $('.rule-box'),
+                padding: 0
+            });
+            that.dialog.showModal();
+        });
+
+        //参与过
+        $('.js-partake').click(function () {
+            that.dialog = new dialog({
+                content: $('.partake'),
+                padding: 0
+            });
+            that.dialog.showModal();
+        });
+
+        $('.js-banus').click(function () {
+            that.dialog = new dialog({
+                content: $('.banus-box'),
+                padding: 0
+            });
+            that.dialog.showModal();
+        });
+        $('.js-no-banus').click(function () {
+            that.dialog = new dialog({
+                content: $('.no-banus-box'),
+                padding: 0
+            });
+            that.dialog.showModal();
+        });
+
+        $('body').on('click', '.pop-close', function () {
+            that.dialog.close().remove()
+        })
     },
     initScroll: function () {
         var $bangList = $('.js-bang-list');

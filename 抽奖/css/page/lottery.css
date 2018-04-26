@@ -1,4 +1,5 @@
 @import url(../lib/reset.css);
+@import url(../lib/art-dialog.css);
 html, body {
   padding: 0px;
   margin: 0px;
@@ -134,5 +135,71 @@ html, body {
     color: white;
     font-size: 0.4rem;
     border-radius: 0.10667rem; }
+
+.ui-dialog {
+  background: transparent; }
+  .ui-dialog .pop-box {
+    position: relative;
+    border-radius: 0.13333rem;
+    background: white;
+    overflow: hidden; }
+    .ui-dialog .pop-box .pop-close {
+      position: absolute;
+      width: 0.46667rem;
+      height: 0.46667rem;
+      right: 0.18667rem;
+      top: 0.18667rem; }
+    .ui-dialog .pop-box.partake {
+      width: 6.86667rem;
+      height: 3.66667rem;
+      vertical-align: middle;
+      display: table-cell;
+      overflow: hidden;
+      text-align: center;
+      color: #8f8f8f; }
+      .ui-dialog .pop-box.partake > p {
+        width: 100%; }
+    .ui-dialog .pop-box.rule-box {
+      width: 8.36rem;
+      padding: 0.53333rem 0.4rem;
+      box-sizing: border-box;
+      color: #8f8f8f;
+      font-size: 0.32rem; }
+      .ui-dialog .pop-box.rule-box .mtitle {
+        font-size: 0.37333rem;
+        text-align: center;
+        padding: 0.32rem;
+        padding-bottom: 0.05333rem;
+        border-bottom: rgba(143, 143, 143, 0.5); }
+      .ui-dialog .pop-box.rule-box .title {
+        padding: 0.34667rem;
+        padding-top: 0.26667rem; }
+      .ui-dialog .pop-box.rule-box .info > p {
+        text-indent: 1.6em;
+        line-height: 1.6; }
+    .ui-dialog .pop-box.banus-box, .ui-dialog .pop-box.no-banus-box {
+      width: 8.36rem;
+      box-sizing: border-box;
+      color: white;
+      font-size: 0.37333rem;
+      text-align: center;
+      background: #ff8400; }
+      .ui-dialog .pop-box.banus-box .title, .ui-dialog .pop-box.no-banus-box .title {
+        font-size: 0.48rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.13333rem; }
+      .ui-dialog .pop-box.banus-box .banus-img, .ui-dialog .pop-box.no-banus-box .banus-img {
+        padding: 1.06667rem 0px;
+        background: url("../../img/lottery/banus-bg.png") 0px 0px no-repeat;
+        background-size: 100% 100%; }
+        .ui-dialog .pop-box.banus-box .banus-img > img, .ui-dialog .pop-box.no-banus-box .banus-img > img {
+          width: 2.81333rem; }
+      .ui-dialog .pop-box.banus-box .btn-see, .ui-dialog .pop-box.no-banus-box .btn-see {
+        height: 1.38667rem;
+        line-height: 1.38667rem;
+        text-align: center;
+        color: #ff8400;
+        font-size: 0.42667rem;
+        background: white; }
 
 /*# sourceMappingURL=lottery.css.map */

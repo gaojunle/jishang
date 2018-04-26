@@ -11,4 +11,10 @@
   align-items: center;
   z-index: 1000; }
 
+.ui-dialog .ui-dialog-close {
+  width: px2rem(36);
+  height: px2rem(36);
+  background: url("../../img/common/close.png") 0px 0px no-repeat;
+  background-size: 100% 100%; }
+
 /*# sourceMappingURL=common.css.map */
