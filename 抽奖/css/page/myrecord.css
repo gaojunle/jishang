@@ -1,0 +1,87 @@
+@import url(../lib/reset.css);
+@chartset 'utf-8';
+.mask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; }
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: #efefef; }
+
+.wrapper {
+  position: relative;
+  margin: 0px auto;
+  max-width: 600px; }
+
+.records {
+  padding: 1.2rem 0.8rem 0.50667rem; }
+  .records a {
+    height: 3.2rem;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.37333rem 0.29333rem;
+    background: url("../../img/record/card-bg.png") no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 0.4rem;
+    box-sizing: border-box;
+    position: relative; }
+    .records a img {
+      width: 1.70667rem;
+      height: 1.70667rem;
+      padding: 0px 0.44rem; }
+    .records a .info {
+      flex: 1; }
+      .records a .info h3 {
+        font-size: 0.48rem;
+        color: #2a2a2a;
+        padding-top: 0.26667rem; }
+      .records a .info .desc {
+        font-size: 0.34667rem;
+        color: #8f8f8f;
+        padding-top: 0.06667rem; }
+    .records a .time {
+      position: absolute;
+      bottom: 0.18667rem;
+      font-size: 0.24rem;
+      color: #8f8f8f;
+      right: 0.4rem; }
+
+.lingqu-box {
+  text-align: center; }
+  .lingqu-box .btn-lingqu {
+    display: inline-block;
+    width: 7.24rem;
+    height: 0.86667rem;
+    line-height: 0.86667rem;
+    text-align: center;
+    background: #ff8400;
+    font-size: 0.37333rem;
+    color: white;
+    border-radius: 0.13333rem; }
+
+.desc {
+  color: #818181;
+  padding: 0rem 0.8rem; }
+  .desc .title {
+    font-size: 0.37333rem;
+    text-align: center;
+    padding-top: 1.06667rem;
+    padding-bottom: 0.34667rem;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 0.26667rem; }
+  .desc .info {
+    font-size: 0.32rem;
+    line-height: 1.6; }
+
+/*# sourceMappingURL=myrecord.css.map */
