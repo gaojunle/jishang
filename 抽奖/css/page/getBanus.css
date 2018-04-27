@@ -33,10 +33,11 @@ html, body {
       height: 0.66667rem;
       position: absolute;
       left: 0px;
-      top: 0.4rem; }
+      top: 0.34667rem; }
     .sub-info .item.uname:before {
       background: url("../../img/lottery/icon-user.png") 1px 0px no-repeat;
-      background-size: 0.53333rem 0.53333rem; }
+      background-size: 0.53333rem 0.53333rem;
+      top: 0.4rem; }
     .sub-info .item.uphone:before {
       background: url("../../img/lottery/icon-phone.png") 1px 0px no-repeat;
       background-size: 0.42667rem 0.61333rem; }

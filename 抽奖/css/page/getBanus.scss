@@ -45,12 +45,13 @@ html, body {
       height: px2rem(50);
       position: absolute;
       left: 0px;
-      top: px2rem(30);
+      top: px2rem(26);
     }
     &.uname {
       &:before {
         background: url("../../img/lottery/icon-user.png") 1px 0px no-repeat;
         background-size: px2rem(40) px2rem(40);
+        top: px2rem(30);
       }
     }
     &.uphone {

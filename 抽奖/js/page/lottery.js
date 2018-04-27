@@ -33,13 +33,13 @@ lottery.prototype = {
     toggleStatus: function () {
         var opt = this.opt;
 
-        opt.$units.eq(opt.index).removeClass("active");
+        opt.$units.filter('.active').removeClass("active");
 
         opt.index += 1;
         if (opt.index > opt.count - 1) {
             opt.index = 0;
         }
-        opt.$units.eq(opt.index).addClass("active");
+        opt.$units.filter('.unit-' + opt.index).addClass("active");
     },
     roll: function () {
         var that = this,
