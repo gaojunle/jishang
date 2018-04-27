@@ -21,7 +21,7 @@ lottery.prototype = {
     init: function (id) {
         var opt = this.opt;
 
-        opt.$units.eq(opt.index).addClass("active");
+        opt.$units.addClass('rolling').eq(opt.index).addClass("active");
 
         if (opt.$lottery.data('running')) {
             return false;

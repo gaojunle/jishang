@@ -71,11 +71,14 @@ html, body {
         align-items: center;
         width: px2rem(124);
         height: px2rem(124);
-        background: #d4d4d4;
+        background: white;
         border-radius: px2rem(15);
         > img {
           width: px2rem(100);
           height: px2rem(100);
+        }
+        &.rolling {
+          background: #d4d4d4;
         }
         &.active {
           background: white;

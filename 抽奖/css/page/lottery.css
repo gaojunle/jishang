@@ -59,11 +59,13 @@ html, body {
         align-items: center;
         width: 1.65333rem;
         height: 1.65333rem;
-        background: #d4d4d4;
+        background: white;
         border-radius: 0.2rem; }
         #lottery table td .l-util > img {
           width: 1.33333rem;
           height: 1.33333rem; }
+        #lottery table td .l-util.rolling {
+          background: #d4d4d4; }
         #lottery table td .l-util.active {
           background: white; }
       #lottery table td .btn-lottery {
