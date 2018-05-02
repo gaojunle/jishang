@@ -4,7 +4,7 @@
 
 $orange: #cb9b54;
 $fontGray: #8f8f8f;
-$lineGray: rgba(143, 143, 143, .5);
+$lineGray: rgba(216, 216, 216, 0.68);
 
 html, body {
   margin: 0px;
@@ -20,7 +20,7 @@ html, body {
   display: inline-block;
   width: px2rem(247);
   height: px2rem(64);
-  line-height: px2rem(68);
+  line-height: px2rem(64);
   text-align: center;
   color: white;
   background: #cc9c4e;
@@ -28,6 +28,7 @@ html, body {
   border-radius: px2rem(10);
   margin: 0px px2rem(6);
   box-sizing: border-box;
+  vertical-align: middle;
   &.btn-look {
     border: 1px solid #cc9c4e;
     background: white;
@@ -59,7 +60,6 @@ html, body {
   .q-info {
     text-align: center;
     padding-top: px2rem(110);
-    overflow: hidden;
     position: relative;
     padding-bottom: px2rem(85);
     .title {
@@ -70,6 +70,7 @@ html, body {
 
     .price-box {
       padding-bottom: px2rem(30);
+      font-size: px2rem(32);
       .type {
         color: $orange;
         font-size: px2rem(74);
@@ -85,6 +86,7 @@ html, body {
         font-size: px2rem(36);
         color: #c4c4c4;
         margin-left: px2rem(16);
+        vertical-align: middle;
         &:before {
           position: absolute;
           left: 0px;
@@ -146,7 +148,7 @@ html, body {
     li {
       padding: px2rem(0) 0px;
       margin: 0px px2rem(24);
-      border-top: 1px solid rgba(216, 216, 216, 0.68);
+      border-top: 1px solid $lineGray;
 
       img {
         width: 100%;

@@ -55,14 +55,15 @@ html, body {
   display: inline-block;
   width: 3.29333rem;
   height: 0.85333rem;
-  line-height: 0.90667rem;
+  line-height: 0.85333rem;
   text-align: center;
   color: white;
   background: #cc9c4e;
   font-size: 0.45333rem;
   border-radius: 0.13333rem;
   margin: 0px 0.08rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  vertical-align: middle; }
   .btn.btn-look {
     border: 1px solid #cc9c4e;
     background: white;
@@ -88,7 +89,6 @@ html, body {
   .wrapper .q-info {
     text-align: center;
     padding-top: 1.46667rem;
-    overflow: hidden;
     position: relative;
     padding-bottom: 1.13333rem; }
     .wrapper .q-info .title {
@@ -96,7 +96,8 @@ html, body {
       color: #2a2a2a;
       padding-bottom: 0.4rem; }
     .wrapper .q-info .price-box {
-      padding-bottom: 0.4rem; }
+      padding-bottom: 0.4rem;
+      font-size: 0.42667rem; }
       .wrapper .q-info .price-box .type {
         color: #cb9b54;
         font-size: 0.98667rem; }
@@ -109,7 +110,8 @@ html, body {
         position: relative;
         font-size: 0.48rem;
         color: #c4c4c4;
-        margin-left: 0.21333rem; }
+        margin-left: 0.21333rem;
+        vertical-align: middle; }
         .wrapper .q-info .price-box .price:before {
           position: absolute;
           left: 0px;

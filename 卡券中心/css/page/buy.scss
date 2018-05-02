@@ -4,7 +4,7 @@
 
 $orange: #cb9b54;
 $fontGray: #8f8f8f;
-$lineGray: rgba(143, 143, 143, .5);
+$lineGray: rgba(216, 216, 216, 0.68);
 
 html, body {
   padding: 0px;
@@ -20,7 +20,7 @@ html, body {
   display: inline-block;
   width: px2rem(147);
   height: px2rem(50);
-  line-height: px2rem(52);
+  line-height: px2rem(50);
   text-align: center;
   color: white;
   background: #cc9c4e;
@@ -106,7 +106,7 @@ html, body {
 
 .pay-box {
   li {
-    border-top: 1px solid #c7c7c7;
+    border-top: 1px solid $lineGray;
     height: px2rem(80);
     line-height: px2rem(83);
     font-size: px2rem(28);
@@ -136,7 +136,7 @@ html, body {
   .pay-way {
     height: px2rem(105);
     line-height: px2rem(102);
-    border-bottom: 1px solid #c7c7c7;
+    border-bottom: 1px solid $lineGray;
     > a {
       img {
         border: 1px solid #c7c7c7;

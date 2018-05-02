@@ -55,7 +55,7 @@ html, body {
   display: inline-block;
   width: 1.96rem;
   height: 0.66667rem;
-  line-height: 0.69333rem;
+  line-height: 0.66667rem;
   text-align: center;
   color: white;
   background: #cc9c4e;
@@ -124,7 +124,7 @@ html, body {
         right: 0rem; }
 
 .pay-box li {
-  border-top: 1px solid #c7c7c7;
+  border-top: 1px solid rgba(216, 216, 216, 0.68);
   height: 1.06667rem;
   line-height: 1.10667rem;
   font-size: 0.37333rem;
@@ -148,7 +148,7 @@ html, body {
 .pay-box .pay-way {
   height: 1.4rem;
   line-height: 1.36rem;
-  border-bottom: 1px solid #c7c7c7; }
+  border-bottom: 1px solid rgba(216, 216, 216, 0.68); }
   .pay-box .pay-way > a img {
     border: 1px solid #c7c7c7;
     width: 2.66667rem;

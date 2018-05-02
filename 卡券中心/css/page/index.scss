@@ -3,12 +3,13 @@
 @import "../lib/reset.css";
 
 $fontGray: #8f8f8f;
-$lineGray: rgba(143, 143, 143, .5);
+$lineGray: rgba(216, 216, 216, 0.68);
 
 html, body {
   padding: 0px;
   margin: 0px;
   background: #fff;
+  font-size: px2rem(24);
 }
 
 .tab {
