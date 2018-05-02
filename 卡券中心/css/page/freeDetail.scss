@@ -1,0 +1,206 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+
+$orange: #cb9b54;
+$fontGray: #8f8f8f;
+$lineGray: rgba(143, 143, 143, .5);
+
+html, body {
+  margin: 0px;
+  background: #efefef;
+  padding: 0px;
+}
+
+.f-orange {
+  color: $orange;
+}
+
+.btn {
+  display: inline-block;
+  width: px2rem(247);
+  height: px2rem(64);
+  line-height: px2rem(68);
+  text-align: center;
+  color: white;
+  background: #cc9c4e;
+  font-size: px2rem(34);
+  border-radius: px2rem(10);
+  margin: 0px px2rem(6);
+  box-sizing: border-box;
+  &.btn-look {
+    border: 1px solid #cc9c4e;
+    background: white;
+    color: #cc9c4e;
+  }
+  &.hide {
+    display: none;
+  }
+}
+
+.wrapper {
+  position: relative;
+  background: #fff;
+  max-width: 600px;
+  margin: px2rem(110) px2rem(22) px2rem(50);
+  border: 1px solid rgba(191, 191, 191, .6);
+  border-radius: px2rem(6);
+
+  .logo {
+    position: absolute;
+    text-align: center;
+    top: - px2rem(80);
+    left: 50%;
+    margin-left: - px2rem(80);
+    width: px2rem(160);
+    height: px2rem(160);
+  }
+
+  .q-info {
+    text-align: center;
+    padding-top: px2rem(110);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: px2rem(85);
+    .title {
+      font-size: px2rem(38);
+      color: rgb(42, 42, 42);
+      padding-bottom: px2rem(30);
+    }
+
+    .price-box {
+      padding-bottom: px2rem(30);
+      .type {
+        color: $orange;
+        font-size: px2rem(74);
+      }
+      .jifen {
+        font-size: px2rem(36);
+        color: $orange;
+        margin-left: px2rem(6);
+      }
+      .price {
+        display: inline-block;
+        position: relative;
+        font-size: px2rem(36);
+        color: #c4c4c4;
+        margin-left: px2rem(16);
+        &:before {
+          position: absolute;
+          left: 0px;
+          top: 47%;
+          width: 100%;
+          content: '';
+          height: 1px;
+          background-color: #c4c4c4;
+          -webkit-transform: rotate(-19deg) translateX(-5%);
+          transform: rotate(-19deg) translateX(-5%);
+        }
+      }
+    }
+    .num {
+      font-size: px2rem(38);
+      color: rgb(42, 42, 42);
+      padding-bottom: px2rem(30);
+      > span {
+        display: inline-block;
+        padding: px2rem(10);
+      }
+      &.no-show {
+        > span {
+          color: #d2d2d2;
+          background: #d2d2d2;
+        }
+      }
+    }
+    .desc {
+      font-size: px2rem(24);
+      color: rgb(136, 136, 136);
+      padding-bottom: px2rem(38);
+    }
+    .ops {
+      text-align: center;
+    }
+    .split {
+      position: absolute;
+      background: #efefef;
+      border-left: 1px solid #efefef;
+      border-right: 1px solid #efefef;
+      width: calc(100% + 2px);
+      margin-left: -1px;
+      bottom: px2rem(10);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .info-desc {
+    font-size: px2rem(24);
+    color: rgb(136, 136, 136);
+    line-height: 1.5;
+    padding-left: px2rem(100);
+    padding-bottom: px2rem(24);
+  }
+  .desc-box {
+    li {
+      padding: px2rem(0) 0px;
+      margin: 0px px2rem(24);
+      border-top: 1px solid rgba(216, 216, 216, 0.68);
+
+      img {
+        width: 100%;
+        padding-bottom: px2rem(24);
+      }
+      .title {
+        position: relative;
+        font-size: px2rem(28);
+        color: rgb(42, 42, 42);
+        padding: px2rem(20) px2rem(15);
+        &:before, &:after {
+          display: inline-block;
+          position: absolute;
+          content: ' ';
+        }
+        &:before {
+          width: px2rem(6);
+          background: $orange;
+          height: px2rem(30);
+          top: 50%;
+          margin-top: - px2rem(15);
+          left: 0px;
+        }
+        &:after {
+          right: 0px;
+          width: px2rem(26);
+          height: px2rem(26);
+          top: 50%;
+          margin-top: - px2rem(13);
+          text-align: center;
+          background: url("../../img/detail/arrow-right.png") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .info {
+        display: none;
+        font-size: px2rem(24);
+        color: #8f8f8f;
+        line-height: 1.5;
+        padding-bottom: px2rem(15);
+      }
+      &.unfold {
+        .title {
+          &:after {
+            right: px2rem(8);
+            background: url("../../img/detail/arrow-top.png") no-repeat;
+            background-size: contain;
+          }
+        }
+        .info {
+          display: block;
+        }
+      }
+    }
+  }
+}
