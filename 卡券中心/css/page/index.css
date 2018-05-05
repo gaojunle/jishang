@@ -51,7 +51,7 @@ html, body {
 
 .tab .tab-menu {
   position: relative;
-  border-bottom: 1px solid rgba(216, 216, 216, 0.68);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.5);
   box-sizing: border-box; }
   .tab .tab-menu > li {
     float: left;
@@ -66,7 +66,7 @@ html, body {
       background: #cc9c4e; }
 .tab .tab-cont {
   display: none;
-  padding: 0.56rem 0px; }
+  padding: 0px 0.56rem 0px; }
   .tab .tab-cont:nth-of-type(1) {
     display: block; }
   .tab .tab-cont .btn {
@@ -95,7 +95,7 @@ html, body {
       -ms-flex-pack: justify;
       justify-content: space-between;
       background: #fafafa;
-      border: 1px solid rgba(199, 199, 199, 0.5);
+      border: 1px solid rgba(199, 199, 199, 0.6);
       border-top-left-radius: 0.08rem;
       border-top-right-radius: 0.08rem;
       border-bottom: none;
@@ -131,8 +131,6 @@ html, body {
   display: flex;
   -ms-flex-align: center;
   align-items: center; }
-  .tab .discount > li:nth-last-of-type(1) .list-box {
-    border-bottom: 1px solid rgba(216, 216, 216, 0.68); }
 .tab .discount .i-logo {
   width: 1.74667rem;
   height: 1.74667rem;
@@ -147,7 +145,7 @@ html, body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.56rem 0.30667rem 0.56rem 0px;
-  border-top: 1px solid rgba(216, 216, 216, 0.68); }
+  border-bottom: 1px solid rgba(216, 216, 216, 0.5); }
   .tab .discount .list-box .h3 {
     color: #2a2a2a;
     font-size: 0.37333rem; }

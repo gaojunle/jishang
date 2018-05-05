@@ -4,7 +4,7 @@
 
 $orange: #cb9b54;
 $fontGray: #8f8f8f;
-$lineGray: rgba(216, 216, 216, 0.68);
+$lineGray: rgba(216, 216, 216, 0.50);
 
 html, body {
   margin: 0px;
@@ -18,7 +18,8 @@ html, body {
 
 .btn {
   display: inline-block;
-  width: px2rem(247);
+  width: px2rem(240);
+
   height: px2rem(64);
   line-height: px2rem(64);
   text-align: center;
@@ -85,19 +86,23 @@ html, body {
         position: relative;
         font-size: px2rem(36);
         color: #c4c4c4;
-        margin-left: px2rem(16);
+        margin-left: px2rem(8);
         vertical-align: middle;
-        &:before {
-          position: absolute;
-          left: 0px;
-          top: 47%;
-          width: 100%;
-          content: '';
-          height: 1px;
-          background-color: #c4c4c4;
-          -webkit-transform: rotate(-19deg) translateX(-5%);
-          transform: rotate(-19deg) translateX(-5%);
+        i{
+          position: relative;
+          font-style: normal;
+          margin-left: px2rem(2);
+          &:before {
+            position: absolute;
+            left: 0px;
+            top: 47%;
+            width: 100%;
+            content: '';
+            height: 1px;
+            background-color: #c4c4c4;
+          }
         }
+
       }
     }
     .num {
@@ -116,7 +121,7 @@ html, body {
       }
     }
     .desc {
-      font-size: px2rem(24);
+      font-size: px2rem(28);
       color: rgb(136, 136, 136);
       padding-bottom: px2rem(38);
     }
@@ -138,7 +143,7 @@ html, body {
   }
 
   .info-desc {
-    font-size: px2rem(24);
+    font-size: px2rem(28);
     color: rgb(136, 136, 136);
     line-height: 1.5;
     padding-left: px2rem(100);

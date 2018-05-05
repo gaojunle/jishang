@@ -53,7 +53,7 @@ html, body {
 
 .btn {
   display: inline-block;
-  width: 3.29333rem;
+  width: 3.2rem;
   height: 0.85333rem;
   line-height: 0.85333rem;
   text-align: center;
@@ -110,18 +110,20 @@ html, body {
         position: relative;
         font-size: 0.48rem;
         color: #c4c4c4;
-        margin-left: 0.21333rem;
+        margin-left: 0.10667rem;
         vertical-align: middle; }
-        .wrapper .q-info .price-box .price:before {
-          position: absolute;
-          left: 0px;
-          top: 47%;
-          width: 100%;
-          content: '';
-          height: 1px;
-          background-color: #c4c4c4;
-          -webkit-transform: rotate(-19deg) translateX(-5%);
-          transform: rotate(-19deg) translateX(-5%); }
+        .wrapper .q-info .price-box .price i {
+          position: relative;
+          font-style: normal;
+          margin-left: 0.02667rem; }
+          .wrapper .q-info .price-box .price i:before {
+            position: absolute;
+            left: 0px;
+            top: 47%;
+            width: 100%;
+            content: '';
+            height: 1px;
+            background-color: #c4c4c4; }
     .wrapper .q-info .num {
       font-size: 0.50667rem;
       color: #2a2a2a;
@@ -133,7 +135,7 @@ html, body {
         color: #d2d2d2;
         background: #d2d2d2; }
     .wrapper .q-info .desc {
-      font-size: 0.32rem;
+      font-size: 0.37333rem;
       color: #888888;
       padding-bottom: 0.50667rem; }
     .wrapper .q-info .ops {
@@ -149,7 +151,7 @@ html, body {
       .wrapper .q-info .split img {
         width: 100%; }
   .wrapper .info-desc {
-    font-size: 0.32rem;
+    font-size: 0.37333rem;
     color: #888888;
     line-height: 1.5;
     padding-left: 1.33333rem;
@@ -157,7 +159,7 @@ html, body {
   .wrapper .desc-box li {
     padding: 0rem 0px;
     margin: 0px 0.32rem;
-    border-top: 1px solid rgba(216, 216, 216, 0.68); }
+    border-top: 1px solid rgba(216, 216, 216, 0.5); }
     .wrapper .desc-box li img {
       width: 100%;
       padding-bottom: 0.32rem; }

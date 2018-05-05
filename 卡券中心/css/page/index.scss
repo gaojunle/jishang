@@ -3,7 +3,7 @@
 @import "../lib/reset.css";
 
 $fontGray: #8f8f8f;
-$lineGray: rgba(216, 216, 216, 0.68);
+$lineGray: rgba(216, 216, 216, 0.50);
 
 html, body {
   padding: 0px;
@@ -33,7 +33,7 @@ html, body {
   }
   .tab-cont {
     display: none;
-    padding: px2rem(42) 0px;
+    padding: 0px px2rem(42) 0px;
     &:nth-of-type(1) {
       display: block;
     }
@@ -66,7 +66,7 @@ html, body {
         -ms-flex-pack: justify;
             justify-content: space-between;
         background: #fafafa;
-        border: 1px solid rgba(199, 199, 199, .5);
+        border: 1px solid rgba(199, 199, 199, .6);
         border-top-left-radius: px2rem(6);
         border-top-right-radius: px2rem(6);
         border-bottom: none;
@@ -119,7 +119,7 @@ html, body {
           align-items: center;
       &:nth-last-of-type(1) {
         .list-box {
-          border-bottom: 1px solid $lineGray;
+          //border-top: 1px solid $lineGray;
         }
       }
     }
@@ -138,7 +138,7 @@ html, body {
       -ms-flex-pack: justify;
           justify-content: space-between;
       padding: px2rem(42) px2rem(23) px2rem(42) 0px;
-      border-top: 1px solid $lineGray;
+      border-bottom: 1px solid $lineGray;
 
       .h3 {
         color: #2a2a2a;
