@@ -1,0 +1,152 @@
+@charset "UTF-8";
+@import url(../lib/reset.css);
+@chartset 'utf-8';
+/*
+    @author xiao
+    @des: APP端基础方法
+    @使用心得:
+        -适配方案参考淘宝开源库lib.flexible
+        -布局rem动态适配
+        -字体dpr动态适配
+        -和文字相关的布局用px写死比较好。。。因为用rem会和没有用rem布局的字体有错位
+        -目前市面上有三种代表的适配方案：
+            1. 直接750设计稿除以2适配所有机型，布局采用百分比：代表网站 拉勾网
+            2. 动态改变html font-size基准，所有元素以rem适配：代表网站 小米网
+            3. 动态改变html font-size基准，所有除字体相关元素以外的rem适配，字体只按分辨率适配：代表网站 淘宝网
+ */
+/**
+ * 基本思想描述：
+ * 多屏适配布局问题
+ * 移动端布局，为了适配各种大屏手机，目前最好用的方案莫过于使用相对单位rem。
+ * 基于rem的原理，我们要做的就是: 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。
+ * 这里我们提取了一个公式(rem表示基准值)
+ * rem = document.documentElement.clientWidth * dpr / 10
+ * 说明：
+ * 1）乘以dpr，是因为页面有可能为了实现1px border页面会缩放(scale) 1/dpr 倍(如果没有，dpr=1)。
+ * 2）除以10，是为了取整，方便计算(理论上可以是任何值)
+ * 所以就像下面这样，html的font-size可能会：
+ * iPhone3gs: 320px / 10 = 32px
+ * iPhone4/5: 320px * 2 / 10 = 64px
+ * iPhone6: 375px * 2 / 10 = 75px
+ * iPhone6plus: 414 * 3 / 10 = 124.2px
+ */
+/*
+    px转换成rem
+ */
+/*
+    默认已iPhone6的750为基准开发
+    font-size 不推荐转换成rem
+    原因：我们不希望文本在Retina屏幕下变小，
+    另外，我们希望在大屏手机上看到更多文本，
+    以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。
+    注意设计稿是2x屏幕, 所以1x屏幕需要除以2
+ */
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+html, body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 0.32rem; }
+
+.wrapper {
+  position: relative;
+  max-width: 10rem;
+  min-height: 100%;
+  margin: 0px auto; }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+html, body {
+  height: 100%;
+  padding-bottom: 0px; }
+
+.flex-box {
+  height: 100vh;
+  position: relative;
+  max-width: 10rem;
+  min-height: 100%;
+  margin: 0px auto;
+  background-color: #f4f4f4; }
+  .flex-box .header {
+    height: 1.30667rem; }
+  .flex-box .body {
+    background-color: #f4f4f4;
+    overflow: auto; }
+    .flex-box .body.bottom_bg {
+      background: url(../../img/common/bottom_bg.png) no-repeat center bottom;
+      background-size: 100% auto;
+      padding-bottom: 1rem; }
+
+.mtitle {
+  display: inline-block; }
+  .mtitle .location {
+    width: 0.26667rem; }
+  .mtitle span {
+    font-size: 0.34667rem;
+    margin: 0px 0.29333rem;
+    color: #8f8f8f;
+    vertical-align: middle; }
+  .mtitle .arrow {
+    width: 0.16rem; }
+
+.phone-list {
+  padding: 0px 0.34667rem; }
+  .phone-list .ph-item {
+    padding: 0.4rem 0.50667rem;
+    border-top: 1px solid rgba(216, 216, 216, 0.68); }
+    .phone-list .ph-item h3 {
+      border-left: 5px solid #59c3f9;
+      padding-left: 0.16rem;
+      line-height: 1;
+      font-size: 0.42667rem;
+      color: #2a2a2a;
+      margin: 0.21333rem 0px; }
+    .phone-list .ph-item p {
+      font-size: 0.4rem;
+      color: #8f8f8f; }
+    .phone-list .ph-item a img {
+      width: 1.45333rem; }
+
+.bt-fixed {
+  height: 0.8rem;
+  background: #59c3f9;
+  font-size: 0.28rem;
+  color: white; }
+
+/*# sourceMappingURL=usedPhone.css.map */

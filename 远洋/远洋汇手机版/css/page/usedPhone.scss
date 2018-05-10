@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import "../lib/common";
+
+html, body {
+  height: 100%;
+  padding-bottom: 0px
+}
+
+//弹性布局，body可自由伸缩
+.flex-box {
+  height: 100vh;
+  position: relative;
+  max-width: px2rem(750);
+  min-height: 100%;
+  margin: 0px auto;
+  background-color: #f4f4f4;
+  .header {
+    height: px2rem(98);
+  }
+  .body {
+    background-color: #f4f4f4;
+    overflow: auto;
+    &.bottom_bg {
+      background: url(../../img/common/bottom_bg.png) no-repeat center bottom;
+      background-size: 100% auto;
+      padding-bottom: px2rem(75);
+    }
+  }
+  .footer {
+
+  }
+}
+
+.mtitle {
+  display: inline-block;
+  .location {
+    width: px2rem(20);
+  }
+  span {
+    font-size: px2rem(26);
+    margin: 0px px2rem(22);
+    color: #8f8f8f;
+    vertical-align: middle;
+  }
+  .arrow {
+    width: px2rem(12);
+  }
+}
+
+.phone-list {
+  padding: 0px px2rem(26);
+  .ph-item {
+    padding: px2rem(30) px2rem(38);
+    border-top: 1px solid $lineGray;
+    h3 {
+      border-left: 5px solid #59c3f9;
+      padding-left: px2rem(12);
+      line-height: 1;
+      font-size: px2rem(32);
+      color: rgb(42, 42, 42);
+      margin: px2rem(16) 0px;
+    }
+    p {
+      font-size: px2rem(30);
+      color: rgb(143, 143, 143);
+
+    }
+    a {
+      img {
+        width: px2rem(109);
+      }
+    }
+  }
+}
+
+.bt-fixed {
+  height: px2rem(60);
+  background: #59c3f9;
+  font-size: px2rem(21);
+  color: rgb(255, 255, 255);
+}
