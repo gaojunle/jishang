@@ -135,11 +135,12 @@ html, body {
       border-radius: 0.26667rem;
       margin-bottom: 0.26667rem; }
       .wrapper .my-list a img {
-        width: 1.06667rem;
-        height: 1.06667rem; }
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-left: 0.13333rem; }
       .wrapper .my-list a .info {
         color: #8f8f8f;
-        padding-left: 0.26667rem; }
+        padding-left: 0.4rem; }
         .wrapper .my-list a .info h3 {
           font-size: 0.50667rem; }
         .wrapper .my-list a .info p {
