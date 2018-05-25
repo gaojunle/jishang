@@ -1,0 +1,263 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/art-dialog.css";
+
+$fontGray: #8f8f8f;
+$lineGray: rgba(143, 143, 143, .5);
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: #fee378;
+}
+
+.slogan {
+  text-align: center;
+  padding-top: px2rem(10);
+  padding-bottom: px2rem(15);
+  img {
+    height: px2rem(190);
+  }
+}
+
+#lottery {
+  position: relative;
+  width: px2rem(800);
+  height: px2rem(800);
+  padding: px2rem(30);
+  margin: 0px auto;
+  background: #ff6400;
+  border-radius: px2rem(30);
+  box-sizing: border-box;
+  .bg-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../../img/lottery/deng1.png") no-repeat;
+    background-size: cover;
+    &.on {
+      background: url("../../img/lottery/deng2.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  .lottery-box {
+    position: absolute;
+    left: px2rem(40);
+    top: px2rem(40);
+    width: px2rem(720);
+    height: px2rem(720);
+    overflow: hidden;
+    background: #fda31c;
+    border-radius: px2rem(30);
+    box-sizing: border-box;
+    padding-top: px2rem(5);
+    padding-left: px2rem(20);
+  }
+  table {
+    padding: px2rem(22);
+
+    td {
+      width: px2rem(175);
+      height: px2rem(175);
+      .l-util {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: px2rem(154);
+        height: px2rem(154);
+        background: white;
+        border-radius: px2rem(15);
+        > img {
+          width: px2rem(120);
+          height: px2rem(120);
+        }
+        &.rolling {
+          background: #d4d4d4;
+        }
+        &.active {
+          background: white;
+        }
+      }
+      .btn-lottery {
+        display: -ms-flexbox;
+        display: flex;
+        width: px2rem(330);
+        height: px2rem(330);
+        border-radius: 0.2rem;
+        background: #fcd435;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        > img {
+          width: px2rem(230);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.bang {
+  width: px2rem(800);
+  margin: px2rem(22) auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  .tip, .list {
+    background: #fff9e4;
+    height: px2rem(172);
+    border-radius: px2rem(15);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .tip {
+    text-align: center;
+    width: px2rem(180);
+    padding: px2rem(22) 0px;
+
+    img {
+      width: px2rem(81);
+      padding-bottom: px2rem(8);
+    }
+    p {
+      color: #904d00;
+      font-size: px2rem(28);
+    }
+  }
+  .list {
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: px2rem(12);
+    padding: px2rem(6) px2rem(15);
+    position: relative;
+    li {
+      position: relative;
+      height: px2rem(54);
+      line-height: px2rem(56);
+      border-bottom: 1px solid #fee378;
+      font-size: px2rem(24);
+    }
+  }
+}
+
+.ops {
+  position: relative;
+  width: px2rem(665);
+  margin: 0px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  a {
+    display: inline-block;
+    width: px2rem(320);
+    height: px2rem(65);
+    line-height: px2rem(65);
+    text-align: center;
+    background: #ff8400;
+    color: white;
+    font-size: px2rem(30);
+    border-radius: px2rem(8);
+  }
+}
+
+.ui-dialog {
+  background: transparent;
+  .pop-box {
+    position: relative;
+    border-radius: px2rem(10);
+    background: white;
+    overflow: hidden;
+    .pop-close {
+      position: absolute;
+      width: px2rem(35);
+      height: px2rem(35);
+      right: px2rem(14);
+      top: px2rem(14);
+    }
+    &.partake {
+      width: px2rem(515);
+      height: px2rem(275);
+      vertical-align: middle;
+      display: table-cell;
+      overflow: hidden;
+      text-align: center;
+      color: $fontGray;
+
+      > p {
+        width: 100%;
+      }
+    }
+
+    &.rule-box {
+      width: px2rem(1000);
+      padding: px2rem(40) px2rem(30);
+      box-sizing: border-box;
+      color: $fontGray;
+      font-size: px2rem(24);
+      .mtitle {
+        font-size: px2rem(28);
+        text-align: center;
+        padding: px2rem(24);
+        padding-bottom: px2rem(4);
+        border-bottom: $lineGray;
+      }
+      .title {
+        padding: px2rem(26);
+        padding-top: px2rem(20);
+      }
+      .info {
+        > p {
+          text-indent: 1.6em;
+          line-height: 1.6;
+        }
+      }
+    }
+    &.banus-box, &.no-banus-box {
+      width: px2rem(627);
+      box-sizing: border-box;
+      color: white;
+      font-size: px2rem(28);
+      text-align: center;
+      background: #ff8400;
+      .title {
+        font-size: px2rem(36);
+        padding-top: px2rem(60);
+        padding-bottom: px2rem(10);
+      }
+      .banus-img {
+        padding: px2rem(80) 0px;
+        background: url("../../img/lottery/banus-bg.png") 0px 0px no-repeat;
+        background-size: 100% 100%;
+
+        > img {
+          width: px2rem(211);
+        }
+      }
+      .btn-see {
+        height: px2rem(104);
+        line-height: px2rem(104);
+        text-align: center;
+        color: #ff8400;
+        font-size: px2rem(32);
+        background: white;
+        a{
+          color: #ff8400;
+        }
+      }
+    }
+  }
+}
+.pop-content{
+  font-size: px2rem(28);
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>九宫格大转盘抽奖</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" type="text/css" href="./css/lib/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/page/lottery.css"/>
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="slogan"><img src="./img/lottery/slogan.png" alt=""></div>
+<div id="lottery">
+    <div class="bg-img"></div>
+    <div class="lottery-box">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <div class="l-util unit-0"><img src="./img/lottery-list/1.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-1"><img src="./img/lottery-list/2.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-2"><img src="./img/lottery-list/3.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-3"><img src="./img/lottery-list/4.png"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="l-util"><img src="./img/lottery-list/5.png"></div>
+                </td>
+                <td colspan="2" rowspan="2">
+                    <a class="btn-lottery" href="#"><img src="./img/lottery/btn-lottery.png" alt=""></a>
+                </td>
+                <td>
+                    <div class="l-util unit-4"><img src="./img/lottery-list/6.png"></div>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <div class="l-util unit-10"><img src="./img/lottery-list/7.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-5"><img src="./img/lottery-list/8.png"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="l-util unit-9"><img src="./img/lottery-list/1.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-8"><img src="./img/lottery-list/1.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-7"><img src="./img/lottery-list/1.png"></div>
+                </td>
+                <td>
+                    <div class="l-util unit-6"><img src="./img/lottery-list/1.png"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="bang">
+    <div class="tip">
+        <img src="./img/lottery/cup.png" alt="">
+        <p>超级红人榜</p>
+    </div>
+    <ul class="list js-bang-list">
+        <li>186****1234获得星巴克中杯饮品券1</li>
+        <li>186****1234获得星巴克中杯饮品券2</li>
+        <li>186****1234获得星巴克中杯饮品券3</li>
+        <li>186****1234获得星巴克中杯饮品券4</li>
+        <li>186****1234获得星巴克中杯饮品券5</li>
+        <li>186****1234获得星巴克中杯饮品券6</li>
+        <li>186****1234获得星巴克中杯饮品券7</li>
+    </ul>
+</div>
+<div class="ops">
+    <a href="#" class="js-rule">游戏规则</a>
+    <a href="./myRecord.html">我的奖品</a>
+</div>
+<div class="ops" style="padding-top: 3px">
+    <a href="#" class="js-partake">参与过</a>
+    <a href="#" class="js-banus">中奖</a>
+    <a href="#" class="js-no-banus">未中奖</a>
+</div>
+
+<div class="pop-box partake" style="display: none">
+    <img class="pop-close" src="./img/common/close.png" alt="">
+    <div class="pop-content">
+        <p>每位用户只有一次抽奖机会，</p>
+        <p>您已参与过此次活动啦～</p>
+    </div>
+</div>
+<div class="pop-box rule-box" style="display: none">
+    <img class="pop-close" src="./img/common/close.png" alt="">
+    <div class="pop-content">
+        <div class="mtitle">• 游戏规则 •</div>
+        <p class="title">1、抽奖券说明</p>
+        <div class="info">
+            <p>(1) 抽奖券分为正券和副券，正券和副券上印有同样的号码及员工姓名，且有公司综合部的签字方能视为有效;</p>
+            <p>(2) 正券投入抽奖箱内，副券持有者保存以做兑奖用;</p>
+            <p>(3) 在兑奖时，必须持有效副券前来兑奖，凡无效奖券、奖券损坏无法识 别、奖券丢失者均不予以兑奖，抽奖卷投入抽奖箱方有资格，沿虚线将正、 副卷妥善保存，参加抽奖活动。</p>
+        </div>
+        <p class="title">2、兑奖说明：</p>
+        <div class="info">
+            <p>((1) 此次抽奖实施现场开奖、兑奖、领奖制;</p>
+            <p>((2) 所有奖品必须由本人持兑奖副券到领奖台登记领取，不得代领;</p>
+            <p>((3) 抽到奖而未及时上台兑奖者将取消兑奖资格，奖项继续保留至下一次 抽奖。</p>
+        </div>
+    </div>
+</div>
+<div class="pop-box banus-box" style="display: none">
+    <img class="pop-close" src="./img/common/close-white.png" alt="">
+    <div class="pop-content">
+        <p class="title">恭喜您！</p>
+        <p class="detail">获得星巴克中杯饮品券一张！</p>
+        <div class="banus-img"><img src="./img/lottery/avt-1.png" alt=""></div>
+        <div class="btn-see"><a href="./recordDetail.html">立即查看</a></div>
+    </div>
+</div>
+<div class="pop-box no-banus-box" style="display: none">
+    <img class="pop-close" src="./img/common/close-white.png" alt="">
+    <div class="pop-content">
+        <p class="title">很遗憾，您没有中奖！</p>
+        <p class="detail">一起期待下次活动吧～</p>
+        <div class="banus-img"><img src="./img/lottery/gxfc.png" alt=""></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/lib/artDialog.js"></script>
+<script type="text/javascript" src="./js/page/lottery.js"></script>
+</body>
+</html>

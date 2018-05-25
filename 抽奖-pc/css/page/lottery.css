@@ -1,0 +1,212 @@
+@import url(../lib/reset.css);
+@import url(../lib/art-dialog.css);
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: #fee378; }
+
+.slogan {
+  text-align: center;
+  padding-top: 0.13333rem;
+  padding-bottom: 0.2rem; }
+  .slogan img {
+    height: 2.53333rem; }
+
+#lottery {
+  position: relative;
+  width: 10.66667rem;
+  height: 10.66667rem;
+  padding: 0.4rem;
+  margin: 0px auto;
+  background: #ff6400;
+  border-radius: 0.4rem;
+  box-sizing: border-box; }
+  #lottery .bg-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../../img/lottery/deng1.png") no-repeat;
+    background-size: cover; }
+    #lottery .bg-img.on {
+      background: url("../../img/lottery/deng2.png") no-repeat;
+      background-size: cover; }
+  #lottery .lottery-box {
+    position: absolute;
+    left: 0.53333rem;
+    top: 0.53333rem;
+    width: 9.6rem;
+    height: 9.6rem;
+    overflow: hidden;
+    background: #fda31c;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    padding-top: 0.06667rem;
+    padding-left: 0.26667rem; }
+  #lottery table {
+    padding: 0.29333rem; }
+    #lottery table td {
+      width: 2.33333rem;
+      height: 2.33333rem; }
+      #lottery table td .l-util {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 2.05333rem;
+        height: 2.05333rem;
+        background: white;
+        border-radius: 0.2rem; }
+        #lottery table td .l-util > img {
+          width: 1.6rem;
+          height: 1.6rem; }
+        #lottery table td .l-util.rolling {
+          background: #d4d4d4; }
+        #lottery table td .l-util.active {
+          background: white; }
+      #lottery table td .btn-lottery {
+        display: -ms-flexbox;
+        display: flex;
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 0.2rem;
+        background: #fcd435;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        #lottery table td .btn-lottery > img {
+          width: 3.06667rem;
+          vertical-align: middle; }
+
+.bang {
+  width: 10.66667rem;
+  margin: 0.29333rem auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .bang .tip, .bang .list {
+    background: #fff9e4;
+    height: 2.29333rem;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    overflow: hidden; }
+  .bang .tip {
+    text-align: center;
+    width: 2.4rem;
+    padding: 0.29333rem 0px; }
+    .bang .tip img {
+      width: 1.08rem;
+      padding-bottom: 0.10667rem; }
+    .bang .tip p {
+      color: #904d00;
+      font-size: 0.37333rem; }
+  .bang .list {
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 0.16rem;
+    padding: 0.08rem 0.2rem;
+    position: relative; }
+    .bang .list li {
+      position: relative;
+      height: 0.72rem;
+      line-height: 0.74667rem;
+      border-bottom: 1px solid #fee378;
+      font-size: 0.32rem; }
+
+.ops {
+  position: relative;
+  width: 8.86667rem;
+  margin: 0px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .ops a {
+    display: inline-block;
+    width: 4.26667rem;
+    height: 0.86667rem;
+    line-height: 0.86667rem;
+    text-align: center;
+    background: #ff8400;
+    color: white;
+    font-size: 0.4rem;
+    border-radius: 0.10667rem; }
+
+.ui-dialog {
+  background: transparent; }
+  .ui-dialog .pop-box {
+    position: relative;
+    border-radius: 0.13333rem;
+    background: white;
+    overflow: hidden; }
+    .ui-dialog .pop-box .pop-close {
+      position: absolute;
+      width: 0.46667rem;
+      height: 0.46667rem;
+      right: 0.18667rem;
+      top: 0.18667rem; }
+    .ui-dialog .pop-box.partake {
+      width: 6.86667rem;
+      height: 3.66667rem;
+      vertical-align: middle;
+      display: table-cell;
+      overflow: hidden;
+      text-align: center;
+      color: #8f8f8f; }
+      .ui-dialog .pop-box.partake > p {
+        width: 100%; }
+    .ui-dialog .pop-box.rule-box {
+      width: 13.33333rem;
+      padding: 0.53333rem 0.4rem;
+      box-sizing: border-box;
+      color: #8f8f8f;
+      font-size: 0.32rem; }
+      .ui-dialog .pop-box.rule-box .mtitle {
+        font-size: 0.37333rem;
+        text-align: center;
+        padding: 0.32rem;
+        padding-bottom: 0.05333rem;
+        border-bottom: rgba(143, 143, 143, 0.5); }
+      .ui-dialog .pop-box.rule-box .title {
+        padding: 0.34667rem;
+        padding-top: 0.26667rem; }
+      .ui-dialog .pop-box.rule-box .info > p {
+        text-indent: 1.6em;
+        line-height: 1.6; }
+    .ui-dialog .pop-box.banus-box, .ui-dialog .pop-box.no-banus-box {
+      width: 8.36rem;
+      box-sizing: border-box;
+      color: white;
+      font-size: 0.37333rem;
+      text-align: center;
+      background: #ff8400; }
+      .ui-dialog .pop-box.banus-box .title, .ui-dialog .pop-box.no-banus-box .title {
+        font-size: 0.48rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.13333rem; }
+      .ui-dialog .pop-box.banus-box .banus-img, .ui-dialog .pop-box.no-banus-box .banus-img {
+        padding: 1.06667rem 0px;
+        background: url("../../img/lottery/banus-bg.png") 0px 0px no-repeat;
+        background-size: 100% 100%; }
+        .ui-dialog .pop-box.banus-box .banus-img > img, .ui-dialog .pop-box.no-banus-box .banus-img > img {
+          width: 2.81333rem; }
+      .ui-dialog .pop-box.banus-box .btn-see, .ui-dialog .pop-box.no-banus-box .btn-see {
+        height: 1.38667rem;
+        line-height: 1.38667rem;
+        text-align: center;
+        color: #ff8400;
+        font-size: 0.42667rem;
+        background: white; }
+        .ui-dialog .pop-box.banus-box .btn-see a, .ui-dialog .pop-box.no-banus-box .btn-see a {
+          color: #ff8400; }
+
+.pop-content {
+  font-size: 0.37333rem; }
+
+/*# sourceMappingURL=lottery.css.map */

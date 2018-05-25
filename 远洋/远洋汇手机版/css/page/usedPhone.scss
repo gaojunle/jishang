@@ -6,7 +6,6 @@ html, body {
   padding-bottom: 0px
 }
 
-//弹性布局，body可自由伸缩
 .flex-box {
   height: 100vh;
   position: relative;
@@ -52,6 +51,9 @@ html, body {
   .ph-item {
     padding: px2rem(30) px2rem(38);
     border-top: 1px solid $lineGray;
+    &:nth-last-of-type(1){
+      border-bottom: 1px solid $lineGray;
+    }
     h3 {
       border-left: 5px solid #59c3f9;
       padding-left: px2rem(12);
