@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>注册绑定</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/regist.css">
+</head>
+<body>
+<div class="wraper">
+    <section class="check-info">
+        <img src="./img/logo.png" class="logo">
+        <form action="" id="suform">
+            <p><span class="must">＊</span><input type="text" name="name" placeholder="姓名"></p>
+            <p><span class="must">＊</span><input type="text" name="mobile" placeholder="手机号" class="js-mobile"></p>
+            <p><span class="must">＊</span><input type="text" name="card" placeholder="会员卡号"></p>
+            <p><span class="must">＊</span><input type="text" name="blcard" placeholder="白鹭卡号"></p>
+            <p class="get-code"><span class="must">＊</span>
+                <input type="text" name="code" placeholder="校验码"><a href="#" class="btn-get-code">获取验证码</a>
+            </p>
+            <div><input type="submit" class="btn-login js-submit" value="立即绑定"></div>
+            <div><input type="button" class="btn-login js-dismiss" value="解除绑定(测试用)"></div>
+            <div><a href="./个人中心.html">个人中心(测试用)</a></div>
+        </form>
+    </section>
+    <div class="pop-box">
+        <div class="pop-mask"></div>
+        <div class="pop-wraper">
+            <div class="pop-content">
+                <img src="./img/close.png" class="pop-close">
+                <div class="pop-cont">－－</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/jquery.validate.js"></script>
+<script>
+    jQuery(function ($) {
+        var $getCode = $('.btn-get-code');
+
+        //输入手机号正确，激活获取验证码按钮
+        $('.js-mobile').on('keyup', function () {
+            var val = $(this).val();
+
+            if (/^1[3|4|5|7|8|9][0-9]\d{8}$/.test(val) && !$('.btn-get-code').data('istime')) {
+                $getCode.addClass('active')
+            }
+        });
+
+        //弹层关闭
+        $('.pop-box .pop-close').click(function () {
+            $('.pop-box').hide();
+        })
+
+        //点击获取验证码；倒计时处理
+        $getCode.click(function () {
+            var $this = $(this),
+                countDown = 5;
+
+            if (!$this.data('istime') && $this.hasClass('active')) {
+                //TODO 发送请求获取验证码
+                //alert('发送请求获取验证码');
+                $this.removeClass('active');
+                $this.html('发送中(' + countDown-- + ')');
+                $this.data('istime', setInterval(function () {
+                    if (countDown == 0) {
+                        clearInterval($this.data('istime'));
+                        $this.data('istime', false).addClass('active');
+                        $this.html('获取验证码');
+                        return false;
+                    }
+                    $this.html('发送中(' + countDown-- + ')');
+                }, 1000));
+            }
+        });
+
+        //表提交及验证
+        $("#suform").validate({
+            submitHandler: function (form) {
+                alert("提交绑定");
+                //显示绑定成功；
+                $('.pop-box').show().find('.pop-cont').html('恭喜您绑定成功！')
+//                form.submit();
+
+            },
+            rules: {
+                name: "required",
+                mobile: "required",
+                card: "required",
+                blcard: "required",
+                code: "required"
+            },
+            messages: {
+                name: "请输入姓名",
+                mobile: "请输入手机号",
+                card: "请输入会员卡号",
+                blcard: "请输入白鹭卡号",
+                code: "请输入验证码",
+            }
+        });
+
+        //解除绑定
+        $('.js-dismiss').click(function () {
+            $('.pop-box').show().find('.pop-cont').html('已为您解除绑定，<br>尊享特权请重新绑定。')
+        })
+    })
+</script>
+</body>
+</html>

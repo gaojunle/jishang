@@ -1,0 +1,119 @@
+@charset "utf-8";
+@import "./flexible";
+@import "./common";
+
+$gold-color: #aa8e68;
+
+.wraper {
+  max-width: 1024px;
+  margin: 0px auto;
+  background: url("../img/bg.jpg") 0px 0px no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  padding-top: px2rem(164);
+  box-sizing: border-box;
+}
+
+.check-info {
+  background: white;
+  margin: 0px px2rem(45);
+  padding: px2rem(130) px2rem(30) px2rem(65) px2rem(30);
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 1px #ccc;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: - px2rem(108);
+    width: px2rem(216);
+    left: 50%;
+    margin-left: - px2rem(108);
+  }
+  .tip {
+    font-size: 14px;
+    padding: px2rem(20) 0px px2rem(30);
+  }
+  form {
+    > p {
+      border-bottom: 1px solid #dddddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: px2rem(26);
+      margin-bottom: px2rem(30);
+    }
+
+    .must {
+      margin-left: px2rem(20);
+      color: #8f8f8f;
+      padding-top: px2rem(8);
+    }
+    input {
+      outline: none;
+      -webkit-appearance: none;
+      border: none;
+      font-size: px2rem(26);
+      padding: px2rem(20);
+      color: #222;
+      flex: 1;
+      &[ name='mobile' ] {
+        width: px2rem(460);
+      }
+      &.btn-login {
+        margin-top: px2rem(20);
+        background: #01519a;
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-size: px2rem(30);
+        &.active {
+          background: $gold-color;
+          color: white;
+        }
+      }
+    }
+
+    .get-code {
+      position: relative;
+      label.error {
+        position: absolute;
+        right: 0px;
+        top: -12px;
+
+      }
+    }
+    .btn-get-code {
+      position: absolute;
+      right: 0px;
+      top: px2rem(16);
+      display: inline-block;
+      padding: px2rem(10) px2rem(20);
+      color: #bababa;
+      border-radius: px2rem(8);
+      &.active {
+        color: #00a0e9;
+      }
+    }
+  }
+}
+
+.pop-cont {
+  border-radius: 5px;
+  width: px2rem(350);
+  height: px2rem(350);
+  box-sizing: border-box;
+  background: white;
+  padding: 0px px2rem(10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8f8f8f;
+  text-align: center;
+}
+
+/*校验*/
+form .error {
+  display: block;
+  font-size: 12px;
+  color: #ea5c5c;
+}
