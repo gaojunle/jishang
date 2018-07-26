@@ -2,7 +2,7 @@
 /*common*/
 html, body {
   min-height: 100%;
-  font-family: "Microsoft YaHei"; }
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
 
 body {
   margin: 0px;
@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   padding: 0.76rem 0.6rem;
   box-sizing: border-box;
-  color: #8F8F8F; }
+  color: #777777; }
 
 .info {
   border-radius: 0.21333rem;
@@ -74,10 +74,10 @@ body {
 .details {
   border-radius: 0.21333rem;
   background: white;
-  padding: 0.13333rem 0.26667rem; }
+  padding: 0.13333rem 0.34667rem; }
   .details .list {
     padding: 0.32rem 0.02667rem;
-    border-bottom: 1px solid rgba(143, 143, 143, 0.4); }
+    border-bottom: 1px solid rgba(143, 143, 143, 0.25); }
     .details .list:nth-last-of-type(1) {
       border-bottom: none; }
     .details .list .title {

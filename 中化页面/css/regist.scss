@@ -2,8 +2,6 @@
 @import "./flexible";
 @import "./common";
 
-$gold-color: #aa8e68;
-
 .wraper {
   max-width: 1024px;
   margin: 0px auto;
@@ -19,8 +17,7 @@ $gold-color: #aa8e68;
   background: white;
   margin: 0px px2rem(45);
   padding: px2rem(130) px2rem(30) px2rem(65) px2rem(30);
-  border-radius: 5px;
-  box-shadow: 0px 0px 0px 1px #ccc;
+  border-radius: $radius;
   position: relative;
   .logo {
     position: absolute;
@@ -35,7 +32,7 @@ $gold-color: #aa8e68;
   }
   form {
     > p {
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid $border-color;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,16 +41,20 @@ $gold-color: #aa8e68;
     }
 
     .must {
-      margin-left: px2rem(20);
-      color: #8f8f8f;
-      padding-top: px2rem(8);
+      margin-left: - px2rem(4);
+      color: #777777;
+      padding-bottom: px2rem(4);
+      color: $cRed;
+    }
+    .btn-box {
+      text-align: center;
     }
     input {
       outline: none;
       -webkit-appearance: none;
       border: none;
       font-size: px2rem(26);
-      padding: px2rem(20);
+      padding: px2rem(20) px2rem(16);
       color: #222;
       flex: 1;
       &[ name='mobile' ] {
@@ -63,9 +64,10 @@ $gold-color: #aa8e68;
         margin-top: px2rem(20);
         background: #01519a;
         color: white;
-        width: 100%;
+        width: 88%;
         text-align: center;
         font-size: px2rem(30);
+        border-radius: px2rem(4);
         &.active {
           background: $gold-color;
           color: white;
@@ -98,7 +100,7 @@ $gold-color: #aa8e68;
 }
 
 .pop-cont {
-  border-radius: 5px;
+  border-radius: $radius;
   width: px2rem(350);
   height: px2rem(350);
   box-sizing: border-box;
@@ -107,13 +109,12 @@ $gold-color: #aa8e68;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8f8f8f;
+  color: #777777;
   text-align: center;
 }
 
-/*校验*/
 form .error {
   display: block;
   font-size: 12px;
-  color: #ea5c5c;
+  color: $cRed;
 }

@@ -2,7 +2,7 @@
 /*common*/
 html, body {
   min-height: 100%;
-  font-family: "Microsoft YaHei"; }
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
 
 body {
   margin: 0px;
@@ -60,7 +60,7 @@ body {
   box-sizing: border-box; }
 
 .info {
-  border-radius: 0.21333rem;
+  border-radius: 0.26667rem;
   margin-bottom: 0.2rem;
   height: 4.53333rem;
   background: url("../img/card_bg.jpg") 0px 0px no-repeat;
@@ -76,7 +76,7 @@ body {
       border: 1px solid #888;
       border-radius: 100%; }
     .info .info-box .mobile {
-      color: #8f8f8f;
+      color: #777777;
       font-size: 12px;
       vertical-align: bottom;
       margin-left: -0.13333rem; }
@@ -93,9 +93,9 @@ body {
       height: 2.61333rem;
       text-align: center;
       font-size: 0.32rem;
-      color: #8f8f8f;
-      border-bottom: 1px solid rgba(143, 143, 143, 0.4);
-      border-right: 1px solid rgba(143, 143, 143, 0.4);
+      color: #777777;
+      border-bottom: 1px solid rgba(143, 143, 143, 0.25);
+      border-right: 1px solid rgba(143, 143, 143, 0.25);
       padding-top: 0.45333rem;
       box-sizing: border-box; }
       .navs .list a:nth-last-of-type(1) {

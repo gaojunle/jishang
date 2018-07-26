@@ -2,8 +2,6 @@
 @import "./flexible";
 @import "./common";
 
-$border-color: rgba(143, 143, 143, .4);
-
 .wraper {
   max-width: 1024px;
   margin: 0px auto;
@@ -13,7 +11,7 @@ $border-color: rgba(143, 143, 143, .4);
   min-height: 100vh;
   padding: px2rem(57) px2rem(45);
   box-sizing: border-box;
-  color: #8F8F8F;
+  color: #777777;
 }
 
 .info {
@@ -33,7 +31,7 @@ $border-color: rgba(143, 143, 143, .4);
 .details {
   border-radius: px2rem(16);
   background: white;
-  padding: px2rem(10) px2rem(20);
+  padding: px2rem(10) px2rem(26);
   .list {
     padding: px2rem(24) px2rem(2);
     border-bottom: 1px solid $border-color;

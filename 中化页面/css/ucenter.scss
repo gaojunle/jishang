@@ -2,8 +2,6 @@
 @import "./flexible";
 @import "./common";
 
-$border-color: rgba(143, 143, 143, .4);
-
 .wraper {
   max-width: 1024px;
   margin: 0px auto;
@@ -15,8 +13,9 @@ $border-color: rgba(143, 143, 143, .4);
   box-sizing: border-box;
 }
 
+
 .info {
-  border-radius: px2rem(16);
+  border-radius: px2rem(20);
   margin-bottom: px2rem(15);
   height: px2rem(340);
   background: url("../img/card_bg.jpg") 0px 0px no-repeat;
@@ -34,13 +33,14 @@ $border-color: rgba(143, 143, 143, .4);
       border-radius: 100%;
     }
     .mobile {
-      color: #8f8f8f;
+      color: #777777;
       font-size: 12px;
       vertical-align: bottom;
       margin-left: - px2rem(10);
     }
   }
 }
+
 
 .navs {
   border-radius: px2rem(16);
@@ -55,7 +55,7 @@ $border-color: rgba(143, 143, 143, .4);
       height: px2rem(196);
       text-align: center;
       font-size: px2rem(24);
-      color: #8f8f8f;
+      color: #777777;
       border-bottom: 1px solid $border-color;
       border-right: 1px solid $border-color;
       padding-top: px2rem(34);
