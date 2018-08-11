@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import "./flexible";
+@import "./common";
+@import "./animate.min.css";
+
+.wraper {
+  max-width: 1024px;
+  margin: 0px auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  &.process {
+    background: url("../img/process_bg.jpg") 0px 0px no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+  &.home {
+    background: url("../img/home_bg.jpg") 0px 0px no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+}
+
+.process_logo {
+  padding-top: px2rem(100);
+  padding-bottom: px2rem(80);
+  img {
+    width: px2rem(320);
+  }
+}
+
+.home_logo {
+  padding-top: px2rem(100);
+  padding-bottom: px2rem(80);
+  img {
+    width: px2rem(393);
+  }
+}
+
+.navs {
+  position: relative;
+  li {
+    display: inline-block;
+    border: 1px solid rgb(12, 52, 124);
+    width: px2rem(130);
+    height: px2rem(130);
+    line-height: px2rem(130);
+    border-radius: 100%;
+    margin: 0px px2rem(19);
+  }
+  .nav-link {
+    display: inline-block;
+    width: px2rem(117);
+    height: px2rem(117);
+    line-height: px2rem(117);
+    border-radius: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: rgb(12, 52, 124);
+    background: white;
+  }
+}
