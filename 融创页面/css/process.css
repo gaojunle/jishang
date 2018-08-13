@@ -1,0 +1,105 @@
+@import url(./reset.css);
+/*common*/
+@import url(./animate.min.css);
+html, body {
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  font-size: 15px;
+  background: #f4f4f4; }
+
+/*popBox*/
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  display: none; }
+  .pop-box .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); }
+  .pop-box .pop-wraper {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; }
+    .pop-box .pop-wraper .pop-content {
+      position: relative;
+      border-radius: 6px; }
+      .pop-box .pop-wraper .pop-content .pop-close {
+        position: absolute;
+        right: 0.26667rem;
+        top: 0.26667rem;
+        width: 0.53333rem;
+        height: 0.53333rem; }
+      .pop-box .pop-wraper .pop-content .pop-cont {
+        background: white; }
+
+.wraper {
+  max-width: 1024px;
+  margin: 0px auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center; }
+  .wraper.process {
+    background: url("../img/process_bg.jpg") 0px 0px no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; }
+    .wraper.process .navs .nav-link {
+      background: #f9faf9; }
+  .wraper.home {
+    background: url("../img/home_bg.jpg") 0px 0px no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%; }
+
+.process_logo {
+  padding-top: 1.33333rem;
+  padding-bottom: 1.06667rem; }
+  .process_logo img {
+    width: 4.26667rem; }
+
+.home_logo {
+  padding-top: 1.33333rem;
+  padding-bottom: 1.06667rem; }
+  .home_logo img {
+    width: 5.24rem; }
+
+.navs {
+  position: relative; }
+  .navs li {
+    display: inline-block;
+    border: 1px solid #0c347c;
+    width: 1.73333rem;
+    height: 1.73333rem;
+    border-radius: 100%;
+    margin: 0px 0.25333rem;
+    margin-bottom: 0.46667rem; }
+  .navs .nav-link {
+    display: inline-block;
+    width: 1.54667rem;
+    height: 1.54667rem;
+    line-height: 1.54667rem;
+    margin-top: 0.09333rem;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #0c347c;
+    background: #f5f7f9; }
+
+/*# sourceMappingURL=process.css.map */
