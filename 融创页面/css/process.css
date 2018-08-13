@@ -60,8 +60,11 @@ body {
     background: url("../img/process_bg.jpg") 0px 0px no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%; }
+<<<<<<< HEAD
     .wraper.process .navs .nav-link {
       background: #f9faf9; }
+=======
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
   .wraper.home {
     background: url("../img/home_bg.jpg") 0px 0px no-repeat;
     -webkit-background-size: 100% 100%;
@@ -82,24 +85,45 @@ body {
 .navs {
   position: relative; }
   .navs li {
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
     display: inline-block;
     border: 1px solid #0c347c;
     width: 1.73333rem;
     height: 1.73333rem;
     border-radius: 100%;
+<<<<<<< HEAD
     margin: 0px 0.25333rem;
     margin-bottom: 0.46667rem; }
   .navs .nav-link {
+=======
+    margin: 0px 0.25333rem; }
+  .navs .nav-link {
+    position: absolute;
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
     display: inline-block;
     width: 1.54667rem;
     height: 1.54667rem;
     line-height: 1.54667rem;
+<<<<<<< HEAD
     margin-top: 0.09333rem;
+=======
+    left: 50%;
+    margin-left: -0.77333rem;
+    margin-top: -0.77333rem;
+    top: 50%;
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
     border-radius: 100%;
     text-align: center;
     font-size: 14px;
     font-family: "Microsoft YaHei";
     color: #0c347c;
+<<<<<<< HEAD
     background: #f5f7f9; }
+=======
+    background: white; }
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
 
 /*# sourceMappingURL=process.css.map */

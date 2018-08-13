@@ -13,11 +13,14 @@
     background: url("../img/process_bg.jpg") 0px 0px no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
+<<<<<<< HEAD
     .navs {
       .nav-link {
         background: #f9faf9;
       }
     }
+=======
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
   }
   &.home {
     background: url("../img/home_bg.jpg") 0px 0px no-repeat;
@@ -49,6 +52,7 @@
     border: 1px solid rgb(12, 52, 124);
     width: px2rem(130);
     height: px2rem(130);
+<<<<<<< HEAD
     border-radius: 100%;
     margin: 0px px2rem(19);
     margin-bottom: px2rem(35);
@@ -59,11 +63,26 @@
     height: px2rem(116);
     line-height: px2rem(116);
     margin-top: px2rem(7);
+=======
+    line-height: px2rem(130);
+    border-radius: 100%;
+    margin: 0px px2rem(19);
+  }
+  .nav-link {
+    display: inline-block;
+    width: px2rem(117);
+    height: px2rem(117);
+    line-height: px2rem(117);
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
     border-radius: 100%;
     text-align: center;
     font-size: 14px;
     font-family: "Microsoft YaHei";
     color: rgb(12, 52, 124);
+<<<<<<< HEAD
     background: #f5f7f9;
+=======
+    background: white;
+>>>>>>> 2c7eb70b26c74c94782d3980da46aec980d4823c
   }
 }
