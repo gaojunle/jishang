@@ -1,0 +1,78 @@
+@import url(./reset.css);
+/*common*/
+@import url(./animate.min.css);
+html, body {
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  font-size: 15px;
+  background: #f4f4f4; }
+
+/*popBox*/
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  display: none; }
+  .pop-box .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); }
+  .pop-box .pop-wraper {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; }
+    .pop-box .pop-wraper .pop-content {
+      position: relative;
+      border-radius: 6px; }
+      .pop-box .pop-wraper .pop-content .pop-close {
+        position: absolute;
+        right: 0.26667rem;
+        top: 0.26667rem;
+        width: 0.53333rem;
+        height: 0.53333rem; }
+      .pop-box .pop-wraper .pop-content .pop-cont {
+        background: white; }
+
+.wraper {
+  max-width: 768px;
+  margin: 0px auto;
+  background: white;
+  min-height: 100vh; }
+  .wraper .banner img {
+    width: 100%; }
+  .wraper .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.4rem 0.24rem; }
+    .wraper .list a {
+      width: 4.53333rem;
+      text-align: center;
+      padding-bottom: 0.34667rem; }
+      .wraper .list a img {
+        display: block;
+        width: 100%; }
+      .wraper .list a .title {
+        font-size: 12px;
+        font-family: "Microsoft YaHei";
+        color: #8f8f8f;
+        padding-top: 0.24rem; }
+
+/*# sourceMappingURL=detail.css.map */
