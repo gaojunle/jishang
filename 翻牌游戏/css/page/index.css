@@ -1,0 +1,249 @@
+@import url(../lib/reset.css);
+@import url(../lib/art-dialog.css);
+@chartset 'utf-8';
+.mask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; }
+
+.ui-dialog .ui-dialog-close {
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url("../../img/common/close.png") 0px 0px no-repeat;
+  background-size: 100% 100%; }
+
+.wraper {
+  min-height: 100vh;
+  background: url("../../img/index/bg.jpg") 0px 0px no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%; }
+
+#showFlip {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  padding: 8px;
+  background-color: #428bca;
+  border-color: #357ebd;
+  color: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /* future proofing */
+  -khtml-border-radius: 10px;
+  /* for old Konqueror browsers */
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  font-weight: 900;
+  font-size: 24px; }
+
+.banus-box {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000; }
+  .banus-box.show {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.flip-box {
+  width: 8rem;
+  height: 10.4rem;
+  border-radius: 0.29333rem;
+  background-color: white;
+  box-sizing: border-box;
+  position: relative; }
+  .flip-box .slogon-box {
+    border-top-left-radius: 0.29333rem;
+    border-top-right-radius: 0.29333rem;
+    width: 100%;
+    overflow: hidden; }
+    .flip-box .slogon-box .slogon {
+      width: 100%; }
+  .flip-box .flip-close {
+    width: 0.58667rem;
+    position: absolute;
+    top: 0.18667rem;
+    right: 0.18667rem; }
+  .flip-box .flip-rule {
+    font-size: 13px;
+    color: #777777;
+    text-align: center;
+    padding: 0.45333rem 0px; }
+  .flip-box .flip-grid-box {
+    position: relative; }
+  .flip-box .flip-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem; }
+    .flip-box .flip-grid:before, .flip-box .flip-grid:after {
+      content: ""; }
+    .flip-box .flip-grid .fgrid {
+      display: inline-block;
+      position: relative; }
+      .flip-box .flip-grid .fgrid.sel:before {
+        content: ' ';
+        width: 0.42667rem;
+        height: 0.42667rem;
+        position: absolute;
+        top: 0.16rem;
+        right: 0.16rem;
+        background: url("../../img/index/icon_sel.png") 0px 0px no-repeat;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        z-index: 11; }
+      .flip-box .flip-grid .fgrid img {
+        width: 2.13333rem;
+        height: 2.4rem; }
+        .flip-box .flip-grid .fgrid img.front {
+          opacity: 1;
+          transform: scale(1);
+          transition: all 1s; }
+          .flip-box .flip-grid .fgrid img.front.show {
+            transform: scale(0.1);
+            opacity: 0; }
+        .flip-box .flip-grid .fgrid img.back {
+          opacity: 0;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          transform: scale(0.1);
+          transition: all 1s;
+          z-index: 10; }
+          .flip-box .flip-grid .fgrid img.back.show {
+            opacity: 1;
+            transform: scale(1); }
+  .flip-box .btn-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 0.18667rem; }
+    .flip-box .btn-box:before, .flip-box .btn-box:after {
+      content: ""; }
+    .flip-box .btn-box a {
+      display: inline-block;
+      background-color: #e8244a;
+      width: 3.38667rem;
+      height: 0.74667rem;
+      line-height: 0.74667rem;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      border-radius: 0.13333rem; }
+  .flip-box .flip-banus-mask, .flip-box .flip-rule-mask, .flip-box .no-count-box {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.29333rem;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    z-index: 1000;
+    transform: scale(0.01);
+    transition: all 1s; }
+    .flip-box .flip-banus-mask.show, .flip-box .flip-rule-mask.show, .flip-box .no-count-box.show {
+      transform: scale(1);
+      opacity: 1; }
+  .flip-box .no-count-box {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .flip-box .no-count-box .content {
+      position: relative;
+      font-size: 13px;
+      color: #777777;
+      line-height: 1.6;
+      text-align: center;
+      background: white;
+      width: 7.06667rem;
+      padding: 1.46667rem 0px;
+      border-radius: 0.13333rem; }
+      .flip-box .no-count-box .content .icon-close {
+        width: 0.58667rem;
+        position: absolute;
+        top: 0.16rem;
+        right: 0.16rem; }
+  .flip-box .flip-banus-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .flip-box .flip-banus-mask .flip-banus {
+      height: 6.66667rem;
+      width: 5.06667rem;
+      position: absolute;
+      top: 50%;
+      margin-top: -3.33333rem;
+      left: 50%;
+      margin-left: -2.53333rem;
+      text-align: center;
+      box-sizing: border-box;
+      background: white; }
+      .flip-box .flip-banus-mask .flip-banus .bunus-close {
+        width: 0.58667rem;
+        position: absolute;
+        top: 0.16rem;
+        right: 0.16rem; }
+      .flip-box .flip-banus-mask .flip-banus .info {
+        color: #777777;
+        padding-top: 0.56rem; }
+        .flip-box .flip-banus-mask .flip-banus .info h3 {
+          font-size: 15px;
+          line-height: 1.75; }
+        .flip-box .flip-banus-mask .flip-banus .info p {
+          font-size: 12px; }
+      .flip-box .flip-banus-mask .flip-banus .bunus-img {
+        display: inline-block;
+        width: 65%;
+        padding: 0.4rem 0px; }
+      .flip-box .flip-banus-mask .flip-banus .see-detail {
+        display: block;
+        width: 100%;
+        height: 0.93333rem;
+        line-height: 0.93333rem;
+        background: #e8244a;
+        text-align: center;
+        font-size: 14px;
+        color: white; }
+  .flip-box .flip-rule-mask {
+    background: white;
+    font-size: 12px;
+    color: #777; }
+    .flip-box .flip-rule-mask .icon-close {
+      width: 0.58667rem;
+      position: absolute;
+      top: 0.16rem;
+      right: 0.16rem; }
+    .flip-box .flip-rule-mask .rule-info-box .title {
+      font-size: 14px;
+      text-align: center;
+      padding: 0.66667rem 0px 0.34667rem;
+      border-bottom: 1px solid rgba(143, 143, 143, 0.25); }
+    .flip-box .flip-rule-mask .rule-info-box .desc {
+      padding: 0.4rem 0.53333rem;
+      line-height: 1.5; }
+      .flip-box .flip-rule-mask .rule-info-box .desc h3 {
+        font-size: 12px; }
+      .flip-box .flip-rule-mask .rule-info-box .desc > p {
+        text-indent: 2em; }
+      .flip-box .flip-rule-mask .rule-info-box .desc:nth-last-of-type(1) {
+        padding-top: 0px; }
+
+/*# sourceMappingURL=index.css.map */

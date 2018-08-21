@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>翻牌游戏</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" type="text/css" href="./css/lib/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/page/index.css"/>
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="wraper">
+    <div id="showFlip">点击翻牌</div>
+</div>
+<div class="flex-center flex-middle banus-box">
+    <div class="flip-box">
+        <div class="slogon-box">
+            <img class="slogon" src="./img/index/flip-slogon.jpg">
+        </div>
+        <img src="./img/common/close-white.png" class="flip-close">
+        <div class="flip-rule">
+            每日可以翻牌2次
+        </div>
+        <div class="flip-grid-box">
+            <div class="flip-grid">
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_1.png" title="奖品1说明" data-id="1">
+                </div>
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_2.png" title="奖品2说明" data-id="2">
+                </div>
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_3.png" title="奖品3说明" data-id="3">
+                </div>
+            </div>
+            <div class="flip-grid">
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_4.png" title="奖品4说明" data-id="4">
+                </div>
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_5.png" title="奖品5说明" data-id="5">
+                </div>
+                <div class="fgrid">
+                    <img class="front" src="./img/index/flip-f.jpg">
+                    <img class="back" src="./img/index/b_6.png" title="奖品6说明" data-id="6">
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="javascript:;" class="js-rule">游戏规则</a>
+            <a href="./myRecord.html">我的奖品</a>
+        </div>
+        <!--中奖-->
+        <div class="flip-banus-mask">
+            <div class="flip-banus">
+                <img class="bunus-close" src="./img/common/close.png">
+                <div class="info">
+                    <h3>恭喜您</h3>
+                    <p>获得韩国水光面膜一份！</p>
+                </div>
+                <img src="./img/index/bunus-1.png" class="bunus-img">
+                <a href="./recordDetail.html" class="see-detail">立即查看</a>
+            </div>
+        </div>
+        <!--次数不够-->
+        <div class="no-count-box">
+            <div class="content">
+                <img class="icon-close" src="./img/common/close.png">
+                <p>每位用户只有<span class="js-banus-count">1</span>次抽奖机会</p>
+                <p>您的抽奖次数已用完</p>
+            </div>
+        </div>
+        <!--规则-->
+        <div class="flip-rule-mask">
+            <div class="rule-info-box">
+                <img class="icon-close" src="./img/common/close.png">
+                <h3 class="title">• 游戏规则 •</h3>
+                <div class="desc">
+                    <h3>1、抽奖券说明</h3>
+                    <p>(1) 抽奖券分为正券和副券，正券和副券上印有同样的号码及员工姓名，且有公司综合部的签字方能视为有效;</p>
+                    <p>(2) 正券投入抽奖箱内，副券持有者保存以做兑奖用;</p>
+                    <p>(3) 在兑奖时，必须持有效副券前来兑奖，凡无效奖券、奖券损坏无法识 别、奖券丢失者均不予以兑奖，抽奖卷投入抽奖箱方有资格，沿虚线将正、 副卷妥善保存，参加抽奖活动。</p>
+                </div>
+                <div class="desc">
+                    <h3>2、兑奖说明：</h3>
+                    <p>(1) 此次抽奖实施现场开奖、兑奖、领奖制;</p>
+                    <p>(2) 所有奖品必须由本人持兑奖副券到领奖台登记领取，不得代领;</p>
+                    <p>(3) 抽到奖而未及时上台兑奖者将取消兑奖资格</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/lib/artDialog.js"></script>
+<script type="text/javascript" src="./js/page/index.js"></script>
+</body>
+</html>
