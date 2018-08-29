@@ -12,6 +12,31 @@ body {
   font-size: 15px;
   background: #f4f4f4; }
 
+.audio-icon {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+  background: url("../img/icon-audio.svg") 0px 0px no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 14px;
+  right: 14px; }
+  .audio-icon.rotate {
+    -webkit-animation: rotating 2.5s linear infinite;
+    animation: rotating 2.5s linear infinite; }
+
+@-webkit-keyframes rotating {
+  0% {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(1turn); } }
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(1turn); } }
 /*popBox*/
 .pop-box {
   position: fixed;
@@ -54,22 +79,12 @@ body {
   max-width: 1024px;
   margin: 0px auto;
   background: url("../img/common/bg.jpg") 0px 0px no-repeat;
-  background-size: 110% 110%;
-  background-position: -5% -5%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  text-align: center;
-  animation: bgZoomIn 2s;
-  animation-fill-mode: forwards; }
+  text-align: center; }
 
-@keyframes bgZoomIn {
-  from {
-    background: url("../img/common/bg.jpg") 0px 0px no-repeat;
-    background-size: 110% 110%; }
-  to {
-    background: url("../img/common/bg.jpg") 0px 0px no-repeat;
-    background-position: 0px 0px;
-    background-size: 100% 100%; } }
 .logo {
   padding-top: 1.06667rem; }
   .logo img {

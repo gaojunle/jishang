@@ -19,6 +19,43 @@ $border-color: rgba(143, 143, 143, .25);
 $gold-color: #aa8e68;
 $radius: px2rem(16);
 
+.audio-icon {
+  position: absolute;
+  width: px2rem(60);
+  height: px2rem(60);
+  border-radius: 100%;
+  background: url("../img/icon-audio.svg") 0px 0px no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  &.rotate {
+    -webkit-animation: rotating 2.5s linear infinite;
+    animation: rotating 2.5s linear infinite;
+  }
+}
+
+@-webkit-keyframes rotating {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(1turn)
+  }
+}
+
 /*popBox*/
 .pop-box {
   position: fixed;
