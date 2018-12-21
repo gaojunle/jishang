@@ -1,0 +1,82 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+
+.my-box {
+  .card {
+    height: px2rem(375);
+    margin: 6px px2rem(60);
+    border-radius: px2rem(20);
+    background: url("../../img/my/card_bg.png") 0px 0px no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: px2rem(42);
+    color: white;
+    .info {
+      display: flex;
+      align-items: flex-end;
+      font-size: 12px;
+      > img {
+        width: px2rem(130);
+        height: px2rem(130);
+        border-radius: 100%;
+      }
+      .txt {
+        flex: 1;
+        margin-left: px2rem(30);
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+    .card_num {
+      margin-top: px2rem(100);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 13px;
+      img {
+        width: px2rem(62);
+        height: px2rem(62);
+      }
+    }
+  }
+
+  .my-list {
+    padding: 0px px2rem(60);
+    background: white;
+    a {
+      color: $cGrey;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: px2rem(24) 0px;
+      .icon {
+        height: px2rem(34);
+      }
+      span {
+        flex: 1;
+        padding-left: px2rem(12);
+      }
+      .right {
+        width: px2rem(12);
+      }
+    }
+  }
+  .kefu {
+    padding: px2rem(30) px2rem(60);
+    background: white;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    .red {
+      color: $cRed;
+      a{
+        color: $cRed;
+      }
+    }
+  }
+}

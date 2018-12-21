@@ -1,0 +1,122 @@
+@charset "utf-8";
+@import "../lib/reset.css";
+@import "../lib/flexible";
+@import "../lib/common";
+
+.check-info {
+  height: 100vh;
+  background: white;
+  //background: url("../../img/login/login_bg.png") 0px 0px no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  .login_logo {
+    text-align: center;
+    padding: px2rem(80) px2rem(30) px2rem(116);
+    img {
+      width: px2rem(240);
+      height: px2rem(240);
+    }
+  }
+  .title {
+    font-size: 24px;
+  }
+  .tip {
+    font-size: 14px;
+    padding: px2rem(20) 0px px2rem(30);
+  }
+  form {
+    padding: 0px px2rem(60);
+    > p {
+      border-bottom: 1px solid rgba(221, 221, 221, .6);
+      position: relative;
+      padding: px2rem(10) 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: px2rem(34);
+        height: px2rem(49)
+      }
+      input {
+        flex: 1;
+        outline: none;
+        -webkit-appearance: none;
+        border: none;
+        padding: px2rem(24) px2rem(0);
+        width: 100%;
+        color: #222;
+        font-size: 14px;
+        &[ name='mobile' ] {
+          width: px2rem(460);
+        }
+      }
+      &.code-box {
+        input {
+          width: px2rem(270);
+        }
+        img {
+          width: px2rem(34);
+          height: px2rem(38)
+        }
+      }
+      .btn-get-mscode {
+        display: inline-block;
+        border: 1px solid $cRed;
+        border-radius: px2rem(8);
+        overflow: hidden;
+        width: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .imgcode {
+          width: 66px;
+          height: 28px;
+        }
+        .imgfetch {
+          height: 86%;
+          margin-right: px2rem(8);
+
+        }
+      }
+      .btn-get-code {
+        display: inline-block;
+        width: 92px;
+        height: 30px;
+        line-height: 30px;
+        color: $cRed;
+        border: 1px solid $cRed;
+        border-radius: px2rem(8);
+        font-size: 12px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .submit-box {
+      text-align: center;
+      margin-top: px2rem(80);
+
+      .btn-login {
+        outline: none;
+        width: px2rem(328);
+        height: px2rem(64);
+        border: none;
+        background: $cRed;
+        width: 4.36rem;
+        height: 0.85333rem;
+        line-height: 0.85333rem;
+        border-radius: 0.85333rem;
+        text-align: center;
+        font-size: 17px;
+        color: white;
+      }
+    }
+
+  }
+}
+
+form .error {
+  display: block;
+  font-size: 12px;
+  color: $cRed;
+}
