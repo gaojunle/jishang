@@ -312,13 +312,14 @@ html, body {
   font-size: 15px;
   color: #7d7c7d;
   text-align: center;
-  margin-top: 0.13333rem;
+  margin-top: 0.32rem;
+  margin-bottom: 0.13333rem;
   font-weight: bold;
   position: relative; }
   .inner-title .show-more {
     position: absolute;
     right: 0.33333rem;
-    top: 0.13333rem;
+    top: 0.10667rem;
     color: #7d7c7d;
     display: flex;
     align-items: center;
@@ -357,6 +358,8 @@ html, body {
           height: 100%;
           display: block; }
       .pd-list li > a .pro_text_con p {
+        margin-bottom: 6px;
+        margin-top: 3px;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
@@ -365,8 +368,7 @@ html, body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #7d7c7d;
-        padding-top: 6px; }
+        color: #7d7c7d; }
         .pd-list li > a .jf .limit-jf {
           font-style: normal;
           font-size: 12px; }

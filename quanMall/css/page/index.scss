@@ -46,13 +46,14 @@
   font-size: 15px;
   color: $cGrey;
   text-align: center;
-  margin-top: px2rem(10);
+  margin-top: px2rem(24);
+  margin-bottom: px2rem(10);
   font-weight: bold;
   position: relative;
   .show-more {
     position: absolute;
     right: px2rem(25);
-    top: px2rem(10);
+    top: px2rem(8);
     color: $cGrey;
     display: flex;
     align-items: center;
@@ -97,6 +98,8 @@
       }
       .pro_text_con {
         p {
+          margin-bottom: 6px;
+          margin-top: 3px;
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
@@ -108,7 +111,6 @@
         justify-content: space-between;
         align-items: center;
         color: $cGrey;
-        padding-top: 6px;
         .limit-jf {
           font-style: normal;
           font-size: 12px;
