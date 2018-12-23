@@ -25,16 +25,16 @@
 }
 
 .ad-recom {
-  display: flex;
-  justify-content: space-between;
-  img {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 100%;
+    }
   }
-}
 
-.pbox {
-  .title {
-    font-size: 15px;
+  .pbox {
+    .title {
+      font-size: 15px;
     color: $cGrey;
     text-align: center;
     padding-top: px2rem(48);

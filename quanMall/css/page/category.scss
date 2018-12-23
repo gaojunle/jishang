@@ -79,7 +79,7 @@ html, body {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        color:#e0e2e1;
         input {
           border: 1px solid $bd-line;
           width: px2rem(170);
@@ -87,6 +87,7 @@ html, body {
           border-radius: 3px;
           height: px2rem(40);
           box-sizing: border-box;
+          color:#333;
         }
         .btn-ok {
           background: $cRed;

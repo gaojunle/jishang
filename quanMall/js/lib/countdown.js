@@ -8,6 +8,7 @@ var time_s = document.getElementById("times_s");
 var time_end = new Date($('#times_wrap').data('enddate')); // 设定结束时间
 time_end = time_end.getTime();
 
+console.log($('#times_wrap').data('enddate'))
 function show_time() {
     var time_now = new Date(); // 获取当前时间
     time_now = time_now.getTime();

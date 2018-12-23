@@ -19,6 +19,8 @@ html, body {
 }
 
 .header {
+  position: relative;
+  z-index: 401;
   .main-nav {
     background-color: rgb(255, 255, 255);
     height: px2rem(88);
@@ -27,6 +29,8 @@ html, body {
     color: rgb(125, 124, 125);
     text-align: center;
     position: relative;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.7);
+
     .back {
       position: absolute;
       left: px2rem(26);
@@ -99,7 +103,8 @@ html, body {
     display: flex;
     justify-content: space-around;
     padding: 0px px2rem(16);
-    span {
+    a {
+      color: #7d7c7d;
       &.on {
         border-bottom: 2px solid $cRed;
       }
@@ -199,7 +204,7 @@ html, body {
   width: 100%;
   height: px2rem(100);
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px -2px 10px 0px rgba(219, 216, 216, 0.75);
+  box-shadow: 0px -1px 5px 0px rgba(219, 216, 216, 0.75);
   z-index: 410;
   text-align: center;
   box-sizing: border-box;
@@ -260,6 +265,34 @@ html, body {
   span {
     font-size: px2rem(18);
     color: $cGrey;
+  }
+}
+
+.tab {
+  .tab-menu {
+    position: relative;
+    border-bottom: 1px solid $lineGray;
+    box-sizing: border-box;
+    background: white;
+    > li, > a {
+      float: left;
+      width: 50%;
+      height: px2rem(78);
+      line-height: px2rem(78);
+      text-align: center;
+      font-size: px2rem(28);
+      color: $cGrey;
+      &.on {
+        color: white;
+        background: $cRed;
+      }
+    }
+  }
+  .tab-cont {
+    display: none;
+    &:nth-of-type(1) {
+      display: block;
+    }
   }
 }
 

@@ -1,0 +1,287 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+
+html, body {
+  padding-bottom: 0px;
+}
+
+.f-orange {
+  color: $cRed;
+}
+
+.btn {
+  display: inline-block;
+  width: px2rem(147);
+  height: px2rem(50);
+  line-height: px2rem(50);
+  text-align: center;
+  color: white;
+  background: #cc9c4e;
+  font-size: px2rem(24);
+  border-radius: px2rem(10);
+  margin: 0px px2rem(6);
+  box-sizing: border-box;
+  &.btn-look {
+    border: 1px solid $cRed;
+    background: white;
+    color: $cRed;
+
+  }
+  &.counting {
+    opacity: .6;
+  }
+}
+
+.info-box {
+  padding: px2rem(20);
+  padding-bottom: px2rem(20);
+  margin: px2rem(10) 0px;
+  background: white;
+  .desc {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: $cGrey;
+
+    > img {
+      width: px2rem(174);
+      height: px2rem(174);
+      border-radius: px2rem(10);
+    }
+    .info {
+      -ms-flex: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: px2rem(16);
+      position: relative;
+
+      h3 {
+        font-size: px2rem(32);
+      }
+      .f-orange {
+        bottom: 5px;
+        font-size: px2rem(32);
+        vertical-align: middle;
+      }
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: px2rem(32);
+        position: relative;
+        > div {
+          bottom: 5px;
+          right: px2rem(0);
+        }
+      }
+    }
+  }
+}
+
+.pay-box {
+  margin: px2rem(10) 0px;
+  > div {
+    height: px2rem(80);
+    line-height: px2rem(83);
+    font-size: px2rem(28);
+    color: #2a2a2a;
+  }
+
+  .prow {
+    border-bottom: 1px solid $lineGray;
+    > input {
+      width: px2rem(450);
+      -ms-flex: 1;
+      flex: 1;
+      height: px2rem(60);
+      border: none;
+      padding-left: px2rem(15);
+    }
+  }
+  .sub {
+    color: $cRed;
+    font-size: 10px;
+  }
+  .scode-box {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    border-top: none;
+  }
+}
+
+.buy-box {
+  position: fixed;
+  left: 0px;
+  bottom: px2rem(100);
+  width: 100%;
+  background: white;
+  color: $cGrey;
+  .jf-use {
+    border-bottom: 1px solid $lineGray;
+    font-size: px2rem(28);
+    line-height: px2rem(76);
+    padding-left: px2rem(20);
+    > span {
+      color: $cRed;
+    }
+  }
+  .jf-sum {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+
+    height: px2rem(90);
+  }
+  .buy-price {
+    -ms-flex: 1;
+    flex: 1;
+    padding-left: px2rem(20);
+    font-size: px2rem(30);
+    line-height: px2rem(92);
+    color: $cRed;
+    font-size: px2rem(32);
+  }
+  .link-buy {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    width: px2rem(240);
+    background: $cRed;
+    color: white;
+    font-size: px2rem(32);
+  }
+}
+
+/*dh-scu*/
+.dh-suc {
+  padding-top: px2rem(174);
+  text-align: center;
+  font-size: 14px;
+  color: $cGrey;
+  > img {
+    width: px2rem(100);
+  }
+  .desc {
+    padding-top: px2rem(48);
+    padding-bottom: px2rem(112);
+  }
+  .ops {
+    text-align: center;
+    > a {
+      display: inline-block;
+      padding: 2px 15px;
+      font-size: 12px;
+      color: $cRed;
+      border: 1px solid $cRed;
+      border-radius: 10px;
+      margin: 0px px2rem(36);
+      &.on {
+        background: $cRed;
+        color: white;
+      }
+    }
+  }
+}
+
+/*my orders*/
+.my-orders {
+  color: #7d7c7d;
+  font-size: 12px;
+
+  .my-order {
+    margin-top: px2rem(20);
+    background: white;
+    padding: px2rem(20);
+    padding-top: 0px;
+    .title {
+      height: px2rem(70);
+      line-height: px2rem(70);
+    }
+    .desc {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      color: $cGrey;
+      border-top: 1px solid $lineGray;
+      border-bottom: 1px solid $lineGray;
+      padding: px2rem(20) 0px;
+
+      > img {
+        width: px2rem(160);
+        height: px2rem(160);
+        border-radius: px2rem(10);
+      }
+      .info {
+        -ms-flex: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: px2rem(16);
+        position: relative;
+
+        h3 {
+          font-size: px2rem(28);
+          p {
+            font-size: 12px;
+            color: rgba(125, 124, 125, 0.6);
+            padding-top: px2rem(4);
+          }
+        }
+        .num {
+          font-size: px2rem(32);
+        }
+        .price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: px2rem(28);
+          position: relative;
+          > div {
+            bottom: 5px;
+            right: px2rem(0);
+          }
+        }
+      }
+
+    }
+    .summary {
+      padding-top: px2rem(25);
+      padding-bottom: px2rem(5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        i {
+          font-style: normal;
+          color: $cRed;
+        }
+      }
+      > a {
+        display: inline-block;
+        padding: 2px 12px;
+        font-size: 12px;
+        color: $cRed;
+        border: 1px solid $cRed;
+        border-radius: 10px;
+        margin: 0px px2rem(6);
+      }
+    }
+  }
+}

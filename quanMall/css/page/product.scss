@@ -87,6 +87,7 @@
 
 .p-info {
   margin-top: px2rem(20);
+  margin-bottom: px2rem(150);
   background: white;
   padding: px2rem(30);
   font-size: 13px;
@@ -128,7 +129,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    p{
+    p {
       padding-left: px2rem(20);
     }
     .btn, input {
@@ -148,6 +149,9 @@
 }
 
 .op {
+  position: fixed;
+  width: 100%;
+  bottom: px2rem(65);
   display: flex;
   margin-top: px2rem(20);
   margin-bottom: px2rem(40);
@@ -163,5 +167,12 @@
       background: #de172a;
       color: white;
     }
+  }
+}
+
+.p-detail {
+  padding-bottom: px2rem(150);
+  .p-bg {
+    width: 100%;
   }
 }

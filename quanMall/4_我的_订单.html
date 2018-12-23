@@ -7,29 +7,45 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
-    <title>商品详情</title>
+    <title>我的订单</title>
     <script type="text/javascript" src="./js/lib/flexible.js"></script>
-    <link rel="stylesheet" href="css/page/product.css">
+    <link rel="stylesheet" href="css/lib/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/page/order.css">
 </head>
 <body>
-<div class="p_header">
+<div class="header">
     <div class="main-nav">
         <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
-        <a href="./商品页.html">商品</a>
-        <a href="./商品详情页.html" class="on">详情</a>
-        <a href="./商品详情页.html">说明</a>
+        <span>我的订单</span>
     </div>
 </div>
-<div class="p-detail">
-    <img class="p-bg" src="./img/products/pdetail.png" alt="">
+<div class="my-orders">
+    <div class="my-order">
+        <div class="title">订单编号：68716863813</div>
+        <div class="desc">
+            <img src="./img/order/avt-1.png" alt="">
+            <div class="info">
+                <h3>
+                    多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                    <p>商品编码 : 00020160804-4</p>
+                </h3>
+                <div class="price">
+                    <div>兑换积分 :1000</div>
+                    <div>x<span class="num">2</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <span>共<i>1</i>件商品</span>
+            <span>合计 : <i>1689</i> 积分</span>
+            <a href="#">查看券码</a>
+        </div>
+    </div>
 </div>
-<div class="op">
-    <a href="#" class="btn">再逛逛</a>
-    <a href="#" class="btn btn-dh">立即兑换</a>
-</div>
+
 <!--固定页尾-->
 <footer class="fix-footer">
-    <a href="./2_首页.html" class="on">
+    <a href="./2_首页.html">
         <div class="f-icon f-home"></div>
         <span>首页</span>
     </a>
@@ -41,7 +57,7 @@
         <div class="f-icon f-find"></div>
         <span>发现</span>
     </a>
-    <a href="4_我的.html">
+    <a href="4_我的.html" class="on">
         <div class="f-icon f-my"></div>
         <span>我的</span>
     </a>
