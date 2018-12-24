@@ -18,7 +18,7 @@
         <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
         <a href="./商品页.html" class="on">商品</a>
         <a href="./商品详情页.html">详情</a>
-        <a href="./商品详情页.html">说明</a>
+        <a href="./商品_说明.html">说明</a>
     </div>
 </div>
 <section class="banner-box">
@@ -62,16 +62,19 @@
     </div>
     <div class="nums">
         <span>购买数量 : </span>
-        <p>
+        <p class="js-num">
             <button class="btn js-reduce">-</button>
             <input type="text" name="nums" value="1">
             <button class="btn js-add">+</button>
         </p>
     </div>
 </div>
+<div class="scroll-go">
+    <a href="./商品详情页.html">点击查看图文详情 ></a>
+</div>
 <div class="op">
-    <a href="#" class="btn">再逛逛</a>
-    <a href="#" class="btn btn-dh">立即兑换</a>
+    <a href="./3_分类_列表.html" class="btn">再逛逛</a>
+    <a href="./7_下单页面.html" class="btn btn-dh">立即兑换</a>
 </div>
 <!--固定页尾-->
 <footer class="fix-footer">
@@ -117,6 +120,28 @@
                 autoplayDisableOnInteraction: false,
                 pagination: '.swiper-pagination',
             });
+
+            $('.js-num')
+                .on('click', '.js-reduce', function () {
+                    var $num = $(this).parents('.js-num').find('input'),
+                        val = parseInt($num.val())
+                    if (val > 1) {
+                        $num.val(val - 1)
+                    }
+                    return false;
+                })
+                .on('click', '.js-add', function () {
+                    var $num = $(this).parents('.js-num').find('input'),
+                        val = parseInt($num.val())
+                    $num.val(val + 1)
+                    return false;
+                })
+
+            /*$(window).scroll(function () {
+                if ($('.scroll-go').offset().top - $(window).scrollTop() - $(window).height() + 130 > 0) {
+                    location.href = './商品详情页.html';
+                }
+            })*/
         }
     };
     App.init();
