@@ -299,7 +299,7 @@ html, body {
         width: 0.82667rem; }
 
 html, body {
-  margin-bottom: 1.06667rem; }
+  margin-bottom: 1.6rem; }
 
 .banner-box {
   position: relative; }
@@ -329,7 +329,7 @@ html, body {
     padding: 0.24rem 0.53333rem;
     line-height: 1.8; }
     .xsq .jf-info .new span {
-      font-size: 13px; }
+      font-size: 14px; }
     .xsq .jf-info .old img {
       width: 1.70667rem; }
     .xsq .jf-info .old span {
@@ -371,14 +371,17 @@ html, body {
     line-height: 1.6;
     border-bottom: 1px solid rgba(216, 216, 216, 0.4);
     padding: 0px 0.13333rem;
-    padding-bottom: 0.13333rem; }
+    padding-bottom: 0.26667rem; }
     .p-info .summary h3 {
       color: #2a2a2a;
       font-size: 14px; }
     .p-info .summary p {
       color: #7d7c7d; }
+      .p-info .summary p .red {
+        color: #de172a; }
   .p-info .types {
     padding: 0.26667rem 0.13333rem;
+    padding-top: 0.4rem;
     display: flex;
     flex-wrap: wrap; }
     .p-info .types .list span {

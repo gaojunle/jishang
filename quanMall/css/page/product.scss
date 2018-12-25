@@ -4,7 +4,7 @@
 @import "../lib/common";
 
 html, body {
-  margin-bottom: px2rem(80);
+  margin-bottom: px2rem(120);
 }
 
 .banner-box {
@@ -44,7 +44,7 @@ html, body {
     line-height: 1.8;
     .new {
       span {
-        font-size: 13px;
+        font-size: 14px;
       }
     }
     .old {
@@ -99,17 +99,21 @@ html, body {
     line-height: 1.6;
     border-bottom: 1px solid $lineGray;
     padding: 0px px2rem(10);
-    padding-bottom: px2rem(10);
+    padding-bottom: px2rem(20);
     h3 {
       color: rgb(42, 42, 42);
       font-size: 14px;
     }
     p {
       color: $cGrey;
+      .red{
+        color: $cRed;
+      }
     }
   }
   .types {
     padding: px2rem(20) px2rem(10);
+    padding-top: px2rem(30);
     display: flex;
     flex-wrap: wrap;
     .list {

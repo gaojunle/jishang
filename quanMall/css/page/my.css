@@ -226,7 +226,7 @@ html, body {
     color: #7d7c7d;
     border-right: 1px solid rgba(216, 216, 216, 0.4); }
     .tab .tab-menu > li:nth-last-of-type(1), .tab .tab-menu > a:nth-last-of-type(1) {
-      border-right: non; }
+      border-right: none; }
     .tab .tab-menu > li.on, .tab .tab-menu > a.on {
       color: white;
       background: #de172a; }
@@ -331,7 +331,7 @@ html, body {
       width: 0.82667rem;
       height: 0.82667rem; }
 .my-box .my-list {
-  padding: 0px 0.8rem;
+  padding: 10px 0.8rem 0px;
   background: white; }
   .my-box .my-list a {
     color: #7d7c7d;
@@ -339,7 +339,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.32rem 0px; }
+    padding: 0.4rem 0px; }
     .my-box .my-list a .icon {
       height: 0.45333rem; }
     .my-box .my-list a span {
@@ -352,7 +352,8 @@ html, body {
   background: white;
   text-align: center;
   font-size: 13px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  color: #7d7c7d; }
   .my-box .kefu .red {
     color: #de172a; }
     .my-box .kefu .red a {

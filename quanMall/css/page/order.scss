@@ -3,10 +3,6 @@
 @import "../lib/reset.css";
 @import "../lib/common";
 
-html, body {
-  padding-bottom: 0px;
-}
-
 .f-orange {
   color: $cRed;
 }
@@ -244,7 +240,7 @@ html, body {
           }
         }
         .num {
-          font-size: px2rem(32);
+          margin-left: 1px;
         }
         .price {
           display: flex;

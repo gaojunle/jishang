@@ -298,9 +298,6 @@ html, body {
       .pop-box .pop-wraper .close img {
         width: 0.82667rem; }
 
-html, body {
-  padding-bottom: 0px; }
-
 .f-orange {
   color: #de172a; }
 
@@ -496,7 +493,7 @@ html, body {
             color: rgba(125, 124, 125, 0.6);
             padding-top: 0.05333rem; }
         .my-orders .my-order .desc .info .num {
-          font-size: 0.42667rem; }
+          margin-left: 1px; }
         .my-orders .my-order .desc .info .price {
           display: flex;
           justify-content: space-between;
