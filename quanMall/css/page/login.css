@@ -131,7 +131,7 @@ html, body {
     height: 16px;
     line-height: 16px; }
   .time-cd .time_w {
-    padding: 0px 10px;
+    padding-left: 10px;
     height: 16px;
     line-height: 16px;
     overflow: hidden; }
@@ -226,7 +226,7 @@ html, body {
     color: #7d7c7d;
     border-right: 1px solid rgba(216, 216, 216, 0.4); }
     .tab .tab-menu > li:nth-last-of-type(1), .tab .tab-menu > a:nth-last-of-type(1) {
-      border-right: no; }
+      border-right: none; }
     .tab .tab-menu > li.on, .tab .tab-menu > a.on {
       color: white;
       background: #de172a; }
@@ -260,7 +260,7 @@ html, body {
     left: 50%;
     margin-left: -3.6rem;
     top: 50%;
-    margin-top: -4.66667rem;
+    margin-top: -2.13333rem;
     z-index: 10002;
     border-radius: 0.26667rem;
     background: white; }

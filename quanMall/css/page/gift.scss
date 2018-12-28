@@ -73,6 +73,7 @@ html, body {
       .ipt_phone {
         border: none;
         width: 100%;
+        font-size: 13px;
       }
     }
   }
@@ -103,6 +104,7 @@ html, body {
 .q_list {
   color: #7d7c7d;
   font-size: 12px;
+  padding-bottom: px2rem(110);
   .item {
     margin-top: px2rem(12);
     background: white;

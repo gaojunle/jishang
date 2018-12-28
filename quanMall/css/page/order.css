@@ -131,7 +131,7 @@ html, body {
     height: 16px;
     line-height: 16px; }
   .time-cd .time_w {
-    padding: 0px 10px;
+    padding-left: 10px;
     height: 16px;
     line-height: 16px;
     overflow: hidden; }
@@ -260,7 +260,7 @@ html, body {
     left: 50%;
     margin-left: -3.6rem;
     top: 50%;
-    margin-top: -4.66667rem;
+    margin-top: -2.13333rem;
     z-index: 10002;
     border-radius: 0.26667rem;
     background: white; }
@@ -344,16 +344,15 @@ html, body {
       padding-left: 0.21333rem;
       position: relative; }
       .info-box .desc .info h3 {
-        font-size: 0.42667rem; }
+        font-size: 0.37333rem; }
       .info-box .desc .info .f-orange {
         bottom: 5px;
-        font-size: 0.42667rem;
-        vertical-align: middle; }
+        font-size: 0.37333rem; }
       .info-box .desc .info .price {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.42667rem;
+        font-size: 0.37333rem;
         position: relative; }
         .info-box .desc .info .price > div {
           bottom: 5px;
@@ -363,21 +362,25 @@ html, body {
   margin: 0.13333rem 0px; }
   .pay-box > div {
     height: 1.06667rem;
-    line-height: 1.10667rem;
     font-size: 0.37333rem;
-    color: #2a2a2a; }
+    color: #2a2a2a;
+    display: flex;
+    align-items: center; }
+    .pay-box > div > span {
+      color: #7d7c7d; }
   .pay-box .prow {
     border-bottom: 1px solid rgba(216, 216, 216, 0.4); }
     .pay-box .prow > input {
       width: 6rem;
       -ms-flex: 1;
       flex: 1;
-      height: 0.8rem;
       border: none;
-      padding-left: 0.2rem; }
+      padding-left: 0.13333rem;
+      font-size: 0.37333rem;
+      padding-bottom: 2px; }
   .pay-box .sub {
     color: #de172a;
-    font-size: 10px; }
+    font-size: 12px; }
   .pay-box .scode-box {
     display: -ms-flexbox;
     display: flex;
@@ -528,6 +531,8 @@ html, body {
     padding: 1.46667rem 0px 0.4rem; }
   .get_qcode .mobile {
     padding-bottom: 1.06667rem; }
+  .get_qcode .btn-look {
+    background: transparent; }
   .get_qcode .pay-box {
     padding: 0px 0.45333rem; }
     .get_qcode .pay-box span {
@@ -536,10 +541,10 @@ html, body {
     margin-top: 1.13333rem; }
     .get_qcode .btn-get-qcode a {
       border-radius: 0.8rem;
-      font-size: 0.45333rem;
+      font-size: 16px;
       background: #de172a;
       width: 4.37333rem;
-      height: 0.88rem;
+      height: 0.81333rem;
       line-height: 0.88rem; }
 
 /*card-pwd*/

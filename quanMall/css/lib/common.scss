@@ -165,7 +165,7 @@ html, body {
     line-height: 16px;
   }
   .time_w {
-    padding: 0px 10px;
+    padding-left: 10px;
     height: 16px;
     line-height: 16px;
     overflow: hidden;
@@ -285,7 +285,7 @@ html, body {
       font-size: px2rem(28);
       color: $cGrey;
       border-right: 1px solid $lineGray;
-      &:nth-last-of-type(1){
+      &:nth-last-of-type(1) {
         border-right: none;
       }
       &.on {
@@ -328,7 +328,7 @@ html, body {
     left: 50%;
     margin-left: - px2rem(270);
     top: 50%;
-    margin-top: - px2rem(350);
+    margin-top: - px2rem(160);
     z-index: 10002;
     border-radius: px2rem(20);
     background: white;

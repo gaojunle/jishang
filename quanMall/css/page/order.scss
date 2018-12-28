@@ -57,18 +57,17 @@
       position: relative;
 
       h3 {
-        font-size: px2rem(32);
+        font-size: px2rem(28);
       }
       .f-orange {
         bottom: 5px;
-        font-size: px2rem(32);
-        vertical-align: middle;
+        font-size: px2rem(28);
       }
       .price {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: px2rem(32);
+        font-size: px2rem(28);
         position: relative;
         > div {
           bottom: 5px;
@@ -83,9 +82,13 @@
   margin: px2rem(10) 0px;
   > div {
     height: px2rem(80);
-    line-height: px2rem(83);
     font-size: px2rem(28);
     color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    >span{
+      color: #7d7c7d;
+    }
   }
 
   .prow {
@@ -94,14 +97,15 @@
       width: px2rem(450);
       -ms-flex: 1;
       flex: 1;
-      height: px2rem(60);
       border: none;
-      padding-left: px2rem(15);
+      padding-left: px2rem(10);
+      font-size: px2rem(28);
+      padding-bottom: 2px;
     }
   }
   .sub {
     color: $cRed;
-    font-size: 10px;
+    font-size: 12px;
   }
   .scode-box {
     display: -ms-flexbox;
@@ -291,6 +295,9 @@
   .mobile {
     padding-bottom: px2rem(80);
   }
+  .btn-look {
+    background: transparent;
+  }
   .pay-box {
     padding: 0px px2rem(34);
     span {
@@ -302,10 +309,10 @@
 
     a {
       border-radius: px2rem(60);
-      font-size: px2rem(34);
+      font-size: 16px;
       background: $cRed;
       width: px2rem(328);
-      height: px2rem(66);
+      height: px2rem(61);
       line-height: px2rem(66);
     }
   }
