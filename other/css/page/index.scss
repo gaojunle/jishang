@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+
+.lazy-box {
+  .lazy {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+}

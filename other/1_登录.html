@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>图片懒加载</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/page/index.css">
+</head>
+<body>
+
+<section class="lazy-box">
+    <img class="lazy" data-original="img/1.jpg">
+    <img class="lazy" data-original="img/2.jpg">
+    <img class="lazy" data-original="img/3.jpg">
+    <img class="lazy" data-original="img/4.jpg">
+    <img class="lazy" data-original="img/5.jpg">
+    <img class="lazy" data-original="img/6.jpg">
+    <img class="lazy" data-original="img/7.jpg">
+    <img class="lazy" data-original="img/8.jpg">
+</section>
+<script src="js/lib/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $(".lazy-box .lazy").lazyload({effect: "fadeIn", threshold: 40/*, placeholder: "img/grey.gif"*/});
+    });
+</script>
+</body>
+</html>
