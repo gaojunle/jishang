@@ -45,7 +45,7 @@
   }
 
   .my-list {
-    padding: 0px px2rem(60);
+    padding: 10px px2rem(60) 0px;
     background: white;
     a {
       color: $cGrey;
@@ -53,7 +53,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: px2rem(24) 0px;
+      padding: px2rem(30) 0px;
       .icon {
         height: px2rem(34);
       }
@@ -72,9 +72,32 @@
     text-align: center;
     font-size: 13px;
     line-height: 1.6;
+    color: #7d7c7d;
     .red {
       color: $cRed;
-      a{
+      a {
+        color: $cRed;
+      }
+    }
+  }
+}
+
+.jf-list {
+  color: #7d7c7d;
+  font-size: 12px;
+  .item {
+    background: white;
+    margin-top: px2rem(16);
+    padding: px2rem(22) px2rem(66) px2rem(5);
+    line-height: 1.8;
+    p {
+      display: flex;
+      justify-content: space-between;
+      .xf {
+        color: #333;;
+      }
+      .xf-num {
+        font-size: 16px;
         color: $cRed;
       }
     }

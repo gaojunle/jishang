@@ -3,10 +3,6 @@
 @import "../lib/reset.css";
 @import "../lib/common";
 
-html, body {
-  padding-bottom: 0px;
-}
-
 .f-orange {
   color: $cRed;
 }
@@ -18,7 +14,7 @@ html, body {
   line-height: px2rem(50);
   text-align: center;
   color: white;
-  background: #cc9c4e;
+  background: $cRed;
   font-size: px2rem(24);
   border-radius: px2rem(10);
   margin: 0px px2rem(6);
@@ -61,18 +57,17 @@ html, body {
       position: relative;
 
       h3 {
-        font-size: px2rem(32);
+        font-size: px2rem(28);
       }
       .f-orange {
         bottom: 5px;
-        font-size: px2rem(32);
-        vertical-align: middle;
+        font-size: px2rem(28);
       }
       .price {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: px2rem(32);
+        font-size: px2rem(28);
         position: relative;
         > div {
           bottom: 5px;
@@ -87,9 +82,13 @@ html, body {
   margin: px2rem(10) 0px;
   > div {
     height: px2rem(80);
-    line-height: px2rem(83);
     font-size: px2rem(28);
     color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    >span{
+      color: #7d7c7d;
+    }
   }
 
   .prow {
@@ -98,14 +97,15 @@ html, body {
       width: px2rem(450);
       -ms-flex: 1;
       flex: 1;
-      height: px2rem(60);
       border: none;
-      padding-left: px2rem(15);
+      padding-left: px2rem(10);
+      font-size: px2rem(28);
+      padding-bottom: 2px;
     }
   }
   .sub {
     color: $cRed;
-    font-size: 10px;
+    font-size: 12px;
   }
   .scode-box {
     display: -ms-flexbox;
@@ -203,7 +203,7 @@ html, body {
   font-size: 12px;
 
   .my-order {
-    margin-top: px2rem(20);
+    margin-top: px2rem(12);
     background: white;
     padding: px2rem(20);
     padding-top: 0px;
@@ -244,7 +244,7 @@ html, body {
           }
         }
         .num {
-          font-size: px2rem(32);
+          margin-left: 1px;
         }
         .price {
           display: flex;
@@ -281,6 +281,79 @@ html, body {
         border: 1px solid $cRed;
         border-radius: 10px;
         margin: 0px px2rem(6);
+      }
+    }
+  }
+}
+
+/*get_qcode*/
+.get_qcode {
+  text-align: center;
+  .title {
+    padding: px2rem(110) 0px px2rem(30);
+  }
+  .mobile {
+    padding-bottom: px2rem(80);
+  }
+  .btn-look {
+    background: transparent;
+  }
+  .pay-box {
+    padding: 0px px2rem(34);
+    span {
+      color: #7d7c7d;
+    }
+  }
+  .btn-get-qcode {
+    margin-top: px2rem(85);
+
+    a {
+      border-radius: px2rem(60);
+      font-size: 16px;
+      background: $cRed;
+      width: px2rem(328);
+      height: px2rem(61);
+      line-height: px2rem(66);
+    }
+  }
+}
+
+/*card-pwd*/
+.card-pwd {
+  color: #7d7c7d;
+  font-size: 12px;
+
+  .item {
+    margin-top: px2rem(16);
+    background: white;
+    padding: px2rem(20);
+    padding-top: 0px;
+    .title {
+      padding: px2rem(22) 10px;
+      font-size: 13px;
+    }
+    .desc {
+      color: $cGrey;
+      border-top: 1px solid $lineGray;
+      border-bottom: 1px solid $lineGray;
+      padding: px2rem(30) 10px;
+      line-height: 1.6;
+    }
+    .summary {
+      padding: px2rem(25) 10px px2rem(5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > a {
+        display: inline-block;
+        padding: 2px 12px;
+        font-size: 12px;
+        color: white;
+        border: 1px solid $cRed;
+        border-radius: 20px;
+        margin: 0px px2rem(6);
+        background: $cRed;
       }
     }
   }

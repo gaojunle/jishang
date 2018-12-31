@@ -3,6 +3,10 @@
 @import "../lib/reset.css";
 @import "../lib/common";
 
+html, body {
+  margin-bottom: px2rem(120);
+}
+
 .banner-box {
   position: relative;
   .banner-swiper {
@@ -40,7 +44,7 @@
     line-height: 1.8;
     .new {
       span {
-        font-size: 13px;
+        font-size: 14px;
       }
     }
     .old {
@@ -87,7 +91,6 @@
 
 .p-info {
   margin-top: px2rem(20);
-  margin-bottom: px2rem(150);
   background: white;
   padding: px2rem(30);
   font-size: 13px;
@@ -96,17 +99,21 @@
     line-height: 1.6;
     border-bottom: 1px solid $lineGray;
     padding: 0px px2rem(10);
-    padding-bottom: px2rem(10);
+    padding-bottom: px2rem(20);
     h3 {
       color: rgb(42, 42, 42);
       font-size: 14px;
     }
     p {
       color: $cGrey;
+      .red{
+        color: $cRed;
+      }
     }
   }
   .types {
     padding: px2rem(20) px2rem(10);
+    padding-top: px2rem(30);
     display: flex;
     flex-wrap: wrap;
     .list {
@@ -151,7 +158,7 @@
 .op {
   position: fixed;
   width: 100%;
-  bottom: px2rem(65);
+  bottom: px2rem(60);
   display: flex;
   margin-top: px2rem(20);
   margin-bottom: px2rem(40);
@@ -171,8 +178,36 @@
 }
 
 .p-detail {
-  padding-bottom: px2rem(150);
+  padding-bottom: px2rem(30);
   .p-bg {
     width: 100%;
+  }
+}
+
+.scroll-go {
+  text-align: center;
+  padding: px2rem(24) 0px;
+  font-size: 12px;
+  a {
+    font-size: 12px;
+    color: #7d7c7d;
+  }
+  > span {
+    vertical-align: text-top;
+    font-size: 20px;
+    padding: 0px px2rem(10);
+  }
+}
+
+.p_describe {
+  background: white;
+  height: 100vh;
+  font-size: 12px;
+  color: rgb(125, 124, 125);
+  line-height: 1.8;
+  padding: px2rem(26);
+  margin-bottom: - px2rem(100);
+  p {
+    padding-bottom: px2rem(10);
   }
 }
