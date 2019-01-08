@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import "../lib/reset.css";
+@import "../lib/flexible";
+@import "../lib/common";
+
+html, body {
+  padding-bottom: 0px;
+}
+
+.addr-box {
+  li {
+    margin: px2rem(10) 0px;
+    padding: px2rem(20);
+    background: white;
+    font-size: 12px;
+    color: #7d7c7d;
+    &.on {
+      .ops {
+        .check-box {
+          background: url("../../img/common/i-gou.png") center center no-repeat;
+          -webkit-background-size: 70%;
+          background-size: 70%;
+        }
+      }
+    }
+  }
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px px2rem(54);
+  }
+  .detail {
+    color: #7d7c7d;
+    margin-top: px2rem(10);
+    line-height: 1.5;
+    padding: 0px px2rem(54) px2rem(10);
+  }
+  .ops {
+    border-top: 1px solid $lineGray;
+    padding: px2rem(20) px2rem(54) 0px;
+    display: flex;
+    justify-content: space-between;
+    .edit, .delete {
+      margin-left: px2rem(34);
+
+      img {
+        height: px2rem(30);
+        margin-right: px2rem(10);
+      }
+    }
+
+    span {
+      vertical-align: middle;
+    }
+    .check-box {
+      display: inline-block;
+      width: px2rem(34);
+      height: px2rem(34);
+      border: 2px solid rgba(224, 226, 225, .7);
+      border-radius: 100%;
+      margin-right: px2rem(14);
+      box-sizing: border-box;
+    }
+  }
+}
+
+.add_addr_box {
+  text-align: center;
+  margin-top: px2rem(60);
+  a {
+    display: inline-block;
+    background: $cRed;
+    width: px2rem(600);
+    height: px2rem(64);
+    line-height: px2rem(64);
+    text-align: center;
+    border-radius: px2rem(60);
+    color: white;
+  }
+}
+
+.add-new-box {
+  margin: px2rem(10) 0px;
+  background: white;
+  padding: 0px px2rem(20);
+  .prow {
+    border-bottom: 1px solid $lineGray;
+    padding: px2rem(18) px2rem(40);
+    font-size: px2rem(28);
+    color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7d7c7d;
+    font-size: 12px;
+
+    .label {
+      display: inline-block;
+      font-size: 13px;
+      color: #706F70;
+    }
+    .pcont {
+      flex: 1;
+      input {
+        height: px2rem(60);
+        border: none;
+        vertical-align: middle;
+        padding: 0px px2rem(10);
+      }
+
+    }
+    .def_addr {
+      .check-box {
+        display: inline-block;
+        width: px2rem(34);
+        height: px2rem(34);
+        border: 2px solid rgba(224, 226, 225, .7);
+        border-radius: 100%;
+        margin-right: px2rem(14);
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      &.on {
+        .check-box {
+          background: url("../../img/common/i-gou.png") center center no-repeat;
+          -webkit-background-size: 70%;
+          background-size: 70%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>添加收货地址</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery-weui.min.css" />
+    <link rel="stylesheet" href="css/page/address.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>添加收货地址</span>
+    </div>
+</div>
+<form id="suform" class="add-new-box">
+    <div class="prow">
+        <span class="label">姓名 : </span>
+        <div class="pcont"><input type="text" name="uname" placeholder="请输入收货人姓名"></div>
+    </div>
+    <div class="prow">
+        <span class="label">电话 : </span>
+        <div class="pcont"><input type="text" name="phone" placeholder="请输入11位手机号码"></div>
+    </div>
+    <div class="prow">
+        <span class="label">地区 : </span>
+        <div class="pcont"><input id="city-picker" type="text" name="uname" placeholder="请选择>"></div>
+    </div>
+    <div class="prow">
+        <span class="label">详细地址 : </span>
+        <div class="pcont"><input type="text" name="uname" placeholder="最少3个字，最多40个字"></div>
+    </div>
+    <div class="prow">
+        <div class="pcont def_addr"><span><span class="check-box"></span>设为默认地址</span></div>
+    </div>
+</form>
+<div class="add_addr_box">
+    <a href="5_购物车.html">保存收货地址</a>
+</div>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html" class="on">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<script src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/lib/city-picker.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+
+        },
+        bindEvent: function () {
+            $('.def_addr').click(function () {
+                $(this).toggleClass('on')
+            })
+
+            $("#city-picker").cityPicker({
+                title: "选择省市区/县",
+                onChange: function (picker, values, displayValues) {
+                    console.log(values, displayValues);
+                }
+            });
+
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

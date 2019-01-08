@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>卡密</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/page/order.css">
+</head>
+<body>
+<div class="card-pwd">
+    <div class="item">
+        <div class="title">爱奇艺VIP视频月卡</div>
+        <div class="desc">
+            <p>卡号 : JDV764700017060000001</p>
+            <p class="km">卡密 : <span>34DD-4C8B-2D77-D5A1</span></p>
+        </div>
+        <div class="summary">
+            <span>有效期：2018.10.03-2021.10.03</span>
+            <a href="#" class="js-copy-km">复制卡密</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">爱奇艺VIP视频月卡</div>
+        <div class="desc">
+            <p>卡号 : JDV764700017060000001</p>
+            <p class="km">卡密 : <span>34DD-4C8B-2D77-D5A1</span></p>
+        </div>
+        <div class="summary">
+            <span>有效期：2018.10.03-2021.10.03</span>
+            <a href="#" class="js-copy-km">复制卡密</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">爱奇艺VIP视频月卡</div>
+        <div class="desc">
+            <p>卡号 : JDV764700017060000001</p>
+            <p class="km">卡密 : <span>34DD-4C8B-2D77-D5A1</span></p>
+        </div>
+        <div class="summary">
+            <span>有效期：2018.10.03-2021.10.03</span>
+            <a href="#" class="js-copy-km">复制卡密</a>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/lib/clipboard.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+        },
+
+        bindEvent: function () {
+            $('.card-pwd').on('click', '.js-copy-km', function () {
+
+            })
+            var clipboard = new ClipboardJS('.js-copy-km', {
+                text: function (target) {
+                    return $(target).parents('.item').find('.km span').text();
+                }
+            });
+            clipboard.on('success',
+                function (e) {
+                    alert("复制成功");
+                });
+            clipboard.on('error',
+                function (e) {
+                    console.log(e);
+                });
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

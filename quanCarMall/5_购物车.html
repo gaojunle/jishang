@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>购物车</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/page/car.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>购物车</span>
+        <i class="car_status" data-status="default">编辑</i>
+    </div>
+</div>
+<div class="tab-cont q_list">
+    <a href="#" class="item">
+        <span class="check-box js-sel" data-id="1"></span>
+        <img src="./img/order/avt-1.png" alt="">
+        <div class="info">
+            <h3>
+                雅诗兰黛肌透修护眼部精华300ml(专柜）
+            </h3>
+            <div class="price">
+                <div class="jf">积分 : <span class="js-jf">539</span></div>
+                <div class="send-num">
+                    <span class="js-reduce">-</span>
+                    <input type="text" value="1">
+                    <span class="js-add">+</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="item">
+        <span class="check-box js-sel" data-id="2"></span>
+        <img src="./img/order/avt-1.png" alt="">
+        <div class="info">
+            <h3>
+                雅诗兰黛肌透修护眼部精华300ml(专柜）
+            </h3>
+            <div class="price">
+                <div class="jf">积分 : <span class="js-jf">139</span></div>
+                <div class="send-num">
+                    <span class="js-reduce">-</span>
+                    <input type="text" value="1">
+                    <span class="js-add">+</span>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--固定全选-->
+<div class="sel-all">
+    <div class="sel-box default active">
+        <div class="check-box-all js-sel-all">
+            <span class="check-box on"></span>
+            <span>合计 : <i class="js-jf-all">0</i></span>
+        </div>
+        <div class="buy">去结算</div>
+    </div>
+    <div class="sel-box edit">
+        <div class="check-box-all js-sel-all">
+            <span class="check-box on js-sel"></span>
+            <span>全选</span>
+        </div>
+        <div class="delete"><span>删除</span><img class="i-del" src="./img/common/i-del.png"></div>
+    </div>
+</div>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html" class="on">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<div class="pop-box pop-box-buy">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                是否确认结算？
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-cancel js-cancel">取消</a>
+                <a href="#" class="btn-ok js-ok">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-box pop-box-delete">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                是否确认删除？
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-cancel js-cancel">取消</a>
+                <a href="#" class="btn-ok js-ok">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+
+        },
+        bindEvent: function () {
+            this.bindToggleStatus()
+            this.bindCheck();
+            this.bindNumChange();
+            this.bindOp();
+        },
+        bindToggleStatus: function () {
+            var that = this,
+                $selAll = $('.sel-all');
+
+            $('.car_status').click(function () {
+                var $this = $(this),
+                    status = $this.data('status');
+
+                if (status == 'default') {
+                    $this.data('status', 'edit');
+                    $this.html('完成')
+                } else {
+                    $this.data('status', 'default');
+                    $this.html('编辑')
+                }
+                $selAll.find('.sel-box').addClass('active');
+                $selAll.find('.' + status).removeClass('active');
+
+                $('.js-sel').removeClass('on')
+                $('.js-sel-all').removeClass('on')
+                that.calcJiFen();
+                return false;
+            })
+        },
+        bindCheck: function () {
+            var that = this,
+                $qList = $('.q_list'),
+                len = $qList.find('.js-sel').length,
+                $selAll = $('.js-sel-all');
+
+            //单个选中
+            $qList.on('click', '.js-sel', function () {
+                var $this = $(this),
+                    $item = $this.parents('.item');
+
+                $this.toggleClass('on')
+
+                //是否全选
+                if (len == $qList.find('.js-sel.on').length) {
+                    $selAll.addClass('on');
+                } else {
+                    $selAll.removeClass('on')
+                }
+
+                that.calcJiFen();
+                return false;
+            })
+
+            //全选
+            $selAll.on('click', function () {
+                $(this).toggleClass('on');
+                if ($(this).hasClass('on')) {
+                    $qList.find('.js-sel').addClass('on');
+                } else {
+                    $qList.find('.js-sel').removeClass('on');
+                }
+                that.calcJiFen();
+                return false;
+            })
+        },
+        bindNumChange: function () {
+            var that = this;
+            //数目增减
+            $('.send-num')
+                .on('click', '.js-reduce', function () {
+                    var $num = $(this).parents('.send-num').find('input'),
+                        val = parseInt($num.val())
+                    if (val > 1) {
+                        $num.val(val - 1)
+                    }
+                    that.calcJiFen()
+                    return false;
+                })
+                .on('click', '.js-add', function () {
+                    var $num = $(this).parents('.send-num').find('input'),
+                        val = parseInt($num.val())
+                    $num.val(val + 1)
+                    that.calcJiFen()
+                    return false;
+                });
+        },
+        bindOp: function () {
+            $('.pop-box')
+                .on('click', '.js-cancel', function () {
+                    $(this).parents('.pop-box').hide();
+                    return false;
+                })
+                .on('click', '.js-ok', function () {
+                    var $this = $(this),
+                        $selList = $('.q_list .js-sel.on'),
+                        selIds = [];
+                    $selList.each(function () {
+                        selIds.push($(this).data('id'))
+                    })
+
+                    if ($this.parents('.pop-box').hasClass('pop-box-buy')) {
+                        alert('去结算，选择商品ID：' + selIds)
+                        location.href = './7_下单页面.html'
+                    } else {
+                        alert('删除，选择商品ID：' + selIds)
+                    }
+
+                    $(this).parents('.pop-box').hide();
+                    return false;
+                })
+
+            $('.buy').click(function () {
+                var $this = $(this),
+                    $qList = $('.q_list'),
+                    $selBox = $this.parents('.sel-box');
+
+                if ($qList.find('.js-sel.on').length != 0) {
+                    $('.pop-box-buy').show()
+                } else {
+                    alert('请先选择商品')
+                }
+                return false;
+            });
+
+            $('.delete').click(function () {
+                var $this = $(this),
+                    $qList = $('.q_list'),
+                    $selBox = $this.parents('.sel-box');
+
+                if ($qList.find('.js-sel.on').length != 0) {
+                    $('.pop-box-delete').show()
+                } else {
+                    alert('请先选择商品')
+                }
+
+                return false;
+            });
+        },
+        calcJiFen: function () {
+            var $qList = $('.q_list'),
+                $selItems = $qList.find('.js-sel.on'),
+                jsAll = 0,
+                $jfAll = $('.js-jf-all');
+
+            $selItems.each(function () {
+                var $this = $(this),
+                    $item = $this.parents('.item'),
+                    jf = parseInt($item.find('.js-jf').text()),
+                    num = parseInt($item.find('.send-num input').val())
+
+                jsAll += jf * num;
+            })
+            $jfAll.html(jsAll)
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

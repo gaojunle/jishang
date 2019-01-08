@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>发现</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/page/find.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>发现</span>
+    </div>
+</div>
+<ul class="find-box">
+    <li>
+        <div class="list">
+            <img class="avt" src="./img/find/1.png" alt="">
+            <span>商城公告</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+    <li class="on">
+        <div class="list">
+            <img class="avt" src="./img/find/2.png" alt="">
+            <span>新手上路</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+    <li>
+        <div class="list">
+            <img class="avt" src="./img/find/3.png" alt="">
+            <span>兑换服务</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+    <li>
+        <div class="list">
+            <img class="avt" src="./img/find/4.png" alt="">
+            <span>配送服务</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+    <li>
+        <div class="list">
+            <img class="avt" src="./img/find/5.png" alt="">
+            <span>常见问题</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+    <li>
+        <div class="list">
+            <img class="avt" src="./img/find/6.png" alt="">
+            <span>法律条款</span>
+            <img src="./img/find/i-down.png" alt="" class="down">
+        </div>
+        <div class="cont">
+            <a href="./4_发现_详情.html">积分规则</a>
+            <a href="./4_发现_详情.html">客户登录</a>
+            <a href="./4_发现_详情.html">积分查询</a>
+            <a href="./4_发现_详情.html">客户渠道</a>
+        </div>
+    </li>
+</ul>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html" class="on">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/lib/countdown.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+
+        },
+
+        bindEvent: function () {
+            $('.find-box').on('click', '.list', function () {
+                $(this).parents('li').toggleClass('on')
+            })
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

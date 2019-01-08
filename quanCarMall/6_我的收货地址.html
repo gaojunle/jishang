@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>我的收货地址</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/page/address.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>我的收货地址</span>
+    </div>
+</div>
+<ul class="addr-box">
+    <li class="on" data-id="0">
+        <p class="summary"><span class="name">王燕</span><span class="phone">13845878457</span></p>
+        <p class="detail">北京市朝阳区六里屯街道金台路万科公园五号20号楼106室</p>
+        <div class="ops">
+            <span><span class="check-box"></span>默认地址</span>
+            <div class="op">
+                <span class="edit"><img src="./img/common/i-edit.png" alt="">编辑</span>
+                <span class="delete"><img src="./img/common/i-delete.png" alt="">删除</span>
+            </div>
+        </div>
+    </li>
+    <li data-id="1">
+        <p class="summary"><span class="name">王燕</span><span class="phone">13845878457</span></p>
+        <p class="detail">北京市朝阳区六里屯街道金台路万科公园五号20号楼106室</p>
+        <div class="ops">
+            <span><span class="check-box on js-sel" data-id="1"></span>默认地址</span>
+            <div class="op">
+                <span class="edit"><img src="./img/common/i-edit.png" alt="">编辑</span>
+                <span class="delete"><img src="./img/common/i-delete.png" alt="">删除</span>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="add_addr_box">
+    <a href="6_添加新地址.html">添加新地址</a>
+</div>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html" class="on">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<div class="pop-box pop-box-delete">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                是否确认删除？
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-cancel js-cancel">取消</a>
+                <a href="#" class="btn-ok js-ok">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+
+        },
+        bindEvent: function () {
+            $('.edit').click(function () {
+                location.href = '6_添加新地址.html?edit=true';
+            })
+            this.bindDelete();
+            this.bindCheck();
+        },
+        bindDelete: function () {
+            $('.pop-box')
+                .on('click', '.js-cancel', function () {
+                    $(this).parents('.pop-box').hide();
+                    return false;
+                })
+                .on('click', '.js-ok', function () {
+                    var $this = $(this)
+                    var selId = $('.addr-box li.on').data('id');
+                    alert('删除当前地址，ID：' + selId)
+
+                    $(this).parents('.pop-box').hide();
+                    return false;
+                })
+
+            $('.delete').click(function () {
+                $('.pop-box-delete').show();
+            })
+
+        },
+        bindCheck: function () {
+            var that = this,
+                $addrBox = $('.addr-box');
+
+            $addrBox.on('click', 'li', function () {
+                var $this = $(this);
+                $this.addClass('on').siblings().removeClass('on');
+                //TODO 选择方式
+                console.log($this.data('id'))
+                return false;
+            })
+        },
+    };
+    App.init();
+</script>
+</body>
+</html>

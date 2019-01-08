@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>我的订单</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/page/order.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>我的订单</span>
+    </div>
+</div>
+<div class="tab js-tab">
+    <ul class="tab-menu">
+        <li class="on">全部</li>
+        <li>已提交</li>
+        <li>已受理</li>
+        <li>已发货</li>
+        <li>已收货</li>
+        <li>已取消</li>
+    </ul>
+    <div class="tab-cont-box js-op-box">
+        <div class="tab-cont my-orders">
+            <a href="8_订单详情_已提交.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已提交</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button class="btn-cancel" href="#">取消订单</button>
+                </div>
+            </a>
+            <a href="#" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">受理中</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                </div>
+            </a>
+            <a href="8_订单详情_已发货.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已发货</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button href="#" class="btn-confirm">确认收货</button>
+                </div>
+            </a>
+            <a href="8_订单详情_已收货.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已收货</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button class="btn-del" href="#"><img src="./img/common/i-delete.png" alt="">删除</button>
+                </div>
+            </a>
+            <a href="#" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已取消</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                </div>
+            </a>
+        </div>
+        <div class="tab-cont my-orders">
+            <a href="8_订单详情_已提交.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已提交</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button class="btn-cancel">取消订单</button>
+                </div>
+            </a>
+            <a href="8_订单详情_已提交.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已提交</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button class="btn-cancel">取消订单</button>
+                </div>
+            </a>
+        </div>
+        <div class="tab-cont my-orders">
+            <a href="#" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">受理中</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                </div>
+            </a>
+        </div>
+        <div class="tab-cont my-orders">
+            <a href="8_订单详情_已发货.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已发货</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button href="#" class="btn-confirm">确认收货</button>
+                </div>
+            </a>
+        </div>
+        <div class="tab-cont my-orders">
+            <a href="8_订单详情_已收货.html" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已收货</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                    <button class="btn-del" href="#"><img src="./img/common/i-delete.png" alt="">删除</button>
+                </div>
+            </a>
+        </div>
+        <div class="tab-cont my-orders">
+            <a href="#" class="my-order">
+                <div class="title">订单编号：68716863813<span class="status">已取消</span></div>
+                <div class="desc">
+                    <img src="./img/order/avt-1.png" alt="">
+                    <div class="info">
+                        <h3>
+                            多样屋 TAYOHYA 魔方彩虹组合凳儿童...
+                            <p>商品编码 : 00020160804-4</p>
+                        </h3>
+                        <div class="price">
+                            <div>兑换积分 :1000</div>
+                            <div>x<span class="num">2</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary">
+                    <span>共<i>1</i>件商品</span>
+                    <span>合计 : <i>1689</i> 积分</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html" class="on">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<div class="pop-box">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                是否确认此操作？
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-cancel js-cancel">取消</a>
+                <a href="#" class="btn-ok js-ok">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/page/order.js"></script>
+</body>
+</html>
