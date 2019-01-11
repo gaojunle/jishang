@@ -92,7 +92,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     color: #7d7c7d;
-    font-size: 12px;
+    font-size: 13px;
 
     .label {
       display: inline-block;
@@ -105,7 +105,9 @@ html, body {
         height: px2rem(60);
         border: none;
         vertical-align: middle;
-        padding: 0px px2rem(10);
+        padding: 0px px2rem(10) px2rem(5);
+        font-size: 13px;
+        width: 100%;
       }
 
     }

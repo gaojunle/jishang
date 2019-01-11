@@ -7,7 +7,7 @@ html, body {
   background: white;
   font-size: 15px;
   background: #f4f4f4;
-  padding-bottom: 0.72rem; }
+  padding-bottom: 0.93333rem; }
 
 body {
   max-width: 600px;
@@ -315,9 +315,6 @@ body {
       padding-top: 0.66667rem; }
       .pop-box .pop-wraper .close img {
         width: 0.82667rem; }
-
-html, body {
-  padding-bottom: 0px; }
 
 .category-box {
   background: white;

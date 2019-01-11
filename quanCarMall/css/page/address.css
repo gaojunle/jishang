@@ -7,7 +7,7 @@ html, body {
   background: white;
   font-size: 15px;
   background: #f4f4f4;
-  padding-bottom: 0.72rem; }
+  padding-bottom: 0.93333rem; }
 
 body {
   max-width: 600px;
@@ -385,7 +385,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     color: #7d7c7d;
-    font-size: 12px; }
+    font-size: 13px; }
     .add-new-box .prow .label {
       display: inline-block;
       font-size: 13px;
@@ -396,7 +396,9 @@ html, body {
         height: 0.8rem;
         border: none;
         vertical-align: middle;
-        padding: 0px 0.13333rem; }
+        padding: 0px 0.13333rem 0.06667rem;
+        font-size: 13px;
+        width: 100%; }
     .add-new-box .prow .def_addr .check-box {
       display: inline-block;
       width: 0.45333rem;

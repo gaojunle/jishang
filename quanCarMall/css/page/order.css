@@ -7,7 +7,7 @@ html, body {
   background: white;
   font-size: 15px;
   background: #f4f4f4;
-  padding-bottom: 0.72rem; }
+  padding-bottom: 0.93333rem; }
 
 body {
   max-width: 600px;
@@ -411,7 +411,8 @@ html, body {
 .pay-box {
   margin: 0.13333rem 0px;
   background: white;
-  padding: 0px 0.26667rem; }
+  padding: 0px 0.26667rem;
+  margin-bottom: 2.66667rem; }
   .pay-box .prow {
     border-bottom: 1px solid rgba(216, 216, 216, 0.4);
     padding: 0.37333rem 0px;

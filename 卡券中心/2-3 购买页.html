@@ -39,13 +39,20 @@
             </li>
         </ul>
     </div>
-    <div class="buy-box clearfix">
-        <div class="buy-price">实付 : <span class="f-orange">¥1340</span></div>
+    <div class="buy-box">
+        <div class="buy-price">实付 : <span class="f-orange">¥13450</span></div>
         <a href="2-2%20购买后详情页.html" class="link-buy">立即支付</a>
     </div>
 </section>
 
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/page/buy.js"></script>
+<script>
+    $('.scode-box input').bind('focus',function(){
+        $('.buy-box').css('position','static');
+    }).bind('blur',function(){
+        $('.buy-box').css({'position':'fixed','bottom':'0'});
+    });
+</script>
 </body>
 </html>
