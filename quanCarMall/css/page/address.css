@@ -1,5 +1,33 @@
 @import url(../lib/reset.css);
 /*common*/
+.border-gradient:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(0deg, #f00 50%, transparent 50%); }
+
+.border_all:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border: 1px solid red;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body {
   min-height: 100%;
   margin: 0px;
@@ -24,14 +52,15 @@ body {
     color: #7d7c7d;
     text-align: center;
     position: relative;
-    border-bottom: 1px solid rgba(216, 216, 216, 0.7); }
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
     .header .main-nav .back {
       position: absolute;
-      left: 0.34667rem;
+      left: 0;
       top: 50%;
       margin-top: -0.58667rem;
       height: 100%;
-      width: 0.53333rem; }
+      text-align: left;
+      padding: 0px 0.32rem; }
     .header .main-nav img {
       height: 0.4rem; }
   .header .search-box {
@@ -70,15 +99,16 @@ body {
       color: white;
       background: #de172a;
       height: 0.8rem;
-      line-height: 0.77333rem;
+      line-height: 0.84rem;
       width: 1.84rem;
       text-align: center;
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      border: none; }
   .header .car_status {
-    width: 1.6rem;
+    /* width: px2rem(120);*/
     position: absolute;
-    right: 0.4rem;
+    right: 0.29333rem;
     font-style: normal; }
 
 .p_header .main-nav {
@@ -197,7 +227,7 @@ body {
     .fix-footer .f-icon.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: contain; }
+      background-size: auto 89%; }
     .fix-footer .f-icon.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -230,7 +260,7 @@ body {
 
 .tab .tab-menu {
   position: relative;
-  border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.3);
   box-sizing: border-box;
   background: white;
   display: flex;
@@ -295,7 +325,7 @@ body {
         padding: 0px 1.33333rem;
         line-height: 1.8; }
       .pop-box .pop-wraper .pop-content .ops {
-        border-top: 1px solid rgba(216, 216, 216, 0.4);
+        border-top: 1px solid rgba(216, 216, 216, 0.3);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -309,7 +339,7 @@ body {
           color: #de172a; }
           .pop-box .pop-wraper .pop-content .ops a.btn-cancel {
             color: #7d7c7d;
-            border-right: 1px solid rgba(216, 216, 216, 0.4); }
+            border-right: 1px solid rgba(216, 216, 216, 0.3); }
     .pop-box .pop-wraper .close {
       text-align: center;
       padding-top: 0.66667rem; }
@@ -339,7 +369,7 @@ html, body {
   line-height: 1.5;
   padding: 0px 0.72rem 0.13333rem; }
 .addr-box .ops {
-  border-top: 1px solid rgba(216, 216, 216, 0.4);
+  border-top: 1px solid rgba(216, 216, 216, 0.3);
   padding: 0.26667rem 0.72rem 0px;
   display: flex;
   justify-content: space-between; }
@@ -354,7 +384,7 @@ html, body {
     display: inline-block;
     width: 0.45333rem;
     height: 0.45333rem;
-    border: 2px solid rgba(224, 226, 225, 0.7);
+    border: 2px solid rgba(224, 226, 225, 0.5);
     border-radius: 100%;
     margin-right: 0.18667rem;
     box-sizing: border-box; }
@@ -375,9 +405,10 @@ html, body {
 .add-new-box {
   margin: 0.13333rem 0px;
   background: white;
-  padding: 0px 0.26667rem; }
+  padding: 0.26667rem;
+  padding-top: 5px; }
   .add-new-box .prow {
-    border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3);
     padding: 0.24rem 0.53333rem;
     font-size: 0.37333rem;
     color: #2a2a2a;
@@ -393,17 +424,16 @@ html, body {
     .add-new-box .prow .pcont {
       flex: 1; }
       .add-new-box .prow .pcont input {
-        height: 0.8rem;
-        border: none;
+        border: 0px solid transparent;
         vertical-align: middle;
-        padding: 0px 0.13333rem 0.06667rem;
-        font-size: 13px;
+        padding: 0px 0.13333rem;
+        font-size: 12px;
         width: 100%; }
     .add-new-box .prow .def_addr .check-box {
       display: inline-block;
       width: 0.45333rem;
       height: 0.45333rem;
-      border: 2px solid rgba(224, 226, 225, 0.7);
+      border: 2px solid rgba(224, 226, 225, 0.5);
       border-radius: 100%;
       margin-right: 0.18667rem;
       box-sizing: border-box;

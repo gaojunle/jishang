@@ -81,12 +81,13 @@
 .pay-box {
   margin: px2rem(10) 0px;
   > div {
-    height: px2rem(80);
     font-size: px2rem(28);
     color: #2a2a2a;
     display: flex;
-    align-items: center;
+    padding: px2rem(20) 0px;
+
     >span{
+      display: inline-block;
       color: #7d7c7d;
     }
   }
@@ -98,14 +99,15 @@
       -ms-flex: 1;
       flex: 1;
       border: none;
+      padding: 0px;
       padding-left: px2rem(10);
-      font-size: px2rem(28);
-      padding-bottom: 2px;
+      font-size: px2rem(26);
     }
   }
   .sub {
     color: $cRed;
     font-size: 12px;
+    padding-top: 0px;
   }
   .scode-box {
     display: -ms-flexbox;

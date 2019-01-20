@@ -5,8 +5,8 @@ $cRed: #de172a;
 $cGrey: #7d7c7d;
 $lGrey: #f4f4f4;
 $gold-color: #de172a;
-$lineGray: rgba(216, 216, 216, 0.4);
-$bd-line: rgba(216, 216, 216, 0.4);
+$lineGray: rgba(216, 216, 216, 0.3);
+$bd-line: rgba(216, 216, 216, 0.3);
 
 html, body {
   min-height: 100%;
@@ -82,11 +82,12 @@ html, body {
       color: white;
       background: $cRed;
       height: px2rem(60);
-      line-height: px2rem(58);
+      line-height: px2rem(63);
       width: px2rem(138);
       text-align: center;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
+      border: none;
     }
   }
 }

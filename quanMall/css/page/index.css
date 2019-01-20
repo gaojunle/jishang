@@ -66,11 +66,12 @@ html, body {
       color: white;
       background: #de172a;
       height: 0.8rem;
-      line-height: 0.77333rem;
+      line-height: 0.84rem;
       width: 1.84rem;
       text-align: center;
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      border: none; }
 
 .p_header .main-nav {
   background-color: #f4f4f4;
@@ -211,7 +212,7 @@ html, body {
 
 .tab .tab-menu {
   position: relative;
-  border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.3);
   box-sizing: border-box;
   background: white;
   display: flex;
@@ -224,7 +225,7 @@ html, body {
     text-align: center;
     font-size: 0.37333rem;
     color: #7d7c7d;
-    border-right: 1px solid rgba(216, 216, 216, 0.4); }
+    border-right: 1px solid rgba(216, 216, 216, 0.3); }
     .tab .tab-menu > li:nth-last-of-type(1), .tab .tab-menu > a:nth-last-of-type(1) {
       border-right: none; }
     .tab .tab-menu > li.on, .tab .tab-menu > a.on {
@@ -277,7 +278,7 @@ html, body {
         padding: 0px 1.33333rem;
         line-height: 1.8; }
       .pop-box .pop-wraper .pop-content .ops {
-        border-top: 1px solid rgba(216, 216, 216, 0.4);
+        border-top: 1px solid rgba(216, 216, 216, 0.3);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -291,7 +292,7 @@ html, body {
           color: #de172a; }
           .pop-box .pop-wraper .pop-content .ops a.btn-cancel {
             color: #7d7c7d;
-            border-right: 1px solid rgba(216, 216, 216, 0.4); }
+            border-right: 1px solid rgba(216, 216, 216, 0.3); }
     .pop-box .pop-wraper .close {
       text-align: center;
       padding-top: 0.66667rem; }
@@ -451,7 +452,7 @@ html, body {
         color: white;
         background: #de172a;
         border-radius: 10px;
-        padding: 1px 10px; }
+        padding: 2px 9px; }
       .rank-box a .info-box .b-num {
         color: #7d7c7d;
         padding: 0.10667rem 0px 0.05333rem; }

@@ -122,7 +122,7 @@ html, body {
       display: inline-block;
       width: px2rem(30);
       height: px2rem(30);
-      border: 2px solid rgba(224, 226, 225, .7);
+      border: 2px solid rgba(224, 226, 225, .6);
       border-radius: 100%;
       margin-right: px2rem(14);
       &.on {
@@ -250,7 +250,7 @@ html, body {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    padding: 0px px2rem(20);
+    padding-left: px2rem(20);
     font-size: 16px;
     color: #7d7c7d;
     i {
@@ -261,7 +261,7 @@ html, body {
         display: inline-block;
         width: px2rem(30);
         height: px2rem(30);
-        border: 2px solid rgba(224, 226, 225, .7);
+        border: 2px solid rgba(224, 226, 225, .6);
         border-radius: 100%;
         margin-right: px2rem(14);
       }
@@ -295,9 +295,12 @@ html, body {
       &.active{
         display: flex;
       }
+      .delete{
+        padding-right: px2rem(30);
+      }
       .i-del {
         width: px2rem(24);
-        margin-left: px2rem(18);
+        margin-left: px2rem(16);
       }
     }
   }

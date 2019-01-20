@@ -5,8 +5,38 @@ $cRed: #de172a;
 $cGrey: #7d7c7d;
 $lGrey: #f4f4f4;
 $gold-color: #de172a;
-$lineGray: rgba(216, 216, 216, 0.4);
-$bd-line: rgba(216, 216, 216, 0.4);
+$lineGray: rgba(216, 216, 216, 0.3);
+$bd-line: rgba(216, 216, 216, 0.3);
+
+.border-gradient:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(0deg, #f00 50%, transparent 50%);
+}
+
+.border_all:before{
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border: 1px solid red;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 html, body {
   min-height: 100%;
@@ -34,15 +64,16 @@ body {
     color: rgb(125, 124, 125);
     text-align: center;
     position: relative;
-    border-bottom: 1px solid rgba(216, 216, 216, 0.7);
+    border-bottom: 1px solid $lineGray;
 
     .back {
       position: absolute;
-      left: px2rem(26);
+      left: 0;
       top: 50%;
       margin-top: - px2rem(44);
       height: 100%;
-      width: px2rem(40);
+      text-align: left;
+      padding: 0px px2rem(24);
     }
     img {
       height: px2rem(30);
@@ -87,17 +118,18 @@ body {
       color: white;
       background: $cRed;
       height: px2rem(60);
-      line-height: px2rem(58);
+      line-height: px2rem(63);
       width: px2rem(138);
       text-align: center;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
+      border: none;
     }
   }
   .car_status {
-    width: px2rem(120);
+   /* width: px2rem(120);*/
     position: absolute;
-    right: px2rem(30);
+    right: px2rem(22);
     font-style: normal;
   }
 }
@@ -244,7 +276,7 @@ body {
     &.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: contain;
+      background-size: auto 89%;
     }
     &.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;

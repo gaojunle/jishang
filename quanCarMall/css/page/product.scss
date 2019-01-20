@@ -121,7 +121,7 @@ html, body {
         display: inline-block;
         border: 1px solid $cRed;
         border-radius: 20px;
-        padding: 1px px2rem(30);
+        padding: 2px px2rem(30) 1px;
         margin-left: px2rem(20);
         color: $cRed;
         &.on {
@@ -151,6 +151,8 @@ html, body {
     input {
       background: white;
       border: 1px solid $lineGray;
+      padding-top: 1px;
+      box-sizing: border-box;
     }
   }
 }

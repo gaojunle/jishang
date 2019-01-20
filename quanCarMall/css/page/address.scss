@@ -56,7 +56,7 @@ html, body {
       display: inline-block;
       width: px2rem(34);
       height: px2rem(34);
-      border: 2px solid rgba(224, 226, 225, .7);
+      border: 2px solid rgba(224, 226, 225, .5);
       border-radius: 100%;
       margin-right: px2rem(14);
       box-sizing: border-box;
@@ -82,7 +82,8 @@ html, body {
 .add-new-box {
   margin: px2rem(10) 0px;
   background: white;
-  padding: 0px px2rem(20);
+  padding: px2rem(20);
+  padding-top: 5px;
   .prow {
     border-bottom: 1px solid $lineGray;
     padding: px2rem(18) px2rem(40);
@@ -102,21 +103,19 @@ html, body {
     .pcont {
       flex: 1;
       input {
-        height: px2rem(60);
-        border: none;
+        border: 0px solid transparent;
         vertical-align: middle;
-        padding: 0px px2rem(10) px2rem(5);
-        font-size: 13px;
+        padding: 0px px2rem(10);
+        font-size: 12px;
         width: 100%;
       }
-
     }
     .def_addr {
       .check-box {
         display: inline-block;
         width: px2rem(34);
         height: px2rem(34);
-        border: 2px solid rgba(224, 226, 225, .7);
+        border: 2px solid rgba(224, 226, 225, .5);
         border-radius: 100%;
         margin-right: px2rem(14);
         box-sizing: border-box;

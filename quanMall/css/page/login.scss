@@ -27,7 +27,7 @@
   form {
     padding: 0px px2rem(60);
     > p {
-      border-bottom: 1px solid rgba(221, 221, 221, .6);
+      border-bottom: 1px solid $lineGray;
       position: relative;
       padding: px2rem(10) 0px;
       display: flex;
@@ -45,7 +45,7 @@
         padding: px2rem(24) px2rem(0);
         width: 100%;
         color: #222;
-        font-size: 14px;
+        font-size: 13px;
         &[ name='mobile' ] {
           width: px2rem(460);
         }
@@ -68,6 +68,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
         .imgcode {
           width: 66px;
           height: 28px;

@@ -66,11 +66,12 @@ html, body {
       color: white;
       background: #de172a;
       height: 0.8rem;
-      line-height: 0.77333rem;
+      line-height: 0.84rem;
       width: 1.84rem;
       text-align: center;
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      border: none; }
 
 .p_header .main-nav {
   background-color: #f4f4f4;
@@ -211,7 +212,7 @@ html, body {
 
 .tab .tab-menu {
   position: relative;
-  border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+  border-bottom: 1px solid rgba(216, 216, 216, 0.3);
   box-sizing: border-box;
   background: white;
   display: flex;
@@ -224,7 +225,7 @@ html, body {
     text-align: center;
     font-size: 0.37333rem;
     color: #7d7c7d;
-    border-right: 1px solid rgba(216, 216, 216, 0.4); }
+    border-right: 1px solid rgba(216, 216, 216, 0.3); }
     .tab .tab-menu > li:nth-last-of-type(1), .tab .tab-menu > a:nth-last-of-type(1) {
       border-right: none; }
     .tab .tab-menu > li.on, .tab .tab-menu > a.on {
@@ -277,7 +278,7 @@ html, body {
         padding: 0px 1.33333rem;
         line-height: 1.8; }
       .pop-box .pop-wraper .pop-content .ops {
-        border-top: 1px solid rgba(216, 216, 216, 0.4);
+        border-top: 1px solid rgba(216, 216, 216, 0.3);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -291,7 +292,7 @@ html, body {
           color: #de172a; }
           .pop-box .pop-wraper .pop-content .ops a.btn-cancel {
             color: #7d7c7d;
-            border-right: 1px solid rgba(216, 216, 216, 0.4); }
+            border-right: 1px solid rgba(216, 216, 216, 0.3); }
     .pop-box .pop-wraper .close {
       text-align: center;
       padding-top: 0.66667rem; }
@@ -361,26 +362,27 @@ html, body {
 .pay-box {
   margin: 0.13333rem 0px; }
   .pay-box > div {
-    height: 1.06667rem;
     font-size: 0.37333rem;
     color: #2a2a2a;
     display: flex;
-    align-items: center; }
+    padding: 0.26667rem 0px; }
     .pay-box > div > span {
+      display: inline-block;
       color: #7d7c7d; }
   .pay-box .prow {
-    border-bottom: 1px solid rgba(216, 216, 216, 0.4); }
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
     .pay-box .prow > input {
       width: 6rem;
       -ms-flex: 1;
       flex: 1;
       border: none;
+      padding: 0px;
       padding-left: 0.13333rem;
-      font-size: 0.37333rem;
-      padding-bottom: 2px; }
+      font-size: 0.34667rem; }
   .pay-box .sub {
     color: #de172a;
-    font-size: 12px; }
+    font-size: 12px;
+    padding-top: 0px; }
   .pay-box .scode-box {
     display: -ms-flexbox;
     display: flex;
@@ -398,7 +400,7 @@ html, body {
   background: white;
   color: #7d7c7d; }
   .buy-box .jf-use {
-    border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3);
     font-size: 0.37333rem;
     line-height: 1.01333rem;
     padding-left: 0.26667rem; }
@@ -474,8 +476,8 @@ html, body {
       -ms-flex-pack: justify;
       justify-content: space-between;
       color: #7d7c7d;
-      border-top: 1px solid rgba(216, 216, 216, 0.4);
-      border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+      border-top: 1px solid rgba(216, 216, 216, 0.3);
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3);
       padding: 0.26667rem 0px; }
       .my-orders .my-order .desc > img {
         width: 2.13333rem;
@@ -561,8 +563,8 @@ html, body {
       font-size: 13px; }
     .card-pwd .item .desc {
       color: #7d7c7d;
-      border-top: 1px solid rgba(216, 216, 216, 0.4);
-      border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+      border-top: 1px solid rgba(216, 216, 216, 0.3);
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3);
       padding: 0.4rem 10px;
       line-height: 1.6; }
     .card-pwd .item .summary {
