@@ -112,14 +112,16 @@
         },
 
         initSwiper: function () {
-            var swiperBanner = new Swiper('.banner-swiper', {
-                spaceBetween: 0,
-                centeredSlides: true,
-                autoplay: 3000,
-                loop: true,
-                autoplayDisableOnInteraction: false,
-                pagination: '.swiper-pagination',
-            });
+            if ($('.banner-swiper .swiper-slide').length > 1) {
+                var swiperBanner = new Swiper('.banner-swiper', {
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    autoplay: 3000,
+                    loop: true,
+                    autoplayDisableOnInteraction: false,
+                    pagination: '.swiper-pagination',
+                });
+            }
 
             $('.js-num')
                 .on('click', '.js-reduce', function () {

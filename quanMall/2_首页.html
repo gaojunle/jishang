@@ -15,15 +15,13 @@
 <body>
 <div class="header">
     <div class="search-box">
-        <input class="ipt-search" type="text" placeholder="请输入关键字"><button class="btn-search">搜索</button>
+        <input class="ipt-search" type="text" placeholder="请输入关键字">
+        <button class="btn-search">搜索</button>
     </div>
 </div>
 <section class="banner-box">
     <div class="banner-swiper">
         <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/common/1.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/common/1.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/common/1.png"/></a></li>
             <li class="swiper-slide"><a href="javascript:;"><img src="./img/common/1.png"/></a></li>
         </ul>
         <div class="swiper-pagination swiper-pagination-white"></div>
@@ -370,18 +368,22 @@
         },
 
         initSwiper: function () {
-            var swiperBanner = new Swiper('.banner-swiper', {
-                spaceBetween: 0,
-                centeredSlides: true,
-                autoplay: 3000,
-                loop: true,
-                pagination: '.swiper-pagination',
-            });
+            if ($('.banner-swiper .swiper-slide').length > 1) {
+                new Swiper('.banner-swiper', {
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    autoplay: 3000,
+                    loop: true,
+                    pagination: '.swiper-pagination',
+                });
+            }
 
-            var swiperBanner = new Swiper('.rank-box', {
-                spaceBetween: 10,
-                slidesPerView: 'auto',
-            });
+            if ($('.rank-box .swiper-slide').length > 1) {
+                new Swiper('.rank-box', {
+                    spaceBetween: 10,
+                    slidesPerView: 'auto',
+                });
+            }
         }
     };
     App.init();
