@@ -17,14 +17,52 @@
 
 <div class="dropdownMenu">
     <ul class="drop_menu">
-        <li class="on">全部价格</li>
+        <li>全部价格</li>
         <li>全部时间</li>
         <li>全国</li>
     </ul>
     <div class="drop_box">
         <div class="drop_box_cont">
-            <ul>
-                <li>不限</li>
+            <ul class="drop_level_1">
+                <li>
+                    不限
+                    <ul>
+                        <li>上海</li>
+                        <li>北京</li>
+                        <li>天津</li>
+                    </ul>
+                </li>
+                <li>北京
+                    <ul>
+                        <li>上海</li>
+                        <li>1北京</li>
+                        <li>天津</li>
+                    </ul></li>
+                <li>上海
+                    <ul>
+                        <li>上海</li>
+                        <li>2北京</li>
+                        <li>天津</li>
+                    </ul></li>
+            </ul>
+        </div>
+        <div class="drop_box_cont">
+            <ul class="drop_level_1">
+                <li>
+                    不限111
+                    <ul>
+                        <li>上海</li>
+                        <li>北京</li>
+                        <li>天津</li>
+                    </ul>
+                </li>
+                <li>北京</li>
+                <li>上海</li>
+            </ul>
+        </div>
+        <div class="drop_box_cont">
+            <ul class="drop_level_1">
+                <li>不限111</li>
                 <li>北京</li>
                 <li>上海</li>
             </ul>
@@ -127,6 +165,29 @@
 
 <script src="js/lib/jquery.min.js"></script>
 <script>
+    $(document).ready(function () {
+        var $dropdownMenu = $('.dropdownMenu')
+        $dropdownMenu.on('click', '.drop_menu li', function () {
+            var $this = $(this)
+            if (!$this.hasClass('on')) {
+                $dropdownMenu.addClass('on');
+                $this.addClass('on').siblings().removeClass('on');
+                $dropdownMenu.find('.drop_box_cont').eq($this.index()).addClass('on').siblings().removeClass('on')
+            } else {
+                $dropdownMenu.removeClass('on');
+                $this.removeClass('on');
+                $dropdownMenu.find('.drop_box_cont').removeClass('on')
+            }
+        }).on('click', '.drop_level_1>li', function () {
+            var $this = $(this)
+            if ($this.find('ul').length > 0) {
+                $this.addClass('on').siblings().removeClass('on')
+            }else{
+                console.log($this.html())
+                $dropdownMenu.find('.drop_menu li.on').trigger('click')
+            }
+        })
+    });
     //meishi开始
     $(document).ready(function () {
         $(".meishi").click(function () {
