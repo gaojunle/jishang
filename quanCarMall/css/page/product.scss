@@ -132,10 +132,11 @@ html, body {
     }
   }
   .nums {
-    padding: px2rem(15) px2rem(10);
+    padding: px2rem(20) px2rem(10);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    border-bottom: 1px solid $lineGray;
     p {
       padding-left: px2rem(20);
     }
@@ -153,6 +154,60 @@ html, body {
       border: 1px solid $lineGray;
       padding-top: 1px;
       box-sizing: border-box;
+    }
+  }
+  .jiesuan-box{
+    padding: px2rem(20) px2rem(10);
+    padding-bottom: 0px;
+    font-size: px2rem(28);
+    color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #7d7c7d;
+    font-size: 12px;
+    input{
+      border: 1px solid transparent;
+    }
+    .label {
+      display: inline-block;
+      width: px2rem(124);
+      font-size: 13px;
+      color: #706F70;
+    }
+    .pcont {
+      flex: 1;
+      &.dateway {
+        p {
+          height: px2rem(40);
+          display: flex;
+          align-items: center;
+          &:before {
+            content: ' ';
+            display: inline-block;
+            width: px2rem(26);
+            height: 100%;
+            background: url("../../img/common/i-circle.png") 0px center no-repeat;
+            -webkit-background-size: px2rem(22) px2rem(22);
+            background-size: px2rem(22) px2rem(22);
+            margin-right: px2rem(10);
+          }
+          &.on {
+            &:before {
+              background: url("../../img/common/i-circle-on.png") 0px center no-repeat;
+              -webkit-background-size: px2rem(22) px2rem(22);
+              background-size: px2rem(22) px2rem(22);
+            }
+          }
+        }
+      }
+      textarea {
+        width: 100%;
+        height: px2rem(120);
+        padding: px2rem(14);
+        border: 1px solid $lineGray;
+        box-sizing: border-box;
+      }
     }
   }
 }

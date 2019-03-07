@@ -104,10 +104,9 @@ html, body {
       flex: 1;
       input {
         border: 0px solid transparent;
-        vertical-align: middle;
         padding: 0px px2rem(10);
-        font-size: 12px;
-        width: 100%;
+        font-size: 13px;
+        margin-top: -2px;
       }
     }
     .def_addr {

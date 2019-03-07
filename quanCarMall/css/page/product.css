@@ -443,10 +443,11 @@ html, body {
         color: white;
         background: #de172a; }
   .p-info .nums {
-    padding: 0.2rem 0.13333rem;
+    padding: 0.26667rem 0.13333rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: center; }
+    align-items: center;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
     .p-info .nums p {
       padding-left: 0.26667rem; }
     .p-info .nums .btn, .p-info .nums input {
@@ -462,6 +463,48 @@ html, body {
       border: 1px solid rgba(216, 216, 216, 0.3);
       padding-top: 1px;
       box-sizing: border-box; }
+  .p-info .jiesuan-box {
+    padding: 0.26667rem 0.13333rem;
+    padding-bottom: 0px;
+    font-size: 0.37333rem;
+    color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #7d7c7d;
+    font-size: 12px; }
+    .p-info .jiesuan-box input {
+      border: 1px solid transparent; }
+    .p-info .jiesuan-box .label {
+      display: inline-block;
+      width: 1.65333rem;
+      font-size: 13px;
+      color: #706F70; }
+    .p-info .jiesuan-box .pcont {
+      flex: 1; }
+      .p-info .jiesuan-box .pcont.dateway p {
+        height: 0.53333rem;
+        display: flex;
+        align-items: center; }
+        .p-info .jiesuan-box .pcont.dateway p:before {
+          content: ' ';
+          display: inline-block;
+          width: 0.34667rem;
+          height: 100%;
+          background: url("../../img/common/i-circle.png") 0px center no-repeat;
+          -webkit-background-size: 0.29333rem 0.29333rem;
+          background-size: 0.29333rem 0.29333rem;
+          margin-right: 0.13333rem; }
+        .p-info .jiesuan-box .pcont.dateway p.on:before {
+          background: url("../../img/common/i-circle-on.png") 0px center no-repeat;
+          -webkit-background-size: 0.29333rem 0.29333rem;
+          background-size: 0.29333rem 0.29333rem; }
+      .p-info .jiesuan-box .pcont textarea {
+        width: 100%;
+        height: 1.6rem;
+        padding: 0.18667rem;
+        border: 1px solid rgba(216, 216, 216, 0.3);
+        box-sizing: border-box; }
 
 .op {
   position: fixed;

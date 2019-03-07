@@ -425,10 +425,9 @@ html, body {
       flex: 1; }
       .add-new-box .prow .pcont input {
         border: 0px solid transparent;
-        vertical-align: middle;
         padding: 0px 0.13333rem;
-        font-size: 12px;
-        width: 100%; }
+        font-size: 13px;
+        margin-top: -2px; }
     .add-new-box .prow .def_addr .check-box {
       display: inline-block;
       width: 0.45333rem;

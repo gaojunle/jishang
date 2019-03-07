@@ -437,6 +437,8 @@ body {
         justify-content: space-between;
         align-items: center;
         color: #7d7c7d; }
+        .pd-list li > a .jf.xj {
+          justify-content: center; }
         .pd-list li > a .jf .limit-jf {
           font-style: normal;
           font-size: 12px; }
@@ -470,7 +472,8 @@ body {
   padding-right: 10px;
   box-sizing: border-box;
   margin-bottom: 20px;
-  position: relative; }
+  position: relative;
+  margin-top: 0.26667rem; }
   .rank-box .left-rank {
     position: absolute;
     top: 0px;

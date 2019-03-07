@@ -111,6 +111,9 @@
         justify-content: space-between;
         align-items: center;
         color: $cGrey;
+        &.xj{
+          justify-content: center;
+        }
         .limit-jf {
           font-style: normal;
           font-size: 12px;
@@ -156,6 +159,7 @@
   box-sizing: border-box;
   margin-bottom: 20px;
   position: relative;
+  margin-top: px2rem(20);
 
   .left-rank {
     position: absolute;

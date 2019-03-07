@@ -73,7 +73,7 @@ html, body {
 }
 
 .info-box {
-  padding: px2rem(20);
+  padding: px2rem(20) px2rem(30);
   padding-bottom: px2rem(20);
   margin: px2rem(10) 0px;
   background: white;
@@ -123,7 +123,7 @@ html, body {
 .pay-box {
   margin: px2rem(10) 0px;
   background: white;
-  padding: 0px px2rem(20);
+  padding: 0px px2rem(30);
   margin-bottom: px2rem(200);
   .prow {
     border-bottom: 1px solid $lineGray;
@@ -148,22 +148,24 @@ html, body {
       flex: 1;
       &.dateway {
         p {
-          line-height: 1.5;
+          height: px2rem(40);
+          display: flex;
+          align-items: center;
           &:before {
             content: ' ';
             display: inline-block;
-            width: px2rem(20);
-            height: px2rem(20);
-            background: url("../../img/common/i-circle.png") 0px 0px no-repeat;
-            -webkit-background-size: cover;
-            background-size: cover;
+            width: px2rem(26);
+            height: 100%;
+            background: url("../../img/common/i-circle.png") 0px center no-repeat;
+            -webkit-background-size: px2rem(22) px2rem(22);
+            background-size: px2rem(22) px2rem(22);
             margin-right: px2rem(10);
           }
           &.on {
             &:before {
-              background: url("../../img/common/i-circle-on.png") 0px 0px no-repeat;
-              -webkit-background-size: cover;
-              background-size: cover;
+              background: url("../../img/common/i-circle-on.png") 0px center no-repeat;
+              -webkit-background-size: px2rem(22) px2rem(22);
+              background-size: px2rem(22) px2rem(22);
             }
           }
         }
@@ -190,7 +192,7 @@ html, body {
     border-bottom: 1px solid $lineGray;
     font-size: px2rem(28);
     line-height: px2rem(76);
-    padding-left: px2rem(20);
+    padding-left: px2rem(30);
     > span {
       color: $cRed;
     }
@@ -206,7 +208,7 @@ html, body {
   .buy-price {
     -ms-flex: 1;
     flex: 1;
-    padding-left: px2rem(20);
+    padding-left: px2rem(30);
     font-size: px2rem(30);
     line-height: px2rem(92);
     color: $cRed;
@@ -380,7 +382,7 @@ html, body {
       }
       > button {
         display: inline-block;
-        padding: 2px 0px;
+        padding: 2px 10px;
         font-size: 12px;
         color: $cRed;
         border: 1px solid $cRed;
@@ -441,7 +443,7 @@ html, body {
     padding: px2rem(20);
     padding-top: 0px;
     .title {
-      padding: px2rem(22) 10px;
+      padding: px2rem(24) 10px;
       font-size: 13px;
     }
     .desc {
