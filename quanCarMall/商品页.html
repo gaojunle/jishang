@@ -39,7 +39,7 @@
             <span>原积分 : 6145</span>
         </p>
     </div>
-    <div id="times_wrap" class="time-cd" data-enddate="2019/01/22 08:00:00">
+    <div id="times_wrap" class="time-cd" data-enddate="2021/01/22 08:00:00">
         <span class="tdesc">距结束还剩</span>
         <div class="time_w">
             <b id="times_d" class="time"></b> :
@@ -80,9 +80,10 @@
 <div class="scroll-go">
     <a href="./商品详情页.html">点击查看图文详情 ></a>
 </div>
-<div class="op">
-    <a href="./3_分类_列表.html" class="btn">再逛逛</a>
+<div class="op js-op">
+    <a href="#" class="btn btn-collect">加入收藏夹</a>
     <a href="#" class="btn btn-dh">加入购物车</a>
+    <a href="./7_下单页面_钱.html" class="btn btn-buy">立即购买</a>
 </div>
 <!--固定页尾-->
 <footer class="fix-footer">
@@ -140,6 +141,22 @@
             $('.btn-dh').click(function () {
                 $('.pop-box').eq(0).show()
                 return false;
+            })
+
+            var $opBox = $('.js-op');
+            $('.jiesuan-box').on('click', 'p', function () {
+                var $this = $(this);
+                $this.addClass('on').siblings().removeClass('on');
+                if ($this.data('way') == 0) {
+                    $opBox.removeClass('buy')
+                }else{
+                    $opBox.addClass('buy')
+                }
+            })
+
+            //加入收藏
+            $('.btn-collect').click(function () {
+                alert('加入收藏夹')
             })
         },
 

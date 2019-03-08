@@ -240,10 +240,10 @@ body {
 
 .fix-footer {
   position: fixed;
+  bottom: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  bottom: 0px;
   width: 100%;
   height: px2rem(100);
   background-color: rgb(255, 255, 255);
@@ -251,13 +251,16 @@ body {
   z-index: 410;
   text-align: center;
   box-sizing: border-box;
-  padding-top: 3px;
+
   a {
     text-align: center;
+    padding-top: px2rem(2);
   }
   .f-icon {
     width: 100%;
-    height: px2rem(46);
+    height: px2rem(38);
+    margin-top: px2rem(4);
+
     &.f-home {
       background: url("../../img/common/i-home.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -276,7 +279,7 @@ body {
     &.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: auto 89%;
+      background-size: contain;
     }
     &.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;

@@ -195,23 +195,24 @@ body {
 
 .fix-footer {
   position: fixed;
+  bottom: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  bottom: 0px;
   width: 100%;
   height: 1.33333rem;
   background-color: white;
   box-shadow: 0px -1px 5px 0px rgba(219, 216, 216, 0.75);
   z-index: 410;
   text-align: center;
-  box-sizing: border-box;
-  padding-top: 3px; }
+  box-sizing: border-box; }
   .fix-footer a {
-    text-align: center; }
+    text-align: center;
+    padding-top: 0.02667rem; }
   .fix-footer .f-icon {
     width: 100%;
-    height: 0.61333rem; }
+    height: 0.50667rem;
+    margin-top: 0.05333rem; }
     .fix-footer .f-icon.f-home {
       background: url("../../img/common/i-home.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -227,7 +228,7 @@ body {
     .fix-footer .f-icon.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: auto 89%; }
+      background-size: contain; }
     .fix-footer .f-icon.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -462,29 +463,44 @@ html, body {
       color: #706F70; }
     .pay-box .prow .pcont {
       flex: 1; }
-      .pay-box .prow .pcont.dateway p {
-        height: 0.53333rem;
-        display: flex;
-        align-items: center; }
-        .pay-box .prow .pcont.dateway p:before {
-          content: ' ';
-          display: inline-block;
-          width: 0.34667rem;
-          height: 100%;
-          background: url("../../img/common/i-circle.png") 0px center no-repeat;
-          -webkit-background-size: 0.29333rem 0.29333rem;
-          background-size: 0.29333rem 0.29333rem;
-          margin-right: 0.13333rem; }
-        .pay-box .prow .pcont.dateway p.on:before {
-          background: url("../../img/common/i-circle-on.png") 0px center no-repeat;
-          -webkit-background-size: 0.29333rem 0.29333rem;
-          background-size: 0.29333rem 0.29333rem; }
+      .pay-box .prow .pcont.dateway {
+        padding-left: 0.13333rem; }
+        .pay-box .prow .pcont.dateway p {
+          height: 0.53333rem;
+          display: flex;
+          align-items: center; }
+          .pay-box .prow .pcont.dateway p:before {
+            content: ' ';
+            display: inline-block;
+            width: 0.34667rem;
+            height: 100%;
+            background: url("../../img/common/i-circle.png") 0px center no-repeat;
+            -webkit-background-size: 0.29333rem 0.29333rem;
+            background-size: 0.29333rem 0.29333rem;
+            margin-right: 0.13333rem; }
+          .pay-box .prow .pcont.dateway p.on:before {
+            background: url("../../img/common/i-circle-on.png") 0px center no-repeat;
+            -webkit-background-size: 0.29333rem 0.29333rem;
+            background-size: 0.29333rem 0.29333rem; }
       .pay-box .prow .pcont textarea {
         width: 100%;
         height: 1.6rem;
         padding: 0.18667rem;
         border: 1px solid rgba(216, 216, 216, 0.3);
         box-sizing: border-box; }
+    .pay-box .prow.pay-way {
+      height: 1.4rem;
+      line-height: 1.36rem;
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3);
+      justify-content: flex-start; }
+      .pay-box .prow.pay-way > a {
+        margin-left: 0.26667rem; }
+        .pay-box .prow.pay-way > a img {
+          border: 1px solid #c7c7c7;
+          width: 2.66667rem;
+          border-radius: 0.13333rem; }
+        .pay-box .prow.pay-way > a.on img {
+          border: 1px solid #de172a; }
 
 .buy-box {
   position: fixed;
@@ -600,7 +616,11 @@ html, body {
         padding-left: 0.21333rem;
         position: relative; }
         .my-orders .my-order .desc .info h3 {
-          font-size: 0.37333rem; }
+          font-size: 0.37333rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
           .my-orders .my-order .desc .info h3 p {
             font-size: 12px;
             color: rgba(125, 124, 125, 0.6);
@@ -634,20 +654,24 @@ html, body {
       padding-bottom: 0.06667rem;
       display: flex;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      height: 40px;
+      box-sizing: border-box; }
       .my-orders .my-order .summary span:nth-of-type(2) {
         flex: 1;
-        margin-left: 0.66667rem; }
+        margin-left: 0.4rem; }
       .my-orders .my-order .summary span i {
         font-style: normal;
-        color: #de172a; }
+        color: #de172a;
+        padding-right: 0.05333rem; }
       .my-orders .my-order .summary > button {
         display: inline-block;
         padding: 2px 10px;
         font-size: 12px;
         color: #de172a;
         border: 1px solid #de172a;
-        border-radius: 10px; }
+        border-radius: 10px;
+        margin-left: 0.13333rem; }
         .my-orders .my-order .summary > button.btn-del {
           border: none;
           color: #7d7c7d; }

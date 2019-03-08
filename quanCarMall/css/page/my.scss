@@ -135,3 +135,141 @@
     }
   }
 }
+
+/*my orders*/
+.my-orders {
+  color: #7d7c7d;
+  font-size: 12px;
+
+  .my-order {
+    display: block;
+    margin-top: px2rem(12);
+    background: white;
+    padding: 0px px2rem(20);
+    color: #7d7c7d;
+
+    &.order_detail {
+      .title, .desc, .detail, .summary, .logistics {
+        padding-left: px2rem(20);
+        padding-right: px2rem(20);
+      }
+    }
+    .title {
+      height: px2rem(70);
+      line-height: px2rem(70);
+      display: flex;
+      justify-content: space-between;
+      .status {
+        color: $cRed;
+      }
+    }
+    .desc {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      color: $cGrey;
+      border-top: 1px solid $lineGray;
+      border-bottom: 1px solid $lineGray;
+      padding: px2rem(20) 0px;
+
+      > img {
+        width: px2rem(160);
+        height: px2rem(160);
+        border-radius: px2rem(10);
+      }
+      .info {
+        -ms-flex: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: px2rem(16);
+        position: relative;
+
+        h3 {
+          font-size: px2rem(28);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          p {
+            font-size: 12px;
+            color: rgba(125, 124, 125, 0.6);
+            padding-top: px2rem(4);
+          }
+        }
+        .num {
+          margin-left: 1px;
+        }
+        .price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: px2rem(28);
+          position: relative;
+          color: $cRed;
+        }
+      }
+
+    }
+    .detail {
+      color: #7d7c7d;
+      padding: px2rem(20) 0px;
+      line-height: 1.5;
+      border-bottom: 1px solid $lineGray;
+      .addr {
+        color: rgba(125, 124, 125, 0.6);
+        padding-bottom: px2rem(20);
+      }
+    }
+    //物流
+    .logistics {
+      color: #7d7c7d;
+      line-height: 1.5;
+      padding: px2rem(20) 0px;
+      border-bottom: 1px solid $lineGray;
+    }
+    .summary {
+      padding-top: px2rem(25);
+      padding-bottom: px2rem(5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      box-sizing: border-box;
+
+      span {
+        &:nth-of-type(2) {
+          flex: 1;
+          margin-left: px2rem(30);
+          i {
+
+          }
+        }
+        i {
+          font-style: normal;
+          color: $cRed;
+          padding-right: px2rem(4);
+        }
+      }
+      > button {
+        display: inline-block;
+        padding: 2px 10px;
+        font-size: 12px;
+        color: $cRed;
+        border: 1px solid $cRed;
+        border-radius: 10px;
+        margin-left: px2rem(10);
+        &.btn-del {
+          border: none;
+          color: #7d7c7d;
+          img {
+            height: px2rem(28);
+            margin-right: px2rem(10);
+          }
+        }
+      }
+    }
+  }
+}

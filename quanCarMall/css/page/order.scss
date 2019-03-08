@@ -147,6 +147,8 @@ html, body {
     .pcont {
       flex: 1;
       &.dateway {
+
+        padding-left: px2rem(10);
         p {
           height: px2rem(40);
           display: flex;
@@ -176,6 +178,26 @@ html, body {
         padding: px2rem(14);
         border: 1px solid $lineGray;
         box-sizing: border-box;
+      }
+    }
+
+    &.pay-way {
+      height: px2rem(105);
+      line-height: px2rem(102);
+      border-bottom: 1px solid $lineGray;
+      justify-content: flex-start;
+      > a {
+        margin-left: px2rem(20);
+        img {
+          border: 1px solid #c7c7c7;
+          width: px2rem(200);
+          border-radius: px2rem(10);
+        }
+        &.on {
+          img {
+            border: 1px solid $cRed;
+          }
+        }
       }
     }
   }
@@ -323,6 +345,10 @@ html, body {
 
         h3 {
           font-size: px2rem(28);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           p {
             font-size: 12px;
             color: rgba(125, 124, 125, 0.6);
@@ -369,15 +395,21 @@ html, body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 40px;
+      box-sizing: border-box;
 
       span {
         &:nth-of-type(2) {
           flex: 1;
-          margin-left: px2rem(50);
+          margin-left: px2rem(30);
+          i {
+
+          }
         }
         i {
           font-style: normal;
           color: $cRed;
+          padding-right: px2rem(4);
         }
       }
       > button {
@@ -387,6 +419,7 @@ html, body {
         color: $cRed;
         border: 1px solid $cRed;
         border-radius: 10px;
+        margin-left: px2rem(10);
         &.btn-del {
           border: none;
           color: #7d7c7d;
@@ -413,6 +446,7 @@ html, body {
     background: transparent;
   }
   .pay-box {
+
     padding: 0px px2rem(34);
     span {
       color: #7d7c7d;

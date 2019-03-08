@@ -195,23 +195,24 @@ body {
 
 .fix-footer {
   position: fixed;
+  bottom: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  bottom: 0px;
   width: 100%;
   height: 1.33333rem;
   background-color: white;
   box-shadow: 0px -1px 5px 0px rgba(219, 216, 216, 0.75);
   z-index: 410;
   text-align: center;
-  box-sizing: border-box;
-  padding-top: 3px; }
+  box-sizing: border-box; }
   .fix-footer a {
-    text-align: center; }
+    text-align: center;
+    padding-top: 0.02667rem; }
   .fix-footer .f-icon {
     width: 100%;
-    height: 0.61333rem; }
+    height: 0.50667rem;
+    margin-top: 0.05333rem; }
     .fix-footer .f-icon.f-home {
       background: url("../../img/common/i-home.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -227,7 +228,7 @@ body {
     .fix-footer .f-icon.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: auto 89%; }
+      background-size: contain; }
     .fix-footer .f-icon.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -451,5 +452,108 @@ body {
       .jf-list .item p .xf-num {
         font-size: 16px;
         color: #de172a; }
+
+/*my orders*/
+.my-orders {
+  color: #7d7c7d;
+  font-size: 12px; }
+  .my-orders .my-order {
+    display: block;
+    margin-top: 0.16rem;
+    background: white;
+    padding: 0px 0.26667rem;
+    color: #7d7c7d; }
+    .my-orders .my-order.order_detail .title, .my-orders .my-order.order_detail .desc, .my-orders .my-order.order_detail .detail, .my-orders .my-order.order_detail .summary, .my-orders .my-order.order_detail .logistics {
+      padding-left: 0.26667rem;
+      padding-right: 0.26667rem; }
+    .my-orders .my-order .title {
+      height: 0.93333rem;
+      line-height: 0.93333rem;
+      display: flex;
+      justify-content: space-between; }
+      .my-orders .my-order .title .status {
+        color: #de172a; }
+    .my-orders .my-order .desc {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      color: #7d7c7d;
+      border-top: 1px solid rgba(216, 216, 216, 0.3);
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3);
+      padding: 0.26667rem 0px; }
+      .my-orders .my-order .desc > img {
+        width: 2.13333rem;
+        height: 2.13333rem;
+        border-radius: 0.13333rem; }
+      .my-orders .my-order .desc .info {
+        -ms-flex: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 0.21333rem;
+        position: relative; }
+        .my-orders .my-order .desc .info h3 {
+          font-size: 0.37333rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+          .my-orders .my-order .desc .info h3 p {
+            font-size: 12px;
+            color: rgba(125, 124, 125, 0.6);
+            padding-top: 0.05333rem; }
+        .my-orders .my-order .desc .info .num {
+          margin-left: 1px; }
+        .my-orders .my-order .desc .info .price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.37333rem;
+          position: relative;
+          color: #de172a; }
+    .my-orders .my-order .detail {
+      color: #7d7c7d;
+      padding: 0.26667rem 0px;
+      line-height: 1.5;
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
+      .my-orders .my-order .detail .addr {
+        color: rgba(125, 124, 125, 0.6);
+        padding-bottom: 0.26667rem; }
+    .my-orders .my-order .logistics {
+      color: #7d7c7d;
+      line-height: 1.5;
+      padding: 0.26667rem 0px;
+      border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
+    .my-orders .my-order .summary {
+      padding-top: 0.33333rem;
+      padding-bottom: 0.06667rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      box-sizing: border-box; }
+      .my-orders .my-order .summary span:nth-of-type(2) {
+        flex: 1;
+        margin-left: 0.4rem; }
+      .my-orders .my-order .summary span i {
+        font-style: normal;
+        color: #de172a;
+        padding-right: 0.05333rem; }
+      .my-orders .my-order .summary > button {
+        display: inline-block;
+        padding: 2px 10px;
+        font-size: 12px;
+        color: #de172a;
+        border: 1px solid #de172a;
+        border-radius: 10px;
+        margin-left: 0.13333rem; }
+        .my-orders .my-order .summary > button.btn-del {
+          border: none;
+          color: #7d7c7d; }
+          .my-orders .my-order .summary > button.btn-del img {
+            height: 0.37333rem;
+            margin-right: 0.13333rem; }
 
 /*# sourceMappingURL=my.css.map */

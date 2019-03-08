@@ -106,7 +106,7 @@ html, body {
     }
     p {
       color: $cGrey;
-      .red{
+      .red {
         color: $cRed;
       }
     }
@@ -156,7 +156,7 @@ html, body {
       box-sizing: border-box;
     }
   }
-  .jiesuan-box{
+  .jiesuan-box {
     padding: px2rem(20) px2rem(10);
     padding-bottom: 0px;
     font-size: px2rem(28);
@@ -166,22 +166,23 @@ html, body {
     align-items: flex-start;
     color: #7d7c7d;
     font-size: 12px;
-    input{
+    input {
       border: 1px solid transparent;
     }
     .label {
       display: inline-block;
-      width: px2rem(124);
       font-size: 13px;
       color: #706F70;
     }
     .pcont {
       flex: 1;
+      padding-left: px2rem(20);
       &.dateway {
         p {
           height: px2rem(40);
           display: flex;
           align-items: center;
+
           &:before {
             content: ' ';
             display: inline-block;
@@ -220,6 +221,16 @@ html, body {
   margin-top: px2rem(20);
   margin-bottom: px2rem(40);
   background: white;
+  &.buy {
+    a {
+      &.btn-dh {
+        display: none;
+      }
+      &.btn-buy {
+        display: inline-block;
+      }
+    }
+  }
   a {
     font-size: 16px;
     width: 50%;
@@ -228,6 +239,11 @@ html, body {
     text-align: center;
     color: $cGrey;
     &.btn-dh {
+      background: #de172a;
+      color: white;
+    }
+    &.btn-buy {
+      display: none;
       background: #de172a;
       color: white;
     }

@@ -194,23 +194,24 @@ body {
 
 .fix-footer {
   position: fixed;
+  bottom: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  bottom: 0px;
   width: 100%;
   height: 1.33333rem;
   background-color: white;
   box-shadow: 0px -1px 5px 0px rgba(219, 216, 216, 0.75);
   z-index: 410;
   text-align: center;
-  box-sizing: border-box;
-  padding-top: 3px; }
+  box-sizing: border-box; }
   .fix-footer a {
-    text-align: center; }
+    text-align: center;
+    padding-top: 0.02667rem; }
   .fix-footer .f-icon {
     width: 100%;
-    height: 0.61333rem; }
+    height: 0.50667rem;
+    margin-top: 0.05333rem; }
     .fix-footer .f-icon.f-home {
       background: url("../../img/common/i-home.png") center 0px no-repeat;
       -webkit-background-size: contain;
@@ -226,7 +227,7 @@ body {
     .fix-footer .f-icon.f-car {
       background: url("../../img/common/i-car.png") center 0px no-repeat;
       -webkit-background-size: contain;
-      background-size: auto 89%; }
+      background-size: contain; }
     .fix-footer .f-icon.f-my {
       background: url("../../img/common/i-my.png") center 0px no-repeat;
       -webkit-background-size: contain;

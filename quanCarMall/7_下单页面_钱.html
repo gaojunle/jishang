@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>确认订单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" type="text/css" href="./css/page/order.css"/>
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>确认订单</span>
+    </div>
+</div>
+<a href="./6_我的收货地址.html" class="add-box">
+    <div class="addr">
+        <p class="summary"><span class="name">潘梦迪</span><span class="phone">173****7937</span><span
+                class="def_addr">默认</span></p>
+        <p class="detail">北京朝阳区金台路万科公园东三环北路三环五号万科大厦B座112室</p>
+    </div>
+    <img class="i-go" src="./img/common/i-go.png" alt="">
+</a>
+<div class="info-box">
+    <div class="desc">
+        <img src="./img/order/avt-1.png" alt="">
+        <div class="info">
+            <h3>贝特阿斯BestHA耐热玻璃保鲜盒两件套 烤箱</h3>
+            <div class="price">
+                <div>单价 : <span class="f-orange">137000</span></div>
+                <div>x<span class="num">20</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="info-box">
+    <div class="desc">
+        <img src="./img/order/avt-1.png" alt="">
+        <div class="info">
+            <h3>贝特阿斯BestHA耐热玻璃保鲜盒两件套 烤箱</h3>
+            <div class="price">
+                <div>单价 : <span class="f-orange">137000</span></div>
+                <div>x<span class="num">20</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="suform" class="pay-box">
+    <div class="prow pay-way">
+        <span>支付方式 : </span>
+        <a href="#" class="on" data-paytype="weixin"><img src="./img/order/icon-weixin.png" alt=""></a>
+        <a href="#" data-paytype="alipay"><img src="./img/order/icon-zhifubao.png" alt=""></a>
+    </div>
+    <div class="prow">
+        <span class="label">送货方式 : </span>
+        <div class="pcont">送货方式：普通快递（免运费，发货后3-5日送达）</div>
+    </div>
+    <div class="prow">
+        <span class="label">送货时间 : </span>
+        <div class="pcont dateway">
+            <p class="on" data-way="0"><span>时间不限</span></p>
+            <p data-way="1"><span>周一到周五</span></p>
+            <p data-way="2"><span>周六日及公众节假日</span></p>
+        </div>
+    </div>
+    <div class="prow">
+        <span class="label">备注 : </span>
+        <div class="pcont">
+            <textarea name="bz" class="bz"></textarea>
+        </div>
+    </div>
+</form>
+<div class="buy-box clearfix">
+    <div class="brow jf-use">
+        可用积分 : <span class="js-have">11831</span>
+    </div>
+    <div class="brow jf-sum">
+        <span class="buy-price">合计 : <span class="js-need">1000积分+10元</span></span>
+        <a href="#" class="link-buy">去支付</a>
+    </div>
+</div>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="./2_首页.html">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="3_分类.html">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="4_发现.html">
+        <div class="f-icon f-find"></div>
+        <span>发现</span>
+    </a>
+    <a href="5_购物车.html" class="on">
+        <div class="f-icon f-car"></div>
+        <span>购物车</span>
+    </a>
+    <a href="4_我的.html">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<div class="pop-box js-jf-notenough">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                礼品已经成功添加到购物车， 请到购物车兑换礼品！
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-ok js-cancel">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-box pop-box-confirm">
+    <div class="pop-mask"></div>
+    <div class="pop-wraper">
+        <div class="pop-content">
+            <div class="pop-cont">
+                是否确认提交订单？
+            </div>
+            <div class="ops">
+                <a href="#" class="btn-cancel js-cancel">取消</a>
+                <a href="#" class="btn-ok js-ok">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/jquery.validate.js"></script>
+<script src="js/lib/codeCheck.js"></script>
+<script>
+    $('.dateway').on('click', 'p', function () {
+        var $this = $(this);
+        $this.addClass('on').siblings().removeClass('on');
+        //TODO 选择方式
+        console.log($this.data('way'))
+    })
+
+    $('.pop-box')
+        .on('click', '.js-cancel', function () {
+            $(this).parents('.pop-box').hide();
+            //TODO 测试
+            $('.pop-box-confirm').show();
+        })
+        .on('click', '.js-ok', function () {
+            alert('点击了OK, 提交订单')
+            $(this).parents('.pop-box').hide();
+            location.href = './7_兑换成功.html'
+        })
+
+    $('.link-buy').click(function () {
+        var diffVal = parseInt(parseInt($('.js-have').html() - $('.js-need').html()));
+        console.log(diffVal)
+        //积分不足提示
+        if (diffVal < 0) {
+            $('.js-jf-notenough').show().find('.pop-cont').html('您距离' + $('.js-need').html() + '积分还差' + Math.abs(diffVal) + '积分');
+        } else {
+            $('.pop-box-confirm').show();
+        }
+
+        return false;
+    })
+</script>
+</body>
+</html>
