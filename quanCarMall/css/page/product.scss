@@ -124,14 +124,25 @@ html, body {
         padding-bottom: 0px;
       }
     }
+    .limit_num{
+      padding-bottom: px2rem(20);
+      i{
+        font-style: normal;
+        color: $cRed;
+        padding-left: px2rem(2);
+        padding-right: px2rem(18);
+      }
+    }
     .list {
       flex: 1;
+      padding-bottom: px2rem(10);
       span {
         display: inline-block;
         border: 1px solid $cRed;
         border-radius: 20px;
         padding: 2px px2rem(20) 1px;
-        margin-left: px2rem(20);
+        margin-left: px2rem(8);
+        margin-right: px2rem(15);
         color: $cRed;
         margin-bottom: px2rem(15);
         &.on {
@@ -163,6 +174,7 @@ html, body {
   }
   .nums {
     padding: px2rem(20) px2rem(10);
+    padding-bottom: px2rem(30);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
