@@ -53,12 +53,20 @@
     <div class="summary">
         <h3>资生堂丝蓓绮炫魅滋养洗发露550ml(专柜）</h3>
         <p>商品编号 : JS122345</p>
-        <p>所需积分 : <span class="red">1495</span></p>
         <p>送货方式 : 电子券码下载</p>
+    </div>
+    <div class="activiy">
+        <div class="limit_num">
+            活动详情 : 限量<i>30</i> 剩余<i>25</i></p>
+        </div>
+        <div class="item">
+            <span>会员折扣 : </span>
+            <p class="list"><span>普卡9.0折</span><span>银卡8.0折</span><span>金卡7.0折</span><span>钻卡6.0折</span></p>
+        </div>
     </div>
     <div class="types">
         <span>颜色分类 : </span>
-        <p class="list"><span class="on">白色</span><span>红色</span><span>蓝色</span></p>
+        <p class="list js-typelist"><span class="on">白色</span><span>红色</span><span>蓝色</span></p>
     </div>
     <div class="nums">
         <span>购买数量 : </span>
@@ -135,6 +143,9 @@
         },
 
         bindEvent: function () {
+            $('.js-typelist').on('click', 'span', function () {
+                $(this).addClass('on').siblings().removeClass('on')
+            })
             $('.pop-box').on('click', '.js-ok', function () {
                 $(this).parents('.pop-box').hide();
             })
@@ -149,7 +160,7 @@
                 $this.addClass('on').siblings().removeClass('on');
                 if ($this.data('way') == 0) {
                     $opBox.removeClass('buy')
-                }else{
+                } else {
                     $opBox.addClass('buy')
                 }
             })

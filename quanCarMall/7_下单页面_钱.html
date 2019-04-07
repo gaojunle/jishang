@@ -30,7 +30,7 @@
         <div class="info">
             <h3>贝特阿斯BestHA耐热玻璃保鲜盒两件套 烤箱</h3>
             <div class="price">
-                <div>单价 : <span class="f-orange">137000</span></div>
+                <div><span class="f-orange">500积分＋10元／10元</span></div>
                 <div>x<span class="num">20</span></div>
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="info">
             <h3>贝特阿斯BestHA耐热玻璃保鲜盒两件套 烤箱</h3>
             <div class="price">
-                <div>单价 : <span class="f-orange">137000</span></div>
+                <div><span class="f-orange">500积分＋10元／10元</span></div>
                 <div>x<span class="num">20</span></div>
             </div>
         </div>
@@ -136,6 +136,13 @@
 <script src="js/lib/jquery.validate.js"></script>
 <script src="js/lib/codeCheck.js"></script>
 <script>
+    //支付方式切换
+    $('.pay-way').on('click', 'a', function () {
+        var $this = $(this);
+        $this.addClass('on').siblings().removeClass('on');
+        console.log($this.data('paytype'))
+    })
+
     $('.dateway').on('click', 'p', function () {
         var $this = $(this);
         $this.addClass('on').siblings().removeClass('on');

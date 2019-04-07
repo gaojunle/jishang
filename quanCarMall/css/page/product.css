@@ -348,7 +348,7 @@ body {
         width: 0.82667rem; }
 
 html, body {
-  margin-bottom: 1.6rem; }
+  margin-bottom: 1.06667rem; }
 
 .banner-box {
   position: relative; }
@@ -428,6 +428,38 @@ html, body {
       color: #7d7c7d; }
       .p-info .summary p .red {
         color: #de172a; }
+  .p-info .activiy {
+    padding: 0.26667rem 0.13333rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.06667rem;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3); }
+    .p-info .activiy .item {
+      display: flex;
+      padding-bottom: 0.26667rem; }
+      .p-info .activiy .item:nth-last-of-type(1) {
+        padding-bottom: 0px; }
+    .p-info .activiy .limit_num {
+      padding-bottom: 0.26667rem; }
+      .p-info .activiy .limit_num i {
+        font-style: normal;
+        color: #de172a;
+        padding-left: 0.02667rem;
+        padding-right: 0.24rem; }
+    .p-info .activiy .list {
+      flex: 1;
+      padding-bottom: 0.13333rem; }
+      .p-info .activiy .list span {
+        display: inline-block;
+        border: 1px solid #de172a;
+        border-radius: 20px;
+        padding: 2px 0.26667rem 1px;
+        margin-left: 0.10667rem;
+        margin-right: 0.2rem;
+        color: #de172a;
+        margin-bottom: 0.2rem; }
+        .p-info .activiy .list span.on {
+          color: white;
+          background: #de172a; }
   .p-info .types {
     padding: 0.26667rem 0.13333rem;
     padding-top: 0.4rem;
@@ -445,6 +477,7 @@ html, body {
         background: #de172a; }
   .p-info .nums {
     padding: 0.26667rem 0.13333rem;
+    padding-bottom: 0.4rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
