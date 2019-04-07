@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>挑选贺卡</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/lib/swiper-3.4.0.min.css">
+    <link rel="stylesheet" href="css/page/wishes.css">
+</head>
+<body>
+<div class="wishes-content">
+    <section class="banner-box">
+        <div class="banner-swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide" data-txt="1感谢你陪我闯过的风雨，一份心意，让我继续陪你披荆斩棘"><a href="javascript:;"><img src="./img/wishes/avt9.jpg"/></a></li>
+                <li class="swiper-slide" data-txt="2感谢你陪我闯过的风雨，一份心意，让我继续陪你披荆斩棘"><a href="javascript:;"><img src="./img/wishes/wishes_1.png"/></a></li>
+                <li class="swiper-slide" data-txt="3感谢你陪我闯过的风雨，一份心意，让我继续陪你披荆斩棘"><a href="javascript:;"><img src="./img/wishes/wishes_1.png"/></a></li>
+                <li class="swiper-slide" data-txt="4感谢你陪我闯过的风雨，一份心意，让我继续陪你披荆斩棘"><a href="javascript:;"><img src="./img/wishes/wishes_1.png"/></a></li>
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <div class="wishes">
+        <textarea class="wish-txt" cols="30" rows="10"></textarea>
+        <div class="txt-num">
+            <span>0</span>/28
+        </div>
+    </div>
+    <div class="btn-box">
+        <a class="btn btn-send-friend" href="#">送给好友</a>
+    </div>
+    <div class="btn-box">
+        <p>以下是测试使用链接，忽略样式</p>
+        <p><a class="" href="./2_送出礼物.html">2_送出礼物</a></p>
+        <p><a class="" href="./4_我的礼单.html">4_我的礼单</a></p>
+        <p><a class="" href="./5_全部订单.html">5_全部订单</a></p>
+    </div>
+    <div class="pop-box">
+        <div class="pop-mask"></div>
+
+        <div class="pcont">
+            <a href="./3_打开礼物.html">发送给微信好友</a>
+            <a href="#" class="btn-share-pic">生成分享图片</a>
+            <a href="#" class="btn-cancel">取消</a>
+        </div>
+    </div>
+    <div class="share-box">
+        <div class="share-cont">
+            <img class="hdj" src="./img/wishes/bg_hdj.png" alt="">
+            <div class="avt-box">
+                <img src="./img/wishes/1.png" alt="" class="avt">
+                <div class="name">高军</div>
+            </div>
+            <div class="share-desc">
+                <div class="title">为您送来一份礼物，赶快收下吧！</div>
+                <img src="" alt="">
+                <div class="txt"></div>
+            </div>
+            <div class="srcode">
+                <img src="./img/wishes/srcode.png" alt="">
+                <p>长按打开小程序抢礼物</p>
+            </div>
+        </div>
+        <div class="canvas-box"></div>
+    </div>
+</div>
+<!--固定页尾-->
+<footer class="fix-footer">
+    <a href="#">
+        <div class="f-icon f-home"></div>
+        <span>首页</span>
+    </a>
+    <a href="#">
+        <div class="f-icon f-types"></div>
+        <span>分类</span>
+    </a>
+    <a href="#">
+        <div class="f-icon f-find"></div>
+        <span>送礼</span>
+    </a>
+    <a href="#" class="on">
+        <div class="f-icon f-my"></div>
+        <span>我的</span>
+    </a>
+</footer>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/lib/html2canvas.min.js"></script>
+<script src="js/lib/canvas2image.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+            this.initSwiper();
+        },
+
+        bindEvent: function () {
+            $('.wishes')
+                .on('input', '.wish-txt', function () {
+                    var $this = $(this),
+                        len = $this.val().length;
+                    if (len <= 28) {
+                        $('.txt-num').find('span').html(len)
+                    } else {
+                        $this.val($this.val().substring(0, 28))
+                    }
+                });
+
+            $('.wish-txt').trigger('input');
+
+            $('.btn-send-friend').click(function () {
+                $('.pop-box').addClass('show')
+            })
+            $('.btn-cancel').click(function () {
+                $('.pop-box').removeClass('show')
+            })
+
+            this.bindSharePic();
+        },
+
+        bindSharePic: function () {
+            $('.btn-share-pic').click(function () {
+                $('.share-box').addClass('on');
+                $('.pop-box').removeClass('show')
+                convert2canvas().then(function () {
+                    $('.share-cont').addClass('on')
+                });
+                /*html2canvas($('.share-cont')[0], {
+                    onrendered: function (canvas) {
+                        var url = canvas.toDataURL();//图片地址
+                        //console.log(url);
+                        var $img = $('<img src="' + url + '" style="width: 100%;height: 100%">');
+                        $img.click(function () {
+                            $('.share-box').removeClass('on');
+                        })
+                        $('.canvas-box').empty().append($img);
+                    },
+                    width: $('.canvas-box').width(),
+                    height: $('.canvas-box').height()
+                });*/
+            })
+
+            function convert2canvas() {
+                var shareContent = $('.share-cont')[0];
+                var width = shareContent.offsetWidth; //获取dom 宽度
+                var height = shareContent.offsetHeight; //获取dom 高度
+                var canvas = document.createElement("canvas"); //创建一个canvas节点
+                var scale = 2; //定义任意放大倍数 支持小数
+                canvas.width = width * scale; //定义canvas 宽度 * 缩放
+                canvas.height = height * scale; //定义canvas高度 *缩放
+                canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+                var opts = {
+                    scale: scale, // 添加的scale 参数
+                    canvas: canvas, //自定义 canvas
+                    // logging: true, //日志开关，便于查看html2canvas的内部执行流程
+                    width: width, //dom 原始宽度
+                    height: height,
+                    useCORS: true // 【重要】开启跨域配置
+                };
+
+                return html2canvas(shareContent, opts).then(function (canvas) {
+                    var context = canvas.getContext('2d');
+                    // 【重要】关闭抗锯齿
+                    context.mozImageSmoothingEnabled = false;
+                    context.webkitImageSmoothingEnabled = false;
+                    context.msImageSmoothingEnabled = false;
+                    context.imageSmoothingEnabled = false;
+
+                    // 【重要】默认转化的格式为png,也可设置为其他格式
+                    var $img = $(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+
+                    $img.css({
+                        "width": canvas.width / 2 + "px",
+                        "height": canvas.height / 2 + "px",
+                    }).click(function () {
+                        $('.share-box').removeClass('on');
+                        $('.share-cont').removeClass('on')
+                    })
+
+                    $('.canvas-box').empty().append($img);
+                });
+            }
+
+        },
+        initSwiper: function () {
+            var swiperBanner = new Swiper('.banner-swiper', {
+                spaceBetween: 0,
+                centeredSlides: true,
+                //autoplay: 3000,
+                loop: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                onSlideChangeEnd: function (swiper) {
+                    var $curSlide = $('.swiper-slide').eq(swiper.activeIndex);
+                    var txt = $curSlide.data('txt');
+                    $('.wish-txt').val(txt);
+                    $('.share-desc').find('img').attr('src', $curSlide.find('img').attr('src'))
+                    $('.share-desc').find('.txt').html(txt)
+                }
+            });
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

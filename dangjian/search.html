@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>党建文库</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/page/search.css">
+</head>
+<body>
+<div class="header">
+    <div class="main-nav">
+        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+        <span>党建文库</span>
+        <span></span>
+    </div>
+</div>
+<div class="search-box">
+    <input type="text" class="ipt-search" placeholder="" value="三严三实">
+    <img class="search-icon" src="./img/common/icon-search-gray.png" alt="">
+</div>
+<div class="no-result">
+    <img src="./img/common/nosearch.png" alt="">
+</div>
+<div class="list-box">
+    <div class="item">
+        <img src="./img/common/word.png" alt="">
+        <div class="info">
+            <div class="title">突出问题导向践行“<span class="search-on">三严三实</span>”</div>
+            <div class="desc">
+                <span>上传者 : 匿名</span>
+                <span>浏览量 : 536</span>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="./img/common/excel.png" alt="">
+        <div class="info">
+            <div class="title">突出问题导向践行“<span class="search-on">三严三实</span>”</div>
+            <div class="desc">
+                <span>上传者 : 匿名</span>
+                <span>浏览量 : 536</span>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="./img/common/picture.png" alt="">
+        <div class="info">
+            <div class="title">突出问题导向践行“<span class="search-on">三严三实</span>”</div>
+            <div class="desc">
+                <span>上传者 : 匿名</span>
+                <span>浏览量 : 536</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/swiper.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+            this.initSwiper();
+        },
+
+        bindEvent: function () {
+            $('.search-box input').on('input', function () {
+                console.log($(this).val())
+            })
+        },
+        initSwiper: function () {
+            var swiperBanner = new Swiper('.banner-swiper', {
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: 3000,
+                //loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

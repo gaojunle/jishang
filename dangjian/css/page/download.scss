@@ -1,0 +1,125 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+
+body {
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+}
+
+.download-cont {
+  padding-bottom: px2rem(100);
+  .page {
+    img {
+      width: 100%;
+    }
+    .pagenum {
+      text-align: right;
+      color: rgb(101, 101, 101);
+
+      padding-right: px2rem(20);
+    }
+  }
+  .see-more {
+    display: block;
+    margin: px2rem(20);
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(231, 71, 68);
+    height: px2rem(81);
+    line-height: px2rem(81);
+  }
+}
+
+.fixed-bottom {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: white;
+  box-shadow: 0px -2px 5px 0px rgba(152, 152, 152, 0.2);
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    color: rgb(231, 71, 68);
+    padding: px2rem(25) 0px;
+
+    img {
+      height: px2rem(36);
+      margin-right: px2rem(22);
+    }
+    &.btn-download {
+      background: rgb(231, 71, 68);
+      color: white;
+    }
+  }
+}
+
+.download-detail {
+  padding: px2rem(22);
+  .info {
+    border-bottom: 1px dashed rgba(0, 0, 0, .4);
+    padding-bottom: px2rem(20);
+    h2 {
+      color: $cBlack;
+      font-size: 16px;
+      padding: px2rem(16) 0px;
+      a {
+        color: #0177d5;
+        font-size: 16px;
+        margin-left: px2rem(10);
+      }
+    }
+    .item {
+      padding-bottom: px2rem(10);
+
+      span {
+        font-size: 14px;
+        color: #656565;
+        margin-right: px2rem(30);
+      }
+    }
+
+    .icon-jieshi {
+      width: px2rem(30);
+      margin-top: - px2rem(8);
+    }
+  }
+  .attention {
+    margin-right: px2rem(30);
+    line-height: 2;
+    h3 {
+      color: $cBlack;
+    }
+    p {
+      text-align: justify;
+      &.strong {
+        color: $cBlack;
+      }
+    }
+    a {
+      color: #0177d5;
+      margin: px2rem(0) px2rem(1);
+    }
+  }
+  .btn-download {
+    display: block;
+    margin: px2rem(20);
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(231, 71, 68);
+    height: px2rem(81);
+    line-height: px2rem(81);
+    margin-top: px2rem(150);
+  }
+}

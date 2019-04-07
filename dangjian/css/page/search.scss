@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+@import "../lib/swiper.min.css";
+
+body {
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+}
+
+.search-box {
+  position: relative;
+  padding: px2rem(25) px2rem(30);
+  .ipt-search {
+    width: 100%;
+    height: px2rem(60);
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    padding-left: px2rem(20);
+    font-size: 14px;
+    background-color: rgb(238, 238, 238);
+    box-sizing: border-box;
+    color: $cBlack;
+  }
+  .search-icon {
+    position: absolute;
+    right: px2rem(42);
+    top: px2rem(36);
+    width: px2rem(35);
+    height: px2rem(35);
+  }
+}
+
+.no-result {
+  text-align: center;
+  padding-top: px2rem(170);
+  img {
+    width: px2rem(318);
+  }
+}
