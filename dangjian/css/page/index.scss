@@ -11,7 +11,7 @@ body {
 
 .header {
   position: relative;
-  .main-nav{
+  .main-nav {
     background: transparent;
     color: white;
     border-bottom: none;
@@ -123,8 +123,8 @@ body {
     position: relative;
     padding-right: px2rem(20);
     .menu {
-      padding: px2rem(20);
-      &.on {
+      padding: px2rem(16) px2rem(30);
+      &.active {
         position: relative;
         font-size: 16px;
         color: rgb(40, 40, 40);
@@ -133,7 +133,7 @@ body {
           content: ' ';
           background-color: rgb(231, 71, 68);
           width: px2rem(36);
-          height: px2rem(7);
+          height: px2rem(5);
           border-radius: 7px;
           position: absolute;
           bottom: 0px;
@@ -169,6 +169,23 @@ body {
   }
 }
 
+#topNav {
+  width: 100%;
+  overflow: hidden;
+  font: 16px/32px hiragino sans gb, microsoft yahei, simsun;
+  border-bottom: 1px solid #f8f8f8;
+  .swiper-slide {
+    letter-spacing: 2px;
+    text-align: center;
+    span {
+      transition: all .3s ease;
+      display: block;
+    }
+    &.active span {
+      transform: scale(1.1);
+    }
+  }
+}
 
 .cate-more {
   position: fixed;
