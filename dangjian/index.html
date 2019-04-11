@@ -162,6 +162,7 @@
         },
         initData: function () {
             this.initSwiper();
+            this.initScrollPage();
         },
 
         bindEvent: function () {
@@ -197,6 +198,52 @@
                     el: '.swiper-pagination',
                 },
             });
+        },
+        initScrollPage: function () {
+            var that = this,
+                $listBox = $('.list-box');
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    if (!$listBox.loading) {
+                        $listBox.append('<div class="loading-box"><img src="./img/common/loading.gif" alt=""></div>')
+                        $listBox.loading = true;
+                        that.getData(function (hasData) {
+                            //没有更多数据
+                            if (!hasData) {
+                                $listBox.append('<div class="nomore-box">无更多数据</div>')
+                            } else {
+                                $listBox.loading = false;
+                            }
+                            $listBox.find('.loading-box').remove();
+                        });
+                    }
+                }
+            });
+        },
+        getData: function (callback) {
+            //模拟加载数据
+            setTimeout(function () {
+                if ($('.list-box .item').length > 10) {
+                    //模拟无数据
+                    callback(false)
+                } else {
+                    //模拟有数据
+                    $('.list-box').append(`
+                    <a href="./文档详情.html" class="item">
+                        <img src="./img/common/picture.png" alt="">
+                        <div class="info">
+                            <div class="title">党委...</div>
+                            <div class="desc">
+                                <span>上传者 : 匿名</span>
+                                <span>浏览量 : 536</span>
+                            </div>
+                        </div>
+                    </a>
+                `)
+                    callback(true)
+                }
+            })
         }
     };
     App.init();

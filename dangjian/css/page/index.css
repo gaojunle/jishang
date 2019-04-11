@@ -48,6 +48,17 @@ body {
       .list-box .item .info .desc span {
         margin-right: 0.21333rem; }
 
+.loading-box {
+  text-align: center;
+  padding: 0.26667rem; }
+  .loading-box img {
+    width: 0.66667rem; }
+
+.nomore-box {
+  text-align: center;
+  font-size: 0.32rem;
+  padding: 0.26667rem; }
+
 .header {
   position: relative;
   z-index: 401; }
