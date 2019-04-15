@@ -238,7 +238,8 @@ body {
       background-position: 98% 8px;
       background-size: 0.44rem 0.45333rem;
       padding-left: 0.26667rem;
-      font-size: 14px; }
+      font-size: 14px;
+      padding-right: 0.8rem; }
     .header .search-box ::-webkit-input-placeholder {
       /* WebKit browsers */
       color: white; }
@@ -251,6 +252,12 @@ body {
     .header .search-box :-ms-input-placeholder {
       /* Internet Explorer 10+ */
       color: white; }
+    .header .search-box .btn-submit {
+      position: absolute;
+      right: 0.46667rem;
+      height: 0.8rem;
+      width: 0.8rem;
+      opacity: 0; }
 
 .cate {
   display: flex;
@@ -269,48 +276,63 @@ body {
     .cate .item p {
       padding-top: 0.26667rem; }
 
-.menu-box .menu_1 {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  padding-right: 0.26667rem; }
-  .menu-box .menu_1 .menu {
-    padding: 0.26667rem; }
-    .menu-box .menu_1 .menu.on {
-      position: relative;
-      font-size: 16px;
-      color: #282828;
-      font-weight: bold; }
-      .menu-box .menu_1 .menu.on:after {
-        content: ' ';
-        background-color: #e74744;
-        width: 0.48rem;
-        height: 0.09333rem;
-        border-radius: 7px;
-        position: absolute;
-        bottom: 0px;
-        left: 50%;
-        margin-left: -0.24rem; }
-  .menu-box .menu_1 .icon-more {
+.menu-box {
+  position: relative; }
+  .menu-box .menu_1 {
+    height: 1.06667rem;
+    padding-right: 0.4rem; }
+    .menu-box .menu_1 .swiper-slide {
+      width: auto;
+      padding: 0px 0.26667rem;
+      box-sizing: border-box;
+      height: 100%;
+      padding-top: 0.26667rem; }
+      .menu-box .menu_1 .swiper-slide > span {
+        transition: all .3s ease;
+        display: block; }
+      .menu-box .menu_1 .swiper-slide.active {
+        position: relative;
+        font-size: 16px;
+        color: #282828;
+        font-weight: bold; }
+        .menu-box .menu_1 .swiper-slide.active:after {
+          content: ' ';
+          background-color: #e74744;
+          width: 0.48rem;
+          height: 0.06667rem;
+          border-radius: 7px;
+          position: absolute;
+          bottom: 0px;
+          left: 50%;
+          margin-left: -0.24rem; }
+  .menu-box .more-box {
+    height: 1.06667rem;
+    background: white;
     position: absolute;
-    right: 0.26667rem;
-    top: 0.4rem;
-    width: 0.34667rem; }
-.menu-box .menu_2 {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  padding-right: 0.26667rem; }
-  .menu-box .menu_2 .menu {
-    margin: 0.26667rem;
-    padding: 0.02667rem 0.13333rem;
-    border-radius: 0.08rem;
-    background: #f4f4f4; }
-    .menu-box .menu_2 .menu.on {
-      background: #e74744;
-      color: white; }
+    right: 0rem;
+    top: 0rem;
+    width: 0.46667rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; }
+    .menu-box .more-box .icon-more {
+      width: 0.34667rem; }
+  .menu-box .sub-menu {
+    height: 1.06667rem;
+    overflow-y: hidden; }
+    .menu-box .sub-menu .menu_2 {
+      position: relative;
+      padding-right: 0.26667rem; }
+      .menu-box .sub-menu .menu_2 .swiper-slide {
+        width: auto;
+        margin: 0.26667rem;
+        padding: 0.02667rem 0.13333rem;
+        border-radius: 0.08rem;
+        background: #f4f4f4; }
+        .menu-box .sub-menu .menu_2 .swiper-slide.active {
+          background: #e74744;
+          color: white; }
 
 .cate-more {
   position: fixed;
@@ -318,7 +340,7 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 1000;
   display: none;
   background: rgba(0, 0, 0, 0.4); }
   .cate-more.show {
@@ -358,10 +380,10 @@ body {
         padding: 0.13333rem;
         margin-bottom: 0.26667rem;
         text-align: center; }
-        .cate-more .cate-cont .list span.on {
-          color: #e74744; }
         .cate-more .cate-cont .list span.strong {
           color: #282828; }
+        .cate-more .cate-cont .list span.on {
+          color: #e74744; }
       .cate-more .cate-cont .list .zw {
         display: block;
         width: 1.86667rem;

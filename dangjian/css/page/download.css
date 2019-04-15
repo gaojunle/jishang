@@ -219,11 +219,13 @@ body {
     text-align: center;
     color: white;
     font-size: 16px;
-    color: #e74744;
+    color: #282828;
     padding: 0.33333rem 0px; }
     .fixed-bottom a img {
       height: 0.48rem;
       margin-right: 0.29333rem; }
+    .fixed-bottom a.on {
+      color: #e74744; }
     .fixed-bottom a.btn-download {
       background: #e74744;
       color: white; }
@@ -234,9 +236,10 @@ body {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
     padding-bottom: 0.26667rem; }
     .download-detail .info h2 {
-      color: #282828;
+      color: #000;
       font-size: 16px;
-      padding: 0.21333rem 0px; }
+      padding: 0.33333rem 0px;
+      font-weight: bold; }
       .download-detail .info h2 a {
         color: #0177d5;
         font-size: 16px;
@@ -254,11 +257,14 @@ body {
     margin-right: 0.4rem;
     line-height: 2; }
     .download-detail .attention h3 {
-      color: #282828; }
+      color: #000;
+      padding: 0.4rem 0px 0.13333rem;
+      font-weight: bold; }
     .download-detail .attention p {
       text-align: justify; }
       .download-detail .attention p.strong {
-        color: #282828; }
+        color: #000;
+        font-weight: bold; }
     .download-detail .attention a {
       color: #0177d5;
       margin: 0rem 0.01333rem; }

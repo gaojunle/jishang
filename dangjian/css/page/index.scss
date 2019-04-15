@@ -11,7 +11,7 @@ body {
 
 .header {
   position: relative;
-  .main-nav{
+  .main-nav {
     background: transparent;
     color: white;
     border-bottom: none;
@@ -71,6 +71,7 @@ body {
       background-size: px2rem(33) px2rem(34);
       padding-left: px2rem(20);
       font-size: 14px;
+      padding-right: px2rem(60);
     }
     ::-webkit-input-placeholder { /* WebKit browsers */
       color: white;
@@ -86,6 +87,13 @@ body {
 
     :-ms-input-placeholder { /* Internet Explorer 10+ */
       color: white
+    }
+    .btn-submit {
+      position: absolute;
+      right: px2rem(35);
+      height: px2rem(60);
+      width: px2rem(60);
+      opacity: 0;
     }
   }
 }
@@ -116,15 +124,22 @@ body {
 }
 
 .menu-box {
+  position: relative;
+
   .menu_1 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    padding-right: px2rem(20);
-    .menu {
-      padding: px2rem(20);
-      &.on {
+    height: px2rem(80);
+    padding-right: px2rem(30);
+    .swiper-slide {
+      width: auto;
+      padding: 0px px2rem(20);
+      box-sizing: border-box;
+      height: 100%;
+      padding-top: px2rem(20);
+      > span {
+        transition: all .3s ease;
+        display: block;
+      }
+      &.active {
         position: relative;
         font-size: 16px;
         color: rgb(40, 40, 40);
@@ -133,7 +148,7 @@ body {
           content: ' ';
           background-color: rgb(231, 71, 68);
           width: px2rem(36);
-          height: px2rem(7);
+          height: px2rem(5);
           border-radius: 7px;
           position: absolute;
           bottom: 0px;
@@ -142,33 +157,42 @@ body {
         }
       }
     }
+  }
+  .more-box {
+    height: px2rem(80);
+    background: white;
+    position: absolute;
+    right: px2rem(0);
+    top: px2rem(0);
+    width: px2rem(35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
     .icon-more {
-      position: absolute;
-      right: px2rem(20);
-      top: px2rem(30);
       width: px2rem(26);
     }
   }
-
-  .menu_2 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    padding-right: px2rem(20);
-    .menu {
-      margin: px2rem(20);
-      padding: px2rem(2) px2rem(10);
-      border-radius: px2rem(6);
-      background: #f4f4f4;
-      &.on {
-        background: rgb(231, 71, 68);
-        color: white;
+  .sub-menu {
+    height: px2rem(80);
+    overflow-y: hidden;
+    .menu_2 {
+      position: relative;
+      padding-right: px2rem(20);
+      .swiper-slide {
+        width: auto;
+        margin: px2rem(20);
+        padding: px2rem(2) px2rem(10);
+        border-radius: px2rem(6);
+        background: #f4f4f4;
+        &.active {
+          background: rgb(231, 71, 68);
+          color: white;
+        }
       }
     }
   }
 }
-
 
 .cate-more {
   position: fixed;
@@ -176,7 +200,7 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 1000;
   display: none;
   background: rgba(0, 0, 0, .4);
   &.show {
@@ -220,11 +244,12 @@ body {
         padding: px2rem(10);
         margin-bottom: px2rem(20);
         text-align: center;
-        &.on {
-          color: rgb(231, 71, 68);
-        }
+
         &.strong {
           color: rgb(40, 40, 40);;
+        }
+        &.on {
+          color: rgb(231, 71, 68);
         }
       }
       .zw {
