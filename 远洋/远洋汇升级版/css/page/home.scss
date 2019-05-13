@@ -1,0 +1,192 @@
+@chartset 'utf-8';
+@import "../lib/flexible";
+@import "../lib/common";
+@import "../lib/artDialog.css";
+$cBlack: rgb(42, 42, 42);
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+}
+
+.banner-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: px2rem(380);
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: px2rem(380);
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+    opacity: .5;
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}
+
+.container {
+  padding-bottom: px2rem(120);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: px2rem(20) px2rem(30);
+  padding: px2rem(20) px2rem(30);
+  background: url("../../img/index/ebg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+
+  .btn_scode {
+    width: px2rem(116);
+    height: px2rem(116);
+  }
+  .default, .actived {
+    flex: 1;
+    height: px2rem(116);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    h3 {
+      font-size: 19px;
+      color: rgb(42, 42, 42);
+      line-height: 1;
+    }
+    .btn_active {
+      font-size: 10px;
+      color: white;
+      background: rgb(42, 42, 42);
+      padding: 4px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    p {
+      line-height: 1;
+      padding-top: px2rem(12);
+    }
+  }
+  .actived {
+    display: none;
+  }
+  &.activated {
+    .default {
+      display: none;
+    }
+
+    .actived {
+      display: flex;
+    }
+  }
+}
+
+.split {
+  border-bottom: 1px solid rgba(42, 42, 42, 0.15);
+}
+
+.link-box {
+  .items {
+    padding: 0px px2rem(58);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &:nth-of-type(2) {
+      background: url("../../img/index/sp1.png") 0px 0px no-repeat;
+      background-size: 100% 1px;
+    }
+    .split {
+      width: 1px;
+      height: px2rem(208);
+    }
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: $cBlack;
+      font-size: px2rem(26);
+      font-weight: bold;
+      padding: px2rem(65) 0px;
+
+      img {
+        height: px2rem(66);
+        margin-bottom: px2rem(30);
+      }
+    }
+  }
+}
+
+.ui-dialog-body {
+  .icon_close {
+    width: px2rem(44);
+    position: absolute;
+    right: 6px;
+    top: 6px;
+  }
+  .scode-avt {
+    width: px2rem(400);
+  }
+  .pop-cont {
+    position: relative;
+    padding: px2rem(0) px2rem(80);
+    height: px2rem(680);
+    line-height: px2rem(680);
+  }
+}
+
+.footer {
+  max-width: 500px;
+  height: px2rem(100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $cBlack;
+  padding: 5px px2rem(100);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  a {
+    padding-top: px2rem(70);
+    color: white;
+    font-size: px2rem(20);
+    text-align: center;
+    min-width: px2rem(120);
+    display: inline-block;
+    &:nth-of-type(1) {
+      background: url("../../img/index/h_1.png") center px2rem(10) no-repeat;
+      background-size: px2rem(50) px2rem(50);
+      &.on {
+        background: url("../../img/index/h_1_on.png") center px2rem(10) no-repeat;
+        background-size: px2rem(50) px2rem(50);
+      }
+    }
+    &:nth-of-type(2) {
+      background: url("../../img/index/h_2.png") center px2rem(10) no-repeat;
+      background-size: px2rem(50) px2rem(50);
+      &.on {
+        background: url("../../img/index/h_2_on.png") center px2rem(10) no-repeat;
+        background-size: px2rem(50) px2rem(50);
+      }
+    }
+    &:nth-of-type(3) {
+      background: url("../../img/index/h_3.png") center px2rem(10) no-repeat;
+      background-size: px2rem(50) px2rem(50);
+      &.on {
+        background: url("../../img/index/h_3_on.png") center px2rem(10) no-repeat;
+        background-size: px2rem(50) px2rem(50);
+      }
+    }
+  }
+}
