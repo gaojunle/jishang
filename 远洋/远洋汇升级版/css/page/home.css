@@ -137,7 +137,8 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    align-items: flex-start; }
+    align-items: flex-start;
+    color: #2a2a2a; }
     .info .default h3, .info .actived h3 {
       font-size: 19px;
       color: #2a2a2a;
@@ -162,30 +163,38 @@ body {
 .split {
   border-bottom: 1px solid rgba(42, 42, 42, 0.15); }
 
-.link-box .items {
-  padding: 0px 0.77333rem;
+.link-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; }
-  .link-box .items:nth-of-type(2) {
-    background: url("../../img/index/sp1.png") 0px 0px no-repeat;
-    background-size: 100% 1px; }
-  .link-box .items .split {
-    width: 1px;
-    height: 2.77333rem; }
-  .link-box .items .item {
+  flex-wrap: wrap;
+  box-sizing: border-box; }
+  .link-box > div {
+    width: 100%;
+    box-sizing: border-box; }
+  .link-box .items {
+    padding: 0px 0.77333rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: #2a2a2a;
-    font-size: 0.34667rem;
-    font-weight: bold;
-    padding: 0.86667rem 0px; }
-    .link-box .items .item img {
-      height: 0.88rem;
-      margin-bottom: 0.4rem; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .link-box .items:nth-of-type(2) {
+      background: url("../../img/index/sp1.png") 0px 0px no-repeat;
+      background-size: 100% 1px; }
+    .link-box .items .split {
+      width: 1px;
+      height: 2.77333rem; }
+    .link-box .items .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #2a2a2a;
+      font-size: 0.34667rem;
+      font-weight: bold;
+      padding: 0.86667rem 0px; }
+      .link-box .items .item img {
+        height: 0.88rem;
+        margin-bottom: 0.4rem; }
 
 .ui-dialog-body .icon_close {
   width: 0.58667rem;
@@ -201,42 +210,43 @@ body {
   line-height: 9.06667rem; }
 
 .footer {
-  max-width: 500px;
-  height: 1.33333rem;
+  height: 1.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #2a2a2a;
-  padding: 5px 1.33333rem;
+  padding: 0px 1.33333rem;
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
   box-sizing: border-box; }
   .footer a {
-    padding-top: 0.93333rem;
+    padding-top: 0.88rem;
     color: white;
     font-size: 0.26667rem;
     text-align: center;
     min-width: 1.6rem;
-    display: inline-block; }
+    display: block;
+    height: 100%;
+    box-sizing: border-box; }
     .footer a:nth-of-type(1) {
-      background: url("../../img/index/h_1.png") center 0.13333rem no-repeat;
+      background: url("../../img/index/h_1.png") center 0.18667rem no-repeat;
       background-size: 0.66667rem 0.66667rem; }
       .footer a:nth-of-type(1).on {
-        background: url("../../img/index/h_1_on.png") center 0.13333rem no-repeat;
+        background: url("../../img/index/h_1_on.png") center 0.18667rem no-repeat;
         background-size: 0.66667rem 0.66667rem; }
     .footer a:nth-of-type(2) {
-      background: url("../../img/index/h_2.png") center 0.13333rem no-repeat;
+      background: url("../../img/index/h_2.png") center 0.18667rem no-repeat;
       background-size: 0.66667rem 0.66667rem; }
       .footer a:nth-of-type(2).on {
-        background: url("../../img/index/h_2_on.png") center 0.13333rem no-repeat;
+        background: url("../../img/index/h_2_on.png") center 0.18667rem no-repeat;
         background-size: 0.66667rem 0.66667rem; }
     .footer a:nth-of-type(3) {
-      background: url("../../img/index/h_3.png") center 0.13333rem no-repeat;
+      background: url("../../img/index/h_3.png") center 0.18667rem no-repeat;
       background-size: 0.66667rem 0.66667rem; }
       .footer a:nth-of-type(3).on {
-        background: url("../../img/index/h_3_on.png") center 0.13333rem no-repeat;
+        background: url("../../img/index/h_3_on.png") center 0.2rem no-repeat;
         background-size: 0.66667rem 0.66667rem; }
 
 /*# sourceMappingURL=home.css.map */

@@ -30,48 +30,50 @@
             <h3>程XX</h3>
             <a class="btn_active" href="javascript:;">立即激活</a>
         </div>
-        <div class="actived">
+        <a href="#" class="actived">
             <h3>程XX</h3>
             <div>
                 <p>员工</p>
                 <p>远洋集团 • 北方事业部客户服务及产业发展中心 </p>
             </div>
-        </div>
+        </a>
         <img class="btn_scode" src="./img/index/scode.png" alt="">
     </div>
     <div class="split"></div>
     <div class="link-box">
-        <div class="items">
-            <a href="#" class="item">
-                <img src="./img/index/m_1.png" alt="">
-                <span>专属权益</span>
-            </a>
-            <img class="split" src="./img/index/sp2.png" alt="">
-            <a href="#" class="item">
-                <img src="./img/index/m_2.png" alt="">
-                <span>社群活动</span>
-            </a>
-            <img class="split" src="./img/index/sp2.png" alt="">
-            <a href="#" class="item">
-                <img src="./img/index/m_3.png" alt="">
-                <span>生活服务</span>
-            </a>
-        </div>
-        <div class="items">
-            <a href="#" class="item">
-                <img src="./img/index/m_4.png" alt="">
-                <span>经营项目</span>
-            </a>
-            <img class="split" src="./img/index/sp2.png" alt="">
-            <a href="#" class="item">
-                <img src="./img/index/m_5.png" alt="">
-                <span>远洋品牌</span>
-            </a>
-            <img class="split" src="./img/index/sp2.png" alt="">
-            <a href="#" class="item">
-                <img src="./img/index/m_6.png" alt="">
-                <span>问卷调研</span>
-            </a>
+        <div>
+            <div class="items">
+                <a href="#" class="item">
+                    <img src="./img/index/m_1.png" alt="">
+                    <span>专属权益</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_2.png" alt="">
+                    <span>社群活动</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_3.png" alt="">
+                    <span>生活服务</span>
+                </a>
+            </div>
+            <div class="items">
+                <a href="#" class="item">
+                    <img src="./img/index/m_4.png" alt="">
+                    <span>经营项目</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_5.png" alt="">
+                    <span>远洋品牌</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_6.png" alt="">
+                    <span>问卷调研</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -88,6 +90,8 @@
         init: function () {
             this.initData();
             this.bindEvent();
+            this.calcH();
+            $(window).on('resize', this.calcH)
         },
         bindEvent: function () {
             //TODO 测试使用，info的div上加 activated 类名表示激活
@@ -112,6 +116,16 @@
             this.initSwiper();
         },
 
+        calcH: function () {
+            var wH = $(window).height(),
+                bannerH = $('.banner-swiper').height(),
+                infoH = $('.info').height(),
+                footerH = $('.footer').height(),
+                linksH = $('.link-box').height();
+            var sH = wH - bannerH - infoH - footerH;
+            console.log(sH, linksH)
+            $('.link-box').height(sH > linksH ? sH - 40 : linksH)
+        },
         initSwiper: function () {
             var swiperBanner = new Swiper('.banner-swiper', {
                 spaceBetween: 0,

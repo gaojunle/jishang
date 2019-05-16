@@ -57,6 +57,7 @@ body {
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
+    color: rgb(42, 42, 42);
     h3 {
       font-size: 19px;
       color: rgb(42, 42, 42);
@@ -94,6 +95,15 @@ body {
 }
 
 .link-box {
+  //background: #cc9c4e;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  >div{
+    width: 100%;
+    box-sizing: border-box;
+  }
   .items {
     padding: 0px px2rem(58);
     display: flex;
@@ -145,46 +155,47 @@ body {
 }
 
 .footer {
-  max-width: 500px;
-  height: px2rem(100);
+  height: px2rem(120);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: $cBlack;
-  padding: 5px px2rem(100);
+  padding: 0px px2rem(100);
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
   box-sizing: border-box;
   a {
-    padding-top: px2rem(70);
+    padding-top: px2rem(66);
     color: white;
     font-size: px2rem(20);
     text-align: center;
     min-width: px2rem(120);
-    display: inline-block;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
     &:nth-of-type(1) {
-      background: url("../../img/index/h_1.png") center px2rem(10) no-repeat;
+      background: url("../../img/index/h_1.png") center px2rem(14) no-repeat;
       background-size: px2rem(50) px2rem(50);
       &.on {
-        background: url("../../img/index/h_1_on.png") center px2rem(10) no-repeat;
+        background: url("../../img/index/h_1_on.png") center px2rem(14) no-repeat;
         background-size: px2rem(50) px2rem(50);
       }
     }
     &:nth-of-type(2) {
-      background: url("../../img/index/h_2.png") center px2rem(10) no-repeat;
+      background: url("../../img/index/h_2.png") center px2rem(14) no-repeat;
       background-size: px2rem(50) px2rem(50);
       &.on {
-        background: url("../../img/index/h_2_on.png") center px2rem(10) no-repeat;
+        background: url("../../img/index/h_2_on.png") center px2rem(14) no-repeat;
         background-size: px2rem(50) px2rem(50);
       }
     }
     &:nth-of-type(3) {
-      background: url("../../img/index/h_3.png") center px2rem(10) no-repeat;
+      background: url("../../img/index/h_3.png") center px2rem(14) no-repeat;
       background-size: px2rem(50) px2rem(50);
       &.on {
-        background: url("../../img/index/h_3_on.png") center px2rem(10) no-repeat;
+        background: url("../../img/index/h_3_on.png") center px2rem(14) no-repeat;
         background-size: px2rem(50) px2rem(50);
       }
     }
