@@ -91,8 +91,6 @@
         init: function () {
             this.initData();
             this.bindEvent();
-            //this.calcH();
-            //$(window).on('resize', this.calcH)
         },
         bindEvent: function () {
             //TODO 测试使用，info的div上加 activated 类名表示激活
@@ -117,16 +115,6 @@
             this.initSwiper();
         },
 
-        calcH: function () {
-            var wH = $(window).height(),
-                bannerH = $('.banner-swiper').height(),
-                infoH = $('.info').height(),
-                footerH = $('.footer').height(),
-                linksH = $('.link-box').height();
-            var sH = wH - bannerH - infoH - footerH;
-            console.log(sH, linksH)
-            $('.link-box').height(sH > linksH ? sH - 40 : linksH)
-        },
         initSwiper: function () {
             var swiperBanner = new Swiper('.banner-swiper', {
                 spaceBetween: 0,
