@@ -95,16 +95,16 @@ body {
 }
 
 .link-box {
-  //background: #cc9c4e;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
   box-sizing: border-box;
-  /*>div{
-    width: 100%;
-    box-sizing: border-box;
-    height: 100%;
-  }*/
+
+  &:before,&:after{
+    content: ' ';
+    display: block;
+  }
   .split_bg {
     display: block;
     width: 100%;
@@ -112,10 +112,11 @@ body {
   }
   .items {
     width: 100%;
-    padding: 0px px2rem(58);
+    padding: 0px px2rem(22);
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     .split {
       width: 1px;
