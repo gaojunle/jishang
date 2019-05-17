@@ -99,6 +99,15 @@ body {
   position: relative;
   margin: 0px auto; }
 
+.wrap-box {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
 .banner-swiper {
   width: 100%;
   position: relative;
@@ -118,11 +127,21 @@ body {
       opacity: 1; }
 
 .container {
-  padding-bottom: 1.6rem; }
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .info {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-align: start;
   align-items: flex-start;
   margin: 0.26667rem 0.4rem;
   padding: 0.26667rem 0.4rem;
@@ -132,11 +151,16 @@ body {
     width: 1.54667rem;
     height: 1.54667rem; }
   .info .default, .info .actived {
+    -ms-flex: 1;
     flex: 1;
     height: 1.54667rem;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-align: start;
     align-items: flex-start;
     color: #2a2a2a; }
     .info .default h3, .info .actived h3 {
@@ -158,15 +182,22 @@ body {
   .info.activated .default {
     display: none; }
   .info.activated .actived {
+    display: -ms-flexbox;
     display: flex; }
 
 .split {
   border-bottom: 1px solid rgba(42, 42, 42, 0.15); }
 
 .link-box {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box; }
   .link-box:before, .link-box:after {
@@ -180,17 +211,25 @@ body {
     width: 100%;
     padding: 0px 0.29333rem;
     box-sizing: border-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .link-box .items .split {
       width: 1px;
       height: 2.77333rem; }
     .link-box .items .item {
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-pack: center;
       justify-content: center;
+      -ms-flex-align: center;
       align-items: center;
+      -ms-flex-direction: column;
       flex-direction: column;
       color: #2a2a2a;
       font-size: 0.34667rem;
@@ -215,12 +254,15 @@ body {
 
 .footer {
   height: 1.6rem;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-align: center;
   align-items: center;
   background: #2a2a2a;
   padding: 0px 1.33333rem;
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0px;
   left: 0px;
   width: 100%;
