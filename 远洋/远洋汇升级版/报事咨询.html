@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>报事咨询</title>
+    <meta name="keywords" content="远洋首页"/>
+    <meta name="description" content="远洋首页"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
+    <link rel="stylesheet" href="./css/page/zixun.css"/>
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="wrap-box">
+    <div class="log"><img src="./img/yyh_logo.png" alt=""></div>
+    <div class="liuyan">
+        <textarea name="" id="ipt_liuyan" cols="30" rows="10" placeholder="请在此处输入文字......"></textarea>
+        <div class="limit"><span class="ipt_num">0</span><span>/500</span></div>
+    </div>
+    <div class="tip">
+        ＊产权问题请于上方留言；投诉与建议请拨打400客服电话。
+    </div>
+</div>
+<div class="footer_400">
+    <a href="tel:400" class="gray">400客服</a>
+    <a class="btn_zixun" href="#">提交咨询</a>
+</div>
+<script src="./js/lib/jquery.min.js"></script>
+<script src="./js/lib/artDialog.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.bindEvent();
+        },
+        bindEvent: function () {
+            var that = this;
+            $('.btn_zixun').click(function () {
+                var d = dialog({
+                    title: '',
+                    padding: 0,
+                    content: '<div class="pop-cont"><p style="color: #8f8f8f">您已提交成功，请等待回复</p></div>',
+                    backdropOpacity: '0.3',
+                    okValue: '3秒后自动跳转',
+                    ok: function () {
+                        d.close().remove();
+                        location.href = './我的留言.html'
+                        return false;
+                    }
+                });
+                d.showModal();
+                $('.icon_close').click(function () {
+                    d.close().remove();
+                })
+                that.countDownTo(d);
+            })
+            $('#ipt_liuyan').on('input', function () {
+                var _val = $(this).val();
+                var limitNum = 500;
+                if (_val.length > limitNum) {
+                    $(this).val(_val.substring(0, limitNum));
+                    $('.ipt_num').text(limitNum)
+                } else {
+                    $('.ipt_num').text(_val.length)
+                }
+            })
+        },
+        countDownTo: function (d) {
+            var cd = 3;
+            var $btn = $(d.node).find('[i-id="ok"]');
+            setInterval(function () {
+                cd--;
+                $btn.html(cd + '秒后自动跳转');
+
+                if (cd == 0) {
+                    location.href = './我的留言.html'
+                }
+            }, 1000)
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

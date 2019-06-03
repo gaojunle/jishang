@@ -48,4 +48,57 @@ html, body {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
+.ui-dialog-body .icon_close {
+  width: px2rem(44);
+  position: absolute;
+  right: 6px;
+  top: 6px; }
+.ui-dialog-body .scode-avt {
+  width: px2rem(400); }
+.ui-dialog-body .pop-cont {
+  position: relative;
+  padding: px2rem(0) px2rem(80);
+  min-height: px2rem(280);
+  min-width: px2rem(400);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; }
+
+.ui-dialog-footer .ui-dialog-button {
+  justify-content: center; }
+.ui-dialog-footer button {
+  display: inline-block;
+  background-color: #00c5ff;
+  height: px2rem(70);
+  line-height: px2rem(70);
+  text-align: center;
+  border-radius: 33px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 0px; }
+  .ui-dialog-footer button.ui-dialog-autofocus {
+    background-color: #00c5ff !important; }
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: px2rem(70);
+  line-height: px2rem(70);
+  border-radius: 33px;
+  background-color: #00c5ff;
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center; }
+  .btn_defualt.nobg {
+    background: transparent;
+    border: 1px solid #00c5ff;
+    color: #00c5ff; }
+  .btn_defualt.light {
+    background-color: rgba(40, 194, 252, 0.2);
+    color: #00c5ff; }
+
 /*# sourceMappingURL=common.css.map */

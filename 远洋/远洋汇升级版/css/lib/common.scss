@@ -2,7 +2,8 @@
 @import "../lib/reset.css";
 
 $fontGray: #8f8f8f;
-$lineGray: rgba(216, 216, 216, 0.68);
+
+$lineGray: rgba(216, 216, 216, 0.25);
 
 html, body {
   padding: 0px;
@@ -58,4 +59,71 @@ html, body {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.ui-dialog-body {
+  .icon_close {
+    width: px2rem(44);
+    position: absolute;
+    right: 6px;
+    top: 6px;
+  }
+  .scode-avt {
+    width: px2rem(400);
+  }
+  .pop-cont {
+    position: relative;
+    padding: px2rem(0) px2rem(80);
+    min-height: px2rem(280);
+    min-width: px2rem(400);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+}
+
+.ui-dialog-footer {
+  .ui-dialog-button {
+    justify-content: center;
+  }
+  button {
+    display: inline-block;
+    background-color: rgb(0, 197, 255);
+    height: px2rem(70);
+    line-height: px2rem(70);
+    text-align: center;
+    border-radius: 33px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    box-sizing: border-box;
+    padding: 0px;
+
+    &.ui-dialog-autofocus {
+      background-color: rgb(0, 197, 255) !important;
+    }
+  }
+}
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: px2rem(70);
+  line-height: px2rem(70);
+  border-radius: 33px;
+  background-color: rgb(0, 197, 255);
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  &.nobg {
+    background: transparent;
+    border: 1px solid rgb(0, 197, 255);
+    color: rgb(0, 197, 255);
+  }
+  &.light{
+    background-color: rgba(40, 194, 252, 0.2);
+    color: rgb(0, 197, 255);
+  }
 }
