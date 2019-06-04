@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
+    <link rel="stylesheet" href="./css/page/home.css"/>
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="wrap-box">
+    <div class="banner-swiper">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="tab js-tab">
+        <ul class="tab-menu clearfix">
+            <li class="on"><span>特惠卡券</span></li>
+            <li><span>兑换记录</span></li>
+        </ul>
+        <img src="./img/index/tab_bt_lin.png" alt="">
+        <div class="tab-cont-box">
+            <div class="tab-cont adult">
+                <a href="./卡券详情页.html"><img src="./img/index/01.png" alt=""></a>
+                <a href="./卡券详情页.html"><img src="./img/index/02.png" alt=""></a>
+            </div>
+            <div class="tab-cont childen">
+                <section class="list">
+                    <a href="./卡券详情页.html">
+                        <img src="./img/index/list_1.png" alt="">
+                        <div class="info">
+                            <h3>爱奇艺会员季卡立减10元优惠券</h3>
+                            <p>有效期：2019-06-25</p>
+                        </div>
+                        <span class="detail">立即使用</span>
+                    </a>
+                    <a href="#" class="overdate">
+                        <img src="./img/index/list_1.png" alt="">
+                        <div class="info">
+                            <h3>爱奇艺会员季卡立减10元优惠券</h3>
+                            <p>有效期：2019-06-25</p>
+                        </div>
+                        <img class="overdate_img" src="./img/index/overdate.png" alt="">
+                    </a>
+                </section>
+                <div class="nodata">
+                    <img src="./img/index/nodata.png" alt="">
+                    <p>您还没有任何订单，赶快去看看吧～</p>
+                    <div class="btn">
+                        <a href="#" class="btn_defualt js_see">去看看</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop_tpl js_vertify_box">
+    <img class="icon_close" src="./img/common/close.png" alt="">
+    <form action="#" class="get_code_box">
+        <div class="fline">
+            <input type="text" placeholder="请输入领取的手机号">
+        </div>
+        <div class="fline">
+            <input type="text" placeholder="请输入短信验证码">
+            <a href="#" class="get_code">获取验证码</a>
+        </div>
+        <div class="btns">
+            <a href="#" class="btn js_ok">确定</a>
+        </div>
+    </form>
+</div>
+<div class="pop_tpl js_vertify">
+    <form action="#" class="get_code_box">
+        <div class="fline fphone">确定本手机号码为：18611001120</div>
+        <div class="fline ftip">＊如本手机非此号码，请换对应手机发送短信</div>
+    </form>
+</div>
+<script src="./js/lib/jquery.min.js"></script>
+<script src="./js/lib/artDialog.js"></script>
+<script src="./js/lib/swiper.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        bindEvent: function () {
+            this.bindTab();
+        },
+        initData: function () {
+            this.initSwiper();
+        },
+
+        initSwiper: function () {
+            var swiperBanner = new Swiper('.banner-swiper', {
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: 4000,
+                loop: true,
+                pagination: '.swiper-pagination'
+            });
+        },
+        bindTab: function () {
+            var that = this;
+            var $tab = $('.js-tab');
+            var $tabConts = $tab.find('.tab-cont');
+            $tab.on('click', '.tab-menu>li', function () {
+                var $this = $(this),
+                    idx = $this.index();
+                //TODO idx可用于向后台传参
+                console.log(idx);
+                $tabConts.hide().eq(idx).show();
+                $this.addClass('on').siblings().removeClass('on');
+                if (idx == 1) {
+                    that.popVertify_1();
+                }
+            })
+
+            $('.js_see').click(function () {
+                $tab.find('.tab-menu>li:first').trigger('click')
+            })
+        },
+        popVertify_1: function () {
+            var that = this;
+            var d = dialog({
+                title: '',
+                padding: 0,
+                content: $('.js_vertify_box').html(),
+                backdropOpacity: '0.3',
+            });
+            d.showModal();
+            that.bindCountDwon();
+            $('.icon_close').click(function () {
+                d.close().remove();
+            })
+            //确定兑换
+            $('.js_ok').click(function () {
+                d.close().remove();
+                that.popVertify_2();
+            })
+        },
+        popVertify_2: function () {
+            var that = this;
+            var d = dialog({
+                title: '',
+                padding: 0,
+                content: $('.js_vertify').html(),
+                backdropOpacity: '0.3',
+                cancelValue: '取消',
+                cancel: function () {
+                    d.close().remove();
+                    return false;
+                },
+                okValue: '确认',
+                ok: function () {
+                    d.close().remove();
+                    that.popMsg();
+                    return false;
+                }
+            }).showModal();
+        },
+        //弹出普通提示消息，参考如下：
+        popMsg: function () {
+            var d = dialog({
+                title: '',
+                padding: 0,
+                content: '<div class="msg_cont"><p>您已超出特惠权益限额，<br>请下个月再来领取～</p></div>',
+                backdropOpacity: '0.3',
+                okValue: '确认',
+                ok: function () {
+                    d.close().remove();
+                    location.href='./已兑换.html'
+                    return false;
+                }
+            }).showModal();
+        },
+        bindCountDwon: function () {
+            var countdownFlag = -1;
+            var countDownTime = 60;
+
+            $('.get_code').click(function () {
+                var $this = $(this);
+                if ($this.hasClass('counting')) {
+                    return false;
+                }
+                $this.html(countDownTime + 's可重发').addClass('counting');
+
+                //发送验证码；
+                alert('发送验证码')
+                /*$.get('#', {}, function () {
+                 alert('发送成功')
+                 })*/
+
+                countdownFlag = setInterval(function () {
+                    countDownTime--;
+                    $this.html(countDownTime + 's可重发')
+                    if (countDownTime == 0) {
+                        clearInterval(countdownFlag);
+                        $this.html('获取验证码').removeClass('counting');
+                        countDownTime = 60;
+                    }
+                }, 1000)
+            })
+        },
+    };
+    App.init();
+</script>
+</body>
+</html>
