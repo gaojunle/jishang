@@ -23,6 +23,7 @@ html, body {
   }
 }
 
+
 .wrapper {
   position: relative;
   background: #fff;
@@ -34,15 +35,18 @@ html, body {
     padding: px2rem(70) 0px px2rem(0);
     text-align: center;
     h3 {
-      font-size: 15px;
+      font-size: 17px;
       color: rgb(42, 42, 42);
-      font-weight: bold;
       padding-bottom: px2rem(40);
+    }
+    .btn{
+      font-size: 14px;
+      width: px2rem(320);
     }
     .desc {
       text-align: left;
       padding: px2rem(40) px2rem(40) px2rem(20);
-      font-style: 12px;
+      font-size: 14px;
       color: rgb(42, 42, 42);
       line-height: 2;
       text-align: justify;
@@ -110,6 +114,7 @@ html, body {
         color: #8f8f8f;
         line-height: 2;
         padding-bottom: px2rem(15);
+
         padding-top: px2rem(10);
         text-align: justify;
         .stitle {
@@ -119,8 +124,6 @@ html, body {
           padding-bottom: 4px;
         }
       }
-
-
       &.unfold {
         .title {
           &:after {

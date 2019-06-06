@@ -59,10 +59,11 @@ html, body {
 .ui-dialog {
   overflow: hidden; }
   .ui-dialog .ui-dialog-body .icon_close {
-    width: 0.58667rem;
+    width: 0.50667rem;
     position: absolute;
     right: 6px;
-    top: 6px; }
+    top: 6px;
+    opacity: .75; }
   .ui-dialog .ui-dialog-body .scode-avt {
     width: 5.33333rem; }
   .ui-dialog .ui-dialog-body .pop-cont {
@@ -90,7 +91,7 @@ html, body {
     min-height: 3.73333rem; }
   .ui-dialog .ui-dialog-footer {
     padding: 2px 0px;
-    border-top: 1px solid rgba(216, 216, 216, 0.2); }
+    border-top: 1px solid rgba(216, 216, 216, 0.4); }
     .ui-dialog .ui-dialog-footer .ui-dialog-button {
       justify-content: space-between; }
     .ui-dialog .ui-dialog-footer button {
@@ -111,7 +112,7 @@ html, body {
         background-color: white;
         color: #2a2a2a; }
       .ui-dialog .ui-dialog-footer button + button {
-        border-left: 1px solid rgba(216, 216, 216, 0.2) !important; }
+        border-left: 1px solid rgba(216, 216, 216, 0.4) !important; }
 
 .btn_defualt {
   display: block;
@@ -123,7 +124,8 @@ html, body {
   border: none;
   font-size: 15px;
   color: #2a2a2a;
-  text-align: center; }
+  text-align: center;
+  border-radius: 20px; }
   .btn_defualt.nobg {
     background: transparent;
     border: 1px solid #00c5ff;
@@ -143,11 +145,12 @@ html, body {
   font-size: 12px;
   border-radius: 1.06667rem;
   box-sizing: border-box;
-  border: 1px solid rgba(216, 216, 216, 0.2);
+  border: 1px solid rgba(216, 216, 216, 0.4);
   margin-bottom: 0.29333rem; }
   .btn.on {
     background: #ffd900;
-    color: #2a2a2a; }
+    color: #2a2a2a;
+    border: none; }
 
 .pop_tpl {
   display: none; }
@@ -163,14 +166,18 @@ html, body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding-top: 0.53333rem; }
+    padding-top: 0.53333rem;
+    justify-content: center;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.06);
+    height: 1rem; }
     .get_code_box .fline input {
       flex: 1;
       border: none;
-      border-bottom: 1px solid rgba(42, 42, 42, 0.06);
-      height: 1rem;
-      font-size: 12px;
+      font-size: 14px;
       color: #2a2a2a; }
+      .get_code_box .fline input::-webkit-input-placeholder {
+        font-size: 14px;
+        color: rgba(42, 42, 42, 0.3); }
     .get_code_box .fline .get_code {
       width: 2.13333rem;
       box-sizing: border-box;
@@ -190,7 +197,8 @@ html, body {
       width: 3.33333rem;
       background: #ffd900;
       color: #2a2a2a;
-      font-size: 14px; }
+      font-size: 15px;
+      border: none; }
   .get_code_box .cgray {
     display: block;
     text-align: center;
@@ -226,7 +234,7 @@ html, body {
   font-size: 12px;
   border-radius: 1.06667rem;
   box-sizing: border-box;
-  border: 1px solid rgba(216, 216, 216, 0.2);
+  border: 1px solid rgba(216, 216, 216, 0.4);
   margin-bottom: 0.29333rem; }
   .btn.on {
     background: #ffd900;
@@ -248,11 +256,10 @@ html, body {
       margin: 0px 0.34667rem;
       padding: 0.34667rem 0px;
       color: #8f8f8f;
-      border-bottom: 1px solid rgba(216, 216, 216, 0.2); }
+      border-bottom: 1px solid rgba(216, 216, 216, 0.4); }
     .wrapper > .info h3 {
       font-size: 15px;
       color: #2a2a2a;
-      font-weight: bold;
       padding-top: 0.84rem; }
     .wrapper > .info .desc {
       padding-top: 0.26667rem;
@@ -261,7 +268,6 @@ html, body {
     .wrapper > .info .code {
       font-size: 15px;
       color: #2a2a2a;
-      font-weight: bold;
       padding: 0.26667rem 0px 0.4rem; }
   .wrapper .split {
     background: #f6f7f9;

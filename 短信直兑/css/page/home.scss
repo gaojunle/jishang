@@ -3,7 +3,6 @@
 @import "../lib/artDialog.css";
 @import "../lib/common";
 
-
 body {
   max-width: 500px;
   position: relative;
@@ -35,7 +34,6 @@ body {
   }
 }
 
-
 .tab {
   background: white;
   .tab-menu {
@@ -49,6 +47,7 @@ body {
       line-height: px2rem(84);
       color: $cBlack;
       text-align: center;
+      font-size: 14px;
       &.on {
         font-weight: bold;
         span {
@@ -61,7 +60,10 @@ body {
     }
   }
 
-
+  .tab_bt_lin {
+    width: 100%;
+    display: block;
+  }
   .tab-cont {
     display: none;
     padding: px2rem(0) px2rem(45);
@@ -88,8 +90,8 @@ body {
         font-size: 13px;
         padding: px2rem(48) 0px;
       }
-      .btn{
-        .btn_defualt{
+      .btn {
+        .btn_defualt {
           width: px2rem(220);
           display: inline-block;
         }
@@ -120,7 +122,7 @@ body {
           width: px2rem(120);
           height: px2rem(120);
           margin: 0px px2rem(22);
-          &.overdate_img{
+          &.overdate_img {
             margin: 0px
           }
         }
@@ -128,7 +130,7 @@ body {
         .info {
           flex: 1;
           h3 {
-            font-size: 10px;
+            font-size: 12px;
             margin-bottom: 4px;
           }
           p {
@@ -136,6 +138,12 @@ body {
             line-height: 1.5;
             color: #2a2a2a;
           }
+        }
+        .detail{
+          background: #2a2a2a;
+          color: white;
+          border-radius: 10px;
+          padding: 1px 5px;
         }
       }
     }
