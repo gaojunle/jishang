@@ -150,11 +150,11 @@ body {
       .info {
         &.check {
           padding-left: px2rem(55);
-          background: url("../../img/icon_check.png") 0px center no-repeat;
+          background: url("../../img/icon_check.png") 0px px2rem(14) no-repeat;
           -webkit-background-size: px2rem(34) px2rem(34);
           background-size: px2rem(34) px2rem(34);
           &.on {
-            background: url("../../img/icon_checked.png") 0px center no-repeat;
+            background: url("../../img/icon_checked.png") 0px px2rem(14) no-repeat;
             -webkit-background-size: px2rem(34) px2rem(34);
             background-size: px2rem(34) px2rem(34);
           }

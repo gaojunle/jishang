@@ -266,11 +266,11 @@ body {
       padding-top: 0.26667rem; }
       .baoming .flist .item .info.check {
         padding-left: 0.73333rem;
-        background: url("../../img/icon_check.png") 0px center no-repeat;
+        background: url("../../img/icon_check.png") 0px 0.18667rem no-repeat;
         -webkit-background-size: 0.45333rem 0.45333rem;
         background-size: 0.45333rem 0.45333rem; }
         .baoming .flist .item .info.check.on {
-          background: url("../../img/icon_checked.png") 0px center no-repeat;
+          background: url("../../img/icon_checked.png") 0px 0.18667rem no-repeat;
           -webkit-background-size: 0.45333rem 0.45333rem;
           background-size: 0.45333rem 0.45333rem; }
       .baoming .flist .item .ops {
