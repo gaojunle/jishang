@@ -26,6 +26,21 @@ jQuery(function ($) {
     })
 
     $btnDel.click(function () {
-        alert('选中：' + $listBox.find('.check-box.on').length)
+        var d = dialog({
+            title: '',
+            content: '<p style="text-align: center;font-size: 16px;padding: 10px 10px;">确定删除？</p>',
+            okValue: '确定',
+            width: 200,
+            ok: function () {
+                alert('选中：' + $listBox.find('.check-box.on').length);
+                d.close().remove();
+                return false;
+            },
+            backdropOpacity: '0.3',
+            cancelValue: '取消',
+            cancel: function () {
+            }
+        });
+        d.showModal();
     })
 })

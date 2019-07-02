@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>首页</title>
+    <meta name="keywords" content="远洋首页"/>
+    <meta name="description" content="远洋首页"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
+    <link rel="stylesheet" href="./css/page/home.css"/>
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="wrap-box">
+    <div class="banner-swiper">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="container">
+        <div class="info">
+            <div class="default">
+                <h3>程XX</h3>
+                <a class="btn_active" href="javascript:;">立即激活</a>
+            </div>
+            <a href="#" class="actived">
+                <h3>程XX</h3>
+                <div>
+                    <p>员工</p>
+                    <p>远洋集团 • 北方事业部客户服务及产业发展中心 </p>
+                </div>
+            </a>
+            <img class="btn_scode" src="./img/index/scode.png" alt="">
+        </div>
+        <div class="split"></div>
+        <div class="link-box">
+            <div class="items">
+                <a href="#" class="item">
+                    <img src="./img/index/m_1.png" alt="">
+                    <span>专属权益</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_2.png" alt="">
+                    <span>社群活动</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_3.png" alt="">
+                    <span>生活服务</span>
+                </a>
+            </div>
+            <img class="split_bg" src="./img/index/sp1.png" alt=""/>
+            <div class="items">
+                <a href="#" class="item">
+                    <img src="./img/index/m_4.png" alt="">
+                    <span>经营项目</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_5.png" alt="">
+                    <span>远洋品牌</span>
+                </a>
+                <img class="split" src="./img/index/sp2.png" alt="">
+                <a href="#" class="item">
+                    <img src="./img/index/m_6.png" alt="">
+                    <span>问卷调研</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#" class="on">首页</a>
+        <a href="./报事咨询.html" class="on">联系客服</a>
+        <a href="#">个人中心</a>
+    </div>
+</div>
+<script src="./js/lib/jquery.min.js"></script>
+<script src="./js/lib/artDialog.js"></script>
+<script src="./js/lib/swiper.min.js"></script>
+<script>
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        bindEvent: function () {
+            //TODO 测试使用，info的div上加 activated 类名表示激活
+            $('.btn_active').click(function () {
+                $(this).parents('.info').addClass('activated')
+            })
+
+            $('.btn_scode').click(function () {
+                var d = dialog({
+                    title: '',
+                    padding: 0,
+                    content: '<div class="pop-cont"><img class="icon_close" src="./img/index/icon_close.png" alt=""><p><img class="scode-avt" src="./img/index/scode-avt.png" alt=""></p></div>',
+                    backdropOpacity: '0.3'
+                });
+                d.showModal();
+                $('.icon_close').click(function () {
+                    d.close().remove();
+                })
+            })
+        },
+        initData: function () {
+            this.initSwiper();
+        },
+
+        initSwiper: function () {
+            var swiperBanner = new Swiper('.banner-swiper', {
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: 4000,
+                loop: true,
+                pagination: '.swiper-pagination'
+            });
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

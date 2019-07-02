@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>详情页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
+    <link rel="stylesheet" href="./css/page/detail.css"/>
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
+    <script src="./js/lib/flexible.js"></script>
+</head>
+<body>
+<div class="wrap-box wrapper">
+    <div class="info">
+        <h3>爱奇艺会员季卡立减10元优惠券</h3>
+        <div class="sel_box">
+            <a href="#" class="btn on">中国移动积分：1040</a>
+            <a href="#" class="btn">中国联通积分：1060</a>
+        </div>
+        <div class="split"><img src="./img/common/split-line.png" alt=""></div>
+        <div class="desc">
+            <p>1、兑换时将核实手机号，请确保填写的为本手机号，且所选兑换方式与手机号通讯公司一致；</p>
+            <p>2、如填写的号码非本手机，请使用对应号码的手机发送短信DH515920 到 10658999，（浙江、河南用户不参与兑换）；</p>
+            <p>3、如未按以上操作将产生无效兑换，损失由其本人承担。</p>
+        </div>
+    </div>
+
+    <ul class="desc-box">
+        <li class="box unfold">
+            <div class="title">卡券详情：</div>
+
+            <div class="info">
+                <img src="./img/avt_1.png" alt="">
+                <h3 class="stitle">使用说明：</h3>
+                <p>1、兑换码可享受移动端VIP会员全部功能及特权；TV端不可使用。</p>
+                <p>2、兑换码请在有效期内激活，过期作废。</p>
+                <p>3、兑换码仅可激活一次，自激活之日起享有VIP会员服务。</p>
+                <p>4、通过话费购买爱奇艺视频VIP会员的用户，此次兑换的时长将在话费包月到期后生效。</p>
+                <p>5、该虚拟券不支持退换，不开具发票。</p>
+            </div>
+        </li>
+    </ul>
+    <a href="#" class="btn_live">短信直兑</a>
+    <div class="pop_tpl js_vertify_box">
+        <img class="icon_close" src="./img/common/close.png" alt="">
+        <form action="#" class="get_code_box">
+            <div class="fline">
+                <input type="text" placeholder="请输入领取的手机号">
+            </div>
+            <div class="fline">
+                <input type="text" placeholder="请输入短信验证码">
+                <a href="#" class="get_code">获取验证码</a>
+            </div>
+            <div class="btns">
+                <a href="#" class="btn js_ok">确定</a>
+            </div>
+        </form>
+    </div>
+    <div class="pop_tpl js_vertify">
+        <form action="#" class="get_code_box">
+            <div class="fline fphone">确定本手机号码为：18611001120</div>
+            <div class="fline ftip">＊如本手机非此号码，请换对应手机发送短信</div>
+        </form>
+    </div>
+</div>
+<script src="./js/lib/jquery.min.js"></script>
+<script src="./js/lib/artDialog.js"></script>
+<script>
+
+    var App = {
+        init: function () {
+            this.initData();
+            this.bindEvent();
+        },
+        initData: function () {
+        },
+        bindEvent: function () {
+            this.bindLivePop();
+            this.bindCountDwon();
+
+            $('.desc-box').on('click', 'li', function () {
+                $(this).toggleClass('unfold');
+            })
+            $('.sel_box').on('click', 'a', function () {
+                $(this).addClass('on').siblings().removeClass('on')
+            })
+        },
+        bindCountDwon: function () {
+            var countdownFlag = -1;
+            var countDownTime = 60;
+            $('.get_code').click(function () {
+                var $this = $(this);
+                if ($this.hasClass('counting')) {
+                    return false;
+                }
+                $this.html(countDownTime + 's可重发').addClass('counting');
+
+                //发送验证码；
+                alert('发送验证码')
+                /*$.get('#', {}, function () {
+                 alert('发送成功')
+                 })*/
+
+                countdownFlag = setInterval(function () {
+                    countDownTime--;
+                    $this.html(countDownTime + 's可重发')
+                    if (countDownTime == 0) {
+                        clearInterval(countdownFlag);
+                        $this.html('获取验证码').removeClass('counting');
+                        countDownTime = 60;
+                    }
+                }, 1000)
+            })
+        },
+        bindLivePop: function () {
+            var that = this;
+            $('.btn_live').click(function () {
+                var d = dialog({
+                    title: '',
+                    padding: 0,
+                    content: $('.js_vertify_box').html(),
+                    backdropOpacity: '0.3',
+                });
+                d.showModal();
+                that.bindCountDwon();
+                $('.icon_close').click(function () {
+                    d.close().remove();
+                })
+                //确定兑换
+                $('.js_ok').click(function () {
+                    d.close().remove();
+                    that.popVertify();
+                })
+            })
+        },
+        popVertify: function () {
+            var that = this;
+            var d = dialog({
+                title: '',
+                padding: 0,
+                content: $('.js_vertify').html(),
+                backdropOpacity: '0.3',
+                cancelValue: '取消',
+                cancel: function () {
+                    d.close().remove();
+                    return false;
+                },
+                okValue: '确认',
+                ok: function () {
+                    d.close().remove();
+                    that.popMsg();
+                    return false;
+                }
+            }).showModal();
+        },
+        //弹出普通提示消息，参考如下：
+        popMsg: function () {
+            var d = dialog({
+                title: '',
+                padding: 0,
+                content: '<div class="msg_cont"><p>您已超出特惠权益限额，<br>请下个月再来领取～</p></div>',
+                backdropOpacity: '0.3',
+                okValue: '确认',
+                ok: function () {
+                    d.close().remove();
+                    location.href='./已兑换.html'
+                    return false;
+                }
+            }).showModal();
+        }
+    };
+    App.init();
+</script>
+</body>
+</html>

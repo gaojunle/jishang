@@ -74,6 +74,10 @@
             $('.search-box input').on('input', function () {
                 console.log($(this).val())
             })
+
+            $('.search-icon').click(function () {
+                alert('do Search')
+            })
         },
         initSwiper: function () {
             var swiperBanner = new Swiper('.banner-swiper', {

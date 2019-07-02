@@ -73,7 +73,18 @@ body {
     }
   }
 }
-
+.loading-box{
+  text-align: center;
+  padding: px2rem(20);
+  img{
+    width: px2rem(50);
+  }
+}
+.nomore-box{
+  text-align: center;
+  font-size: px2rem(24);
+  padding: px2rem(20);
+}
 .header {
   position: relative;
   z-index: 401;
