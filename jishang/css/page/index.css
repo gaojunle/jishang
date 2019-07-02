@@ -216,7 +216,6 @@ body {
       font-size: 12px;
       padding: 6px 10px; }
       .wrap .fuwu .menus a.on {
-        text-decoration: underline;
         padding-bottom: 2px; }
   .wrap .fuwu .link_1 {
     top: 3.54667rem; }
@@ -273,6 +272,7 @@ body {
     transform-style: preserve-3d;
     position: relative; }
     .wrap .youshi .ziyuan .flip-container .front, .wrap .youshi .ziyuan .flip-container .back {
+      display: block;
       width: 100%;
       height: 100%;
       box-sizing: border-box;
@@ -312,7 +312,7 @@ body {
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      background: url("../../img/index/zy_flip_bg.png") 0px 0px no-repeat;
+      background: url("../../img/index/zy_flip_bg.png") 0px -2px no-repeat;
       text-align: center; }
       .wrap .youshi .ziyuan .flip-container .back p {
         width: 100%; }
@@ -340,11 +340,8 @@ body {
 .wrap .hezuo .swiper-container {
   padding-bottom: 1.38667rem; }
   .wrap .hezuo .swiper-container .swiper-slide {
-    height: 7.70667rem;
     display: flex;
     align-items: center; }
-    .wrap .hezuo .swiper-container .swiper-slide img {
-      height: 100%; }
 .wrap .hezuo .swiper-button-box {
   position: static;
   display: flex;
