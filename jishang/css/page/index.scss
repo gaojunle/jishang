@@ -1,0 +1,239 @@
+@charset "utf-8";
+@import "../lib/flexible";
+@import "../lib/reset.css";
+@import "../lib/common";
+@import "../lib/swiper.min.css";
+
+body {
+  font-size: 14px;
+  color: #000;
+}
+
+.wrap {
+  .link {
+    display: inline-block;
+    width: px2rem(168);
+    height: px2rem(46);
+    background: tr;
+    border-radius: px2rem(46);
+    position: absolute;
+    left: 50%;
+    margin-left: - px2rem(84);
+    z-index: 10;
+  }
+  .bg {
+    width: 100%;
+  }
+  .mtitle {
+    font-size: 18px;
+    padding-top: px2rem(80);
+    padding-bottom: px2rem(60);
+    text-align: center;
+  }
+  .fuwu {
+    position: relative;
+    .menus {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      a {
+        color: black;
+        font-size: 12px;
+        padding: 6px 10px;
+        &.on {
+          text-decoration: underline;
+          padding-bottom: 2px;
+        }
+      }
+    }
+    .link_1 {
+      top: px2rem(266)
+    }
+    .link_2 {
+      bottom: px2rem(80)
+    }
+  }
+  .youshi {
+    .gift {
+      padding: 0px px2rem(36);
+      .swiper-container-horizontal > .swiper-pagination-bullets {
+        position: static;
+        padding-top: px2rem(20);
+        .swiper-pagination-bullet {
+          background: #e5e5e5;
+          opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+          background: #999;
+        }
+      }
+    }
+    .buy {
+      text-align: center;
+      padding-top: px2rem(50);
+      padding-bottom: px2rem(70);
+      img {
+        width: px2rem(164);
+      }
+    }
+    .ziyuan {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      .mtable {
+        td {
+          width: 50%;
+          vertical-align: top;
+          padding: 0px;
+          position: relative;
+          padding-bottom: 1px;
+          background: white;
+          img {
+            width: 100%;
+          }
+          .link {
+            top: px2rem(184)
+          }
+          .zy-1 {
+            height: px2rem(600);
+          }
+        }
+      }
+      .flip-container {
+        width: 100%;
+        height: px2rem(300);
+        overflow: hidden;
+        position: relative;
+        transition: transform .5s ease-in-out;
+        -webkit-transition: transform .5s ease-in-out;
+        -moz-transition: transform .5s ease-in-out;
+        -ms-transition: transform .5s ease-in-out;
+        -o-transition: transform .5s ease-in-out;
+        -webkit-transform-style: preserve-3d; /*使其子类变换后得以保留 3d转换后的位置*/
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: relative;
+        .front, .back {
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          backface-visibility: hidden;
+          transition: 0.6s ease-out;
+          -webkit-transition: .6s ease-out;
+          -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          position: absolute;
+          top: 0;
+          left: 0;
+          img {
+            width: 100%;
+          }
+        }
+        .front {
+          z-index: 2;
+          transform: rotateY(0deg);
+          transform: rotateY(0deg);
+          -webkit-transform: rotateY(0deg);
+          -moz-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+          -o-transform: rotateY(0deg);
+        }
+        .back {
+          z-index: 1;
+          transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+          -webkit-transform: rotateY(-180deg);
+          -moz-transform: rotateY(-180deg);
+          -ms-transform: rotateY(-180deg);
+          -o-transform: rotateY(-180deg);
+          font-size: 11px;
+          line-height: 1.5;
+          color: rgb(0, 0, 0);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          background: url("../../img/index/zy_flip_bg.png") 0px 0px no-repeat;
+          text-align: center;
+          p {
+            width: 100%;
+          }
+        }
+        &.on {
+          .back {
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            z-index: 2;
+          }
+          .front {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            z-index: 1
+          }
+        }
+      }
+
+    }
+    .tuandui {
+      padding: 0px px2rem(33);
+      padding-bottom: px2rem(70);
+    }
+    .shixian {
+      position: relative;
+      .link {
+        bottom: px2rem(54);
+      }
+    }
+  }
+  .hezuo {
+    .swiper-container {
+      padding-bottom: px2rem(104);
+      .swiper-slide {
+        height: px2rem(578);
+        display: flex;
+        align-items: center;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .swiper-button-box {
+      position: static;
+      display: flex;
+      justify-content: center;
+
+      .swiper-button-next, .swiper-button-prev {
+        position: relative;
+        width: px2rem(15);
+        height: px2rem(29);
+        margin-top: 0px;
+        z-index: 10;
+        cursor: pointer;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: px2rem(44) px2rem(100) 0px;
+      }
+
+      .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        background-image: url("../../img/index/right.png");
+      }
+      .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        background-image: url("../../img/index/left.png");
+      }
+    }
+  }
+}

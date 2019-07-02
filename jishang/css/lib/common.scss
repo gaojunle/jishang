@@ -1,0 +1,242 @@
+/*common*/
+@import "../lib/flexible";
+
+$cRed: rgb(231, 71, 68);
+$cBlack: rgb(40, 40, 40);
+$cGrey: rgb(152, 152, 152);
+$lGrey: #f4f4f4;
+$lineGray: rgba(216, 216, 216, 0.5);
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background: white;
+}
+
+body {
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.list-box {
+  &.on {
+    .item {
+      .check-box {
+        display: block;
+      }
+    }
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    padding: px2rem(15) px2rem(34);
+    border-bottom: 1px solid $lineGray;
+    .check-box {
+      display: none;
+      width: px2rem(40);
+      height: px2rem(40);
+      margin-right: px2rem(24);
+      background: url("../../img/common/icon-check.png") 0px 0px no-repeat;
+      -webkit-background-size: 100% 100%;
+      background-size: 100% 100%;
+
+      &.on {
+        background: url("../../img/common/icon-checked.png") 0px 0px no-repeat;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+      }
+    }
+
+    > img {
+      display: block;
+      width: px2rem(94);
+      height: px2rem(112);
+      margin-right: px2rem(30);
+    }
+    .info {
+      flex: 1;
+      .title {
+        font-size: 16px;
+        color: $cBlack;
+        .search-on {
+          color: $cRed;
+        }
+      }
+      .desc {
+        font-size: 12px;
+        color: $cGrey;
+        line-height: 2.083;
+        span {
+          margin-right: px2rem(16);
+        }
+      }
+    }
+  }
+}
+.loading-box{
+  text-align: center;
+  padding: px2rem(20);
+  img{
+    width: px2rem(50);
+  }
+}
+.nomore-box{
+  text-align: center;
+  font-size: px2rem(24);
+  padding: px2rem(20);
+}
+.header {
+  position: relative;
+  z-index: 401;
+  .main-nav {
+    background: rgb(255, 255, 255);
+    height: px2rem(80);
+    line-height: px2rem(80);
+    font-size: 16px;
+    color: $cBlack;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid $lineGray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px px2rem(30);
+    z-index: 1000;
+    .back {
+
+    }
+    img {
+      height: px2rem(30);
+    }
+  }
+  .op-box {
+    min-width: px2rem(60);
+    i {
+      font-style: normal;
+      display: none;
+      font-size: 14px;
+      color: rgb(231, 71, 68);
+    }
+    &.on {
+      img {
+        display: none;
+      }
+      i {
+        display: inline-block;
+      }
+    }
+  }
+  .icon-del {
+
+  }
+}
+
+.tab {
+  .tab-menu {
+    position: relative;
+    border-bottom: 1px solid $lineGray;
+    box-sizing: border-box;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    > li, > a {
+      width: 100%;
+      float: left;
+      width: 50%;
+      height: px2rem(78);
+      line-height: px2rem(78);
+      text-align: center;
+      font-size: px2rem(28);
+      color: $cGrey;
+      &:nth-last-of-type(1) {
+        border-right: none;
+      }
+      &.on {
+        color: white;
+        background: $cRed;
+      }
+    }
+  }
+  .tab-cont {
+    display: none;
+    &:nth-of-type(1) {
+      display: block;
+    }
+  }
+}
+
+/*popBox*/
+.pop-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  &.show {
+    display: block;
+  }
+  .pop-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    z-index: 1001;
+  }
+  .pop-wraper {
+    position: absolute;
+    width: px2rem(540);
+    height: px2rem(322);
+    box-sizing: border-box;
+    left: 50%;
+    margin-left: - px2rem(270);
+    top: 50%;
+    margin-top: - px2rem(160);
+    z-index: 10002;
+    border-radius: px2rem(20);
+    background: white;
+    .pop-content {
+      position: relative;
+      text-align: center;
+      .pop-cont {
+        height: px2rem(245);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: #7d7c7d;
+        padding: 0px px2rem(100);
+        line-height: 1.8;
+      }
+      .ops {
+        border-top: 1px solid $lineGray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        a {
+          display: inline-block;
+          width: 100%;
+          height: px2rem(76);
+          line-height: px2rem(76);
+          font-size: 15px;
+          color: $cRed;
+          &.btn-cancel {
+            color: #7d7c7d;
+            border-right: 1px solid $lineGray;
+          }
+        }
+      }
+    }
+    .close {
+      text-align: center;
+      padding-top: px2rem(50);
+      img {
+        width: px2rem(62);
+      }
+    }
+  }
+}
