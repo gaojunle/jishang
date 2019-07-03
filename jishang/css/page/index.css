@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url(../lib/reset.css);
 /*common*/
 @import url(../lib/swiper.min.css);
@@ -258,78 +257,30 @@ body {
     width: 100%;
     height: 4rem;
     overflow: hidden;
-    position: relative;
-    transition: transform .5s ease-in-out;
-    -webkit-transition: transform .5s ease-in-out;
-    -moz-transition: transform .5s ease-in-out;
-    -ms-transition: transform .5s ease-in-out;
-    -o-transition: transform .5s ease-in-out;
-    -webkit-transform-style: preserve-3d;
-    /*使其子类变换后得以保留 3d转换后的位置*/
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
     position: relative; }
     .wrap .youshi .ziyuan .flip-container .front, .wrap .youshi .ziyuan .flip-container .back {
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       box-sizing: border-box;
-      backface-visibility: hidden;
-      transition: 0.6s ease-out;
-      -webkit-transition: .6s ease-out;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      -ms-transform-style: preserve-3d;
-      -o-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      position: absolute;
-      top: 0;
-      left: 0; }
+      opacity: 1;
+      transition: opacity 2s ease; }
       .wrap .youshi .ziyuan .flip-container .front img, .wrap .youshi .ziyuan .flip-container .back img {
         width: 100%; }
-    .wrap .youshi .ziyuan .flip-container .front {
-      z-index: 2;
-      transform: rotateY(0deg);
-      transform: rotateY(0deg);
-      -webkit-transform: rotateY(0deg);
-      -moz-transform: rotateY(0deg);
-      -ms-transform: rotateY(0deg);
-      -o-transform: rotateY(0deg); }
     .wrap .youshi .ziyuan .flip-container .back {
-      z-index: 1;
-      transform: rotateY(-180deg);
-      transform: rotateY(-180deg);
-      -webkit-transform: rotateY(-180deg);
-      -moz-transform: rotateY(-180deg);
-      -ms-transform: rotateY(-180deg);
-      -o-transform: rotateY(-180deg);
-      font-size: 11px;
-      line-height: 1.5;
-      color: black;
+      opacity: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       background: url("../../img/index/zy_flip_bg.png") 0px -2px no-repeat;
       text-align: center; }
-      .wrap .youshi .ziyuan .flip-container .back p {
-        width: 100%; }
     .wrap .youshi .ziyuan .flip-container.on .back {
-      transform: rotateY(0deg);
-      -webkit-transform: rotateY(0deg);
-      -moz-transform: rotateY(0deg);
-      -ms-transform: rotateY(0deg);
-      -o-transform: rotateY(0deg);
-      z-index: 2; }
+      opacity: 1; }
     .wrap .youshi .ziyuan .flip-container.on .front {
-      transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-      z-index: 1; }
+      opacity: 0; }
 .wrap .youshi .tuandui {
   padding: 0px 0.44rem;
   padding-bottom: 0.93333rem; }
@@ -337,29 +288,31 @@ body {
   position: relative; }
   .wrap .youshi .shixian .link {
     bottom: 0.72rem; }
-.wrap .hezuo .swiper-container {
-  padding-bottom: 1.38667rem; }
-  .wrap .hezuo .swiper-container .swiper-slide {
+.wrap .hezuo {
+  padding: 0px 20px; }
+  .wrap .hezuo .swiper-container {
+    padding-bottom: 1.38667rem; }
+    .wrap .hezuo .swiper-container .swiper-slide {
+      display: flex;
+      align-items: center; }
+  .wrap .hezuo .swiper-button-box {
+    position: static;
     display: flex;
-    align-items: center; }
-.wrap .hezuo .swiper-button-box {
-  position: static;
-  display: flex;
-  justify-content: center; }
-  .wrap .hezuo .swiper-button-box .swiper-button-next, .wrap .hezuo .swiper-button-box .swiper-button-prev {
-    position: relative;
-    width: 0.2rem;
-    height: 0.38667rem;
-    margin-top: 0px;
-    z-index: 10;
-    cursor: pointer;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0.58667rem 1.33333rem 0px; }
-  .wrap .hezuo .swiper-button-box .swiper-button-next, .wrap .hezuo .swiper-button-box .swiper-container-rtl .swiper-button-prev {
-    background-image: url("../../img/index/right.png"); }
-  .wrap .hezuo .swiper-button-box .swiper-button-prev, .wrap .hezuo .swiper-button-box .swiper-container-rtl .swiper-button-next {
-    background-image: url("../../img/index/left.png"); }
+    justify-content: center; }
+    .wrap .hezuo .swiper-button-box .swiper-button-next, .wrap .hezuo .swiper-button-box .swiper-button-prev {
+      position: relative;
+      width: 0.2rem;
+      height: 0.38667rem;
+      margin-top: 0px;
+      z-index: 10;
+      cursor: pointer;
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0.58667rem 1.33333rem 0px; }
+    .wrap .hezuo .swiper-button-box .swiper-button-next, .wrap .hezuo .swiper-button-box .swiper-container-rtl .swiper-button-prev {
+      background-image: url("../../img/index/right.png"); }
+    .wrap .hezuo .swiper-button-box .swiper-button-prev, .wrap .hezuo .swiper-button-box .swiper-container-rtl .swiper-button-next {
+      background-image: url("../../img/index/left.png"); }
 
 /*# sourceMappingURL=index.css.map */

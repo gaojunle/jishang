@@ -125,9 +125,9 @@
         <div class="swiper-container">
             <div class="mtitle">我们一直在合作</div>
             <div class="swiper-wrapper">
-                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_1.png" alt=""></div>
-                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_2.png" alt=""></div>
-                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_3.png" alt=""></div>
+                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_1.jpg" alt=""></div>
+                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_2.jpg" alt=""></div>
+                <div class="swiper-slide active"><img class="bg" src="./img/index/corp_3.jpg" alt=""></div>
             </div>
             <div class="swiper-button-box">
                 <div class="swiper-button-prev"></div>
@@ -145,13 +145,17 @@
     var App = {
         init: function () {
             this.initData();
-            this.bindEvent();
         },
         initData: function () {
             this.initSwiper();
             var idx = 0;
 
             setInterval(() => {
+                filter()
+            }, 3500)
+            filter();
+
+            function filter() {
                 var fliper = $('.flip-container').eq(idx % 4);
                 if (fliper.hasClass('on')) {
                     fliper.removeClass('on');
@@ -159,37 +163,9 @@
                 } else {
                     fliper.addClass('on');
                 }
-            }, 2500)
-        },
-
-        bindEvent: function () {
-            //让更多分类下面能够分散对齐，并且最后一行左对齐
-            var that = this;
-            var $cateMore = $('.cate-more');
-            var $items = $('.cate-cont .list .item');
-            for (var i = 0; i < $items.length % 4; i++) {
-                $('.cate-cont .list').append('<span class="zw"></span>')
             }
-            $items.click(function () {
-                var idx = $(this).index();
-                that.menuSwiper.clickedIndex = idx;
-                that.menuSwiper.emit("onTap", that.menuSwiper);
-                $cateMore.find('.js-btn-close').trigger('click')
-            })
-
-            $('.more-box').click(function (e) {
-                e.stopPropagation()
-                $cateMore.addClass('show')
-                return false
-            })
-            $('.js-btn-close').click(function () {
-                $cateMore.removeClass('show')
-            })
-            /*$('.menu-box').on('click', '.menu', function () {
-                $(this).addClass('on').siblings('.menu').removeClass('on');
-                alert('你选中了第' + ($(this).index() + 1) + '个')
-            })*/
         },
+
         initSwiper: function () {
             var swiperBanner = new Swiper('.swiper-container', {
                 spaceBetween: 0,
