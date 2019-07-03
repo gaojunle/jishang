@@ -276,6 +276,32 @@ body {
     .cate .item p {
       padding-top: 0.26667rem; }
 
+<<<<<<< HEAD
+.menu-box .menu_1 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding-right: 0.26667rem; }
+  .menu-box .menu_1 .menu {
+    padding: 0.21333rem 0.4rem; }
+    .menu-box .menu_1 .menu.active {
+      position: relative;
+      font-size: 16px;
+      color: #282828;
+      font-weight: bold; }
+      .menu-box .menu_1 .menu.active:after {
+        content: ' ';
+        background-color: #e74744;
+        width: 0.48rem;
+        height: 0.06667rem;
+        border-radius: 7px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        margin-left: -0.24rem; }
+  .menu-box .menu_1 .icon-more {
+=======
 .menu-box {
   position: relative; }
   .menu-box .menu_1 {
@@ -308,6 +334,7 @@ body {
   .menu-box .more-box {
     height: 1.06667rem;
     background: white;
+>>>>>>> fd6748e8213af8c91fd7fc33f442e3705e62d656
     position: absolute;
     right: 0rem;
     top: 0rem;
@@ -334,6 +361,20 @@ body {
         .menu-box .sub-menu .menu_2 .swiper-slide.active {
           background: #e74744;
           color: white; }
+
+#topNav {
+  width: 100%;
+  overflow: hidden;
+  font: 16px/32px hiragino sans gb, microsoft yahei, simsun;
+  border-bottom: 1px solid #f8f8f8; }
+  #topNav .swiper-slide {
+    letter-spacing: 2px;
+    text-align: center; }
+    #topNav .swiper-slide span {
+      transition: all .3s ease;
+      display: block; }
+    #topNav .swiper-slide.active span {
+      transform: scale(1.1); }
 
 .cate-more {
   position: fixed;
