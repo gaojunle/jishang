@@ -126,6 +126,10 @@ body {
           flex-wrap: wrap;
           background: url("../../img/index/zy_flip_bg.jpg") 0px -2px no-repeat;
           text-align: center;
+          p{
+            text-align: left;
+            line-height: 1.6;
+          }
         }
         &.on {
           .back {
@@ -183,6 +187,7 @@ body {
       }
     }
   }
+
   .address {
     position: relative;
     .hds {

@@ -131,24 +131,20 @@ body {
     display: flex; }
   .pop-box .pop-cont {
     position: relative;
-    height: 3.26667rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: 13px;
     color: #7d7c7d;
     padding: 0px 1.33333rem;
     line-height: 1.8; }
     .pop-box .pop-cont .close {
-      position: absolute;
-      right: 1.01333rem;
-      top: -1.33333rem; }
+      position: relative;
+      padding-top: 0.4rem; }
       .pop-box .pop-cont .close img {
         width: 0.66667rem; }
-
-.pop-box .close {
-  position: absolute; }
-.pop-box .pop-scode {
-  width: 5.33333rem; }
+    .pop-box .pop-cont .pop-scode {
+      width: 5.33333rem; }
 
 /*# sourceMappingURL=common.css.map */

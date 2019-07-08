@@ -186,30 +186,23 @@ body {
   }
   .pop-cont {
     position: relative;
-    height: px2rem(245);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: 13px;
     color: #7d7c7d;
     padding: 0px px2rem(100);
     line-height: 1.8;
     .close {
-      position: absolute;
-      right: px2rem(76);
-      top: - px2rem(100);
+      position: relative;
+      padding-top: px2rem(30);
       img {
         width: px2rem(50);
       }
     }
-  }
-}
-
-.pop-box {
-  .close {
-    position: absolute;
-  }
-  .pop-scode {
-    width: px2rem(400);
+    .pop-scode {
+      width: px2rem(400);
+    }
   }
 }
