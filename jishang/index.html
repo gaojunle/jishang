@@ -46,12 +46,12 @@
             <table class="mtable">
                 <tr>
                     <td rowspan="2" style="padding-right: 1px;">
-                        <img class="zy-1" src="./img/index/zy_1.png" alt="" style="width: 100%;">
+                        <img class="zy-1" src="./img/index/zy_1.jpg" alt="" style="width: 100%;">
                         <a href="tel:400 800 900" class="link"></a>
                     </td>
                     <td>
                         <div class="flip-container flipper">
-                            <div class="front"><img src="./img/index/zy_2.png"></div>
+                            <div class="front"><img src="./img/index/zy_2.jpg"></div>
                             <div class="back">
                                 <div>
                                     <p>全国院线观影</p>
@@ -68,7 +68,7 @@
                 <tr>
                     <td>
                         <div class="flip-container">
-                            <div class="front"><img src="./img/index/zy_3.png"></div>
+                            <div class="front"><img src="./img/index/zy_3.jpg"></div>
                             <div class="back">
                                 <div>
                                     <p>星级酒店住宿</p>
@@ -83,7 +83,7 @@
                 <tr>
                     <td style="padding-right: 1px;">
                         <div class="flip-container">
-                            <div class="front"><img src="./img/index/zy_4.png"></div>
+                            <div class="front"><img src="./img/index/zy_4.jpg"></div>
                             <div class="back">
                                 <div>
                                     <p>境内外机场贵宾厅</p>
@@ -97,7 +97,7 @@
                     </td>
                     <td>
                         <div class="flip-container">
-                            <div class="front"><img src="./img/index/zy_5.png"></div>
+                            <div class="front"><img src="./img/index/zy_5.jpg"></div>
                             <div class="back">
                                 <div>
                                     <p>癌症筛查/基因检测</p>
@@ -137,6 +137,18 @@
     </div>
     <div id="lianxi" class="address">
         <img class="bg" src="./img/index/address.jpg" alt="">
+        <div class="hds">
+            <a href="#" class="pop-handle" data-src="scode_schz.jpg"></a>
+            <a href="#" class="pop-handle" data-src="scode_qyhz.jpg"></a>
+            <a href="#" class="pop-handle" data-src="scode_lphz.jpg"></a>
+            <a href="#" class="pop-handle bottom" data-src="scode_gzh.jpg"></a>
+        </div>
+    </div>
+</div>
+<div class="pop-box">
+    <div class="pop-cont">
+        <div class="close"><img class="pop-close" src="./img/index/close.png" alt=""></div>
+        <img class="pop-scode" src="./img/index/" alt="">
     </div>
 </div>
 <script src="js/lib/jquery.min.js"></script>
@@ -145,6 +157,7 @@
     var App = {
         init: function () {
             this.initData();
+            this.bindEvent();
         },
         initData: function () {
             this.initSwiper();
@@ -176,6 +189,19 @@
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev'
             });
+        },
+
+        bindEvent: function () {
+            var $popBox = $('.pop-box');
+            $popBox.on('click', '.close', function () {
+                $popBox.removeClass('show');
+                return false;
+            })
+            $('.hds').on('click', '.pop-handle', function () {
+                $popBox.find('.pop-scode').attr('src', './img/index/' + $(this).data('src'))
+                $popBox.addClass('show');
+                return false;
+            })
         }
     };
     App.init();
