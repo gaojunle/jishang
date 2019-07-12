@@ -1,5 +1,5 @@
 /*common*/
-@import "../lib/flexible";
+@import "./flexible.scss";
 
 $cRed: #de172a;
 $cGrey: #7d7c7d;
@@ -312,6 +312,9 @@ html, body {
   height: 100%;
   z-index: 10000;
   display: none;
+  &.show{
+    display: block
+  }
   .pop-mask {
     position: absolute;
     top: 0px;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>登录</title>
+    <script type="text/javascript" src="./js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="css/page/payVip.css">
+</head>
+
+<body>
+    <div class="ad-pop-box show">
+        <div class="ad-pop-cont">
+            <a href="./0_权益详情页.html"> <img src="./img/payVip/active_img.png" alt="" class="pop-ad"></a>
+            <img class="close" src="./img/payVip/icon-close.png" alt="">
+        </div>
+    </div>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <script>
+        jQuery(function ($) {
+            $('.ad-pop-box').on('click', '.close', function () {
+                $('.ad-pop-box').removeClass('show');
+            })
+        })
+    </script>
+</body>
+
+</html>
