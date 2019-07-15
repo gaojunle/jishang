@@ -4,665 +4,716 @@
 
 html,
 body {
-    padding-bottom: 0px;
-    background: #fff;
+  padding-bottom: 0px;
+  background: #fff;
 }
 
 .ad-pop-box {
-    position: fixed;
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .25);
+  padding-bottom: 20px;
+  display: none;
+
+  &.show {
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, .25);
-    padding-bottom: 20px;
-    display: none;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &.show {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .ad-pop-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .pop-ad {
+      width: px2rem(500);
     }
 
-    .ad-pop-cont {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        .pop-ad {
-            width: px2rem(500);
-        }
-
-        .close {
-            width: px2rem(57);
-            margin-top: px2rem(25);
-        }
+    .close {
+      width: px2rem(57);
+      margin-top: px2rem(25);
     }
+  }
 
 }
 
 .quanyi {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 
-    .banner {
-        img {
-            width: 100%;
-            height: px2rem(350);
-        }
+  .banner {
+    img {
+      width: 100%;
+      height: px2rem(350);
     }
+  }
 
-    .tab {
-        background: white;
-
-        .tab-menu {
-            padding: px2rem(24) px2rem(12);
-            justify-content: space-between;
-            border-bottom: none;
-
-            img {
-                width: px2rem(220);
-                height: px2rem(150);
-                border-radius: px2rem(15);
-            }
-
-            >li {
-                width: auto;
-                height: auto;
-                padding: 3px;
-                border-right: none;
-
-                &.on {
-                    color: white;
-                    background: transparent;
-                    border: 1px solid rgb(222, 23, 42);
-                    border-radius: px2rem(15);
-                }
-            }
-        }
-
-        .list {
-            padding: 0px px2rem(20);
-
-            .item {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                min-height: px2rem(170);
-                background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
-                background-size: contain;
-                box-sizing: border-box;
-                margin-bottom: px2rem(20);
-
-                .top {
-                    top: px2rem(366);
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 100%;
-                    padding: px2rem(20);
-                    box-sizing: border-box;
-
-                    img {
-                        width: px2rem(80);
-                        height: px2rem(80);
-                        margin-right: px2rem(25);
-                    }
-
-                    .info {
-                        flex: 1;
-                        line-height: 1.65;
-
-                        h3 {
-                            font-size: 15px;
-                            color: rgb(42, 42, 42);
-                        }
-
-                        >p {
-                            font-size: 12px;
-                            color: rgb(143, 143, 143);
-                        }
-                    }
-
-                    .use {
-                        color: white;
-                        display: inline-block;
-                        background: rgb(42, 42, 42);
-                        width: px2rem(140);
-                        border-radius: 20px;
-                        text-align: center;
-                        font-size: 12px;
-                        padding: 2px 0px;
-                    }
-                }
-
-                .bottom {
-                    height: px2rem(42);
-                    text-align: right;
-                    width: 100%;
-                    box-sizing: border-box;
-
-                    .instruction {
-                        font-size: 12px;
-                        color: #222;
-                        padding-right: px2rem(24);
-                    }
-                }
-
-                .desc {
-                    display: none;
-                    font-size: 12px;
-                    color: rgb(143, 143, 143);
-                    line-height: 1.667;
-                    border: 1px solid rgba(225, 225, 225, .6);
-                    border-top: none;
-                    background-color: rgb(255, 255, 255);
-                    padding: px2rem(24) px2rem(20);
-                    margin-top: -1px;
-
-                    &.show {
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
-
-    .bt-pay {
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-
-        .protocal {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-size: 15px;
-            color: rgb(42, 42, 42);
-            background: white;
-            padding: px2rem(30) px2rem(20);
-
-            .proc-check {
-                display: inline-block;
-                width: px2rem(44);
-                height: px2rem(44);
-                background: url('../../img/payVip/icon-checked.png') 0px 0px no-repeat;
-                background-size: 100% 100%;
-                margin-right: px2rem(8);
-
-                &.uncheck {
-                    background: url('../../img/payVip/icon-check.png') 0px 0px no-repeat;
-                    background-size: 100% 100%;
-                }
-            }
-
-            .pro-name {
-                color: rgb(222, 23, 42);
-            }
-
-            .pro-cont {
-                display: none;
-            }
-        }
-
-        .btns {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .pbtn {
-                height: px2rem(90);
-                flex: 1;
-                width: 50%;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 15px;
-                color: rgb(42, 42, 42);
-                background: #e1e1e1;
-
-                &.btn-pay {
-                    color: white;
-                    background-image: -moz-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
-                    background-image: -webkit-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
-                    background-image: -ms-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
-                }
-            }
-        }
-    }
-}
-
-.protocal-pop-box {
-    .pop-wraper {
-        width: 80vw;
-        margin-left: -40vw;
-        display: block;
-        font-size: 12px;
-        height: auto;
-        top: 30vh;
-
-        .pop-content {
-            .pop-cont {
-                height: 50vh;
-                overflow-y: scroll;
-                display: block;
-                padding: 10px;
-                text-align: left;
-            }
-        }
-    }
-}
-
-//券码兑换
-.check-info {
-    height: 100vh;
+  .tab {
     background: white;
-    //background: url("../../img/login/login_bg.png") 0px 0px no-repeat;
-    background-size: 100%;
-    background-position: bottom;
 
-    .banner {
-        img {
-            width: 100%;
-            height: 140px;
-            margin-bottom: 50px;
+    .tab-menu {
+      padding: px2rem(24) px2rem(12);
+      justify-content: space-between;
+      border-bottom: none;
+
+      img {
+        width: px2rem(220);
+        height: px2rem(150);
+        border-radius: px2rem(15);
+      }
+
+      > li {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border-right: none;
+
+        &.on {
+          color: white;
+          background: transparent;
+          border: 1px solid rgb(222, 23, 42);
+          border-radius: px2rem(15);
         }
-
+      }
     }
 
+    .list {
+      padding: 0px px2rem(20);
 
-    form {
-        padding: 0px px2rem(60);
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: px2rem(170);
+        background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+        margin-bottom: px2rem(20);
 
-        >p {
-            border-bottom: 1px solid $lineGray;
-            position: relative;
-            padding: px2rem(10) 0px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .top {
+          top: px2rem(366);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: px2rem(126);
+          padding: 0px px2rem(20);
+          box-sizing: border-box;
 
-            img {
-                width: px2rem(34);
-                height: px2rem(49)
+          img {
+            width: px2rem(80);
+            height: px2rem(80);
+            margin-right: px2rem(25);
+
+            &.overdate {
+              width: px2rem(116);
+              height: px2rem(116);
+            }
+          }
+
+          .info {
+            flex: 1;
+            line-height: 1.65;
+
+            h3 {
+              font-size: 15px;
+              color: rgb(42, 42, 42);
             }
 
-            input {
-                flex: 1;
-                outline: none;
-                -webkit-appearance: none;
-                border: none;
-                padding: px2rem(24) px2rem(0);
-                width: 100%;
-                color: #222;
-                font-size: 13px;
-
-                &[ name='mobile'] {
-                    width: px2rem(460);
-                }
+            > p {
+              font-size: 12px;
+              color: rgb(143, 143, 143);
             }
 
-            &.code-box {
-                input {
-                    width: px2rem(270);
-                }
+          }
 
-                img {
-                    width: px2rem(34);
-                    height: px2rem(38)
-                }
-            }
-
-            .btn-get-mscode {
-                display: inline-block;
-                border: 1px solid #333;
-                border-radius: px2rem(8);
-                overflow: hidden;
-                width: 92px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                box-sizing: border-box;
-
-                .imgcode {
-                    width: 66px;
-                    height: 28px;
-                }
-
-                .imgfetch {
-                    height: 86%;
-                    margin-right: px2rem(8);
-
-                }
-            }
-
-            .btn-get-code {
-                display: inline-block;
-                width: 92px;
-                height: 30px;
-                line-height: 30px;
-                color: #333;
-                border: 1px solid #333;
-                border-radius: px2rem(8);
-                font-size: 12px;
-                text-align: center;
-                box-sizing: border-box;
-            }
-        }
-
-        .submit-box {
+          .use {
+            color: white;
+            display: inline-block;
+            background: rgb(42, 42, 42);
+            width: px2rem(140);
+            border-radius: 20px;
             text-align: center;
-            margin-top: px2rem(80);
-
-            .btn-login {
-                outline: none;
-                width: px2rem(328);
-                height: px2rem(64);
-                border: none;
-                background: rgb(255, 217, 0);
-                width: px2rem(628);
-                height: px2rem(90);
-                line-height: px2rem(90);
-                border-radius: px2rem(90);
-                text-align: center;
-                font-size: 16px;
-                color: rgb(42, 42, 42);
-            }
-        }
-
-    }
-
-    form .error {
-        display: block;
-        font-size: 12px;
-        color: $cRed;
-    }
-}
-
-//卡券详情
-.card-detail {
-    min-height: 100vh;
-    position: relative;
-    background: #f6f7f9;
-    padding: px2rem(20);
-
-    >.info {
-        padding: px2rem(60) 0px px2rem(0);
-        text-align: center;
-        background: #fff;
-        border-radius: 5px;
-
-        img {
-            width: px2rem(156);
-        }
-
-        h3 {
-            font-size: 15px;
-            color: rgb(42, 42, 42);
-            padding: px2rem(40) 0px 10px;
-            font-weight: bold;
-        }
-
-        .date {
             font-size: 12px;
-            color: rgb(143, 143, 143);
-            padding-bottom: px2rem(60);
-
+            padding: 2px 0px;
+          }
         }
 
-        .quan-code {
-            padding-bottom: px2rem(52);
+        .bottom {
+          height: px2rem(42);
+          text-align: right;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0px px2rem(24);
+          height: px2rem(44);
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          a {
+            font-size: 12px;
+            color: #222;
+          }
+
+          .instruction {
+            font-size: 12px;
+            color: #222;
+
+          }
         }
-    }
 
-    .split {
-        background: #f6f7f9;
-        padding: 0px;
-
-        img {
+        .desc {
+          display: none;
+          font-size: 12px;
+          color: rgb(143, 143, 143);
+          line-height: 1.667;
+          border: 1px solid rgba(225, 225, 225, .6);
+          border-top: none;
+          background-color: rgb(255, 255, 255);
+          padding: px2rem(24) px2rem(20);
+          margin-top: -1px;
+          position: relative;
+          &.show {
             display: block;
-            width: 100%;
+          }
+          &:before, &:after {
+            content: ' ';
+            background: rgba(225, 225, 225, 0.6);
+            width: 1px;
+            height: 10px;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+          }
+          &:before {
+            left: -1px;
+          }
+          &:after {
+            right: -1px;
+          }
         }
+      }
+    }
+  }
+
+  .bt-pay {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+
+    .protocal {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 15px;
+      color: rgb(42, 42, 42);
+      background: white;
+      padding: px2rem(30) px2rem(20);
+
+      .proc-check {
+        display: inline-block;
+        width: px2rem(44);
+        height: px2rem(44);
+        background: url('../../img/payVip/icon-checked.png') 0px 0px no-repeat;
+        background-size: 100% 100%;
+        margin-right: px2rem(8);
+
+        &.uncheck {
+          background: url('../../img/payVip/icon-check.png') 0px 0px no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+
+      .pro-name {
+        color: rgb(222, 23, 42);
+        margin-left: -8px;
+      }
+
+      .pro-cont {
+        display: none;
+      }
     }
 
-    .desc-box {
-        background: #fff;
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        li {
-            padding: px2rem(0) 0px;
-            margin: 0px px2rem(24);
-
-            img {
-                width: 100%;
-                padding-bottom: px2rem(24);
-            }
-
-            .title {
-                position: relative;
-                font-size: px2rem(28);
-                color: rgb(42, 42, 42);
-                padding: px2rem(20) px2rem(15) px2rem(40);
-
-                &:before,
-                &:after {
-                    display: inline-block;
-                    position: absolute;
-                    content: ' ';
-                }
-
-                &:before {
-                    width: px2rem(6);
-                    background: #ffd900;
-                    height: px2rem(30);
-                    top: 50%;
-                    margin-top: - px2rem(23);
-                    left: 0px;
-                }
-
-                &:after {
-                    right: 0px;
-                    width: px2rem(26);
-                    height: px2rem(26);
-                    top: 50%;
-                    margin-top: - px2rem(13);
-                    text-align: center;
-                    background: url("../../img/payVip/arrow-right.png") no-repeat;
-                    background-size: contain;
-                }
-            }
-
-            .info {
-                display: none;
-                font-size: 12px;
-                color: #8f8f8f;
-                line-height: 2;
-                padding-bottom: px2rem(15);
-
-                padding-top: px2rem(10);
-                text-align: justify;
-
-                .stitle {
-                    color: #8f8f8f;
-                    font-weight: bold;
-                    line-height: 2;
-                    padding-bottom: 4px;
-                }
-            }
-
-            &.unfold {
-                .title {
-                    &:after {
-                        right: px2rem(8);
-                        background: url("../../img/payVip/arrow-top.png") no-repeat;
-                        background-size: contain;
-                    }
-                }
-
-                .info {
-                    display: block;
-                }
-            }
-        }
-    }
-
-
-    .btn_live {
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        background: #ffd900;
+      .pbtn {
+        height: px2rem(90);
+        flex: 1;
+        width: 50%;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 15px;
+        color: rgb(42, 42, 42);
+        background: #e1e1e1;
+
+        &.btn-pay {
+          color: white;
+          background-image: -moz-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+          background-image: -webkit-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+          background-image: -ms-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+        }
+      }
+    }
+  }
+}
+
+.protocal-pop-box {
+  .pop-wraper {
+    width: 80vw;
+    margin-left: -40vw;
+    display: block;
+    font-size: 12px;
+    height: auto;
+    top: 30vh;
+
+    .pop-content {
+      .pop-cont {
+        height: 50vh;
+        overflow-y: scroll;
+        display: block;
+        padding: 10px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+//券码兑换
+.check-info {
+  height: 100vh;
+  background: white;
+  //background: url("../../img/login/login_bg.png") 0px 0px no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+
+  .banner {
+    img {
+      width: 100%;
+      height: 140px;
+      margin-bottom: 50px;
+    }
+
+  }
+
+  form {
+    padding: 0px px2rem(60);
+
+    > p {
+      border-bottom: 1px solid $lineGray;
+      position: relative;
+      padding: px2rem(10) 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: px2rem(34);
+        height: px2rem(49)
+      }
+
+      input {
+        flex: 1;
+        outline: none;
+        -webkit-appearance: none;
+        border: none;
+        padding: px2rem(24) px2rem(0);
+        width: 100%;
+        color: #222;
+        font-size: 13px;
+
+        &[ name='mobile'] {
+          width: px2rem(460);
+        }
+      }
+
+      &.code-box {
+        input {
+          width: px2rem(270);
+        }
+
+        img {
+          width: px2rem(34);
+          height: px2rem(38)
+        }
+      }
+
+      .btn-get-mscode {
+        display: inline-block;
+        border: 1px solid #333;
+        border-radius: px2rem(8);
+        overflow: hidden;
+        width: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+
+        .imgcode {
+          width: 66px;
+          height: 28px;
+        }
+
+        span {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .imgfetch {
+          height: 86%;
+        }
+      }
+
+      .btn-get-code {
+        display: inline-block;
+        width: 92px;
+        height: 30px;
+        line-height: 30px;
+        color: #333;
+        border: 1px solid #333;
+        border-radius: px2rem(8);
+        font-size: 12px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .submit-box {
+      text-align: center;
+      margin-top: px2rem(80);
+
+      .btn-login {
+        outline: none;
+        width: px2rem(328);
+        height: px2rem(64);
+        border: none;
+        background: rgb(255, 217, 0);
+        width: px2rem(628);
         height: px2rem(90);
         line-height: px2rem(90);
-        color: #2a2a2a;
+        border-radius: px2rem(90);
+        text-align: center;
         font-size: 16px;
+        color: rgb(42, 42, 42);
+      }
     }
+
+  }
+
+  form .error {
+    display: block;
+    font-size: 12px;
+    color: $cRed;
+  }
+}
+
+//卡券详情
+.card-detail {
+  min-height: 100vh;
+  position: relative;
+  background: #f6f7f9;
+  padding: px2rem(20);
+
+  > .info {
+    padding: px2rem(60) 0px px2rem(0);
+    text-align: center;
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    img {
+      width: px2rem(156);
+    }
+
+    h3 {
+      font-size: 15px;
+      color: rgb(42, 42, 42);
+      padding: px2rem(40) 0px 10px;
+      font-weight: bold;
+    }
+
+    .date {
+      font-size: 12px;
+      color: rgb(143, 143, 143);
+      padding-bottom: px2rem(60);
+
+    }
+
+    .quan-code {
+      padding-bottom: px2rem(52);
+    }
+  }
+
+  .split {
+    background: #f6f7f9;
+    padding: 0px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .desc-box {
+    background: #fff;
+
+    li {
+      padding: px2rem(0) 0px;
+      margin: 0px px2rem(24);
+
+      img {
+        width: 100%;
+        padding-bottom: px2rem(24);
+      }
+
+      .title {
+        position: relative;
+        font-size: px2rem(28);
+        color: rgb(42, 42, 42);
+        padding: px2rem(20) px2rem(15) px2rem(40);
+
+        &:before,
+        &:after {
+          display: inline-block;
+          position: absolute;
+          content: ' ';
+        }
+
+        &:before {
+          width: px2rem(6);
+          background: #ffd900;
+          height: px2rem(30);
+          top: 50%;
+          margin-top: - px2rem(25);
+          left: 0px;
+        }
+
+        &:after {
+          right: 0px;
+          width: px2rem(26);
+          height: px2rem(26);
+          top: 50%;
+          margin-top: - px2rem(13);
+          text-align: center;
+          background: url("../../img/payVip/arrow-right.png") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .info {
+        display: none;
+        font-size: 12px;
+        color: #8f8f8f;
+        line-height: 2;
+        padding-bottom: px2rem(15);
+
+        padding-top: px2rem(10);
+        text-align: justify;
+
+        .stitle {
+          color: #8f8f8f;
+          font-weight: bold;
+          line-height: 2;
+          padding-bottom: 4px;
+        }
+      }
+
+      &.unfold {
+        .title {
+          &:after {
+            right: px2rem(8);
+            background: url("../../img/payVip/arrow-top.png") no-repeat;
+            background-size: contain;
+          }
+        }
+
+        .info {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .btn_live {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #ffd900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: px2rem(90);
+    line-height: px2rem(90);
+    color: #2a2a2a;
+    font-size: 16px;
+  }
 }
 
 //我的卡券
 .mycard {
-    padding-bottom: 60px;
+  padding-bottom: 60px;
 
-    .tab {
-        background: white;
+  .tab {
+    background: white;
 
-        .tab-menu {
-            padding: px2rem(24) px2rem(12);
-            justify-content: space-between;
-            border-bottom: none;
+    .tab-menu {
+      padding-bottom: px2rem(24);
+      justify-content: space-between;
+      border-bottom: none;
 
-            >li {
-                width: 50%;
-                border-right: none;
-                background: #e1e1e1;
-                font-size: 15px;
+      > li {
+        width: 50%;
+        border-right: none;
+        background: #e1e1e1;
+        font-size: 15px;
 
-                &.on {
-                    color: rgb(42, 42, 42);
-                    background: #ffd900;
-                }
-            }
+        &.on {
+          color: rgb(42, 42, 42);
+          background: #ffd900;
         }
-
-        .list {
-            padding: 0px px2rem(20);
-
-            .item {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                min-height: px2rem(170);
-                background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
-                background-size: contain;
-                box-sizing: border-box;
-                margin-bottom: px2rem(20);
-
-                .top {
-                    top: px2rem(366);
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 100%;
-                    height: px2rem(124);
-                    padding: 0px px2rem(20);
-                    box-sizing: border-box;
-
-                    img {
-                        width: px2rem(80);
-                        height: px2rem(80);
-                        margin-right: px2rem(25);
-
-                        &.overdate {
-                            width: px2rem(116);
-                            height: px2rem(116);
-                        }
-                    }
-
-                    .info {
-                        flex: 1;
-                        line-height: 1.65;
-
-                        h3 {
-                            font-size: 15px;
-                            color: rgb(42, 42, 42);
-                        }
-
-                        >p {
-                            font-size: 12px;
-                            color: rgb(143, 143, 143);
-                        }
-
-                    }
-
-                    .use {
-                        color: white;
-                        display: inline-block;
-                        background: rgb(42, 42, 42);
-                        width: px2rem(140);
-                        border-radius: 20px;
-                        text-align: center;
-                        font-size: 12px;
-                        padding: 2px 0px;
-                    }
-                }
-
-                .bottom {
-                    height: px2rem(42);
-                    text-align: right;
-                    width: 100%;
-                    box-sizing: border-box;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0px px2rem(24);
-                    a {
-                        font-size: 12px;
-                        color: #222;
-                    }
-
-                    .instruction {
-                        font-size: 12px;
-                        color: #222;
-                       
-                    }
-                }
-
-                .desc {
-                    display: none;
-                    font-size: 12px;
-                    color: rgb(143, 143, 143);
-                    line-height: 1.667;
-                    border: 1px solid rgba(225, 225, 225, .6);
-                    border-top: none;
-                    background-color: rgb(255, 255, 255);
-                    padding: px2rem(24) px2rem(20);
-                    margin-top: -1px;
-
-                    &.show {
-                        display: block;
-                    }
-                }
-            }
-        }
+      }
     }
 
-    .btn-get-more {
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        display: block;
-        height: px2rem(90);
-        line-height: px2rem(90);
-        text-align: center;
-        background: #ffd900;
-        color: rgb(42, 42, 42);
+    .list {
+      padding: 0px px2rem(20);
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: px2rem(170);
+        background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+        margin-bottom: px2rem(20);
+
+        .top {
+          top: px2rem(366);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: px2rem(126);
+          padding: 0px px2rem(20);
+          box-sizing: border-box;
+
+          img {
+            width: px2rem(80);
+            height: px2rem(80);
+            margin-right: px2rem(25);
+
+            &.overdate {
+              width: px2rem(116);
+              height: px2rem(116);
+            }
+          }
+
+          .info {
+            flex: 1;
+            line-height: 1.65;
+
+            h3 {
+              font-size: 15px;
+              color: rgb(42, 42, 42);
+            }
+
+            > p {
+              font-size: 12px;
+              color: rgb(143, 143, 143);
+            }
+
+          }
+
+          .use {
+            color: white;
+            display: inline-block;
+            background: rgb(42, 42, 42);
+            width: px2rem(140);
+            border-radius: 20px;
+            text-align: center;
+            font-size: 12px;
+            padding: 2px 0px;
+          }
+        }
+
+        .bottom {
+          height: px2rem(42);
+          text-align: right;
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px px2rem(24);
+          height: px2rem(44);
+          a {
+            font-size: 12px;
+            color: #222;
+          }
+
+          .instruction {
+            font-size: 12px;
+            color: #222;
+
+          }
+        }
+
+        .desc {
+          display: none;
+          font-size: 12px;
+          color: rgb(143, 143, 143);
+          line-height: 1.667;
+          border: 1px solid rgba(225, 225, 225, .6);
+          border-top: none;
+          background-color: rgb(255, 255, 255);
+          padding: px2rem(24) px2rem(20);
+          margin-top: -1px;
+          position: relative;
+          &.show {
+            display: block;
+          }
+          &:before, &:after {
+            content: ' ';
+            background: rgba(225, 225, 225, 0.6);
+            width: 1px;
+            height: 10px;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+          }
+          &:before {
+            left: -1px;
+          }
+          &:after {
+            right: -1px;
+          }
+        }
+      }
     }
+  }
+
+  .btn-get-more {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: block;
+    height: px2rem(90);
+    line-height: px2rem(90);
+    text-align: center;
+    background: #ffd900;
+    color: rgb(42, 42, 42);
+  }
 }
