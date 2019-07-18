@@ -83,6 +83,7 @@
         <a href="#">个人中心</a>
     </div>
 </div>
+<a id="roll" href="#" class="baoxiang"><img src="./img/baoxiang.gif" alt=""></a>
 <script src="./js/lib/jquery.min.js"></script>
 <script src="./js/lib/artDialog.js"></script>
 <script src="./js/lib/swiper.min.js"></script>
@@ -91,6 +92,7 @@
         init: function () {
             this.initData();
             this.bindEvent();
+            this.initBaoXiang();
         },
         bindEvent: function () {
             //TODO 测试使用，info的div上加 activated 类名表示激活
@@ -123,8 +125,47 @@
                 loop: true,
                 pagination: '.swiper-pagination'
             });
+        },
+
+        initBaoXiang: function () {
+
         }
     };
+    //宝箱动画效果
+    var BX = {
+        roll: document.getElementById("roll"),
+        speed: 20,
+        statusX: 1,
+        statusY: 1,
+        x: 100,
+        y: 300,
+        winW: document.documentElement.clientWidth - document.getElementById("roll").offsetWidth,
+        winH: document.documentElement.clientHeight - document.getElementById("roll").offsetHeight,
+        Go: function () {
+            this.roll.style.left = this.x + 'px';
+            this.roll.style.top = this.y + 'px';
+
+            this.x = this.x + (this.statusX ? -1 : 1)
+            if (this.x < 0) {
+                this.statusX = 0
+            }
+            if (this.x > this.winW) {
+                this.statusX = 1
+            }
+
+            this.y = this.y + (this.statusY ? -1 : 1)
+            if (this.y < 0) {
+                this.statusY = 0
+            }
+            if (this.y > this.winH) {
+                this.statusY = 1
+            }
+        },
+        Play: function () {
+            setInterval(BX.Go.bind(BX), BX.speed);
+        }
+    }
+    BX.Play();
     App.init();
 </script>
 </body>

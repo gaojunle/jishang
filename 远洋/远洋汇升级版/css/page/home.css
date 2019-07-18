@@ -348,4 +348,12 @@ body {
         background: url("../../img/index/h_3_on.png") center 0.18667rem no-repeat;
         background-size: 0.66667rem 0.66667rem; }
 
+.baoxiang {
+  position: fixed;
+  z-index: 2;
+  right: 0px;
+  bottom: 4.66667rem; }
+  .baoxiang img {
+    width: 1.6rem; }
+
 /*# sourceMappingURL=home.css.map */
