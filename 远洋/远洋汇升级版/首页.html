@@ -88,85 +88,87 @@
 <script src="./js/lib/artDialog.js"></script>
 <script src="./js/lib/swiper.min.js"></script>
 <script>
-    var App = {
-        init: function () {
-            this.initData();
-            this.bindEvent();
-            this.initBaoXiang();
-        },
-        bindEvent: function () {
-            //TODO 测试使用，info的div上加 activated 类名表示激活
-            $('.btn_active').click(function () {
-                $(this).parents('.info').addClass('activated')
-            })
-
-            $('.btn_scode').click(function () {
-                var d = dialog({
-                    title: '',
-                    padding: 0,
-                    content: '<div class="pop-cont"><img class="icon_close" src="./img/index/icon_close.png" alt=""><p><img class="scode-avt" src="./img/index/scode-avt.png" alt=""></p></div>',
-                    backdropOpacity: '0.3'
-                });
-                d.showModal();
-                $('.icon_close').click(function () {
-                    d.close().remove();
+    jQuery(function ($) {
+        var App = {
+            init: function () {
+                this.initData();
+                this.bindEvent();
+                this.initBaoXiang();
+            },
+            bindEvent: function () {
+                //TODO 测试使用，info的div上加 activated 类名表示激活
+                $('.btn_active').click(function () {
+                    $(this).parents('.info').addClass('activated')
                 })
-            })
-        },
-        initData: function () {
-            this.initSwiper();
-        },
 
-        initSwiper: function () {
-            var swiperBanner = new Swiper('.banner-swiper', {
-                spaceBetween: 0,
-                centeredSlides: true,
-                autoplay: 4000,
-                loop: true,
-                pagination: '.swiper-pagination'
-            });
-        },
+                $('.btn_scode').click(function () {
+                    var d = dialog({
+                        title: '',
+                        padding: 0,
+                        content: '<div class="pop-cont"><img class="icon_close" src="./img/index/icon_close.png" alt=""><p><img class="scode-avt" src="./img/index/scode-avt.png" alt=""></p></div>',
+                        backdropOpacity: '0.3'
+                    });
+                    d.showModal();
+                    $('.icon_close').click(function () {
+                        d.close().remove();
+                    })
+                })
+            },
+            initData: function () {
+                this.initSwiper();
+            },
 
-        initBaoXiang: function () {
+            initSwiper: function () {
+                var swiperBanner = new Swiper('.banner-swiper', {
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    autoplay: 4000,
+                    loop: true,
+                    pagination: '.swiper-pagination'
+                });
+            },
 
+            initBaoXiang: function () {
+
+            }
+        };
+        //宝箱动画效果
+        var BX = {
+            roll: document.getElementById("roll"),
+            speed: 20,
+            statusX: 1,
+            statusY: 1,
+            x: 100,
+            y: 300,
+            winW: document.documentElement.clientWidth - document.getElementById("roll").offsetWidth,
+            winH: document.documentElement.clientHeight - 80*1.2,
+            Go: function () {
+                this.roll.style.left = this.x + 'px';
+                this.roll.style.top = this.y + 'px';
+
+                this.x = this.x + (this.statusX ? -1 : 1)
+                if (this.x < 0) {
+                    this.statusX = 0
+                }
+                if (this.x > this.winW) {
+                    this.statusX = 1
+                }
+
+                this.y = this.y + (this.statusY ? -1 : 1)
+                if (this.y < 0) {
+                    this.statusY = 0
+                }
+                if (this.y > this.winH) {
+                    this.statusY = 1
+                }
+            },
+            Play: function () {
+                setInterval(BX.Go.bind(BX), BX.speed);
+            }
         }
-    };
-    //宝箱动画效果
-    var BX = {
-        roll: document.getElementById("roll"),
-        speed: 20,
-        statusX: 1,
-        statusY: 1,
-        x: 100,
-        y: 300,
-        winW: document.documentElement.clientWidth - document.getElementById("roll").offsetWidth,
-        winH: document.documentElement.clientHeight - document.getElementById("roll").offsetHeight,
-        Go: function () {
-            this.roll.style.left = this.x + 'px';
-            this.roll.style.top = this.y + 'px';
-
-            this.x = this.x + (this.statusX ? -1 : 1)
-            if (this.x < 0) {
-                this.statusX = 0
-            }
-            if (this.x > this.winW) {
-                this.statusX = 1
-            }
-
-            this.y = this.y + (this.statusY ? -1 : 1)
-            if (this.y < 0) {
-                this.statusY = 0
-            }
-            if (this.y > this.winH) {
-                this.statusY = 1
-            }
-        },
-        Play: function () {
-            setInterval(BX.Go.bind(BX), BX.speed);
-        }
-    }
-    BX.Play();
-    App.init();
+        BX.Play();
+        App.init();
+    })
 </script>
 </body>
 </html>
