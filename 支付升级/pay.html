@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" href="./css/page/main.css" />
+    <script src="./js/lib/flexible.js"></script>
+</head>
+
+<body>
+    <div class="bd pay-box">
+        <div class="card-info-box">
+            <img class="info-bg" src="./img/avt1.png" alt="">
+            <div class="info">
+                <div class="m-info">
+                    <h3>嗨视听月卡</h3>
+                    <p>就要“剧”会生活！</p>
+                </div>
+                <div class="price-box">
+                    <span class="mark">¥</span>
+                    <span class="num">25.8</h3>
+                </div>
+            </div>
+        </div>
+        <div class="detail">
+            <div class="pline">
+                购买账户：186****2021
+            </div>
+            <div class="pline">
+                到期日期：2019-9-30
+            </div>
+            <div class="pline">
+                支付金额：<span class="red">¥25.8</span>
+            </div>
+            <div class="pline">
+                支付方式：
+            </div>
+            <div class="pay-ways">
+                <div class="pay-way on"><img src="./img/pay-wx.png" alt=""></div>
+                <div class="pay-way"><img src="./img/pay-zfb.png" alt=""></div>
+            </div>
+        </div>
+        <div class="fix-bottom">
+            <div class="price">¥25.8</div>
+            <a href="./充值记录.html" class="btn pay">立即支付</a>
+        </div>
+    </div>
+    
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/artDialog.js"></script>
+    <script>
+
+        var App = {
+            init: function () {
+                this.bindEvent();
+            },
+            bindEvent: function () {
+                $('.pay-ways').on('click', '.pay-way', function () {
+                    $(this).addClass('on').siblings().removeClass('on')
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

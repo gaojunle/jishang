@@ -1,0 +1,145 @@
+@fontGray: #8f8f8f;
+@lineGray: rgba(216, 216, 216, 0.4);
+@orange: #ffd900;
+@cBlack: #2a2a2a;
+@cGray: #8f8f8f;
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #fff;
+    font-size: 0.28rem;
+}
+
+.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 7.5rem;
+    min-height: 100%;
+    margin: 0px auto;
+}
+
+.ui-dialog {
+    overflow: hidden;
+    .ui-dialog-body {
+        .icon_close {
+            width: 0.4rem;
+            position: absolute;
+            right: .12rem;
+            top: .12rem;
+            opacity: 0.75;
+        }
+        .scode-avt {
+            width: 4rem;
+        }
+        .pop-cont {
+            position: relative;
+            padding: 0px 0.8rem;
+            min-height: 2.8rem;
+            min-width: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+    }
+    .msg_cont {
+        border-radius: 5px;
+        background: white;
+        width: 6rem;
+        box-sizing: border-box;
+        padding: 0.45rem 0.55rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 1.9;
+        color: @cGray;
+        text-align: center;
+        min-height: 2.8rem;
+    }
+    .ui-dialog-footer {
+        padding: 0.04rem 0px;
+        border-top: 1px solid @lineGray;
+        .ui-dialog-button {
+            justify-content: space-between;
+        }
+        button {
+            display: inline-block;
+            background-color: white;
+            height: 0.93333rem;
+            line-height: 0.93333rem;
+            text-align: center;
+            border-radius: 0px;
+            border: none;
+            color: @cGray;
+            font-size: 15px;
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            &.ui-dialog-autofocus {
+                background-color: white;
+                color: #2a2a2a;
+            }
+            + button {
+                border-left: 1px solid @lineGray !important;
+            }
+        }
+    }
+}
+
+.btn {
+    display: block;
+    width: 2.9rem;
+    margin: 0px auto;
+    height: 0.66rem;
+    line-height: 0.66rem;
+    text-align: center;
+    color: #8f8f8f;
+    font-size: 12px;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    border: 1px solid @lineGray;
+    margin-bottom: 0.22rem;
+    .btn_defualt {
+        display: block;
+        width: 100%;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        border-radius: 0px;
+        background-color: #ffd900;
+        border: none;
+        font-size: 15px;
+        color: #2a2a2a;
+        text-align: center;
+        border-radius: 20px;
+        &.nobg {
+            background: transparent;
+            border: 1px solid rgb(0, 197, 255);
+            color: rgb(0, 197, 255);
+        }
+        &.light {
+            background-color: rgba(40, 194, 252, 0.2);
+            color: rgb(0, 197, 255);
+        }
+    }
+    &.on {
+        background: @orange;
+        color: rgb(42, 42, 42);
+        border: none;
+    }
+}
+
+.pop_tpl {
+    display: none;
+}
