@@ -293,6 +293,7 @@ body .card-info-box .info .date-box {
   color: rgba(42, 42, 42, 0.8);
   border-radius: 0.1rem;
   padding: 0.06rem 0px;
+  font-size: .26rem;
 }
 .ui-dialog .pop-cont-box .get_code_box .fline .get_code.counting {
   opacity: 0.6;
@@ -303,13 +304,14 @@ body .card-info-box .info .date-box {
 }
 .ui-dialog .pop-cont-box .pop-btn {
   display: block;
-  width: 100%;
+  width: 2.2rem;
+  margin: .4rem auto;
   color: #2a2a2a;
   font-size: 0.3rem;
   text-align: center;
-  border-top: 0.02rem solid rgba(42, 42, 42, 0.06);
-  padding: 0.2rem 0px;
-  margin-top: 0.4rem;
+  background: #ffd900;
+  padding: 0.1rem 0px;
+  border-radius: .4rem;
 }
 .index-box {
   height: 100vh;
@@ -424,7 +426,7 @@ body .card-info-box .info .date-box {
   padding-bottom: 0.14rem;
 }
 .pay-records .list .item .info p {
-  color: #7d7c7d;
+  color: #8f8f8f;
 }
 .pay-records .list .item .status-info {
   display: flex;
@@ -432,6 +434,7 @@ body .card-info-box .info .date-box {
   justify-content: space-between;
   padding-right: 0.25rem;
   height: 1.2rem;
+  text-align: right;
 }
 .pay-records .list .item .status-info .price {
   font-size: 0.32rem;
@@ -472,6 +475,9 @@ body .card-info-box .info .date-box {
   flex-direction: column;
   color: #7d7c7d;
   font-size: 0.24rem;
+}
+.pay-center .list .item img {
+  width: 1.2rem;
 }
 .pay-center .list .item p {
   padding-top: 0.2rem;
@@ -541,6 +547,7 @@ body .card-info-box .info .date-box {
   color: rgba(42, 42, 42, 0.8);
   border-radius: 0.1rem;
   padding: 0.06rem 0px;
+  font-size: .26rem;
 }
 .pay-info .mform .fline .get_code.counting {
   opacity: 0.6;
@@ -584,6 +591,7 @@ body .card-info-box .info .date-box {
 .quanyi-box .zhichong h3 {
   font-size: 0.3rem;
   padding-bottom: 0.1rem;
+  font-weight: bold;
 }
 .quanyi-box .zhichong h4 {
   font-size: 0.24rem;
@@ -599,14 +607,24 @@ body .card-info-box .info .date-box {
   width: 1.3rem;
   margin: 0px 0.33rem;
 }
+.quanyi-box .zhichong .zc-choose .cbox img:nth-last-of-type(1) {
+  display: none;
+}
+.quanyi-box .zhichong .zc-choose .cbox.on img:nth-of-type(1) {
+  display: none;
+}
+.quanyi-box .zhichong .zc-choose .cbox.on img:nth-last-of-type(1) {
+  display: inline-block;
+}
 .quanyi-box .discount {
   padding: 0.5rem 0.2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.6rem;
 }
 .quanyi-box .discount .mtitle {
   text-align: center;
   padding-bottom: 0.35rem;
   font-size: 0.3rem;
+  font-weight: bold;
 }
 .quanyi-box .discount .item {
   margin-bottom: 0.2rem;
@@ -698,3 +716,4 @@ body .card-info-box .info .date-box {
 .quanyi-box .fix-bottom > a.btn-record {
   background: #8f8f8f;
 }
+/*# sourceMappingURL=./main.css.map */

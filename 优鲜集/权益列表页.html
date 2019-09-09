@@ -30,9 +30,18 @@
             <h3>影视会员直充</h3>
             <h4>（月卡三选一）</h4>
             <div class="zc-choose">
-                <div class="cbox"><img src="./img/zc-1.png" alt="" /></div>
-                <div class="cbox"><img src="./img/zc-2.png" alt="" /></div>
-                <div class="cbox"><img src="./img/zc-2.png" alt="" /></div>
+                <div class="cbox on">
+                    <img src="./img/zc-2.png" alt="" />
+                    <img src="./img/zc-2_on.png" alt="" />
+                </div>
+                <div class="cbox">
+                    <img src="./img/zc-2.png" alt="" />
+                    <img src="./img/zc-2_on.png" alt="" />
+                </div>
+                <div class="cbox">
+                    <img src="./img/zc-2.png" alt="" />
+                    <img src="./img/zc-2_on.png" alt="" />
+                </div>
             </div>
         </div>
         <div class="discount">
@@ -112,6 +121,10 @@
             bindEvent: function () {
                 $('.discount').on('click', '.use-desc', function () {
                     $(this).parents('.item').find('.desc').toggle();
+                })
+
+                $('.zc-choose').on('click','.cbox',function(){
+                    $(this).toggleClass('on')
                 })
             }
         };
