@@ -124,7 +124,7 @@
                 })
 
                 $('.zc-choose').on('click','.cbox',function(){
-                    $(this).toggleClass('on')
+                    $(this).addClass('on').siblings().removeClass('on')
                 })
             }
         };
