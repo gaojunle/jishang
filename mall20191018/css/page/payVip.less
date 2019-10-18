@@ -1,0 +1,731 @@
+@import "../lib/reset.css";
+@import "../lib/common.less";
+
+html,
+body {
+  padding-bottom: 0px;
+  background: #fff;
+}
+
+.ad-pop-box {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .25);
+  padding-bottom: 20px;
+  display: none;
+
+  &.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ad-pop-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .pop-ad {
+      width: 5rem;
+    }
+
+    .close {
+      width: 0.57rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+}
+
+.quanyi {
+  padding-bottom: 100px;
+
+  .banner {
+    img {
+      width: 100%;
+      height: 3.5rem;
+    }
+  }
+
+  .tab {
+    background: white;
+
+    .tab-menu {
+      padding: 0.24rem 0.12rem;
+      justify-content: space-between;
+      border-bottom: none;
+
+      img {
+        width: 2.2rem;
+        height: 1.5rem;
+        border-radius: 0.15rem;
+      }
+
+      >li {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border-right: none;
+
+        &.on {
+          color: white;
+          background: transparent;
+          border: 1px solid rgb(222, 23, 42);
+          border-radius: 0.15rem;
+        }
+      }
+    }
+
+    .list {
+      padding: 0px 0.2rem;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: 1.7rem;
+        background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+        margin-bottom: 0.2rem;
+
+        .top {
+          top: 3.66rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 1.26rem;
+          padding: 0px 0.2rem;
+          box-sizing: border-box;
+
+          img {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-right: 0.25rem;
+
+            &.overdate {
+              width: 1.16rem;
+              height: 1.16rem;
+            }
+          }
+
+          .info {
+            flex: 1;
+            line-height: 1.65;
+
+            h3 {
+              font-size: 0.3rem;
+              color: rgb(42, 42, 42);
+            }
+
+            >p {
+              font-size: 0.24rem;
+              color: rgb(143, 143, 143);
+            }
+
+          }
+
+          .use {
+            color: white;
+            display: inline-block;
+            background: rgb(42, 42, 42);
+            width: 1.4rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.24rem;
+            padding: 2px 0px;
+          }
+        }
+
+        .bottom {
+          height: 0.42rem;
+          text-align: right;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0px 0.24rem;
+          height: 0.44rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          a {
+            font-size: 0.24rem;
+            color: #222;
+          }
+
+          .instruction {
+            font-size: 0.24rem;
+            color: #222;
+
+          }
+        }
+
+        .desc {
+          display: none;
+          font-size: 0.24rem;
+          color: rgb(143, 143, 143);
+          line-height: 1.667;
+          border: 1px solid rgba(225, 225, 225, .6);
+          border-top: none;
+          background-color: rgb(255, 255, 255);
+          padding: 0.24rem 0.2rem;
+          margin-top: -1px;
+          position: relative;
+
+          &.show {
+            display: block;
+          }
+
+          &:before,
+          &:after {
+            content: ' ';
+            background: rgba(225, 225, 225, 0.6);
+            width: 1px;
+            height: 10px;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+          }
+
+          &:before {
+            left: -1px;
+          }
+
+          &:after {
+            right: -1px;
+          }
+        }
+      }
+    }
+  }
+
+  .bt-pay {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+
+    .protocal {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 0.3rem;
+      color: rgb(42, 42, 42);
+      background: white;
+      padding: 0.3rem 0.2rem;
+
+      .proc-check {
+        display: inline-block;
+        width: 0.44rem;
+        height: 0.44rem;
+        background: url('../../img/payVip/icon-checked.png') 0px 0px no-repeat;
+        background-size: 100% 100%;
+        margin-right: 0.08rem;
+
+        &.uncheck {
+          background: url('../../img/payVip/icon-check.png') 0px 0px no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+
+      .pro-name {
+        color: rgb(222, 23, 42);
+        margin-left: -8px;
+      }
+
+      .pro-cont {
+        display: none;
+      }
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .pbtn {
+        height: 0.9rem;
+        flex: 1;
+        width: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.3rem;
+        color: rgb(42, 42, 42);
+        background: #e1e1e1;
+
+        &.btn-pay {
+          color: white;
+          background-image: -moz-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+          background-image: -webkit-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+          background-image: -ms-linear-gradient(-90deg, rgb(65, 64, 64) 0%, rgb(9, 9, 9) 100%);
+        }
+      }
+    }
+  }
+}
+
+.protocal-pop-box {
+  .pop-wraper {
+    width: 80vw;
+    margin-left: -40vw;
+    display: block;
+    font-size: 0.24rem;
+    height: auto;
+    top: 30vh;
+
+    .pop-content {
+      .pop-cont {
+        height: 50vh;
+        overflow-y: scroll;
+        display: block;
+        padding: 10px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+//券码兑换
+.check-info {
+  height: 100vh;
+  background: white;
+  //background: url("../../img/login/login_bg.png") 0px 0px no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+
+  .banner {
+    img {
+      width: 100%;
+      height: 140px;
+      margin-bottom: 50px;
+    }
+
+  }
+
+  form {
+    padding: 0px 0.6rem;
+
+    >p {
+      border-bottom: 1px solid @lineGray;
+      position: relative;
+      padding: 0.1rem 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 0.34rem;
+        height: 0.49rem
+      }
+
+      input {
+        flex: 1;
+        outline: none;
+        -webkit-appearance: none;
+        border: none;
+        padding: 0.24rem 0rem;
+        width: 100%;
+        color: #222;
+        font-size: 0.26rem;
+
+        &[ name='mobile'] {
+          width: 4.6rem;
+        }
+      }
+
+      &.code-box {
+        input {
+          width: 2.7rem;
+        }
+
+        img {
+          width: 0.34rem;
+          height: 0.38rem
+        }
+      }
+
+      .btn-get-mscode {
+        display: inline-block;
+        border: 1px solid #333;
+        border-radius: 0.08rem;
+        overflow: hidden;
+        width: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+
+        .imgcode {
+          width: 66px;
+          height: 28px;
+        }
+
+        span {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .imgfetch {
+          height: 86%;
+        }
+      }
+
+      .btn-get-code {
+        display: inline-block;
+        width: 92px;
+        height: 30px;
+        line-height: 30px;
+        color: #333;
+        border: 1px solid #333;
+        border-radius: 0.08rem;
+        font-size: 0.24rem;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .submit-box {
+      text-align: center;
+      margin-top: 0.8rem;
+
+      .btn-login {
+        outline: none;
+        width: 3.28rem;
+        height: 0.64rem;
+        border: none;
+        background: rgb(255, 217, 0);
+        width: 6.28rem;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        border-radius: 0.9rem;
+        text-align: center;
+        font-size: 0.32rem;
+        color: rgb(42, 42, 42);
+      }
+    }
+
+  }
+
+  form .error {
+    display: block;
+    font-size: 0.24rem;
+    color: @cRed;
+  }
+}
+
+//卡券详情
+.card-detail {
+  min-height: 100vh;
+  position: relative;
+  background: #f6f7f9;
+  padding: 0.2rem;
+
+  >.info {
+    padding: 0.6rem 0px 0rem;
+    text-align: center;
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    img {
+      width: 1.56rem;
+    }
+
+    h3 {
+      font-size: 0.3rem;
+      color: rgb(42, 42, 42);
+      padding: 0.4rem 0px 10px;
+      font-weight: bold;
+    }
+
+    .date {
+      font-size: 0.24rem;
+      color: rgb(143, 143, 143);
+      padding-bottom: 0.6rem;
+
+    }
+
+    .quan-code {
+      padding-bottom: 0.52rem;
+    }
+  }
+
+  .split {
+    background: #f6f7f9;
+    padding: 0px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .desc-box {
+    background: #fff;
+
+    li {
+      padding: 0rem 0px;
+      margin: 0px 0.24rem;
+
+      img {
+        width: 100%;
+        padding-bottom: 0.24rem;
+      }
+
+      .title {
+        position: relative;
+        font-size: 0.28rem;
+        color: rgb(42, 42, 42);
+        padding: 0.2rem 0.15rem 0.4rem;
+
+        &:before,
+        &:after {
+          display: inline-block;
+          position: absolute;
+          content: ' ';
+        }
+
+        &:before {
+          width: 0.06rem;
+          background: #ffd900;
+          height: 0.3rem;
+          top: 50%;
+          margin-top: - 0.25rem;
+          left: 0px;
+        }
+
+        &:after {
+          right: 0px;
+          width: 0.26rem;
+          height: 0.26rem;
+          top: 50%;
+          margin-top: - 0.13rem;
+          text-align: center;
+          background: url("../../img/payVip/arrow-right.png") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .info {
+        display: none;
+        font-size: 0.24rem;
+        color: #8f8f8f;
+        line-height: 2;
+        padding-bottom: 0.15rem;
+
+        padding-top: 0.1rem;
+        text-align: justify;
+
+        .stitle {
+          color: #8f8f8f;
+          font-weight: bold;
+          line-height: 2;
+          padding-bottom: 4px;
+        }
+      }
+
+      &.unfold {
+        .title {
+          &:after {
+            right: 0.08rem;
+            background: url("../../img/payVip/arrow-top.png") no-repeat;
+            background-size: contain;
+          }
+        }
+
+        .info {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .btn_live {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #ffd900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    color: #2a2a2a;
+    font-size: 0.32rem;
+  }
+}
+
+//我的卡券
+.mycard {
+  padding-bottom: 60px;
+
+  .tab {
+    background: white;
+
+    .tab-menu {
+      padding-bottom: 0.24rem;
+      justify-content: space-between;
+      border-bottom: none;
+
+      >li {
+        width: 50%;
+        border-right: none;
+        background: #e1e1e1;
+        font-size: 0.3rem;
+
+        &.on {
+          color: rgb(42, 42, 42);
+          background: #ffd900;
+        }
+      }
+    }
+
+    .list {
+      padding: 0px 0.2rem;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: 1.7rem;
+        background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+        margin-bottom: 0.2rem;
+
+        .top {
+          top: 3.66rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 1.26rem;
+          padding: 0px 0.2rem;
+          box-sizing: border-box;
+
+          img {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-right: 0.25rem;
+
+            &.overdate {
+              width: 1.16rem;
+              height: 1.16rem;
+            }
+          }
+
+          .info {
+            flex: 1;
+            line-height: 1.65;
+
+            h3 {
+              font-size: 0.3rem;
+              color: rgb(42, 42, 42);
+            }
+
+            >p {
+              font-size: 0.24rem;
+              color: rgb(143, 143, 143);
+            }
+
+          }
+
+          .use {
+            color: white;
+            display: inline-block;
+            background: rgb(42, 42, 42);
+            width: 1.4rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.24rem;
+            padding: 2px 0px;
+          }
+        }
+
+        .bottom {
+          height: 0.42rem;
+          text-align: right;
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 0.24rem;
+          height: 0.44rem;
+
+          a {
+            font-size: 0.24rem;
+            color: #222;
+          }
+
+          .instruction {
+            font-size: 0.24rem;
+            color: #222;
+
+          }
+        }
+
+        .desc {
+          display: none;
+          font-size: 0.24rem;
+          color: rgb(143, 143, 143);
+          line-height: 1.667;
+          border: 1px solid rgba(225, 225, 225, .6);
+          border-top: none;
+          background-color: rgb(255, 255, 255);
+          padding: 0.24rem 0.2rem;
+          margin-top: -1px;
+          position: relative;
+
+          &.show {
+            display: block;
+          }
+
+          &:before,
+          &:after {
+            content: ' ';
+            background: rgba(225, 225, 225, 0.6);
+            width: 1px;
+            height: 10px;
+            display: inline-block;
+            position: absolute;
+            top: -10px;
+          }
+
+          &:before {
+            left: -1px;
+          }
+
+          &:after {
+            right: -1px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-get-more {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: block;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    text-align: center;
+    background: #ffd900;
+    color: rgb(42, 42, 42);
+  }
+}

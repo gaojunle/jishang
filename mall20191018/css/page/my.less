@@ -1,0 +1,122 @@
+@charset "utf-8";
+@import "../lib/reset.css";
+@import "../lib/common.less";
+
+.my-box {
+  .card {
+    height: 3.75rem;
+    margin: 6px 0.6rem;
+    border-radius: 0.2rem;
+    background: url("../../img/my/card_bg.png") 0px 0px no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 0.42rem;
+    color: white;
+
+    .info {
+      display: flex;
+      align-items: flex-end;
+      font-size: 0.24rem;
+
+      >img {
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 100%;
+      }
+
+      .txt {
+        flex: 1;
+        margin-left: 0.3rem;
+
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+
+    .card_num {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.26rem;
+
+      img {
+        width: 0.62rem;
+        height: 0.62rem;
+      }
+    }
+  }
+
+  .my-list {
+    padding: 10px 0.6rem 0px;
+    background: white;
+
+    a {
+      color: @cGrey;
+      font-size: 0.24rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3rem 0px;
+
+      .icon {
+        height: 0.34rem;
+      }
+
+      span {
+        flex: 1;
+        padding-left: 0.12rem;
+      }
+
+      .right {
+        width: 0.12rem;
+      }
+    }
+  }
+
+  .kefu {
+    padding: 0.3rem 0.6rem;
+    background: white;
+    text-align: center;
+    font-size: 0.26rem;
+    line-height: 1.6;
+    color: #7d7c7d;
+
+    .red {
+      color: @cRed;
+
+      a {
+        color: @cRed;
+      }
+    }
+  }
+}
+
+.jf-list {
+  color: #7d7c7d;
+  font-size: 0.24rem;
+
+  .item {
+    background: white;
+    margin-top: 0.16rem;
+    padding: 0.22rem 0.66rem 0.05rem;
+    line-height: 1.8;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+
+      .xf {
+        color: #333;
+        ;
+      }
+
+      .xf-num {
+        font-size: 0.32rem;
+        color: @cRed;
+      }
+    }
+  }
+}

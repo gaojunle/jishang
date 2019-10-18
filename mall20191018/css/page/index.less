@@ -1,0 +1,237 @@
+@charset "utf-8";
+@import "../lib/reset.css";
+@import "../lib/common.less";
+html,body{
+  font-size: .28rem;
+}
+.categorys {
+  height: 2.3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+
+  a {
+    display: block;
+    font-size: 0.24rem;
+    color: @cGrey;
+    text-align: center;
+
+    img {
+      width: 0.82rem;
+    }
+
+    span {
+      display: block;
+      padding-top: 0.08rem;
+    }
+  }
+}
+
+.ad-recom {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+  }
+}
+
+.pbox {
+  .title {
+    font-size: 0.3rem;
+    color: @cGrey;
+    text-align: center;
+    padding-top: 0.48rem;
+    font-weight: bold;
+  }
+}
+
+.inner-title {
+  font-size: 0.3rem;
+  color: @cGrey;
+  text-align: center;
+  margin-top: 0.24rem;
+  margin-bottom: 0.1rem;
+  font-weight: bold;
+  position: relative;
+
+  .show-more {
+    position: absolute;
+    right: 0.25rem;
+    top: 0.08rem;
+    color: @cGrey;
+    display: flex;
+    align-items: center;
+    font-size: 0.24rem;
+    font-weight: normal;
+
+    img {
+      height: 0.15rem;
+      margin-left: 0.06rem;
+    }
+  }
+}
+
+.pd-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.26rem 0.2rem;
+
+  li {
+    width: 50%;
+    padding: 0.07rem;
+    box-sizing: border-box;
+
+    >a {
+      display: block;
+      width: 100%;
+      background: white;
+      border-radius: 0.1rem;
+      color: #2a2a2a;
+      font-size: 0.26rem;
+      box-sizing: border-box;
+      padding: 0.02rem 0.16rem;
+
+      .pro_pic {
+        position: relative;
+        width: 2.92rem;
+        height: 2.92rem;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        text-align: center;
+
+        .bg {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      .pro_text_con {
+        p {
+          margin-bottom: 6px;
+          margin-top: 3px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      }
+
+      .jf {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: @cGrey;
+
+        .limit-jf {
+          font-style: normal;
+          font-size: 0.24rem;
+
+          span {
+            color: @cRed;
+          }
+        }
+
+        .origin-jf {
+          font-style: normal;
+          font-size: 0.2rem;
+
+          span {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .btn-qd {
+        text-align: center;
+
+        .btn {
+          width: 1.9rem;
+          height: 0.42rem;
+          line-height: 0.4rem;
+          margin: 10px auto;
+          border: none;
+          background: @cRed;
+          border-radius: 0.2rem;
+          font-size: 0.24rem;
+          color: white;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.rank-box {
+  width: 100%;
+  overflow-y: hidden;
+  height: 2.23rem;
+  padding-left: 0.5rem;
+  padding-right: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+
+  .left-rank {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 2.32rem;
+    z-index: 300;
+  }
+
+  .inner-rank-box {
+    li {
+      width: 4.6rem;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    width: 4.6rem;
+    height: 2.32rem;
+    font-size: 0.2rem;
+    box-sizing: border-box;
+    background: white;
+
+    >img {
+      width: 2.1rem;
+      height: 2.1rem;
+    }
+
+    .info-box {
+      padding-right: 8px;
+
+      .jf {
+        color: white;
+        background: @cRed;
+        border-radius: 10px;
+        padding: 2px 9px;
+      }
+
+      .b-num {
+        color: @cGrey;
+        padding: 0.08rem 0px 0.04rem;
+      }
+
+      p {
+        color: #2a2a2a;
+      }
+    }
+  }
+}
+
+.adbox {
+  padding: 0.2rem 0px;
+
+  img {
+    width: 100%;
+  }
+}
