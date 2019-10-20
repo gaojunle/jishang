@@ -1,221 +1,37 @@
 @import "../lib/reset.css";
+@import "../lib/common.css";
 @import "../lib/artDialog.css";
-html,
-body {
-  padding: 0px;
-  margin: 0px;
-  background: #f6f7f9;
-  font-size: 0.28rem;
-}
-body {
-  position: relative;
-  margin: 0px auto;
-  max-width: 7.5rem;
-}
-body .pop_tpl {
-  display: none;
-}
-body .card-info-box {
-  position: relative;
-  padding: 0.4rem 0.2rem;
-}
-body .card-info-box .info-bg {
-  width: 100%;
-}
-body .card-info-box .info {
-  width: 5.8rem;
-  position: absolute;
-  left: 0.96rem;
-  top: 0.85rem;
-  z-index: 1;
-  color: #e9c596;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-body .card-info-box .info .m-info h3 {
-  font-size: 0.34rem;
-  padding-bottom: 0.14rem;
-}
-body .card-info-box .info .m-info p {
-  font-size: 0.24rem;
-}
-body .card-info-box .info .price-box {
-  margin-bottom: -0.15rem;
-}
-body .card-info-box .info .price-box .mark {
-  font-size: 0.4rem;
-}
-body .card-info-box .info .price-box .num {
-  font-size: 0.78rem;
-}
-body .card-info-box .info .date-box {
-  font-size: 0.24rem;
-}
-.ui-dialog {
-  overflow: hidden;
-}
-.ui-dialog .ui-dialog-body .icon_close {
-  width: 0.4rem;
-  position: absolute;
-  right: 0.12rem;
-  top: 0.12rem;
-  opacity: 0.75;
-}
-.ui-dialog .pop-cont-box .get_code_box {
-  border-radius: 0.1rem;
-  background: white;
-  width: 6rem;
+.pay-records {
   box-sizing: border-box;
-  padding: 0.45rem 0.55rem;
-  font-size: 0.28rem;
-}
-.ui-dialog .pop-cont-box .get_code_box .fline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding-top: 0.4rem;
-  justify-content: center;
-  border-bottom: 0.02rem solid rgba(42, 42, 42, 0.06);
-  height: 0.75rem;
-}
-.ui-dialog .pop-cont-box .get_code_box .fline input {
-  flex: 1;
-  border: none;
-  font-size: 0.26rem;
-  color: #2a2a2a;
-}
-.ui-dialog .pop-cont-box .get_code_box .fline input::-webkit-input-placeholder {
-  font-size: 0.26rem;
-  color: rgba(42, 42, 42, 0.3);
-}
-.ui-dialog .pop-cont-box .get_code_box .fline .get_code {
-  width: 1.6rem;
-  box-sizing: border-box;
-  text-align: center;
-  position: absolute;
-  right: 0px;
-  bottom: 0.13rem;
-  border: 1px solid rgba(42, 42, 42, 0.8);
-  color: rgba(42, 42, 42, 0.8);
-  border-radius: 0.1rem;
-  padding: 0.06rem 0px;
-}
-.ui-dialog .pop-cont-box .get_code_box .fline .get_code.counting {
-  opacity: 0.6;
-}
-.ui-dialog .pop-cont-box .get_code_box .fline .ftip {
-  font-size: 0.24rem;
-  color: #ff0000;
-}
-.ui-dialog .pop-cont-box .pop-btn {
-  display: block;
-  width: 100%;
-  color: #2a2a2a;
-  font-size: 0.3rem;
-  text-align: center;
-  border-top: 0.02rem solid rgba(42, 42, 42, 0.06);
-  padding: 0.2rem 0px;
-  margin-top: 0.4rem;
-}
-.index-box {
-  height: 100vh;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.index-box .ad-box {
-  width: 100%;
-  height: 100%;
-}
-.index-box .ad-box img {
-  width: 100%;
-  height: 100%;
-}
-.index-box .fix-bottom {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  background: #ffd900;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 0.9rem;
-  color: #2a2a2a;
-  font-size: 0.32rem;
-}
-.pay-box {
-  min-height: 100vh;
-}
-.pay-box .detail {
-  padding: 0.45rem 0.7rem;
-  background: #fff;
-  font-size: 0.28rem;
-  color: #8f8f8f;
-}
-.pay-box .detail .red {
-  color: #de172a;
-}
-.pay-box .detail .pline {
-  padding-bottom: 0.4rem;
-}
-.pay-box .detail .pay-ways {
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-}
-.pay-box .detail .pay-ways img {
-  width: 1.94rem;
-}
-.pay-box .detail .pay-ways .pay-way {
-  border: 0.01rem solid #7d7c7d;
-  border-radius: 0.05rem;
-  margin-right: 0.28rem;
-}
-.pay-box .detail .pay-ways .pay-way.on {
-  border: 0.01rem solid #de172a;
-}
-.pay-box .fix-bottom {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  overflow: hidden;
-  height: 0.9rem;
-  background: #e1e1e1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.pay-box .fix-bottom .price {
-  font-size: 0.34rem;
-  color: #de172a;
-  padding-left: 0.7rem;
-}
-.pay-box .fix-bottom .pay {
-  display: block;
-  height: 100%;
-  width: 2.5rem;
-  color: white;
-  font-size: 0.3rem;
-  background: #2a2a2a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 .pay-records .list {
   padding: 0.45rem 0.2rem 1rem;
 }
-.pay-records .list .item {
+.pay-records .list .mbox {
   background: white;
+  border-radius: 0.1rem;
+  margin-bottom: 0.23rem;
+}
+.pay-records .list .mbox .order {
+  padding: 0.15rem 0.25rem;
+  font-size: 0.24rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+  display: flex;
+  justify-content: space-between;
+}
+.pay-records .list .mbox .order .o_num {
+  color: #7d7c7d;
+  flex: 1;
+}
+.pay-records .list .mbox .order .o_status {
+  color: #de172a;
+  text-align: right;
+}
+.pay-records .list .item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0.25rem 0rem;
-  margin-bottom: 0.23rem;
 }
 .pay-records .list .item .cop-logo {
   width: 1rem;
@@ -237,7 +53,7 @@ body .card-info-box .info .date-box {
 .pay-records .list .item .status-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-right: 0.25rem;
   height: 1.2rem;
 }

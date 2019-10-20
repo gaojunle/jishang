@@ -1,122 +1,256 @@
 @charset "utf-8";
 @import "../lib/reset.css";
-@import "../lib/common.less";
-
+@import "../lib/common.css";
+@cRed: #de172a;
+@cGrey: #7d7c7d;
+@lGrey: #f4f4f4;
+@gold-color: #de172a;
+@lineGray: rgba(216, 216, 216, 0.3);
+@bd-line: rgba(216, 216, 216, 0.3);
 .my-box {
-  .card {
-    height: 3.75rem;
-    margin: 6px 0.6rem;
-    border-radius: 0.2rem;
-    background: url("../../img/my/card_bg.png") 0px 0px no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    box-sizing: border-box;
-    padding: 0.42rem;
-    color: white;
+    .card {
+        height: 3.74rem;
+        margin: 0.3rem 0.6rem;
+        border-radius: 0.2rem;
+        background: url("../../img/my/card_bg.png") 0px 0px no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        box-sizing: border-box;
+        padding: 0.42rem;
+        color: #88543d;
 
-    .info {
-      display: flex;
-      align-items: flex-end;
-      font-size: 0.24rem;
+        .info {
+            display: flex;
+            align-items: flex-end;
+            font-size: 0.3rem;
 
-      >img {
-        width: 1.3rem;
-        height: 1.3rem;
-        border-radius: 100%;
-      }
+            > img {
+                width: 1.3rem;
+                height: 1.3rem;
+                border-radius: 100%;
+            }
 
-      .txt {
-        flex: 1;
-        margin-left: 0.3rem;
-
-        p {
-          padding-top: 5px;
+            .txt {
+                flex: 1;
+                margin-left: 0.3rem;
+                font-size: 0.24rem;
+                p {
+                    padding-top: 0.15rem;
+                }
+                .mvip {
+                    font-size: 0.3rem;
+                    display: flex;
+                    align-items: flex-end;
+                    .icon_vip {
+                        display: inline-block;
+                        width: 0.46rem;
+                        height: 0.46rem;
+                        margin-right: 0.1rem;
+                    }
+                    span {
+                        margin-bottom: -0.05rem;
+                    }
+                }
+            }
         }
-      }
+        &.card_1 {
+            background: url("../../img/my/card_bg_1.png") 0px 0px no-repeat;
+            background-size: cover;
+            .info {
+                .txt {
+                    .mvip {
+                        .icon_vip {
+                            background: url(../../img/my/icon_vip_1.png) 0px 0px no-repeat;
+                            background-size: cover;
+                        }
+                        .hy {
+                            color: #88543d;
+                        }
+                    }
+                }
+            }
+            .card_num {
+                .scode {
+                    background: url(../../img/my/scode_1.png) 0px 0px no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        &.card_2 {
+            background: url("../../img/my/card_bg_2.png") 0px 0px no-repeat;
+            background-size: cover;
+            color: #e2c79c;
+            .info {
+                .txt {
+                    .mvip {
+                        .icon_vip {
+                            background: url(../../img/my/icon_vip_2.png) 0px 0px no-repeat;
+                            background-size: cover;
+                        }
+                        .hy {
+                            color: #e2c79c;
+                        }
+                    }
+                }
+            }
+            .card_num {
+                .scode {
+                    background: url(../../img/my/scode_2.png) 0px 0px no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        &.card_3 {
+            background: url("../../img/my/card_bg_3.png") 0px 0px no-repeat;
+            background-size: cover;
+            color: #fff1da;
+            .info {
+                .txt {
+                    .mvip {
+                        .icon_vip {
+                            background: url(../../img/my/icon_vip_3.png) 0px 0px no-repeat;
+                            background-size: cover;
+                        }
+                        .hy {
+                            color: #fff1da;
+                        }
+                    }
+                }
+            }
+            .card_num {
+                .scode {
+                    background: url(../../img/my/scode_3.png) 0px 0px no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        .card_num {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.26rem;
+
+            .scode {
+                display: inline-block;
+                width: 0.62rem;
+                height: 0.62rem;
+            }
+        }
+    }
+    .ad_box {
+        img {
+            width: 100%;
+        }
+        &.ad_big {
+            padding: 0.55rem 0px;
+        }
+    }
+    .categorys {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0.44rem 0px;
+        a {
+            display: block;
+            font-size: 0.24rem;
+            text-align: center;
+            width: 25%;
+            img {
+                width: 0.9rem;
+            }
+
+            span {
+                display: block;
+                color: #2a2a2a;
+                padding: 0.1rem 0px 0.05rem;
+            }
+            i {
+                font-style: normal;
+            }
+            &.hot {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -0.1rem;
+                    right: 0.3rem;
+                    width: 0.6rem;
+                    height: 0.29rem;
+                    background: url(../../img/index/icon_hot.png) 0px 0px no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+    .my-list {
+        padding: 10px 0.35rem 0px;
+        background: white;
+
+        a {
+            color: #2a2a2a;
+            font-size: 0.24rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0px;
+
+            .icon {
+                height: 0.34rem;
+            }
+
+            span {
+                flex: 1;
+                padding-left: 0.12rem;
+            }
+
+            .right {
+                width: 0.12rem;
+                margin-right: 0.2rem;
+            }
+        }
     }
 
-    .card_num {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      font-size: 0.26rem;
+    .kefu {
+        padding: 0.3rem 0.6rem;
+        background: white;
+        text-align: center;
+        font-size: 0.26rem;
+        line-height: 1.6;
+        color: #7d7c7d;
 
-      img {
-        width: 0.62rem;
-        height: 0.62rem;
-      }
+        .red {
+            color: @cRed;
+
+            a {
+                color: @cRed;
+            }
+        }
     }
-  }
-
-  .my-list {
-    padding: 10px 0.6rem 0px;
-    background: white;
-
-    a {
-      color: @cGrey;
-      font-size: 0.24rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.3rem 0px;
-
-      .icon {
-        height: 0.34rem;
-      }
-
-      span {
-        flex: 1;
-        padding-left: 0.12rem;
-      }
-
-      .right {
-        width: 0.12rem;
-      }
-    }
-  }
-
-  .kefu {
-    padding: 0.3rem 0.6rem;
-    background: white;
-    text-align: center;
-    font-size: 0.26rem;
-    line-height: 1.6;
-    color: #7d7c7d;
-
-    .red {
-      color: @cRed;
-
-      a {
-        color: @cRed;
-      }
-    }
-  }
 }
 
 .jf-list {
-  color: #7d7c7d;
-  font-size: 0.24rem;
+    color: #7d7c7d;
+    font-size: 0.24rem;
 
-  .item {
-    background: white;
-    margin-top: 0.16rem;
-    padding: 0.22rem 0.66rem 0.05rem;
-    line-height: 1.8;
+    .item {
+        background: white;
+        margin-top: 0.16rem;
+        padding: 0.22rem 0.66rem 0.05rem;
+        line-height: 1.8;
 
-    p {
-      display: flex;
-      justify-content: space-between;
+        p {
+            display: flex;
+            justify-content: space-between;
 
-      .xf {
-        color: #333;
-        ;
-      }
+            .xf {
+                color: #333;
+            }
 
-      .xf-num {
-        font-size: 0.32rem;
-        color: @cRed;
-      }
+            .xf-num {
+                font-size: 0.32rem;
+                color: @cRed;
+            }
+        }
     }
-  }
 }

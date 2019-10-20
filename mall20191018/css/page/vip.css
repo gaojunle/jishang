@@ -1,0 +1,315 @@
+@import "../lib/reset.css";
+@import "../lib/common.css";
+html,
+body {
+  padding-bottom: 0px;
+  background: #fff;
+}
+.wrap {
+  padding-bottom: 1rem;
+}
+.wrap .banner-swiper {
+  overflow: hidden;
+}
+.wrap .cards {
+  padding: 0.5rem 0px;
+  padding-bottom: 0.7rem;
+}
+.wrap .cards .card {
+  width: 5.6rem;
+  height: 2.9rem;
+  position: relative;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  transition: all 0.8s;
+  transform: scale(0.8);
+}
+.wrap .cards .card.swiper-slide-active {
+  transform: scale(1);
+}
+.wrap .cards .card .mark_icon {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  width: 1.53rem;
+}
+.wrap .cards .card .info {
+  display: flex;
+}
+.wrap .cards .card .info .vip-icon {
+  width: 1.38rem;
+  height: 0.84rem;
+  background: url(../../img/vip/vip_1.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.wrap .cards .card .info .vip-hy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.22rem;
+  margin-bottom: -0.06rem;
+  padding-top: 0.06rem;
+}
+.wrap .cards .card .info .vip-hy .hy_1 {
+  font-size: 0.36rem;
+}
+.wrap .cards .card .info .vip-hy .hy_2 {
+  font-size: 0.24rem;
+  text-decoration: line-through;
+  padding: 0px 0.05rem;
+}
+.wrap .cards .card .desc {
+  font-size: 0.24rem;
+  padding-top: 0.65rem;
+  text-align: center;
+}
+.wrap .cards .card .cbtn {
+  width: 1.6rem;
+  height: 0.44rem;
+  line-height: 0.44rem;
+  position: absolute;
+  bottom: -0.2rem;
+  left: 50%;
+  margin-left: -0.8rem;
+  text-align: center;
+  color: #f7dbb8;
+  background-color: #88543d;
+  box-shadow: 1.338px 1.486px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0.44rem;
+  font-size: 0.28rem;
+}
+.wrap .cards .card .cbtn.btn_my {
+  display: none;
+}
+.wrap .cards .card.vip .cbtn.btn_sj {
+  display: none;
+}
+.wrap .cards .card.vip .cbtn.btn_my {
+  display: inline-block;
+}
+.wrap .cards .card.vip1 {
+  background: url(../../img/vip/bg_1.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  color: #88543d;
+}
+.wrap .cards .card.vip1 .cbtn {
+  background: #88543d;
+}
+.wrap .cards .card.vip2 {
+  background: url(../../img/vip/bg_2.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  color: #e2c79c;
+}
+.wrap .cards .card.vip2 .cbtn {
+  background: #e2c79c;
+  color: #2a2a2a;
+}
+.wrap .cards .card.vip2 .info .vip-icon {
+  width: 1.38rem;
+  height: 0.84rem;
+  background: url(../../img/vip/vip_2.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.wrap .cards .card.vip3 {
+  background: url(../../img/vip/bg_3.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  color: #fff1da;
+}
+.wrap .cards .card.vip3 .cbtn {
+  background: #fff1da;
+  color: #002c21;
+}
+.wrap .cards .card.vip3 .info .vip-icon {
+  width: 1.38rem;
+  height: 0.84rem;
+  background: url(../../img/vip/vip_2.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.wrap .sect {
+  padding-bottom: 1rem;
+}
+.wrap .sect .stitle {
+  color: #2a2a2a;
+  font-size: 0.32rem;
+  text-align: center;
+  padding-top: 0.1rem;
+  padding-bottom: 0.4rem;
+}
+.wrap .list {
+  padding: 0px 0.22rem;
+}
+.wrap .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 1.7rem;
+  background: url(../../img/payVip/card_bg.png) 0px 0px no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  margin-bottom: 0.3rem;
+}
+.wrap .list .item .top {
+  top: 3.66rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 1.26rem;
+  padding: 0px 0.2rem;
+  box-sizing: border-box;
+}
+.wrap .list .item .top img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.25rem;
+}
+.wrap .list .item .top img.overdate {
+  width: 1.16rem;
+  height: 1.16rem;
+}
+.wrap .list .item .top .info {
+  flex: 1;
+  line-height: 1.65;
+}
+.wrap .list .item .top .info h3 {
+  font-size: 0.3rem;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+.wrap .list .item .top .info > p {
+  font-size: 0.24rem;
+  color: #8f8f8f;
+}
+.wrap .list .item .top .use {
+  color: white;
+  display: inline-block;
+  background: #2a2a2a;
+  width: 1.4rem;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.24rem;
+  padding: 0.04rem 0px;
+}
+.wrap .list .item .bottom {
+  height: 0.42rem;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 0.24rem;
+  height: 0.44rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.wrap .list .item .bottom a {
+  font-size: 0.24rem;
+  color: #222;
+}
+.wrap .list .item .bottom .instruction {
+  font-size: 0.24rem;
+  color: #222;
+}
+.wrap .list .item .desc {
+  display: none;
+  font-size: 0.24rem;
+  color: #8f8f8f;
+  line-height: 1.667;
+  border: 1px solid rgba(225, 225, 225, 0.6);
+  border-top: none;
+  background-color: #ffffff;
+  padding: 0.24rem 0.2rem;
+  margin-top: -1px;
+  position: relative;
+}
+.wrap .list .item .desc.show {
+  display: block;
+}
+.wrap .list .item .desc:before,
+.wrap .list .item .desc:after {
+  content: " ";
+  background: rgba(225, 225, 225, 0.6);
+  width: 1px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  top: -0.1rem;
+}
+.wrap .list .item .desc:before {
+  left: -1px;
+}
+.wrap .list .item .desc:after {
+  right: -1px;
+}
+.wrap .bt-pay {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.wrap .bt-pay .protocal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #2a2a2a;
+  background: white;
+  padding: 0.3rem 0.2rem;
+}
+.wrap .bt-pay .protocal .proc-check {
+  display: inline-block;
+  width: 0.44rem;
+  height: 0.44rem;
+  background: url("../../img/payVip/icon-checked.png") 0px 0px no-repeat;
+  background-size: 100% 100%;
+  margin-right: 0.08rem;
+}
+.wrap .bt-pay .protocal .proc-check.uncheck {
+  background: url("../../img/payVip/icon-check.png") 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.wrap .bt-pay .protocal .pro-name {
+  color: #de172a;
+  margin-left: -8px;
+}
+.wrap .bt-pay .protocal .pro-cont {
+  display: none;
+}
+.wrap .bt-pay .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .bt-pay .btns .pbtn {
+  height: 0.9rem;
+  flex: 1;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #2a2a2a;
+  background: #e1e1e1;
+}
+.wrap .bt-pay .btns .pbtn.btn-pay {
+  color: white;
+  background-image: -moz-linear-gradient(-90deg, #414040 0%, #090909 100%);
+  background-image: -webkit-linear-gradient(-90deg, #414040 0%, #090909 100%);
+  background-image: -ms-linear-gradient(-90deg, #414040 0%, #090909 100%);
+}
+.protocal-pop-box .pop-wraper {
+  width: 80vw;
+  margin-left: -40vw;
+  display: block;
+  font-size: 0.24rem;
+  height: auto;
+  top: 30vh;
+}
+.protocal-pop-box .pop-wraper .pop-content .pop-cont {
+  height: 50vh;
+  overflow-y: scroll;
+  display: block;
+  padding: 10px;
+  text-align: justify;
+}

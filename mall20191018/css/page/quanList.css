@@ -1,0 +1,180 @@
+@import "../lib/reset.css";
+@import "../lib/common.css";
+html,
+body {
+  padding-bottom: 0px;
+}
+.wrap {
+  padding-bottom: 60px;
+}
+.wrap .ad_box {
+  background: #a11319;
+}
+.wrap .ad_box img {
+  height: 2.4rem;
+  width: 100%;
+}
+.wrap .ad_box.ad_big {
+  padding: 0.55rem 0px;
+}
+.wrap .quanList {
+  padding: 0.45rem 0.25rem;
+}
+.wrap .quanList .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 1.7rem;
+  box-shadow: 0.02rem 0.03rem 0.1rem 0px rgba(0, 0, 0, 0.14);
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  margin-bottom: 0.32rem;
+  color: #2a2a2a;
+  background: white;
+}
+.wrap .quanList .item .top {
+  top: 3.66rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.35rem 0.3rem;
+  box-sizing: border-box;
+}
+.wrap .quanList .item .top > img {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.25rem;
+}
+.wrap .quanList .item .top > img.overdate {
+  width: 1.16rem;
+  height: 1.16rem;
+}
+.wrap .quanList .item .top .info {
+  flex: 1;
+}
+.wrap .quanList .item .top .info h3 {
+  font-size: 0.26rem;
+  color: #2a2a2a;
+  padding-bottom: 0.35rem;
+}
+.wrap .quanList .item .top .info > p {
+  font-size: 0.24rem;
+  color: #8f8f8f;
+  padding-bottom: 0.1rem;
+}
+.wrap .quanList .item .top .info .detail {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.wrap .quanList .item .top .info .detail .icon_vip {
+  width: 0.26rem;
+  height: 0.26rem;
+  margin-right: 0.1rem;
+}
+.wrap .quanList .item .top .info .detail .price {
+  font-size: 0.32rem;
+  color: #a11319;
+}
+.wrap .quanList .item .top .info .detail .price i {
+  font-size: 0.26rem;
+  font-style: normal;
+}
+.wrap .quanList .item .top .info .detail .num {
+  flex: 1;
+  color: #a11319;
+  font-size: 0.26rem;
+  text-align: right;
+}
+.wrap .quanList .item .top .info .detail .icon_zx {
+  height: 0.36rem;
+  margin-left: 0.1rem;
+}
+.wrap .quanList .item .top .use {
+  color: white;
+  display: inline-block;
+  background: #2a2a2a;
+  width: 1.4rem;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.24rem;
+  padding: 2px 0px;
+}
+.wrap .quanList .item .bottom {
+  height: 0.42rem;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0.24rem;
+  height: 0.44rem;
+}
+.wrap .quanList .item .bottom a {
+  font-size: 0.24rem;
+  color: #222;
+}
+.wrap .quanList .item .bottom .instruction {
+  font-size: 0.24rem;
+  color: #222;
+}
+.wrap .quanList .item .desc {
+  display: none;
+  font-size: 0.24rem;
+  color: #8f8f8f;
+  line-height: 1.667;
+  border: 1px solid rgba(225, 225, 225, 0.6);
+  border-top: none;
+  background-color: #ffffff;
+  padding: 0.24rem 0.2rem;
+  margin-top: -1px;
+  position: relative;
+}
+.wrap .quanList .item .desc.show {
+  display: block;
+}
+.wrap .quanList .item .desc:before,
+.wrap .quanList .item .desc:after {
+  content: " ";
+  background: rgba(225, 225, 225, 0.6);
+  width: 1px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+}
+.wrap .quanList .item .desc:before {
+  left: -1px;
+}
+.wrap .quanList .item .desc:after {
+  right: -1px;
+}
+.wrap .pay_box {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  display: block;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background: white;
+  color: #2a2a2a;
+  box-shadow: 0rem -0.01rem 0.02rem 0px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .pay_box .price {
+  padding-left: 0.5rem;
+}
+.wrap .pay_box .btn_pay {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #2a2a2a;
+  width: 2.5rem;
+  color: white;
+  text-align: center;
+}
