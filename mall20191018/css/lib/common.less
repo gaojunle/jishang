@@ -223,11 +223,18 @@ body {
         align-items: center;
         a {
             display: block;
+            height: 100%;
+            line-height: 1rem;
             width: 20%;
             &.vip {
                 margin-top: -0.5rem;
                 img {
                     width: 1.28rem;
+                }
+            }
+            &.on{
+                span{
+                    color: #2a2a2a;
                 }
             }
         }
@@ -259,11 +266,15 @@ body {
     }
 
     > a.on {
+        span {
+            color: #2a2a2a;
+        }
         .f-icon {
             &.f-home {
                 background: url("../../img/common/i-home-on.png") 0px 0px no-repeat;
                 -webkit-background-size: contain;
                 background-size: contain;
+                color: #2a2a2a;
             }
             &.f-types {
                 background: url("../../img/common/i-types-on.png") 0px 0px no-repeat;

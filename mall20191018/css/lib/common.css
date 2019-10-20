@@ -202,6 +202,8 @@ body {
 }
 .fix-footer .footer-container a {
   display: block;
+  height: 100%;
+  line-height: 1rem;
   width: 20%;
 }
 .fix-footer .footer-container a.vip {
@@ -209,6 +211,9 @@ body {
 }
 .fix-footer .footer-container a.vip img {
   width: 1.28rem;
+}
+.fix-footer .footer-container a.on span {
+  color: #2a2a2a;
 }
 .fix-footer .f-icon {
   width: 0.46rem;
@@ -234,10 +239,14 @@ body {
   -webkit-background-size: contain;
   background-size: contain;
 }
+.fix-footer > a.on span {
+  color: #2a2a2a;
+}
 .fix-footer > a.on .f-icon.f-home {
   background: url("../../img/common/i-home-on.png") 0px 0px no-repeat;
   -webkit-background-size: contain;
   background-size: contain;
+  color: #2a2a2a;
 }
 .fix-footer > a.on .f-icon.f-types {
   background: url("../../img/common/i-types-on.png") 0px 0px no-repeat;
