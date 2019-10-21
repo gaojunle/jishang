@@ -8,7 +8,7 @@ body {
   padding-bottom: 60px;
 }
 .wrap .ad_box {
-  background: #a11319;
+  background: #de172a;
 }
 .wrap .ad_box img {
   height: 2.4rem;
@@ -42,12 +42,27 @@ body {
   padding: 0.35rem 0.3rem;
   box-sizing: border-box;
 }
-.wrap .quanList .item .top > img {
+.wrap .quanList .item .top .pd_logo {
+  position: relative;
   width: 1.4rem;
   height: 1.4rem;
   margin-right: 0.25rem;
 }
-.wrap .quanList .item .top > img.overdate {
+.wrap .quanList .item .top .pd_logo.guang:after {
+  content: " ";
+  background: url(../../img/quanlist/guang.png) 0px 0px no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.wrap .quanList .item .top .pd_logo > img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .quanList .item .top .pd_logo > img.overdate {
   width: 1.16rem;
   height: 1.16rem;
 }
@@ -76,7 +91,7 @@ body {
 }
 .wrap .quanList .item .top .info .detail .price {
   font-size: 0.32rem;
-  color: #a11319;
+  color: #de172a;
 }
 .wrap .quanList .item .top .info .detail .price i {
   font-size: 0.26rem;
@@ -84,7 +99,7 @@ body {
 }
 .wrap .quanList .item .top .info .detail .num {
   flex: 1;
-  color: #a11319;
+  color: #de172a;
   font-size: 0.26rem;
   text-align: right;
 }
@@ -168,6 +183,7 @@ body {
 }
 .wrap .pay_box .price {
   padding-left: 0.5rem;
+  color: #de172a;
 }
 .wrap .pay_box .btn_pay {
   display: block;

@@ -5,6 +5,9 @@ html,
 body {
   font-size: 0.28rem;
 }
+.banner-box {
+  margin-bottom: 0.35rem;
+}
 .banner-box-qy {
   position: relative;
   margin-bottom: 0.4rem;
@@ -74,19 +77,22 @@ body {
 .fuli_box a {
   display: block;
   transition: all 0.8s;
-  transform: scale(0.9);
+  transform: scale(0.9) !important;
 }
 .fuli_box a img {
   width: 100%;
   height: 100%;
 }
 .fuli_box a.swiper-slide-active {
-  transform: scale(1);
+  transform: scale(1) !important;
 }
 .ad_swiper {
   position: relative;
   overflow: hidden;
   margin: 0.2rem 0px 0.4rem;
+}
+.ad_swiper.outer img {
+  width: 100%;
 }
 .ad_swiper.inner .swiper-slide {
   display: block;
@@ -184,6 +190,7 @@ body {
 .pd-list li > a .libao_price {
   color: #8f8f8f;
   padding: 0.15rem 0px 0.08rem;
+  text-decoration: line-through;
 }
 .pd-list li > a .vip_mark {
   display: flex;

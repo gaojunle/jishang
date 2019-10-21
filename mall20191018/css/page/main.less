@@ -11,60 +11,72 @@
 //充值记录
 .pay-records {
     box-sizing: border-box;
+
     .list {
         padding: 0.45rem 0.2rem 1rem;
+
         .mbox {
             background: white;
-            border-radius: 0.1rem;            
+            border-radius: 0.1rem;
             margin-bottom: 0.23rem;
+
             .order {
                 padding: 0.15rem 0.25rem;
                 font-size: 0.24rem;
                 border-bottom: 1px solid @lineGray;
                 display: flex;
                 justify-content: space-between;
+
                 .o_num {
                     color: rgb(125, 124, 125);
                     flex: 1;
                 }
+
                 .o_status {
                     color: rgb(222, 23, 42);
                     text-align: right;
                 }
             }
         }
-        .item {            
+
+        .item {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;           
+            justify-content: space-between;
+            align-items: center;
             padding: 0.25rem 0rem;
-           
+
             .cop-logo {
                 width: 1rem;
                 height: 1rem;
                 margin: 0px 0.25rem;
             }
+
             .info {
                 flex: 1;
                 line-height: 1.4;
+
                 h2 {
                     font-size: 0.32rem;
                     color: @cBlack;
                     padding-bottom: 0.14rem;
                 }
+
                 p {
                     color: @cGray;
                 }
             }
+
             .status-info {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
                 padding-right: 0.25rem;
-                height: 1.2rem;
+                height: 1.4rem;
+
                 .price {
                     font-size: 0.32rem;
                 }
+
                 .status {
                     &.red {
                         color: #de172a;
@@ -73,6 +85,7 @@
             }
         }
     }
+
     .fix-bottom {
         position: fixed;
         bottom: 0px;
@@ -88,15 +101,18 @@
         font-size: 0.32rem;
     }
 }
+
 //充值中心
 .pay-center {
     height: 100vh;
     padding-top: 0.6rem;
     box-sizing: border-box;
+
     .list {
         display: flex;
         padding-bottom: 0.8rem;
         padding: 0px 0.15rem 0.8rem 0.15rem;
+
         .item {
             display: inline-block;
             width: 25%;
@@ -106,6 +122,7 @@
             flex-direction: column;
             color: @cGray;
             font-size: 0.24rem;
+
             p {
                 padding-top: 0.2rem;
             }
@@ -115,10 +132,12 @@
 
 .pay-info {
     padding: 0.65rem 0.6rem;
+
     .cards {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
         .card {
             border-radius: 0.1rem;
             border: 1px solid rgb(42, 42, 42);
@@ -126,26 +145,31 @@
             height: 1.3rem;
             text-align: center;
             margin-bottom: 0.14rem;
+
             &.on {
                 border: 1px solid rgb(255, 217, 0);
                 background-color: rgb(255, 217, 0);
             }
+
             h3 {
                 font-size: 0.32rem;
                 padding-top: 0.25rem;
                 padding-bottom: 0.12rem;
             }
+
             p {
                 font-size: 0.22rem;
             }
         }
     }
+
     .mform {
         box-sizing: border-box;
         padding: 0.45rem 0rem;
         padding-top: 0.1rem;
 
         font-size: 0.28rem;
+
         .fline {
             display: flex;
             justify-content: space-between;
@@ -155,16 +179,19 @@
             justify-content: center;
             border-bottom: 0.02rem solid rgba(42, 42, 42, 0.06);
             height: 0.75rem;
+
             input {
                 flex: 1;
                 border: none;
                 font-size: 0.26rem;
                 color: #2a2a2a;
+
                 &::-webkit-input-placeholder {
                     font-size: 0.26rem;
                     color: rgba(42, 42, 42, 0.3);
                 }
             }
+
             .get_code {
                 width: 1.6rem;
                 box-sizing: border-box;
@@ -176,16 +203,19 @@
                 color: rgba(42, 42, 42, 0.8);
                 border-radius: 0.1rem;
                 padding: 0.06rem 0px;
+
                 &.counting {
                     opacity: 0.6;
                 }
             }
+
             .ftip {
                 font-size: 0.24rem;
                 color: #ff0000;
             }
         }
     }
+
     .fix-bottom {
         position: fixed;
         bottom: 0px;
@@ -200,18 +230,22 @@
         color: white;
         font-size: 0.3rem;
     }
+
     .tips {
         color: @cGray;
         line-height: 1.8;
         padding-bottom: 1rem;
+
         h3 {
             font-size: 0.26rem;
         }
+
         p {
             font-size: 0.24rem;
         }
     }
 }
+
 //2权益列表页
 .quanyi-box {
     .zhichong {
@@ -220,14 +254,17 @@
         background: #fff;
         padding: 0.45rem 0px;
         margin-top: -0.2rem;
+
         h3 {
             font-size: 0.3rem;
             padding-bottom: 0.1rem;
         }
+
         h4 {
             font-size: 0.24rem;
             padding-bottom: 0.4rem;
         }
+
         .zc-choose {
             display: flex;
             justify-content: center;
@@ -242,51 +279,63 @@
             }
         }
     }
+
     .discount {
         padding: 0.5rem 0.2rem;
         padding-bottom: 1rem;
+
         .mtitle {
             text-align: center;
             padding-bottom: 0.35rem;
             font-size: 0.3rem;
         }
+
         .item {
             margin-bottom: 0.2rem;
+
             &.owned {
                 .detail .info .img-owned {
                     display: block;
                 }
+
                 .detail .info .btn-get {
                     display: none;
                 }
             }
+
             .detail {
                 height: 1.7rem;
                 background: url(../../img/card-style.png) 0px 0px no-repeat;
                 background-size: 100% 100%;
                 z-index: 1;
                 position: relative;
+
                 .info {
                     height: 1.28rem;
                     display: flex;
                     align-items: center;
                     padding-right: 0.2rem;
+
                     .i-logo {
                         width: 0.8rem;
                         margin: 0px 0.2rem;
                     }
+
                     .list-box {
                         flex: 1;
+
                         h3 {
                             color: @cBlack;
                             font-size: 0.3rem;
                             padding-bottom: 0.1rem;
                         }
+
                         .edate {
                             color: @fontGray;
                             font-size: 0.24rem;
                         }
                     }
+
                     .btn-get {
                         background-color: rgb(42, 42, 42);
                         padding: 0.06rem 0.24rem;
@@ -296,12 +345,14 @@
 
                         text-align: center;
                     }
+
                     .img-owned {
                         display: none;
                         width: 1.16rem;
                         margin-right: 0.15rem;
                     }
                 }
+
                 .use-desc {
                     text-align: right;
                     font-size: 0.24rem;
@@ -310,6 +361,7 @@
                     padding-top: 0.05rem;
                 }
             }
+
             .desc {
                 display: none;
                 font-size: 0.24rem;
@@ -321,6 +373,7 @@
             }
         }
     }
+
     .fix-bottom {
         position: fixed;
         bottom: 0px;
@@ -332,13 +385,15 @@
         justify-content: center;
         align-items: center;
         z-index: 1;
-        > a {
+
+        >a {
             height: 0.9rem;
             line-height: 0.9rem;
             color: white;
             font-size: 0.3rem;
             flex: 1;
             width: 50%;
+
             &.btn-record {
                 background: #8f8f8f;
             }

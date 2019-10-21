@@ -1,7 +1,8 @@
 @import "../lib/reset.css";
 @import "../lib/common.css";
 
-@red: #a11319;
+@red: #de172a;
+
 html,
 body {
     padding-bottom: 0px;
@@ -9,16 +10,20 @@ body {
 
 .wrap {
     padding-bottom: 60px;
+
     .ad_box {
         background: @red;
+
         img {
             height: 2.4rem;
             width: 100%;
         }
+
         &.ad_big {
             padding: 0.55rem 0px;
         }
     }
+
     .quanList {
         padding: 0.45rem 0.25rem;
 
@@ -34,6 +39,7 @@ body {
             margin-bottom: 0.32rem;
             color: #2a2a2a;
             background: white;
+
             .top {
                 top: 3.66rem;
                 display: flex;
@@ -43,14 +49,33 @@ body {
                 padding: 0.35rem 0.3rem;
                 box-sizing: border-box;
 
-                > img {
+                .pd_logo {
+                    position: relative;
                     width: 1.4rem;
                     height: 1.4rem;
                     margin-right: 0.25rem;
 
-                    &.overdate {
-                        width: 1.16rem;
-                        height: 1.16rem;
+                    &.guang {
+                        &:after {
+                            content: " ";
+                            background: url(../../img/quanlist/guang.png) 0px 0px no-repeat;
+                            background-size: cover;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                        }
+                    }
+
+                    >img {
+                        width: 100%;
+                        height: 100%;
+
+                        &.overdate {
+                            width: 1.16rem;
+                            height: 1.16rem;
+                        }
                     }
                 }
 
@@ -63,20 +88,23 @@ body {
                         padding-bottom: 0.35rem;
                     }
 
-                    > p {
+                    >p {
                         font-size: 0.24rem;
                         color: #8f8f8f;
                         padding-bottom: 0.1rem;
                     }
+
                     .detail {
                         display: flex;
                         align-items: center;
                         line-height: 1;
+
                         .icon_vip {
                             width: 0.26rem;
                             height: 0.26rem;
                             margin-right: 0.1rem;
                         }
+
                         .price {
                             font-size: 0.32rem;
                             color: @red;
@@ -86,13 +114,15 @@ body {
                                 font-style: normal;
                             }
                         }
+
                         .num {
                             flex: 1;
                             color: @red;
                             font-size: 0.26rem;
                             text-align: right;
                         }
-                        .icon_zx{
+
+                        .icon_zx {
                             height: .36rem;
                             margin-left: .1rem;
                         }
@@ -184,9 +214,12 @@ body {
         box-shadow: 0rem -0.01rem 0.02rem 0px rgba(0, 0, 0, 0.04);
         display: flex;
         justify-content: space-between;
+
         .price {
             padding-left: 0.5rem;
+            color: #de172a;
         }
+
         .btn_pay {
             display: block;
             height: 100%;

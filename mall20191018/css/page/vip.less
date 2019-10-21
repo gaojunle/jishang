@@ -22,9 +22,9 @@ body {
             padding: 0.6rem;
             box-sizing: border-box;
             transition: all 0.8s;
-            transform: scale(0.8);
+            transform: scale(0.8) !important;
             &.swiper-slide-active {
-                transform: scale(1);
+                transform: scale(1) !important;
             }
             .mark_icon {
                 position: absolute;
@@ -91,6 +91,11 @@ body {
                         display: inline-block;
                     }
                 }
+                .vip-hy {                    
+                    .hy_2 {
+                        text-decoration: none !important;
+                    }
+                }
             }
             &.vip1 {
                 background: url(../../img/vip/bg_1.png) 0px 0px no-repeat;
@@ -142,8 +147,8 @@ body {
             color: rgb(42, 42, 42);
             font-size: 0.32rem;
             text-align: center;
-            padding-top: 0.1rem;
-            padding-bottom: 0.4rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.5rem;
         }
     }
     .list {
@@ -202,7 +207,7 @@ body {
                     display: inline-block;
                     background: rgb(42, 42, 42);
                     width: 1.4rem;
-                    border-radius: 20px;
+                    border-radius: 1rem;
                     text-align: center;
                     font-size: 0.24rem;
                     padding: 0.04rem 0px;
