@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
@@ -11,340 +11,300 @@
     <script type="text/javascript" src="./js/lib/flexible.js"></script>
     <link rel="stylesheet" href="css/page/index.css">
 </head>
+
 <body>
-<section class="header">
-    <div class="main-nav">
-        <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
-        <span>党建文库</span>
-        <span></span>
+    <section class="header">
+        <div class="main-nav">
+            <a href="javascript:history.go(-1);" class="back"><img src="./img/common/i-arrow-left.png" alt=""></a>
+            <span>党建文库</span>
+            <span></span>
+        </div>
+        <div class="banner-swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png" /></a></li>
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png" /></a></li>
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png" /></a></li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+        <form action="./search.html" class="search-box" method="get">
+            <input type="search" name="search" class="ipt-search" placeholder="搜索文档">
+            <input type="submit" class="btn-submit">
+        </form>
+    </section>
+    <div class="cate">
+        <a class="item" href="./我的阅读.html">
+            <img class="img_1" src="./img/index/yuedu.png" alt="">
+            <p>最新阅读</p>
+        </a>
+        <a class="item" href="./我的收藏.html">
+            <img class="img_2" src="./img/index/shoucang.png" alt="">
+            <p>我的收藏</p>
+        </a>
+        <a class="item" href="./我的下载.html">
+            <img class="img_3" src="./img/index/renling.png" alt="">
+            <p>我的下载</p>
+        </a>
     </div>
-    <div class="banner-swiper">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-        </ul>
-        <div class="swiper-pagination"></div>
-    </div>
-    <form action="./search.html" class="search-box" method="get">
-        <input type="search" name="search" class="ipt-search" placeholder="搜索文档">
-        <input type="submit" class="btn-submit">
-    </form>
-</section>
-<div class="cate">
-    <a class="item" href="./我的阅读.html">
-        <img class="img_1" src="./img/index/yuedu.png" alt="">
-        <p>最新阅读</p>
-    </a>
-    <a class="item" href="./我的收藏.html">
-        <img class="img_2" src="./img/index/shoucang.png" alt="">
-        <p>我的收藏</p>
-    </a>
-    <a class="item" href="./我的下载.html">
-        <img class="img_3" src="./img/index/renling.png" alt="">
-        <p>我的下载</p>
-    </a>
-</div>
-<div class="menu-box">
-    <div id="topNav" class="swiper-container menu_1">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide active"><span>推荐</span></div>
-            <div class="swiper-slide"><span>公文写作</span></div>
-            <div class="swiper-slide"><span>党章党规</span></div>
-            <div class="swiper-slide"><span>思想理论</span></div>
-            <div class="swiper-slide"><span>社会</span></div>
-            <div class="swiper-slide"><span>娱乐</span></div>
-            <div class="swiper-slide"><span>科技</span></div>
-        </div>
-    </div>
-    <div class="more-box">
-        <img class="icon-more" src="./img/index/gengduo.png" alt="">
-    </div>
-    <div class="sub-menu">
-        <div class="menu_2 swiper-container subNav">
+    <div class="menu-box">
+        <div id="topNav" class="swiper-container menu_1">
             <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">推荐</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+                <div class="swiper-slide active"><span>推荐</span></div>
+                <div class="swiper-slide"><span>公文写作</span></div>
+                <div class="swiper-slide"><span>党章党规</span></div>
+                <div class="swiper-slide"><span>思想理论</span></div>
+                <div class="swiper-slide"><span>社会</span></div>
+                <div class="swiper-slide"><span>娱乐</span></div>
+                <div class="swiper-slide"><span>科技</span></div>
             </div>
         </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">公文写作</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+        <div class="more-box">
+            <img class="icon-more" src="./img/index/gengduo.png" alt="">
+        </div>
+        <div class="sub-menu">
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">推荐</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">党章党规</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">公文写作</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">思想理论</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">党章党规</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">思想理论</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-        <div class="menu_2 swiper-container subNav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
-                <div class="swiper-slide">二级标题</div>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="list-box">
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/word.png" alt="">
-        <div class="info">
-            <div class="title">提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
+            <div class="menu_2 swiper-container subNav">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                    <div class="swiper-slide">二级标题</div>
+                </div>
             </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/ppt.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/excel.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/pdf.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/txt.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/other.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-    <a href="./文档详情.html" class="item">
-        <img src="./img/common/picture.png" alt="">
-        <div class="info">
-            <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
-            <div class="desc">
-                <span>上传者 : 匿名</span>
-                <span>浏览量 : 536</span>
-            </div>
-        </div>
-    </a>
-</div>
-<div class="cate-more">
-    <div class="cate-cont">
-        <div class="title">
-            <span>更多分类</span>
-            <img class="close js-btn-close" src="./img/common/icon-close.png" alt="">
-        </div>
-        <div class="list">
-            <span class="item on">推荐</span>
-            <span class="item">公文写作</span>
-            <span class="item">党章党规</span>
-            <span class="item">思想理论</span>
-            <span class="item strong">社会</span>
-            <span class="item strong">娱乐</span>
-            <span class="item strong">科技</span>
         </div>
     </div>
-</div>
-<script src="js/lib/jquery.min.js"></script>
-<script src="js/lib/swiper.min.js"></script>
-<script>
-    var App = {
-        init: function () {
-            this.initData();
-            this.bindEvent();
-        },
-        initData: function () {
-            this.initSwiper();
-            this.initMenuSwiper();
-            this.initSubMenuSwiper();
-            this.initScrollPage();
-        },
+    <div class="list-box">
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/word.png" alt="">
+            <div class="info">
+                <div class="title">提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/ppt.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/excel.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/pdf.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/txt.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/other.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+        <a href="./文档详情.html" class="item">
+            <img src="./img/common/picture.png" alt="">
+            <div class="info">
+                <div class="title">党委副书记、纪委书记、工会主席专题 民主生活会发言提纲</div>
+                <div class="desc">
+                    <span>上传者 : 匿名</span>
+                    <span>浏览量 : 536</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="cate-more">
+        <div class="cate-cont">
+            <div class="title">
+                <span>更多分类</span>
+                <img class="close js-btn-close" src="./img/common/icon-close.png" alt="">
+            </div>
+            <div class="list">
+                <span class="item on">推荐</span>
+                <span class="item">公文写作</span>
+                <span class="item">党章党规</span>
+                <span class="item">思想理论</span>
+                <span class="item strong">社会</span>
+                <span class="item strong">娱乐</span>
+                <span class="item strong">科技</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/swiper.min.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.initData();
+                this.bindEvent();
+            },
+            initData: function () {
+                this.initSwiper();
+                this.initMenuSwiper();
+                this.initSubMenuSwiper();
+                this.initScrollPage();
+            },
 
-        bindEvent: function () {
-            //让更多分类下面能够分散对齐，并且最后一行左对齐
-            var that = this;
-            var $cateMore = $('.cate-more');
-            var $items = $('.cate-cont .list .item');
-            for (var i = 0; i < $items.length % 4; i++) {
-                $('.cate-cont .list').append('<span class="zw"></span>')
-            }
-            $items.click(function () {
-                var idx = $(this).index();
-                that.menuSwiper.clickedIndex = idx;
-                that.menuSwiper.emit("onTap", that.menuSwiper);
-                $cateMore.find('.js-btn-close').trigger('click')
-            })
-
-            $('.more-box').click(function (e) {
-                e.stopPropagation()
-                $cateMore.addClass('show')
-                return false
-            })
-            $('.js-btn-close').click(function () {
-                $cateMore.removeClass('show')
-            })
-            /*$('.menu-box').on('click', '.menu', function () {
-                $(this).addClass('on').siblings('.menu').removeClass('on');
-                alert('你选中了第' + ($(this).index() + 1) + '个')
-            })*/
-        },
-        initSwiper: function () {
-            var swiperBanner = new Swiper('.banner-swiper', {
-                spaceBetween: 0,
-                centeredSlides: true,
-                autoplay: 4000,
-                //loop: true,
-                pagination: '.swiper-pagination'
-            });
-        },
-        initMenuSwiper: function () {
-            var mySwiper = new Swiper('#topNav', {
-                freeMode: true,
-                freeModeMomentumRatio: 0.5,
-                slidesPerView: 'auto'
-            });
-
-            this.menuSwiper = mySwiper;
-
-            var swiperWidth = mySwiper.container[0].clientWidth;
-            var maxTranslate = mySwiper.maxTranslate();
-            var maxWidth = -maxTranslate + swiperWidth / 2
-
-            $("#topNav .swiper-container").on('touchstart', function (e) {
-                e.preventDefault()
-            })
-
-            mySwiper.on('tap', function (swiper, e) {
-                var slide = swiper.slides[swiper.clickedIndex]
-                var slideLeft = slide.offsetLeft;
-                var slideWidth = slide.clientWidth;
-                var slideCenter = slideLeft + slideWidth / 2;
-
-                // 被点击slide的中心点
-                mySwiper.setWrapperTransition(300)
-                if (slideCenter < swiperWidth / 2) {
-                    mySwiper.setWrapperTranslate(0)
-                } else if (slideCenter > maxWidth) {
-                    mySwiper.setWrapperTranslate(maxTranslate)
-                } else {
-                    var nowTlanslate = slideCenter - swiperWidth / 2
-                    mySwiper.setWrapperTranslate(-nowTlanslate)
+            bindEvent: function () {
+                //让更多分类下面能够分散对齐，并且最后一行左对齐
+                var that = this;
+                var $cateMore = $('.cate-more');
+                var $items = $('.cate-cont .list .item');
+                for (var i = 0; i < $items.length % 4; i++) {
+                    $('.cate-cont .list').append('<span class="zw"></span>')
                 }
-                $("#topNav  .active").removeClass('active')
-                $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active');
+                $items.click(function () {
+                    var idx = $(this).index();
+                    that.menuSwiper.clickedIndex = idx;
+                    that.menuSwiper.emit("onTap", that.menuSwiper);
+                    $cateMore.find('.js-btn-close').trigger('click')
+                })
 
-                $('.menu_2').hide().eq(swiper.clickedIndex).show();
-                $('.cate-cont .list .item').removeClass('on').eq(swiper.clickedIndex).addClass('on')
-            })
-        },
-        initSubMenuSwiper: function () {
-            $('.subNav').each(function (i, v) {
-                var $this = $(this);
-
-                var mySwiper = new Swiper(this, {
+                $('.more-box').click(function (e) {
+                    e.stopPropagation()
+                    $cateMore.addClass('show')
+                    return false
+                })
+                $('.js-btn-close').click(function () {
+                    $cateMore.removeClass('show')
+                })
+                /*$('.menu-box').on('click', '.menu', function () {
+                    $(this).addClass('on').siblings('.menu').removeClass('on');
+                    alert('你选中了第' + ($(this).index() + 1) + '个')
+                })*/
+            },
+            initSwiper: function () {
+                var swiperBanner = new Swiper('.banner-swiper', {
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    autoplay: 4000,
+                    //loop: true,
+                    pagination: '.swiper-pagination'
+                });
+            },
+            initMenuSwiper: function () {
+                var mySwiper = new Swiper('#topNav', {
                     freeMode: true,
                     freeModeMomentumRatio: 0.5,
                     slidesPerView: 'auto'
                 });
 
+                this.menuSwiper = mySwiper;
+
                 var swiperWidth = mySwiper.container[0].clientWidth;
                 var maxTranslate = mySwiper.maxTranslate();
                 var maxWidth = -maxTranslate + swiperWidth / 2
 
-                $this.find(".swiper-container").on('touchstart', function (e) {
+                $("#topNav .swiper-container").on('touchstart', function (e) {
                     e.preventDefault()
                 })
 
@@ -353,6 +313,8 @@
                     var slideLeft = slide.offsetLeft;
                     var slideWidth = slide.clientWidth;
                     var slideCenter = slideLeft + slideWidth / 2;
+
+                    App.getSliderData()
                     // 被点击slide的中心点
                     mySwiper.setWrapperTransition(300)
                     if (slideCenter < swiperWidth / 2) {
@@ -363,63 +325,117 @@
                         var nowTlanslate = slideCenter - swiperWidth / 2
                         mySwiper.setWrapperTranslate(-nowTlanslate)
                     }
-                    $this.find(".active").removeClass('active')
-                    $this.find(".swiper-slide").eq(swiper.clickedIndex).addClass('active')
+                    $("#topNav  .active").removeClass('active')
+                    $("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active');
+
+                    $('.menu_2').hide().eq(swiper.clickedIndex).show();
+                    $('.cate-cont .list .item').removeClass('on').eq(swiper.clickedIndex).addClass('on')
                 })
+            },
+            initSubMenuSwiper: function () {
+                $('.subNav').each(function (i, v) {
+                    var $this = $(this);
 
-                if (i != 0) {
-                    $(this).hide();
-                }
-            })
-        },
-        initScrollPage: function () {
-            var that = this,
-                $listBox = $('.list-box');
+                    var mySwiper = new Swiper(this, {
+                        freeMode: true,
+                        freeModeMomentumRatio: 0.5,
+                        slidesPerView: 'auto'
+                    });
 
-            $(window).scroll(function () {
-                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                    if (!$listBox.loading) {
-                        $listBox.append('<div class="loading-box"><img src="./img/common/loading.gif" alt=""></div>')
-                        $listBox.loading = true;
-                        that.getData(function (hasData) {
-                            //没有更多数据
-                            if (!hasData) {
-                                $listBox.append('<div class="nomore-box">无更多数据</div>')
-                            } else {
-                                $listBox.loading = false;
-                            }
-                            $listBox.find('.loading-box').remove();
-                        });
+                    var swiperWidth = mySwiper.container[0].clientWidth;
+                    var maxTranslate = mySwiper.maxTranslate();
+                    var maxWidth = -maxTranslate + swiperWidth / 2
+
+                    $this.find(".swiper-container").on('touchstart', function (e) {
+                        e.preventDefault()
+                    })
+
+                    mySwiper.on('tap', function (swiper, e) {
+                        var slide = swiper.slides[swiper.clickedIndex];
+                        if(!slide){
+                            return false;
+                        }
+                        var slideLeft = slide.offsetLeft;
+                        var slideWidth = slide.clientWidth;
+                        var slideCenter = slideLeft + slideWidth / 2;
+                        App.getSliderData()
+                        // 被点击slide的中心点
+                        mySwiper.setWrapperTransition(300)
+                        if (slideCenter < swiperWidth / 2) {
+                            mySwiper.setWrapperTranslate(0)
+                        } else if (slideCenter > maxWidth) {
+                            mySwiper.setWrapperTranslate(maxTranslate)
+                        } else {
+                            var nowTlanslate = slideCenter - swiperWidth / 2
+                            mySwiper.setWrapperTranslate(-nowTlanslate)
+                        }
+                        $this.find(".active").removeClass('active')
+                        $this.find(".swiper-slide").eq(swiper.clickedIndex).addClass('active')
+                    })
+
+                    if (i != 0) {
+                        $(this).hide();
                     }
-                }
-            });
-        },
-        getData: function (callback) {
-            //模拟加载数据
-            setTimeout(function () {
-                if ($('.list-box .item').length > 10) {
-                    //模拟无数据
-                    callback(false)
-                } else {
-                    //模拟有数据
-                    $('.list-box').append(`
-                    <a href="./文档详情.html" class="item">
-                        <img src="./img/common/picture.png" alt="">
-                        <div class="info">
-                            <div class="title">党委...</div>
-                            <div class="desc">
-                                <span>上传者 : 匿名</span>
-                                <span>浏览量 : 536</span>
-                            </div>
-                        </div>
-                    </a>
-                `)
-                    callback(true)
-                }
-            })
-        }
-    };
-    App.init();
-</script>
+                })
+            },
+            initScrollPage: function () {
+                var that = this,
+                    $listBox = $('.list-box');
+
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                        if (!$listBox.loading) {
+                            $listBox.append('<div class="loading-box"><img src="./img/common/loading.gif" alt=""></div>')
+                            $listBox.loading = true;
+                            that.getData(function (hasData) {
+                                //没有更多数据
+                                if (!hasData) {
+                                    $listBox.append('<div class="nomore-box">无更多数据</div>')
+                                } else {
+                                    $listBox.loading = false;
+                                }
+                                $listBox.find('.loading-box').remove();
+                            });
+                        }
+                    }
+                });
+            },
+            getData: function (callback) {
+                //模拟加载数据
+                setTimeout(function () {
+                    if ($('.list-box .item').length > 10) {
+                        //模拟无数据
+                        callback(false)
+                    } else {
+                        //模拟有数据
+                        $('.list-box').append(`
+                            <a href="./文档详情.html" class="item">
+                                <img src="./img/common/picture.png" alt="">
+                                <div class="info">
+                                    <div class="title">党委...</div>
+                                    <div class="desc">
+                                        <span>上传者 : 匿名</span>
+                                        <span>浏览量 : 536</span>
+                                    </div>
+                                </div>
+                            </a>
+                        `)
+                        callback(true)
+                    }
+                })
+            },
+            //用来获取动态数据
+            getSliderData: function () {
+                var list = $('.list-box .item').sort(function (a, b) {
+                    return Math.random() - 0.5;
+                });
+                console.log(list)
+                $('.list-box').empty().append(list);
+                console.log(12323)
+            }
+        };
+        App.init();
+    </script>
 </body>
+
 </html>
