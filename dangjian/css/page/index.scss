@@ -113,9 +113,6 @@ body {
     img {
       height: px2rem(65);
     }
-    .img_1 {
-
-    }
     p {
       padding-top: px2rem(20);
 
@@ -127,15 +124,6 @@ body {
   position: relative;
 
   .menu_1 {
-<<<<<<< HEAD
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    padding-right: px2rem(20);
-    .menu {
-      padding: px2rem(16) px2rem(30);
-=======
     height: px2rem(80);
     padding-right: px2rem(30);
     .swiper-slide {
@@ -148,7 +136,6 @@ body {
         transition: all .3s ease;
         display: block;
       }
->>>>>>> fd6748e8213af8c91fd7fc33f442e3705e62d656
       &.active {
         position: relative;
         font-size: 16px;
@@ -205,27 +192,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-#topNav {
-  width: 100%;
-  overflow: hidden;
-  font: 16px/32px hiragino sans gb, microsoft yahei, simsun;
-  border-bottom: 1px solid #f8f8f8;
-  .swiper-slide {
-    letter-spacing: 2px;
-    text-align: center;
-    span {
-      transition: all .3s ease;
-      display: block;
-    }
-    &.active span {
-      transform: scale(1.1);
-    }
-  }
-}
-
-=======
->>>>>>> fd6748e8213af8c91fd7fc33f442e3705e62d656
 .cate-more {
   position: fixed;
   top: 0px;
