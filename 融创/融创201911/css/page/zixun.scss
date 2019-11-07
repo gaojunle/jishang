@@ -1,0 +1,88 @@
+@chartset 'utf-8';
+@import "../lib/flexible";
+@import "../lib/common";
+@import "../lib/artDialog.css";
+$cBlack: #2a2a2a;
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: #f4f4f4;
+}
+
+.wrap-box {
+  height: 100vh;
+  .log {
+    padding: px2rem(64) 0px;
+    text-align: center;
+    img {
+      width: px2rem(110);
+    }
+  }
+  .liuyan {
+    padding: 0px px2rem(45);
+    position: relative;
+    textarea {
+      font-size: 14px;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(0, 0, 0, .06);
+      border-radius: 5px;
+      height: px2rem(300);
+      width: 100%;
+      box-sizing: border-box;
+      padding: px2rem(24) px2rem(28);
+      color: $cBlack;
+      &::-webkit-input-placeholder {
+        color: rgba(42, 42, 42, 0.302);
+      }
+    }
+    .limit {
+      font-size: 13px;
+      position: absolute;
+      right: px2rem(65);
+      bottom: px2rem(14);
+      color: rgba(42, 42, 42, 0.5);
+    }
+  }
+  .tip {
+    padding-top: px2rem(30);
+    color: rgb(42, 42, 42);
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+.footer_400 {
+  height: px2rem(120);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  background: $cBlack;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  a {
+    width: 50%;
+    display: block;
+    color: white;
+    font-size: px2rem(20);
+    text-align: center;
+    min-width: px2rem(120);
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.gray {
+      background: #666666;
+      color: white;
+    }
+  }
+}
