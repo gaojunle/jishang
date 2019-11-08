@@ -247,7 +247,7 @@ body {
   -ms-flex: 1;
   -webkit-box-flex: 1;
           flex: 1;
-  height: 1.5466666667rem;
+  height: 1.6rem;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -331,6 +331,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 .link-box:before, .link-box:after {
   content: " ";
@@ -378,26 +379,25 @@ body {
 }
 .link-box .items {
   width: 100%;
-  padding: 0px 0.2933333333rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -ms-flexbox;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
   -webkit-box-align: center;
+      -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .link-box .items .split {
   width: 1px;
   height: 2.7733333333rem;
 }
 .link-box .items .item {
-  width: 33%;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -501,4 +501,9 @@ body {
 }
 .baoxiang img {
   width: 2.1333333333rem;
+}
+
+.ui-dialog {
+  border: none !important;
+  box-shadow: none !important;
 }

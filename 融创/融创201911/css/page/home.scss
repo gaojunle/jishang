@@ -79,7 +79,7 @@ body {
   .actived {
     -ms-flex: 1;
     flex: 1;
-    height: px2rem(116);
+    height: px2rem(120);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -155,6 +155,8 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
+  
   &:before,
   &:after {
     content: ' ';
@@ -198,25 +200,18 @@ body {
 
   .items {
     width: 100%;
-    padding: 0px px2rem(22);
     box-sizing: border-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -ms-flex-wrap: wrap;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-
+    
     .split {
       width: 1px;
       height: px2rem(208);
     }
 
     .item {
-      width: 33%;
-
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: center;
@@ -325,4 +320,7 @@ body {
   img {
     width: px2rem(160);
   }
+}
+.ui-dialog{
+  border: none !important;
 }
