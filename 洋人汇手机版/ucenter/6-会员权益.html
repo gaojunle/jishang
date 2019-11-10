@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>我的会员卡</title>
+    <script type="text/javascript" src="../js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="../css/page/ucenter/vip.css">
+</head>
+<body class="mb50">
+<div id="app" class=" bg-bottom">
+    <div class="vip-card no-active">
+        <img src="../img/ucenter/vip-card.png" alt="">
+    </div>
+
+    <div class="common-title">会员卡权益</div>
+    <ol class="msg">
+        <li>品牌礼遇：部分品牌享受9.0—9.5折； </li>
+        <li>停车优惠：当日办卡免费停车1天；每月可享受免费停车10次（每月赠送100积分进行兑换免费1天停车券）。平日扣减会员卡内100积分即可兑换6改小时免费停车券；</li>
+        <li>申报条件：当日消费满10000元，当月累计消费20000元。</li>
+    </ol>
+</div>
+<div class="active-card">
+    <a href="#" class="btn-active js-btn-active">激活会员卡</a>
+   <!-- <a href="#" class="btn-active js-btn-suc">提交-成功</a>
+    <a href="#" class="btn-active js-btn-fail">提交-失败</a>-->
+</div>
+<!--弹窗模板-->
+<script type="text/html" class="mdialog dialog-active">
+    <div class="dialog-html ">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <form action="" class="dialog-cont">
+            <p>请填写您的身份证号</p>
+            <input type="text" class="ipt-active">
+            <input type="submit" class="btn-submit" value="提交">
+        </form>
+    </div>
+</script>
+<script type="text/html" class="mdialog dialog-suc">
+    <div class="dialog-html dialog-tpl">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div class="d-title">信息已提交~</div>
+            <img src="../img/common/dialog-suc.png" alt="">
+            <div class="d-cont">恭喜您，<br>信息已提交成功！</div>
+        </div>
+    </div>
+</script>
+<script type="text/html" class="mdialog dialog-fail">
+    <div class="dialog-html dialog-tpl">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div class="d-title">抱歉，身份未认证～</div>
+            <img src="../img/common/dialog-fail.png" alt="">
+            <div class="d-cont">您的身份未能得到认证<br>
+                请认证业主身份<br>
+                享有更多权益～
+            </div>
+        </div>
+    </div>
+</script>
+<script src="../js/lib/jquery-2.1.4.min.js"></script>
+<script src="../js/lib/artDialog.js"></script>
+<script src="../js/page/ucenter/vip.js"></script>
+</body>
+</html>

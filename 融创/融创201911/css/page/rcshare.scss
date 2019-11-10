@@ -1,0 +1,111 @@
+@import "../lib/flexible";
+@import "../lib/artDialog.css";
+@import "../lib/common";
+
+$fontGray: #8f8f8f;
+$lineGray: rgba(216, 216, 216, 0.5);
+$cBlack: #2a2a2a;
+$cGray: rgba(42, 42, 42, 0.502);
+$cBlue: #ffa800;
+
+body {
+    max-width: 500px;
+    position: relative;
+    margin: 0px auto;
+    background: #f4f4f4;
+    min-height: 100vh;
+    font-size: 14px;
+    padding-bottom: px2rem(30);
+}
+
+.rcshare {
+    position: relative;
+    .share_top {
+        padding: 0px px2rem(32);
+    }
+    .share_cont {
+        padding: px2rem(32);
+        padding-bottom: 0px;
+        background: white;
+        .title {
+            color: #2a2a2a;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: px2rem(10);
+                height: px2rem(30);
+                background: #ffa300;
+                margin-right: px2rem(10);
+            }
+            .num {
+                font-size: 12px;
+            }
+        }
+        .share {
+            padding: px2rem(30) 0px;
+        }
+    }
+    .share {
+        display: block;
+        padding: px2rem(45) 0px;
+        border-bottom: 1px solid $lineGray;
+        &:nth-last-of-type(1){
+            border:none;
+        }
+        &.no_line {
+            border: none;
+        }
+        .sitem {
+            display: flex;
+            justify-content: space-between;
+            .avt {
+                width: px2rem(90);
+                height: px2rem(90);
+            }
+            .info {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: px2rem(6) 0px px2rem(8) px2rem(20);
+                .mtitle {
+                    font-size: 14px;
+                    color: #2a2a2a;
+                }
+                .detail {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    > span {
+                        font-size: 12px;
+                        color: #8f8f8f;
+                        .date {
+                            padding-left: px2rem(16);
+                        }
+                    }
+
+                    .eyes {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        line-height: 1;
+                        img {
+                            width: px2rem(28);
+                        }
+                        i {
+                            font-style: normal;
+                            padding-left: px2rem(10);
+                        }
+                    }
+                }
+            }
+        }
+        .sh_img {
+            margin-top: px2rem(20);
+            width: 100%;
+        }
+    }
+}

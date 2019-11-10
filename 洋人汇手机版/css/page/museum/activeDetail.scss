@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import "../../common/reset.css";
+@import "../../common/common.css";
+@import "../../common/flexible";
+@import "../../lib/art-dialog.css";
+@import "../../lib/art-dialog-skin";
+
+body{
+  background-color: #fff !important;
+  padding-bottom: 80px;
+}
+
+.ui-dialog-body{
+  padding: 10px 10px 30px;
+}
+.app {
+  .title {
+    font-size: 14px;
+    color: #474646;
+    text-align: center;
+    padding: px2rem(38) 10px;
+  }
+  .haibao {
+    padding: px2rem(14);
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.ops {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  height: px2rem(100);
+  line-height: px2rem(100);
+  background: #474646;
+  text-align: center;
+
+  .city-bottom {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: - px2rem(72);
+  }
+  a {
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 6px;
+    width: px2rem(176);
+    height: px2rem(50);
+    line-height: px2rem(50);
+    text-align: center;
+    color: white;
+    background: #28c2fc;
+    margin: 0px px2rem(40);
+  }
+}

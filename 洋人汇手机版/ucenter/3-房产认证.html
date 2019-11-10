@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>房产认证</title>
+    <script type="text/javascript" src="../js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="../css/lib/mobileSelect.css">
+    <link rel="stylesheet" href="../css/page/ucenter/houseAuth.css">
+</head>
+<body class="bg-bottom">
+<div id="app">
+    <div class="common-title">填写身份信息</div>
+    <form action="./4-房产认证（通过与未通过）.html">
+        <ul class="nav-box">
+            <li class="arrow-r">省市 <input type="text" name="city" placeholder="请选择所在省市" class="js-select" readonly>
+                <select class="sel-data" data-title="省市">
+                    <option value="1">北京</option>
+                    <option value="2">天津</option>
+                    <option value="3">石家庄</option>
+                    <option value="4">上海</option>
+                </select>
+            </li>
+            <li class="arrow-r">小区 <input type="text" name="area" placeholder="请选择所在小区" class="js-select" readonly>
+                <select class="sel-data" data-title="小区">
+                    <option value="1">小区一</option>
+                    <option value="2">小区二</option>
+                    <option value="3">小区三</option>
+                </select>
+            </li>
+            <li class="arrow-r">期数 <input type="text" name="qishu" placeholder="请选择所在期数" class="js-select" readonly>
+                <select class="sel-data" data-title="期数">
+                    <option value="1">一</option>
+                    <option value="2">二</option>
+                    <option value="3">三</option>
+                </select>
+            </li>
+            <li class="arrow-r">楼栋 <input type="text" name="loudong" placeholder="请选择所在楼栋" class="js-select" readonly>
+                <select class="sel-data" data-title="楼栋">
+                    <option value="1">一</option>
+                    <option value="2">二</option>
+                    <option value="3">三</option>
+                </select>
+            </li>
+            <li class="arrow-r">单元 <input type="text" name="danyuan" placeholder="请选择所在单元" class="js-select" readonly>
+                <select class="sel-data" data-title="单元">
+                    <option value="1">一</option>
+                    <option value="2">二</option>
+                    <option value="3">三</option>
+                </select>
+            </li>
+            <li class="arrow-r">房间 <input type="text" name="fangjian" placeholder="请选择所在房间" class="js-select" readonly>
+                <select class="sel-data" data-title="房间">
+                    <option value="1">一</option>
+                    <option value="2">二</option>
+                    <option value="3">三</option>
+                </select>
+            </li>
+            <li>姓名 <input type="text" name="uname" placeholder="请填写您的真实姓名"></li>
+            <li class="clearfix">电话 <span class="phone">1862233XXXX</span><span class="error-msg fr">＊手机号不能更改</span></li>
+        </ul>
+        <div class="submit-line">
+            <input class="js-exit" type="submit" value="提    交">
+            <p class="error-msg">＊您的个人信息将用于物业审核，请务必填写正确</p>
+
+            <input class="js-submit-suc" type="submit" value="提交注册-成功点击">
+            <input class="js-submit-fail" type="submit" value="提交注册-失败点击">
+        </div>
+    </form>
+</div>
+
+<!--弹窗模板-->
+<script type="text/html" class="mdialog dialog-suc">
+    <div class="dialog-html ">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div>您的认证申请已提交，<br>稍后将有专人为您审核，<br>请稍后！</div>
+            <img src="../img/common/dialog-suc.png" alt="">
+        </div>
+    </div>
+</script>
+<script type="text/html" class="mdialog dialog-fail">
+    <div class="dialog-html ">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div>您还没有进行房产认证，<br>完成认证后，<br>您将享有更多服务～ </div>
+            <img src="../img/common/dialog-fail.png" alt="">
+        </div>
+    </div>
+</script>
+
+<script src="../js/lib/jquery-2.1.4.min.js"></script>
+<script src="../js/lib/cityData.js"></script>
+<script src="../js/lib/mobileSelect.js"></script>
+<script src="../js/lib/artDialog.js"></script>
+<script src="../js/page/ucenter/houseAuth.js"></script>
+</body>
+</html>

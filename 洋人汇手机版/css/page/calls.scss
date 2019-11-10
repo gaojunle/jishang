@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import "../common/reset.css";
+@import "../common/common.css";
+
+html, body {
+  height: 100%;
+  padding-bottom: 0px
+
+}
+
+.wrapper {
+  min-height: 100%;
+  background: url("../../img/common/calls-bg.png") 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+
+/*报事报修*/
+.calls {
+  text-align: center;
+  padding-top: 153px;
+
+  img {
+    display: block;
+    margin: 0px auto;
+    width: 35%;
+    border-radius: 100%;
+    margin-bottom: 50px;
+  }
+}

@@ -1,104 +1,37 @@
-@import url(../lib/reset.css);
-@chartset 'utf-8';
-html, body {
+@import "../lib/reset.css";
+html,
+body {
   padding: 0px;
   margin: 0px;
   background: #fff;
-  font-size: px2rem(24); }
+  font-size: px2rem(24);
+}
 
 .wrapper {
   position: relative;
   max-width: px2rem(750);
   min-height: 100%;
-  margin: 0px auto; }
-
-.flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-.flex-v {
-  -webkit-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-
-.flex-1 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
-
-.flex-align-center {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.flex-pack-center {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.flex-pack-justify {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-.ui-dialog-body .icon_close {
-  width: px2rem(44);
-  position: absolute;
-  right: 6px;
-  top: 6px; }
-.ui-dialog-body .scode-avt {
-  width: px2rem(400); }
-.ui-dialog-body .pop-cont {
-  position: relative;
-  padding: px2rem(0) px2rem(80);
-  min-height: px2rem(280);
-  min-width: px2rem(400);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px; }
-
-.ui-dialog-footer .ui-dialog-button {
-  justify-content: center; }
-.ui-dialog-footer button {
-  display: inline-block;
-  background-color: #00c5ff;
-  height: px2rem(70);
-  line-height: px2rem(70);
-  text-align: center;
-  border-radius: 33px;
-  border: none;
-  color: white;
-  font-size: 15px;
-  box-sizing: border-box;
-  padding: 0px; }
-  .ui-dialog-footer button.ui-dialog-autofocus {
-    background-color: #00c5ff !important; }
+  margin: 0px auto;
+}
 
 .btn_defualt {
   display: block;
   width: 100%;
-  height: px2rem(70);
-  line-height: px2rem(70);
+  height: px2rem(65);
+  line-height: px2rem(65);
   border-radius: 33px;
-  background-color: #00c5ff;
+  background-color: #ffa800;
   border: none;
   font-size: 15px;
   color: white;
-  text-align: center; }
-  .btn_defualt.nobg {
-    background: transparent;
-    border: 1px solid #00c5ff;
-    color: #00c5ff; }
-  .btn_defualt.light {
-    background-color: rgba(40, 194, 252, 0.2);
-    color: #00c5ff; }
-
-/*# sourceMappingURL=common.css.map */
+  text-align: center;
+}
+.btn_defualt.nobg {
+  background: transparent;
+  border: 1px solid #ffa800;
+  color: #ffa800;
+}
+.btn_defualt.light {
+  background-color: rgba(40, 194, 252, 0.2);
+  color: #ffa800;
+}

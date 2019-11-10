@@ -1,0 +1,33 @@
+@chartset 'utf-8';
+
+.ui-dialog {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  .ui-dialog-header {
+    background: white;
+  }
+}
+
+.dialog-html {
+  position: relative;
+  min-width: px2rem(400);
+  min-height: px2rem(473);
+  .dialog-close-icon {
+    position: absolute;
+    top: px2rem(1);
+    right: px2rem(1);
+    width: px2rem(44);
+    height: px2rem(44);
+  }
+  .dialog-cont {
+    text-align: center;
+    font-size: px2rem(28);
+    color: rgb(143, 143, 143);
+    padding-top: px2rem(105);
+    img {
+      margin-top: px2rem(40);
+      width:px2rem(146);
+    }
+  }
+}

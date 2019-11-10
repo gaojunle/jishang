@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "../../common/reset.css";
+@import "../../common/common.css";
+@import "../../common/flexible";
+@import "../../lib/art-dialog.css";
+@import "../../lib/art-dialog-skin";
+
+.bg-bottom {
+  padding-bottom: 40px;
+}
+.dialog-html{
+  width: auto;
+  text-align: center;
+  .srcode-img{
+    width: 5rem !important;
+    margin-top: 0px !important;
+  }
+}
+
+.app {
+  .active-list {
+    li {
+      padding: px2rem(18) px2rem(74);
+      background: white;
+      margin: px2rem(26) 0px;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(42, 42, 42);
+        border-bottom: 1px solid #ccc;
+        padding-bottom: px2rem(20);
+        position: relative;
+
+        &:before {
+          display: inline-block;
+          position: relative;
+          content: ' ';
+          display: inline-block;
+          width: px2rem(10);
+          height: 15px;
+          background: #28c2fc;
+          margin-right: px2rem(10);
+          vertical-align: middle;
+          top:- px2rem(4);
+        }
+      }
+
+      .op-box {
+        text-align: right;
+        padding-top: px2rem(10);
+
+        a {
+          font-size: 12px;
+          color: rgb(143, 143, 143);
+          margin-left: px2rem(50);
+        }
+      }
+    }
+  }
+}

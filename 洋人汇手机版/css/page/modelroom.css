@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import url(../common/reset.css);
+@import url(../common/common.css);
+@import url(../lib/viewer.min.css);
+@import url(../lib/swiper-3.4.0.min.css);
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%; }
+
+.swiper-button-prev {
+  background: url(../../img/common/arrow-left.png) left 0px no-repeat;
+  -webkit-background-size: 35%;
+  background-size: 35%; }
+
+.swiper-button-next {
+  background: url("../../img/common/arrow-right.png") right 0px no-repeat;
+  -webkit-background-size: 35%;
+  background-size: 35%; }
+
+/*户口图*/
+.house-title {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  line-height: 2.6;
+  background: #2a2a2a;
+  min-height: 39px; }
+
+/* 主力户型 */
+.viewer-pic {
+  height: 2rem;
+  overflow: hidden;
+  margin: .1rem 0px; }
+  .viewer-pic li {
+    text-align: center; }
+    .viewer-pic li img {
+      height: 2rem; }
+
+.link-3d {
+  padding: 15px 0; }
+  .link-3d a {
+    display: block;
+    width: 80%;
+    font-size: 16px;
+    color: #fff !important;
+    background: #28c2fc;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px 0; }
+    .link-3d a:visited, .link-3d a:active {
+      color: #fff; }
+
+.main-type {
+  padding: 0.15rem 0.1rem 0.45rem; }
+  .main-type .main-type-slide {
+    overflow: hidden;
+    margin-top: 0.1rem; }
+    .main-type .main-type-slide .swiper-container {
+      overflow: visible; }
+    .main-type .main-type-slide .swiper-slide {
+      width: 41%;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-right: 0.07rem; }
+      .main-type .main-type-slide .swiper-slide .pic {
+        position: relative;
+        border-bottom: 0.03rem solid #28c2fc; }
+      .main-type .main-type-slide .swiper-slide .pic-3d:after {
+        content: '3D';
+        color: white;
+        background: #28c2fc;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-radius: 100%;
+        padding: 3px;
+        text-align: center;
+        font-size: 0.1rem; }
+  .main-type .main-type-slide .swiper-slide a,
+  .main-type .main-type-slide .swiper-slide a img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .main-type .main-type-slide .swiper-slide a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.73);
+    color: #fff;
+    font-size: 0.1rem;
+    line-height: 1.8; }
+  .main-type .main-type-slide .swiper-slide .tit {
+    font-size: 0.1rem;
+    color: #2a2a2a;
+    line-height: 1.8;
+    margin-top: 0.05rem; }
+
+/*# sourceMappingURL=modelroom.css.map */

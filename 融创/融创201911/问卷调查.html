@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>问卷调查</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/page/wenjuan.css" />
+    <script src="./js/lib/flexible.js"></script>
+</head>
+
+<body>
+    <div class="wenjuan">
+        <div class="banner"><img src="./img/wenjuan/banner.png" alt=""></div>
+        <div class="wj">
+            <div class="ques">您对社群内的噪音影响及后续客服完成的隔音 设施有何评价？</div>
+            <ul class="ans">
+                <li class="on">很好，优秀</li>
+                <li>一般般</li>
+                <li>勉强能适应</li>
+                <li>很差，需要整改</li>
+            </ul>
+        </div>
+        <div class="op"><a href="#" class="mbtn">下一题</a></div>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+            },
+            bindEvent: function () {
+                $('.ans').on('click', 'li', function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    alert('您选择了第' + ($(this).index() + 1) + '个')
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

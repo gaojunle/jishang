@@ -1,0 +1,218 @@
+/* CSS Document */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 100px;
+    min-height: 100%;
+    width: 100%;
+}
+
+body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+body {
+    min-width: 320px;
+    font-size: 0.14rem;
+    background: #f4f4f4;
+    text-rendering: optimizeLegibility;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+table {
+    margin: auto;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol, ul {
+    list-style: none;
+    list-style-type: none;
+}
+
+a img, img {
+    vertical-align: middle;
+    border: none;
+}
+
+/* a style */
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:visited {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+a:active {
+    outline: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+/* form style */
+input, textarea, select, button {
+    vertical-align: middle;
+    outline: none;
+    background: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+label {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* clearfix style */
+.clear {
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: "\20";
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.clearfix {
+    display: block;
+    *zoom: 1;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #8F8F8F;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #8F8F8F;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #8F8F8F;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #8F8F8F;
+}
+
+/* float style */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fn {
+    float: none;
+}
+
+.rel {
+    position: relative;
+}
+
+/* display style */
+.db {
+    display: block;
+}
+
+.dn {
+    display: none;
+}
+
+.di {
+    display: inline;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.ovh {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.psa {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.flex-middle {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center; /* IE 10 */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+}
+
+.flex-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+}
+
+.fx1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+}

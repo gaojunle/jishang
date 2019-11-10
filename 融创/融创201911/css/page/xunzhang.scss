@@ -1,0 +1,205 @@
+@import "../lib/flexible";
+@import "../lib/artDialog.css";
+@import "../lib/common";
+
+$fontGray: #8f8f8f;
+$lineGray: rgba(216, 216, 216, 0.25);
+$cBlack: #2a2a2a;
+$cGray: rgba(42, 42, 42, 0.502);
+$cBlue: #ffa800;
+
+body {
+    max-width: 500px;
+    position: relative;
+    margin: 0px auto;
+    background: #f4f4f4;
+    min-height: 100vh;
+    font-size: 14px;
+    padding-bottom: px2rem(120);
+}
+.banner {
+    img {
+        width: 100%;
+    }
+}
+
+.xz {
+    padding: px2rem(62) px2rem(32);
+    background: linear-gradient(#f4f4f4, #eaeaea);
+    position: relative;
+
+    .title {
+        color: #2a2a2a;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: px2rem(10);
+            height: px2rem(30);
+            background: #ffa300;
+            margin-right: px2rem(10);
+        }
+        .num {
+            font-size: 12px;
+        }
+    }
+    .list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap;
+        height: px2rem(250);
+        overflow: hidden;
+        transition: all 1s;
+        > a {
+            color: #8f8f8f;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: px2rem(22) 0px;
+            img {
+                width: px2rem(160);
+                height: px2rem(160);
+            }
+            span {
+                margin-top: px2rem(16);
+            }
+        }
+    }
+    &.unfold {
+        .list {
+            height: auto;
+        }
+        .more_btn{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.ops {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    background: #8f8f8f;
+    &.on {
+        background: #ffa800;
+        a {
+            color: #fff;
+        }
+    }
+    a {
+        height: px2rem(86);
+        flex: 1;
+        color: #cdcdcd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+    }
+}
+.hotsell-about-detail {
+    background: #2a2a2a;
+    padding: 0.12rem 0.1rem;
+    display: none;
+}
+.more_btn {
+    width: px2rem(52);
+    height: px2rem(52);
+    position: absolute;
+    bottom: px2rem(-26);
+    left: 50%;
+    margin-left: px2rem(-26);
+    border-radius: 100%;
+    z-index: 3;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.more_btn:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.26rem;
+    height: 0.26rem;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 100%;
+    z-index: 4;
+    opacity: 1;
+    -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+    animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.more_btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.26rem;
+    height: 0.26rem;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 100%;
+    z-index: 4;
+    opacity: 1;
+    -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+    animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.more_btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 6;
+    -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+    animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.more_btn.open {
+    bottom: -0.11rem;
+    top: auto;
+}
+
+@keyframes animate-shadow-1 {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 16px rgba(0, 0, 0, 0);
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+@-webkit-keyframes animate-shadow-1 {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 16px rgba(0, 0, 0, 0);
+        background: rgba(0, 0, 0, 0);
+    }
+}

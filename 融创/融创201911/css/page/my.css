@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import "../lib/reset.css";
+@import "../lib/common.css";
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  font-size: 13px;
+  background-image: url(../../img/common/bottom_bg.png);
+  background-repeat: no-repeat;
+  background-position: 0px bottom;
+  background-size: 100%;
+  padding-bottom: 1.6rem;
+}
+
+.my-box {
+  color: #2a2a2a;
+  padding: 0.32rem;
+}
+.my-box .card {
+  padding: 0.32rem 0px;
+}
+.my-box .card .info {
+  padding: 0.56rem;
+  background: url(../../img/my/card_bg.png) 0px 0px no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-size: 13px;
+}
+.my-box .card .info > img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  margin-bottom: 0.3333333333rem;
+}
+.my-box .card .info .txt p {
+  padding-top: 6px;
+}
+.my-box .my-list {
+  background: white;
+  border-radius: 0.2rem;
+  margin-bottom: 0.32rem;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.my-box .my-list a {
+  color: #2a2a2a;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4rem 0.5866666667rem;
+  border-top: 1px solid rgba(216, 216, 216, 0.5);
+}
+.my-box .my-list a .icon {
+  height: 0.5066666667rem;
+}
+.my-box .my-list a span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 0.16rem;
+}
+.my-box .my-list a i {
+  font-style: normal;
+  color: #8f8f8f;
+}
+.my-box .my-list a strong {
+  font-weight: normal;
+  color: white;
+  background: #ec0000;
+  border-radius: 50%;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  min-width: 0.4rem;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 0.1066666667rem;
+}
+.my-box .my-list a .right {
+  width: 0.2rem;
+}
+.my-box .my-list a:nth-of-type(1) {
+  border-top: none;
+}
+.my-box .kefu {
+  padding: 0.4rem 0.8rem;
+  background: white;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #7d7c7d;
+}
+.my-box .kefu .red {
+  color: #de172a;
+}
+.my-box .kefu .red a {
+  color: #de172a;
+}
+
+.jf-list {
+  color: #7d7c7d;
+  font-size: 12px;
+}
+.jf-list .item {
+  background: white;
+  margin-top: 0.2133333333rem;
+  padding: 0.2933333333rem 0.88rem 0.0666666667rem;
+  line-height: 1.8;
+}
+.jf-list .item p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.jf-list .item p .xf {
+  color: #333;
+}
+.jf-list .item p .xf-num {
+  font-size: 16px;
+  color: #de172a;
+}

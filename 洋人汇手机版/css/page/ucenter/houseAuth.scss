@@ -1,0 +1,98 @@
+@import "../../common/flexible";
+@import "../../common/reset-ucenter.css";
+@import "../../lib/art-dialog.css";
+@import "../../lib/art-dialog-skin";
+
+html, body {
+  height: 100%;
+  padding-bottom: 0px;
+  #app {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+}
+
+.sel-data {
+  display: none;
+}
+
+.dialog-html .dialog-cont {
+  padding-top: 1rem;
+}
+
+.nav-box {
+  li {
+    padding: px2rem(28) 0.48rem;
+    background: white;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 14px;
+    position: relative;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: rgb(42, 42, 42);
+    }
+    .icon {
+      width: px2rem(44);
+      margin-right: px2rem(16);
+    }
+    input[type='text'] {
+      border: none;
+      height: 100%;
+      width: 70%;
+      font-size: 14px;
+      vertical-align: text-top;
+      text-align: right;
+      float: right;
+      margin-right: .5rem;
+    }
+    .error-msg {
+      font-size: 14px;
+      margin-right: .5rem;
+    }
+    .phone {
+      color: #8f8f8f;
+      margin-left: px2rem(10);
+    }
+  }
+}
+
+.arrow-r {
+  &:after {
+    position: absolute;
+    right: px2rem(32);
+    top: 50%;
+    margin-top: - px2rem(13);
+
+    content: '';
+    width: px2rem(13);
+    background: url("../../../img/ucenter/arrow-right.png") right center no-repeat;
+    background-size: contain;
+    height: px2rem(26);
+  }
+}
+
+.submit-line {
+  text-align: center;
+  margin-top: px2rem(75);
+
+  input {
+    width: px2rem(604);
+    height: px2rem(68);
+    line-height: px2rem(68);
+    text-align: center;
+    background: #28c2fc;
+    border: none;
+    color: white;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    line-height: 1.185;
+    margin-bottom: px2rem(20);
+  }
+}

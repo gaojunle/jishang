@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@import url(../common/reset.css);
+@import url(../common/common.css);
+#r-result {
+  max-height: 2rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: none;
+  box-sizing: border-box; }
+
+/*地图*/
+.map-box .map-header {
+  height: 2.1rem;
+  width: 100%;
+  box-sizing: border-box; }
+.map-box .map-search {
+  overflow: hidden;
+  width: 100%; }
+  .map-box .map-search .pos {
+    font-family: "micrsoft yahei";
+    width: 100%;
+    height: 2em;
+    font-size: 1em;
+    line-height: 1.8em;
+    border: 0px;
+    outline: 0px;
+    padding: .2em .5em;
+    margin-left: 10%;
+    border-bottom: 1px solid #e9e9e9; }
+    .map-box .map-search .pos:read-only {
+      color: #444; }
+  .map-box .map-search .ways-search {
+    text-align: center;
+    border-bottom: 1px solid #e9e9e9; }
+    .map-box .map-search .ways-search li {
+      float: left;
+      width: 33.3%;
+      padding: .06rem 0px; }
+      .map-box .map-search .ways-search li.on {
+        color: #28c2fc; }
+
+/*位置和周边*/
+.location-title {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 0.06rem 0.08rem 0;
+  line-height: 0.26rem;
+  font-size: 0.13rem; }
+  .location-title p {
+    float: left;
+    padding-left: 0.17rem;
+    background-repeat: no-repeat;
+    background-position: 0 center; }
+  .location-title .loc1 {
+    background-image: url(../../img/location/red_loc.png);
+    background-size: 0.13rem auto; }
+  .location-title .loc2 {
+    background-image: url(../../img/location/black_loc.png);
+    background-size: 0.12rem auto; }
+  .location-title a {
+    display: block;
+    float: right;
+    color: #28c2fc; }
+
+.loc-around {
+  padding: 0.15rem 0 50px; }
+  .loc-around .common-title {
+    margin: 0 0.1rem 0.09rem; }
+  .loc-around .loc-link {
+    margin-bottom: 0.06rem; }
+    .loc-around .loc-link a {
+      display: block;
+      position: relative; }
+    .loc-around .loc-link img {
+      width: 100%;
+      height: auto; }
+    .loc-around .loc-link i {
+      display: block;
+      background: url(../../img/location/luxian.png) no-repeat 0 0;
+      background-size: 100%;
+      width: 0.39rem;
+      height: 0.38rem;
+      position: absolute;
+      bottom: 0;
+      right: 0.12rem;
+      z-index: 1;
+      font-size: 0; }
+  .loc-around .loc-map {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.03rem;
+    box-animate-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    font-size: 0; }
+    .loc-around .loc-map img {
+      width: 100%;
+      height: auto; }
+    .loc-around .loc-map a {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 3;
+      background: #28c2fc url(../../img/location/loc.png) no-repeat 0.02rem center;
+      background-size: auto 100%;
+      color: #fff;
+      height: 0.21rem;
+      line-height: 0.23rem;
+      padding: 0 0.05rem 0 0.28rem;
+      font-size: 0.12rem; }
+  .loc-around .loc-list {
+    padding: 0.1rem 0.18rem;
+    font-size: 0.12rem;
+    color: #2a2a2a;
+    line-height: 1.6; }
+    .loc-around .loc-list .left {
+      margin-right: 0.05rem; }
+
+/*# sourceMappingURL=location.css.map */

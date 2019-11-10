@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>会客厅</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/page/hkt.css" />
+    <script src="./js/lib/flexible.js"></script>
+</head>
+
+<body>
+    <div class="hkt">
+        <div class="banner"><img src="./img/banner_hkt.png" alt=""></div>
+        <form action="#" class="hkt_form">
+            <div class="fline">
+                <input type="text" name="uname" placeholder="请填写预约人姓名">
+            </div>
+            <div class="fline">
+                <input type="text" name="phone" placeholder="请填写预约人手机号" value="155****1234">
+            </div>
+            <div class="fline select">
+                <select name="city">
+                    <option value="">请选择预约城市</option>
+                    <option value="1">北京</option>
+                    <option value="2">上海</option>
+                    <option value="3">深圳</option>
+                    <option value="4">广州</option>
+                </select>
+            </div>
+            <div class="fline select">
+                <select name="mall">
+                    <option value="">请选择预约客厅</option>
+                    <option value="1">客厅1</option>
+                    <option value="2">客厅2</option>
+                    <option value="3">客厅3</option>
+                    <option value="4">客厅4</option>
+                </select>
+            </div>
+            <div class="fline select">
+                <input id="date" type="text" name="date" placeholder="请选择预约日期">
+            </div>
+            <div class="fline select">
+                <input id="time" type="text" name="time" placeholder="请选择预约时间">
+            </div>
+            <div class="fline select">
+                <select name="project">
+                    <option value="">请选择预约项目</option>
+                    <option value="1">项目1</option>
+                    <option value="2">项目2</option>
+                    <option value="3">项目3</option>
+                    <option value="4">项目4</option>
+                </select>
+            </div>
+        </form>
+        <div class="op"><a href="#" class="mbtn">提交信息</a></div>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+            },
+            bindEvent: function () {
+                $('#date').on('focus', function () {
+                    $(this).attr('type', 'date').focus();
+                })
+
+                $('#time').on('focus', function () {
+                    var $this = $(this);
+                    $this.attr('type', 'time')
+                    $this.focus();
+                })
+                // var opt = {
+                //     startY: 1990,   //开始时间
+                //     endY: 2050,      //结束事件
+                //     mPickerType: 1,
+                //     separator: '/'  //日期分割符
+                // }
+                // $('#date').mPickDater(opt);
+
+                $('.ans').on('click', 'li', function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    alert('您选择了第' + ($(this).index() + 1) + '个')
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

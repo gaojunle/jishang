@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款计算</title>
+    <meta name="keywords" content=" 贷款计算"/>
+    <meta name="description" content=" 贷款计算"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="img/common/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/page/loancalc.css"/>
+</head>
+<body>
+
+<div class="loading-gif"><img src="./img/common/loading.gif" alt=""></div>
+<section class="wrapper bg-bottom" id="wrapper">
+    <div id="wygf" class="show">
+        <div class="loan-info">
+            <!--<div class="common-title" style="display: none">贷款信息</div>-->
+            <div class="loan-head">
+                <ul class="flex flex-center">
+                    <li data="0" class="on"><a href="javascript:;">商业贷款</a></li>
+                    <li data="1" class=""><a href="javascript:;">公积金贷款</a></li>
+                    <li data="2" class=""><a href="javascript:;" style="display: none;">组合贷款</a></li>
+                </ul>
+            </div>
+            <div class="loan-tab">
+                <ul style="display: block;">
+                    <li class="flex repay-way">
+                        <div class="tit">还款方式：</div>
+                        <input type="radio" name="calcMode" id="r1" value="0" checked="checked" form="calcForm">
+                        <label for="r1">等额本息</label>
+                        <input type="radio" name="calcMode" id="r2" value="1" form="calcForm">
+                        <label for="r2">等额本金</label>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">折后房款：</div>
+                        <div class="fx1">
+                            <input type="text" class="loan-num">
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">贷款金额：</div>
+                        <div class="fx1">
+                            <input type="text" placeholder="请输入贷款金额" class="loan-num" name="amount" id="amount" calcmode="">
+                        </div>
+                        <p>万元</p>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">按揭年数：</div>
+                        <div class="fx1">
+                            <div class="loan-select">
+                                <div class="year" id="year">20年（240期）</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">利率：</div>
+                        <div class="fx1">
+                            <div class="loan-select">
+                                <div class="rate" id="rate">2017年11月27日基准利率</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex last">
+                        <div class="loan-rate fx1">商业贷款利率4.9%</div>
+                    </li>
+                </ul>
+
+                <ul class="combine" style="display: none;">
+                    <li class="flex">
+                        <div class="tit">商业贷款：</div>
+                        <div class="fx1">
+                            <input type="text" placeholder="请输入贷款金额" class="loan-num" id="txtsy">
+                        </div>
+                        <p>万元</p>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">公积金贷款：</div>
+                        <div class="fx1">
+                            <input type="text" placeholder="请输入贷款金额" class="loan-num" id="txtgjj">
+                        </div>
+                        <p>万元</p>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">按揭年数：</div>
+                        <div class="fx1">
+                            <div class="loan-select">
+                                <div class="year" id="year2">20年（240期）</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <div class="tit">贷款利率：</div>
+                        <div class="fx1">
+                            <div class="loan-select">
+                                <div class="rate" id="rate2">2017年11月27日基准利率</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex repay-way">
+                        <div class="tit">还款方式：</div>
+                        <input type="radio" name="calcMode2" id="r3" value="0" checked="checked">
+                        <label for="r3">等额本息</label>
+                        <input type="radio" name="calcMode2" id="r4" value="1">
+                        <label for="r4">等额本金</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="select-cover" id="year-select" controlid="term" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, -792px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="year-list">
+                                    <ul>
+                                        <li data="12">1年（12期）</li>
+                                        <li data="24">2年（24期）</li>
+                                        <li data="36">3年（36期）</li>
+                                        <li data="48">4年（48期）</li>
+                                        <li data="60">5年（60期）</li>
+                                        <li data="72">6年（72期）</li>
+                                        <li data="84">7年（84期）</li>
+                                        <li data="96">8年（96期）</li>
+                                        <li data="108">9年（108期）</li>
+                                        <li data="120">10年（120期）</li>
+                                        <li data="132">11年（132期）</li>
+                                        <li data="144">12年（144期）</li>
+                                        <li data="156">13年（156期）</li>
+                                        <li data="168">14年（168期）</li>
+                                        <li data="180">15年（180期）</li>
+                                        <li data="192">16年（192期）</li>
+                                        <li data="204">17年（204期）</li>
+                                        <li data="216">18年（216期）</li>
+                                        <li data="228">19年（228期）</li>
+                                        <li data="240" class="selected">20年（240期）</li>
+                                        <li data="252">21年（252期）</li>
+                                        <li data="264">22年（264期）</li>
+                                        <li data="276">23年（276期）</li>
+                                        <li data="288">24年（288期）</li>
+                                        <li data="300">25年（300期）</li>
+                                        <li data="312">26年（312期）</li>
+                                        <li data="324">27年（324期）</li>
+                                        <li data="336">28年（336期）</li>
+                                        <li data="348">29年（348期）</li>
+                                        <li data="360">30年（360期）</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-cover" id="rate-select" controlid="ratio" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="rate-list">
+                                    <ul>
+                                        <li data="100" class="selected">2017年11月27日基准利率</li>
+                                        <li data="70">7折</li>
+                                        <li data="85">85折</li>
+                                        <li data="88">88折</li>
+                                        <li data="90">9折</li>
+                                        <li data="95">95折</li>
+                                        <li data="110">1.1倍</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-cover" id="year-select1" controlid="term1" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, -792px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="year-list">
+                                    <ul>
+                                        <li data="12">1年（12期）</li>
+                                        <li data="24">2年（24期）</li>
+                                        <li data="36">3年（36期）</li>
+                                        <li data="48">4年（48期）</li>
+                                        <li data="60">5年（60期）</li>
+                                        <li data="72">6年（72期）</li>
+                                        <li data="84">7年（84期）</li>
+                                        <li data="96">8年（96期）</li>
+                                        <li data="108">9年（108期）</li>
+                                        <li data="120">10年（120期）</li>
+                                        <li data="132">11年（132期）</li>
+                                        <li data="144">12年（144期）</li>
+                                        <li data="156">13年（156期）</li>
+                                        <li data="168">14年（168期）</li>
+                                        <li data="180">15年（180期）</li>
+                                        <li data="192">16年（192期）</li>
+                                        <li data="204">17年（204期）</li>
+                                        <li data="216">18年（216期）</li>
+                                        <li data="228">19年（228期）</li>
+                                        <li data="240" class="selected">20年（240期）</li>
+                                        <li data="252">21年（252期）</li>
+                                        <li data="264">22年（264期）</li>
+                                        <li data="276">23年（276期）</li>
+                                        <li data="288">24年（288期）</li>
+                                        <li data="300">25年（300期）</li>
+                                        <li data="312">26年（312期）</li>
+                                        <li data="324">27年（324期）</li>
+                                        <li data="336">28年（336期）</li>
+                                        <li data="348">29年（348期）</li>
+                                        <li data="360">30年（360期）</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-cover" id="rate-select1" controlid="ratio1" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="rate-list">
+                                    <ul>
+                                        <li data="100" class="selected">2017年11月27日基准利率</li>
+                                        <li data="70">7折</li>
+                                        <li data="85">85折</li>
+                                        <li data="88">88折</li>
+                                        <li data="90">9折</li>
+                                        <li data="95">95折</li>
+                                        <li data="110">1.1倍</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-cover" id="year-select2" controlid="term2" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, -792px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="year-list">
+                                    <ul>
+                                        <li data="12">1年（12期）</li>
+                                        <li data="24">2年（24期）</li>
+                                        <li data="36">3年（36期）</li>
+                                        <li data="48">4年（48期）</li>
+                                        <li data="60">5年（60期）</li>
+                                        <li data="72">6年（72期）</li>
+                                        <li data="84">7年（84期）</li>
+                                        <li data="96">8年（96期）</li>
+                                        <li data="108">9年（108期）</li>
+                                        <li data="120">10年（120期）</li>
+                                        <li data="132">11年（132期）</li>
+                                        <li data="144">12年（144期）</li>
+                                        <li data="156">13年（156期）</li>
+                                        <li data="168">14年（168期）</li>
+                                        <li data="180">15年（180期）</li>
+                                        <li data="192">16年（192期）</li>
+                                        <li data="204">17年（204期）</li>
+                                        <li data="216">18年（216期）</li>
+                                        <li data="228">19年（228期）</li>
+                                        <li data="240" class="selected">20年（240期）</li>
+                                        <li data="252">21年（252期）</li>
+                                        <li data="264">22年（264期）</li>
+                                        <li data="276">23年（276期）</li>
+                                        <li data="288">24年（288期）</li>
+                                        <li data="300">25年（300期）</li>
+                                        <li data="312">26年（312期）</li>
+                                        <li data="324">27年（324期）</li>
+                                        <li data="336">28年（336期）</li>
+                                        <li data="348">29年（348期）</li>
+                                        <li data="360">30年（360期）</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="select-cover" id="rate-select2" controlid="ratio2" style="display: none;">
+            <div class="select-fixed">
+                <div class="select-cancel"><span>取消</span></div>
+                <div class="select-swiper">
+                    <div class="swiper-container swiper-container-vertical swiper-container-free-mode">
+                        <div class="swiper-wrapper"
+                             style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <section class="rate-list">
+                                    <ul>
+                                        <li data="100" class="selected">2017年11月27日基准利率</li>
+                                        <li data="70">7折</li>
+                                        <li data="85">85折</li>
+                                        <li data="88">88折</li>
+                                        <li data="90">9折</li>
+                                        <li data="95">95折</li>
+                                        <li data="110">1.1倍</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form style="display:none;" id="calcForm" name="calcForm">
+            <input type="hidden" id="calcType" name="calcType" value="0">
+            <input type="hidden" id="term" name="term" value="240">
+            <input type="hidden" id="ratio" name="ratio" value="100">
+            <input type="hidden" id="term1" name="term1" value="240">
+            <input type="hidden" id="ratio1" name="ratio1" value="100">
+            <input type="hidden" id="term2" name="term2" value="240">
+            <input type="hidden" id="ratio2" name="ratio2" value="100">
+        </form>
+        <div class="calculate-btn">
+            <p>开始计算</p>
+        </div>
+
+        <div class="calculate-result">
+            <h3>贷款明细</h3>
+            <div class="line"></div>
+            <ul>
+                <li class="flex">
+                    <div class="tit">贷款方式：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">贷款总额：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">利<span style="padding-left: 26px;">率</span>：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">按揭年数：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">利<span style="padding-left: 26px;">息</span>：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">还款总额：</div>
+                    <div class="fx1"></div>
+                </li>
+                <li class="flex">
+                    <div class="tit">参考月供：</div>
+                    <div class="fx1"></div>
+                </li>
+            </ul>
+            <a href="#" class="bill-btn" style="display:none">生成报价单</a>
+        </div>
+        <p class="calculate-result-tips">*以上结果仅供参考</p>
+    </div>
+</section>
+<ul class="footer flex">
+    <li class="zd"><a href="tel:010-2547854"><div><img src="./img/common/footer/zd-0.png"></div>致电</a></li>
+    <li class="ly"><a href="./1-3-2feedback.html"><div><img src="./img/common/footer/ly-0.png"></div>留言</a></li>
+    <li class="ysg"><a href="./1-1-1hotsell.html"><div><img src="./img/common/footer/ysg-0.png"></div></a>艺术馆</li>
+</ul>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/lib/viewer-jquery.min.js"></script>
+<script src="js/lib/common.js"></script>
+<script src="js/page/loancalc.js"></script>
+
+</body>
+</html>

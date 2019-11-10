@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import "../common/reset.css";
+@import "../common/common.css";
+@import "../lib/photoswipe.css";
+@import "../lib/default-skin/default-skin.css";
+@import "../lib/swiper-3.4.0.min.css";
+
+body {
+  background: #f4f4f4;
+}
+
+.common-title {
+  margin: 10px;
+}
+
+/* 项目画册 */
+.pictures-content {
+  background-color: #f4f4f4;
+  padding-bottom: 0.3rem;
+  position: relative;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.pictures-slide {
+  padding: 0px 10px 0.28rem 10px;
+}
+
+.pictures-tit {
+  padding: 12px 0 9px 10px;
+}
+
+.pictures-tit p {
+  padding-left: 0.07rem;
+  position: relative;
+  font-size: 0.15rem;
+  color: #2a2a2a;
+  line-height: 0.2rem;
+}
+
+.pictures-tit p:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.03rem;
+  left: 0;
+  background: #28c2fc;
+  width: 0.02rem;
+  height: 0.125rem;
+}
+
+.ios .pictures-tit p:after {
+  top: 0.04rem;
+}
+
+.pictures-slide .swiper-slide {
+  width: 40%;
+  text-align: center;
+  margin: 0px 4px;
+}
+
+.pictures-slide .swiper-slide a {
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+  padding: 2px;
+  margin-top: 5px;
+}
+
+.pictures-slide .swiper-slide a, .pictures-slide .swiper-slide a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: .12rem;
+  color: #6f6f7b;
+  text-align: left;
+}
+
+.pictures-slide .swiper-slide a img {
+}
+
+.pictures-slide .swiper-slide figcaption {
+  font-size: 0.11rem;
+  color: #2a2a2a;
+  padding-top: 0.08rem;
+  line-height: 1.5;
+  text-align: center;
+  padding: 10px 7px;
+}
+
+.pictures-slide .swiper-slide figure {
+  position: relative;
+}

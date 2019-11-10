@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>区位</title>
+    <meta name="keywords" content="区位"/>
+    <meta name="description" content="区位"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="shortcut icon" href="img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="img/common/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/page/location.css"/>
+</head>
+<body style="padding-bottom: 30px;">
+<div class="loading-gif"><img src="./img/common/loading.gif" alt=""></div>
+
+<section class="wrapper bg-bottom" id="wrapper">
+    <div class="map-box">
+        <div id="BMap" class="map-header"></div>
+        <div id="r-result"></div>
+        <div class="map-search">
+            <input class="pos" id="pStart" placeholder="正在定位您的位置..."/>
+            <div class="pos" id="pEnd">远洋天著春秋</div>
+            <ul class="ways-search clearfix">
+                <li data-type="bus">公交</li>
+                <li data-type="driver">驾车</li>
+                <li data-type="walk">步行</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="location-title border">
+        <p class="loc1">天著春秋</p>
+    </div>
+    <div class="loc-around">
+        <div class="common-title">位置及周边</div>
+
+        <ul class="loc-list">
+            <li class="flex">
+                <div class="left">项目地址:</div>
+                <div class="fx1">深圳南山区滨海大道和科苑路交汇处（深圳湾体育中心西门）</div>
+            </li>
+            <li class="flex">
+                <div class="left">休闲配套:</div>
+                <div class="fx1">深圳湾体育中心、万象汇、木棉花酒店、安达仕酒店、深圳湾公园、15公里滨海长廊、海岸城、</div>
+            </li>
+            <li class="flex">
+                <div class="left">人文配套:</div>
+                <div class="fx1">艺术中心、科技馆、保利剧院</div>
+            </li>
+            <li class="flex">
+                <div class="left">医疗配套:</div>
+                <div class="fx1">香港大学深圳医院、南山人民医院</div>
+            </li>
+            <li class="flex">
+                <div class="left">教育配套:</div>
+                <div class="fx1">根据政府相关规定就近入学</div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--<img style="width: 100%" src="./img/common/bottom_bg.png" alt="">-->
+<ul class="footer flex">
+    <li class="zd"><a href="tel:010-2547854">
+        <div><img src="./img/common/footer/zd-0.png"></div>
+        致电</a></li>
+    <li class="ly"><a href="./1-3-2feedback.html">
+        <div><img src="./img/common/footer/ly-0.png"></div>
+        留言</a></li>
+    <li class="ysg"><a href="./1-1-1hotsell.html">
+        <div><img src="./img/common/footer/ysg-0.png"></div>
+    </a>艺术馆
+    </li>
+</ul>
+<script src="http://api.map.baidu.com/getscript?v=2.0&ak=nLBM5uQfBMcdRn2OV4rHGL3iQdWU4BaT"></script>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/common.js"></script>
+<script src="js/page/location.js"></script>
+</body>
+</html>

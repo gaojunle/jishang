@@ -1,7 +1,10 @@
 @chartset 'utf-8';
 @import "../lib/flexible";
-@import "../lib/common";
+@import "../lib/common.css";
 @import "../lib/artDialog.css";
+
+$fontGray: #8f8f8f;
+$lineGray: rgba(216, 216, 216, 0.25);
 $cBlack: rgb(42, 42, 42);
 
 body {

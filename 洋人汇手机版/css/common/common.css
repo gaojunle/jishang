@@ -1,0 +1,234 @@
+@charset "UTF-8";
+.cr {
+  color: #28c2fc; }
+
+@font-face {
+  font-family: 'iconfont';
+  src: url("iconfont.eot");
+  /* IE9*/
+  src: url("iconfont.eot?#iefix") format("embedded-opentype"), url("iconfont.woff") format("woff"), url("iconfont.ttf") format("truetype"), url("iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */ }
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.001rem;
+  -moz-osx-font-smoothing: grayscale; }
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box; }
+
+.bg-bottom {
+  background: url(../../img/common/bottom_bg.png) no-repeat center bottom;
+  background-size: 100% auto;
+  background-color: #f4f4f4; }
+
+.bg-city {
+  background: url(../../img/location/project_city.png) no-repeat center bottom;
+  background-size: 100% auto; }
+
+header {
+  height: 2.4rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #2a2a2a; }
+
+/* loading动画 */
+.loading-gif {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff;
+  text-align: center; }
+  .loading-gif img {
+    width: 30px;
+    margin-top: 55%; }
+
+/* banner-swiper */
+.banner-swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  .banner-swiper .swiper-slide {
+    width: 100%; }
+    .banner-swiper .swiper-slide a, .banner-swiper .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: auto; }
+    .banner-swiper .swiper-slide.swiper-container-horizontal > .swiper-pagination {
+      bottom: 10px;
+      left: 0;
+      width: 100%; }
+    .banner-swiper .swiper-slide.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+      margin: 0 4px; }
+    .banner-swiper .swiper-slide .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 100%;
+      border: 1px solid #fff;
+      background: transparent;
+      opacity: 1;
+      box-sizing: border-box; }
+    .banner-swiper .swiper-slide .swiper-pagination-bullet-active {
+      border-radius: 100%;
+      border-color: rgba(255, 255, 255, 0.2);
+      background: #3cab4c;
+      opacity: 1; }
+
+/* 选择城市 */
+.city-select {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 0.64rem;
+  z-index: 9;
+  padding-left: 0.1rem;
+  padding-top: 0.12rem;
+  color: white; }
+  .city-select .location-icon {
+    width: 0.15rem;
+    vertical-align: top; }
+  .city-select ul {
+    display: inline-block;
+    line-height: 0.2rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 0.11rem;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    top: -2px; }
+    .city-select ul li {
+      padding: 0px 6px;
+      padding-top: 2px;
+      opacity: .8;
+      font-size: 0.11rem; }
+      .city-select ul li a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #a8a7a7; }
+      .city-select ul li.on {
+        background: #28c2fc;
+        opacity: 1; }
+        .city-select ul li.on a {
+          color: white; }
+      .city-select ul li:after {
+        content: ' ';
+        width: 90%;
+        display: block;
+        border-bottom: 1px solid #8f8f8f;
+        position: relative;
+        padding: 0px;
+        bottom: -1px; }
+      .city-select ul li.on:after {
+        bottom: 0px; }
+      .city-select ul li:nth-last-of-type(1):after {
+        border: none; }
+
+@keyframes animate-shadow {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2); }
+  100% {
+    box-shadow: 0 0 0 12px transparent;
+    background: transparent; } }
+@-webkit-keyframes animate-shadow {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2); }
+  100% {
+    box-shadow: 0 0 0 12px transparent;
+    background: transparent; } }
+@keyframes animate-shadow-1 {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2); }
+  100% {
+    box-shadow: 0 0 0 16px transparent;
+    background: transparent; } }
+@-webkit-keyframes animate-shadow-1 {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2); }
+  100% {
+    box-shadow: 0 0 0 16px transparent;
+    background: transparent; } }
+.common-title {
+  position: relative;
+  font-size: 0.14rem;
+  color: #2a2a2a;
+  line-height: 1;
+  margin-bottom: 0.13rem;
+  padding-left: 0.06rem; }
+  .common-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 0.04rem;
+    height: 100%;
+    background: #28c2fc; }
+  .common-title .more {
+    float: right;
+    font-size: 0.13rem;
+    color: #666;
+    padding-right: 0.11rem;
+    background: url(../../img/location/right.png) no-repeat right 1px;
+    background-size: auto 0.11rem; }
+
+.android .common-title:after {
+  top: -0.01rem; }
+.android .android .common-title .more {
+  background-position: right 0.01rem; }
+
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background: white;
+  color: #8f8f8f;
+  font-size: 0.1rem;
+  justify-content: space-around;
+  z-index: 100000;
+  box-sizing: border-box; }
+  .footer li {
+    text-align: center; }
+    .footer li.on {
+      color: #28c2fc; }
+      .footer li.on a {
+        color: #28c2fc; }
+    .footer li div {
+      display: block;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      padding-top: 2px; }
+    .footer li a {
+      color: #8f8f8f; }
+    .footer li img {
+      width: 50%; }
+    .footer li.bwg img {
+      width: 60%; }
+    .footer li.ucenter img {
+      width: 40%; }
+    .footer li.zd img {
+      width: 55%; }
+
+/*# sourceMappingURL=common.css.map */

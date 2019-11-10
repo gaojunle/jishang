@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import url(../../common/reset.css);
+@import url(../../common/common.css);
+/*
+    @author xiao
+    @des: APP端基础方法
+    @使用心得:
+        -适配方案参考淘宝开源库lib.flexible
+        -布局rem动态适配
+        -字体dpr动态适配
+        -和文字相关的布局用px写死比较好。。。因为用rem会和没有用rem布局的字体有错位
+        -目前市面上有三种代表的适配方案：
+            1. 直接750设计稿除以2适配所有机型，布局采用百分比：代表网站 拉勾网
+            2. 动态改变html font-size基准，所有元素以rem适配：代表网站 小米网
+            3. 动态改变html font-size基准，所有除字体相关元素以外的rem适配，字体只按分辨率适配：代表网站 淘宝网
+ */
+/**
+ * 基本思想描述：
+ * 多屏适配布局问题
+ * 移动端布局，为了适配各种大屏手机，目前最好用的方案莫过于使用相对单位rem。
+ * 基于rem的原理，我们要做的就是: 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。
+ * 这里我们提取了一个公式(rem表示基准值)
+ * rem = document.documentElement.clientWidth * dpr / 10
+ * 说明：
+ * 1）乘以dpr，是因为页面有可能为了实现1px border页面会缩放(scale) 1/dpr 倍(如果没有，dpr=1)。
+ * 2）除以10，是为了取整，方便计算(理论上可以是任何值)
+ * 所以就像下面这样，html的font-size可能会：
+ * iPhone3gs: 320px / 10 = 32px
+ * iPhone4/5: 320px * 2 / 10 = 64px
+ * iPhone6: 375px * 2 / 10 = 75px
+ * iPhone6plus: 414 * 3 / 10 = 124.2px
+ */
+/*
+    px转换成rem
+ */
+/*
+    默认已iPhone6的750为基准开发
+    font-size 不推荐转换成rem
+    原因：我们不希望文本在Retina屏幕下变小，
+    另外，我们希望在大屏手机上看到更多文本，
+    以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。
+    注意设计稿是2x屏幕, 所以1x屏幕需要除以2
+ */
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import url(../../lib/art-dialog.css);
+@chartset 'utf-8';
+.ui-dialog {
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden; }
+  .ui-dialog .ui-dialog-header {
+    background: white; }
+
+.dialog-html {
+  position: relative;
+  min-width: 5.33333rem;
+  min-height: 6.30667rem; }
+  .dialog-html .dialog-close-icon {
+    position: absolute;
+    top: 0.01333rem;
+    right: 0.01333rem;
+    width: 0.58667rem;
+    height: 0.58667rem; }
+  .dialog-html .dialog-cont {
+    text-align: center;
+    font-size: 0.37333rem;
+    color: #8f8f8f;
+    padding-top: 1.4rem; }
+    .dialog-html .dialog-cont img {
+      margin-top: 0.53333rem;
+      width: 1.94667rem; }
+
+.bg-bottom {
+  padding-bottom: 40px; }
+
+.dialog-html {
+  width: auto;
+  text-align: center; }
+  .dialog-html .srcode-img {
+    width: 5rem !important;
+    margin-top: 0px !important; }
+
+.app .active-list li {
+  padding: 0.24rem 0.98667rem;
+  background: white;
+  margin: 0.34667rem 0px; }
+  .app .active-list li .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2a2a2a;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.26667rem;
+    position: relative; }
+    .app .active-list li .title:before {
+      display: inline-block;
+      position: relative;
+      content: ' ';
+      display: inline-block;
+      width: 0.13333rem;
+      height: 15px;
+      background: #28c2fc;
+      margin-right: 0.13333rem;
+      vertical-align: middle;
+      top: -0.05333rem; }
+  .app .active-list li .op-box {
+    text-align: right;
+    padding-top: 0.13333rem; }
+    .app .active-list li .op-box a {
+      font-size: 12px;
+      color: #8f8f8f;
+      margin-left: 0.66667rem; }
+
+/*# sourceMappingURL=myActivity.css.map */

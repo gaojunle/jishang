@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import "../lib/common.css";
+@import "../lib/artDialog.css";
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: #f4f4f4;
+  min-height: 100vh;
+  font-size: 13px;
+}
+
+.wenjuan .banner img {
+  width: 100%;
+}
+.wenjuan .wj {
+  padding: 0.8533333333rem 1rem;
+  font-size: 15px;
+  color: #2a2a2a;
+}
+.wenjuan .wj .ans li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.8rem;
+}
+.wenjuan .wj .ans li::before {
+  content: "";
+  display: inline-block;
+  width: 0.5333333333rem;
+  height: 0.5333333333rem;
+  background: url(../../img/wenjuan/icon_circle.png) 0px 0px no-repeat;
+  background-size: cover;
+  margin-right: 0.4666666667rem;
+}
+.wenjuan .wj .ans li.on::before {
+  background: url(../../img/wenjuan/icon_dui.png) 0px 0px no-repeat;
+  background-size: cover;
+}
+.wenjuan .op {
+  text-align: center;
+  padding-top: 0.5866666667rem;
+}
+.wenjuan .op .mbtn {
+  display: inline-block;
+  padding: 0.1466666667rem 2.7466666667rem;
+  background: #ffa800;
+  color: white;
+  border-radius: 20px;
+}

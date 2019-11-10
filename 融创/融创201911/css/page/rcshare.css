@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import "../lib/artDialog.css";
+@import "../lib/reset.css";
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 0.32rem;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 10rem;
+  min-height: 100%;
+  margin: 0px auto;
+}
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: 0.8666666667rem;
+  line-height: 0.8666666667rem;
+  border-radius: 33px;
+  background-color: #ffa800;
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+.btn_defualt.nobg {
+  background: transparent;
+  border: 1px solid #ffa800;
+  color: #ffa800;
+}
+.btn_defualt.light {
+  background-color: rgba(40, 194, 252, 0.2);
+  color: #ffa800;
+}
+
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: #f4f4f4;
+  min-height: 100vh;
+  font-size: 14px;
+  padding-bottom: 0.4rem;
+}
+
+.rcshare {
+  position: relative;
+}
+.rcshare .share_top {
+  padding: 0px 0.4266666667rem;
+}
+.rcshare .share_cont {
+  padding: 0.4266666667rem;
+  padding-bottom: 0px;
+  background: white;
+}
+.rcshare .share_cont .title {
+  color: #2a2a2a;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.rcshare .share_cont .title::before {
+  content: "";
+  display: inline-block;
+  width: 0.1333333333rem;
+  height: 0.4rem;
+  background: #ffa300;
+  margin-right: 0.1333333333rem;
+}
+.rcshare .share_cont .title .num {
+  font-size: 12px;
+}
+.rcshare .share_cont .share {
+  padding: 0.4rem 0px;
+}
+.rcshare .share {
+  display: block;
+  padding: 0.6rem 0px;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+}
+.rcshare .share:nth-last-of-type(1) {
+  border: none;
+}
+.rcshare .share.no_line {
+  border: none;
+}
+.rcshare .share .sitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.rcshare .share .sitem .avt {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.rcshare .share .sitem .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.08rem 0px 0.1066666667rem 0.2666666667rem;
+}
+.rcshare .share .sitem .info .mtitle {
+  font-size: 14px;
+  color: #2a2a2a;
+}
+.rcshare .share .sitem .info .detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.rcshare .share .sitem .info .detail > span {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.rcshare .share .sitem .info .detail > span .date {
+  padding-left: 0.2133333333rem;
+}
+.rcshare .share .sitem .info .detail .eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+}
+.rcshare .share .sitem .info .detail .eyes img {
+  width: 0.3733333333rem;
+}
+.rcshare .share .sitem .info .detail .eyes i {
+  font-style: normal;
+  padding-left: 0.1333333333rem;
+}
+.rcshare .share .sh_img {
+  margin-top: 0.2666666667rem;
+  width: 100%;
+}

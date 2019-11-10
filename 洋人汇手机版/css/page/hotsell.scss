@@ -1,0 +1,320 @@
+@charset "utf-8";
+@import "../common/reset.css";
+@import "../common/common.css";
+@import "../lib/swiper-3.4.0.min.css";
+
+/* 首页 */
+.switch-tab {
+  height: 40px;
+  line-height: 40px;
+  justify-content: space-around;
+  background: white;
+  a {
+    color: #8f8f8f;
+    border-bottom: 3px solid #8f8f8f;
+    display: inline-block;
+    width: 35%;
+    text-align: center;
+    &.on {
+      color: #28c2fc;
+      border-bottom: 3px solid #28c2fc;
+    }
+  }
+}
+
+.hotsell-box {
+  padding-bottom: 0.55rem;
+  z-index: 10;
+}
+
+.hotsell-header-bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hotsell-header-bg img {
+  width: 100%;
+  height: auto;
+}
+
+/* 首页头部 */
+.hotsell-header {
+  padding-bottom: 0.13rem;
+  position: relative;
+  background: #f4f4f4;
+}
+
+.hotsell-about {
+  position: relative;
+}
+
+.hotsell-about-btn {
+  width: 0.26rem;
+  height: 0.26rem;
+  position: absolute;
+  top: -0.13rem;
+  right: 0.4rem;
+  border-radius: 100%;
+  z-index: 3;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.hotsell-about-btn:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.26rem;
+  height: 0.26rem;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 100%;
+  z-index: 4;
+  opacity: 1;
+  -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+  animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.hotsell-about-btn:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.26rem;
+  height: 0.26rem;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 100%;
+  z-index: 4;
+  opacity: 1;
+  -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+  animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.hotsell-about-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 6;
+  -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+  animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.hotsell-about-btn.open {
+  bottom: -0.11rem;
+  top: auto;
+}
+
+.hotsell-about-detail {
+  background: #2a2a2a;
+  padding: 0.12rem 0.1rem;
+  display: none;
+}
+
+.hotsell-about-detail h3 {
+  font-size: 0.16rem;
+  color: white;
+  line-height: 1.5;
+  padding-bottom: 0.1rem;
+}
+
+.hotsell-about-swpiper .swiper-slide {
+  font-size: 0.12rem;
+  color: #fff;
+  line-height: 1.5;
+  text-align: justify;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0.12rem 0.1rem 0;
+}
+
+.hotsell-about-swpiper {
+  width: 100%;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+.hotsell-about-swpiper .swiper-scrollbar-drag {
+  background: #28c2fc;
+  border-radius: 5px;
+}
+
+.hotsell-about-swpiper.swiper-container-vertical > .swiper-scrollbar {
+  background: #fff;
+  border-radius: 5px;
+  right: 0px;
+  width: 0.02rem;
+}
+
+/* 在售项目 */
+.hotsell-onsale {
+  background: #f4f4f4;
+  padding: 0.08rem 0.1rem 0.13rem;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .12);
+  margin-top: -5px;
+}
+
+.hotsell-onsale-icon {
+  position: absolute;
+  bottom: -0.11rem;
+  left: 50%;
+  margin-left: -0.11rem;
+  width: 0.22rem;
+  height: 0.22rem;
+  z-index: 2;
+}
+
+.hotsell-onsale li {
+  margin-bottom: 0.13rem;
+  padding-bottom: 0.15rem;
+}
+
+/*.ios .hotsell-onsale li{
+    padding-bottom: 0.12rem;
+}*/
+.hotsell-onsale .hotsell-onsale-box {
+  display: block;
+  width: 1.7rem;
+  height: 1.2rem;
+  position: relative;
+  margin-top: 0.03rem;
+}
+
+.hotsell-onsale .hotsell-onsale-box:after {
+  content: '';
+  display: block;
+  width: 0.04rem;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #28c2fc;
+  z-index: 2;
+}
+
+.hotsell-onsale .hotsell-onsale-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.hotsell-onsale .hotsell-onsale-box span {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #28c2fc;
+  width: 0.2rem;
+  height: 0.2rem;
+  text-align: center;
+  line-height: 0.2rem;
+  color: #fff;
+  font-size: 0.1rem;
+  z-index: 2;
+}
+
+.hotsell-onsale .txt {
+  margin-left: 0.08rem;
+}
+
+.hotsell-onsale .name {
+  font-size: 0.14rem;
+  color: #28c2fc;
+  padding-bottom: 0.04rem;
+  padding-top: 0.04rem;
+  font-weight: bold;
+}
+
+.hotsell-onsale .loc,
+.hotsell-onsale .price,
+.hotsell-onsale .time {
+  font-size: 0.11rem;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+.hotsell-onsale .info {
+  color: #8f8f8f;
+  font-size: 0.11rem;
+  line-height: 1.6;
+  padding-top: 0.05rem;
+  margin-top: 0.04rem;
+  border-top: 1px solid #cdcdcd;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.about-to {
+  background: transparent;
+  padding-top: 0.25rem;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  padding-bottom: 0;
+}
+
+.about-to .txt {
+  margin-left: 0;
+  margin-right: 0.08rem;
+}
+
+.about-to .name {
+  padding-bottom: 0.03rem;
+  font-size: 0.13rem;
+  color: #2a2a2a;
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+.about-to .time {
+  font-size: 0.13rem;
+  color: #2a2a2a;
+}
+
+.about-to .info {
+  padding-top: 0.04rem;
+  margin-top: 0.04rem;
+}
+
+.about-to .hotsell-onsale-box:after {
+  right: auto;
+  left: 0;
+  width: 0.04rem;
+}
+
+.about-to .hotsell-onsale-box span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  color: white;
+  line-height: 1.2rem;
+  text-align: center;
+  z-index: 1;
+  font-size: 0.14rem;
+}

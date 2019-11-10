@@ -1,0 +1,343 @@
+@charset "utf-8";
+@import "../common/reset.css";
+@import "../common/common.css";
+@import "../lib/swiper-3.4.0.min.css";
+
+/* 项目链接块 */
+.detail-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: url(../../img/location/project_head.png) no-repeat 0 0;
+  background-size: cover;
+  z-index: 3;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 0.54rem;
+  font-size: 0.12rem;
+  li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    a {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+    }
+    img {
+      width: auto;
+      height: 0.19rem;
+      padding-bottom: 0.06rem;
+    }
+    p {
+      font-size: 0.1rem;
+      color: #fff;
+      line-height: 1.2;
+      margin-top: 0;
+    }
+  }
+}
+
+/*项目概述*/
+.project-info {
+  padding: 0.15rem 0.1rem 0.66rem;
+  .project-info-detail {
+    padding-left: 0.05rem;
+    position: relative;
+    .pic {
+      position: absolute;
+      top: -0.05rem;
+      left: 0px;
+      z-index: 1;
+      width: 1.15rem;
+      height: 1.5rem;
+      .bg-pic {
+        width: 100%;
+        height: 100%;
+      }
+      .go-3d {
+        position: absolute;
+        left: 6px;
+        top: 0rem;
+        z-index: 2;
+        height: 20px;
+      }
+    }
+    .txt {
+      min-height: 1.4rem;
+      background: #2a2a2a;
+      position: relative;
+      font-size: 0.1rem;
+      line-height: 1.6;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0.1rem 0.08rem;
+      transition: all .6s;
+      .info{
+        min-height: 1rem;
+      }
+      p {
+        padding: 0rem 0rem;
+      }
+      &:before {
+        content: '';
+        display: block;
+        float: left;
+        width: 1.15rem;
+        height: 1.4rem;
+      }
+    }
+    &.open {
+      .txt {
+        height: auto;
+      }
+      .full {
+        display: block;
+        line-height: 1.9;
+      }
+    }
+    .full {
+      display: none;
+      padding: 0.3rem 0.04rem;
+    }
+    .project-info-btn {
+      position: absolute;
+      bottom: -0.13rem;
+      right: 0.2rem;
+      width: 0.26rem;
+      height: 0.26rem;
+      border-radius: 100%;
+      z-index: 3;
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.26rem;
+        height: 0.26rem;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        border-radius: 100%;
+        z-index: 4;
+        opacity: 1;
+        -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+        animation: animate-shadow-1 2.4s infinite ease-in-out 0s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        box-animate-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.26rem;
+        height: 0.26rem;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        border-radius: 100%;
+        z-index: 4;
+        opacity: 1;
+        -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+        animation: animate-shadow-1 2.4s infinite ease-in-out 0.8s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        box-animate-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 6;
+        -webkit-animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+        animation: animate-shadow-1 2.4s infinite ease-in-out 1.6s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        box-animate-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      }
+      &.open {
+        width: 0.26rem;
+        height: 0.26rem;
+        bottom: -0.1rem;
+        left: 50%;
+        margin-left: -0.13rem;
+      }
+    }
+  }
+}
+
+/*项目消息区*/
+.news-more {
+  padding: 0.15rem 0.1rem 0.4rem;
+  .more-link {
+    text-align: right;
+    a {
+      font-size: 0.12rem;
+      color: rgb(143, 143, 143);
+    }
+  }
+  .news-list {
+    padding: 10px 0px;
+    li {
+      padding: 0px;
+      text-align: left;
+      padding-left: 0.2rem;
+      font-size: 0.12rem;
+      line-height: 1.7;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        border-radius: 100%;
+        background: #28c2fc;
+        margin-right: 10px;
+      }
+      a {
+        color: #2a2a2a;
+      }
+    }
+  }
+}
+
+/* 主力户型 */
+.main-type {
+  padding: 0.15rem 0.1rem 0.45rem;
+  .main-type-slide {
+    overflow: hidden;
+    margin-top: 0.1rem;
+    .swiper-container {
+      overflow: visible;
+    }
+    .swiper-slide {
+      width: 41%;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-right: 0.07rem;
+      .pic {
+        position: relative;
+        border-bottom: 0.03rem solid #28c2fc;
+      }
+      .pic-3d:after {
+        content: '3D';
+        color: white;
+        background: #28c2fc;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-radius: 100%;
+        padding: 3px;
+        text-align: center;
+        font-size: 0.1rem;
+      }
+    }
+  }
+
+  .main-type-slide .swiper-slide a,
+  .main-type-slide .swiper-slide a img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .main-type-slide .swiper-slide a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .73);
+    color: #fff;
+    font-size: 0.1rem;
+    line-height: 1.8;
+  }
+
+  .main-type-slide .swiper-slide .tit {
+    font-size: 0.1rem;
+    color: #2a2a2a;
+    line-height: 1.8;
+    margin-top: 0.05rem;
+  }
+}
+
+/* 位置周边 */
+.loc-around {
+  padding: 0.15rem 0 0.48rem;
+  .common-title {
+    margin: 0 0.1rem 0.09rem;
+  }
+  .loc-link {
+    margin-bottom: 0.06rem;
+    a {
+      display: block;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    i {
+      display: block;
+      background: url(../../img/location/luxian.png) no-repeat 0 0;
+      background-size: 100%;
+      width: 0.39rem;
+      height: 0.38rem;
+      position: absolute;
+      bottom: 0;
+      right: 0.12rem;
+      z-index: 1;
+      font-size: 0;
+    }
+  }
+  .loc-map {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.03rem;
+    box-animate-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    background: #fff;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    a {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 3;
+      background: #28c2fc url(../../img/location/loc.png) no-repeat 0.02rem center;
+      background-size: auto 100%;
+      color: #fff;
+      height: 0.21rem;
+      line-height: 0.23rem;
+      padding: 0 0.05rem 0 0.28rem;
+      font-size: 0.12rem;
+    }
+  }
+  .loc-list {
+    padding: 0.1rem 0.18rem;
+    font-size: 0.12rem;
+    color: #2a2a2a;
+    line-height: 1.6;
+    .left {
+      margin-right: 0.05rem;
+    }
+  }
+}

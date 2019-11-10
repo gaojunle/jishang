@@ -1,0 +1,65 @@
+@import "../lib/flexible";
+@import "../lib/common.css";
+@import "../lib/artDialog.css";
+$fontGray: #8f8f8f;
+
+$lineGray: rgba(216, 216, 216, 0.25);
+$cBlack: #2a2a2a;
+$cGray: rgba(42, 42, 42, 0.502);
+$cBlue: #ffa800;
+
+body {
+    max-width: 500px;
+    position: relative;
+    margin: 0px auto;
+    background: #f4f4f4;
+    min-height: 100vh;
+    font-size: 13px;
+}
+.wenjuan {
+    .banner {
+        img {
+            width: 100%;
+        }
+    }
+    .wj {
+        padding: px2rem(64) px2rem(75);
+        font-size: 15px;
+        color: #2a2a2a;
+        .ques {
+        }
+        .ans {
+            li {
+                display: flex;
+                align-items: center;
+                padding-top: px2rem(60);
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: px2rem(40);
+                    height: px2rem(40);
+                    background: url(../../img/wenjuan/icon_circle.png) 0px 0px no-repeat;
+                    background-size: cover;
+                    margin-right: px2rem(35);
+                }
+                &.on {
+                    &::before {
+                        background: url(../../img/wenjuan/icon_dui.png) 0px 0px no-repeat;
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+    }
+    .op {
+        text-align: center;
+        padding-top: px2rem(44);
+        .mbtn {
+            display: inline-block;
+            padding: px2rem(11) px2rem(206);
+            background: #ffa800;
+            color: white;
+            border-radius: 20px;            
+        }
+    }
+}

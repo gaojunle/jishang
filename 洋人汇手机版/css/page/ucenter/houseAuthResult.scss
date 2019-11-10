@@ -1,0 +1,32 @@
+@import "../../common/flexible";
+@import "../../common/reset-ucenter.css";
+@import "../../lib/art-dialog.css";
+@import "../../lib/art-dialog-skin";
+
+
+html, body {
+  height: 100%;
+  padding-bottom: 0px;
+  #app {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+.nav-box {
+  li {
+    padding: px2rem(28) px2rem(32);
+    background: white;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 14px;
+    span {
+      padding-left: px2rem(58);
+    }
+  }
+}
+
+.pass-result-icon {
+  float: right;
+  height: px2rem(298);
+  margin-top: - px2rem(150);
+}

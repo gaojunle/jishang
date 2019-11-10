@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import "../lib/artDialog.css";
+@import "../lib/reset.css";
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 0.32rem;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 10rem;
+  min-height: 100%;
+  margin: 0px auto;
+}
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: 0.8666666667rem;
+  line-height: 0.8666666667rem;
+  border-radius: 33px;
+  background-color: #ffa800;
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+.btn_defualt.nobg {
+  background: transparent;
+  border: 1px solid #ffa800;
+  color: #ffa800;
+}
+.btn_defualt.light {
+  background-color: rgba(40, 194, 252, 0.2);
+  color: #ffa800;
+}
+
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: #fff;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+.hkt .banner img {
+  width: 100%;
+}
+.hkt .hkt_form {
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+  width: 9.0666666667rem;
+  margin: 0px auto;
+  margin-top: -0.9066666667rem;
+  z-index: 2;
+  padding: 0.5333333333rem;
+  padding-bottom: 0.9333333333rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.hkt .hkt_form .fline {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding-top: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hkt .hkt_form .fline.select::after {
+  content: ">";
+  color: #8f8f8f;
+}
+.hkt .hkt_form input,
+.hkt .hkt_form select {
+  font-size: 14px;
+  width: 100%;
+  color: #8f8f8f;
+  height: 0.8rem;
+  border: none;
+  outline: none;
+}
+.hkt .op {
+  text-align: center;
+  padding: 0.9333333333rem 0.5333333333rem;
+}
+.hkt .op .mbtn {
+  display: block;
+  background: #ffa800;
+  height: 1.0666666667rem;
+  line-height: 1.0666666667rem;
+  font-size: 17px;
+  color: white;
+  border-radius: 20px;
+}
+
+.hkt_detail {
+  padding: 0px 0.4666666667rem;
+}
+.hkt_detail li {
+  position: relative;
+  border-radius: 0.1333333333rem;
+  background-color: #f4f4f4;
+  padding-top: 0.6133333333rem;
+  background: url(../../img/hkt_bg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  padding: 0.4533333333rem 0.48rem 0.3466666667rem 0.6133333333rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  height: 3.0666666667rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 0.5333333333rem;
+}
+.hkt_detail li::before {
+  content: "";
+  display: inline-block;
+  width: 0.16rem;
+  background: #f8ac26;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+}
+.hkt_detail li .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #8f8f8f;
+}
+.hkt_detail li .info .title {
+  font-size: 16px;
+  color: #2a2a2a;
+  padding-bottom: 0.2rem;
+}
+.hkt_detail li .info .bt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hkt_detail li .info .ops {
+  border: 1px solid #f8ac26;
+  border-radius: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.hkt_detail li .info .ops a {
+  display: inline-block;
+  width: 1.28rem;
+  height: 0.5333333333rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f8ac26;
+}
+.hkt_detail li .info .ops a:nth-last-of-type(1) {
+  color: #fff;
+  background: #f8ac26;
+}

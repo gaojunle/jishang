@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>周边信息</title>
+    <meta name="keywords" content=" 周边信息"/>
+    <meta name="description" content=" 周边信息"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="img/common/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/page/aroundCommunityDetail.css"/>
+</head>
+<body>
+<div class="loading-gif"><img src="./img/common/loading.gif" alt=""></div>
+
+<section class="wrapper bestCommunity">
+    <div class="swiper-container swiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide selected">交通(12)</div>
+            <div class="swiper-slide">教育(12)</div>
+            <div class="swiper-slide">医疗(12)</div>
+            <div class="swiper-slide">商业(12)</div>
+            <div class="swiper-slide">其他(12)</div>
+        </div>
+    </div>
+    <!-- swiper2 -->
+    <div class="swiper-container swiper2">
+        <div class="swiper-wrapper">
+            <div id="jiaotong" class="swiper-slide"></div>
+            <div id="jiaoyu" class="swiper-slide"></div>
+            <div id="yiliao" class="swiper-slide"></div>
+            <div id="shangye" class="swiper-slide"></div>
+            <div id="qita" class="swiper-slide"></div>
+        </div>
+    </div>
+    <div class="project-desc"></div>
+</section>
+<script>
+    var mapData = {
+        city: '北京',  //城市
+        projectImg: './img/common/map-pro-icon.png',//项目在地图上显示图片地址
+        projectAddr: '北京市石景山区金顶山路刘娘府北街5号院',           //项目地址
+        labels: [   //周边分类列表
+            {
+                mapId: 'jiaotong', //地图绑定ele元素ID
+                type: '交通',
+                list: [
+                    {name: '绍家坡(公交站)', detail: ['开始时间：05：10', '结束时间：20：00']},
+                    {name: '福寿岭(公交站)', detail: ['开始时间：07：10', '结束时间：22：30']}
+                ]
+            },
+            {
+                mapId: 'jiaoyu', //地图绑定ele元素ID
+                type: '教育',
+                list: [
+                    {name: '绍家坡(公交站)', detail: ['开始时间：17：90', '结束时间：22：00']}
+                ]
+            },
+            {
+                mapId: 'yiliao', //地图绑定ele元素ID
+                type: '医疗',
+                list: [
+                    {name: '绍家坡(公交站)', detail: ['开始时间：17：90', '结束时间：22：00']}
+                ]
+            },
+            {
+                mapId: 'shangye', //地图绑定ele元素ID
+                type: '商业',
+                list: [
+                    {name: '绍家坡(公交站)', detail: ['开始时间：17：90', '结束时间：22：00']}
+                ]
+            },
+            {
+                mapId: 'qita', //地图绑定ele元素ID
+                type: '其它',
+                list: [
+                    {name: '绍家坡(公交站)', detail: ['开始时间：17：90', '结束时间：22：00']},
+                    {name: '福寿岭(公交站)', detail: ['开始时间：17：90', '结束时间：22：00']}
+                ]
+            }
+        ]
+    }
+</script>
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/common.js"></script>
+<script src="http://api.map.baidu.com/getscript?v=2.0&ak=nLBM5uQfBMcdRn2OV4rHGL3iQdWU4BaT"></script>
+<script src="js/lib/swiper-3.4.0.jquery.min.js"></script>
+<script src="js/page/aroundCommunityDetail.js"></script>
+</body>
+</html>

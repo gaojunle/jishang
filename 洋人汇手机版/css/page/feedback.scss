@@ -1,0 +1,104 @@
+@chartset 'utf-8';
+@import "../common/reset.css";
+@import "../common/common.css";
+html, body {
+  height: 100%;
+  padding: 0px;
+}
+
+/* 客户留言 */
+.feedback {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  .form {
+    width: 1.7rem;
+    margin: 0 auto;
+    padding-top: 0.86rem;
+
+    .tit {
+      font-size: 0.12rem;
+      color: #8f8f8f;
+      line-height: 0.18rem;
+      text-align: center;
+      padding-top: 0.06rem;
+    }
+    .txt {
+      border-bottom: 2px solid #8f8f8f;
+      margin-top: 0.045rem;
+      input {
+        border: none;
+        display: block;
+        color: #2a2a2a;
+        font-size: 0.12rem;
+        border-radius: 0;
+        width: 100%;
+        height: 0.18rem;
+        line-height: 0.18rem;
+      }
+      p {
+        font-size: 0.07rem;
+        color: #8f8f8f;
+        padding-left: 0.05rem;
+        height: 0.18rem;
+        line-height: 0.22rem;
+        min-width: 0.26rem;
+      }
+    }
+    .word {
+      border-bottom: 2px solid #8f8f8f;
+      p {
+        font-size: 0.07rem;
+        color: #8f8f8f;
+        padding-left: 0.05rem;
+      }
+      textarea {
+        border: none;
+        width: 100%;
+        height: 0.65rem;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0.03rem 0.05rem;
+        color: #2a2a2a;
+        font-size: 0.13rem;
+        line-height: 1.5;
+        display: block;
+        border-radius: 0;
+        resize: none;
+      }
+    }
+    .btn {
+      margin-top: 0.2rem;
+      text-align: center;
+      input {
+        background: url(../../img/common/feedback-send.png) no-repeat center;
+        width: 70px;
+        height: 24px;
+        background-size: 100%;
+        border: none;
+        border-radius: 0;
+      }
+    }
+    .mark-icon {
+      text-align: center;
+      padding-top: .55rem;
+      img {
+        height: 32px;
+      }
+    }
+  }
+}
+
+.feedback-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}

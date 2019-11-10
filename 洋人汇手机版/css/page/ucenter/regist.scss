@@ -1,0 +1,87 @@
+@import "../../common/flexible";
+@import "../../common/reset-ucenter.css";
+@import "../../lib/art-dialog.css";
+@import "../../lib/art-dialog-skin";
+
+.we-select {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  width: 80%;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: #8F8F8F;
+  margin-left: -10px;
+  padding-left: 10px;
+  option {
+    color: #111;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: px2rem(422);
+}
+
+.regist-form {
+  margin: px2rem(36) px2rem(30) px2rem(75);
+  .content {
+    background: white;
+    .form-line {
+      border-bottom: 1px solid #f4f4f4;
+      padding: px2rem(32);
+      &:nth-last-of-type(1) {
+        border-bottom: none;
+      }
+      input {
+        border: none;
+        height: px2rem(50);
+        width: px2rem(440);
+        font-size: 14px;
+      }
+      .btn-code {
+        border: 1px solid rgb(244, 244, 244);
+        background: white;
+        border-radius: px2rem(10);
+        padding: px2rem(12) px2rem(16);
+        font-size: 12px;
+        color: rgb(143, 143, 143);
+        float: right;
+      }
+
+      &.arrow-r {
+        &:after {
+          display: inline-block;
+          float: right;
+          content: '';
+          width: px2rem(20);
+          background: url("../../../img/ucenter/arrow-right.png") right center no-repeat;
+          background-size: contain;
+          height: px2rem(40);
+        }
+      }
+    }
+  }
+
+  .submit-line {
+    text-align: center;
+    margin-top: px2rem(75);
+
+    input {
+      width: px2rem(604);
+      height: px2rem(68);
+      line-height: px2rem(68);
+      text-align: center;
+      background: #28c2fc;
+      border: none;
+      color: white;
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      line-height: 1.185;
+      margin-bottom: px2rem(20);
+      border-radius: 0px;
+    }
+  }
+}

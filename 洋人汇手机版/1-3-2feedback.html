@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>留言</title>
+    <meta name="keywords" content=" 留言"/>
+    <meta name="description" content=" 留言"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="img/common/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" href="img/common/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/page/feedback.css"/>
+</head>
+<body style="padding-bottom: 0px">
+
+<div class="loading-gif"><img src="./img/common/loading.gif" alt=""></div>
+<section class="wrapper feedback">
+    <form class="form" action="#" method="post">
+        <input type="hidden" name="NodeID" value="16"/>
+        <input type="hidden" name="SiteID" value="27546"/>
+        <input type="hidden" name="returnurl" value=""/>
+        <div class="tit">
+            <p>您的姓名</p>
+        </div>
+        <div class="txt flex">
+            <p>Name</p>
+            <div class="ipt fx1">
+                <input type="text" value="" name="name" required/>
+            </div>
+        </div>
+        <div class="tit">
+            <p>联系方式</p>
+        </div>
+        <div class="txt flex">
+            <p>Phone</p>
+            <div class="ipt fx1">
+                <input type="mobile" value="" name="mobile"
+                       pattern="^1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\d{8}$" title="请输入正确的手机格式" required/>
+            </div>
+        </div>
+        <div class="tit">
+            <p>留言内容</p>
+        </div>
+        <div class="word">
+            <p>message</p>
+            <textarea name="message" required></textarea>
+        </div>
+        <div class="btn">
+            <input type="submit" value=""/>
+        </div>
+        <div class="mark-icon">
+            <img src="./img/common/mark-icon.png" alt="">
+        </div>
+    </form>
+</section>
+<img src="./img/common/feedback-bg.png" alt="" class="feedback-bg">
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/common.js"></script>
+</body>
+</html>

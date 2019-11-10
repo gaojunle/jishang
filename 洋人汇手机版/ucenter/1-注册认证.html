@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>注册认证</title>
+    <script type="text/javascript" src="../js/lib/flexible.js"></script>
+    <link rel="stylesheet" href="../css/page/ucenter/regist.css">
+</head>
+<body class="bg-bottom">
+<div id="app">
+    <img src="../img/ucenter/banner.png" alt="" class="banner">
+    <form action="./2-个人中心.html" class="regist-form">
+        <div class="content">
+            <div class="form-line">
+                <input type="text" placeholder="请输入您的手机号" name="phoneNum">
+                <a href="#" class="btn-code js-get-code">获取验证码</a>
+            </div>
+            <div class="form-line">
+                <input type="text" placeholder="请输入您收到的验证码" name="code">
+            </div>
+            <div class="form-line arrow-r">
+                <select name="identify" class="we-select">
+                    <option value="-1" style="color: #777">请进行身份确认</option>
+                    <option value="1">业主</option>
+                    <option value="2">家庭成员</option>
+                    <option value="3">租户</option>
+                    <option value="4">远洋员工</option>
+                    <option value="5">游客</option>
+                </select>
+            </div>
+        </div>
+        <div class="submit-line">
+            <input class="js-submit" type="submit" value="提交注册">
+            <input class="js-submit-suc" type="submit" value="提交注册-成功点击">
+            <input class="js-submit-fail" type="submit" value="提交注册-失败点击">
+        </div>
+    </form>
+</div>
+
+<!--弹窗模板-->
+<script type="text/html" class="mdialog dialog-suc">
+    <div class="dialog-html ">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div>恭喜您，<br>信息已提交成功！</div>
+            <img src="../img/common/dialog-suc.png" alt="">
+        </div>
+    </div>
+</script>
+<script type="text/html" class="mdialog dialog-fail">
+    <div class="dialog-html ">
+        <img class="dialog-close-icon" src="../img/common/dialog-close.png" alt="">
+        <div class="dialog-cont">
+            <div>很抱歉，<br>信息提交失败～</div>
+            <img src="../img/common/dialog-fail.png" alt="">
+        </div>
+    </div>
+</script>
+
+<script src="../js/lib/jquery-2.1.4.min.js"></script>
+<script src="../js/lib/artDialog.js"></script>
+<script src="../js/page/ucenter/regist.js"></script>
+</body>
+</html>
