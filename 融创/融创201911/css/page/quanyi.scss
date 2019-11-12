@@ -11,7 +11,7 @@ body {
     max-width: 500px;
     position: relative;
     margin: 0px auto;
-    background: #f4f4f4;
+    background: white;
     min-height: 100vh;
     font-size: 13px;
 }
@@ -28,14 +28,19 @@ body {
         position: fixed;
         left: 0px;
         top: 0px;
+        height: 100vh;
+        background: #f4f4f4;
+
         li {
             height: px2rem(80);
             line-height: px2rem(80);
             border-bottom: 1px solid $lineGray;
+
             &.on {
                 color: $cBlack;
                 position: relative;
                 background: white;
+
                 &:before {
                     content: " ";
                     position: absolute;
@@ -48,29 +53,34 @@ body {
             }
         }
     }
+
     .q_right {
         width: calc(100% - 80px);
         margin-left: 80px;
+
         .map {
             height: px2rem(850);
             width: 100%;
+
             img {
                 width: 100%;
                 height: 100%;
             }
         }
+
         .menu_1 {
             height: px2rem(80);
             line-height: px2rem(80);
             background: white;
             color: $cGray;
             border-bottom: 1px solid $lineGray;
+
             .swiper-slide {
                 width: auto;
                 box-sizing: border-box;
                 height: 100%;
 
-                > span {
+                >span {
                     display: inline-block;
                     transition: all 0.3s ease;
                     width: px2rem(130);
@@ -79,6 +89,7 @@ body {
                     height: px2rem(50);
                     line-height: px2rem(50);
                 }
+
                 &.active {
                     position: relative;
                     color: white;
@@ -86,10 +97,12 @@ body {
                 }
             }
         }
+
         .cont {
             padding: px2rem(35);
             padding-right: px2rem(30);
             background: white;
+
             .title {
                 position: relative;
                 padding-left: 5px;
@@ -98,35 +111,42 @@ body {
                 margin-top: 6px;
                 margin-bottom: 6px;
             }
+
             .clist {
                 .item {
                     display: flex;
                     justify-content: space-between;
                     padding: px2rem(22) 0px;
+
                     .iconb {
                         width: px2rem(250);
                         height: px2rem(148);
                     }
+
                     .info {
                         display: flex;
                         justify-content: space-between;
                         flex-direction: column;
-                        font-size: 10px;
+                        font-size: 12px;
                         line-height: 1.5;
                         padding-left: px2rem(20);
                         flex: 1;
+
                         .ctitle {
                             font-size: 17px;
                         }
                     }
+
                     .date {
                         color: $cGray;
                     }
+
                     .clink {
                         color: $cBlue;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+
                         &::after {
                             content: " ";
                             display: inline-block;
@@ -138,16 +158,19 @@ body {
                     }
                 }
             }
+
             .cards {
-                > a {
+                >a {
                     display: block;
                     padding-top: px2rem(20);
                     padding-right: px2rem(15);
                 }
+
                 img {
                     width: 100%;
                 }
             }
+
             .cards-box {
                 border-top: 1px solid $lineGray;
                 padding-top: px2rem(30);
@@ -171,25 +194,31 @@ body {
         color: $cGray;
         padding-bottom: px2rem(58);
     }
+
     .list {
         font-size: 13px;
         line-height: 1.6;
+
         .item {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding-bottom: px2rem(50);
+
             .avt {
                 width: px2rem(60);
                 height: px2rem(60);
                 border-radius: 2px;
             }
+
             .info {
                 padding-left: px2rem(26);
                 flex: 1;
+
                 .name {
                     color: $cGray;
                 }
+
                 .auser {
                     border-left: 2px solid #00c5ff;
                     padding-left: px2rem(15);
@@ -197,6 +226,7 @@ body {
                     color: $cGray;
                     margin: px2rem(10) 0px;
                 }
+
                 .btn_del {
                     color: #385082;
                     font-size: 14px;
@@ -217,14 +247,15 @@ body {
     justify-content: space-around;
     align-items: center;
     background: #ffa800;
+
     .vline {
         display: inline-block;
         width: 1px;
         height: px2rem(70);
         background: rgba(243, 240, 240, 0.8);
     }
+
     a {
-        flex: 1;
         height: px2rem(88);
         font-size: 15px;
         color: white;
@@ -238,7 +269,9 @@ body {
             width: px2rem(200);
             background: #2a2a2a;
         }
-        &:nth-of-type(2) {
+
+        &:nth-of-type(n+2) {
+            flex: 1;
             &::after {
                 //content: "";
                 display: inline-block;
@@ -247,7 +280,8 @@ body {
                 background: rgba(243, 240, 240, 0.8);
             }
         }
-        > img {
+
+        >img {
             width: px2rem(30);
             margin-right: px2rem(10);
             margin-bottom: 1px;
@@ -257,6 +291,7 @@ body {
 
 .liuyan-box {
     position: relative;
+
     textarea {
         font-size: 13px;
         background-color: rgb(255, 255, 255);
@@ -268,10 +303,12 @@ body {
         padding: px2rem(14) px2rem(18);
         color: $cBlack;
         width: px2rem(590);
+
         &::-webkit-input-placeholder {
             color: rgba(42, 42, 42, 0.302);
         }
     }
+
     .limit {
         position: absolute;
         right: px2rem(15);

@@ -45,9 +45,15 @@ body {
   max-width: 500px;
   position: relative;
   margin: 0px auto;
-  background: #fff;
+  background: #f4f4f4;
   min-height: 100vh;
   font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid transparent;
+}
+body.bg_white {
+  background: white;
 }
 
 .hkt .banner img {
@@ -103,7 +109,7 @@ body {
   line-height: 1.0666666667rem;
   font-size: 17px;
   color: white;
-  border-radius: 20px;
+  border-radius: 1.0666666667rem;
 }
 
 .hkt_detail {
@@ -172,8 +178,6 @@ body {
           align-items: center;
 }
 .hkt_detail li .info .ops {
-  border: 1px solid #f8ac26;
-  border-radius: 20px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,7 +186,7 @@ body {
 .hkt_detail li .info .ops a {
   display: inline-block;
   width: 1.28rem;
-  height: 0.5333333333rem;
+  height: 0.5866666667rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,8 +197,19 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #f8ac26;
+  border: 1px solid #f8ac26;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+}
+.hkt_detail li .info .ops a:nth-of-type(1) {
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 .hkt_detail li .info .ops a:nth-last-of-type(1) {
   color: #fff;
   background: #f8ac26;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }

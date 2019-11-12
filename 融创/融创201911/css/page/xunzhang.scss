@@ -87,6 +87,7 @@ body {
     width: 100%;
     display: flex;
     background: #8f8f8f;
+    z-index: 100;
     &.on {
         background: #ffa800;
         a {

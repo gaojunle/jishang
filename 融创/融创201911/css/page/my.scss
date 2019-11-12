@@ -7,7 +7,7 @@ $cRed: #de172a;
 $cGrey: #7d7c7d;
 $lGrey: #f4f4f4;
 $gold-color: #de172a;
-$lineGray: rgba(216, 216, 216, 0.5);
+$lineGray: rgba(216, 216, 216, 0.25);
 $bd-line: rgba(216, 216, 216, 0.3);
 
 body {
@@ -23,23 +23,28 @@ body {
     background-size: 100%;
     padding-bottom: px2rem(120);
 }
+
 .my-box {
     color: #2a2a2a;
     padding: px2rem(24);
+
     .card {
         padding: px2rem(24) 0px;
+
         .info {
             padding: px2rem(42);
             background: url(../../img/my/card_bg.png) 0px 0px no-repeat;
             background-size: cover;
             text-align: center;
             font-size: 13px;
-            > img {
+
+            >img {
                 width: px2rem(150);
                 height: px2rem(150);
                 border-radius: 100%;
                 margin-bottom: px2rem(25);
             }
+
             .txt {
                 p {
                     padding-top: 6px;
@@ -53,6 +58,7 @@ body {
         border-radius: px2rem(15);
         margin-bottom: px2rem(24);
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+
         a {
             color: #2a2a2a;
             font-size: 16px;
@@ -65,10 +71,12 @@ body {
             .icon {
                 height: px2rem(38);
             }
+
             span {
                 flex: 1;
                 padding-left: px2rem(12);
             }
+
             i {
                 font-style: normal;
                 color: #8f8f8f;
@@ -80,20 +88,25 @@ body {
                 background: rgb(236, 0, 0);
                 border-radius: 50%;
                 height: px2rem(30);
-                line-height: px2rem(30);
                 min-width: px2rem(30);
-                text-align: center;
                 font-size: 12px;
                 margin-right: px2rem(8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
             }
+
             .right {
                 width: px2rem(15);
             }
+
             &:nth-of-type(1) {
                 border-top: none;
             }
         }
     }
+
     .kefu {
         padding: px2rem(30) px2rem(60);
         background: white;
@@ -101,8 +114,10 @@ body {
         font-size: 13px;
         line-height: 1.6;
         color: #7d7c7d;
+
         .red {
             color: $cRed;
+
             a {
                 color: $cRed;
             }
@@ -113,17 +128,21 @@ body {
 .jf-list {
     color: #7d7c7d;
     font-size: 12px;
+
     .item {
         background: white;
         margin-top: px2rem(16);
         padding: px2rem(22) px2rem(66) px2rem(5);
         line-height: 1.8;
+
         p {
             display: flex;
             justify-content: space-between;
+
             .xf {
                 color: #333;
             }
+
             .xf-num {
                 font-size: 16px;
                 color: $cRed;

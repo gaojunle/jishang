@@ -141,6 +141,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   background: #8f8f8f;
+  z-index: 100;
 }
 .ops.on {
   background: #ffa800;

@@ -21,6 +21,19 @@ body {
   font-size: 15px;
   color: #2a2a2a;
 }
+.wenjuan .wj textarea {
+  border-radius: 10px;
+  background-color: white;
+  width: 8rem;
+  height: 4.96rem;
+  border: none;
+  font-size: 14px;
+  color: #2a2a2a;
+  padding: 0.2666666667rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 0.8rem;
+}
 .wenjuan .wj .ans li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,8 +62,11 @@ body {
 }
 .wenjuan .op .mbtn {
   display: inline-block;
-  padding: 0.1466666667rem 2.7466666667rem;
+  height: 1.0666666667rem;
+  line-height: 1.0666666667rem;
+  padding: 0rem 2.7466666667rem;
   background: #ffa800;
   color: white;
-  border-radius: 20px;
+  border-radius: 1.0666666667rem;
+  font-size: 15px;
 }

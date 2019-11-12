@@ -16,23 +16,40 @@ body {
     min-height: 100vh;
     font-size: 13px;
 }
+
 .wenjuan {
     .banner {
         img {
             width: 100%;
         }
     }
+
     .wj {
         padding: px2rem(64) px2rem(75);
         font-size: 15px;
         color: #2a2a2a;
-        .ques {
+
+        .ques {}
+
+        textarea {
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            width: px2rem(600);
+            height: px2rem(372);
+            border: none;
+            font-size: 14px;
+            color: #2a2a2a;
+            padding: px2rem(20);
+            box-sizing: border-box;
+            margin-top: px2rem(60);
         }
+
         .ans {
             li {
                 display: flex;
                 align-items: center;
                 padding-top: px2rem(60);
+
                 &::before {
                     content: "";
                     display: inline-block;
@@ -42,6 +59,7 @@ body {
                     background-size: cover;
                     margin-right: px2rem(35);
                 }
+
                 &.on {
                     &::before {
                         background: url(../../img/wenjuan/icon_dui.png) 0px 0px no-repeat;
@@ -51,15 +69,20 @@ body {
             }
         }
     }
+
     .op {
         text-align: center;
         padding-top: px2rem(44);
+
         .mbtn {
             display: inline-block;
-            padding: px2rem(11) px2rem(206);
+            height: px2rem(80);
+            line-height: px2rem(80);
+            padding: px2rem(0) px2rem(206);
             background: #ffa800;
             color: white;
-            border-radius: 20px;            
+            border-radius: px2rem(80);
+            font-size: 15px;
         }
     }
 }
