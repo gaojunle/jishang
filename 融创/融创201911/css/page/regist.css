@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@import "../lib/reset.css";
+@import "../lib/common.css";
+@import "../lib/artDialog.css";
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  font-size: 13px;
+  background-image: url(../../img/common/bottom_bg.png);
+  background-repeat: no-repeat;
+  background-position: 0px bottom;
+  background-size: 100%;
+}
+
+.my-box {
+  color: #2a2a2a;
+  padding: 0.3333333333rem;
+}
+.my-box .card .info {
+  padding: 0.6rem;
+  background: url(../../img/regist_bg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.my-box .card .info > img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  margin-bottom: 0.1333333333rem;
+}
+.my-box .card .info .txt p {
+  padding-top: 6px;
+}
+
+.regist-form {
+  margin: 0px 0.3333333333rem;
+}
+.regist-form .we-select {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  width: 80%;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  color: #8F8F8F;
+  margin-left: -10px;
+  padding-left: 10px;
+}
+.regist-form .we-select option {
+  color: #111;
+}
+.regist-form .content {
+  background: white;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.14);
+}
+.regist-form .content .form-line {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding: 0.48rem;
+}
+.regist-form .content .form-line:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.regist-form .content .form-line input {
+  border: none;
+  height: 0.6666666667rem;
+  width: 5.8666666667rem;
+  font-size: 16px;
+}
+.regist-form .content .form-line .btn-code {
+  border: 1px solid rgba(143, 143, 143, 0.35);
+  background: white;
+  padding: 0.1333333333rem 0.32rem;
+  font-size: 12px;
+  color: #8F8F8F;
+  float: right;
+  border-radius: 20px;
+}
+.regist-form .content .form-line.arrow-r {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.regist-form .content .form-line.arrow-r input,
+.regist-form .content .form-line.arrow-r select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.regist-form .content .form-line.arrow-r:after {
+  display: inline-block;
+  content: "";
+  width: 0.2rem;
+  background: url("../../img/my/icon-right.png") right center no-repeat;
+  background-size: contain;
+  height: 0.3866666667rem;
+}
+.regist-form .submit-line {
+  text-align: center;
+  margin-top: 1.3866666667rem;
+}
+.regist-form .submit-line input {
+  width: 100%;
+  height: 1.0666666667rem;
+  line-height: 1.0666666667rem;
+  text-align: center;
+  background: #ffa300;
+  border: none;
+  color: white;
+  font-size: 17px;
+  color: white;
+  border-radius: 1.0666666667rem;
+}
