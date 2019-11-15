@@ -119,6 +119,7 @@ body {
 .info .actived p {
   line-height: 1;
   padding-top: 0.0533333333rem;
+  font-size: 12px;
 }
 .info .default .mark,
 .info .actived .mark {
@@ -253,6 +254,7 @@ body {
   font-size: 0.3466666667rem;
   font-weight: bold;
   padding: 0.8666666667rem 0px;
+  width: 30%;
 }
 .link-box .items .item img {
   height: 0.88rem;

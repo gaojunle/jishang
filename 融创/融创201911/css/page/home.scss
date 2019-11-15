@@ -110,6 +110,7 @@ body {
     p {
       line-height: 1;
       padding-top: px2rem(4);
+      font-size: 12px;
     }
 
     .mark {
@@ -227,7 +228,7 @@ body {
       font-size: px2rem(26);
       font-weight: bold;
       padding: px2rem(65) 0px;
-
+      width: 30%;
       img {
         height: px2rem(66);
         margin-bottom: px2rem(30);
