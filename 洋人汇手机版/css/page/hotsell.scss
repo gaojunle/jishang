@@ -9,15 +9,48 @@
   line-height: 40px;
   justify-content: space-around;
   background: white;
+
   a {
     color: #8f8f8f;
     border-bottom: 3px solid #8f8f8f;
     display: inline-block;
     width: 35%;
     text-align: center;
+
     &.on {
       color: #28c2fc;
       border-bottom: 3px solid #28c2fc;
+    }
+  }
+}
+
+.menu_1 {
+  font-size: 13px;
+  height: .4rem;
+  line-height: .4rem;
+  background: white;
+  color: #8f8f8f;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);;
+
+  .swiper-slide {
+    width: auto;
+    box-sizing: border-box;
+    height: 100%;
+
+    >span {
+      display: inline-block;
+      transition: all 0.3s ease;
+      width: .65rem;
+      text-align: center;
+      border-right: 1px solid rgba(216, 216, 216, 0.25);;
+      height: .25rem;
+      line-height: .25rem;
+    }
+
+    &.active {
+      position: relative;
+      color: white;
+      background: #ffa800;
     }
   }
 }
@@ -160,7 +193,7 @@
   border-radius: 5px;
 }
 
-.hotsell-about-swpiper.swiper-container-vertical > .swiper-scrollbar {
+.hotsell-about-swpiper.swiper-container-vertical>.swiper-scrollbar {
   background: #fff;
   border-radius: 5px;
   right: 0px;

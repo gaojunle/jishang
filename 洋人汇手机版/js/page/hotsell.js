@@ -8,16 +8,17 @@ var App = {
         this.bindEvent();
     },
     initData: function () {
-        this.initSwiper()
+        this.initMenuSwiper()
+        //this.initSwiper()
         //模拟滚动条
-        swiperAbout = new Swiper('.hotsell-about-swpiper', {
-            scrollbar: '.swiper-scrollbar',
-            direction: 'vertical',
-            slidesPerView: 'auto',
-            mousewheelControl: true,
-            freeMode: true,
-            scrollbarHide: false
-        });
+        // swiperAbout = new Swiper('.hotsell-about-swpiper', {
+        //     scrollbar: '.swiper-scrollbar',
+        //     direction: 'vertical',
+        //     slidesPerView: 'auto',
+        //     mousewheelControl: true,
+        //     freeMode: true,
+        //     scrollbarHide: false
+        // });
     },
 
     initSwiper: function () {
@@ -28,6 +29,15 @@ var App = {
             loop: true,
             autoplayDisableOnInteraction: false
         });
+    },
+    initMenuSwiper: function () {
+        var that = this;
+
+        var mySwiper = new Swiper('#topNav', {
+            freeModeMomentumRatio: 0.5,
+            slidesPerView: 'auto'
+        });
+      
     },
     //绑定事件操作
     bindEvent: function () {
@@ -45,6 +55,9 @@ var App = {
                 setTimeout("swiperAbout.update()", 100);
             }
         });
+    },
+    updateData: function (idx) {
+        console.log(idx);
     }
 };
 App.init();
