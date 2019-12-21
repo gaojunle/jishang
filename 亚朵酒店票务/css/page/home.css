@@ -1,0 +1,359 @@
+@charset "UTF-8";
+@import url(../lib/reset.css);
+@import url(../lib/artDialog.css);
+@chartset 'utf-8';
+/*
+    @author xiao
+    @des: APP端基础方法
+    @使用心得:
+        -适配方案参考淘宝开源库lib.flexible
+        -布局rem动态适配
+        -字体dpr动态适配
+        -和文字相关的布局用px写死比较好。。。因为用rem会和没有用rem布局的字体有错位
+        -目前市面上有三种代表的适配方案：
+            1. 直接750设计稿除以2适配所有机型，布局采用百分比：代表网站 拉勾网
+            2. 动态改变html font-size基准，所有元素以rem适配：代表网站 小米网
+            3. 动态改变html font-size基准，所有除字体相关元素以外的rem适配，字体只按分辨率适配：代表网站 淘宝网
+ */
+/**
+ * 基本思想描述：
+ * 多屏适配布局问题
+ * 移动端布局，为了适配各种大屏手机，目前最好用的方案莫过于使用相对单位rem。
+ * 基于rem的原理，我们要做的就是: 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。
+ * 这里我们提取了一个公式(rem表示基准值)
+ * rem = document.documentElement.clientWidth * dpr / 10
+ * 说明：
+ * 1）乘以dpr，是因为页面有可能为了实现1px border页面会缩放(scale) 1/dpr 倍(如果没有，dpr=1)。
+ * 2）除以10，是为了取整，方便计算(理论上可以是任何值)
+ * 所以就像下面这样，html的font-size可能会：
+ * iPhone3gs: 320px / 10 = 32px
+ * iPhone4/5: 320px * 2 / 10 = 64px
+ * iPhone6: 375px * 2 / 10 = 75px
+ * iPhone6plus: 414 * 3 / 10 = 124.2px
+ */
+/*
+    px转换成rem
+ */
+/*
+    默认已iPhone6的750为基准开发
+    font-size 不推荐转换成rem
+    原因：我们不希望文本在Retina屏幕下变小，
+    另外，我们希望在大屏手机上看到更多文本，
+    以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。
+    注意设计稿是2x屏幕, 所以1x屏幕需要除以2
+ */
+/**
+ *  为了和字体适配一样的非字体元素准备的转化方法
+ */
+@chartset 'utf-8';
+html, body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 0.32rem; }
+
+.wrapper {
+  position: relative;
+  max-width: 10rem;
+  min-height: 100%;
+  margin: 0px auto; }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.ui-dialog-body .icon_close {
+  width: 0.58667rem;
+  position: absolute;
+  right: 6px;
+  top: 6px; }
+.ui-dialog-body .scode-avt {
+  width: 5.33333rem; }
+.ui-dialog-body .pop-cont {
+  position: relative;
+  padding: 0rem 1.06667rem;
+  min-height: 3.73333rem;
+  min-width: 5.33333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; }
+
+.ui-dialog-footer .ui-dialog-button {
+  justify-content: center; }
+.ui-dialog-footer button {
+  display: inline-block;
+  background-color: #00c5ff;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  text-align: center;
+  border-radius: 33px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 0px; }
+  .ui-dialog-footer button.ui-dialog-autofocus {
+    background-color: #00c5ff !important; }
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: 0.93333rem;
+  line-height: 0.93333rem;
+  border-radius: 33px;
+  background-color: #00c5ff;
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center; }
+  .btn_defualt.nobg {
+    background: transparent;
+    border: 1px solid #00c5ff;
+    color: #00c5ff; }
+  .btn_defualt.light {
+    background-color: rgba(40, 194, 252, 0.2);
+    color: #00c5ff; }
+
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto; }
+
+.wrap-box {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.banner-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 5.06667rem; }
+  .banner-swiper .swiper-slide img {
+    width: 100%;
+    height: 5.06667rem; }
+  .banner-swiper .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+    opacity: .5; }
+    .banner-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      opacity: 1; }
+
+.container {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.info {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 0.26667rem 0.4rem;
+  padding: 0.26667rem 0.4rem;
+  background: url("../../img/index/ebg.png") 0 0 no-repeat;
+  background-size: 100% 100%; }
+  .info .btn_scode {
+    width: 1.54667rem;
+    height: 1.54667rem; }
+  .info .default, .info .actived {
+    -ms-flex: 1;
+    flex: 1;
+    height: 1.54667rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    color: #2a2a2a; }
+    .info .default h3, .info .actived h3 {
+      font-size: 19px;
+      color: #2a2a2a;
+      line-height: 1; }
+    .info .default .btn_active, .info .actived .btn_active {
+      font-size: 10px;
+      color: white;
+      background: #2a2a2a;
+      padding: 4px 20px;
+      border-radius: 20px;
+      font-weight: bold; }
+    .info .default p, .info .actived p {
+      line-height: 1;
+      padding-top: 0.16rem; }
+  .info .actived {
+    display: none; }
+  .info.activated .default {
+    display: none; }
+  .info.activated .actived {
+    display: -ms-flexbox;
+    display: flex; }
+
+.split {
+  border-bottom: 1px solid rgba(42, 42, 42, 0.15); }
+
+.link-box {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box; }
+  .link-box:before, .link-box:after {
+    content: ' ';
+    display: block; }
+  .link-box .split_bg {
+    display: block;
+    width: 100%;
+    height: 1px; }
+  .link-box .items {
+    width: 100%;
+    padding: 0px 0.29333rem;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .link-box .items .split {
+      width: 1px;
+      height: 2.77333rem; }
+    .link-box .items .item {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      color: #2a2a2a;
+      font-size: 0.34667rem;
+      font-weight: bold;
+      padding: 0.86667rem 0px; }
+      .link-box .items .item img {
+        height: 0.88rem;
+        margin-bottom: 0.4rem; }
+
+.ui-dialog-body .icon_close {
+  width: 0.58667rem;
+  position: absolute;
+  right: 6px;
+  top: 6px; }
+.ui-dialog-body .scode-avt {
+  width: 5.33333rem; }
+.ui-dialog-body .pop-cont {
+  position: relative;
+  padding: 0rem 1.06667rem;
+  height: 9.06667rem;
+  line-height: 9.06667rem; }
+
+.footer {
+  height: 1.6rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #2a2a2a;
+  padding: 0px 1.33333rem;
+  /*position: fixed;*/
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box; }
+  .footer a {
+    padding-top: 0.88rem;
+    color: white;
+    font-size: 0.26667rem;
+    text-align: center;
+    min-width: 1.6rem;
+    display: block;
+    height: 100%;
+    box-sizing: border-box; }
+    .footer a:nth-of-type(1) {
+      background: url("../../img/index/h_1.png") center 0.18667rem no-repeat;
+      background-size: 0.66667rem 0.66667rem; }
+      .footer a:nth-of-type(1).on {
+        background: url("../../img/index/h_1_on.png") center 0.18667rem no-repeat;
+        background-size: 0.66667rem 0.66667rem; }
+    .footer a:nth-of-type(2) {
+      background: url("../../img/index/h_2.png") center 0.18667rem no-repeat;
+      background-size: 0.66667rem 0.66667rem; }
+      .footer a:nth-of-type(2).on {
+        background: url("../../img/index/h_2_on.png") center 0.18667rem no-repeat;
+        background-size: 0.66667rem 0.66667rem; }
+    .footer a:nth-of-type(3) {
+      background: url("../../img/index/h_3.png") center 0.18667rem no-repeat;
+      background-size: 0.66667rem 0.66667rem; }
+      .footer a:nth-of-type(3).on {
+        background: url("../../img/index/h_3_on.png") center 0.18667rem no-repeat;
+        background-size: 0.66667rem 0.66667rem; }
+
+.baoxiang {
+  position: fixed;
+  z-index: 2;
+  right: 0px;
+  bottom: 4.66667rem; }
+  .baoxiang img {
+    width: 2.13333rem; }
+
+/*# sourceMappingURL=home.css.map */
