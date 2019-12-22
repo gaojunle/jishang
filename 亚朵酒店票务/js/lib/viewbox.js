@@ -49,14 +49,14 @@
         var scale = 1 / dpr,
             content = 'width=device-width, initial-scale=' + scale + ', minimum-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no';
 
-        if (viewportEl) {
-            viewportEl.setAttribute('content', content);
-        } else {
-            viewportEl = document.createElement('meta');
-            viewportEl.setAttribute('name', 'viewport');
-            viewportEl.setAttribute('content', content);
-            document.head.appendChild(viewportEl);
-        }
+        // if (viewportEl) {
+        //     viewportEl.setAttribute('content', content);
+        // } else {
+        //     viewportEl = document.createElement('meta');
+        //     viewportEl.setAttribute('name', 'viewport');
+        //     viewportEl.setAttribute('content', content);
+        //     document.head.appendChild(viewportEl);
+        // }
 
     })();
 
