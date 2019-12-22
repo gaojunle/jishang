@@ -12,163 +12,50 @@
     <link rel="shortcut icon" href="./img/common/favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
     <link rel="stylesheet" href="./css/page/home.css"/>
-    <link rel="stylesheet" href="./css/lib/swiper.min.css">
-    <script src="./js/lib/flexible.js"></script>
+    <script src="./js/lib/viewbox.js"></script>
 </head>
 <body>
-<div class="wrap-box">
-    <div class="banner-swiper">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/index/banner.png"/></a></li>
-        </ul>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="container">
-        <div class="info">
-            <div class="default">
-                <h3>程XX</h3>
-                <a class="btn_active" href="javascript:;">立即激活</a>
-            </div>
-            <a href="#" class="actived">
-                <h3>程XX</h3>
-                <div>
-                    <p>员工</p>
-                    <p>远洋集团 • 北方事业部客户服务及产业发展中心 </p>
+<div class="wrapper">
+    <div class="location"><img src="./img/common/location.png" alt=""><span>北京</span></div>
+    <div class="list">
+        <a href="#" class="item">
+            <img src="./img/avt_1.png" alt="">
+            <div class="info">
+                <div class="left">
+                    <h2>北京朝阳公园亚朵酒店</h2>
+                    <p>地址：北京朝阳区朝阳公园东门南行200米</p>
                 </div>
-            </a>
-            <img class="btn_scode" src="./img/index/scode.png" alt="">
-        </div>
-        <div class="split"></div>
-        <div class="link-box">
-            <div class="items">
-                <a href="#" class="item">
-                    <img src="./img/index/m_1.png" alt="">
-                    <span>专属权益</span>
-                </a>
-                <img class="split" src="./img/index/sp2.png" alt="">
-                <a href="#" class="item">
-                    <img src="./img/index/m_2.png" alt="">
-                    <span>社群活动</span>
-                </a>
-                <img class="split" src="./img/index/sp2.png" alt="">
-                <a href="#" class="item">
-                    <img src="./img/index/m_3.png" alt="">
-                    <span>生活服务</span>
-                </a>
+                <div class="right">
+                    ¥280<span>起</span>
+                </div>
             </div>
-            <img class="split_bg" src="./img/index/sp1.png" alt=""/>
-            <div class="items">
-                <a href="#" class="item">
-                    <img src="./img/index/m_4.png" alt="">
-                    <span>经营项目</span>
-                </a>
-                <img class="split" src="./img/index/sp2.png" alt="">
-                <a href="#" class="item">
-                    <img src="./img/index/m_5.png" alt="">
-                    <span>远洋品牌</span>
-                </a>
-                <img class="split" src="./img/index/sp2.png" alt="">
-                <a href="#" class="item">
-                    <img src="./img/index/m_6.png" alt="">
-                    <span>问卷调研</span>
-                </a>
+        </a>
+        <a href="#" class="item">
+            <img src="./img/avt_2.png" alt="">
+            <div class="info">
+                <div class="left">
+                    <h2>北京朝阳公园亚朵酒店</h2>
+                    <p>地址：北京朝阳区朝阳公园东门南行200米</p>
+                </div>
+                <div class="right">
+                    ¥280<span>起</span>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <a href="#" class="on">首页</a>
-        <a href="./报事咨询.html" class="on">联系客服</a>
-        <a href="#">个人中心</a>
+        </a>
+        <a href="#" class="item">
+            <img src="./img/avt_3.png" alt="">
+            <div class="info">
+                <div class="left">
+                    <h2>北京朝阳公园亚朵酒店</h2>
+                    <p>地址：北京朝阳区朝阳公园东门南行200米</p>
+                </div>
+                <div class="right">
+                    ¥280<span>起</span>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
-<a id="roll" href="#" class="baoxiang"><img src="./img/baoxiang.gif" alt=""></a>
 <script src="./js/lib/jquery.min.js"></script>
-<script src="./js/lib/artDialog.js"></script>
-<script src="./js/lib/swiper.min.js"></script>
-<script>
-    jQuery(function ($) {
-        var App = {
-            init: function () {
-                this.initData();
-                this.bindEvent();
-                this.initBaoXiang();
-            },
-            bindEvent: function () {
-                //TODO 测试使用，info的div上加 activated 类名表示激活
-                $('.btn_active').click(function () {
-                    $(this).parents('.info').addClass('activated')
-                })
-
-                $('.btn_scode').click(function () {
-                    var d = dialog({
-                        title: '',
-                        padding: 0,
-                        content: '<div class="pop-cont"><img class="icon_close" src="./img/index/icon_close.png" alt=""><p><img class="scode-avt" src="./img/index/scode-avt.png" alt=""></p></div>',
-                        backdropOpacity: '0.3'
-                    });
-                    d.showModal();
-                    $('.icon_close').click(function () {
-                        d.close().remove();
-                    })
-                })
-            },
-            initData: function () {
-                this.initSwiper();
-            },
-
-            initSwiper: function () {
-                var swiperBanner = new Swiper('.banner-swiper', {
-                    spaceBetween: 0,
-                    centeredSlides: true,
-                    autoplay: 4000,
-                    loop: true,
-                    pagination: '.swiper-pagination'
-                });
-            },
-
-            initBaoXiang: function () {
-
-            }
-        };
-        //宝箱动画效果
-        var BX = {
-            roll: document.getElementById("roll"),
-            speed: 20,
-            statusX: 1,
-            statusY: 1,
-            x: 100,
-            y: 300,
-            winW: document.documentElement.clientWidth - document.getElementById("roll").offsetWidth,
-            winH: document.documentElement.clientHeight - 80*1.2,
-            Go: function () {
-                this.roll.style.left = this.x + 'px';
-                this.roll.style.top = this.y + 'px';
-
-                this.x = this.x + (this.statusX ? -1 : 1)
-                if (this.x < 0) {
-                    this.statusX = 0
-                }
-                if (this.x > this.winW) {
-                    this.statusX = 1
-                }
-
-                this.y = this.y + (this.statusY ? -1 : 1)
-                if (this.y < 0) {
-                    this.statusY = 0
-                }
-                if (this.y > this.winH) {
-                    this.statusY = 1
-                }
-            },
-            Play: function () {
-                setInterval(BX.Go.bind(BX), BX.speed);
-            }
-        }
-        BX.Play();
-        App.init();
-    })
-</script>
 </body>
 </html>
