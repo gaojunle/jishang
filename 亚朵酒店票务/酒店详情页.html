@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>酒店详情页</title>
+    <meta name="keywords" content="酒店详情页" />
+    <meta name="description" content="酒店详情页" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/page/detail.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="detail">
+        <img src="./img/avt_4.png" alt="" class="banner">
+        <div class="info">
+            <div class="left">
+                <h2>北京朝阳公园亚朵酒店</h2>
+                <p>地址 : 北京朝阳区朝阳公园东门南行200米</p>
+                <p>电话 : 010-53012345</p>
+            </div>
+            <div class="right">
+                <a href="tel:400300">致电咨询</a>
+                <a href="#" class="js_detail">酒店详情</a>
+            </div>
+        </div>
+        <div class="date-box">
+            <span class="date-title">请选择入住时间 ：</span>
+            <div class="stdate js_selDate">
+                <div class="sdate">
+                    <span>入住时间</span>
+                    <p>12月30日</p>
+                </div>
+                <div class="edate">
+                    <span>离店时间</span>
+                    <p>12月31日</p>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item">
+                <img src="./img/avt_1.png" alt="">
+                <div class="minfo">
+                    <span class="fang">高级大床房</span>
+                    <span class="price">¥580</span>
+                    <a href="#" class="btn_yd">预定</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./img/avt_2.png" alt="">
+                <div class="minfo">
+                    <span class="fang">高级大床房</span>
+                    <span class="price">¥580</span>
+                    <a href="#" class="btn_yd">预定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail_pop">
+        <img src="./img/common/close-white.png" alt="" class="pop_close">
+        <div class="detail_cont">
+            <h2 style="font-size: 18px;">这是一些示例</h2>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+        </div>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+    <script src="./js/lib/moment_zh-cn.js"></script>
+    <script>
+        $('.js_detail').on('click', function () {
+            $('.detail_pop').addClass('show');
+            return false;
+        })
+        $('.pop_close').click(function () {
+            $('.detail_pop').removeClass('show')
+            return false;
+        })
+    </script>
+</body>
+
+</html>

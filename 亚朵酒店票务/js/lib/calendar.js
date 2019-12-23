@@ -1,22 +1,62 @@
 (function ($) {
     "use strict"; var calendarSwitch = (function () {
-        function calendarSwitch(element, options) { this.settings = $.extend(true, $.fn.calendarSwitch.defaults, options || {}); this.element = element; this.init(); }
+        function calendarSwitch(element, options) {
+            this.settings = $.extend(true, $.fn.calendarSwitch.defaults, options || {}); this.element = element; this.init();
+        }
         calendarSwitch.prototype = {
             init: function () {
-                var me = this; me.selectors = me.settings.selectors; me.sections = me.selectors.sections; me.index = me.settings.index; me.comfire = me.settings.comfireBtn; var html = "<div class='headerWrapper'><div class='headerTip'>请选择入住离店日期</div><div class='comfire'>确定</div></div><table class='dateZone'><tr><td class='colo'>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td class='colo'>六</td></tr></table>" + "<div class='tbody'></div>"
-                $(me.sections).append(html); $(me.sections).find('.headerWrapper').css({ "height": "50px", "line-height": "50px", "position": "relative" }); $(me.sections).find('.headerTip').css({ "text-align": "center", "line-height": "50px", }); $(me.sections).find(me.comfire).css({ "height": "20px", "line-height": "20px", "width": "60px", "color": "#ff5400", "position": "absolute", "right": "15px", "text-align": "center", "font-size": "14px", "cursor": "pointer", "top": "15px", "border": "1px solid #ff5400" }); for (var q = 0; q < me.index; q++) {
+                var me = this;
+                me.selectors = me.settings.selectors;
+                me.sections = me.selectors.sections;
+                me.index = me.settings.index; me.comfire = me.settings.comfireBtn;
+                var html = "<div class='headerWrapper'><div class='headerTip'>请选择入住离店日期</div><div class='comfire'>确定</div></div><table class='dateZone'><tr><td class='colo'>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td class='colo'>六</td></tr></table>" + "<div class='tbody'></div>"
+                $(me.sections).append(html); $(me.sections).find('.headerTip').css({ "text-align": "center", "line-height": "50px", });
+                for (var q = 0; q < me.index; q++) {
                     var select = q; $(me.sections).find(".tbody").append("<p class='ny1'></p><table class='dateTable'></table>")
                     var currentDate = new Date(); currentDate.setMonth(currentDate.getMonth() + select); var currentYear = currentDate.getFullYear(); var currentMonth = currentDate.getMonth(); var setcurrentDate = new Date(currentYear, currentMonth, 1); var firstDay = setcurrentDate.getDay(); var yf = currentMonth + 1; if (yf < 10) { $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + '0' + yf + '月'); } else { $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + yf + '月'); }
                     var DaysInMonth = []; if (me._isLeapYear(currentYear)) { DaysInMonth = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); } else { DaysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); }
                     var Ntd = firstDay + DaysInMonth[currentMonth]; var Ntr = Math.ceil(Ntd / 7); for (var i = 0; i < Ntr; i++) { $(me.sections).find('.dateTable').eq(select).append('<tr></tr>'); }; var createTd = $(me.sections).find('.dateTable').eq(select).find('tr'); createTd.each(function (index, element) { for (var j = 0; j < 7; j++) { $(this).append('<td></td>') } }); var arryTd = $(me.sections).find('.dateTable').eq(select).find('td'); for (var m = 0; m < DaysInMonth[currentMonth]; m++) { arryTd.eq(firstDay++).text(m + 1); }
                 }
-                me._initselected(); me.element.on('click', function (event) { event.preventDefault(); var startDate = $("#startDate").val(); var endDate = $("#endDate").val(); startDate = startDate.replace(/-/g, "/"); endDate = endDate.replace(/-/g, "/"); startDate && endDate && me._initSelectDate(startDate, endDate); me._slider(me.sections) }); $(me.comfire).on('click', function (event) {
-                    event.preventDefault(); var st = $('#startDate').val(); var en = $('#endDate').val(); if (st) {
+                me._initselected();
+                me.element.on('click', function (event) {
+                    event.preventDefault();
+                    var startDate = $("#startDate").val() || '';
+                    var endDate = $("#endDate").val() || '';
+                    startDate = startDate.replace(/-/g, "/"); endDate = endDate.replace(/-/g, "/");
+                    startDate && endDate && me._initSelectDate(startDate, endDate); me._slider(me.sections)
+                });
+                $(me.comfire).on('click', function (event) {
+                    event.preventDefault();
+                    var st = $('#startDate').val();
+                    var en = $('#endDate').val();
+                    if (st) {
                         me._slider(me.sections)
-                        me._callback();
+                        me._callback({
+                            sdate: $('#startDate').val(),
+                            edate: $('#endDate').val()
+                        });
                     } else {
-                        var b = new Date(); var ye = b.getFullYear(); var mo = b.getMonth() + 1; var da = b.getDate(); $('#startDate').val(ye + '-' + mo + '-' + da); b = new Date(b.getTime() + 24 * 3600 * 1000); var ye = b.getFullYear(); var mo = b.getMonth() + 1; var da = b.getDate(); $('#endDate').val(ye + '-' + mo + '-' + da); me._slider(me.sections)
-                        me._callback()
+                        var b = new Date();
+                        var ye = b.getFullYear();
+                        var mo = b.getMonth() + 1;
+                        var da = b.getDate();
+                        var sdate = ye + '-' + mo + '-' + da;
+                        $('#startDate').val(sdate);
+                        b = new Date(b.getTime() + 24 * 3600 * 1000);
+                        var ye = b.getFullYear();
+                        var mo = b.getMonth() + 1;
+                        var da = b.getDate();
+                        var edate = ye + '-' + mo + '-' + da;
+                        $('#endDate').val(sdate);
+                        me._slider(me.sections)
+                        console.log({
+                            sdate: sdate,
+                            edate: edate
+                        })
+                        me._callback({
+                            sdate: sdate,
+                            edate: edate
+                        })
                     }
                 });
             }, _isLeapYear: function (year) { return (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0); }, _initSelectDate: function (start, end) {
@@ -39,7 +79,25 @@
                     for (var i = strDays + (+me.daysnumber); i < $(arry).length; i++) { $(arry[i]).css('color', '#ccc') }
                 } else { for (var i = strDays - 1; i < $(arry).length; i++) { arry1.push(arry[i]) } }
                 me._selectDate(arry1)
-            }, _checkColor: function (comeColor, outColor) { var me = this; var rz = $(me.sections).find('.rz'); console.log(rz); for (var i = 0; i < rz.length; i++) { if (rz.eq(i).text() == "入住") { rz.eq(i).closest('td').css({ 'background': comeColor, 'color': '#fff' }); } else { rz.eq(i).closest('td').css({ 'background': outColor, 'color': '#fff' }); } } }, _callback: function () { var me = this; if (me.settings.callback && $.type(me.settings.callback) === "function") { me.settings.callback(); } }, _selectDate: function (arry1) {
+            },
+            _checkColor: function (comeColor, outColor) {
+                var me = this;
+                var rz = $(me.sections).find('.rz');
+                for (var i = 0; i < rz.length; i++) {
+                    if (rz.eq(i).text() == "入住") {
+                        rz.eq(i).closest('td').css({ 'background': comeColor, 'color': '#fff' });
+                    } else {
+                        rz.eq(i).closest('td').css({ 'background': outColor, 'color': '#fff' });
+                    }
+                }
+            },
+            _callback: function (date) {
+                var me = this;
+                if (me.settings.callback && $.type(me.settings.callback) === "function") {
+                    me.settings.callback(date);
+                }
+            },
+            _selectDate: function (arry1) {
                 var me = this; me.comeColor = me.settings.comeColor; me.outColor = me.settings.outColor; me.comeoutColor = me.settings.comeoutColor; me.sections = me.selectors.sections; var flag = 0; var first; var sum; var second; $(arry1).on('click', function (index) {
                     if (flag == 0) {
                         $(me.sections).find('.hover').remove(); $(me.sections).find('.tbody').find('p').remove('.rz'); $(me.sections).find('.tbody').find('br').remove(); $(arry1).css({ 'background': '#fff', 'color': '#000' }); $(this).append('<p class="rz">入住</p>')
@@ -76,9 +134,17 @@
                             if ($(this).text() == '离店') {
                                 var day = parseInt($(this).parent().text().replace(/离店.+?天/, "")); var endDayArrays = $(this).parents('table').prev('p').text().split(''); var endDayArrayYear = []; var endDayArrayMonth = []; var endDayYear = ""; var endDayMonth = ""; for (var i = 0; i < 4; i++) { endDayArrayYear.push(endDayArrays[i]) }
                                 endDayYear = endDayArrayYear.join(''); for (var i = 5; i < 7; i++) { endDayArrayMonth.push(endDayArrays[i]) }
-                                endDayMonth = endDayArrayMonth.join(''); $('#endDate').val(endDayYear + '-' + endDayMonth + '-' + day); console.log($("#startDate").val().replace(/[^0-9]/ig, ""))
-                                console.log($("#endDate").val().replace(/[^0-9]/ig, ""))
-                                if (parseInt($("#startDate").val().replace(/[^0-9]/ig, "")) == parseInt($("#endDate").val().replace(/[^0-9]/ig, ""))) { var x = $('#startDate').val(); var a = new Date(x.replace(/-/g, "/")); var b = new Date(); b = new Date(a.getTime() + 24 * 3600 * 1000); var ye = b.getFullYear(); var mo = b.getMonth() + 1; var da = b.getDate(); $('#endDate').val(ye + '-' + mo + '-' + da); }
+                                endDayMonth = endDayArrayMonth.join('');
+                                $('#endDate').val(endDayYear + '-' + endDayMonth + '-' + day);
+                                if ($("#startDate").val() && parseInt($("#startDate").val().replace(/[^0-9]/ig, "")) == parseInt($("#endDate").val().replace(/[^0-9]/ig, ""))) {
+                                    var x = $('#startDate').val();
+                                    var a = new Date(x.replace(/-/g, "/"));
+                                    var b = new Date();
+                                    b = new Date(a.getTime() + 24 * 3600 * 1000);
+                                    var ye = b.getFullYear(); var mo = b.getMonth() + 1;
+                                    var da = b.getDate();
+                                    $('#endDate').val(ye + '-' + mo + '-' + da);
+                                }
                             }
                             startDayArrayYear = []; startDayArrayMonth = []; endDayArrayYear = []; endDayArrayMonth = [];
                         }); var myweek = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]; var st = new Date($('#startDate').val()); var en = new Date($('#endDate').val()); $('.week').text(myweek[st.getDay()])
@@ -91,7 +157,10 @@
         return calendarSwitch;
     })(); $.fn.calendarSwitch = function (options) {
         return this.each(function () {
-            var me = $(this), instance = me.data("calendarSwitch"); if (!instance) { me.data("calendarSwitch", (instance = new calendarSwitch(me, options))); }
+            var me = $(this), instance = me.data("calendarSwitch");
+            if (!instance) {
+                me.data("calendarSwitch", (instance = new calendarSwitch(me, options)));
+            }
             if ($.type(options) === "string") return instance[options]();
         });
     }; $.fn.calendarSwitch.defaults = { selectors: { sections: "#calendar" }, index: 4, animateFunction: "toggle", controlDay: false, daysnumber: "90", comeColor: "blue", outColor: "red", comeoutColor: "#0cf", callback: "", comfireBtn: '.comfire' };
