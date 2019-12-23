@@ -1,0 +1,21 @@
+@import "../lib/reset.css";
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: 0.28rem;
+  min-height: 100vh;
+}
+html *,
+body * {
+  font-size: 0.28rem;
+  color: #2a2a2a;
+}
+.wrapper {
+  position: relative;
+  max-width: 75rem;
+  min-height: 100%;
+  margin: 0px auto;
+}
+/*# sourceMappingURL=./common.css.map */

@@ -1,0 +1,52 @@
+@import '../lib/common.css';
+.location {
+  text-align: center;
+  padding: 0.35rem 0px;
+  font-size: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location img {
+  width: 0.24rem;
+  margin-right: 0.2rem;
+}
+.list .item {
+  display: block;
+  position: relative;
+}
+.list .item > img {
+  width: 100%;
+}
+.list .item .info {
+  padding: 0.3rem 0.55rem 0.55rem 0.55rem;
+  display: flex;
+  align-items: flex-start;
+}
+.list .item .info .left {
+  flex: 1;
+}
+.list .item .info .left h2 {
+  font-size: 0.3rem;
+  line-height: 1.667;
+  color: #2a2a2a;
+}
+.list .item .info .left p {
+  font-size: 0.24rem;
+  color: #8f8f8f;
+  line-height: 2.083;
+}
+.list .item .info .right {
+  font-size: 0.3rem;
+  color: #cb0000;
+  line-height: 1.151;
+  -moz-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
+  -webkit-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
+  -ms-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
+}
+.list .item .info .right span {
+  color: #cb0000;
+  font-size: 0.2rem;
+  padding-left: 0.04rem;
+}
+/*# sourceMappingURL=./home.css.map */

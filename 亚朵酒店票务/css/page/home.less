@@ -1,0 +1,60 @@
+@import '../lib/common.css';
+
+.location {
+  text-align: center;
+  padding: .35rem 0px;
+  font-size: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: .24rem;
+    margin-right: .2rem;
+  }
+}
+
+.list {
+  .item {
+    display: block;
+    position: relative;
+    
+    >img {
+      width: 100%;
+    }
+
+    .info {
+      padding: .3rem .55rem .55rem .55rem;
+      display: flex;
+      align-items: flex-start;
+      .left{
+        flex: 1;
+        h2 {
+          font-size: .3rem;
+          line-height: 1.667;
+          color: rgb(42, 42, 42);
+        }
+  
+        p {
+          font-size: .24rem;
+          color: rgb(143, 143, 143);
+          line-height: 2.083;
+        }
+      }
+      .right{
+          font-size: .3rem;
+          color: rgb(203, 0, 0);
+          line-height: 1.151;
+          -moz-transform: matrix( 1.3155622854396,0,0,1.3155622854396,0,0);
+          -webkit-transform: matrix( 1.3155622854396,0,0,1.3155622854396,0,0);
+          -ms-transform: matrix( 1.3155622854396,0,0,1.3155622854396,0,0);
+          span{
+            color: rgb(203, 0, 0);
+            font-size: .2rem;
+            padding-left: .04rem;
+          }        
+      }
+      
+    }
+  }
+}
