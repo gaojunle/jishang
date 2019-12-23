@@ -12,6 +12,7 @@
 
     <link rel="shortcut icon" href="./img/common/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/calendar.css" />
     <link rel="stylesheet" href="./css/page/detail.css" />
     <script src="./js/lib/viewbox.js"></script>
 </head>
@@ -43,13 +44,16 @@
                 </div>
             </div>
         </div>
+        <div class="calendar"> </div>
+        <input type="text" id="startDate" style="display: none;" />
+        <input type="text" id="endDate" style="display: none;" />
         <div class="list">
             <div class="item">
                 <img src="./img/avt_1.png" alt="">
                 <div class="minfo">
                     <span class="fang">高级大床房</span>
                     <span class="price">¥580</span>
-                    <a href="#" class="btn_yd">预定</a>
+                    <a href="./酒店预定.html" class="btn_yd">预定</a>
                 </div>
             </div>
             <div class="item">
@@ -57,7 +61,7 @@
                 <div class="minfo">
                     <span class="fang">高级大床房</span>
                     <span class="price">¥580</span>
-                    <a href="#" class="btn_yd">预定</a>
+                    <a href="./酒店预定.html" class="btn_yd">预定</a>
                 </div>
             </div>
         </div>
@@ -76,6 +80,7 @@
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/moment.min.js"></script>
     <script src="./js/lib/moment_zh-cn.js"></script>
+    <script src="./js/lib/calendar.js"></script>
     <script>
         $('.js_detail').on('click', function () {
             $('.detail_pop').addClass('show');
@@ -85,6 +90,23 @@
             $('.detail_pop').removeClass('show')
             return false;
         })
+        $('.js_selDate').calendarSwitch({
+            selectors: {
+                sections: ".calendar"
+            },
+            index: 5,      //展示的月份个数
+            animateFunction: "toggle",        //动画效果
+            controlDay: true,//知否控制在daysnumber天之内，这个数值的设置前提是总显示天数大于90天
+            daysnumber: "60",     //控制天数
+            comeColor: "#66CCFF",       //入住颜色
+            outColor: "#FF0033",      //离店颜色
+            comeoutColor: "#FFCCCC",        //入住和离店之间的颜色
+            callback: function (date) {
+                $('.js_selDate').find('.sdate p').html(moment(date.sdate).format('MMMDo'))
+                $('.js_selDate').find('.edate p').html(moment(date.edate).format('MMMDo'))
+            },   //回调函数
+            comfireBtn: '.comfire'//确定按钮的class或者id
+        });
     </script>
 </body>
 
