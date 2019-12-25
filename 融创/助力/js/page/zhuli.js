@@ -9,8 +9,7 @@ var App = {
     },
     countdown: function () {
         var $cdNum = $('.countdown_num');
-        var date = new Date();
-        var time = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + $cdNum.data('time');
+        var time = moment().format('YYYY-MM-DD') + ' ' + $cdNum.data('time');
         var step = 1;
         setInterval(function () {
             var f = moment(time).subtract('seconds', step);

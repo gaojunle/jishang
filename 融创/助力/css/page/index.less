@@ -19,8 +19,7 @@
 
 .cont {
   position: relative;
-  margin-top: -0.67rem;
-  border-radius: 20px;
+  border-radius: .2rem;
   background-color: rgb(255, 255, 255);
   box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
   width: 6.9rem;
@@ -66,8 +65,9 @@
     }
 
     .yaoqing {
-      font-size: .32rem;
+      font-size: .3rem;
       padding-bottom: .3rem;
+      font-weight: bold;
 
       .st {
         font-size: .32rem;
@@ -118,6 +118,7 @@
     bottom: -0.56rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 5.75rem;
     box-sizing: border-box;
     padding: 0px .35rem;
@@ -132,7 +133,7 @@
   width: 6.9rem;
   margin: 0px auto;
   background: white;
-  border-radius: 20px;
+  border-radius: .2rem;
   background-color: rgb(255, 255, 255);
   box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
   padding: .44rem .58rem;
@@ -230,124 +231,5 @@
     top: 8rem;
     left: 50%;
     margin-left: -1.27rem;
-  }
-}
-
-.pop_msg {
-  .pop_cont {
-    width: 5.24rem;
-    padding: .55rem;
-    height: auto;
-    overflow-y: initial;
-
-    .msg_ok {
-      text-align: center;
-
-      >img {
-        width: 2.4rem;
-      }
-    }
-
-    .msg {
-      text-align: center;
-      font-size: .3rem;
-      padding-top: .2rem;
-      padding-bottom: .66rem;
-    }
-
-    .ops {
-      text-align: center;
-
-      .btn_canjia {
-        font-size: .34rem;
-        color: white;
-        background: @cBlack;
-        border-radius: 1rem;
-        padding: .1rem .3rem;
-      }
-    }
-
-    .pop_close {
-      position: absolute;
-      width: .6rem;
-      bottom: -1rem;
-      left: 50%;
-      margin-left: -0.3rem;
-      top: auto;
-      z-index: 11;
-    }
-  }
-}
-
-.pop_address {
-  .pop_cont {
-    width: 5.24rem;
-    padding: .55rem;
-    height: initial;
-    overflow-y: initial;
-
-    .addr_title {
-      text-align: center;
-      padding-bottom: .2rem;
-      font-size: .3rem;
-    }
-
-    form {
-      padding-bottom: 1rem;
-    }
-
-    .fline {
-      padding-top: .55rem;
-      border-bottom: 1px solid @lineGray;
-      padding-bottom: .15rem;
-
-      label {
-        color: rgba(42, 42, 42, 0.4);
-        padding-right: .08rem;
-      }
-
-      input {
-        font-size: .24rem;
-        color: rgba(42, 42, 42, 0.4);
-        border: none;
-      }
-    }
-
-    .msg {
-      text-align: center;
-      font-size: .3rem;
-      padding-top: .2rem;
-      padding-bottom: .66rem;
-    }
-
-    .ops {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .btn_canjia {
-        display: inline-block;
-        font-size: .34rem;
-        color: white;
-        width: 2.5rem;
-        height: .68rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: @cBlack;
-        border-radius: 1rem;
-      }
-    }
-
-    .pop_close {
-      position: absolute;
-      width: .6rem;
-      bottom: -1rem;
-      left: 50%;
-      margin-left: -0.3rem;
-      top: auto;
-      z-index: 11;
-    }
   }
 }
