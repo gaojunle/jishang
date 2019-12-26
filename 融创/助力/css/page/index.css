@@ -194,3 +194,100 @@
   left: 50%;
   margin-left: -1.27rem;
 }
+.pop_msg .pop_cont {
+  width: 5.24rem;
+  padding: 0.55rem;
+  height: auto;
+  overflow-y: initial;
+}
+.pop_msg .pop_cont .msg_ok {
+  text-align: center;
+}
+.pop_msg .pop_cont .msg_ok > img {
+  width: 2.4rem;
+}
+.pop_msg .pop_cont .msg {
+  text-align: center;
+  font-size: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.66rem;
+}
+.pop_msg .pop_cont .ops {
+  text-align: center;
+}
+.pop_msg .pop_cont .ops .btn_canjia {
+  font-size: 0.34rem;
+  color: white;
+  background: #2a2a2a;
+  border-radius: 1rem;
+  padding: 0.1rem 0.3rem;
+}
+.pop_msg .pop_cont .pop_close {
+  position: absolute;
+  width: 0.6rem;
+  bottom: -1rem;
+  left: 50%;
+  margin-left: -0.3rem;
+  top: auto;
+  z-index: 11;
+}
+.pop_address .pop_cont {
+  width: 5.24rem;
+  padding: 0.55rem;
+  height: initial;
+  overflow-y: initial;
+}
+.pop_address .pop_cont .addr_title {
+  text-align: center;
+  padding-bottom: 0.2rem;
+  font-size: 0.3rem;
+}
+.pop_address .pop_cont form {
+  padding-bottom: 1rem;
+}
+.pop_address .pop_cont .fline {
+  padding-top: 0.55rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding-bottom: 0.15rem;
+}
+.pop_address .pop_cont .fline label {
+  color: rgba(42, 42, 42, 0.4);
+  padding-right: 0.08rem;
+}
+.pop_address .pop_cont .fline input {
+  font-size: 0.24rem;
+  border: none;
+}
+.pop_address .pop_cont .msg {
+  text-align: center;
+  font-size: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.66rem;
+}
+.pop_address .pop_cont .ops {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pop_address .pop_cont .ops .btn_canjia {
+  display: inline-block;
+  font-size: 0.34rem;
+  color: white;
+  width: 2.5rem;
+  height: 0.68rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a2a;
+  border-radius: 1rem;
+}
+.pop_address .pop_cont .pop_close {
+  position: absolute;
+  width: 0.6rem;
+  bottom: -1rem;
+  left: 50%;
+  margin-left: -0.3rem;
+  top: auto;
+  z-index: 11;
+}
