@@ -199,6 +199,7 @@
   padding: 0.55rem;
   height: auto;
   overflow-y: initial;
+  margin-top: -30%;
 }
 .pop_msg .pop_cont .msg_ok {
   text-align: center;
