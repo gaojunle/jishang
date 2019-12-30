@@ -161,9 +161,12 @@
 }
 .pop_box .pop_cont {
   position: relative;
-  overflow-y: scroll;
   border-radius: 0.1rem;
   background-color: white;
+}
+.pop_box .pop_cont .pop_wraper {
+  height: 100%;
+  overflow-y: scroll;
   padding: 0.1rem 0px;
   width: 6.16rem;
   height: 8.48rem;
