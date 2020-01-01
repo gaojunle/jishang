@@ -1,68 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>常用联系人－编辑</title>
-    <meta name="keywords" content="远洋"/>
-    <meta name="description" content="远洋"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="keywords" content="常用联系人－编辑" />
+    <meta name="description" content="常用联系人－编辑" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" href="./img/common/favicon.ico"/>
-    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico"/>
-    <link rel="stylesheet" href="./css/page/fcontacts.css"/>
-    <script src="./js/lib/flexible.js"></script>
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/page/contacts.css" />
+    <script src="./js/lib/viewbox.js"></script>
 </head>
+
 <body>
-<div class="wrap-box">
-    <div class="tab js-tab">
-        <ul class="tab-menu clearfix">
-            <li class="on">成人</li>
-            <li>儿童</li>
-        </ul>
-        <div class="tab-cont-box">
-            <div class="tab-cont adult">
-                <form class="mform" action="#">
-                    <p class="pline"><label>姓名 : </label><input type="text" placeholder="请输入真实姓名"></p>
-                    <p class="pline"><label>电话 : </label><input type="text" placeholder="请输入联系方式"></p>
-                    <p class="pline"><label>身份证号 : </label><input type="text" placeholder="请输入身份证号，用于保险购买"></p>
-                </form>
-            </div>
-            <div class="tab-cont childen">
-                <form class="mform" action="#">
-                    <p class="pline"><label>姓名 : </label><input type="text" placeholder="请输入真实姓名"></p>
-                    <p class="pline"><label>身份证号 : </label><input type="text" placeholder="请输入身份证号，用于保险购买"></p>
-                </form>
-            </div>
+    <div class="edit_contacts">
+        <form class="mform" action="#">
+            <p class="pline"><label>联系人名 : </label><input type="text" placeholder="请与证件姓名一致"></p>
+            <p class="pline"><label>联系电话 : </label><input type="text" placeholder="请填写手机号码"></p>
+            <p class="pline"><label>证件号码 : </label><input type="text" placeholder="请填写证件号码"></p>
+        </form>
+        <div class="btn-box">
+            <a href="./常用联系人－列表.html" class="btn_defualt">保存</a>
         </div>
     </div>
-    <div class="btn-box">
-        <a href="./常用联系人－列表.html" class="btn_defualt">保存</a>
-    </div>
-</div>
-<div class="bg_box"><img src="./img/common/bottom_bg.png" alt=""></div>
-<script src="./js/lib/jquery.min.js"></script>
-<script src="./js/lib/artDialog.js"></script>
-<script>
-    var App = {
-        init: function () {
-            this.bindEvent();
-        },
-        bindEvent: function () {
-            var $tab = $('.js-tab');
-            var $tabConts = $tab.find('.tab-cont');
-            $tab.on('click', '.tab-menu>li', function () {
-                var $this = $(this),
-                    idx = $this.index();
-                //TODO idx可用于向后台传参
-                console.log(idx);
-                $tabConts.hide().eq(idx).show();
-                $this.addClass('on').siblings().removeClass('on');
-            })
-        }
-    };
-    App.init();
-</script>
 </body>
+
 </html>

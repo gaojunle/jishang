@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="./css/lib/popups.css" />
+    <link rel="stylesheet" href="./css/page/myorder.css">
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="tab js-tab">
+        <ul class="tab-menu">
+            <li class="on">酒店订单</li>
+            <li>票务订单</li>
+        </ul>
+        <div class="tab-cont-box js-op-box">
+            <div class="tab-cont my-orders">
+                <div class="order">
+                    <div class="title">订单编号:20235905410672906<span class="status">待使用</span></div>
+                    <div class="info">
+                        <div class="item">
+                            <span>北京朝阳公园亚朵酒店</span>
+                            <span>高级大床房</span>
+                        </div>
+                        <div class="item">
+                            <span>2019年12月30日至2019年12月31日</span>
+                            <span>共1晚</span>
+                            <span>1间</span>
+                        </div>
+                        <div class="ops det">
+                            <a href="#" class="btn default js_showRuZhu">入住人信息</a>
+                            <span class="price">¥580</span>
+                        </div>
+                        <div class="ops bt">
+                            <a href="#" class="btn black js_quan">查看券码</a>
+                            <a href="#" class="btn black js_cancel">取消订单</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="title">订单编号:20235905410672906<span class="status">已完成</span></div>
+                    <div class="info">
+                        <div class="item">
+                            <span>北京朝阳公园亚朵酒店</span>
+                            <span>高级大床房</span>
+                        </div>
+                        <div class="item">
+                            <span>2019年12月30日至2019年12月31日</span>
+                            <span>共1晚</span>
+                            <span>1间</span>
+                        </div>
+                        <div class="ops det">
+                            <a href="#" class="btn default js_showRuZhu">入住人信息</a>
+                            <span class="price">¥580</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-cont my-orders">
+                <div class="order">
+                    <div class="title">订单编号:20235905410672906<span class="status">待使用</span></div>
+                    <div class="info">
+                        <div class="item">
+                            <span>毛不易2020全国巡回演唱会《二零三》北京站</span>
+                        </div>
+                        <div class="item">
+                            <span>2020年12月17日</span>
+                            <span>16:30</span>
+                        </div>
+                        <div class="item">
+                            <span>¥2600／张，共计1张</span>
+                        </div>
+                        <div class="ops det flex_r">
+                            <span class="price">¥580</span>
+                        </div>
+                        <div class="ops bt flex_r">
+                            <a href="#" class="btn black js_quan">查看券码</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="order">
+                    <div class="title">订单编号:20235905410672906<span class="status">已完成</span></div>
+                    <div class="info">
+                        <div class="item">
+                            <span>北京朝阳公园亚朵酒店</span>
+                            <span>高级大床房</span>
+                        </div>
+                        <div class="item">
+                            <span>2019年12月30日至2019年12月31日</span>
+                            <span>共1晚</span>
+                            <span>1间</span>
+                        </div>
+                        <div class="ops det">
+                            <a href="#" class="btn default js_showRuZhu">入住人信息</a>
+                            <span class="price">¥580</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 入住人信息 -->
+    <div class="pop_box js_ruzhuren_box">
+        <div class="list">
+            <div class="item">
+                <img class="icon_check" src="./img/common/checked.png" alt="">
+                <div class="info">
+                    <p>李一彤</p>
+                    <p>186****1234</p>
+                    <p>130203********5114</p>
+                </div>
+            </div>
+            <div class="item">
+                <img class="icon_check" src="./img/common/checked.png" alt="">
+                <div class="info">
+                    <p>李一彤</p>
+                    <p>186****1234</p>
+                    <p>130203********5114</p>
+                </div>
+            </div>
+            <div class="item">
+                <img class="icon_check" src="./img/common/checked.png" alt="">
+                <div class="info">
+                    <p>李一彤</p>
+                    <p>186****1234</p>
+                    <p>130203********5114</p>
+                </div>
+            </div>
+        </div>
+        <img src="./img/common/close-white.png" alt="" class="pop_close">
+    </div>
+    <div class="pop_box quan_box js_quan_box">
+        <div class="pop_cont">
+            <img class="srcode" src="./img/srcode.png" alt="">
+            <p class="qcode">券码：1204145034298767961</p>
+        </div>
+        <img src="./img/common/close-white.png" alt="" class="pop_close">
+    </div>
+    <div class="nodata">
+        <img src="./img/nodata.png" alt="">
+        <p>暂无订单记录～</p>
+    </div>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="./js/lib/popups.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.initData();
+                this.bindEvent();
+                this.bindBtnOp();
+            },
+            initData: function () {
+
+            },
+
+            bindEvent: function () {
+                var that = this,
+                    $tab = $('.js-tab');
+                var $tabConts = $tab.find('.tab-cont');
+                $tab.on('click', '.tab-menu>li', function () {
+                    var $this = $(this),
+                        idx = $this.index();
+                    $tabConts.hide().eq(idx).show();
+                    $this.addClass('on').siblings().removeClass('on');
+
+                    var type = that.getQueryString('type')
+                    if (type == idx) {
+                        return;
+                    } else {
+                        location.href = location.pathname + '?type=' + idx
+                    }
+                })
+            },
+
+            bindBtnOp: function () {
+                $('.js_cancel').click(function () {
+                    jqalert({
+                        title: '提示',
+                        content: '<p style="text-align:center;">是否确认取消订单？</p>',
+                        yestext: '确定',
+                        notext: '取消',
+                        yesfn: function () {
+                            alert('确定')
+                        }
+                    })
+                    return false;
+                })
+                $('.pop_close').click(function () {
+                    $(this).parents('.pop_box').removeClass('show');
+                    return false;
+                })
+                $('.js_showRuZhu').click(function () {
+                    $('.js_ruzhuren_box').addClass('show');
+                    return false;
+                })
+                $('.js_quan').click(function () {
+                    $('.js_quan_box').addClass('show');
+                    return false;
+                })                
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

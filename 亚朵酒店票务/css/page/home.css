@@ -40,9 +40,6 @@
   font-size: 0.3rem;
   color: #cb0000;
   line-height: 1.151;
-  -moz-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
-  -webkit-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
-  -ms-transform: matrix(1.31556229, 0, 0, 1.31556229, 0, 0);
 }
 .list .item .info .right span {
   color: #cb0000;

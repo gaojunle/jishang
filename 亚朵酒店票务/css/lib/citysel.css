@@ -1,0 +1,58 @@
+@import "../lib/reset.css";
+.citysel_box {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background: #f4f4f4;
+  padding: 0.2rem 0.37rem;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  z-index: 100;
+}
+.citysel_box.show {
+  display: block;
+}
+.citysel_box .citysel_title {
+  text-align: center;
+  font-size: 0.26rem;
+  font-weight: bold;
+}
+.citysel_box .cityitem {
+  padding-bottom: 0.1rem;
+}
+.citysel_box .cityitem .cindex {
+  font-size: 0.3rem;
+  font-weight: bold;
+  padding: 0.2rem 0px 0.3em;
+}
+.citysel_box .cityitem ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.citysel_box .cityitem ul li {
+  font-size: 0.24rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 2.16rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  margin-bottom: 0.15rem;
+}
+.citysel_box .cityitem ul li.no {
+  opacity: 0;
+}
+.citysel_box .idx_list {
+  position: fixed;
+  right: 0.1rem;
+  top: 50%;
+}
+.citysel_box .idx_list li {
+  padding-bottom: 0.1rem;
+  font-size: 0.24rem;
+}

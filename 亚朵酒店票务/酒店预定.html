@@ -12,77 +12,104 @@
 
     <link rel="shortcut icon" href="./img/common/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
-    <link rel="stylesheet" href="./css/page/detail.css" />
+    <link rel="stylesheet" href="./css/lib/popups.css" />
+    <link rel="stylesheet" href="./css/page/yuding.css" />
     <script src="./js/lib/viewbox.js"></script>
 </head>
 
 <body>
-    <div class="detail">
-        <img src="./img/avt_4.png" alt="" class="banner">
-        <div class="info">
-            <div class="left">
-                <h2>北京朝阳公园亚朵酒店</h2>
-                <p>地址 : 北京朝阳区朝阳公园东门南行200米</p>
-                <p>电话 : 010-53012345</p>
+    <div class="yuding">
+        <img src="./img/avt_2.png" alt="" class="banner">
+        <div class="box">
+            <div class="minfo">
+                <span class="fang">高级大床房</span>
+                <span class="price">¥580<i>／房晚</i></span>
             </div>
-            <div class="right">
-                <a href="tel:400300">致电咨询</a>
-                <a href="#" class="js_detail">酒店详情</a>
-            </div>
-        </div>
-        <div class="date-box">
-            <span class="date-title">请选择入住时间 ：</span>
-            <div class="stdate js_selDate">
-                <div class="sdate">
-                    <span>入住时间</span>
-                    <p>12月30日</p>
-                </div>
-                <div class="edate">
-                    <span>离店时间</span>
-                    <p>12月31日</p>
+            <div class="room">
+                <div>2019年12月30日-2019年12月31日 <span class="wan">共1晚</span></div>
+                <div class="selroom">间数选择 ：
+                    <div class="countsel">
+                        <span class="reduce"></span>
+                        <span class="cnt"><span class="num">1</span>间</span>
+                        <span class="add"></span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="list">
-            <div class="item">
-                <img src="./img/avt_1.png" alt="">
-                <div class="minfo">
-                    <span class="fang">高级大床房</span>
-                    <span class="price">¥580</span>
-                    <a href="#" class="btn_yd">预定</a>
+        <div class=" peoples">
+            <div class="box people">
+                <div class="ruzhu">
+                    <span class="uname">入住人1</span>
+                    <a href="#" class="btn_del">删除</a>
+                </div>
+                <div class="item">
+                    <p>姓名 ： <span>王一一</span></p>
+                    <p>联系电话 ： <span>185****1234</span></p>
+                    <p>身份证号 ： <span>130***********1554</span></p>
                 </div>
             </div>
-            <div class="item">
-                <img src="./img/avt_2.png" alt="">
-                <div class="minfo">
-                    <span class="fang">高级大床房</span>
-                    <span class="price">¥580</span>
-                    <a href="#" class="btn_yd">预定</a>
+            <div class="box people">
+                <div class="ruzhu">
+                    <span class="uname">入住人1</span>
+                    <a href="#" class="btn_del">删除</a>
+                </div>
+                <div class="item">
+                    <p>姓名 ： <span>王一一</span></p>
+                    <p>联系电话 ： <span>185****1234</span></p>
+                    <p>身份证号 ： <span>130***********1554</span></p>
                 </div>
             </div>
         </div>
+        <div class="box op"><a href="./常用联系人－列表.html" class="btn_add_ruzhu">＋添加入住人</a></div>
+
     </div>
-    <div class="detail_pop">
-        <img src="./img/common/close-white.png" alt="" class="pop_close">
-        <div class="detail_cont">
-            <h2 style="font-size: 18px;">这是一些示例</h2>
-            <p style="padding: 1rem;">这里内部是后台编辑的</p>
-            <p style="padding: 1rem;">这里内部是后台编辑的</p>
-            <p style="padding: 1rem;">这里内部是后台编辑的</p>
-            <p style="padding: 1rem;">这里内部是后台编辑的</p>
-            <p style="padding: 1rem;">这里内部是后台编辑的</p>
-        </div>
+    <div class="submit_yd">
+        <span class="total_price">合计 : <i>¥580</i></span>
+        <a href="#" class="btn_pay">立即支付</a>
     </div>
     <script src="./js/lib/jquery.min.js"></script>
-    <script src="./js/lib/moment.min.js"></script>
-    <script src="./js/lib/moment_zh-cn.js"></script>
+    <script src="./js/lib/popups.js"></script>
     <script>
-        $('.js_detail').on('click', function () {
-            $('.detail_pop').addClass('show');
+        $('.countsel')
+            .on('click', '.reduce', function () {
+                var $this = $(this),
+                    $ct = $this.parents('.countsel'),
+                    $num = $ct.find('.num'),
+                    num = parseInt($ct.find('.num').html());
+
+                if (num > 1) {
+                    $num.html(--num);
+                }
+                return false;
+            })
+            .on('click', '.add', function () {
+                var $this = $(this),
+                    $ct = $this.parents('.countsel'),
+                    $num = $ct.find('.num'),
+                    num = parseInt($ct.find('.num').html()),
+                    limit = parseInt($this.data('limit'));
+
+                if (limit && num == limit) {
+                    return;
+                } else {
+                    $num.html(++num);
+                }
+                return false;
+            })
+        $('.peoples').on('click', '.btn_del', function () {
+            jqalert({
+                title: '提示',
+                content: '您确定删除吗？',
+                yestext: '确定',
+                notext: '取消',
+                yesfn: function () {
+                    alert('点击了确定')
+                }
+            })
             return false;
         })
-        $('.pop_close').click(function () {
-            $('.detail_pop').removeClass('show')
+        $('.btn_pay').click(function () {
+            jqtoast('去支付。。。');
             return false;
         })
     </script>

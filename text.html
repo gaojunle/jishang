@@ -1,0 +1,1565 @@
+<!DOCTYPE html><html><head>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="shortcut icon" href="">-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>WECHAT_EMPTY_TITLE</title>
+    <link rel="stylesheet" type="text/css" href="https://aia.tohours.com/bdtookeen/survey/survey-index.action/static/css/AIASurery/swiper.css?v=101">
+    <link rel="stylesheet" type="text/css" href="https://aia.tohours.com/bdtookeen/static/css/AIASurery/base.css?v=101">
+    <link rel="stylesheet" type="text/css" href="https://aia.tohours.com/bdtookeen/static/css/AIASurery/aia.css?v=101">
+    
+
+
+
+<script src="https://hm.baidu.com/hm.js?29a17418e1721cc46d96b3c2b5c75f0e"></script>
+<script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/jquery-1.9.1.min.js"></script>
+<style id="__WXWORK_INNER_SCROLLBAR_CSS">::-webkit-scrollbar { width: 12px !important; height: 12px !important; }::-webkit-scrollbar-track:vertical {  }::-webkit-scrollbar-thumb:vertical { background-color: rgba(136, 141, 152, 0.5) !important; border-radius: 10px !important; background-clip: content-box !important; border:2px solid transparent !important; } ::-webkit-scrollbar-track:horizontal {  }::-webkit-scrollbar-thumb:horizontal { background-color: rgba(136, 141, 152, 0.5) !important; border-radius: 10px !important; background-clip: content-box !important; border:2px solid transparent !important; } ::-webkit-resizer { display: none !important; }</style>
+
+   <link rel="stylesheet" type="text/css" href="https://aia.tohours.com/bdtookeen/static/css/cover.css">
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?29a17418e1721cc46d96b3c2b5c75f0e";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	
+	
+	function ajaxShow(){
+		$('.page-cover').show();
+	}
+	
+	function ajaxHide(){
+		$('.page-cover').hide();
+	}
+	
+	window._config = {
+		title: document.title, // 分享标题
+		desc: document.title, // 分享内容
+		link: location.href, // 分享链接
+		imgUrl: 'https://static.tohours.com/salesplus/images/qinghua_logo.png'
+	};
+
+
+	
+	
+	function bindWxEvent(){
+		var timelineConfig = $.extend(true, {}, window._config);
+		var messageConfig = $.extend(true, {}, window._config);
+		if(timelineConfig.timeline_title){
+			timelineConfig.title = timelineConfig.timeline_title;
+		}
+		console.log(timelineConfig);
+		console.log(messageConfig);
+		
+		
+		timelineConfig.success = function(){
+			saveShare(timelineConfig,'timeline');
+		}
+		messageConfig.success = function(){
+			saveShare(messageConfig,'point');
+		}
+		//微信朋友圈
+		wx.onMenuShareTimeline(timelineConfig);
+		//微信好友
+		wx.onMenuShareAppMessage(messageConfig);
+		//QQ好友
+		wx.onMenuShareQQ(messageConfig);
+		//QQ空间
+		wx.onMenuShareQZone(messageConfig);
+	}
+	
+	function saveShare(config,shareType){
+		var data = {
+			'agentId':$('#agentId').val(),
+			'userId':$('#userId').val(),
+			'listKey':$('#listKey').val(),
+			'location':encodeURI(window._config.link),
+			'shareType':shareType,
+			'source':$('#source').val()
+			};
+		console.log('分享data:'+data);
+		$.ajax({
+			url: window.BASE_URL+'/goldenquestion/saveShare.action',
+			data: data,
+			dataType:'jsonp',
+			success:function(json){
+				bindWxEvent();
+			}
+		});
+	}
+	
+	//获取微信接口相关信息
+    var url = "";
+    if(location.origin.indexOf('campaign.tohours.com')>=0 || location.origin.indexOf('aia.tohours.com')>=0){
+    	url = "https://ebiz.aia.com.cn/salesplus/sign/url.action?url=" + encodeURIComponent(location.href)+'&callback=?';
+    } else {
+    	url = "https://sit.tohours.com/salesplus/sign/url.action?url=" + encodeURIComponent(location.href)+'&callback=?';
+    }
+	console.log(url);
+	// $.getJSON(url, function(data) {
+	// 	 console.log(data);
+    //     if (data.success) {
+	// 		var cg = data.msg;
+	// 		cg.debug = false;
+    //         wx.config(cg);
+    //         wx.ready(function() {
+    //             wx.showOptionMenu();
+    //             bindWxEvent();
+    //         });
+	// 		wx.error(function(res){
+	// 			console.log('error ...');
+	// 			console.log(res);
+	// 		});
+    //     } else {
+	// 		alert(json.msg);
+	// 	}
+    // });
+	
+	
+</script>
+
+    <script type="text/javascript">
+		wx.ready(function(){
+			 $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+			wx.showOptionMenu();
+			window._config.title = '测测您的保障重点';
+			window._config.desc = $('#shareDesc').val();
+			window._config.timeline_title = '测测您的保障重点';
+			window._config.imgUrl = 'https://aia.tohours.com/bdtookeen/static/images/AIASurery/fang.jpg';
+			window._config.link = 'https://aia.tohours.com/bdtookeen/survey/survey-index.action?agentId=8ac0b3a0515bb79401515bfa54cc04b0&parendId=8a02ad9d665d549901666661eb02046c';
+			bindWxEvent();
+		});
+	  </script>
+    <script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/AIASurery/jquery.min.js?v=101"></script>
+    <script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/AIASurery/swiper.js?v=101"></script>
+    <!-- <script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/param.js?v=2019012115001500"></script> -->
+    <script type="text/javascript" src="https://aia.tohours.com/bdtookeen/static/js/AIASurery/base.js?v=101"></script>
+
+
+
+<style>
+.aside_btn_box{
+    position: fixed;
+    right: 0;
+    top: 77px;
+    width: 29px;
+}
+.aside_btn_box a{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background:#D31145;
+    border-top-right-radius:3px;
+    border-bottom-left-radius: 3px;
+}
+
+
+</style></head>
+
+
+
+
+<body style="height: 687px;">
+<input type="hidden" value="&nbsp;" id="shareDesc">
+<input type="hidden" id="source" name="source" value="1">
+<input type="hidden" id="listKey" name="listKey" value="SURVEY-INDEX">
+<input type="hidden" id="agentId" name="agentId" value="8ac0b3a0515bb79401515bfa54cc04b0">
+<input type="hidden" id="userId" name="userId" value="8a02ad9d665d549901666661eb02046c">
+
+<!--存放ajaxloading的div-->
+    <div class="page-cover" style="display:none;">
+		<div class="page-cover-mid"></div>
+	</div>
+<div id="outer-container" style="overflow: hidden;"><div class="lg-swiper"><div class="lg-swiper-page current"><div class="div00" id="div00">
+    <img class="div00_3_top" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_top.png">
+    <img class="div00_3_img_01_a" id="div00_3_img_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_img_01.png">
+    <img class="div00_3_img_02_a" id="div00_3_img_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_img_02_1.png">
+    <img class="div00_3_img_03_a" id="div00_3_img_03" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_img_03.png">
+    <img class="div00_3_down_arrow_a" id="div00_3_down_arrow" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_down_arrow.png">
+    <img class="div00_3_foot" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_foot.png">
+    <div class="aside_btn_box">
+        <a href="" class="edit"></a>
+    </div>
+</div></div><div class="lg-swiper-page"><div class="div01" id="div01">
+    <img class="div01_tit" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_txt.png">
+    <img class="div01_back" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_line.png">
+    <div class="div01_main1">
+        <img class="div01_pic div01_main_pic_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_pic_01.png" onclick="setDiv01Val(1,'有孩家庭');">
+        <img class="div01_check div01_01_check" id="div01_01_check" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_check.png" onclick="setDiv01Val(1);">
+    </div>
+    <div class="div01_main2">
+        <img class="div01_pic div01_main_pic_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_pic_02.png" onclick="setDiv01Val(2,'甜蜜二人');">
+        <img class="div01_check div01_02_check" id="div01_02_check" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_check.png" onclick="setDiv01Val(2);">
+    </div>
+    <div class="div01_main3">
+        <img class="div01_pic div01_main_pic_03" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_pic_03.png" onclick="setDiv01Val(3,'单身贵族');">
+        <img class="div01_check div01_03_check" id="div01_03_check" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_check.png" onclick="setDiv01Val(3);">
+    </div>
+</div></div><div class="lg-swiper-page"><div class="div02" id="div02">
+    <img class="div02_head" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_head.png">
+    <div class="div02_first_line">
+        <div class="div02_first_line_item">
+            <div class="div02_first_line_item_tit">最重要</div>
+            <div class="div02_first_line_item_subtit">(选择1项)</div>
+        </div>
+        <div class="div02_first_line_item">
+            <div class="div02_first_line_item_tit">次重要</div>
+            <div class="div02_first_line_item_subtit">(选择1项)</div>
+        </div>
+        <div class="div02_first_line_item">
+            <div class="div02_first_line_item_tit">第三重要</div>
+            <div class="div02_first_line_item_subtit">(选择1项)</div>
+        </div>
+    </div>
+    <div class="div02_main">
+        <div class="div02_main_tit">社交人脉</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_1_check" onclick="setDiv0201Val('1','社交人脉');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_1_check" onclick="setDiv0202Val('1','社交人脉');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_1_check" onclick="setDiv0203Val('1','社交人脉');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div class="div02_main_border">
+        <div class="div02_main_tit">婚姻家庭</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_2_check" onclick="setDiv0201Val('2','婚姻家庭');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_2_check" onclick="setDiv0202Val('2','婚姻家庭');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_2_check" onclick="setDiv0203Val('2','婚姻家庭');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_03" class="div02_main">
+        <div class="div02_main_tit">孩子成长</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_3_check" onclick="setDiv0201Val('3','孩子成长');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_3_check" onclick="setDiv0202Val('3','孩子成长');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_3_check" onclick="setDiv0203Val('3','孩子成长');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_04" class="div02_main_border">
+        <div class="div02_main_tit">兴趣爱好</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_4_check" onclick="setDiv0201Val('4','兴趣爱好');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_4_check" onclick="setDiv0202Val('4','兴趣爱好');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_4_check" onclick="setDiv0203Val('4','兴趣爱好');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_05" class="div02_main">
+        <div class="div02_main_tit">物质追求</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_5_check" onclick="setDiv0201Val('5','物质追求');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_5_check" onclick="setDiv0202Val('5','物质追求');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_5_check" onclick="setDiv0203Val('5','物质追求');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_06" class="div02_main_border">
+        <div class="div02_main_tit">社会公益</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_6_check" onclick="setDiv0201Val('6','社会公益');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_6_check" onclick="setDiv0202Val('6','社会公益');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_6_check" onclick="setDiv0203Val('6','社会公益');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_07" class="div02_main">
+        <div class="div02_main_tit">精神信仰</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_7_check" onclick="setDiv0201Val('7','精神信仰');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_7_check" onclick="setDiv0202Val('7','精神信仰');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_7_check" onclick="setDiv0203Val('7','精神信仰');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_08" class="div02_main_border">
+        <div class="div02_main_tit">父母养老</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_8_check" onclick="setDiv0201Val('8','父母养老');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_8_check" onclick="setDiv0202Val('8','父母养老');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_8_check" onclick="setDiv0203Val('8','父母养老');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_09" class="div02_main">
+        <div class="div02_main_tit">事业发展</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_9_check" onclick="setDiv0201Val('9','事业发展');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_9_check" onclick="setDiv0202Val('9','事业发展');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_9_check" onclick="setDiv0203Val('9','事业发展');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_10" class="div02_main_border">
+        <div class="div02_main_tit">身体健康</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_10_check" onclick="setDiv0201Val('10','身体健康');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_10_check" onclick="setDiv0202Val('10','身体健康');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_10_check" onclick="setDiv0203Val('10','身体健康');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+    <div id="div02_main_11" class="div02_main">
+        <div class="div02_main_tit">财富管理</div>
+        <div class="div02_main_left">
+            <img class="div02_01_check div02_check" id="div02_01_11_check" onclick="setDiv0201Val('11','财富管理');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_02_check div02_check" id="div02_02_11_check" onclick="setDiv0202Val('11','财富管理');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div02_03_check div02_check" id="div02_03_11_check" onclick="setDiv0203Val('11','财富管理');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+        </div>
+    </div>
+
+
+
+
+</div></div><div class="lg-swiper-page"><div class="div03" id="div03">
+    <img class="div03_head" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div03_pic.png">
+    <img class="div03_txt" id="div_03_txt" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div03_txt.png">
+    <div class="div03_stars">
+        <div class="div_stars_item" onclick="setDiv03Val(1);">
+            <img class="div_stars_item_img" id="div_03_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_03_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv03Val(2);">
+            <img class="div_stars_item_img" id="div_03_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_03_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv03Val(3);">
+            <img class="div_stars_item_img" id="div_03_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_03_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv03Val(4);">
+            <img class="div_stars_item_img" id="div_03_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_03_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv03Val(5);">
+            <img class="div_stars_item_img" id="div_03_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_03_txt_5">非常赞同</div>
+        </div>
+    </div>
+</div></div><div class="lg-swiper-page"><div class="div04" id="div04">
+    <img class="div04_txt_01" id="div04_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div04_txt_01.png">
+    <div class="div04_stars div04_01_stars">
+        <div class="div_stars_item" onclick="setDiv0401Val(1);">
+            <img class="div_stars_item_img" id="div_04_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_04_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0401Val(2);">
+            <img class="div_stars_item_img" id="div_04_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0401Val(3);">
+            <img class="div_stars_item_img" id="div_04_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0401Val(4);">
+            <img class="div_stars_item_img" id="div_04_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0401Val(5);">
+            <img class="div_stars_item_img" id="div_04_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_04_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div04_txt_02" id="div04_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div04_txt_02.png">
+    <div class="div04_stars div04_02_stars">
+        <div class="div_stars_item" onclick="setDiv0402Val(1);">
+            <img class="div_stars_item_img" id="div_04_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_04_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0402Val(2);">
+            <img class="div_stars_item_img" id="div_04_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0402Val(3);">
+            <img class="div_stars_item_img" id="div_04_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0402Val(4);">
+            <img class="div_stars_item_img" id="div_04_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_04_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0402Val(5);">
+            <img class="div_stars_item_img" id="div_04_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_04_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div04_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div04_pic.png">
+
+</div></div><div class="lg-swiper-page"><div class="div05" id="div05">
+    <img class="div05_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div05_pic.png">
+    <img class="div05_txt_01" id="div05_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div05_txt_01.png">
+    <div class="div05_stars div05_01_stars">
+        <div class="div_stars_item" onclick="setDiv0501Val(1);">
+            <img class="div_stars_item_img" id="div_05_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_05_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0501Val(2);">
+            <img class="div_stars_item_img" id="div_05_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0501Val(3);">
+            <img class="div_stars_item_img" id="div_05_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0501Val(4);">
+            <img class="div_stars_item_img" id="div_05_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0501Val(5);">
+            <img class="div_stars_item_img" id="div_05_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_05_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div05_txt_02" id="div05_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div05_txt_02_1.png">
+    <div class="div05_stars div05_02_stars">
+        <div class="div_stars_item" onclick="setDiv0502Val(1);">
+            <img class="div_stars_item_img" id="div_05_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_05_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0502Val(2);">
+            <img class="div_stars_item_img" id="div_05_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0502Val(3);">
+            <img class="div_stars_item_img" id="div_05_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0502Val(4);">
+            <img class="div_stars_item_img" id="div_05_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_05_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0502Val(5);">
+            <img class="div_stars_item_img" id="div_05_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_05_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+
+
+</div></div><div class="lg-swiper-page"><div class="div06" id="div06">
+    <img class="div06_txt_01" id="div06_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div06_txt_01.png">
+    <div class="div06_stars div06_01_stars">
+        <div class="div_stars_item" onclick="setDiv0601Val(1);">
+            <img class="div_stars_item_img" id="div_06_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_06_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0601Val(2);">
+            <img class="div_stars_item_img" id="div_06_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0601Val(3);">
+            <img class="div_stars_item_img" id="div_06_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0601Val(4);">
+            <img class="div_stars_item_img" id="div_06_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0601Val(5);">
+            <img class="div_stars_item_img" id="div_06_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_06_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div06_txt_02" id="div06_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div06_txt_02.png">
+    <div class="div06_stars div06_02_stars">
+        <div class="div_stars_item" onclick="setDiv0602Val(1);">
+            <img class="div_stars_item_img" id="div_06_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_06_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0602Val(2);">
+            <img class="div_stars_item_img" id="div_06_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0602Val(3);">
+            <img class="div_stars_item_img" id="div_06_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0602Val(4);">
+            <img class="div_stars_item_img" id="div_06_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_06_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0602Val(5);">
+            <img class="div_stars_item_img" id="div_06_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_06_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div06_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div06_pic.png">
+
+</div></div><div class="lg-swiper-page"><div class="div07" id="div07">
+    <img class="div07_txt_01" id="div07_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_01.png">
+    <div class="div07_stars div07_01_stars">
+        <div class="div_stars_item" onclick="setDiv0701Val(1);">
+            <img class="div_stars_item_img" id="div_07_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0701Val(2);">
+            <img class="div_stars_item_img" id="div_07_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0701Val(3);">
+            <img class="div_stars_item_img" id="div_07_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0701Val(4);">
+            <img class="div_stars_item_img" id="div_07_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0701Val(5);">
+            <img class="div_stars_item_img" id="div_07_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div07_txt_02" id="div07_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_02.png">
+    <div class="div07_stars div07_02_stars">
+        <div class="div_stars_item" onclick="setDiv0702Val(1);">
+            <img class="div_stars_item_img" id="div_07_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0702Val(2);">
+            <img class="div_stars_item_img" id="div_07_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0702Val(3);">
+            <img class="div_stars_item_img" id="div_07_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0702Val(4);">
+            <img class="div_stars_item_img" id="div_07_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0702Val(5);">
+            <img class="div_stars_item_img" id="div_07_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div07_txt_03" id="div07_txt_03" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_03_1.png">
+    <div class="div07_stars div07_03_stars">
+        <div class="div_stars_item" onclick="setDiv0703Val(1);">
+            <img class="div_stars_item_img" id="div_07_03_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_03_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0703Val(2);">
+            <img class="div_stars_item_img" id="div_07_03_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_03_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0703Val(3);">
+            <img class="div_stars_item_img" id="div_07_03_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_03_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0703Val(4);">
+            <img class="div_stars_item_img" id="div_07_03_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_07_03_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0703Val(5);">
+            <img class="div_stars_item_img" id="div_07_03_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_07_03_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div07_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_pic.png">
+
+</div></div><div class="lg-swiper-page"><div class="div08" id="div08">
+    <img class="div08_txt_01" id="div08_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div08_txt_01.png">
+    <div class="div08_stars div08_01_stars">
+        <div class="div_stars_item" onclick="setDiv0801Val(1);">
+            <img class="div_stars_item_img" id="div_08_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_08_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0801Val(2);">
+            <img class="div_stars_item_img" id="div_08_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0801Val(3);">
+            <img class="div_stars_item_img" id="div_08_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0801Val(4);">
+            <img class="div_stars_item_img" id="div_08_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0801Val(5);">
+            <img class="div_stars_item_img" id="div_08_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_08_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div08_txt_02" id="div08_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div08_txt_02.png">
+    <div class="div08_stars div08_02_stars">
+        <div class="div_stars_item" onclick="setDiv0802Val(1);">
+            <img class="div_stars_item_img" id="div_08_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_08_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0802Val(2);">
+            <img class="div_stars_item_img" id="div_08_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0802Val(3);">
+            <img class="div_stars_item_img" id="div_08_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0802Val(4);">
+            <img class="div_stars_item_img" id="div_08_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_08_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0802Val(5);">
+            <img class="div_stars_item_img" id="div_08_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_08_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+
+    <img class="div08_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div08_pic.png">
+
+</div></div><div class="lg-swiper-page"><div class="div09" id="div09">
+    <img class="div09_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_pic.png">
+    <img class="div09_txt_01" id="div09_txt_01" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_01.png">
+    <div class="div09_stars div09_01_stars">
+        <div class="div_stars_item" onclick="setDiv0901Val(1);">
+            <img class="div_stars_item_img" id="div_09_01_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_01_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0901Val(2);">
+            <img class="div_stars_item_img" id="div_09_01_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_01_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0901Val(3);">
+            <img class="div_stars_item_img" id="div_09_01_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_01_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0901Val(4);">
+            <img class="div_stars_item_img" id="div_09_01_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_01_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0901Val(5);">
+            <img class="div_stars_item_img" id="div_09_01_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_01_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div09_txt_02" id="div09_txt_02" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_02.png">
+    <div class="div09_stars div09_02_stars">
+        <div class="div_stars_item" onclick="setDiv0902Val(1);">
+            <img class="div_stars_item_img" id="div_09_02_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_02_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0902Val(2);">
+            <img class="div_stars_item_img" id="div_09_02_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_02_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0902Val(3);">
+            <img class="div_stars_item_img" id="div_09_02_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_02_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0902Val(4);">
+            <img class="div_stars_item_img" id="div_09_02_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_02_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0902Val(5);">
+            <img class="div_stars_item_img" id="div_09_02_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_02_txt_5">非常赞同</div>
+        </div>
+    </div>
+    <img class="div09_txt_03" id="div09_txt_03" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_03.png">
+    <div class="div09_stars div09_03_stars">
+        <div class="div_stars_item" onclick="setDiv0903Val(1);">
+            <img class="div_stars_item_img" id="div_09_03_stars_1" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_03_txt_1">非常不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0903Val(2);">
+            <img class="div_stars_item_img" id="div_09_03_stars_2" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_03_txt_2">比较不赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0903Val(3);">
+            <img class="div_stars_item_img" id="div_09_03_stars_3" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_03_txt_3">一般</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0903Val(4);">
+            <img class="div_stars_item_img" id="div_09_03_stars_4" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt hide" id="div_09_03_txt_4">比较赞同</div>
+        </div>
+        <div class="div_stars_item" onclick="setDiv0903Val(5);">
+            <img class="div_stars_item_img" id="div_09_03_stars_5" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png">
+            <div class="div_stars_item_txt" id="div_09_03_txt_5">非常赞同</div>
+        </div>
+    </div>
+
+</div></div><div class="lg-swiper-page"><div class="div10" id="div10">
+    <img class="div10_head" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div10_txt1.png">
+    <div class="div10_first_line">
+        <img class="div10_head_logo" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div10_pic.png">
+        <div class="div10_first_line_item">
+            <div class="div10_first_line_item_tit">考虑因素</div>
+            <div class="div10_first_line_item_subtit">(选择1-3项)</div>
+        </div>
+        <div class="div10_first_line_item">
+            <div class="div10_first_line_item_tit">最主要因素</div>
+            <div class="div10_first_line_item_subtit">(选择1项)</div>
+        </div>
+    </div>
+    <div class="div10_main_too">
+        <div class="div10_main_tit_too">
+            <div class="div10_main_tit_tit">产品保障范围</div>
+            <div class="div10_main_tit_subtit">(比方说重险覆盖对病种)</div>
+        </div>
+        <div class="div10_main_left_too">
+            <img class="div10_check div10_01_check" id="div10_01_1_check" data-id="1" onclick="setDiv1001Val('1');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_1_check" data-id="1" onclick="setDiv1002Val('1');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">是否有豁免及豁免条件</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_2_check" data-id="2" onclick="setDiv1001Val('2');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_2_check" data-id="2" onclick="setDiv1002Val('2');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main">
+        <div class="div10_main_tit">保障金额(保额)</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_3_check" data-id="3" onclick="setDiv1001Val('3');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_3_check" data-id="3" onclick="setDiv1002Val('3');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">高性价比</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_4_check" data-id="4" onclick="setDiv1001Val('4');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_4_check" data-id="4" onclick="setDiv1002Val('4');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main">
+        <div class="div10_main_tit">业界口碑</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_5_check" data-id="5" onclick="setDiv1001Val('5');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_5_check" data-id="5" onclick="setDiv1002Val('5');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">外资背景</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_6_check" data-id="6" onclick="setDiv1001Val('6');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_6_check" data-id="6" onclick="setDiv1002Val('6');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main">
+        <div class="div10_main_tit">代理人专业性</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_7_check" data-id="7" onclick="setDiv1001Val('7');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_7_check" data-id="7" onclick="setDiv1002Val('7');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">代理人值得信任</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_8_check" data-id="8" onclick="setDiv1001Val('8');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_8_check" data-id="8" onclick="setDiv1002Val('8');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main">
+        <div class="div10_main_tit">代理人服务贴心</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_9_check" data-id="9" onclick="setDiv1001Val('9');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_9_check" data-id="9" onclick="setDiv1002Val('9');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">亲戚朋友推荐</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_10_check" data-id="10" onclick="setDiv1001Val('10');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_10_check" data-id="10" onclick="setDiv1002Val('10');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main">
+        <div class="div10_main_tit">专业人士推荐</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_11_check" data-id="11" onclick="setDiv1001Val('11');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_11_check" data-id="11" onclick="setDiv1002Val('11');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+    <div class="div10_main_border">
+        <div class="div10_main_tit">增值服务</div>
+        <div class="div10_main_left">
+            <img class="div10_check div10_01_check" id="div10_01_12_check" data-id="12" onclick="setDiv1001Val('12');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png">
+            <img class="div10_check div10_02_check" id="div10_02_12_check" data-id="12" onclick="setDiv1002Val('12');" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png">
+        </div>
+    </div>
+</div></div><div class="lg-swiper-page"><div class="div11" id="div11">
+    <img class="div11_txt" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div11_txt.png" onclick="GetResult();">
+    <img class="div11_pic" id="div11_pic" src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div11_pic.png">
+</div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+	@-webkit-keyframes rotataZ{
+	    0%{-webkit-transform: rotateZ(0deg);}
+	    100%{-webkit-transform: rotateZ(360deg);}
+	}
+	@keyframes rotataZ{
+	    0%{transform: rotateZ(0deg);}
+	    100%{transform: rotateZ(360deg);}
+	}
+	#musicControl { position:fixed;right:2%;top:2%;margin-top:0;display:inline-block;z-index:99999999}
+	#musicControl a { display:inline-block;width:50px;height:50px;overflow:hidden;background:url('https://aia.tohours.com/bdtookeen/static/images/AIASurery/play.png') no-repeat;background-size:100%;}
+	#musicControl a audio{width:100%;height:56px;}
+	#musicControl a.stop { background-position:left bottom;}
+	#musicControl a.on { background-position:0px 1px;-webkit-animation: rotataZ 1.2s linear infinite;-animation: rotataZ 1.2s linear infinite;}
+	#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+</style>
+<!--音乐-->
+<span id="musicControl">
+    <a id="mc_play" class="on">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="https://aia.tohours.com/bdtookeen/static/images/AIASurery/aia_weaction_1018_17.mp3" type="audio/mpeg">
+        </audio>
+    </a>
+</span>
+<script>
+	//<!-- music -->
+    function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        event.stopPropagation(); //阻止冒泡
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+        event.stopPropagation(); //阻止冒泡
+    }
+
+	 $("#mc_play").on("touchstart",function(){
+	 	play_music();
+	 })
+</script>
+
+<!--以下javascript可以不用做更改-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var faceID=Math.floor(Math.random()*2+1);
+        console.log(faceID);
+        $("#div00_3_img_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div00_3_img_02_"+faceID+".png");
+
+        showFadeInTo("div00_3_img_02",1500);
+        showFadeInTo("div00_3_img_03",3000);
+        showFadeInTo("div00_3_down_arrow",4500);
+    });
+
+    var Q01Val="",Q02_01Val="",Q02_02Val="",Q02_03Val="",Q03Val="",Q04_01Val="",Q04_02Val="",Q05_01Val="",Q05_02Val="",Q06_01Val="",Q06_02Val="";
+    var Q07_01Val="",Q07_02Val="",Q07_03Val="",Q08_01Val="",Q08_02Val="",Q09_01Val="",Q09_02Val="",Q09_03Val="";
+    var Q10_01Val="",Q10_02Val="";
+
+    var is_android = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+    var is_ios = navigator.userAgent.toLowerCase().indexOf('iphone') != -1
+    var is_weixin = navigator.userAgent.toLowerCase().indexOf('micromessenger') != -1;
+    var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+    if (is_android && _ww < 720) {
+        document.writeln('<meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5,maximum-scale=1.0" />');
+    } else {
+        document.writeln('<meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0" />');
+    }
+
+    var myAudio =  document.getElementById("audio");;
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        myAudio.play();
+    }, false);
+
+	$("body").css("height",$(window).height() + "px")
+    var list = [{
+        content: document.getElementById('div00')
+    }, {
+        content: document.getElementById('div01')
+    }, {
+        content: document.getElementById('div02')
+    }, {
+        content: document.getElementById('div03')
+    }, {
+        content: document.getElementById('div04')
+    }, {
+        content: document.getElementById('div05')
+    }, {
+        content: document.getElementById('div06')
+    }, {
+        content: document.getElementById('div07')
+    }, {
+        content: document.getElementById('div08')
+    }, {
+        content: document.getElementById('div09')
+    }, {
+        content: document.getElementById('div10')
+    }, {
+        content: document.getElementById('div11')
+    }]
+
+    var swiper = new Swiper({
+        debug:true,
+        container: document.querySelector('#outer-container'),
+        data: list,
+        keepDefaultClasses:['div01_pic','div01_check','div02_check','div_stars_item','div10_check','div11_txt']
+    });
+
+    // swiper.swipeTo(10);
+
+
+    function setDiv01Val(ID,val) {
+        $(".div01_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_check.png");
+        $("#div01_0"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div01_checked.png");
+        Q01Val=ID;
+        // swiper.swipeTo(2);
+        swipeTo(2);
+        if (ID=='2' || ID=='3'){
+            $("#div04_txt_02").hide();
+            $(".div04_02_stars").hide();
+
+            $("#div02_main_03").hide();
+
+            $("#div02_main_04").removeClass("div02_main_border");
+            $("#div02_main_04").addClass("div02_main");
+
+            $("#div02_main_06").removeClass("div02_main_border");
+            $("#div02_main_06").addClass("div02_main");
+
+            $("#div02_main_08").removeClass("div02_main_border");
+            $("#div02_main_08").addClass("div02_main");
+
+            $("#div02_main_10").removeClass("div02_main_border");
+            $("#div02_main_10").addClass("div02_main");
+
+            $("#div02_main_05").removeClass("div02_main");
+            $("#div02_main_05").addClass("div02_main_border");
+
+            $("#div02_main_07").removeClass("div02_main");
+            $("#div02_main_07").addClass("div02_main_border");
+
+            $("#div02_main_09").removeClass("div02_main");
+            $("#div02_main_09").addClass("div02_main_border");
+
+            $("#div02_main_11").removeClass("div02_main");
+            $("#div02_main_11").addClass("div02_main_border");
+        }else{
+            $("#div04_txt_02").show();
+            $(".div04_02_stars").show();
+
+            $("#div02_main_03").show();
+
+            $("#div02_main_04").addClass("div02_main_border");
+            $("#div02_main_04").removeClass("div02_main");
+
+            $("#div02_main_06").addClass("div02_main_border");
+            $("#div02_main_06").removeClass("div02_main");
+
+            $("#div02_main_08").addClass("div02_main_border");
+            $("#div02_main_08").removeClass("div02_main");
+
+            $("#div02_main_10").addClass("div02_main_border");
+            $("#div02_main_10").removeClass("div02_main");
+
+            $("#div02_main_05").addClass("div02_main");
+            $("#div02_main_05").removeClass("div02_main_border");
+
+            $("#div02_main_07").addClass("div02_main");
+            $("#div02_main_07").removeClass("div02_main_border");
+
+            $("#div02_main_09").addClass("div02_main");
+            $("#div02_main_09").removeClass("div02_main_border");
+
+            $("#div02_main_11").addClass("div02_main");
+            $("#div02_main_11").removeClass("div02_main_border");
+        }
+
+        if (ID=='1'){
+            $("#div11_pic").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div11_pic_03.png?v=1");
+        }else if (ID=='2'){
+            $("#div11_pic").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div11_pic_02.png");
+        }else if (ID=='3'){
+            $("#div11_pic").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div11_pic_01.png");
+        }
+    }
+
+    function setDiv0201Val(ID,val) {
+        $(".div02_01_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+        $("#div02_01_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_checked.png");
+        $(".div02_02_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+        $(".div02_03_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+
+        $(".div02_02_check").removeClass("unable");
+        $(".div02_03_check").removeClass("unable1");
+
+        $("#div02_02_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+        $("#div02_03_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+
+        $("#div02_02_"+ID+"_check").addClass("unable");
+        $("#div02_03_"+ID+"_check").addClass("unable1");
+        Q02_01Val=ID;
+
+    }
+
+    function setDiv0202Val(ID,val) {
+        if(cn(Q02_01Val)==""){
+            confirm('', '请先选择最重要内容', '确定', '', true , null, null );
+            // alert("请先选择最重要内容");
+        }else{
+            if ($("#div02_02_"+ID+"_check").hasClass("unable")){
+
+            }else{
+                $(".div02_02_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+                $("#div02_02_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_checked.png");
+
+                $(".div02_03_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+                $(".unable1").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+
+
+                $(".div02_03_check").removeClass("unable2");
+                $("#div02_03_"+ID+"_check").addClass("unable2");
+                $("#div02_03_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+                Q02_02Val=ID;
+            }
+
+        }
+    }
+
+    function setDiv0203Val(ID,val) {
+        if(cn(Q02_01Val)=="" || cn(Q02_02Val)==""){
+            // alert("请先选择最重要和次重要内容");
+            confirm('', '请先选择最重要和次重要内容', '确定', '', true , null, null );
+        }else{
+            if ($("#div02_03_"+ID+"_check").hasClass("unable1") || $("#div02_03_"+ID+"_check").hasClass("unable2")){
+
+            }else{
+                $(".div02_03_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+                $("#div02_03_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_checked.png");
+                Q02_03Val=ID;
+                if(cn(Q02_01Val)!="" && cn(Q02_02Val)!="")
+                // swiper.swipeTo(3);
+                    swipeTo(3);
+            }
+
+        }
+
+    }
+
+    function setDiv03Val(ID) {
+        $(".div03_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div03_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_03_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div_03_txt_"+ID+"").removeClass("hide");
+
+        $("#div_03_txt").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div03_txt_sel.png");
+
+        Q03Val=ID;
+        // swiper.swipeTo(4);
+        swipeTo(4);
+    }
+
+    function setDiv0401Val(ID) {
+        $(".div04_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div04_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_04_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div04_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div04_txt_01_sel.png");
+        $("#div_04_01_txt_"+ID+"").removeClass("hide");
+        Q04_01Val=ID;
+        if (Q01Val=='2' || Q01Val=='3'){
+            swipeTo(5);
+        }else{
+            if(cn(Q04_01Val)!="" && cn(Q04_02Val)!="")
+            // swiper.swipeTo(5);
+                swipeTo(5);
+        }
+
+    }
+
+    function setDiv0402Val(ID) {
+        $(".div04_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div04_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_04_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div04_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div04_txt_02_sel.png");
+        $("#div_04_02_txt_"+ID+"").removeClass("hide");
+        Q04_02Val=ID;
+        if(cn(Q04_01Val)!="" && cn(Q04_02Val)!="")
+            // swiper.swipeTo(5);
+            swipeTo(5);
+    }
+
+
+    function setDiv0501Val(ID) {
+        $(".div05_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div05_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_05_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div05_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div05_txt_01_sel.png");
+        $("#div_05_01_txt_"+ID+"").removeClass("hide");
+        Q05_01Val=ID;
+        if(cn(Q05_01Val)!="" && cn(Q05_02Val)!="")
+            // swiper.swipeTo(6);
+            swipeTo(6);
+    }
+
+    function setDiv0502Val(ID) {
+        $(".div05_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div05_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_05_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div05_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div05_txt_02_1_sel.png");
+        $("#div_05_02_txt_"+ID+"").removeClass("hide");
+        Q05_02Val=ID;
+        if(cn(Q05_01Val)!="" && cn(Q05_02Val)!="")
+            // swiper.swipeTo(6);
+            swipeTo(6);
+    }
+
+
+    function setDiv0601Val(ID) {
+        $(".div06_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div06_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_06_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked_ju.png");
+        }
+        $("#div06_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div06_txt_01_sel.png");
+        $("#div_06_01_txt_"+ID+"").removeClass("hide");
+        Q06_01Val=ID;
+        if(cn(Q06_01Val)!="" && cn(Q06_02Val)!="")
+            // swiper.swipeTo(7);
+            swipeTo(7);
+    }
+
+    function setDiv0602Val(ID) {
+        $(".div06_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div06_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_06_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked_ju.png");
+        }
+        $("#div06_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div06_txt_02_sel.png");
+        $("#div_06_02_txt_"+ID+"").removeClass("hide");
+        Q06_02Val=ID;
+        if(cn(Q06_01Val)!="" && cn(Q06_02Val)!="")
+            // swiper.swipeTo(7);
+            swipeTo(7);
+    }
+
+    function setDiv0701Val(ID) {
+        $(".div07_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div07_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_07_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div07_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_01_sel.png");
+        $("#div_07_01_txt_"+ID+"").removeClass("hide");
+        Q07_01Val=ID;
+        if(cn(Q07_01Val)!="" && cn(Q07_02Val)!="" && cn(Q07_03Val)!="")
+            // swiper.swipeTo(8);
+            swipeTo(8);
+    }
+
+    function setDiv0702Val(ID) {
+        $(".div07_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div07_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_07_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div07_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_02_sel.png");
+        $("#div_07_02_txt_"+ID+"").removeClass("hide");
+        Q07_02Val=ID;
+        if(cn(Q07_01Val)!="" && cn(Q07_02Val)!="" && cn(Q07_03Val)!="")
+            // swiper.swipeTo(8);
+            swipeTo(8);
+    }
+
+    function setDiv0703Val(ID) {
+        $(".div07_03_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div07_03_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_07_03_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div07_txt_03").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div07_txt_03_1_sel.png");
+        $("#div_07_03_txt_"+ID+"").removeClass("hide");
+        Q07_03Val=ID;
+        if(cn(Q07_01Val)!="" && cn(Q07_02Val)!="" && cn(Q07_03Val)!="")
+            // swiper.swipeTo(8);
+            swipeTo(8);
+    }
+
+
+    function setDiv0801Val(ID) {
+        $(".div08_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div08_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_08_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div08_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div08_txt_01_sel.png");
+        $("#div_08_01_txt_"+ID+"").removeClass("hide");
+        Q08_01Val=ID;
+        if(cn(Q08_01Val)!="" && cn(Q08_02Val)!="")
+            // swiper.swipeTo(9);
+            swipeTo(9);
+    }
+
+    function setDiv0802Val(ID) {
+        $(".div08_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div08_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_08_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div08_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div08_txt_02_sel.png");
+        $("#div_08_02_txt_"+ID+"").removeClass("hide");
+        Q08_02Val=ID;
+        if(cn(Q08_01Val)!="" && cn(Q08_02Val)!="")
+            // swiper.swipeTo(9);
+            swipeTo(9);
+    }
+
+    function setDiv0901Val(ID) {
+        $(".div09_01_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div09_01_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_09_01_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div09_txt_01").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_01_sel.png");
+        $("#div_09_01_txt_"+ID+"").removeClass("hide");
+        Q09_01Val=ID;
+        if(cn(Q09_01Val)!="" && cn(Q09_02Val)!="" && cn(Q09_03Val)!="")
+            // swiper.swipeTo(10);
+            swipeTo(10);
+    }
+
+    function setDiv0902Val(ID) {
+        $(".div09_02_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div09_02_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_09_02_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div09_txt_02").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_02_sel.png");
+        $("#div_09_02_txt_"+ID+"").removeClass("hide");
+        Q09_02Val=ID;
+        if(cn(Q09_01Val)!="" && cn(Q09_02Val)!="" && cn(Q09_03Val)!="")
+            // swiper.swipeTo(10);
+            swipeTo(10);
+    }
+
+    function setDiv0903Val(ID) {
+        $(".div09_03_stars .div_stars_item_img").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_nor.png");
+        $(".div09_03_stars .div_stars_item_txt").addClass("hide");
+        for(var i=1;i<=ID;i++){
+            $("#div_09_03_stars_"+i+"").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_star_checked.png");
+        }
+        $("#div09_txt_03").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div09_txt_03_sel.png");
+        $("#div_09_03_txt_"+ID+"").removeClass("hide");
+        Q09_03Val=ID;
+        if(cn(Q09_01Val)!="" && cn(Q09_02Val)!="" && cn(Q09_03Val)!="")
+            // swiper.swipeTo(10);
+            swipeTo(10);
+    }
+
+
+
+    function chkDiv1001Sel(){
+        if($(".div10_chked").length>=3){
+            $(".div10_01_check").each(function(){
+                if (!$(this).hasClass("div10_chked"))
+                    $(this).attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+            });
+        }else{
+            $(".div10_01_check").each(function(){
+                if (!$(this).hasClass("div10_chked"))
+                    $(this).attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+            });
+        }
+    }
+
+    function chkDiv1002Canchk(){
+        $(".div10_02_check").each(function(){
+            if (!$(this).hasClass("div10_02_canchk"))
+                $(this).attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+        });
+    }
+
+    function setDiv1001Val(ID) {
+        if ($("#div10_01_"+ID+"_check").hasClass("div10_chked")){
+            $("#div10_01_"+ID+"_check").removeClass("div10_chked");
+            $("#div10_01_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+
+            $("#div10_02_"+ID+"_check").removeClass("div10_02_canchk");
+            $("#div10_02_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check_gray.png");
+        }else{
+            if($(".div10_chked").length>=3){
+                confirm('温馨提示', '最多只能选择三个！', '确定', '', true , null, null );
+                return;
+            }else{
+                $("#div10_01_"+ID+"_check").addClass("div10_chked");
+                $("#div10_01_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_checked.png");
+
+                $("#div10_02_"+ID+"_check").addClass("div10_02_canchk");
+                $("#div10_02_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+            }
+
+        }
+        chkDiv1001Sel();
+        chkDiv1002Canchk();
+    }
+
+    function setDiv1002Val(ID) {
+        $(".div10_02_check").each(function(){
+            if ($(this).hasClass("div10_02_canchk"))
+                $(this).attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_check.png");
+        });
+
+
+        if ($("#div10_02_"+ID+"_check").hasClass("div10_02_canchk")){
+            $("#div10_02_"+ID+"_check").attr("src","https://aia.tohours.com/bdtookeen/static/images/AIASurery/icon_div02_checked.png");
+            var Q10_01Val_IDS=new Array();
+            $(".div10_01_check").each(function(){
+                if ($(this).hasClass("div10_chked"))
+                    Q10_01Val_IDS.push($(this).data("id"));
+            });
+            Q10_01Val = Q10_01Val_IDS.join(',');
+            Q10_02Val = ID;
+            swipeTo(11);
+        }
+
+
+    }
+
+
+    function swipeToNext(ID){
+        swiper.swipeTo(ID);
+    }
+    function swipeTo(ID){
+        // alert("b"+ID);
+        window.setTimeout('swipeToNext('+ID+')',1000);
+    }
+    function showFadeIn(obj){
+        $("#"+obj+"").removeClass(obj);
+        $("#"+obj+"").addClass(obj+"_a");
+
+    }
+    function showFadeInTo(obj,time){
+        window.setTimeout('showFadeIn("'+obj+'")',time);
+    }
+
+</script><meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">
+
+<!--请修改一下javascript以便和服务器接口通讯-->
+<script type="text/javascript">
+     //agent_id
+	 var agent_id='8ac0b3a0515bb79401515bfa54cc04b0';
+	 var user_id ='8a02ad9d665d549901666661eb02046c';
+    function GetResult(){
+		ajaxShow();
+        //问题为空效验
+        if(cn(Q01Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(1);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q02_01Val)=="" || cn(Q02_02Val)=="" || cn(Q02_03Val)=="" ){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(2);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q03Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(3);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if (Q01Val=='2' || Q01Val=='3'){
+            if(cn(Q04_01Val)==""){
+                confirm('', '请正确回答问题', '确定', '', true , function () {
+                    swiper.swipeTo(4);
+                }, null );
+				ajaxHide();
+                return;
+            }
+        }else{
+            if(cn(Q04_01Val)=="" ||cn(Q04_02Val)==""){
+                confirm('', '请正确回答问题', '确定', '', true , function () {
+                    swiper.swipeTo(4);
+                }, null );
+				ajaxHide();
+                return;
+            }
+        }
+
+
+        if(cn(Q05_01Val)=="" ||cn(Q05_02Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(5);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q06_01Val)=="" ||cn(Q06_02Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(6);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q07_01Val)=="" ||cn(Q07_02Val)=="" ||cn(Q07_03Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(7);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q08_01Val)=="" ||cn(Q08_02Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(8);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+        if(cn(Q09_01Val)=="" ||cn(Q09_02Val)=="" ||cn(Q09_03Val)==""){
+            confirm('', '请正确回答问题', '确定', '', true , function () {
+                swiper.swipeTo(9);
+            }, null );
+            return;
+        }
+
+        if(cn(Q10_01Val)=="" || cn(Q10_02Val)==""){
+            confirm('', '请正确回答问题，并从答案中选择最主要原因', '确定', '', true , function () {
+                swiper.swipeTo(10);
+            }, null );
+			ajaxHide();
+            return;
+        }
+
+         
+		 if(Q04_02Val==""){
+			 Q04_02Val=0;
+		 }
+		 
+		 
+        var data = {//整理数据
+            q0:Q01Val,
+            q1_1:Q02_01Val,
+            q1_2:Q02_02Val,
+            q1_3:Q02_03Val,
+            q2:Q03Val,
+            q3:Q04_01Val,
+            q4:Q04_02Val,
+            q5:Q05_01Val,
+            q6:Q05_02Val,
+            q7:Q06_01Val,
+            q8:Q06_02Val,
+            q9:Q07_01Val,
+            q10:Q07_02Val,
+            q11:Q07_03Val,
+            q12:Q08_01Val,
+            q13:Q08_02Val,
+            q14:Q09_01Val,
+            q15:Q09_02Val,
+            q16:Q09_03Val,
+            q17_1:Q10_01Val,
+            q17_2:Q10_02Val,
+			type:'1',
+			source:$('#source').val(),
+			agent_id:agent_id,
+			user_id:user_id
+        };
+		
+		console.log(data);
+		console.log(JSON.stringify(data));
+		
+		// var url = window.BASE_URL + '/goldenquestion/saveGoldenSurvey.action';
+		// $.ajax({
+		// 	url : url,
+		// 	data : data,
+		// 	type:'post',//提交方式
+		// 	success : function(json) {
+		// 		if(json.success){
+		// 			waitok();
+		// 			GoToResult(json);//数据结果进行处理
+		// 			ajaxHide();
+		// 		}else{
+		// 			alert(json.msg);
+		// 			ajaxHide();
+		// 		}
+		// 	},
+		// 	error : function(jqXHR,textStatus,errorThrown) {
+		// 		waitok();
+		// 		alert('服务连接异常，请稍后再试！');
+		// 	}
+		// });
+
+    }
+
+
+    function GoToResult(ret){
+        //ss("rtype",ret.type);//结果类型
+        // ss("anxiety",ret.anxiety);//生活焦虑度分数
+        // ss("price",ret.price);//价格敏感度
+        // ss("affect",ret.affect);//代理人影响
+        // ss("initiative",ret.initiative);//主动性
+        // ss("mature",ret.mature);//保险成熟度
+        goUrl('result-worders.action?type='+ret.lable_type+'&source='+$('#source').val()+'&id='+ret.id+'&v='+Math.floor(Math.random()*1000000+1));
+    }
+   var datas={
+	    type:'1',
+		source:$('#source').val(),
+		agentId:agent_id,
+		userId:user_id
+   };
+   console.log(datas);
+   var logurl = window.BASE_URL + '/goldenquestion/saveSurveyLog.action';
+//    $.ajax({
+// 		url : logurl,
+// 		data : datas,
+// 		type:'post',//提交方式
+// 		success : function(json) {
+// 			console.log(datas);
+// 		},
+// 		error : function(json){
+// 			alert('服务连接异常，请稍后再试！');
+// 		}
+// 		});
+
+</script>
+
+</body></html>

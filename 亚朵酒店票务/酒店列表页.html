@@ -12,6 +12,7 @@
 
     <link rel="shortcut icon" href="./img/common/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/citysel.css" />
     <link rel="stylesheet" href="./css/page/home.css" />
     <script src="./js/lib/viewbox.js"></script>
 </head>
@@ -58,36 +59,69 @@
             </a>
         </div>
     </div>
-    <div class="sel_city ">
-        <ul>
-            <li class="on" data-id="1">北京</li>
-            <li data-id="2">上海</li>
-            <li data-id="3">天津</li>
-            <li data-id="4">大连</li>
-            <li data-id="5">长春</li>
-            <li data-id="5">长春</li>
-            <li data-id="5">长春</li>
-            <li data-id="5">长春</li>
-            <li data-id="5">长春</li>
-        </ul>
-        <img src="./img/common/close-white.png" alt="" class="pop_close">
-    </div>
     <div class="loading"><img src="./img/common/loading.gif" alt=""></div>
+    <div class="citysel_box"></div>
     <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/chinese2pinyin.js"></script>
+    <script src="./js/lib/citysel.js"></script>
     <script>
+        $('.citysel_box').citysel({
+            data: [
+                { "cityName": "安康市", "cityId": "1", "provinceName": "北京市" },
+                { "cityName": "安宁市", "cityId": "1", "provinceName": "北京市" },
+                { "cityName": "北京市", "cityId": "1", "provinceName": "北京市" },
+                { "cityName": "上海市", "cityId": "75", "provinceName": "上海市" },
+                { "cityName": "北海市", "cityId": "75", "provinceName": "上海市" },
+                { "cityName": "地海市", "cityId": "75", "provinceName": "上海市" },
+                { "cityName": "安海市", "cityId": "75", "provinceName": "上海市" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "宁波市", "cityId": "91", "provinceName": "浙江省" },
+                { "cityName": "平波市", "cityId": "91", "provinceName": "浙江省" }
+            ],
+            selCityFun: function (city) {
+                console.log(city)
+                alert('你选择了-' + city.cityName)
+            }
+        });
         $('.location').on('click', function () {
-            $('.sel_city').addClass('show')
+            $('.citysel_box').addClass('show');
+            return false;
         })
+
         $('.sel_city').on('click', 'li', function () {
             $(this).addClass('on').siblings().removeClass('on');
-            alert('您选择了' + $(this).text() + 'id:' + $(this).data('id'))
+            alert('您选择了' + $(this).text() + 'id:' + $(this).data('id'));
+            return false;
         })
         $('.pop_close').click(function () {
-            $('.sel_city').removeClass('show')
+            $('.sel_city').removeClass('show');
+            return false;
         })
+
         setTimeout(function () {
             $('.loading').hide();
-        }, 3000)
+        }, 1000)
     </script>
 </body>
 

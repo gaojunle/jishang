@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>票务预定</title>
+    <meta name="keywords" content="票务预定" />
+    <meta name="description" content="票务预定" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/calendar.css" />
+    <link rel="stylesheet" href="./css/page/dingpiao.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="dingpiao">
+        <img src="./img/avt_4.png" alt="" class="banner">
+        <div class="info">
+            <h2>毛不易2020全国巡回演唱会－北京站</h2>
+            <p class="price">¥280<span>／起</span></p>
+            <div class="detail">
+                会员专享特惠票价及精美应援礼包套装，专属席位定 制，近距离接触偶像。
+                <a href="#" class="btn_detail js_detail">查看详情</a>
+            </div>
+        </div>
+        <div class="dingpiao_box">
+            <div class="dbox date_box clearfix">
+                <h2>演出时间：</h2>
+                <ul class="list">
+                    <li data-date="2019-12-11">
+                        <div class="day">12月11日</div>
+                        <div class="week">星期日</div>
+                    </li>
+                    <li data-date="2019-12-12">
+                        <div class="day">12月12日</div>
+                        <div class="week">星期日</div>
+                    </li data-date="2019-12-11">
+                    <li data-date="2019-12-13">
+                        <div class="day">12月13日</div>
+                        <div class="week">星期日</div>
+                    </li>
+                    <li class="js_moredate">
+                        <div class="day">更多</div>
+                        <div class="week">时间</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="dbox chang_box">
+                <h2>选择场次：</h2>
+                <ul class="list clearfix">
+                    <li class="disabled">10:30</li>
+                    <li>11:30</li>
+                    <li>12:30</li>
+                    <li>13:30</li>
+                    <li>13:30</li>
+                </ul>
+            </div>
+            <div class="dbox chang_box">
+                <h2>选择票档：</h2>
+                <ul class="list clearfix">
+                    <li class="sel">¥280</li>
+                    <li class="disabled">¥680</li>
+                    <li>¥680</li>
+                    <li>¥680</li>
+                    <li>¥680</li>
+                    <li>¥680</li>
+                </ul>
+            </div>
+            <div class="selroom">数量选择 ：
+                <div class="countsel">
+                    <span class="reduce"></span>
+                    <span class="cnt"><span class="num">1</span>张</span>
+                    <span class="add"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar"> </div>
+        <input type="text" id="startDate" style="display: none;" />
+        <input type="text" id="endDate" style="display: none;" />
+    </div>
+    <div class="submit_yd">
+        <span class="total_price">合计 : <i>¥2600</i></span>
+        <a href="#" class="btn_pay">立即支付</a>
+    </div>
+    <div class="detail_pop">
+        <img src="./img/common/close-white.png" alt="" class="pop_close">
+        <div class="detail_cont">
+            <h2 style="font-size: 18px;">这是一些示例</h2>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+            <p style="padding: 1rem;">这里内部是后台编辑的</p>
+        </div>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+    <script src="./js/lib/moment_zh-cn.js"></script>
+    <script src="./js/lib/calendar.js"></script>
+    <script>
+        $('.countsel')
+            .on('click', '.reduce', function () {
+                var $this = $(this),
+                    $ct = $this.parents('.countsel'),
+                    $num = $ct.find('.num'),
+                    num = parseInt($ct.find('.num').html());
+
+                if (num > 1) {
+                    $num.html(--num);
+                }
+                return false;
+            })
+            .on('click', '.add', function () {
+                var $this = $(this),
+                    $ct = $this.parents('.countsel'),
+                    $num = $ct.find('.num'),
+                    num = parseInt($ct.find('.num').html()),
+                    limit = parseInt($this.data('limit'));
+
+                if (limit && num == limit) {
+                    return;
+                } else {
+                    $num.html(++num);
+                }
+                return false;
+            })
+
+        $('.js_detail').on('click', function () {
+            $('.detail_pop').addClass('show');
+            return false;
+        })
+
+        $('.pop_close').click(function () {
+            $('.detail_pop').removeClass('show')
+            return false;
+        })
+
+        $('.js_moredate').calendarSwitch({
+            selectors: {
+                sections: ".calendar"
+            },
+            type: 'singleDay',
+            index: 5,      //展示的月份个数
+            animateFunction: "toggle",        //动画效果
+            controlDay: true,
+            daysnumber: "60",     //控制天数
+            comeColor: "#66CCFF",
+            callback: function (date) {
+                var $dbox = $('.date_box');
+                var $rElement = null;
+                if ($dbox.find('li.sel').length > 0) {
+                    $rElement = $dbox.find('li.sel')
+                } else {
+                    $rElement = $dbox.find('li:first')
+                }
+                var day = moment(date).format('MM月DD日');
+                var week = moment(date).format('dddd');
+                $rElement.find('.day').html(day);
+                $rElement.find('.week').html(week);
+                $rElement.addClass('sel').data('date', date);
+
+                console.log(date)
+            },   //回调函数
+            comfireBtn: '.comfire'//确定按钮的class或者id
+        });
+
+        $('.dbox .list').on('click', 'li', function () {
+            if ($(this).hasClass('js_moredate')) {
+                return false;
+            }
+            if (!$(this).hasClass('disabled')) {
+                console.log($(this).data('date'))
+                $(this).addClass('sel').siblings().removeClass('sel');
+            }
+            return false;
+        })
+    </script>
+</body>
+
+</html>

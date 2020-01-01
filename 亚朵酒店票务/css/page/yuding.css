@@ -1,0 +1,107 @@
+@import '../lib/common.css';
+.yuding .banner {
+  width: 100%;
+}
+.yuding .box {
+  background: white;
+  padding: 0.35rem 0.55rem;
+  margin-bottom: 0.2rem;
+}
+.yuding .minfo {
+  padding-bottom: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+}
+.yuding .minfo .fang {
+  flex: 1;
+  font-size: 0.32rem;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+.yuding .minfo .price {
+  font-size: 0.32rem;
+  color: rgba(203, 0, 0, 0.8);
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+.yuding .minfo .price i {
+  font-style: normal;
+  color: rgba(203, 0, 0, 0.8);
+  font-size: 0.24rem;
+  font-weight: normal;
+}
+.yuding .room {
+  background: white;
+  padding-top: 0.35rem;
+}
+.yuding .room .wan {
+  padding-left: 0.25rem;
+}
+.yuding .room .selroom {
+  padding-top: 0.2rem;
+  display: flex;
+}
+.yuding .peoples .ruzhu {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding-bottom: 0.3rem;
+}
+.yuding .peoples .ruzhu .uname {
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+.yuding .peoples .ruzhu .btn_del {
+  display: inline-block;
+  background-color: #2a2a2a;
+  width: 1rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  color: white;
+  border-radius: 0.4rem;
+  font-size: 0.24rem;
+  text-align: center;
+}
+.yuding .peoples .item p {
+  font-size: 0.28rem;
+  padding-bottom: 0.2rem;
+}
+.yuding .peoples .item p > span {
+  color: #8f8f8f;
+}
+.yuding .op {
+  text-align: center;
+  padding: 0.2rem;
+  margin-bottom: 1.6rem;
+}
+.submit_yd {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.55rem;
+  box-sizing: border-box;
+  background: white;
+}
+.submit_yd .total_price {
+  flex: 1;
+}
+.submit_yd .total_price i {
+  font-style: normal;
+  font-size: 0.3rem;
+  color: #cb0000;
+}
+.submit_yd .btn_pay {
+  background: #2a2a2a;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0.55rem;
+}

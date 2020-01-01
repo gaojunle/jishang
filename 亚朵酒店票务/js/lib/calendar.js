@@ -1,5 +1,6 @@
 (function ($) {
-    "use strict"; var calendarSwitch = (function () {
+    "use strict";
+    var calendarSwitch = (function () {
         function calendarSwitch(element, options) {
             this.settings = $.extend(true, $.fn.calendarSwitch.defaults, options || {}); this.element = element; this.init();
         }
@@ -9,6 +10,11 @@
                 me.selectors = me.settings.selectors;
                 me.sections = me.selectors.sections;
                 me.index = me.settings.index; me.comfire = me.settings.comfireBtn;
+
+                if (me.settings.type == 'singleDay') {
+                    console.log($(this.element))
+                    $(me.sections).addClass('singleDay')
+                }
                 var html = "<div class='headerWrapper'><div class='headerTip'>请选择入住离店日期</div><div class='comfire'>确定</div></div><table class='dateZone'><tr><td class='colo'>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td class='colo'>六</td></tr></table>" + "<div class='tbody'></div>"
                 $(me.sections).append(html); $(me.sections).find('.headerTip').css({ "text-align": "center", "line-height": "50px", });
                 for (var q = 0; q < me.index; q++) {
@@ -66,10 +72,28 @@
                     if ($(this).text() == startYM) { $(this).next('.dateTable').find('td').each((function (itx) { if ($(this).text().replace(/入住/g, '') == currentDateStart.getDate()) { $(this).trigger('click') } })) }
                     if ($(this).text() == endYM) { $(this).next('.dateTable').find('td').each((function (itx) { if ($(this).text().replace(/离店.+?天/, '') == currentDateEnd.getDate()) { $(this).trigger('click') } })) }
                 })
-            }, _slider: function (id) { var me = this; me.animateFunction = me.settings.animateFunction; if (me.animateFunction == "fadeToggle") { $(id).fadeToggle(); } else if (me.animateFunction == "slideToggle") { $(id).slideToggle(); } else if (me.animateFunction == "toggle") { $(id).toggle(); } }, _initselected: function () {
-                var me = this; me.comeColor = me.settings.comeColor; me.outColor = me.settings.outColor; me.daysnumber = me.settings.daysnumber; me.controlDay = me.settings.controlDay; var strDays = new Date().getDate(); var arry = []; var arry1 = []; var tds = $(me.sections).find('.dateTable').eq(0).find('td'); tds.each(function (index, element) {
+            },
+            _slider: function (id) {
+                var me = this; me.animateFunction = me.settings.animateFunction; if (me.animateFunction == "fadeToggle") { $(id).fadeToggle(); } else if (me.animateFunction == "slideToggle") { $(id).slideToggle(); } else if (me.animateFunction == "toggle") { $(id).toggle(); }
+            },
+            _initselected: function () {
+                var me = this; me.comeColor = me.settings.comeColor; me.outColor = me.settings.outColor;
+                me.daysnumber = me.settings.daysnumber; me.controlDay = me.settings.controlDay;
+                var strDays = new Date().getDate(); var arry = []; var arry1 = [];
+                var tds = $(me.sections).find('.dateTable').eq(0).find('td');
+                tds.each(function (index, element) {
                     if ($(this).text() == strDays) {
-                        var r = index; $(this).append('</br><p class="rz">入住</p>'); if ($(this).next().text() != "") { $(this).next().append('</br><p class="rz">离店</p>'); } else { $(".dateTable").eq(1).find("td").each(function (index, el) { if ($(this).text() != "") { $(this).append('</br><p class="rz">离店</p>'); return false; } }); }
+                        var r = index;
+                        $(this).append('</br><p class="rz">入住</p>');
+                        if ($(this).next().text() != "") {
+                            $(this).next().append('</br><p class="rz">离店</p>');
+                        } else {
+                            $(".dateTable").eq(1).find("td").each(function (index, el) {
+                                if ($(this).text() != "") {
+                                    $(this).append('</br><p class="rz">离店</p>'); return false;
+                                }
+                            });
+                        }
                         me._checkColor(me.comeColor, me.outColor)
                     }
                 })
@@ -87,7 +111,10 @@
                     if (rz.eq(i).text() == "入住") {
                         rz.eq(i).closest('td').css({ 'background': comeColor, 'color': '#fff' });
                     } else {
-                        rz.eq(i).closest('td').css({ 'background': outColor, 'color': '#fff' });
+                        if (me.settings.type != 'singleDay') {
+                            rz.eq(i).closest('td').css({ 'background': outColor, 'color': '#fff' });
+                        }
+
                     }
                 }
             },
@@ -98,9 +125,39 @@
                 }
             },
             _selectDate: function (arry1) {
-                var me = this; me.comeColor = me.settings.comeColor; me.outColor = me.settings.outColor; me.comeoutColor = me.settings.comeoutColor; me.sections = me.selectors.sections; var flag = 0; var first; var sum; var second; $(arry1).on('click', function (index) {
+                var me = this;
+                me.comeColor = me.settings.comeColor;
+                me.outColor = me.settings.outColor;
+                me.comeoutColor = me.settings.comeoutColor;
+                me.sections = me.selectors.sections;
+                var flag = 0;
+                var first;
+                var sum;
+                var second;
+                $(arry1).on('click', function (index) {
+                    if ($(me.sections).hasClass('singleDay')) {
+                        $(arry1).css({ 'background': '#fff', 'color': '#000' });
+                        $(this).css({ 'background': me.comeColor, 'color': '#fff' });
+                        var e = $(this).text().replace(/[^0-9]/ig, "");
+                        var c, d;
+                        var a = new Array();
+                        var b = new Array();
+                        var f;
+                        var same = $(this).parents('table').prev('p').text().replace(/[^0-9]/ig, "").split('');
+                        for (var i = 0; i < 4; i++) { a.push(same[i]); }
+                        c = a.join(''); for (var j = 4; j < 6; j++) { b.push(same[j]); }
+                        d = b.join('');
+                        f = c + '-' + d + '-' + e;
+                        me.settings.callback(f);
+                        $(me.sections).hide();
+                        return false;
+                    }
                     if (flag == 0) {
-                        $(me.sections).find('.hover').remove(); $(me.sections).find('.tbody').find('p').remove('.rz'); $(me.sections).find('.tbody').find('br').remove(); $(arry1).css({ 'background': '#fff', 'color': '#000' }); $(this).append('<p class="rz">入住</p>')
+                        $(me.sections).find('.hover').remove();
+                        $(me.sections).find('.tbody').find('p').remove('.rz');
+                        $(me.sections).find('.tbody').find('br').remove();
+                        $(arry1).css({ 'background': '#fff', 'color': '#000' });
+                        $(this).append('<p class="rz">入住</p>')
                         first = $(arry1).index($(this)); me._checkColor(me.comeColor, me.outColor)
                         flag = 1;
                     } else if (flag == 1) {
@@ -110,9 +167,20 @@
                             $(this).append('<p class="rz">离店</p>')
                             first = first + 1; for (first; first < second; first++) { $(arry1[first]).css({ 'background': me.comeoutColor, 'color': '#fff' }); }
                         } else if (first == second) {
-                            $(me.sections).find('.rz').text('入住'); $(this).append('<p class="rz">离店</p>'); $(this).find('.rz').css('font-size', '12px'); var e = $(this).text().replace(/[^0-9]/ig, ""); var c, d; var a = new Array(); var b = new Array(); var f; var same = $(this).parents('table').prev('p').text().replace(/[^0-9]/ig, "").split(''); for (var i = 0; i < 4; i++) { a.push(same[i]); }
+                            $(me.sections).find('.rz').text('入住');
+                            $(this).append('<p class="rz">离店</p>');
+                            $(this).find('.rz').css('font-size', '12px');
+                            var e = $(this).text().replace(/[^0-9]/ig, "");
+                            var c, d;
+                            var a = new Array();
+                            var b = new Array();
+                            var f;
+                            var same = $(this).parents('table').prev('p').text().replace(/[^0-9]/ig, "").split('');
+                            for (var i = 0; i < 4; i++) { a.push(same[i]); }
                             c = a.join(''); for (var j = 4; j < 6; j++) { b.push(same[j]); }
-                            d = b.join(''); f = c + '-' + d + '-' + e; $("#startDate").val(f);
+                            d = b.join('');
+                            f = c + '-' + d + '-' + e;
+                            $("#startDate").val(f);
                         } else if (first > second) {
                             $(me.sections).find('.rz').text('离店'); $(this).append('<p class="rz">入住</p>')
                             second = second + 1; for (second; second < first; second++) { $(arry1[second]).css({ 'background': me.comeoutColor, 'color': '#fff' }); }
@@ -155,13 +223,16 @@
             }
         }
         return calendarSwitch;
-    })(); $.fn.calendarSwitch = function (options) {
+    })();
+    $.fn.calendarSwitch = function (options) {
         return this.each(function () {
-            var me = $(this), instance = me.data("calendarSwitch");
+            var me = $(this),
+                instance = me.data("calendarSwitch");
             if (!instance) {
                 me.data("calendarSwitch", (instance = new calendarSwitch(me, options)));
             }
             if ($.type(options) === "string") return instance[options]();
         });
-    }; $.fn.calendarSwitch.defaults = { selectors: { sections: "#calendar" }, index: 4, animateFunction: "toggle", controlDay: false, daysnumber: "90", comeColor: "blue", outColor: "red", comeoutColor: "#0cf", callback: "", comfireBtn: '.comfire' };
+    };
+    $.fn.calendarSwitch.defaults = { selectors: { sections: "#calendar" }, index: 4, animateFunction: "toggle", controlDay: false, daysnumber: "90", comeColor: "blue", outColor: "red", comeoutColor: "#0cf", callback: "", comfireBtn: '.comfire' };
 })(jQuery);

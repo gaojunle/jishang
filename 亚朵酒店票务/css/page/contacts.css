@@ -1,0 +1,100 @@
+@import '../lib/common.css';
+body {
+  color: rgba(216, 216, 216, 0.25);
+}
+.general_contacts .contacts_list .item {
+  background: white;
+  padding: 0px 0.55rem;
+  margin-bottom: 0.2rem;
+}
+.general_contacts .contacts_list .item .info {
+  padding: 0.3rem 0px 0.15rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+}
+.general_contacts .contacts_list .item .info p {
+  line-height: 1.9;
+  font-size: 0.24rem;
+}
+.general_contacts .contacts_list .item .ops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0px;
+}
+.general_contacts .contacts_list .item .ops > span {
+  flex: 1;
+  font-size: 0.24rem;
+  padding-left: 0.45rem;
+  background: url(../../img/common/uncheck.png) 0px center no-repeat;
+  background-size: auto 0.32rem;
+  text-align: left;
+}
+.general_contacts .contacts_list .item .ops > span.on {
+  background: url(../../img/common/checked.png) 0px center no-repeat;
+  background-size: auto 0.32rem;
+}
+.general_contacts .contacts_list .item .ops a {
+  display: inline-block;
+  background-color: #2a2a2a;
+  width: 1rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  color: white;
+  border-radius: 0.4rem;
+  font-size: 0.24rem;
+  text-align: center;
+  margin-left: 0.15rem;
+}
+.general_contacts .btn_box {
+  text-align: center;
+  padding-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.general_contacts .btn_box .btn_default {
+  border: 1px solid rgba(42, 42, 42, 0.7);
+  border-radius: 0.5rem;
+  width: 5.22rem;
+  height: 0.64rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.general_contacts .btn_box .btn_default > span {
+  font-size: 0.34rem;
+  padding-right: 0.05rem;
+}
+.edit_contacts {
+  padding: 0.55rem;
+}
+.edit_contacts .mform .pline {
+  line-height: 2.5;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  margin-bottom: 0.2rem;
+}
+.edit_contacts .mform .pline label {
+  font-size: 0.24rem;
+}
+.edit_contacts .mform .pline input {
+  border: none;
+  outline: none;
+  font-size: 0.24rem;
+}
+.edit_contacts .btn-box {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.edit_contacts .btn-box .btn_defualt {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2a2a2a;
+  height: 0.9rem;
+  font-size: 0.28rem;
+  color: white;
+}
