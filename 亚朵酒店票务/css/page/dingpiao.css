@@ -7,6 +7,7 @@
   padding: 0.35rem 0.55rem 0.25rem;
   color: #2a2a2a;
   background: white;
+  margin-bottom: 0.2rem;
 }
 .dingpiao .info h2 {
   font-size: 0.32rem;
@@ -54,7 +55,7 @@
 }
 .dingpiao_box .dbox li {
   float: left;
-  border: 1px solid rgba(42, 42, 42, 0.8);
+  border: 1px solid rgba(42, 42, 42, 0.6);
   border-radius: 0.15rem;
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;

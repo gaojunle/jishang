@@ -1,4 +1,4 @@
-@import '../lib/common.css';
+@import "../lib/common.css";
 body {
   color: rgba(216, 216, 216, 0.25);
 }
@@ -72,8 +72,23 @@ body {
   line-height: 2.5;
   border-bottom: 1px solid rgba(216, 216, 216, 0.25);
   margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.edit_contacts .mform .pline > span {
+  padding: 0px 0.3em;
 }
 .edit_contacts .mform .pline label {
+  display: inline-block;
+  font-size: 0.24rem;
+  width: 1rem;
+  text-align: justify;
+  text-align-last: justify;
+  display: flex;
+  justify-content: space-between;
+}
+.edit_contacts .mform .pline label span {
   font-size: 0.24rem;
 }
 .edit_contacts .mform .pline input {

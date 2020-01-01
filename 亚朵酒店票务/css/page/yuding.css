@@ -24,7 +24,6 @@
   font-size: 0.32rem;
   color: rgba(203, 0, 0, 0.8);
   font-weight: bold;
-  padding-right: 0.5rem;
 }
 .yuding .minfo .price i {
   font-style: normal;
@@ -47,7 +46,8 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(216, 216, 216, 0.25);
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.24rem;
+  margin-bottom: 0.24rem;
 }
 .yuding .peoples .ruzhu .uname {
   font-size: 0.3rem;

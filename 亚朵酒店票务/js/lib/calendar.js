@@ -2,39 +2,80 @@
     "use strict";
     var calendarSwitch = (function () {
         function calendarSwitch(element, options) {
-            this.settings = $.extend(true, $.fn.calendarSwitch.defaults, options || {}); this.element = element; this.init();
+            this.settings = $.extend(true, $.fn.calendarSwitch.defaults, options || {});
+            this.element = element;
+            this.init();
         }
         calendarSwitch.prototype = {
             init: function () {
                 var me = this;
                 me.selectors = me.settings.selectors;
                 me.sections = me.selectors.sections;
-                me.index = me.settings.index; me.comfire = me.settings.comfireBtn;
+                me.index = me.settings.index;
+                me.comfire = me.settings.comfireBtn;
 
                 if (me.settings.type == 'singleDay') {
                     console.log($(this.element))
                     $(me.sections).addClass('singleDay')
                 }
                 var html = "<div class='headerWrapper'><div class='headerTip'>请选择入住离店日期</div><div class='comfire'>确定</div></div><table class='dateZone'><tr><td class='colo'>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td class='colo'>六</td></tr></table>" + "<div class='tbody'></div>"
-                $(me.sections).append(html); $(me.sections).find('.headerTip').css({ "text-align": "center", "line-height": "50px", });
+                $(me.sections).append(html);
+                $(me.sections).find('.headerTip').css({
+                    "text-align": "center",
+                    "line-height": "50px",
+                });
                 for (var q = 0; q < me.index; q++) {
-                    var select = q; $(me.sections).find(".tbody").append("<p class='ny1'></p><table class='dateTable'></table>")
-                    var currentDate = new Date(); currentDate.setMonth(currentDate.getMonth() + select); var currentYear = currentDate.getFullYear(); var currentMonth = currentDate.getMonth(); var setcurrentDate = new Date(currentYear, currentMonth, 1); var firstDay = setcurrentDate.getDay(); var yf = currentMonth + 1; if (yf < 10) { $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + '0' + yf + '月'); } else { $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + yf + '月'); }
-                    var DaysInMonth = []; if (me._isLeapYear(currentYear)) { DaysInMonth = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); } else { DaysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); }
-                    var Ntd = firstDay + DaysInMonth[currentMonth]; var Ntr = Math.ceil(Ntd / 7); for (var i = 0; i < Ntr; i++) { $(me.sections).find('.dateTable').eq(select).append('<tr></tr>'); }; var createTd = $(me.sections).find('.dateTable').eq(select).find('tr'); createTd.each(function (index, element) { for (var j = 0; j < 7; j++) { $(this).append('<td></td>') } }); var arryTd = $(me.sections).find('.dateTable').eq(select).find('td'); for (var m = 0; m < DaysInMonth[currentMonth]; m++) { arryTd.eq(firstDay++).text(m + 1); }
+                    var select = q;
+                    $(me.sections).find(".tbody").append("<p class='ny1'></p><table class='dateTable'></table>")
+                    var currentDate = new Date();
+                    currentDate.setMonth(currentDate.getMonth() + select);
+                    var currentYear = currentDate.getFullYear();
+                    var currentMonth = currentDate.getMonth();
+                    var setcurrentDate = new Date(currentYear, currentMonth, 1);
+                    var firstDay = setcurrentDate.getDay();
+                    var yf = currentMonth + 1;
+                    if (yf < 10) {
+                        $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + '0' + yf + '月');
+                    } else {
+                        $(me.sections).find('.ny1').eq(select).text(currentYear + '年' + yf + '月');
+                    }
+                    var DaysInMonth = [];
+                    if (me._isLeapYear(currentYear)) {
+                        DaysInMonth = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+                    } else {
+                        DaysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+                    }
+                    var Ntd = firstDay + DaysInMonth[currentMonth];
+                    var Ntr = Math.ceil(Ntd / 7);
+                    for (var i = 0; i < Ntr; i++) {
+                        $(me.sections).find('.dateTable').eq(select).append('<tr></tr>');
+                    }
+                    ; var createTd = $(me.sections).find('.dateTable').eq(select).find('tr');
+                    createTd.each(function (index, element) {
+                        for (var j = 0; j < 7; j++) {
+                            $(this).append('<td></td>')
+                        }
+                    });
+                    var arryTd = $(me.sections).find('.dateTable').eq(select).find('td');
+                    for (var m = 0; m < DaysInMonth[currentMonth]; m++) {
+                        arryTd.eq(firstDay++).text(m + 1);
+                    }
                 }
                 me._initselected();
                 me.element.on('click', function (event) {
                     event.preventDefault();
                     var startDate = $("#startDate").val() || '';
                     var endDate = $("#endDate").val() || '';
-                    startDate = startDate.replace(/-/g, "/"); endDate = endDate.replace(/-/g, "/");
-                    startDate && endDate && me._initSelectDate(startDate, endDate); me._slider(me.sections)
+                    startDate = startDate.replace(/-/g, "/");
+                    endDate = endDate.replace(/-/g, "/");
+                    startDate && endDate && me._initSelectDate(startDate, endDate);
+                    me._slider(me.sections)
                 });
                 $(me.comfire).on('click', function (event) {
                     event.preventDefault();
                     var st = $('#startDate').val();
                     var en = $('#endDate').val();
+                    console.log(st, en)
                     if (st) {
                         me._slider(me.sections)
                         me._callback({
@@ -46,13 +87,13 @@
                         var ye = b.getFullYear();
                         var mo = b.getMonth() + 1;
                         var da = b.getDate();
-                        var sdate = ye + '-' + mo + '-' + da;
+                        var sdate = ye + '/' + mo + '/' + da;
                         $('#startDate').val(sdate);
                         b = new Date(b.getTime() + 24 * 3600 * 1000);
                         var ye = b.getFullYear();
                         var mo = b.getMonth() + 1;
                         var da = b.getDate();
-                        var edate = ye + '-' + mo + '-' + da;
+                        var edate = ye + '/' + mo + '/' + da;
                         $('#endDate').val(sdate);
                         me._slider(me.sections)
                         console.log({
@@ -65,21 +106,72 @@
                         })
                     }
                 });
-            }, _isLeapYear: function (year) { return (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0); }, _initSelectDate: function (start, end) {
-                var me = this; var currentDateStart = new Date(start); var currentYearStart = currentDateStart.getFullYear(); var currentMonthStart = currentDateStart.getMonth(); var yfST = currentMonthStart + 1; var startYM; if (yfST < 10) { startYM = currentYearStart + '年' + '0' + yfST + '月'; } else { startYM = currentYearStart + '年' + yfST + '月'; }
-                var currentDateEnd = new Date(end); var currentYearEnd = currentDateEnd.getFullYear(); var currentMonthEnd = currentDateEnd.getMonth(); var yfEd = currentMonthEnd + 1; var endYM; if (yfEd < 10) { endYM = currentYearEnd + '年' + '0' + yfEd + '月'; } else { endYM = currentYearEnd + '年' + yfEd + '月'; }
-                var $yearMonth = $(me.sections).find(".tbody").find('.ny1'); $yearMonth.each(function (index, item) {
-                    if ($(this).text() == startYM) { $(this).next('.dateTable').find('td').each((function (itx) { if ($(this).text().replace(/入住/g, '') == currentDateStart.getDate()) { $(this).trigger('click') } })) }
-                    if ($(this).text() == endYM) { $(this).next('.dateTable').find('td').each((function (itx) { if ($(this).text().replace(/离店.+?天/, '') == currentDateEnd.getDate()) { $(this).trigger('click') } })) }
+            },
+            _isLeapYear: function (year) {
+                return (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);
+            },
+            _initSelectDate: function (start, end) {
+                var me = this;
+                var currentDateStart = new Date(start);
+                var currentYearStart = currentDateStart.getFullYear();
+                var currentMonthStart = currentDateStart.getMonth();
+                var yfST = currentMonthStart + 1;
+                var startYM;
+                if (yfST < 10) {
+                    startYM = currentYearStart + '年' + '0' + yfST + '月';
+                } else {
+                    startYM = currentYearStart + '年' + yfST + '月';
+                }
+                var currentDateEnd = new Date(end);
+                var currentYearEnd = currentDateEnd.getFullYear();
+                var currentMonthEnd = currentDateEnd.getMonth();
+                var yfEd = currentMonthEnd + 1;
+                var endYM;
+                if (yfEd < 10) {
+                    endYM = currentYearEnd + '年' + '0' + yfEd + '月';
+                } else {
+                    endYM = currentYearEnd + '年' + yfEd + '月';
+                }
+                var $yearMonth = $(me.sections).find(".tbody").find('.ny1');
+                $yearMonth.each(function (index, item) {
+                    if ($(this).text() == startYM) {
+                        $(this).next('.dateTable').find('td').each((function (itx) {
+                            if ($(this).text().replace(/入住/g, '') == currentDateStart.getDate()) {
+                                $(this).trigger('click')
+                            }
+                        }
+                        ))
+                    }
+                    if ($(this).text() == endYM) {
+                        $(this).next('.dateTable').find('td').each((function (itx) {
+                            if ($(this).text().replace(/离店.+?天/, '') == currentDateEnd.getDate()) {
+                                $(this).trigger('click')
+                            }
+                        }
+                        ))
+                    }
                 })
             },
             _slider: function (id) {
-                var me = this; me.animateFunction = me.settings.animateFunction; if (me.animateFunction == "fadeToggle") { $(id).fadeToggle(); } else if (me.animateFunction == "slideToggle") { $(id).slideToggle(); } else if (me.animateFunction == "toggle") { $(id).toggle(); }
+                var me = this;
+                me.animateFunction = me.settings.animateFunction;
+                if (me.animateFunction == "fadeToggle") {
+                    $(id).fadeToggle();
+                } else if (me.animateFunction == "slideToggle") {
+                    $(id).slideToggle();
+                } else if (me.animateFunction == "toggle") {
+                    $(id).toggle();
+                }
             },
             _initselected: function () {
-                var me = this; me.comeColor = me.settings.comeColor; me.outColor = me.settings.outColor;
-                me.daysnumber = me.settings.daysnumber; me.controlDay = me.settings.controlDay;
-                var strDays = new Date().getDate(); var arry = []; var arry1 = [];
+                var me = this;
+                me.comeColor = me.settings.comeColor;
+                me.outColor = me.settings.outColor;
+                me.daysnumber = me.settings.daysnumber;
+                me.controlDay = me.settings.controlDay;
+                var strDays = new Date().getDate();
+                var arry = [];
+                var arry1 = [];
                 var tds = $(me.sections).find('.dateTable').eq(0).find('td');
                 tds.each(function (index, element) {
                     if ($(this).text() == strDays) {
@@ -90,18 +182,34 @@
                         } else {
                             $(".dateTable").eq(1).find("td").each(function (index, el) {
                                 if ($(this).text() != "") {
-                                    $(this).append('</br><p class="rz">离店</p>'); return false;
+                                    $(this).append('</br><p class="rz">离店</p>');
+                                    return false;
                                 }
                             });
                         }
                         me._checkColor(me.comeColor, me.outColor)
                     }
                 })
-                $(me.sections).find('.tbody').find('td').each(function (index, element) { if ($(this).text() != '') { arry.push(element); } }); for (var i = 0; i < strDays - 1; i++) { $(arry[i]).css('color', '#ccc'); }
+                $(me.sections).find('.tbody').find('td').each(function (index, element) {
+                    if ($(this).text() != '') {
+                        arry.push(element);
+                    }
+                });
+                for (var i = 0; i < strDays - 1; i++) {
+                    $(arry[i]).css('color', '#ccc');
+                }
                 if (me.controlDay && me.daysnumber) {
-                    for (var i = strDays - 1; i < strDays + (+me.daysnumber); i++) { arry1.push(arry[i]) }
-                    for (var i = strDays + (+me.daysnumber); i < $(arry).length; i++) { $(arry[i]).css('color', '#ccc') }
-                } else { for (var i = strDays - 1; i < $(arry).length; i++) { arry1.push(arry[i]) } }
+                    for (var i = strDays - 1; i < strDays + (+me.daysnumber); i++) {
+                        arry1.push(arry[i])
+                    }
+                    for (var i = strDays + (+me.daysnumber); i < $(arry).length; i++) {
+                        $(arry[i]).css('color', '#ccc')
+                    }
+                } else {
+                    for (var i = strDays - 1; i < $(arry).length; i++) {
+                        arry1.push(arry[i])
+                    }
+                }
                 me._selectDate(arry1)
             },
             _checkColor: function (comeColor, outColor) {
@@ -109,10 +217,16 @@
                 var rz = $(me.sections).find('.rz');
                 for (var i = 0; i < rz.length; i++) {
                     if (rz.eq(i).text() == "入住") {
-                        rz.eq(i).closest('td').css({ 'background': comeColor, 'color': '#fff' });
+                        rz.eq(i).closest('td').css({
+                            'background': comeColor,
+                            'color': '#fff'
+                        });
                     } else {
                         if (me.settings.type != 'singleDay') {
-                            rz.eq(i).closest('td').css({ 'background': outColor, 'color': '#fff' });
+                            rz.eq(i).closest('td').css({
+                                'background': outColor,
+                                'color': '#fff'
+                            });
                         }
 
                     }
@@ -136,16 +250,27 @@
                 var second;
                 $(arry1).on('click', function (index) {
                     if ($(me.sections).hasClass('singleDay')) {
-                        $(arry1).css({ 'background': '#fff', 'color': '#000' });
-                        $(this).css({ 'background': me.comeColor, 'color': '#fff' });
+                        $(arry1).css({
+                            'background': '#fff',
+                            'color': '#000'
+                        });
+                        $(this).css({
+                            'background': me.comeColor,
+                            'color': '#fff'
+                        });
                         var e = $(this).text().replace(/[^0-9]/ig, "");
                         var c, d;
                         var a = new Array();
                         var b = new Array();
                         var f;
                         var same = $(this).parents('table').prev('p').text().replace(/[^0-9]/ig, "").split('');
-                        for (var i = 0; i < 4; i++) { a.push(same[i]); }
-                        c = a.join(''); for (var j = 4; j < 6; j++) { b.push(same[j]); }
+                        for (var i = 0; i < 4; i++) {
+                            a.push(same[i]);
+                        }
+                        c = a.join('');
+                        for (var j = 4; j < 6; j++) {
+                            b.push(same[j]);
+                        }
                         d = b.join('');
                         f = c + '-' + d + '-' + e;
                         me.settings.callback(f);
@@ -156,16 +281,30 @@
                         $(me.sections).find('.hover').remove();
                         $(me.sections).find('.tbody').find('p').remove('.rz');
                         $(me.sections).find('.tbody').find('br').remove();
-                        $(arry1).css({ 'background': '#fff', 'color': '#000' });
+                        $(arry1).css({
+                            'background': '#fff',
+                            'color': '#000'
+                        });
                         $(this).append('<p class="rz">入住</p>')
-                        first = $(arry1).index($(this)); me._checkColor(me.comeColor, me.outColor)
+                        first = $(arry1).index($(this));
+                        me._checkColor(me.comeColor, me.outColor)
                         flag = 1;
                     } else if (flag == 1) {
-                        flag = 0; second = $(arry1).index($(this))
-                        sum = Math.abs(second - first); if (sum == 0) { sum = 1; }
+                        flag = 0;
+                        second = $(arry1).index($(this))
+                        sum = Math.abs(second - first);
+                        if (sum == 0) {
+                            sum = 1;
+                        }
                         if (first < second) {
                             $(this).append('<p class="rz">离店</p>')
-                            first = first + 1; for (first; first < second; first++) { $(arry1[first]).css({ 'background': me.comeoutColor, 'color': '#fff' }); }
+                            first = first + 1;
+                            for (first; first < second; first++) {
+                                $(arry1[first]).css({
+                                    'background': me.comeoutColor,
+                                    'color': '#fff'
+                                });
+                            }
                         } else if (first == second) {
                             $(me.sections).find('.rz').text('入住');
                             $(this).append('<p class="rz">离店</p>');
@@ -176,46 +315,104 @@
                             var b = new Array();
                             var f;
                             var same = $(this).parents('table').prev('p').text().replace(/[^0-9]/ig, "").split('');
-                            for (var i = 0; i < 4; i++) { a.push(same[i]); }
-                            c = a.join(''); for (var j = 4; j < 6; j++) { b.push(same[j]); }
+                            for (var i = 0; i < 4; i++) {
+                                a.push(same[i]);
+                            }
+                            c = a.join('');
+                            for (var j = 4; j < 6; j++) {
+                                b.push(same[j]);
+                            }
                             d = b.join('');
                             f = c + '-' + d + '-' + e;
                             $("#startDate").val(f);
                         } else if (first > second) {
-                            $(me.sections).find('.rz').text('离店'); $(this).append('<p class="rz">入住</p>')
-                            second = second + 1; for (second; second < first; second++) { $(arry1[second]).css({ 'background': me.comeoutColor, 'color': '#fff' }); }
+                            $(me.sections).find('.rz').text('离店');
+                            $(this).append('<p class="rz">入住</p>')
+                            second = second + 1;
+                            for (second; second < first; second++) {
+                                $(arry1[second]).css({
+                                    'background': me.comeoutColor,
+                                    'color': '#fff'
+                                });
+                            }
                         }
                         $(me.sections).find('.rz').each(function (index, element) {
                             if ($(this).text() == '离店') {
                                 $(this).parent('td').append('<span class="hover">' + sum + '天</span>')
                                 $(this).parent('td').css('position', 'relative');
                             }
-                        }); $('.hover').css({ 'position': 'absolute', 'left': '-17px', 'top': '0px' })
+                        });
+                        $('.hover').css({
+                            'position': 'absolute',
+                            'left': '-17px',
+                            'top': '0px',
+                            right: '-17px'
+                        })
+                        if($('.hover').parents('td').index() ==0){
+                            $('.hover').css({
+                                'left': 'auto'
+                            })
+                        }
                         me._slider('firstSelect')
                         $(me.sections).find('.tbody .rz').each(function (index, element) {
                             if ($(this).text() == '入住') {
-                                var day = parseInt($(this).parent().text().replace(/[^0-9]/ig, ""))
-                                var startDayArrays = $(this).parents('table').prev('p').text().split(''); var startDayArrayYear = []; var startDayArrayMonth = []; var startDayYear = ""; var startDayMonth = ""; for (var i = 0; i < 4; i++) { var select = i; startDayArrayYear.push(startDayArrays[select]) }
-                                startDayYear = startDayArrayYear.join(''); for (var i = 5; i < 7; i++) { startDayArrayMonth.push(startDayArrays[i]) }
-                                startDayMonth = startDayArrayMonth.join(''); $('#startDate').val(startDayYear + '-' + startDayMonth + '-' + day)
+                                var day = parseInt($(this).parent().text())
+                                day = day < 10 ? '0' + day : day;
+                                var startDayArrays = $(this).parents('table').prev('p').text().split('');
+                                var startDayArrayYear = [];
+                                var startDayArrayMonth = [];
+                                var startDayYear = "";
+                                var startDayMonth = "";
+                                for (var i = 0; i < 4; i++) {
+                                    var select = i;
+                                    startDayArrayYear.push(startDayArrays[select])
+                                }
+                                startDayYear = startDayArrayYear.join('');
+                                for (var i = 5; i < 7; i++) {
+                                    startDayArrayMonth.push(startDayArrays[i])
+                                }
+                                startDayMonth = startDayArrayMonth.join('');
+                                $('#startDate').val(startDayYear + '-' + startDayMonth + '-' + day)
                             }
+                            console.log($('#startDate').val())
                             if ($(this).text() == '离店') {
-                                var day = parseInt($(this).parent().text().replace(/离店.+?天/, "")); var endDayArrays = $(this).parents('table').prev('p').text().split(''); var endDayArrayYear = []; var endDayArrayMonth = []; var endDayYear = ""; var endDayMonth = ""; for (var i = 0; i < 4; i++) { endDayArrayYear.push(endDayArrays[i]) }
-                                endDayYear = endDayArrayYear.join(''); for (var i = 5; i < 7; i++) { endDayArrayMonth.push(endDayArrays[i]) }
+                                var day = parseInt($(this).parent().text());
+                                day = day < 10 ? '0' + day : day;
+                                var endDayArrays = $(this).parents('table').prev('p').text().split('');
+                                var endDayArrayYear = [];
+                                var endDayArrayMonth = [];
+                                var endDayYear = "";
+                                var endDayMonth = "";
+                                for (var i = 0; i < 4; i++) {
+                                    endDayArrayYear.push(endDayArrays[i])
+                                }
+                                endDayYear = endDayArrayYear.join('');
+                                for (var i = 5; i < 7; i++) {
+                                    endDayArrayMonth.push(endDayArrays[i])
+                                }
                                 endDayMonth = endDayArrayMonth.join('');
                                 $('#endDate').val(endDayYear + '-' + endDayMonth + '-' + day);
-                                if ($("#startDate").val() && parseInt($("#startDate").val().replace(/[^0-9]/ig, "")) == parseInt($("#endDate").val().replace(/[^0-9]/ig, ""))) {
-                                    var x = $('#startDate').val();
-                                    var a = new Date(x.replace(/-/g, "/"));
-                                    var b = new Date();
-                                    b = new Date(a.getTime() + 24 * 3600 * 1000);
-                                    var ye = b.getFullYear(); var mo = b.getMonth() + 1;
-                                    var da = b.getDate();
-                                    $('#endDate').val(ye + '-' + mo + '-' + da);
-                                }
+                                // if ($("#startDate").val() && parseInt($("#startDate").val().replace(/[^0-9]/ig, "")) == parseInt($("#endDate").val().replace(/[^0-9]/ig, ""))) {
+                                //     var x = $('#startDate').val();
+                                //     var a = new Date(x.replace(/-/g, "/"));
+                                //     var b = new Date();
+                                //     b = new Date(a.getTime() + 24 * 3600 * 1000);
+                                //     var ye = b.getFullYear();
+                                //     var mo = b.getMonth() + '1';
+                                //     var da = b.getDate();
+                                //     $('#endDate').val(ye + '-' + mo + '-' + da);
+                                // }
+                                console.log($('#endDate').val())
                             }
-                            startDayArrayYear = []; startDayArrayMonth = []; endDayArrayYear = []; endDayArrayMonth = [];
-                        }); var myweek = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]; var st = new Date($('#startDate').val()); var en = new Date($('#endDate').val()); $('.week').text(myweek[st.getDay()])
+                            startDayArrayYear = [];
+                            startDayArrayMonth = [];
+                            endDayArrayYear = [];
+                            endDayArrayMonth = [];
+                        });
+                        var myweek = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+                        var st = new Date($('#startDate').val());
+                        var en = new Date($('#endDate').val());
+                        $('.week').text(myweek[st.getDay()])
                         $('.week1').text(myweek[en.getDay()])
                         me._checkColor(me.comeColor, me.outColor)
                     }
@@ -223,16 +420,33 @@
             }
         }
         return calendarSwitch;
-    })();
+    }
+    )();
     $.fn.calendarSwitch = function (options) {
         return this.each(function () {
-            var me = $(this),
-                instance = me.data("calendarSwitch");
+            var me = $(this)
+                , instance = me.data("calendarSwitch");
             if (!instance) {
                 me.data("calendarSwitch", (instance = new calendarSwitch(me, options)));
             }
-            if ($.type(options) === "string") return instance[options]();
+            if ($.type(options) === "string")
+                return instance[options]();
         });
+    }
+        ;
+    $.fn.calendarSwitch.defaults = {
+        selectors: {
+            sections: "#calendar"
+        },
+        index: 4,
+        animateFunction: "toggle",
+        controlDay: false,
+        daysnumber: "90",
+        comeColor: "#2a2a2a",
+        outColor: "#2a2a2a",
+        comeoutColor: "#8f8f8f",
+        callback: "",
+        comfireBtn: '.comfire'
     };
-    $.fn.calendarSwitch.defaults = { selectors: { sections: "#calendar" }, index: 4, animateFunction: "toggle", controlDay: false, daysnumber: "90", comeColor: "blue", outColor: "red", comeoutColor: "#0cf", callback: "", comfireBtn: '.comfire' };
-})(jQuery);
+}
+)(jQuery);

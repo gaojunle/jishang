@@ -45,8 +45,10 @@ a {
 }
 .jq-alert .alert .content {
     padding: 0.3rem;
+    padding-bottom: .5rem;
     font-size: 0.28rem;
     color: rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 .jq-alert .alert .content .prompt {
     width: 100%;
@@ -117,10 +119,10 @@ a {
     background-color: #f3f3f3;
 }
 .jq-alert .alert .fd-btn a.confirm {
-    color: #2196f3;
+    color: #2a2a2a;
 }
 .jq-alert .alert .fd-btn a.confirm:active {
-    background-color: #2196f3;
+    background-color: #2a2a2a;
     color: #fff;
 }
 .jq-toast {

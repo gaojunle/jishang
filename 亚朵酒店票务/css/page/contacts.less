@@ -1,125 +1,139 @@
-@import '../lib/common.css';
+@import "../lib/common.css";
 @lineGray: rgba(216, 216, 216, 0.25);
 @cBlack: #2a2a2a;
 
 body {
-  color: @lineGray
+    color: @lineGray;
 }
 
 .general_contacts {
-  .contacts_list {
-    .item {
-      background: white;
-      padding: 0px .55rem;
-      margin-bottom: .2rem;
+    .contacts_list {
+        .item {
+            background: white;
+            padding: 0px 0.55rem;
+            margin-bottom: 0.2rem;
 
-      .info {
-        padding: .3rem 0px .15rem;
-        border-bottom: 1px solid @lineGray;
+            .info {
+                padding: 0.3rem 0px 0.15rem;
+                border-bottom: 1px solid @lineGray;
 
-        p {
-          line-height: 1.9;
-          font-size: .24rem;
+                p {
+                    line-height: 1.9;
+                    font-size: 0.24rem;
+                }
+            }
+
+            .ops {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.3rem 0px;
+
+                > span {
+                    flex: 1;
+                    font-size: 0.24rem;
+                    padding-left: 0.45rem;
+                    background: url(../../img/common/uncheck.png) 0px center no-repeat;
+                    background-size: auto 0.32rem;
+                    text-align: left;
+
+                    &.on {
+                        background: url(../../img/common/checked.png) 0px center no-repeat;
+                        background-size: auto 0.32rem;
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                    background-color: rgb(42, 42, 42);
+                    width: 1rem;
+                    height: 0.4rem;
+                    line-height: 0.4rem;
+                    color: white;
+                    border-radius: 0.4rem;
+                    font-size: 0.24rem;
+                    text-align: center;
+                    margin-left: 0.15rem;
+                }
+            }
         }
-      }
+    }
 
-      .ops {
+    .btn_box {
+        text-align: center;
+        padding-top: 0.35rem;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: .3rem 0px;
+        justify-content: center;
 
-        >span {
-          flex: 1;
-          font-size: .24rem;
-          padding-left: .45rem;
-          background: url(../../img/common/uncheck.png) 0px center no-repeat;
-          background-size: auto .32rem;
-          text-align: left;
+        .btn_default {
+            border: 1px solid rgba(42, 42, 42, 0.7);
+            border-radius: 0.5rem;
+            width: 5.22rem;
+            height: 0.64rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-          &.on {
-            background: url(../../img/common/checked.png) 0px center no-repeat;
-            background-size: auto .32rem;
-          }
+            > span {
+                font-size: 0.34rem;
+                padding-right: 0.05rem;
+            }
         }
-
-        a {
-          display: inline-block;
-          background-color: rgb(42, 42, 42);
-          width: 1rem;
-          height: .40rem;
-          line-height: .4rem;
-          color: white;
-          border-radius: .4rem;
-          font-size: .24rem;
-          text-align: center;
-          margin-left: .15rem;
-        }
-      }
     }
-  }
-
-  .btn_box {
-    text-align: center;
-    padding-top: .35rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .btn_default {
-      border: 1px solid rgba(42, 42, 42, .7);
-      border-radius: .5rem;
-      width: 5.22rem;
-      height: .64rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      >span {
-        font-size: .34rem;
-        padding-right: .05rem;
-      }
-    }
-  }
 }
 
 .edit_contacts {
-  padding: .55rem;
+    padding: 0.55rem;
 
-  .mform {
-    .pline {
-      line-height: 2.5;
-      border-bottom: 1px solid @lineGray;
-      margin-bottom: .2rem;
+    .mform {
+        .pline {
+            line-height: 2.5;
+            border-bottom: 1px solid @lineGray;
+            margin-bottom: 0.2rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            > span {
+                padding: 0px 0.3em;
+            }
+            label {
+                display: inline-block;
+                font-size: 0.24rem;
+                width: 1rem;
+                text-align: justify;
+                text-align-last: justify;
+                display: flex;
+                justify-content: space-between;
+                span{
+                  font-size: .24rem;
+                }
+            }
 
-      label {
-        font-size: .24rem;
-      }
-
-      input {
-        border: none;
-        outline: none;
-        font-size: .24rem;
-      }
+            input {
+                border: none;
+                outline: none;
+                font-size: 0.24rem;
+            }
+        }
     }
-  }
 
-  .btn-box {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    box-sizing: border-box;
+    .btn-box {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        box-sizing: border-box;
 
-    .btn_defualt {
-      display: inline-block;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: @cBlack;
-      height: .9rem;
-      font-size: .28rem;
-      color: white;
+        .btn_defualt {
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: @cBlack;
+            height: 0.9rem;
+            font-size: 0.28rem;
+            color: white;
+        }
     }
-  }
 }
