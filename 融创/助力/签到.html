@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>每日签到</title>
+    <meta name="keywords" content="签到" />
+    <meta name="description" content="签到" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/sign.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="sign-wrap">
+        <div class="summary">
+            <img class="mlogo" src="./img/sign/mlogo.png" alt="">
+            <div class="sum">
+                <img src="./img/sign/count_cirle.png" alt="">
+                <span class="sign_days">20</span>
+                <span class="title_days">已连续签到天数</span>
+            </div>
+            <a href="#" class="icon_rule show_rule"><img src="./img/sign/icon_rule.png" alt=""></a>
+        </div>
+
+        <div class="sign_box">
+            <div class="months">
+                <img class="prev" src="./img/sign/icon_left.png" alt="">
+                <span class="month">2020年3月</span>
+                <img class="next" src="./img/sign/icon_right.png" alt="">
+            </div>
+            <div class="calender-box">
+                <div class="calender">
+                    <div class="day-box">
+                        <div class="day signed">
+                            <img src="./img/sign/sign.png" alt="">
+                            <img src="./img/sign/sign_on.png" alt="">
+                        </div>
+                        <span>1日</span>
+                    </div>
+                    <div class="day-box">
+                        <div class="day">
+                            <img src="./img/sign/sign.png" alt="">
+                            <img src="./img/sign/sign_on.png" alt="">
+                        </div>
+                        <span>2日</span>
+                    </div>
+                    <div class="day-box">
+                        <div class="day">
+                            <img src="./img/sign/sign.png" alt="">
+                            <img src="./img/sign/sign_on.png" alt="">
+                        </div>
+                        <span>3日</span>
+                    </div>
+                    <div class="tmp"></div>
+                </div>
+            </div>
+            <div class="btns">
+                <a href="#" class="btn_xz"><img src="./img/sign/btn_xz.png" alt=""></a>
+                <a href="#" class="btn_sign signed">
+                    <img src="./img/sign/btn_sign.png" alt="">
+                    <img src="./img/sign/btn_sign_ok.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="ads">
+            <a href="#"><img src="./img/sign/ad.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="pop_box js_rule">
+        <div class="pop_cont">
+            <img class="pop_close" src="./img/common/icon_close.png" alt="">
+
+            <div class="pop_wraper">
+                <div class="ptitle">活动规则</div>
+                <p> 1.服务条款的接受与修改</p>
+                <p>1.1
+                    本协议是VIP会员与北京爱奇艺科技有限公司（下称“爱奇艺”）之间关于用户成为爱奇艺VIP会员且使用爱奇艺提供的VIP会员服务所订立的协议。本协议描述爱奇艺与VIP会员之间关于软件许可以及服务使用及相关方面的权利义务。“VIP会员”或“您”是指完成了成为爱奇艺VIP会员的全部程序（包括会员费用的支付、同意本协议全部内容等），且在遵守爱奇艺相关使用规则下使用爱奇艺提供的VIP会员服务的自然人。
+                </p>
+                <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+                <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+                <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+            </div>
+        </div>
+    </div>
+    <div class="pop_box pop_msg js_sign_suc">
+        <div class="pop_cont">
+            <img class="pop_close" src="./img/common/icon_close.png" alt="">
+
+            <div class="pop_text">
+                <div class="stype sign_1">
+                    <img class="icon_suc" src="./img/sign/sign_suc.png" alt="">
+                    <div class="sign_suc_text">今日已签到成功<br>明日继续加油</div>
+                </div>
+                <div class="stype sign_7days">
+                    <img class="icon_suc" src="./img/sign/lihe.png" alt="">
+                    <div class="sign_suc_text">已连续签到7天<br>恭喜获得惊喜礼包<br>请前往“我的优惠券”查看</div>
+                </div>
+                <div class="stype sign_month">
+                    <img class="icon_suc" src="./img/sign/lihe_big.png" alt="">
+                    <div class="sign_suc_text">已连续签到一整月<br>恭喜获得月度好礼<br>并点亮本月勋章</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+    <script>
+        //按月返回签到数据，用于前端显示
+        var signData = {
+            signDays: [1, 2, 3, 4, 5, 6, 7, 9, 10],//签到日期从1开始
+            giftDays: [7, 14, 21],//小礼（后台配置天签到可领礼物）
+            banusDay: [31]//大礼品，一般每月最后一天
+        }
+        var signStatus = 1;
+        var App = {
+            init: function () {
+                this.initData()
+                this.bindPopClose();
+                this.bindShow();
+            },
+            initData: function () {
+                var that = this;
+
+                $('.month').html(moment().format('YYYY年MM月'))
+
+                $('.months').find('.prev').click(function () {
+                    $('.month').html(moment($('.month').html(), 'YYYY年MM月').subtract('months', 1).format('YYYY年MM月'))
+                    that._createHtmlByMonth()
+                })
+                $('.months').find('.next').click(function () {
+                    $('.month').html(moment($('.month').html(), 'YYYY年MM月').add('months', 1).format('YYYY年MM月'));
+                    that._createHtmlByMonth()
+                })
+                this._createHtmlByMonth()
+            },
+            _createHtmlByMonth: function () {
+                var curMonth = moment($('.month').html(), 'YYYY年MM月');
+                var phtml = '';
+
+                for (var i = 1; i <= curMonth.daysInMonth(); i++) {
+                    console.log(signData.banusDay.indexOf(i));
+                    var isSignDay = signData.signDays.indexOf(i) > -1 ? 'signed' : '';//是否签到
+
+                    if (signData.banusDay.indexOf(i) > -1) {
+                        giftDay = '<img style="width:34px" src="./img/sign/gift_2.png" alt=""><img style="width:34px" src="./img/sign/gift_2.png" alt="">'
+                    } else if (signData.giftDays.indexOf(i) > -1) {
+                        giftDay = '<img  style="width:28px" src="./img/sign/gift_1.png" alt=""><img style="width:28px" src="./img/sign/gift_1.png" alt="">'
+                    } else {
+                        giftDay = '<img src="./img/sign/sign.png" alt=""><img src="./img/sign/sign_on.png" alt="">'
+                    }
+
+                    phtml += `<div class="day-box">
+                                <div class="day ${isSignDay}">
+                                    ${giftDay}
+                                </div>
+                                <span>${i}日</span>
+                            </div>`
+                }
+                if (i > 28) {
+                    phtml += '<div class="tmp"></div>'
+                }
+                $('.calender-box').html(`<div class="calender">${phtml}</div>`)
+            },
+            bindShow: function () {
+                $('.show_rule').click(function () {
+                    $('.js_rule').addClass('show')
+                    return false;
+                })
+                $('.btn_sign').click(function () {
+                    var $popBox = $('.js_sign_suc');
+                    $popBox.addClass('show').find('.stype').hide();
+                    switch (signStatus) {
+                        case 1:
+                            $popBox.find('.sign_1').show();
+                            break;
+                        case 2:
+                            $popBox.find('.sign_7days').show();
+                            break;
+                        case 3:
+                            $popBox.find('.sign_month').show();
+                            break;
+                    }
+                    signStatus++;
+                    if (signStatus == 4) {
+                        signStatus = 1;
+                    }
+                    return false;
+                })
+            },
+            bindPopClose: function () {
+                $('.pop_close').click(function () {
+                    $('.pop_box').removeClass('show')
+                    return false;
+                })
+            }
+        }
+        App.init();
+    </script>
+</body>
+
+</html>
