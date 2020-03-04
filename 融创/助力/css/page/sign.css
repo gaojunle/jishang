@@ -21,6 +21,7 @@
   position: absolute;
   left: 0px;
   top: 0px;
+  height: 100%;
   width: 100%;
 }
 .sign-wrap .summary .sum {
@@ -73,7 +74,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background: url(../../img/sign/circle_bg.png) 0px 30px no-repeat;
-  background-size: 100% 301px;
+  background-size: 100% 81%;
   padding: 0px 7px;
   box-sizing: border-box;
 }
@@ -210,3 +211,4 @@
   line-height: 1.8;
   padding-top: 32px;
 }
+/*# sourceMappingURL=./sign.css.map */

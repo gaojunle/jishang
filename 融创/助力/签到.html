@@ -112,11 +112,7 @@
     <script src="./js/lib/moment.min.js"></script>
     <script>
         //按月返回签到数据，用于前端显示
-        var signData = {
-            signDays: [1, 2, 3, 4, 5, 6, 7, 9, 10],//签到日期从1开始
-            giftDays: [7, 14, 21],//小礼（后台配置天签到可领礼物）
-            banusDay: [31]//大礼品，一般每月最后一天
-        }
+
         var signStatus = 1;
         var App = {
             init: function () {
@@ -128,23 +124,37 @@
                 var that = this;
 
                 $('.month').html(moment().format('YYYY年MM月'))
+                that.getMonthData();
 
+                //上下月事件
                 $('.months').find('.prev').click(function () {
                     $('.month').html(moment($('.month').html(), 'YYYY年MM月').subtract('months', 1).format('YYYY年MM月'))
-                    that._createHtmlByMonth()
+                    that.getMonthData();
                 })
                 $('.months').find('.next').click(function () {
                     $('.month').html(moment($('.month').html(), 'YYYY年MM月').add('months', 1).format('YYYY年MM月'));
-                    that._createHtmlByMonth()
+                    that.getMonthData();
                 })
-                this._createHtmlByMonth()
+
             },
-            _createHtmlByMonth: function () {
+            getMonthData: function () {
+                var that = this;
+                var signData = {
+                    signDays: [1, 2, 3, 4, 5, 6, 7, 9, 10],//已签到日期从1开始
+                    giftDays: [7, 14, 21],//小礼（后台配置天签到可领礼物）
+                    banusDay: [31]//大礼品，一般每月最后一天
+                };
+                //模拟异步调用
+                setTimeout(function () {
+                    that._createHtmlByMonth(signData)
+                }, 100)
+            },
+            _createHtmlByMonth: function (signData) {
                 var curMonth = moment($('.month').html(), 'YYYY年MM月');
                 var phtml = '';
 
                 for (var i = 1; i <= curMonth.daysInMonth(); i++) {
-                    console.log(signData.banusDay.indexOf(i));
+                    //console.log(signData.banusDay.indexOf(i));
                     var isSignDay = signData.signDays.indexOf(i) > -1 ? 'signed' : '';//是否签到
 
                     if (signData.banusDay.indexOf(i) > -1) {

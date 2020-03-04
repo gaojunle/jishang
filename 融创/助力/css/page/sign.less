@@ -1,25 +1,32 @@
 @cBlack: #2a2a2a;
 @lineGray: rgba(216, 216, 216, 0.25);
+
 .ab_bg {
     position: absolute;
     left: 0px;
     top: 0px;
     width: 100%;
 }
+
 .sign-wrap {
     padding: 9px 22px;
     box-sizing: border-box;
     max-width: 500px;
     margin: 0px auto;
+
     .summary {
         position: relative;
         height: 95px;
         display: flex;
         justify-content: center;
         align-items: center;
+
         .mlogo {
             .ab_bg;
+            height: 100%;
+            width: 100%;
         }
+
         .sum {
             position: relative;
             display: flex;
@@ -27,9 +34,11 @@
             align-items: center;
             flex-direction: column;
             z-index: 1;
+
             img {
                 width: 56px;
             }
+
             .sign_days {
                 position: absolute;
                 font-size: 28px;
@@ -37,44 +46,52 @@
                 line-height: 0;
                 top: 22px;
             }
+
             .title_days {
                 text-align: center;
                 color: rgb(255, 255, 255);
                 line-height: 1.5;
             }
         }
+
         .icon_rule {
             position: absolute;
             right: 12px;
             bottom: 12px;
+
             img {
                 width: 48px;
             }
         }
     }
+
     .sign_box {
         .months {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 0px 20px 0px;
+
             img {
                 width: 7px;
             }
+
             .month {
                 font-size: 15px;
                 color: rgb(42, 42, 42);
                 line-height: 0;
             }
         }
+
         .calender {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             background: url(../../img/sign/circle_bg.png) 0px 30px no-repeat;
-            background-size: 100% 301px;
+            background-size: 100% 81%;
             padding: 0px 7px;
             box-sizing: border-box;
+
             .day-box {
                 display: inline-block;
                 width: calc(100% / 7);
@@ -86,9 +103,11 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
                     img {
                         display: inline-block;
                         width: 26px;
+
                         &:nth-last-of-type(1) {
                             display: none;
                         }
@@ -97,43 +116,53 @@
                     &.signed {
                         img {
                             display: none;
+
                             &:nth-last-of-type(1) {
                                 display: inline-block;
                             }
                         }
                     }
                 }
+
                 span {
                     font-size: 12px;
                     color: rgb(143, 143, 143);
                 }
             }
+
             .tmp {
                 flex: 1;
                 background: #f4f4f4;
             }
         }
+
         .btns {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-top: 25px;
+
             a {
                 width: 47%;
+
                 img {
                     width: 100%;
                 }
             }
+
             .btn_sign {
                 img {
                     display: block;
+
                     &:nth-last-of-type(1) {
                         display: none;
                     }
                 }
+
                 &.signed {
                     img {
                         display: none;
+
                         &:nth-last-of-type(1) {
                             display: block;
                         }
@@ -142,8 +171,10 @@
             }
         }
     }
+
     .ads {
         padding: 25px 0px;
+
         a {
             img {
                 width: 100%;
@@ -213,13 +244,17 @@
     .pop_cont {
         width: 225px;
         padding: 50px 0px;
+
         .pop_text {
             text-align: center;
+
             .stype {
                 display: none;
+
                 .icon_suc {
-                  width: 72px;
-              }
+                    width: 72px;
+                }
+
                 &.sign_1 {
                     .icon_suc {
                         width: 99px;
