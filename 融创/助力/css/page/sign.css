@@ -211,4 +211,7 @@
   line-height: 1.8;
   padding-top: 32px;
 }
+.pop_msg .pop_cont .pop_text .sign_suc_text span {
+  color: #e74744;
+}
 /*# sourceMappingURL=./sign.css.map */
