@@ -40,12 +40,19 @@
   font-size: 28px;
   color: #e74744;
   line-height: 0;
-  top: 22px;
+  top: 28px;
+  background: white;
+  width: 36px;
+  height: 14px;
+  text-align: center;
+  border-radius: 50%;
 }
 .sign-wrap .summary .sum .title_days {
   text-align: center;
   color: #ffffff;
-  line-height: 1.5;
+  line-height: 1;
+  font-size: 13px;
+  padding-top: 6px;
 }
 .sign-wrap .summary .icon_rule {
   position: absolute;
@@ -82,6 +89,7 @@
   display: inline-block;
   width: calc(100% / 7);
   text-align: center;
+  z-index: 2;
 }
 .sign-wrap .sign_box .calender .day-box .day {
   height: 44px;
@@ -110,6 +118,7 @@
 .sign-wrap .sign_box .calender .tmp {
   flex: 1;
   background: #f4f4f4;
+  margin-left: -15px;
 }
 .sign-wrap .sign_box .btns {
   display: flex;
