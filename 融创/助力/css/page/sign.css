@@ -200,7 +200,7 @@
 }
 .pop_msg .pop_cont {
   width: 225px;
-  padding: 50px 0px;
+  padding: 32px 0px;
 }
 .pop_msg .pop_cont .pop_text {
   text-align: center;
@@ -217,10 +217,15 @@
 .pop_msg .pop_cont .pop_text .sign_suc_text {
   font-size: 15px;
   color: #e74744;
-  line-height: 1.8;
-  padding-top: 32px;
+  line-height: 1.7;
+  padding-top: 20px;
 }
 .pop_msg .pop_cont .pop_text .sign_suc_text span {
   color: #e74744;
 }
-/*# sourceMappingURL=./sign.css.map */
+.pop_msg .pop_cont .pop_text .sign_btn {
+  padding-top: 22px;
+}
+.pop_msg .pop_cont .pop_text .sign_btn img {
+  width: 155px;
+}
