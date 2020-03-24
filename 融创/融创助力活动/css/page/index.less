@@ -1,0 +1,360 @@
+@import '../lib/common.css';
+@cBlack: #2a2a2a;
+@lineGray: rgba(216, 216, 216, 0.25);
+
+.banner_box {
+  position: relative;
+
+  .banner {
+    width: 100%;
+  }
+
+  .show_rule {
+    position: absolute;
+    right: 0px;
+    top: .43rem;
+    width: 1.3rem;
+  }
+}
+
+.cont {
+  position: relative;
+  border-radius: .2rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
+  width: 6.9rem;
+  margin: 0px auto;
+  margin-top: -0.65rem;
+  padding: 0px .58rem;
+  box-sizing: border-box;
+  padding-bottom: .5rem;
+
+  .avt {
+    text-align: center;
+
+    >img {
+      width: 1.26rem;
+      margin-top: -0.64rem;
+    }
+  }
+
+  .countdown {
+    text-align: center;
+
+    .st {
+      font-size: .3rem;
+      color: rgb(209, 0, 0);
+    }
+
+    .people {
+      padding-top: .3rem;
+      padding-bottom: .2rem;
+    }
+
+    .countdown_num {
+      padding-bottom: .4rem;
+
+      >span {
+        background: @cBlack;
+        color: white;
+        font-size: .24rem;
+        padding: 1px 1px;
+        border-radius: .05rem;
+        margin: 0px 2px;
+      }
+    }
+
+    .yaoqing {
+      font-size: .3rem;
+      padding-bottom: .3rem;
+      font-weight: bold;
+
+      .st {
+        font-size: .32rem;
+      }
+    }
+  }
+
+  .banus_list {
+    padding-bottom: .35rem;
+
+    >img {
+      width: 100%;
+      margin-bottom: .15rem;
+    }
+  }
+
+  .ops {
+    text-align: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: @cBlack;
+      color: white;
+      font-size: .34rem;
+      padding: .1rem 0px;
+      border-radius: 1rem;
+    }
+  }
+
+  .ops_yq {
+    width: 5.74rem;
+    height: .66rem;
+    background: url(../../img/btn_zhuli.png) 0px 0px no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+
+    >a {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  .guajian {
+    position: absolute;
+    bottom: -0.56rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5.75rem;
+    box-sizing: border-box;
+    padding: 0px .35rem;
+
+    >img {
+      width: .15rem;
+    }
+  }
+}
+
+.zhuli {
+  width: 6.9rem;
+  margin: 0px auto;
+  background: white;
+  border-radius: .2rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
+  padding: .44rem .58rem;
+  box-sizing: border-box;
+  margin-top: .32rem;
+  margin-bottom: .5rem;
+
+  .yq_num {
+    text-align: center;
+    padding-bottom: .4rem;
+
+    .st {
+      font-size: .28rem;
+      color: rgb(209, 0, 0);
+    }
+  }
+
+  .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .2rem;
+
+    &:nth-last-of-type(1) {
+      padding-bottom: 0rem;
+    }
+
+    >img {
+      width: 1rem;
+    }
+  }
+}
+
+.pop_box {
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+
+  .pop_close {
+    position: absolute;
+    right: .2rem;
+    top: .2rem;
+    width: .24rem;
+  }
+
+  .pop_cont {
+    position: relative;
+
+    border-radius: .1rem;
+    background-color: white;
+
+    .pop_wraper {
+      height: 100%;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      padding: .1rem 0px;
+      width: 6.16rem;
+      height: 8.48rem;
+      padding: .4rem .5rem .5rem .6rem;
+      box-sizing: border-box;
+    }
+
+    .ptitle {
+      font-size: .3rem;
+      color: rgb(143, 143, 143);
+      text-align: center;
+      padding-bottom: .3rem;
+    }
+
+    p {
+      color: rgb(143, 143, 143);
+      line-height: 2.26;
+      font-size: .24rem;
+    }
+  }
+}
+
+.pop_share {
+  .share_zhuli {
+    width: 5.47rem;
+    position: absolute;
+    top: .4rem;
+    right: .5rem;
+  }
+
+  .share_zhidao {
+    width: 2.34rem;
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    margin-left: -1.27rem;
+  }
+}
+
+.pop_msg {
+  .pop_cont {
+    width: 5.24rem;
+    padding: .55rem;
+    height: auto;
+    overflow-y: initial;
+    margin-top: -30%;
+
+    .msg_ok {
+      text-align: center;
+
+      >img {
+        width: 2.4rem;
+      }
+    }
+
+    .msg {
+      text-align: center;
+      font-size: .3rem;
+      padding-top: .2rem;
+      padding-bottom: .66rem;
+    }
+
+    .ops {
+      text-align: center;
+
+      .btn_canjia {
+        font-size: .34rem;
+        color: white;
+        background: @cBlack;
+        border-radius: 1rem;
+        padding: .1rem .3rem;
+      }
+    }
+
+    .pop_close {
+      position: absolute;
+      width: .6rem;
+      bottom: -1rem;
+      left: 50%;
+      margin-left: -0.3rem;
+      top: auto;
+      z-index: 11;
+    }
+  }
+}
+
+.pop_address {
+  .pop_cont {
+    width: 5.24rem;
+    padding: .55rem;
+    height: initial;
+    overflow-y: initial;
+
+    .addr_title {
+      text-align: center;
+      padding-bottom: .2rem;
+      font-size: .3rem;
+    }
+
+    form {
+      padding-bottom: 1rem;
+    }
+
+    .fline {
+      padding-top: .55rem;
+      border-bottom: 1px solid @lineGray;
+      padding-bottom: .15rem;
+
+      label {
+        color: rgba(42, 42, 42, 0.4);
+        padding-right: .08rem;
+      }
+
+      input {
+        font-size: .24rem;
+        border: none;
+      }
+    }
+
+    .msg {
+      text-align: center;
+      font-size: .3rem;
+      padding-top: .2rem;
+      padding-bottom: .66rem;
+    }
+
+    .ops {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .btn_canjia {
+        display: inline-block;
+        font-size: .34rem;
+        color: white;
+        width: 2.5rem;
+        height: .68rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: @cBlack;
+        border-radius: 1rem;
+      }
+    }
+
+    .pop_close {
+      position: absolute;
+      width: .6rem;
+      bottom: -1rem;
+      left: 50%;
+      margin-left: -0.3rem;
+      top: auto;
+      z-index: 11;
+    }
+  }
+}
