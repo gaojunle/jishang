@@ -55,6 +55,7 @@
         </div>
     </form>
     <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
     <script src="./js/lib/popups.js"></script>
     <script>
         var _dialog = null;
@@ -79,14 +80,7 @@
 
                 //验证弹层
                 $('.js-submit').click(function () {
-                    _dialog = dialog({
-                        title: ' ',
-                        backdropOpacity: '0.3',
-                        content: '<div style="text-align:center;padding:30px">恭喜您，<br>信息已提交成功！</div>'
-                    }).showModal();
-                    $('.icon_close').click(function () {
-                        _dialog.close().remove();
-                    })
+                    location.href = "02首页.html"
                     return false;
                 })
 

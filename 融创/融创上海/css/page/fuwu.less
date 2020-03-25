@@ -1,0 +1,31 @@
+@import '../lib/common.less';
+
+.fw-box {
+    .fw-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        a {
+            margin-bottom: 0.13rem;
+            position: relative;
+            &.rec{
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: .36rem;
+                    height: .36rem;
+                    right: .1rem;
+                    top: -0.18rem;
+                    background: url(../../img/fuwu/icon-rec.png) 0px 0px no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+
+        img {
+            width: 1.5rem;
+        }     
+    }
+}

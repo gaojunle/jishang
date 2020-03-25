@@ -19,16 +19,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
-body {
-    min-width: 320px;
-    font-size: 0.14rem;
-    background: #f4f4f4;
-    text-rendering: optimizeLegibility;
-    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    min-height: 100%;
-    padding-bottom: 50px;
-}
-
 table {
     margin: auto;
     text-align: left;
