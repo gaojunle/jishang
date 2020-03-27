@@ -211,17 +211,58 @@ body .flex-full-tmp {
   top: 10px;
   right: 0px;
 }
+body {
+  padding-top: 0.4rem;
+}
+.my-box {
+  background: url(../../img/my/myBg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  margin: 0rem 0.4rem;
+  border-radius: 0.1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0.25rem 0.35rem;
+}
+.my-box .info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.my-box .info .avt {
+  width: 1.48rem;
+  margin-right: 0.2rem;
+}
+.my-box .info .name {
+  font-size: 18px;
+  color: #2a2a2a;
+  padding-bottom: 0.1rem;
+}
+.my-box .info .phone {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.my-box .desc {
+  font-size: 12px;
+  color: #8f8f8f;
+  padding-top: 0.4rem;
+}
+.my-box .scode {
+  width: 0.92rem;
+}
 .banner-swiper {
-  width: 100%;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0.2rem 0.4rem;
 }
 .banner-swiper .swiper-slide img {
   width: 100%;
 }
 .banner-swiper .swiper-pagination-bullets {
-  bottom: 30px;
+  bottom: 5px;
 }
 .banner-swiper .swiper-pagination-bullet {
   width: 4px;
@@ -234,112 +275,8 @@ body .flex-full-tmp {
 .banner-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
   opacity: 1;
 }
-.ads-swiper {
-  width: calc(100% - 40px);
-  position: relative;
-  overflow: hidden;
-  margin: 0px 20px;
-  padding-top: 50px;
-}
-.ads-swiper .swiper-slide img {
-  width: 100%;
-}
-.ads-swiper .swiper-pagination-bullets {
-  bottom: 4px;
-}
-.ads-swiper .swiper-pagination-bullet {
-  width: 4px;
-  height: 4px;
-  display: inline-block;
-  border-radius: 100%;
-  background: white;
-  opacity: 0.5;
-}
-.ads-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 1;
-}
-.scale-swiper {
-  width: calc(100% + 20px);
-  margin-left: -10px;
-  position: relative;
-  overflow: hidden;
-}
-.scale-swiper .swiper-slide img {
-  width: 100%;
-}
-.scale-swiper .swiper-slide a {
-  color: #8f8f8f;
-}
-.scale-swiper .swiper-slide .desc {
-  display: none;
-  line-height: 1.667;
-  font-size: 12px;
-  padding-top: 10px;
-}
-.scale-swiper .swiper-slide .desc .dtitle {
-  color: #2a2a2a;
-  font-size: 13px;
-}
-.scale-swiper .swiper-slide .desc .txt {
-  color: #8f8f8f;
-}
-.scale-swiper .swiper-slide {
-  text-align: center;
-  transition: 300ms;
-  transform: scale(0.8);
-}
-.scale-swiper .swiper-slide-active,
-.scale-swiper .swiper-slide-duplicate-active {
-  transform: scale(1);
-}
-.scale-swiper .swiper-slide-active .desc,
-.scale-swiper .swiper-slide-duplicate-active .desc {
-  display: block;
-}
-.carousel-swiper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.carousel-swiper .swiper-slide {
-  width: 3.6rem;
-  border-radius: 5px;
-}
-.carousel-swiper .swiper-slide img {
-  width: 100%;
-  height: 2.44rem;
-  border-radius: 5px;
-}
-.carousel-swiper .swiper-slide .desc {
-  line-height: 1.667;
-  font-size: 12px;
-  padding-top: 0.12rem;
-}
-.carousel-swiper .swiper-slide .desc .dtitle {
-  color: #8f8f8f;
-}
-.carousel-swiper .swiper-slide .desc .txt {
-  color: #2a2a2a;
-  font-size: 13px;
-}
-.carousel-swiper .swiper-pagination-bullets {
-  bottom: 30px;
-}
-.carousel-swiper .swiper-pagination-bullet {
-  width: 4px;
-  height: 4px;
-  display: inline-block;
-  border-radius: 100%;
-  background: white;
-  opacity: 0.5;
-}
-.carousel-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 1;
-}
 .info-box {
   position: relative;
-  z-index: 10;
-  margin-top: -0.4rem;
 }
 .info-box .main-navs {
   display: flex;
@@ -347,7 +284,7 @@ body .flex-full-tmp {
   align-items: center;
   background: white;
   border-radius: 0.1rem;
-  padding: 0.26rem 0.2rem;
+  padding: 0.26rem 0.35rem;
 }
 .info-box .main-navs a {
   display: block;
@@ -421,212 +358,46 @@ body .flex-full-tmp {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.activity .hdimg {
-  width: 100%;
+.my-list {
+  background: white;
+  border-radius: 0.1rem;
+  margin: 0.2rem 0.4rem;
+  padding: 0.26rem 0.35rem;
 }
-.activity .atitle {
-  font-size: 15px;
-  line-height: 1.667;
-  padding-top: 8px;
+.my-list h3 {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  font-size: 17px;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.12rem;
 }
-.activity .ainfo {
-  font-size: 12px;
-  color: #8f8f8f;
-  line-height: 1.667;
-}
-.live .hdimg {
-  width: 100%;
-}
-.live .atitle {
-  font-size: 15px;
-  line-height: 1.667;
-}
-.live .ainfo {
-  font-size: 12px;
-  color: #8f8f8f;
-  line-height: 1.667;
-}
-.fuli {
-  border-radius: 5px;
-  overflow: hidden;
-}
-.fuli .grid {
+.my-list a {
   display: flex;
   justify-content: space-between;
-}
-.fuli .grid .r1 {
-  margin-right: 0.15rem;
-  width: 100%;
-}
-.fuli .grid .r1 img {
-  display: block;
-  width: 100%;
-  height: 3rem;
-}
-.fuli .grid .r2 {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.fuli .grid .r2 img {
-  display: block;
-  height: 1.42rem;
-  margin-bottom: 0.15rem;
-}
-.fuli .grid .r2 img:nth-last-of-type(1) {
-  margin-bottom: 0px;
-}
-.quanyi .quanyi-list {
-  display: flex;
-  justify-content: space-between;
-}
-.quanyi .quanyi-list a {
-  display: block;
-  width: 23%;
-}
-.quanyi .quanyi-list a img {
-  width: 100%;
-  height: 100%;
-}
-.xsqd .xsqd-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.xsqd .xsqd-list a {
-  display: block;
-  width: 50%;
-  margin-bottom: 25px;
-  line-height: 1.9;
-}
-.xsqd .xsqd-list a .avt {
-  width: 3.16rem;
-  height: 3.16rem;
-}
-.xsqd .xsqd-list a .desc {
-  width: 96%;
-  font-size: 12px;
-  color: #8f8f8f;
-  line-height: 1.667;
-  padding-top: 6px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.xsqd .xsqd-list a .money {
-  display: flex;
-  align-items: baseline;
-  padding-top: 0.1rem;
-}
-.xsqd .xsqd-list a .money span {
-  font-size: 15px;
-  line-height: 1;
-}
-.xsqd .xsqd-list a .money img {
-  width: 0.22rem;
-  margin-right: 0.08rem;
-  margin-bottom: -1px;
-}
-.hhr .hhr-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.hhr .hhr-list img {
-  width: 2.1rem;
-  height: 2.1rem;
-}
-.hhr .hhr-list .info {
-  text-align: center;
-}
-.hhr .hhr-list .info .title {
-  font-size: 13px;
-  padding-top: 0.2rem;
-  padding-bottom: 0.12rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.hhr .hhr-list .info .dec {
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 2.1rem;
-  color: #8f8f8f;
-}
-.guixin .grid a {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.guixin .grid a:nth-last-of-type(1) {
-  margin-bottom: 0px;
-}
-.guixin .grid a .avt {
-  width: 1.7rem;
-  height: 1.7rem;
-}
-.guixin .grid a .info {
-  font-size: 12px;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 1.7;
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
-}
-.guixin .grid a .info .title {
-  color: #5d5d5d;
-  padding-bottom: 3px;
-  font-size: 13px;
-}
-.guixin .grid a .info .txt {
-  color: #a0a0a0;
-  box-sizing: border-box;
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.guixin .grid a .watches {
-  display: flex;
   align-items: center;
-  line-height: 0.5;
-  color: #a0a0a0;
+  padding: 0.16rem 0px;
+  position: relative;
 }
-.guixin .grid a .watches img {
-  height: 9px;
-  margin-right: 0.1rem;
-}
-.lljs .lljs-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.lljs .lljs-list a {
-  display: block;
-  width: 50%;
-  margin-bottom: 25px;
-}
-.lljs .lljs-list a .avt {
-  width: 3.16rem;
-  height: 3.16rem;
-}
-.lljs .lljs-list a .desc {
-  width: 96%;
-  font-size: 12px;
+.my-list a span {
+  font-size: 14px;
   color: #8f8f8f;
-  line-height: 1.667;
-  padding-top: 6px;
-  text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
 }
-/*# sourceMappingURL=./main.css.map */
+.my-list a .right {
+  width: 0.1rem;
+}
+.my-list a strong {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.34rem;
+  height: 0.34rem;
+  line-height: 0;
+  border-radius: 50%;
+  background-color: #b7a793;
+  color: white;
+  font-weight: normal;
+  position: absolute;
+  right: 0.3rem;
+  font-size: 12px;
+}
+/*# sourceMappingURL=./my.css.map */

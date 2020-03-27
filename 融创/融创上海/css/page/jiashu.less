@@ -1,0 +1,33 @@
+@import '../lib/common.less';
+
+body {
+    padding-top: .4rem;
+}
+
+.tbList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .item {
+        display: block;
+        width: calc(50% - 0.201rem);
+        margin-top: .4rem;
+
+        &:nth-of-type(2n+1) {
+            margin-right: .4rem;
+        }
+
+        .avt {
+            display: block;
+            width: 100%;
+        }
+
+        .desc {
+            color: rgb(143, 143, 143);
+            font-size: 12px;
+            text-align: center;
+            padding-top: .2rem;
+        }
+    }
+}

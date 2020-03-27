@@ -4,13 +4,11 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    height: 190px;
     box-sizing: border-box;
 
     .swiper-slide {
         img {
             width: 100%;
-            height: 190px;
         }
     }
 
@@ -36,14 +34,12 @@
     width: calc(100% - 40px);
     position: relative;
     overflow: hidden;
-    height: 130px;
     margin: 0px 20px;
     padding-top: 50px;
 
     .swiper-slide {
         img {
             width: 100%;
-            height: 130px;
         }
     }
 
@@ -131,7 +127,7 @@
         .desc {
             line-height: 1.667;
             font-size: 12px;
-            padding-top: 4px;
+            padding-top: .12rem;
 
             .dtitle {
                 color: rgb(143, 143, 143);
@@ -164,20 +160,41 @@
 
 .info-box {
     position: relative;
-    z-index: 100;
+    z-index: 10;
+    margin-top: -0.4rem;
 
     .main-navs {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background: white;
-        border-radius: 5px;
-        padding: 13px 26px;
-        margin-top: -20px;
+        border-radius: .1rem;
+        padding: .26rem .2rem;
 
         a {
+            display: block;
+            height: 1.2rem;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(143, 143, 143);
+
+            span {
+                color: rgb(143, 143, 143);
+                line-height: 1;
+            }
+
             img {
-                height: 55px;
+                height: .78rem;
+            }
+        }
+
+        &.split5 {
+            a {
+                width: 20%;
             }
         }
     }
@@ -285,8 +302,14 @@
         justify-content: space-between;
 
         .r1 {
+            margin-right: .15rem;
+
+            width: 100%;
+
             img {
-                width: 3.2rem;
+                display: block;
+                width: 100%;
+                height: 3rem;
             }
         }
 
@@ -296,7 +319,13 @@
             flex-direction: column;
 
             img {
+                display: block;
                 height: 1.42rem;
+                margin-bottom: .15rem;
+
+                &:nth-last-of-type(1) {
+                    margin-bottom: 0px;
+                }
             }
         }
     }
@@ -307,9 +336,14 @@
         display: flex;
         justify-content: space-between;
 
-        img {
-            width: 80px;
-            height: 80px;
+        a {
+            display: block;
+            width: 23%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }
@@ -324,6 +358,7 @@
             display: block;
             width: 50%;
             margin-bottom: 25px;
+            line-height: 1.9;
 
             .avt {
                 width: 3.16rem;
@@ -333,7 +368,6 @@
             .desc {
                 width: 96%;
                 font-size: 12px;
-                font-family: "Microsoft YaHei";
                 color: rgb(143, 143, 143);
                 line-height: 1.667;
                 padding-top: 6px;
@@ -343,14 +377,17 @@
             .money {
                 display: flex;
                 align-items: baseline;
+                padding-top: .1rem;
 
                 span {
                     font-size: 15px;
+                    line-height: 1;
                 }
 
                 img {
-                    width: 11px;
-                    margin-right: 4px;
+                    width: .22rem;
+                    margin-right: 0.08rem;
+                    margin-bottom: -1px;
                 }
             }
         }
@@ -365,8 +402,26 @@
         flex-wrap: wrap;
 
         img {
-            width: 2rem;
-            height: 2rem;
+            width: 2.1rem;
+            height: 2.1rem;
+        }
+
+        .info {
+            text-align: center;
+            .title {
+                font-size: 13px;
+                padding-top: .2rem;
+                padding-bottom: .12rem;
+                .ellipsis;
+            }
+
+            .dec {
+                font-size: 12px;
+                line-height: 1;
+                .ellipsis;
+                width: 2.1rem;
+                color: rgb(143, 143, 143);
+            }
         }
     }
 }
@@ -383,7 +438,8 @@
             }
 
             .avt {
-                width: 85px;
+                width: 1.7rem;
+                height: 1.7rem;
             }
 
             .info {
@@ -396,9 +452,11 @@
                 box-sizing: border-box;
                 width: 100%;
                 overflow: hidden;
+
                 .title {
                     color: rgb(93, 93, 93);
                     padding-bottom: 3px;
+                    font-size: 13px;
                 }
 
                 .txt {
@@ -410,8 +468,13 @@
             }
 
             .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                color: rgb(160, 160, 160);
                 img {
                     height: 9px;
+                    margin-right: .1rem;
                 }
             }
         }
@@ -437,7 +500,6 @@
             .desc {
                 width: 96%;
                 font-size: 12px;
-                font-family: "Microsoft YaHei";
                 color: rgb(143, 143, 143);
                 line-height: 1.667;
                 padding-top: 6px;

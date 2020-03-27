@@ -8,7 +8,7 @@
 }
 .avater-box .avater img {
   width: 1.74rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 8px;
 }
 .formbox {
   padding: 20px 40px;
@@ -35,7 +35,7 @@
   right: 0px;
   top: 50%;
   margin-top: -0.14rem;
-  border: 1px solid #b7a793;
+  border: 1px solid rgba(183, 167, 147, 0.7);
   font-size: 12px;
   color: #b7a793;
   text-align: center;
@@ -52,7 +52,7 @@
   right: 0px;
   top: 50%;
   margin-top: -0.14rem;
-  border: 1px solid #b7a793;
+  border: 1px solid rgba(183, 167, 147, 0.7);
   border-radius: 6px;
   overflow: hidden;
   width: 97px;
@@ -66,7 +66,7 @@
 }
 .formbox .content .form-line .imgcode-box .shuaxin {
   height: 15px;
-  padding-right: 5px;
+  padding-right: 3px;
 }
 .formbox .submit-line {
   padding-top: 0.6rem;
@@ -82,3 +82,4 @@
   border: none;
   border-radius: 40px;
 }
+/*# sourceMappingURL=./login.css.map */

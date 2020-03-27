@@ -6,7 +6,6 @@ body {
   font-size: 0.28rem;
   color: #2a2a2a;
   background: white;
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 }
 body {
   max-width: 600px;
@@ -64,8 +63,8 @@ body .flex-full-tmp {
   margin-left: 6px;
 }
 .rbox {
-  padding: 0px 20px;
-  box-sizing: border-box;
+  padding: 0px 0.4rem;
+  border-radius: 0.1rem;
 }
 .rbox .rtitle {
   display: flex;
@@ -170,27 +169,30 @@ body .flex-full-tmp {
   background: url(../../img/common/navs/wd-on.png) center center no-repeat;
   background-size: 25px 24px;
 }
-.fw-box .fw-list {
+body {
+  padding-top: 0.4rem;
+}
+.tbList {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.fw-box .fw-list a {
-  margin-bottom: 0.15rem;
-  position: relative;
-}
-.fw-box .fw-list a.rec::before {
-  content: '';
+.tbList .item {
   display: block;
-  position: absolute;
-  width: 0.36rem;
-  height: 0.36rem;
-  right: 0.1rem;
-  top: -0.18rem;
-  background: url(../../img/fuwu/icon-rec.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
+  width: calc(50% - 0.201rem);
+  margin-top: 0.4rem;
 }
-.fw-box .fw-list img {
-  width: 1.545rem;
+.tbList .item:nth-of-type(2n+1) {
+  margin-right: 0.4rem;
 }
-/*# sourceMappingURL=./fuwu.css.map */
+.tbList .item .avt {
+  display: block;
+  width: 100%;
+}
+.tbList .item .desc {
+  color: #8f8f8f;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 0.2rem;
+}
+/*# sourceMappingURL=./jiashu.css.map */
