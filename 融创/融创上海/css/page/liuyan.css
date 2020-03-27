@@ -238,7 +238,6 @@ body .split-logo img {
   right: 0px;
 }
 .banner-swiper {
-  width: 100%;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -359,241 +358,20 @@ body .split-logo img {
   height: 9px;
   margin-right: 0.1rem;
 }
-body {
-  padding-top: 0.4rem;
-}
-.grid a {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.grid a:nth-last-of-type(1) {
-  margin-bottom: 0px;
-}
-.grid a .avt {
-  width: 1.8rem;
-  height: 1.8rem;
-}
-.grid a .info {
-  padding: 0.1rem 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 1.7;
-  box-sizing: border-box;
-  width: 100%;
-}
-.grid a .info .txt {
-  color: #a0a0a0;
-  box-sizing: border-box;
-  width: 100%;
-  line-height: 1;
-}
-.grid a .watches {
-  display: flex;
-  align-items: center;
-  line-height: 0.5;
-  font-size: 12px;
-  color: #a0a0a0;
-}
-.grid a .watches img {
-  height: 9px;
-  margin-right: 0.1rem;
-}
-.guixinFM {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.guixinFM .item {
-  display: block;
-  width: calc(50% - 0.15rem);
-  margin-bottom: 0.5rem;
-  border-radius: 0.1rem;
-  overflow: hidden;
-}
-.guixinFM .item:nth-of-type(2n+1) {
-  margin-right: 0.3rem;
-}
-.guixinFM .item .avt {
-  display: block;
-  width: 100%;
-}
-.guixinFM .item .desc {
-  color: #8f8f8f;
-  font-size: 12px;
+.doLiuyan .logo-big {
   text-align: center;
-  padding-top: 0.2rem;
+  padding: 0.7rem;
 }
-.datas {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.2rem;
-}
-.datas .collect {
-  display: flex;
-  align-items: center;
-  line-height: 0.5;
-  font-size: 12px;
-  color: #a0a0a0;
-}
-.datas .collect img {
-  height: 9px;
-  margin-right: 0.1rem;
-}
-.datas .watches {
-  display: flex;
-  align-items: center;
-  line-height: 0.5;
-  font-size: 12px;
-  color: #a0a0a0;
-}
-.datas .watches img {
-  height: 9px;
-  margin-right: 0.1rem;
-}
-.guixinLive {
-  padding-top: 0px;
-}
-.guixinLive .gx-banner-swiper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.guixinLive .gx-banner-swiper .swiper-slide img {
-  width: 100%;
-}
-.guixinLive .gx-banner-swiper .swiper-pagination-bullets {
-  bottom: 8px;
-}
-.guixinLive .gx-banner-swiper .swiper-pagination-bullet {
-  width: 4px;
-  height: 4px;
-  display: inline-block;
-  border-radius: 100%;
-  background: white;
-  opacity: 0.5;
-}
-.guixinLive .gx-banner-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 1;
-}
-.guixinLive .kecheng .rtitle {
-  padding-top: 20px;
-}
-.guixinLive .gx-carousel-swiper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide {
+.doLiuyan .logo-big img {
   width: 2.3rem;
-  border-radius: 0.1rem;
-  background-color: #fff;
-  text-align: center;
-  padding: 0.32rem 0px;
 }
-.guixinLive .gx-carousel-swiper .swiper-slide img {
-  width: 1.54rem;
-  height: 1.54rem;
-  border-radius: 100%;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide .desc {
-  line-height: 1.667;
-  font-size: 12px;
-  padding-top: 0.12rem;
-  text-align: center;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide .desc .dtitle {
-  font-size: 13px;
-  color: #2a2a2a;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide .desc .dtitle.ellipsis2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide .desc .txt {
-  color: #8f8f8f;
-  font-size: 12px;
-  line-height: 1;
-  padding-top: 0.05rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.guixinLive .gx-carousel-swiper .swiper-slide .desc .txt.ellipsis2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-}
-.guixinLive .gx-carousel-swiper .swiper-pagination-bullets {
-  bottom: 30px;
-}
-.guixinLive .gx-carousel-swiper .swiper-pagination-bullet {
-  width: 4px;
-  height: 4px;
-  display: inline-block;
-  border-radius: 100%;
-  background: white;
-  opacity: 0.5;
-}
-.guixinLive .gx-carousel-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 1;
-}
-.guixinLive .gx-FM .gx-lbox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.guixinLive .gx-FM .gx-lbox img {
-  height: 2.36rem;
-}
-.guixinLive .gx-FM .gx-lbox img:nth-last-of-type(1) {
-  flex: 1;
-  margin-left: 0.05rem;
-}
-.guixinLive .gx-Story .grid a {
-  margin-bottom: 15px;
-}
-.guixinLive .gx-Story .grid a .avt {
-  width: 2rem;
-  height: 2rem;
-}
-.gxClass .grid a {
-  margin-bottom: 15px;
-}
-.gxClass .grid a .avt {
-  width: 2rem;
-  height: 2rem;
-}
-.liuyanBox {
-  background: white;
-  padding-top: 0px;
-}
-.liuyanBox .liuyan .ly-dec {
-  width: 100%;
-}
-.liuyanBox .liuyan .ly-txt {
-  text-align: center;
-  padding-top: 0.3rem;
-  padding-bottom: 0.6rem;
-}
-.liuyanBox .liuyan .ly-txt img {
-  width: 4.2rem;
-}
-.liuyanBox .liuyan .ly .ipt-box {
+.doLiuyan .ipt-box {
   position: relative;
 }
-.liuyanBox .liuyan .ly .ipt-box textarea {
+.doLiuyan .ipt-box textarea {
   font-size: 12px;
   width: 100%;
   box-sizing: border-box;
-  border-width: 1px;
-  border-color: rgba(183, 167, 147, 0.6);
-  border-style: solid;
   border-radius: 0.1rem;
   background-color: #ffffff;
   height: 3.7rem;
@@ -601,135 +379,76 @@ body {
   resize: none;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 }
-.liuyanBox .liuyan .ly .ipt-box .ipt-limit {
+.doLiuyan .ipt-box .ipt-limit {
   position: absolute;
   right: 0.3rem;
   bottom: 0.3rem;
   font-size: 12px;
   color: #8f8f8f;
 }
-.liuyanBox .liuyan .ly .ipt-box .ipt-limit span {
+.doLiuyan .ipt-box .ipt-limit span {
   color: #8f8f8f;
 }
-.liuyanBox .liuyan .ly .tip {
+.doLiuyan .fileUpBox {
+  position: relative;
+  margin-top: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUpBox .fileup {
+  position: relative;
+  display: block;
+  width: 1.22rem;
+  height: 1.22rem;
+  opacity: 0;
+  z-index: 3;
+}
+.doLiuyan .fileUpBox .cropedBigImg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  z-index: 2;
+  border-radius: 0.1rem;
+}
+.doLiuyan .fileUpBox::after {
+  content: ' ';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.doLiuyan .tip {
   font-size: 12px;
   padding-top: 0.4rem;
   color: #8f8f8f;
   line-height: 1.875;
 }
-.dianpingBox {
-  padding-top: 0px;
+.myLiuyan {
+  padding: 0.4rem;
 }
-.dianpingBox .ly-dec {
-  width: 100%;
-  background: #fff;
+.myLiuyan .item {
+  margin-bottom: 0.7rem;
 }
-.dianpingBox .dianping {
-  background: white;
-}
-.dianpingBox .dianping .collectbox {
+.myLiuyan .item .summ {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  background: white;
-  padding-bottom: 0.6rem;
-}
-.dianpingBox .dianping .collectbox .collect {
-  width: 0.98rem;
-  height: 1.38rem;
-  background: url(../../img/main/dianping-default.png) 0px 0px no-repeat;
-  background-size: 0.98rem 0.98rem;
-  color: #a0a0a0;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  font-size: 12px;
-}
-.dianpingBox .dianping .collectbox .collect.on {
-  background: url(../../img/main/dianping-ok.png) 0px 0px no-repeat;
-  background-size: 0.98rem 0.98rem;
-}
-.dianpingBox .dianping .collectbox .watches {
-  display: flex;
   align-items: center;
-  line-height: 0.5;
+}
+.myLiuyan .item .summ .date {
   font-size: 12px;
-  color: #a0a0a0;
-}
-.dianpingBox .dianping .collectbox .watches img {
-  height: 9px;
-  margin-right: 0.1rem;
-}
-.dianpingBox .dianping .dplist {
-  background: #f4f4f4;
-}
-.dianpingBox .dianping .dplist > h3 {
-  font-size: 17px;
-  padding: 0.4rem 0px;
-}
-.dianpingBox .dianping .dplist li {
   position: relative;
-  width: 100%;
-  border-bottom: 1px solid rgba(42, 42, 42, 0.2);
-  padding-bottom: 0.5rem;
-  margin-bottom: 25px;
-}
-.dianpingBox .dianping .dplist li:nth-last-of-type(1) {
-  margin-bottom: 0px;
-  border: none;
-}
-.dianpingBox .dianping .dplist li .avt {
-  position: absolute;
-  left: 0rem;
-  top: 0px;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 100%;
-}
-.dianpingBox .dianping .dplist li .right {
-  margin-left: 1rem;
-  line-height: 1.4;
-}
-.dianpingBox .dianping .dplist li .right .lyInfo {
-  font-size: 13px;
-  height: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.06rem 0px;
-  box-sizing: border-box;
-}
-.dianpingBox .dianping .dplist li .right .lyInfo .title {
-  font-size: 13px;
-}
-.dianpingBox .dianping .dplist li .right .lyInfo .date {
-  font-size: 12px;
-  color: #8f8f8f;
-}
-.dianpingBox .dianping .dplist li .right .lytxt {
-  font-size: 12px;
-  padding: 0.1rem 0px;
-}
-.dianpingBox .dianping .dplist li .right .lytxt .ly-del {
-  display: inline-block;
-  background-color: #b7a793;
-  width: 0.86rem;
-  padding: 1px 0px;
-  text-align: center;
-  border-radius: 0.4rem;
-  font-size: 12px;
-  color: white;
-  line-height: 1.2;
-  margin-top: 0.2rem;
-}
-.dianpingBox .dianping .dplist li .right .replay-title {
-  font-size: 13px;
-  position: relative;
-  padding: 0.16rem 0px;
   padding-left: 0.24rem;
+  color: #8f8f8f;
+  display: block;
+  height: 12px;
+  line-height: 12px;
 }
-.dianpingBox .dianping .dplist li .right .replay-title::before {
+.myLiuyan .item .summ .date::before {
   content: '';
   background-color: #2a2a2a;
   width: 4px;
@@ -740,35 +459,40 @@ body {
   top: 50%;
   margin-top: -6px;
 }
-.dianpingBox .dianping .dplist li .right .replay-txt {
+.myLiuyan .item .summ .ly-del {
+  display: inline-block;
+  background-color: #b7a793;
+  width: 0.86rem;
+  padding: 1px 0px;
+  text-align: center;
+  border-radius: 0.4rem;
   font-size: 12px;
+  color: white;
+  line-height: 1.2;
 }
-.liuyan-box {
-  position: relative;
-}
-.liuyan-box textarea {
+.myLiuyan .item .ly-txt {
   font-size: 12px;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-  height: 3rem;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.14rem 0.18rem;
-  color: #222222;
-  width: 4.3rem;
-  resize: none;
-}
-.liuyan-box textarea::-webkit-input-placeholder {
-  color: rgba(42, 42, 42, 0.302);
-}
-.liuyan-box .limit {
-  position: absolute;
-  right: 0.15rem;
-  bottom: 0.14rem;
-  font-size: 12px;
-}
-.liuyan-box .limit span {
   color: #8f8f8f;
+  line-height: 1.667;
+  margin-top: 0.2rem;
+  margin-left: 0.24rem;
 }
-/*# sourceMappingURL=./guixin.css.map */
+.myLiuyan .item .reply {
+  font-size: 12px;
+  padding-top: 0.2rem;
+  padding-left: 0.24rem;
+  line-height: 1.667;
+  background-repeat: no-repeat;
+  background: url(../../img/main/reply_arrow.png) 0.6rem 2px no-repeat;
+  background-size: 0.3rem 0.18rem;
+}
+.myLiuyan .item .reply .reply-cont {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.3rem 0.25rem;
+}
+.myLiuyan .item .reply .rc {
+  font-size: 12px;
+  color: #b7a793;
+}
+/*# sourceMappingURL=./liuyan.css.map */

@@ -21,27 +21,105 @@ body {
     padding-bottom: 100px;
     box-sizing: border-box;
 
+    //补齐flex元素
     .flex-full-tmp {
         display: block;
     }
+
+    .loading {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(42, 42, 42, 0.702);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rbox {
+        padding: 0px .4rem;
+        border-radius: .1rem;
+
+        .rtitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 44px;
+            padding-bottom: 18px;
+
+            >span {
+                font-size: 17px;
+            }
+
+            >a {
+                >img {
+                    width: 17px;
+                }
+            }
+        }
+
+        &.ad {
+            padding-top: 52px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .rbox34 {
+        padding: 0px .34rem;
+        border-radius: .1rem;
+    }
+
+    .split-logo {
+        text-align: center;
+        padding: 20px 0px;
+
+        img {
+            width: 2.36rem;
+            opacity: .7;
+        }
+    }
 }
 
-.loading {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(42, 42, 42, 0.702);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search-Box {
+    padding: .15rem .4rem;
+    position: relative;
+
+    .icon-search {
+        width: .28rem;
+        height: .28rem;
+        position: absolute;
+        left: .66rem;
+        top: 50%;
+        margin-top: -.14rem;
+    }
+
+    .search-ipt {
+        height: .6rem;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: rgb(255, 255, 255);
+        border-radius: 1rem;
+        border: none;
+        padding-left: .66rem;
+        font-size: 12px;
+    }
 }
 
 .ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    &.ellipsis2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
 }
 
 .header {
@@ -74,51 +152,6 @@ body {
             height: 8px;
             margin-left: 6px;
         }
-    }
-}
-
-.rbox {
-    padding: 0px .4rem;
-    border-radius: .1rem;
-
-    .rtitle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 44px;
-        padding-bottom: 18px;
-
-        >span {
-            font-size: 17px;
-        }
-
-        >a {
-            >img {
-                width: 17px;
-            }
-        }
-    }
-
-    &.ad {
-        padding-top: 52px;
-
-        img {
-            width: 100%;
-        }
-    }
-}
-.rbox34{
-    padding: 0px .34rem;
-    border-radius: .1rem;
-}
-
-.split-logo {
-    text-align: center;
-    padding: 20px 0px;
-
-    img {
-        width: 2.36rem;
-        opacity: .7;
     }
 }
 
@@ -246,6 +279,7 @@ body {
     z-index: 100;
     text-align: center;
     background: #b7a793;
+
     a {
         display: block;
         height: 100%;
@@ -257,11 +291,12 @@ body {
         font-size: 17px;
         position: relative;
 
-        &:nth-last-of-type(1){
+        &:nth-last-of-type(1) {
             &::after {
                 content: none;
             }
         }
+
         &::after {
             display: block;
             content: '';
@@ -271,6 +306,153 @@ body {
             position: absolute;
             top: 10px;
             right: 0px;
+        }
+    }
+}
+
+.banner-swiper {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .swiper-slide {
+        img {
+            width: 100%;
+        }
+    }
+
+    .swiper-pagination-bullets {
+        bottom: 5px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        border-radius: 100%;
+        background: white;
+        opacity: .5;
+
+        &.swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    }
+}
+
+.hmenus {
+    overflow: hidden;
+    margin: .2rem .4rem 0px;
+
+    .swiper-containe {
+        position: relative;
+        height: 0.70rem;
+        border-bottom: 1px solid @lineGray;
+
+
+        .swiper-slide {
+            width: auto;
+            margin-right: 0.4rem;
+            box-sizing: border-box;
+            height: 100%;
+            padding-top: 0.20rem;
+            position: relative;
+            bottom: -1px;
+            z-index: 10;
+
+            &:nth-last-of-type(1) {
+                margin-right: 0px;
+            }
+
+            >span {
+                transition: all .3s ease;
+                display: block;
+                font-size: 15px;
+                color: rgb(143, 143, 143);
+            }
+
+            &.active {
+                position: relative;
+                border-bottom: 1px solid rgba(40, 40, 40, .8);
+
+                span {
+                    color: rgb(40, 40, 40);
+                }
+
+                &:after {
+                    content: ' ';
+                    background-color: rgb(40, 40, 40);
+                    border-radius: 2px;
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    bottom: -1px;
+                }
+            }
+        }
+    }
+}
+
+.pList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .item {
+        display: block;
+        width: 3.16rem;
+        margin-top: .4rem;
+        line-height: 1.4;
+
+        .pavt {
+            display: block;
+            width: 3.16rem;
+            height: 3.16rem;
+            border-radius: .1rem;
+        }
+
+        .title {
+            font-size: 12px;
+            color: rgb(42, 42, 42);
+            padding-top: .2rem;
+        }
+
+        .desc {
+            font-size: 12px;
+            color: rgb(143, 143, 143);
+            padding-top: .2rem;
+        }
+
+        .watch-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: .2rem;
+
+            .collect {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
         }
     }
 }

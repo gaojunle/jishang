@@ -238,6 +238,7 @@ body .split-logo img {
   right: 0px;
 }
 .banner-swiper {
+  width: 100%;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -358,4 +359,71 @@ body .split-logo img {
   height: 9px;
   margin-right: 0.1rem;
 }
-/*# sourceMappingURL=./common.css.map */
+.mtop {
+  position: relative;
+}
+.pList {
+  padding: 0px 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.rListBox {
+  padding: 0.4rem;
+}
+.rListBox .swiper-cont {
+  display: none;
+}
+.rListBox .swiper-cont:nth-of-type(1) {
+  display: block;
+}
+.rListBox a {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.rListBox a:nth-last-of-type(1) {
+  margin-bottom: 0px;
+}
+.rListBox a .avt {
+  display: block;
+  width: 2.2rem;
+  height: 2rem;
+}
+.rListBox a .info {
+  padding: 0.1rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.7;
+  box-sizing: border-box;
+  flex: 1;
+  overflow: hidden;
+}
+.rListBox a .info .title {
+  font-size: 15px;
+}
+.rListBox a .info .txt {
+  font-size: 12px;
+  color: #2a2a2a;
+  box-sizing: border-box;
+  line-height: 1;
+  padding-top: 0.1rem;
+}
+.rListBox a .desc {
+  font-size: 11px;
+  width: 4.5rem;
+  box-sizing: border-box;
+  color: #a0a0a0;
+  padding-top: 0.2rem;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.rListBox a .desc.ellipsis2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+}
+.kaquan .kaquan_lq img {
+  width: 100%;
+}
+/*# sourceMappingURL=./quanyi.css.map */

@@ -1,0 +1,185 @@
+@import '../lib/common.less';
+
+.mtop {
+    position: relative;
+
+    .search-Box {
+        background-color: rgba(255, 255, 255, 0.502);
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+}
+
+.pListBox {
+    .pList {
+        display: none;
+        padding: 0px .4rem;
+        margin-bottom: .5rem;
+
+        &.show {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+.liuyanBox {
+    background: #f4f4f4;
+}
+
+.grid {
+    a {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px;
+        }
+
+        .avt {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .info {
+            padding: .1rem .2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+            box-sizing: border-box;
+            box-sizing: border-box;
+
+            .title {
+                font-size: 13px;
+            }
+
+            .txt {
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+                box-sizing: border-box;
+                line-height: 1;
+                padding-top: .05rem;
+            }
+
+            .desc {
+                font-size: 11px;
+                width: 4.5rem;
+                box-sizing: border-box;
+                color: rgb(160, 160, 160);
+                padding-top: .2rem;
+                .ellipsis;
+            }
+        }
+
+        .datas {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: .2rem;
+
+            .collect {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+        }
+
+    }
+}
+
+.rListBox {
+    padding: .4rem;
+}
+
+.wenquan {
+    padding: 0px .4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .item {
+        display: block;
+        width: 2rem;
+        margin-top: .4rem;
+        line-height: 1.4;
+
+        .pavt {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: .1rem;
+        }
+
+        .title {
+            font-size: 12px;
+            color: rgb(42, 42, 42);
+            padding-top: .1rem;
+        }
+
+        .desc {
+            font-size: 12px;
+            color: rgb(143, 143, 143);
+            padding-top: .1rem;
+        }
+
+        .watch-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: .2rem;
+
+            .collect {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+        }
+    }
+}
