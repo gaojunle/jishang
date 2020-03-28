@@ -79,12 +79,19 @@ body .tab .tab-menu > a {
   height: 0.8rem;
   line-height: 0.8rem;
   text-align: center;
-  font-size: 0.3rem;
-  color: rgba(42, 42, 42, 0.6);
+  font-size: 0.34rem;
+  color: rgba(42, 42, 42);
 }
 body .tab .tab-menu > li:nth-last-of-type(1),
 body .tab .tab-menu > a:nth-last-of-type(1) {
   border-right: none;
+}
+body .tab .tab-menu > li > span,
+body .tab .tab-menu > a > span {
+  display: inline-block;
+  height: 100%;
+  padding-top: 2px;
+  box-sizing: border-box;
 }
 body .tab .tab-menu > li.on,
 body .tab .tab-menu > a.on {
@@ -93,7 +100,7 @@ body .tab .tab-menu > a.on {
 }
 body .tab .tab-menu > li.on > span,
 body .tab .tab-menu > a.on > span {
-  border-bottom: 1px solid rgba(42, 42, 42, 0.6);
+  border-bottom: 1px solid rgba(42, 42, 42, 0.8);
 }
 body .tab .tab-cont {
   display: none;
@@ -423,7 +430,6 @@ body {
   color: #a0a0a0;
   box-sizing: border-box;
   width: 100%;
-  line-height: 1;
   font-size: 12px;
 }
 .grid a .watches {
