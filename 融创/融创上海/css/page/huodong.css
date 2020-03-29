@@ -7,6 +7,18 @@ body {
   color: #2a2a2a;
   background: white;
 }
+html input::-webkit-input-placeholder,
+body input::-webkit-input-placeholder,
+html textarea::-webkit-input-placeholder,
+body textarea::-webkit-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
+html input:-ms-input-placeholder,
+body input:-ms-input-placeholder,
+html textarea:-ms-input-placeholder,
+body textarea:-ms-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
 body {
   max-width: 600px;
   padding: 0px;
@@ -59,7 +71,7 @@ body .rbox34 {
 }
 body .split-logo {
   text-align: center;
-  padding: 20px 0px;
+  padding: 40px 0px 20px;
 }
 body .split-logo img {
   width: 2.36rem;
@@ -90,6 +102,8 @@ body .tab .tab-menu > li > span,
 body .tab .tab-menu > a > span {
   display: inline-block;
   height: 100%;
+  padding-top: 2px;
+  box-sizing: border-box;
 }
 body .tab .tab-menu > li.on,
 body .tab .tab-menu > a.on {
@@ -139,11 +153,17 @@ body .tab .tab-cont:nth-of-type(1) {
   -webkit-line-clamp: 3;
 }
 .header {
-  height: 38px;
-  padding: 0px 20px;
+  height: 0.76rem;
+  padding: 0px 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header.headerH {
+  height: 0.86rem;
+}
+.header.headerHH {
+  height: 1.2rem;
 }
 .header .logo {
   height: 20px;
@@ -353,7 +373,7 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item {
   display: block;
   width: 3.16rem;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   line-height: 1.4;
 }
 .pList .item .pavt {
@@ -365,17 +385,20 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item .title {
   font-size: 12px;
   color: #2a2a2a;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .desc {
   font-size: 12px;
   color: #8f8f8f;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box .collect {
@@ -451,4 +474,295 @@ body .tab .tab-cont:nth-of-type(1) {
   height: 0.2rem;
   margin-right: 0.1rem;
   display: block;
+}
+.hdList .activity .watch-box .cancel {
+  display: inline-block;
+  background-color: #b7a793;
+  padding: 1px 0.15rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  font-size: 11px;
+  color: white;
+  line-height: 1.2;
+}
+.hdDetail .ly-dec {
+  width: 100%;
+  background: #fff;
+}
+.hdDetail .watch-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem;
+  line-height: 1;
+}
+.hdDetail .watch-box.on .collect {
+  display: none;
+}
+.hdDetail .watch-box.on .collect.collected {
+  display: flex;
+}
+.hdDetail .watch-box .collect {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+.hdDetail .watch-box .collect.collected {
+  display: none;
+}
+.hdDetail .watch-box .collect img {
+  height: 0.26rem;
+  margin-right: 0.1rem;
+  display: block;
+}
+.hdDetail .watch-box .watches {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+.hdDetail .watch-box .watches img {
+  height: 0.2rem;
+  margin-right: 0.1rem;
+  display: block;
+}
+.hdDetail .dianping {
+  background: white;
+}
+.hdDetail .dianping .dplist {
+  background: #f4f4f4;
+}
+.hdDetail .dianping .dplist > h3 {
+  font-size: 17px;
+  padding: 0.4rem 0px;
+}
+.hdDetail .dianping .dplist li {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+  padding-bottom: 0.5rem;
+  margin-bottom: 25px;
+}
+.hdDetail .dianping .dplist li:nth-last-of-type(1) {
+  margin-bottom: 0px;
+  border: none;
+}
+.hdDetail .dianping .dplist li .avt {
+  position: absolute;
+  left: 0rem;
+  top: 0px;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+}
+.hdDetail .dianping .dplist li .right {
+  margin-left: 1rem;
+  line-height: 1.4;
+}
+.hdDetail .dianping .dplist li .right .lyInfo {
+  font-size: 13px;
+  height: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.06rem 0px;
+  box-sizing: border-box;
+}
+.hdDetail .dianping .dplist li .right .lyInfo .title {
+  font-size: 13px;
+}
+.hdDetail .dianping .dplist li .right .lyInfo .date {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.hdDetail .dianping .dplist li .right .lytxt {
+  font-size: 12px;
+  padding: 0.1rem 0px;
+}
+.hdDetail .dianping .dplist li .right .lytxt .ly-del {
+  display: inline-block;
+  background-color: #b7a793;
+  width: 0.86rem;
+  padding: 1px 0px;
+  text-align: center;
+  border-radius: 0.4rem;
+  font-size: 12px;
+  color: white;
+  line-height: 1.2;
+  margin-top: 0.2rem;
+}
+.hdDetail .dianping .dplist li .right .replay-title {
+  font-size: 13px;
+  position: relative;
+  padding: 0.16rem 0px;
+  padding-left: 0.24rem;
+}
+.hdDetail .dianping .dplist li .right .replay-title::before {
+  content: "";
+  background-color: #2a2a2a;
+  width: 4px;
+  height: 12px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  margin-top: -6px;
+}
+.hdDetail .dianping .dplist li .right .replay-txt {
+  font-size: 12px;
+}
+.loupanList {
+  padding: 0.4rem;
+}
+.loupanList a {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.loupanList a:nth-last-of-type(1) {
+  margin-bottom: 0px;
+}
+.loupanList a .avt {
+  width: 2.38rem;
+  height: 1.8rem;
+}
+.loupanList a .info {
+  font-size: 12px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.7;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex: 1;
+}
+.loupanList a .info .title {
+  font-size: 15px;
+  color: #2a2a2a;
+}
+.loupanList a .info .txt {
+  color: #a0a0a0;
+  box-sizing: border-box;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.loupanList a .info .txt.ellipsis2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.loupanDetail {
+  background-color: white;
+}
+.loupanDetail .btn-toggle {
+  display: block;
+  background-color: #b7a793;
+  padding: 0.2rem 0px;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 17px;
+  color: white;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+.loupanDetail .lpDetail .rtitle {
+  padding-top: 0.5rem;
+}
+.loupanDetail .lpDetail .detail {
+  font-size: 12px;
+  height: 3.5rem;
+  overflow: hidden;
+}
+.loupanDetail .lpDetail .detail.unfold {
+  height: auto;
+}
+.loupanDetail .lpDetail .detail p {
+  line-height: 2;
+}
+.loupanDetail .lpDetail .detail p > span {
+  color: #8f8f8f;
+}
+.loupanDetail .lpDetail .detail p > i {
+  font-style: normal;
+}
+.loupanDetail .carousel-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.loupanDetail .carousel-swiper .swiper-slide {
+  width: 3.92rem;
+  border-radius: 5px;
+}
+.loupanDetail .carousel-swiper .swiper-slide figcaption {
+  display: none;
+}
+.loupanDetail .carousel-swiper .swiper-slide img {
+  width: 100%;
+  height: 2.92rem;
+  border-radius: 5px;
+}
+.loupanDetail .carousel-swiper .swiper-slide .desc {
+  line-height: 1.667;
+  font-size: 12px;
+  padding-top: 0.12rem;
+}
+.loupanDetail .carousel-swiper .swiper-slide .desc .dtitle {
+  color: #8f8f8f;
+}
+.loupanDetail .carousel-swiper .swiper-slide .desc .txt {
+  color: #2a2a2a;
+  font-size: 13px;
+}
+.loupanDetail .liangdian .detail {
+  font-size: 12px;
+  color: #8f8f8f;
+  line-height: 2.083;
+  height: 2.2rem;
+  overflow: hidden;
+}
+.loupanDetail .liangdian .detail.unfold {
+  height: auto;
+}
+.loupanDetail .peitao .map img {
+  width: 100%;
+}
+.loupanDetail .peitao .detail {
+  padding-top: 0.5rem;
+}
+.loupanDetail .peitao .detail .item {
+  line-height: 2;
+  font-size: 12px;
+  display: flex;
+}
+.loupanDetail .peitao .detail .item > span {
+  color: #8f8f8f;
+}
+.loupanDetail .peitao .detail .item p {
+  padding-left: 0.04rem;
+  flex: 1;
+}
+.baoDaoList {
+  padding: 0.4rem;
+}
+.baoDaoList .item {
+  display: flex;
+  margin-bottom: 0.45rem;
+}
+.baoDaoList .item .avt {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.1rem;
+}
+.baoDaoList .item .info {
+  padding-left: 0.2rem;
+  flex: 1;
+  font-size: 14px;
+  color: #8f8f8f;
+  line-height: 1.786;
+  padding-top: 0.1rem;
 }

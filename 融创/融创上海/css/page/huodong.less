@@ -38,7 +38,7 @@
                 color: rgb(160, 160, 160);
 
                 img {
-                    height: .27rem;
+                    height: 0.27rem;
                     margin-right: 0.1rem;
                     display: block;
                 }
@@ -51,11 +51,332 @@
                 color: rgb(160, 160, 160);
 
                 img {
-                    height: .2rem;
+                    height: 0.2rem;
                     margin-right: 0.1rem;
                     display: block;
                 }
             }
+            //取消收藏
+            .cancel {
+                display: inline-block;
+                background-color: rgb(183, 167, 147);
+                padding: 1px 0.15rem;
+                text-align: center;
+                border-radius: 0.4rem;
+                font-size: 11px;
+                color: white;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+.hdDetail {
+    .ly-dec {
+        width: 100%;
+        background: #fff;
+    }
+    .watch-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.4rem;
+        line-height: 1;
+        &.on {
+            .collect {
+                display: none;
+                &.collected {
+                    display: flex;
+                }
+            }
+        }
+        .collect {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(160, 160, 160);
+            &.collected {
+                display: none;
+            }
+            img {
+                height: 0.26rem;
+                margin-right: 0.1rem;
+                display: block;
+            }
+        }
+
+        .watches {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(160, 160, 160);
+
+            img {
+                height: 0.2rem;
+                margin-right: 0.1rem;
+                display: block;
+            }
+        }
+    }
+    .dianping {
+        background: white;
+        .dplist {
+            background: #f4f4f4;
+
+            > h3 {
+                font-size: 17px;
+                padding: 0.4rem 0px;
+            }
+
+            li {
+                position: relative;
+                width: 100%;
+                border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+                padding-bottom: 0.5rem;
+                margin-bottom: 25px;
+
+                &:nth-last-of-type(1) {
+                    margin-bottom: 0px;
+                    border: none;
+                }
+
+                .avt {
+                    position: absolute;
+                    left: 0rem;
+                    top: 0px;
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    border-radius: 100%;
+                }
+
+                .right {
+                    margin-left: 1rem;
+                    line-height: 1.4;
+
+                    .lyInfo {
+                        font-size: 13px;
+                        height: 0.8rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 0.06rem 0px;
+                        box-sizing: border-box;
+
+                        .title {
+                            font-size: 13px;
+                        }
+
+                        .date {
+                            font-size: 12px;
+                            color: rgb(143, 143, 143);
+                        }
+                    }
+
+                    .lytxt {
+                        font-size: 12px;
+                        padding: 0.1rem 0px;
+
+                        .ly-del {
+                            display: inline-block;
+                            background-color: rgb(183, 167, 147);
+                            width: 0.86rem;
+                            padding: 1px 0px;
+                            text-align: center;
+                            border-radius: 0.4rem;
+                            font-size: 12px;
+                            color: white;
+                            line-height: 1.2;
+                            margin-top: 0.2rem;
+                        }
+                    }
+
+                    .replay-title {
+                        font-size: 13px;
+                        position: relative;
+                        padding: 0.16rem 0px;
+                        padding-left: 0.24rem;
+
+                        &::before {
+                            content: "";
+                            background-color: rgb(42, 42, 42);
+                            width: 4px;
+                            height: 12px;
+                            display: inline-block;
+                            position: absolute;
+                            left: 0px;
+                            top: 50%;
+                            margin-top: -6px;
+                        }
+                    }
+
+                    .replay-txt {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loupanList {
+    padding: 0.4rem;
+    a {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px;
+        }
+
+        .avt {
+            width: 2.38rem;
+            height: 1.8rem;
+        }
+
+        .info {
+            font-size: 12px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex: 1;
+            .title {
+                font-size: 15px;
+                color: rgb(42, 42, 42);
+            }
+
+            .txt {
+                color: rgb(160, 160, 160);
+                box-sizing: border-box;
+                font-size: 15px;
+                .ellipsis;
+            }
+        }
+    }
+}
+.loupanDetail {
+    background-color: white;
+    .btn-toggle {
+        display: block;
+        background-color: rgb(183, 167, 147);
+        padding: 0.2rem 0px;
+        text-align: center;
+        border-radius: 1rem;
+        font-size: 17px;
+        color: white;
+        line-height: 1.2;
+        margin-top: 0.5rem;
+    }
+    .lpDetail {
+        .rtitle {
+            padding-top: 0.5rem;
+        }
+        .detail {
+            font-size: 12px;
+            height: 3.5rem;
+            overflow: hidden;
+            &.unfold {
+                height: auto;
+            }
+            p {
+                line-height: 2;
+                > span {
+                    color: #8f8f8f;
+                }
+                > i {
+                    font-style: normal;
+                }
+            }
+        }
+    }
+    .carousel-swiper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .swiper-slide {
+            width: 3.92rem;
+            border-radius: 5px;
+            figcaption{
+                display: none;
+            }
+            img {
+                width: 100%;
+                height: 2.92rem;
+                border-radius: 5px;
+            }
+
+            .desc {
+                line-height: 1.667;
+                font-size: 12px;
+                padding-top: 0.12rem;
+
+                .dtitle {
+                    color: rgb(143, 143, 143);
+                }
+
+                .txt {
+                    color: rgb(42, 42, 42);
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .liangdian {
+        .detail {
+            font-size: 12px;
+            color: rgb(143, 143, 143);
+            line-height: 2.083;
+            height: 2.2rem;
+            overflow: hidden;
+            &.unfold {
+                height: auto;
+            }
+        }
+    }
+    .peitao {
+        .map {
+            img {
+                width: 100%;
+            }
+        }
+        .detail {
+            padding-top: 0.5rem;
+            .item {
+                line-height: 2;
+                font-size: 12px;
+                display: flex;
+                > span {
+                    color: #8f8f8f;
+                }
+                p {
+                    padding-left: 0.04rem;
+                    flex: 1;
+                }
+            }
+        }
+    }    
+}
+.baoDaoList {
+    padding: 0.4rem;
+    .item {
+        display: flex;
+        margin-bottom: .45rem;
+        .avt {
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 0.1rem;
+        }
+        .info {
+            padding-left: 0.2rem;
+            flex: 1;
+            font-size: 14px;
+            color: rgb(143, 143, 143);
+            line-height: 1.786;
+            padding-top: .1rem;
         }
     }
 }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创上海</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/huodong.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="./img/logo.png" alt="" class="logo">
+        <div class="selcity">
+            <select>
+                <option value="1" selected>上海</option>
+                <option value="2">无锡</option>
+                <option value="3">其它</option>
+            </select>
+            <img class="icon-down" src="./img/common/icon-down.png" alt="">
+        </div>
+    </div>
+    <div class="banner-swiper js-banner-swiper">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/huodong/loupan/sp.png" /></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/huodong/loupan/sp.png" /></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/huodong/loupan/sp.png" /></a></li>
+            <li class="swiper-slide"><a href="javascript:;"><img src="./img/huodong/loupan/sp.png" /></a></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="loupanList">
+        <a href="./182热销楼盘详情.html">
+            <img class="avt" src="./img/main/guixin-1.png" alt="">
+            <div class="info">
+                <div class="top">
+                    <div class="title">外滩壹号院</div>
+                    <div class="title">121500元/㎡</div>
+                </div>
+                <div class="txt">不要听到甲醛释放周期长就感到害怕，无论，无论</div>
+            </div>
+        </a>
+        <a href="./182热销楼盘详情.html">
+            <img class="avt" src="./img/main/guixin-1.png" alt="">
+            <div class="info">
+                <div class="top">
+                    <div class="title">外滩壹号院</div>
+                    <div class="title">121500元/㎡</div>
+                </div>
+                <div class="txt">不要听到甲醛释放周期长就感到害怕，无论，无论</div>
+            </div>
+        </a>
+        <a href="./182热销楼盘详情.html">
+            <img class="avt" src="./img/main/guixin-1.png" alt="">
+            <div class="info">
+                <div class="top">
+                    <div class="title">外滩壹号院</div>
+                    <div class="title">121500元/㎡</div>
+                </div>
+                <div class="txt">不要听到甲醛释放周期长就感到害怕，无论，无论</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="split-logo">
+        <img src="./img/rc-logo-split.png" alt="">
+    </div>
+    <div class="footer">
+        <a href="./02首页.html" class="sy on">首页</a>
+        <a href="./03福利.html" class="fl">福利</a>
+        <a href="./04社区.html" class="sq">社区</a>
+        <a href="./05服务.html" class="fw">服务</a>
+        <a href="./06我的.html" class="wd">我的</a>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                },
+                initData: function () {
+                    this.initSwiper();
+                },
+
+                initSwiper: function () {
+                    var swiperBanner = new Swiper('.js-banner-swiper', {
+                        spaceBetween: 0,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                }
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

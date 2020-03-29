@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <style>
+        .show-list {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .show-list li {
+            height: 1rem;
+            font-size: .3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #dcdcdc;
+        }
+    </style>
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <ul class="show-list"">
+        <li id="demo1">toast</li>
+        <li id="demo2">alert</li>
+        <li id="demo3">confirm</li>
+        <li id="demo4">prompt</li>
+    </ul>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/popups.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(function () {
+                $('#demo1').click(function () {
+                    jqtoast('你点击了toast')
+                })
+                $('#demo2').click(function () {
+                    jqalert({
+                        title: '',
+                        content: '礼品已经成功添加到购物车，<br> 请到购物车兑换礼品！',
+                        click_bg: false
+                    })
+                })
+                $('#demo3').click(function () {
+                    jqalert({
+                        title: '',
+                        content: '自定义弹窗内容，居左对齐显示，告知需要确认的信息等',
+                        yestext: '知道了',
+                        notext: '取消',
+                        click_bg: false
+                    })
+                })
+                $('#demo4').click(function () {
+                    jqalert({
+                        title: '提示',
+                        prompt: '请问你叫什么名字?',
+                        yestext: '提交',
+                        notext: '取消',
+                        yesfn: function () {
+                            jqtoast('提交成功');
+                        },
+                        nofn: function () {
+                            jqtoast('你点击了取消');
+                        }
+                    })
+                })               
+            })
+        })
+    </script>
+</body>
+
+</html>

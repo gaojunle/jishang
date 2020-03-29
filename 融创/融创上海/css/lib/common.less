@@ -10,6 +10,14 @@ body {
     font-size: 0.28rem;
     color: #2a2a2a;
     background: white;
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: rgba(143, 143, 143, 0.6);
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: rgba(143, 143, 143, 0.6);
+    }
 }
 
 body {
@@ -76,7 +84,7 @@ body {
 
     .split-logo {
         text-align: center;
-        padding: 20px 0px;
+        padding: 40px 0px 20px;
 
         img {
             width: 2.36rem;
@@ -168,12 +176,17 @@ body {
 }
 
 .header {
-    height: 38px;
-    padding: 0px 20px;
+    height: .76rem;
+    padding: 0px .4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    &.headerH {
+        height: 0.86rem;
+    }
+    &.headerHH{
+        height: 1.2rem;
+    }
     .logo {
         height: 20px;
     }
@@ -444,7 +457,7 @@ body {
     .item {
         display: block;
         width: 3.16rem;
-        margin-top: 0.4rem;
+        margin-top: 0.5rem;
         line-height: 1.4;
 
         .pavt {
@@ -457,12 +470,14 @@ body {
         .title {
             font-size: 12px;
             color: rgb(42, 42, 42);
+            padding: 0px 0.1rem;
             padding-top: 0.2rem;
         }
 
         .desc {
             font-size: 12px;
             color: rgb(143, 143, 143);
+            padding: 0px 0.1rem;
             padding-top: 0.2rem;
         }
 
@@ -470,6 +485,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0px 0.1rem;
             padding-top: 0.2rem;
 
             .collect {

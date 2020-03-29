@@ -7,6 +7,18 @@ body {
   color: #2a2a2a;
   background: white;
 }
+html input::-webkit-input-placeholder,
+body input::-webkit-input-placeholder,
+html textarea::-webkit-input-placeholder,
+body textarea::-webkit-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
+html input:-ms-input-placeholder,
+body input:-ms-input-placeholder,
+html textarea:-ms-input-placeholder,
+body textarea:-ms-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
 body {
   max-width: 600px;
   padding: 0px;
@@ -59,7 +71,7 @@ body .rbox34 {
 }
 body .split-logo {
   text-align: center;
-  padding: 20px 0px;
+  padding: 40px 0px 20px;
 }
 body .split-logo img {
   width: 2.36rem;
@@ -141,11 +153,14 @@ body .tab .tab-cont:nth-of-type(1) {
   -webkit-line-clamp: 3;
 }
 .header {
-  height: 38px;
-  padding: 0px 20px;
+  height: 0.76rem;
+  padding: 0px 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header.headerH {
+  height: 0.86rem;
 }
 .header .logo {
   height: 20px;
@@ -355,7 +370,7 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item {
   display: block;
   width: 3.16rem;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   line-height: 1.4;
 }
 .pList .item .pavt {
@@ -367,17 +382,20 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item .title {
   font-size: 12px;
   color: #2a2a2a;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .desc {
   font-size: 12px;
   color: #8f8f8f;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box .collect {
@@ -618,6 +636,9 @@ body {
   background: white;
   padding-top: 0px;
 }
+.liuyanBox .liuyan {
+  padding: 0px 0.4rem;
+}
 .liuyanBox .liuyan .ly-dec {
   width: 100%;
 }
@@ -665,9 +686,20 @@ body {
 .dianpingBox {
   padding-top: 0px;
 }
-.dianpingBox .ly-dec {
+.dianpingBox .kayang {
+  padding: 0.4rem;
+}
+.dianpingBox .kayang img {
   width: 100%;
-  background: #fff;
+}
+.dianpingBox .liuyan {
+  padding: 0px 0.4rem;
+}
+.dianpingBox .liuyan.bgWhite {
+  background: white;
+}
+.dianpingBox .liuyan .ly-dec {
+  width: 100%;
 }
 .dianpingBox .dianping {
   background: white;
@@ -690,10 +722,11 @@ body {
   justify-content: center;
   align-items: flex-end;
   font-size: 12px;
+  margin-left: 1rem;
 }
 .dianpingBox .dianping .collectbox .collect.on {
   background: url(../../img/main/dianping-ok.png) 0px 0px no-repeat;
-  background-size: 0.98rem 0.98rem;
+  background-size: 0.97rem 0.98rem;
 }
 .dianpingBox .dianping .collectbox .watches {
   display: flex;
@@ -701,6 +734,7 @@ body {
   line-height: 0.5;
   font-size: 12px;
   color: #a0a0a0;
+  padding-right: 0.1rem;
 }
 .dianpingBox .dianping .collectbox .watches img {
   height: 9px;

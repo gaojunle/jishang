@@ -7,6 +7,18 @@ body {
   color: #2a2a2a;
   background: white;
 }
+html input::-webkit-input-placeholder,
+body input::-webkit-input-placeholder,
+html textarea::-webkit-input-placeholder,
+body textarea::-webkit-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
+html input:-ms-input-placeholder,
+body input:-ms-input-placeholder,
+html textarea:-ms-input-placeholder,
+body textarea:-ms-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
 body {
   max-width: 600px;
   padding: 0px;
@@ -59,11 +71,54 @@ body .rbox34 {
 }
 body .split-logo {
   text-align: center;
-  padding: 20px 0px;
+  padding: 40px 0px 20px;
 }
 body .split-logo img {
   width: 2.36rem;
   opacity: 0.7;
+}
+body .tab .tab-menu {
+  position: relative;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+body .tab .tab-menu > li,
+body .tab .tab-menu > a {
+  float: left;
+  width: 50%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.34rem;
+  color: rgba(42, 42, 42);
+}
+body .tab .tab-menu > li:nth-last-of-type(1),
+body .tab .tab-menu > a:nth-last-of-type(1) {
+  border-right: none;
+}
+body .tab .tab-menu > li > span,
+body .tab .tab-menu > a > span {
+  display: inline-block;
+  height: 100%;
+  padding-top: 2px;
+  box-sizing: border-box;
+}
+body .tab .tab-menu > li.on,
+body .tab .tab-menu > a.on {
+  position: relative;
+  color: #2a2a2a;
+}
+body .tab .tab-menu > li.on > span,
+body .tab .tab-menu > a.on > span {
+  border-bottom: 1px solid rgba(42, 42, 42, 0.8);
+}
+body .tab .tab-cont {
+  display: none;
+}
+body .tab .tab-cont:nth-of-type(1) {
+  display: block;
 }
 .search-Box {
   padding: 0.15rem 0.4rem;
@@ -94,14 +149,21 @@ body .split-logo img {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
-  height: 38px;
-  padding: 0px 20px;
+  height: 0.76rem;
+  padding: 0px 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header.headerH {
+  height: 0.86rem;
+}
+.header.headerHH {
+  height: 1.2rem;
 }
 .header .logo {
   height: 20px;
@@ -149,7 +211,7 @@ body .split-logo img {
   text-align: center;
 }
 .footer a::before {
-  content: '';
+  content: "";
   width: 38px;
   height: 38px;
   display: inline-block;
@@ -229,16 +291,15 @@ body .split-logo img {
 }
 .footerBtns a::after {
   display: block;
-  content: '';
+  content: "";
   width: 1px;
   height: 39px;
-  background-color: rgba(255, 255, 255, 0.502);
+  background-color: rgba(255, 255, 255, 0.402);
   position: absolute;
   top: 10px;
   right: 0px;
 }
 .banner-swiper {
-  width: 100%;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -296,7 +357,7 @@ body .split-logo img {
   color: #282828;
 }
 .hmenus .swiper-containe .swiper-slide.active:after {
-  content: ' ';
+  content: " ";
   background-color: #282828;
   border-radius: 2px;
   width: 100%;
@@ -312,7 +373,7 @@ body .split-logo img {
 .pList .item {
   display: block;
   width: 3.16rem;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   line-height: 1.4;
 }
 .pList .item .pavt {
@@ -324,17 +385,20 @@ body .split-logo img {
 .pList .item .title {
   font-size: 12px;
   color: #2a2a2a;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .desc {
   font-size: 12px;
   color: #8f8f8f;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box .collect {
@@ -383,6 +447,9 @@ body .split-logo img {
 .liuyanBox {
   background: #f4f4f4;
 }
+.grid {
+  min-height: 60vh;
+}
 .grid a {
   display: flex;
   justify-content: space-between;
@@ -407,7 +474,7 @@ body .split-logo img {
   font-size: 13px;
 }
 .grid a .info .txt {
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
   box-sizing: border-box;
   line-height: 1;
@@ -425,6 +492,7 @@ body .split-logo img {
 }
 .grid a .info .desc.ellipsis2 {
   display: -webkit-box;
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .grid a .datas {
@@ -458,6 +526,9 @@ body .split-logo img {
 .rListBox {
   padding: 0.4rem;
 }
+.rListBox.pTop_0 {
+  padding-top: 0px;
+}
 .wenquan {
   padding: 0px 0.4rem;
   display: flex;
@@ -479,11 +550,13 @@ body .split-logo img {
 .wenquan .item .title {
   font-size: 12px;
   color: #2a2a2a;
+  padding: 0px 0.1rem;
   padding-top: 0.1rem;
 }
 .wenquan .item .desc {
   font-size: 12px;
   color: #8f8f8f;
+  padding: 0px 0.1rem;
   padding-top: 0.1rem;
 }
 .wenquan .item .watch-box {
@@ -514,4 +587,3 @@ body .split-logo img {
   height: 9px;
   margin-right: 0.1rem;
 }
-/*# sourceMappingURL=./jishi.css.map */

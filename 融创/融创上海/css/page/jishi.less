@@ -1,4 +1,4 @@
-@import '../lib/common.less';
+@import "../lib/common.less";
 
 .mtop {
     position: relative;
@@ -16,8 +16,8 @@
 .pListBox {
     .pList {
         display: none;
-        padding: 0px .4rem;
-        margin-bottom: .5rem;
+        padding: 0px 0.4rem;
+        margin-bottom: 0.5rem;
 
         &.show {
             display: flex;
@@ -27,12 +27,12 @@
     }
 }
 
-
 .liuyanBox {
     background: #f4f4f4;
 }
 
 .grid {
+    min-height: 60vh;
     a {
         display: flex;
         justify-content: space-between;
@@ -48,7 +48,7 @@
         }
 
         .info {
-            padding: .1rem .2rem;
+            padding: 0.1rem 0.2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -61,11 +61,11 @@
             }
 
             .txt {
-                font-size: 12px;
+                font-size: 13px;
                 color: rgb(160, 160, 160);
                 box-sizing: border-box;
                 line-height: 1;
-                padding-top: .05rem;
+                padding-top: 0.05rem;
             }
 
             .desc {
@@ -73,7 +73,7 @@
                 width: 4.5rem;
                 box-sizing: border-box;
                 color: rgb(160, 160, 160);
-                padding-top: .2rem;
+                padding-top: 0.2rem;
                 .ellipsis;
             }
         }
@@ -82,7 +82,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: .2rem;
+            padding-top: 0.2rem;
 
             .collect {
                 display: flex;
@@ -93,7 +93,7 @@
 
                 img {
                     height: 9px;
-                    margin-right: .1rem;
+                    margin-right: 0.1rem;
                 }
             }
 
@@ -106,20 +106,22 @@
 
                 img {
                     height: 9px;
-                    margin-right: .1rem;
+                    margin-right: 0.1rem;
                 }
             }
         }
-
     }
 }
 
 .rListBox {
-    padding: .4rem;
+    padding: 0.4rem;
+    &.pTop_0 {
+        padding-top: 0px;
+    }
 }
 
 .wenquan {
-    padding: 0px .4rem;
+    padding: 0px 0.4rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -127,33 +129,35 @@
     .item {
         display: block;
         width: 2rem;
-        margin-top: .4rem;
+        margin-top: 0.4rem;
         line-height: 1.4;
 
         .pavt {
             display: block;
             width: 2rem;
             height: 2rem;
-            border-radius: .1rem;
+            border-radius: 0.1rem;
         }
 
         .title {
             font-size: 12px;
             color: rgb(42, 42, 42);
-            padding-top: .1rem;
+            padding: 0px 0.1rem;
+            padding-top: 0.1rem;
         }
 
         .desc {
             font-size: 12px;
             color: rgb(143, 143, 143);
-            padding-top: .1rem;
+            padding: 0px 0.1rem;
+            padding-top: 0.1rem;
         }
 
         .watch-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: .2rem;
+            padding-top: 0.2rem;
 
             .collect {
                 display: flex;
@@ -164,7 +168,7 @@
 
                 img {
                     height: 9px;
-                    margin-right: .1rem;
+                    margin-right: 0.1rem;
                 }
             }
 
@@ -177,7 +181,7 @@
 
                 img {
                     height: 9px;
-                    margin-right: .1rem;
+                    margin-right: 0.1rem;
                 }
             }
         }
