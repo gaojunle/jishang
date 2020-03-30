@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
     <link rel="shortcut icon" href="./img/common/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
     <link rel="stylesheet" href="./css/page/home_v2.css" />
@@ -104,7 +105,7 @@
                             <img src="./img/index/icons/10_rfkt.png" alt="">
                             <span>融粉课堂</span>
                         </a>
-                        <img class="split" src="./img/index/sp1.png" alt="">
+                        <img class="split" src="./img/index/sp2.png" alt="">
                         <a href="#" class="item">
                             <img src="./img/index/icons/11_gdkf.png" alt="">
                             <span>工地开放</span>
@@ -137,6 +138,7 @@
         </div>
         <div class="arrowUp"><img src="./img/index/arrowUP.gif" alt=""></div>
     </div>
+    <!-- <div class="log" style="position: fixed;top:0px;width: 100%;left: 0px;"></div> -->
     <div class="footer">
         <a href="#" class="on">首页</a>
         <a href="#">联系客服</a>
@@ -153,6 +155,7 @@
                     this.initData();
                     this.bindEvent();
                     this.initBaoXiang();
+                    this.scrollAnimate();
                 },
                 bindEvent: function () {
                     //TODO 测试使用，info的div上加 activated 类名表示激活
@@ -161,7 +164,6 @@
                     })
 
                     $('.btn_scode').click(function () {
-                        console.log(12323)
                         var d = dialog({
                             title: '',
                             padding: 0,
@@ -173,6 +175,12 @@
                             d.close().remove();
                         })
                     })
+                },
+                scrollAnimate: function () {
+                    function preventDefaultScrollDown(e) {
+                        e.preventDefault()
+                    }
+                    document.body.addEventListener('touchmove', preventDefaultScrollDown, { passive: false });                    
 
                     var startx, starty;
                     //获得角度
@@ -209,8 +217,9 @@
                         startx = e.touches[0].pageX;
                         starty = e.touches[0].pageY;
                     }, false);
+
                     //手指离开屏幕
-                    document.addEventListener("touchend", function (e) {
+                    document.addEventListener("touchmove", function (e) {
                         var endx, endy;
                         endx = e.changedTouches[0].pageX;
                         endy = e.changedTouches[0].pageY;
@@ -224,30 +233,25 @@
                                 $('.wrap-box .top').addClass('swiperUp');
 
                                 setTimeout(function () {
-                                    if (!$('.wrap-box').addClass('swiperUp')) {
-                                        $('.container').scrollTop(0);
+                                    if (!$('.wrap-box').hasClass('swiperUp')) {
+                                        $('.container').scrollTop(5);
                                         $('.wrap-box').addClass('swiperUp');
-                                       
+                                        document.body.removeEventListener('touchmove', preventDefaultScrollDown, { passive: true });
                                     }
-                                }, 1500)
+                                }, 1000)
                                 $('.arrowUp').fadeOut();
-                                // var $ct = $('.container'),
-                                //     viewH = $ct.height(),//可见高度
-                                //     contentH = $ct.get(0).scrollHeight,//内容高度
-                                //     scrollTop = $ct.scrollTop();//滚动高度
-                                // if (scrollTop / (contentH - viewH) > 0.7) { //到达底部100px时,加载新内容
-                                //     $('.arrowUp').fadeOut();
-                                // }
                                 break;
                             case 2:
                                 //向下
-                                if ($('.container').scrollTop() < 20) {
+                                if ($('.container').scrollTop() < 5) {
+                                    document.body.addEventListener('touchmove', preventDefaultScrollDown, { passive: false });   
                                     $('.wrap-box').removeClass('swiperUp');
                                     //$('.container').scrollTop(0);
                                     $('.wrap-box .top').removeClass('swiperUp');
                                     $('.arrowUp').fadeIn();
+                                    
                                 }
-                               
+
                                 break;
                             case 3:
                                 //alert("向左！")

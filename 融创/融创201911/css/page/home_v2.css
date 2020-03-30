@@ -300,12 +300,12 @@ body .arrowUp img {
   color: #2a2a2a;
   font-size: 0.3466666667rem;
   font-weight: bold;
-  padding: 0.8666666667rem 0px;
+  padding: 0.2rem 0px;
   width: 30%;
 }
 .link-box .items .item img {
-  height: 0.88rem;
-  margin-bottom: 0.4rem;
+  height: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .ui-dialog-body .icon_close {
