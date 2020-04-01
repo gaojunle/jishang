@@ -54,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -149,7 +150,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
@@ -383,16 +383,17 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .pList .item .title {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
 }
 .pList .item .desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
+  line-height: 1.67;
 }
 .pList .item .watch-box {
   display: flex;
@@ -405,7 +406,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .collect img {
@@ -416,7 +417,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .watches img {
@@ -463,6 +464,7 @@ body .tab .tab-cont:nth-of-type(1) {
   height: 2rem;
 }
 .grid a .info {
+  flex: 1;
   padding: 0.1rem 0.2rem;
   display: flex;
   flex-direction: column;
@@ -471,10 +473,10 @@ body .tab .tab-cont:nth-of-type(1) {
   box-sizing: border-box;
 }
 .grid a .info .title {
-  font-size: 13px;
+  font-size: 14px;
 }
 .grid a .info .txt {
-  font-size: 13px;
+  font-size: 14px;
   color: #a0a0a0;
   box-sizing: border-box;
   line-height: 1;
@@ -492,7 +494,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .grid a .info .desc.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .grid a .datas {
@@ -548,13 +549,13 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .wenquan .item .title {
-  font-size: 12px;
+  font-size: 13px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
   padding-top: 0.1rem;
 }
 .wenquan .item .desc {
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.1rem;
@@ -569,7 +570,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .wenquan .item .watch-box .collect img {
@@ -587,3 +588,4 @@ body .tab .tab-cont:nth-of-type(1) {
   height: 9px;
   margin-right: 0.1rem;
 }
+/*# sourceMappingURL=./jishi.css.map */

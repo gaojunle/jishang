@@ -54,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -149,7 +150,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
@@ -161,6 +161,9 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .header.headerH {
   height: 0.86rem;
+}
+.header.headerHH {
+  height: 1.2rem;
 }
 .header .logo {
   height: 20px;
@@ -434,7 +437,7 @@ body .tab .tab-cont:nth-of-type(1) {
   position: relative;
 }
 .doLiuyan .ipt-box textarea {
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0.1rem;
@@ -448,7 +451,7 @@ body .tab .tab-cont:nth-of-type(1) {
   position: absolute;
   right: 0.3rem;
   bottom: 0.3rem;
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
 }
 .doLiuyan .ipt-box .ipt-limit span {
@@ -490,7 +493,7 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .doLiuyan .tip {
   margin: 0px 0.1rem;
-  font-size: 12px;
+  font-size: 14px;
   padding-top: 0.4rem;
   color: #8f8f8f;
   line-height: 1.875;
@@ -507,7 +510,7 @@ body .tab .tab-cont:nth-of-type(1) {
   align-items: center;
 }
 .myLiuyan .item .summ .date {
-  font-size: 12px;
+  font-size: 13px;
   position: relative;
   padding-left: 0.24rem;
   color: #8f8f8f;
@@ -533,12 +536,12 @@ body .tab .tab-cont:nth-of-type(1) {
   padding: 1px 0px;
   text-align: center;
   border-radius: 0.4rem;
-  font-size: 12px;
+  font-size: 13px;
   color: white;
   line-height: 1.2;
 }
 .myLiuyan .item .ly-txt {
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
   line-height: 1.667;
   margin-top: 0.2rem;
@@ -565,7 +568,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: block;
 }
 .myLiuyan .item .reply {
-  font-size: 12px;
+  font-size: 13px;
   padding-top: 0.2rem;
   padding-left: 0.24rem;
   line-height: 1.667;
@@ -577,8 +580,10 @@ body .tab .tab-cont:nth-of-type(1) {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 0.3rem 0.25rem;
+  font-size: 13px;
 }
 .myLiuyan .item .reply .rc {
-  font-size: 12px;
+  font-size: 13px;
   color: #b7a793;
 }
+/*# sourceMappingURL=./liuyan.css.map */

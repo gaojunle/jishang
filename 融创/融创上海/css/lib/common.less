@@ -10,10 +10,12 @@ body {
     font-size: 0.28rem;
     color: #2a2a2a;
     background: white;
+
     input::-webkit-input-placeholder,
     textarea::-webkit-input-placeholder {
         color: rgba(143, 143, 143, 0.6);
     }
+
     input:-ms-input-placeholder,
     textarea:-ms-input-placeholder {
         color: rgba(143, 143, 143, 0.6);
@@ -57,12 +59,13 @@ body {
             padding-top: 44px;
             padding-bottom: 18px;
 
-            > span {
-                font-size: 17px;
+            >span {
+                font-size: 18px;
+                font-weight: bold;
             }
 
-            > a {
-                > img {
+            >a {
+                >img {
                     width: 17px;
                 }
             }
@@ -91,6 +94,7 @@ body {
             opacity: 0.7;
         }
     }
+
     .tab {
         .tab-menu {
             position: relative;
@@ -99,8 +103,8 @@ body {
             display: flex;
             justify-content: space-between;
 
-            > li,
-            > a {
+            >li,
+            >a {
                 float: left;
                 width: 50%;
                 height: 0.8rem;
@@ -112,16 +116,19 @@ body {
                 &:nth-last-of-type(1) {
                     border-right: none;
                 }
-                > span {
+
+                >span {
                     display: inline-block;
                     height: 100%;
                     padding-top: 2px;
                     box-sizing: border-box;
                 }
+
                 &.on {
                     position: relative;
                     color: rgba(42, 42, 42, 1);
-                    > span {
+
+                    >span {
                         border-bottom: 1px solid rgba(42, 42, 42, 0.8);
                     }
                 }
@@ -181,12 +188,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     &.headerH {
         height: 0.86rem;
     }
-    &.headerHH{
+
+    &.headerHH {
         height: 1.2rem;
     }
+
     .logo {
         height: 20px;
     }
@@ -420,7 +430,7 @@ body {
                 margin-right: 0px;
             }
 
-            > span {
+            >span {
                 transition: all 0.3s ease;
                 display: block;
                 font-size: 15px;
@@ -468,17 +478,18 @@ body {
         }
 
         .title {
-            font-size: 12px;
+            font-size: 14px;
             color: rgb(42, 42, 42);
             padding: 0px 0.1rem;
-            padding-top: 0.2rem;
+            padding-top: 0.1rem;
         }
 
         .desc {
-            font-size: 12px;
+            font-size: 14px;
             color: rgb(143, 143, 143);
             padding: 0px 0.1rem;
             padding-top: 0.2rem;
+            line-height: 1.67;
         }
 
         .watch-box {
@@ -492,7 +503,7 @@ body {
                 display: flex;
                 align-items: center;
                 line-height: 0.5;
-                font-size: 12px;
+                font-size: 13px;
                 color: rgb(160, 160, 160);
 
                 img {
@@ -505,7 +516,7 @@ body {
                 display: flex;
                 align-items: center;
                 line-height: 0.5;
-                font-size: 12px;
+                font-size: 13px;
                 color: rgb(160, 160, 160);
 
                 img {

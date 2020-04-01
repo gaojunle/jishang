@@ -4,37 +4,48 @@
     background: white;
     height: 0.96rem;
 }
+
 .tab {
     padding-top: 0.2rem;
 }
+
 .hdList {
     .activity {
         padding: 0.4rem;
+
+        a {
+            display: block;
+        }
+
         .hdimg {
             width: 100%;
         }
 
         .atitle {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.667;
             padding-top: 8px;
+            padding: .2rem .1rem 0px;
         }
 
         .ainfo {
-            font-size: 12px;
+            font-size: 13px;
             color: rgb(143, 143, 143);
             line-height: 1.667;
+            padding: 0 .1rem;
         }
+
         .watch-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 0.2rem;
             line-height: 1;
+            padding: 0.2rem .1rem 0px;
+
             .collect {
                 display: flex;
                 align-items: center;
-                font-size: 12px;
+                font-size: 13px;
                 color: rgb(160, 160, 160);
 
                 img {
@@ -56,6 +67,7 @@
                     display: block;
                 }
             }
+
             //取消收藏
             .cancel {
                 display: inline-block;
@@ -70,33 +82,40 @@
         }
     }
 }
+
 .hdDetail {
     .ly-dec {
         width: 100%;
         background: #fff;
     }
+
     .watch-box {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0.4rem;
         line-height: 1;
+
         &.on {
             .collect {
                 display: none;
+
                 &.collected {
                     display: flex;
                 }
             }
         }
+
         .collect {
             display: flex;
             align-items: center;
-            font-size: 12px;
+            font-size: 13px;
             color: rgb(160, 160, 160);
+
             &.collected {
                 display: none;
             }
+
             img {
                 height: 0.26rem;
                 margin-right: 0.1rem;
@@ -117,12 +136,14 @@
             }
         }
     }
+
     .dianping {
         background: white;
+
         .dplist {
             background: #f4f4f4;
 
-            > h3 {
+            >h3 {
                 font-size: 17px;
                 padding: 0.4rem 0px;
             }
@@ -153,8 +174,7 @@
                     line-height: 1.4;
 
                     .lyInfo {
-                        font-size: 13px;
-                        height: 0.8rem;
+                        font-size: 14px;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
@@ -162,17 +182,18 @@
                         box-sizing: border-box;
 
                         .title {
-                            font-size: 13px;
+                            font-size: 14px;
                         }
 
                         .date {
-                            font-size: 12px;
+                            font-size: 13px;
                             color: rgb(143, 143, 143);
+                            padding-top:.1rem;
                         }
                     }
 
                     .lytxt {
-                        font-size: 12px;
+                        font-size: 13px;
                         padding: 0.1rem 0px;
 
                         .ly-del {
@@ -190,7 +211,7 @@
                     }
 
                     .replay-title {
-                        font-size: 13px;
+                        font-size: 14px;
                         position: relative;
                         padding: 0.16rem 0px;
                         padding-left: 0.24rem;
@@ -199,7 +220,7 @@
                             content: "";
                             background-color: rgb(42, 42, 42);
                             width: 4px;
-                            height: 12px;
+                            height: 13px;
                             display: inline-block;
                             position: absolute;
                             left: 0px;
@@ -209,7 +230,7 @@
                     }
 
                     .replay-txt {
-                        font-size: 12px;
+                        font-size: 13px;
                     }
                 }
             }
@@ -219,6 +240,7 @@
 
 .loupanList {
     padding: 0.4rem;
+
     a {
         display: flex;
         justify-content: space-between;
@@ -243,22 +265,29 @@
             box-sizing: border-box;
             overflow: hidden;
             flex: 1;
+
             .title {
                 font-size: 15px;
                 color: rgb(42, 42, 42);
+
+                &:nth-of-type(1) {
+                    font-weight: bold;
+                }
             }
 
             .txt {
                 color: rgb(160, 160, 160);
                 box-sizing: border-box;
-                font-size: 15px;
+                font-size: 14px;
                 .ellipsis;
             }
         }
     }
 }
+
 .loupanDetail {
     background-color: white;
+
     .btn-toggle {
         display: block;
         background-color: rgb(183, 167, 147);
@@ -270,28 +299,35 @@
         line-height: 1.2;
         margin-top: 0.5rem;
     }
+
     .lpDetail {
         .rtitle {
             padding-top: 0.5rem;
         }
+
         .detail {
-            font-size: 12px;
+            font-size: 14px;
             height: 3.5rem;
             overflow: hidden;
+
             &.unfold {
                 height: auto;
             }
+
             p {
                 line-height: 2;
-                > span {
+
+                >span {
                     color: #8f8f8f;
                 }
-                > i {
+
+                >i {
                     font-style: normal;
                 }
             }
         }
     }
+
     .carousel-swiper {
         width: 100%;
         position: relative;
@@ -300,9 +336,11 @@
         .swiper-slide {
             width: 3.92rem;
             border-radius: 5px;
-            figcaption{
+
+            figcaption {
                 display: none;
             }
+
             img {
                 width: 100%;
                 height: 2.92rem;
@@ -316,65 +354,77 @@
 
                 .dtitle {
                     color: rgb(143, 143, 143);
+                    font-size: 14px;
                 }
 
                 .txt {
                     color: rgb(42, 42, 42);
-                    font-size: 13px;
+                    font-size: 14px;
                 }
             }
         }
     }
+
     .liangdian {
         .detail {
-            font-size: 12px;
+            font-size: 14px;
             color: rgb(143, 143, 143);
             line-height: 2.083;
             height: 2.2rem;
             overflow: hidden;
+
             &.unfold {
                 height: auto;
             }
         }
     }
+
     .peitao {
         .map {
             img {
                 width: 100%;
             }
         }
+
         .detail {
             padding-top: 0.5rem;
+
             .item {
-                line-height: 2;
-                font-size: 12px;
+                line-height: 1.8;
+                font-size: 14px;
                 display: flex;
-                > span {
+
+                >span {
                     color: #8f8f8f;
                 }
+
                 p {
                     padding-left: 0.04rem;
                     flex: 1;
                 }
             }
         }
-    }    
+    }
 }
+
 .baoDaoList {
     padding: 0.4rem;
+
     .item {
         display: flex;
         margin-bottom: .45rem;
+
         .avt {
             width: 1.8rem;
             height: 1.8rem;
             border-radius: 0.1rem;
         }
+
         .info {
             padding-left: 0.2rem;
             flex: 1;
             font-size: 14px;
-            color: rgb(143, 143, 143);
+            color: #2a2a2a;
             line-height: 1.786;
             padding-top: .1rem;
         }

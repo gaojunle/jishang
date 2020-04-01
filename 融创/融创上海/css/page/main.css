@@ -7,6 +7,18 @@ body {
   color: #2a2a2a;
   background: white;
 }
+html input::-webkit-input-placeholder,
+body input::-webkit-input-placeholder,
+html textarea::-webkit-input-placeholder,
+body textarea::-webkit-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
+html input:-ms-input-placeholder,
+body input:-ms-input-placeholder,
+html textarea:-ms-input-placeholder,
+body textarea:-ms-input-placeholder {
+  color: rgba(143, 143, 143, 0.6);
+}
 body {
   max-width: 600px;
   padding: 0px;
@@ -42,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -59,7 +72,7 @@ body .rbox34 {
 }
 body .split-logo {
   text-align: center;
-  padding: 20px 0px;
+  padding: 40px 0px 20px;
 }
 body .split-logo img {
   width: 2.36rem;
@@ -79,12 +92,19 @@ body .tab .tab-menu > a {
   height: 0.8rem;
   line-height: 0.8rem;
   text-align: center;
-  font-size: 0.3rem;
-  color: rgba(42, 42, 42, 0.6);
+  font-size: 0.34rem;
+  color: rgba(42, 42, 42);
 }
 body .tab .tab-menu > li:nth-last-of-type(1),
 body .tab .tab-menu > a:nth-last-of-type(1) {
   border-right: none;
+}
+body .tab .tab-menu > li > span,
+body .tab .tab-menu > a > span {
+  display: inline-block;
+  height: 100%;
+  padding-top: 2px;
+  box-sizing: border-box;
 }
 body .tab .tab-menu > li.on,
 body .tab .tab-menu > a.on {
@@ -93,7 +113,7 @@ body .tab .tab-menu > a.on {
 }
 body .tab .tab-menu > li.on > span,
 body .tab .tab-menu > a.on > span {
-  border-bottom: 1px solid rgba(42, 42, 42, 0.6);
+  border-bottom: 1px solid rgba(42, 42, 42, 0.8);
 }
 body .tab .tab-cont {
   display: none;
@@ -130,15 +150,20 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
-  height: 38px;
-  padding: 0px 20px;
+  height: 0.76rem;
+  padding: 0px 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header.headerH {
+  height: 0.86rem;
+}
+.header.headerHH {
+  height: 1.2rem;
 }
 .header .logo {
   height: 20px;
@@ -348,7 +373,7 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item {
   display: block;
   width: 3.16rem;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   line-height: 1.4;
 }
 .pList .item .pavt {
@@ -360,17 +385,20 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item .title {
   font-size: 12px;
   color: #2a2a2a;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .desc {
   font-size: 12px;
   color: #8f8f8f;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 0.1rem;
   padding-top: 0.2rem;
 }
 .pList .item .watch-box .collect {
@@ -545,6 +573,7 @@ body .tab .tab-cont:nth-of-type(1) {
   color: #8f8f8f;
 }
 .info-box .main-navs a span {
+  font-size: 13px;
   color: #8f8f8f;
   line-height: 1;
 }
@@ -609,14 +638,16 @@ body .tab .tab-cont:nth-of-type(1) {
   width: 100%;
 }
 .activity .atitle {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.667;
+  padding: 0px 0.1rem;
   padding-top: 8px;
 }
 .activity .ainfo {
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
   line-height: 1.667;
+  padding: 0px 0.1rem;
 }
 .live .hdimg {
   width: 100%;
@@ -682,6 +713,7 @@ body .tab .tab-cont:nth-of-type(1) {
   width: 3.16rem;
   margin-bottom: 25px;
   line-height: 1.9;
+  line-height: 2;
 }
 .xsqd .xsqd-list a .avt {
   width: 3.16rem;
@@ -694,13 +726,13 @@ body .tab .tab-cont:nth-of-type(1) {
   line-height: 1.667;
   padding: 0px 0.1rem;
   padding-top: 6px;
+  font-size: 14px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .xsqd .xsqd-list a .desc.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .xsqd .xsqd-list a .money {
@@ -710,8 +742,8 @@ body .tab .tab-cont:nth-of-type(1) {
   padding-top: 0.1rem;
 }
 .xsqd .xsqd-list a .money span {
-  font-size: 15px;
   line-height: 1;
+  font-size: 16px;
 }
 .xsqd .xsqd-list a .money img {
   width: 0.22rem;
@@ -731,7 +763,7 @@ body .tab .tab-cont:nth-of-type(1) {
   text-align: center;
 }
 .hhr .hhr-list .info .title {
-  font-size: 13px;
+  font-size: 14px;
   padding-top: 0.2rem;
   padding-bottom: 0.12rem;
   white-space: nowrap;
@@ -740,11 +772,10 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .hhr .hhr-list .info .title.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .hhr .hhr-list .info .dec {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -754,7 +785,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .hhr .hhr-list .info .dec.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .guixin .grid a {
@@ -770,20 +800,20 @@ body .tab .tab-cont:nth-of-type(1) {
   height: 1.7rem;
 }
 .guixin .grid a .info {
-  font-size: 12px;
+  font-size: 13px;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   line-height: 1.7;
   box-sizing: border-box;
-  width: 100%;
   overflow: hidden;
+  flex: 1;
 }
 .guixin .grid a .info .title {
   color: #5d5d5d;
   padding-bottom: 3px;
-  font-size: 13px;
+  font-size: 14px;
 }
 .guixin .grid a .info .txt {
   color: #a0a0a0;
@@ -795,7 +825,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .guixin .grid a .info .txt.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .guixin .grid a .watches {
@@ -829,3 +858,4 @@ body .tab .tab-cont:nth-of-type(1) {
   padding: 0px 0.1rem;
   padding-top: 0.15rem;
 }
+/*# sourceMappingURL=./main.css.map */

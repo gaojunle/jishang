@@ -54,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -149,7 +150,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
@@ -161,6 +161,9 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .header.headerH {
   height: 0.86rem;
+}
+.header.headerHH {
+  height: 1.2rem;
 }
 .header .logo {
   height: 20px;
@@ -445,17 +448,17 @@ body {
   flex: 1;
 }
 .grid a .info .txt {
-  color: #a0a0a0;
+  color: #8f8f8f;
   box-sizing: border-box;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
 }
 .grid a .watches {
   display: flex;
   align-items: center;
   line-height: 0.5;
   font-size: 12px;
-  color: #a0a0a0;
+  color: #8f8f8f;
 }
 .grid a .watches img {
   height: 9px;
@@ -567,7 +570,7 @@ body {
   text-align: center;
 }
 .guixinLive .gx-carousel-swiper .swiper-slide .desc .dtitle {
-  font-size: 13px;
+  font-size: 14px;
   color: #2a2a2a;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -575,7 +578,6 @@ body {
 }
 .guixinLive .gx-carousel-swiper .swiper-slide .desc .dtitle.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .guixinLive .gx-carousel-swiper .swiper-slide .desc .txt {
@@ -589,7 +591,6 @@ body {
 }
 .guixinLive .gx-carousel-swiper .swiper-slide .desc .txt.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .guixinLive .gx-carousel-swiper .swiper-pagination-bullets {
@@ -654,7 +655,7 @@ body {
   position: relative;
 }
 .liuyanBox .liuyan .ly .ipt-box textarea {
-  font-size: 12px;
+  font-size: 13px;
   width: 100%;
   box-sizing: border-box;
   border-width: 1px;
@@ -678,7 +679,7 @@ body {
   color: #8f8f8f;
 }
 .liuyanBox .liuyan .ly .tip {
-  font-size: 12px;
+  font-size: 13px;
   padding-top: 0.4rem;
   color: #8f8f8f;
   line-height: 1.875;
@@ -850,3 +851,4 @@ body {
 .liuyan-box .limit span {
   color: #8f8f8f;
 }
+/*# sourceMappingURL=./guixin.css.map */

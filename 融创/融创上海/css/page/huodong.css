@@ -54,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -149,7 +150,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
@@ -433,30 +433,35 @@ body .tab .tab-cont:nth-of-type(1) {
 .hdList .activity {
   padding: 0.4rem;
 }
+.hdList .activity a {
+  display: block;
+}
 .hdList .activity .hdimg {
   width: 100%;
 }
 .hdList .activity .atitle {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.667;
   padding-top: 8px;
+  padding: 0.2rem 0.1rem 0px;
 }
 .hdList .activity .ainfo {
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
   line-height: 1.667;
+  padding: 0 0.1rem;
 }
 .hdList .activity .watch-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.2rem;
   line-height: 1;
+  padding: 0.2rem 0.1rem 0px;
 }
 .hdList .activity .watch-box .collect {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .hdList .activity .watch-box .collect img {
@@ -505,7 +510,7 @@ body .tab .tab-cont:nth-of-type(1) {
 .hdDetail .watch-box .collect {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .hdDetail .watch-box .collect.collected {
@@ -561,8 +566,7 @@ body .tab .tab-cont:nth-of-type(1) {
   line-height: 1.4;
 }
 .hdDetail .dianping .dplist li .right .lyInfo {
-  font-size: 13px;
-  height: 0.8rem;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -570,14 +574,15 @@ body .tab .tab-cont:nth-of-type(1) {
   box-sizing: border-box;
 }
 .hdDetail .dianping .dplist li .right .lyInfo .title {
-  font-size: 13px;
+  font-size: 14px;
 }
 .hdDetail .dianping .dplist li .right .lyInfo .date {
-  font-size: 12px;
+  font-size: 13px;
   color: #8f8f8f;
+  padding-top: 0.1rem;
 }
 .hdDetail .dianping .dplist li .right .lytxt {
-  font-size: 12px;
+  font-size: 13px;
   padding: 0.1rem 0px;
 }
 .hdDetail .dianping .dplist li .right .lytxt .ly-del {
@@ -593,7 +598,7 @@ body .tab .tab-cont:nth-of-type(1) {
   margin-top: 0.2rem;
 }
 .hdDetail .dianping .dplist li .right .replay-title {
-  font-size: 13px;
+  font-size: 14px;
   position: relative;
   padding: 0.16rem 0px;
   padding-left: 0.24rem;
@@ -602,7 +607,7 @@ body .tab .tab-cont:nth-of-type(1) {
   content: "";
   background-color: #2a2a2a;
   width: 4px;
-  height: 12px;
+  height: 13px;
   display: inline-block;
   position: absolute;
   left: 0px;
@@ -610,7 +615,7 @@ body .tab .tab-cont:nth-of-type(1) {
   margin-top: -6px;
 }
 .hdDetail .dianping .dplist li .right .replay-txt {
-  font-size: 12px;
+  font-size: 13px;
 }
 .loupanList {
   padding: 0.4rem;
@@ -642,17 +647,19 @@ body .tab .tab-cont:nth-of-type(1) {
   font-size: 15px;
   color: #2a2a2a;
 }
+.loupanList a .info .title:nth-of-type(1) {
+  font-weight: bold;
+}
 .loupanList a .info .txt {
   color: #a0a0a0;
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .loupanList a .info .txt.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .loupanDetail {
@@ -673,7 +680,7 @@ body .tab .tab-cont:nth-of-type(1) {
   padding-top: 0.5rem;
 }
 .loupanDetail .lpDetail .detail {
-  font-size: 12px;
+  font-size: 14px;
   height: 3.5rem;
   overflow: hidden;
 }
@@ -713,13 +720,14 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .loupanDetail .carousel-swiper .swiper-slide .desc .dtitle {
   color: #8f8f8f;
+  font-size: 14px;
 }
 .loupanDetail .carousel-swiper .swiper-slide .desc .txt {
   color: #2a2a2a;
-  font-size: 13px;
+  font-size: 14px;
 }
 .loupanDetail .liangdian .detail {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   line-height: 2.083;
   height: 2.2rem;
@@ -735,8 +743,8 @@ body .tab .tab-cont:nth-of-type(1) {
   padding-top: 0.5rem;
 }
 .loupanDetail .peitao .detail .item {
-  line-height: 2;
-  font-size: 12px;
+  line-height: 1.8;
+  font-size: 14px;
   display: flex;
 }
 .loupanDetail .peitao .detail .item > span {
@@ -762,7 +770,8 @@ body .tab .tab-cont:nth-of-type(1) {
   padding-left: 0.2rem;
   flex: 1;
   font-size: 14px;
-  color: #8f8f8f;
+  color: #2a2a2a;
   line-height: 1.786;
   padding-top: 0.1rem;
 }
+/*# sourceMappingURL=./huodong.css.map */

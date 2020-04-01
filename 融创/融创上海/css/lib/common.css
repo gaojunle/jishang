@@ -54,7 +54,8 @@ body .rbox .rtitle {
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 body .rbox .rtitle > a > img {
   width: 17px;
@@ -149,7 +150,6 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 .header {
@@ -383,16 +383,17 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .pList .item .title {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
 }
 .pList .item .desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
+  line-height: 1.67;
 }
 .pList .item .watch-box {
   display: flex;
@@ -405,7 +406,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .collect img {
@@ -416,10 +417,11 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .watches img {
   height: 9px;
   margin-right: 0.1rem;
 }
+/*# sourceMappingURL=./common.css.map */
