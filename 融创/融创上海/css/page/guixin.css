@@ -383,16 +383,17 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .pList .item .title {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
 }
 .pList .item .desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
+  line-height: 1.67;
 }
 .pList .item .watch-box {
   display: flex;
@@ -405,7 +406,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .collect img {
@@ -416,7 +417,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .watches img {
@@ -722,7 +723,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 1rem;
 }
 .dianpingBox .dianping .collectbox .collect.on {
@@ -733,7 +734,7 @@ body {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
   padding-right: 0.1rem;
 }
@@ -772,7 +773,7 @@ body {
   line-height: 1.4;
 }
 .dianpingBox .dianping .dplist li .right .lyInfo {
-  font-size: 13px;
+  font-size: 14px;
   height: 0.8rem;
   display: flex;
   flex-direction: column;
@@ -781,14 +782,14 @@ body {
   box-sizing: border-box;
 }
 .dianpingBox .dianping .dplist li .right .lyInfo .title {
-  font-size: 13px;
+  font-size: 14px;
 }
 .dianpingBox .dianping .dplist li .right .lyInfo .date {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
 }
 .dianpingBox .dianping .dplist li .right .lytxt {
-  font-size: 12px;
+  font-size: 14px;
   padding: 0.1rem 0px;
 }
 .dianpingBox .dianping .dplist li .right .lytxt .ly-del {
@@ -798,13 +799,13 @@ body {
   padding: 1px 0px;
   text-align: center;
   border-radius: 0.4rem;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   line-height: 1.2;
   margin-top: 0.2rem;
 }
 .dianpingBox .dianping .dplist li .right .replay-title {
-  font-size: 13px;
+  font-size: 14px;
   position: relative;
   padding: 0.16rem 0px;
   padding-left: 0.24rem;
@@ -821,7 +822,7 @@ body {
   margin-top: -6px;
 }
 .dianpingBox .dianping .dplist li .right .replay-txt {
-  font-size: 12px;
+  font-size: 14px;
 }
 .liuyan-box {
   position: relative;

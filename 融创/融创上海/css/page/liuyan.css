@@ -383,16 +383,17 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .pList .item .title {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
 }
 .pList .item .desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
+  line-height: 1.67;
 }
 .pList .item .watch-box {
   display: flex;
@@ -405,7 +406,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .collect img {
@@ -416,7 +417,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .watches img {
@@ -510,7 +511,7 @@ body .tab .tab-cont:nth-of-type(1) {
   align-items: center;
 }
 .myLiuyan .item .summ .date {
-  font-size: 13px;
+  font-size: 14px;
   position: relative;
   padding-left: 0.24rem;
   color: #8f8f8f;
@@ -536,12 +537,12 @@ body .tab .tab-cont:nth-of-type(1) {
   padding: 1px 0px;
   text-align: center;
   border-radius: 0.4rem;
-  font-size: 13px;
+  font-size: 14px;
   color: white;
   line-height: 1.2;
 }
 .myLiuyan .item .ly-txt {
-  font-size: 13px;
+  font-size: 14px;
   color: #8f8f8f;
   line-height: 1.667;
   margin-top: 0.2rem;
@@ -568,7 +569,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: block;
 }
 .myLiuyan .item .reply {
-  font-size: 13px;
+  font-size: 14px;
   padding-top: 0.2rem;
   padding-left: 0.24rem;
   line-height: 1.667;
@@ -580,10 +581,10 @@ body .tab .tab-cont:nth-of-type(1) {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 0.3rem 0.25rem;
-  font-size: 13px;
+  font-size: 14px;
 }
 .myLiuyan .item .reply .rc {
-  font-size: 13px;
+  font-size: 14px;
   color: #b7a793;
 }
 /*# sourceMappingURL=./liuyan.css.map */

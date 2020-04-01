@@ -42,6 +42,9 @@ body .loading {
   justify-content: center;
   align-items: center;
 }
+body .minH70 {
+  min-height: 70vh;
+}
 body .rbox {
   padding: 0px 0.4rem;
   border-radius: 0.1rem;
@@ -383,16 +386,17 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .pList .item .title {
-  font-size: 12px;
+  font-size: 14px;
   color: #2a2a2a;
   padding: 0px 0.1rem;
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
 }
 .pList .item .desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
+  line-height: 1.4;
 }
 .pList .item .watch-box {
   display: flex;
@@ -405,7 +409,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .collect img {
@@ -416,7 +420,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   align-items: center;
   line-height: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   color: #a0a0a0;
 }
 .pList .item .watch-box .watches img {
@@ -619,6 +623,7 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .loupanList {
   padding: 0.4rem;
+  min-height: 40vh;
 }
 .loupanList a {
   display: flex;
@@ -735,6 +740,10 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .loupanDetail .liangdian .detail.unfold {
   height: auto;
+}
+.loupanDetail .peitao .map {
+  border-radius: 0.1rem;
+  overflow: hidden;
 }
 .loupanDetail .peitao .map img {
   width: 100%;

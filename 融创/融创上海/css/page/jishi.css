@@ -42,6 +42,9 @@ body .loading {
   justify-content: center;
   align-items: center;
 }
+body .minH70 {
+  min-height: 70vh;
+}
 body .rbox {
   padding: 0px 0.4rem;
   border-radius: 0.1rem;
@@ -393,7 +396,7 @@ body .tab .tab-cont:nth-of-type(1) {
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
-  line-height: 1.67;
+  line-height: 1.4;
 }
 .pList .item .watch-box {
   display: flex;
@@ -439,6 +442,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: none;
   padding: 0px 0.4rem;
   margin-bottom: 0.5rem;
+  min-height: 30vh;
 }
 .pListBox .pList.show {
   display: flex;
@@ -535,6 +539,7 @@ body .tab .tab-cont:nth-of-type(1) {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-height: 45vh;
 }
 .wenquan .item {
   display: block;

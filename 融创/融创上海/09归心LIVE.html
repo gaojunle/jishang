@@ -163,18 +163,20 @@
                         loop: true,
                         pagination: '.swiper-pagination'
                     });
-                    new Swiper('.js-carousel-swiper', {
-                        slidesPerView: 'auto',
-                        spaceBetween: 10,
-                        autoplay: 4000,
-                        loop: true,
-                        pagination: '.swiper-pagination'
-                    });
+                    setTimeout(function () {
+                        new Swiper('.js-carousel-swiper', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 10,
+                            autoplay: 4000,
+                            loop: true,
+                            pagination: '.swiper-pagination'
+                        });
+                    }, 1500)
                 }
             };
             App.init();
         })
     </script>
-    </body>
+</body>
 
 </html>
