@@ -167,6 +167,7 @@
     <script src="./js/lib/artDialog.js"></script>
     <script src="./js/lib/swiper.min.js"></script>
     <script>
+
         jQuery(function ($) {
             var App = {
                 init: function () {
@@ -206,7 +207,21 @@
                         loop: true,
                         pagination: '.swiper-pagination'
                     });
-                    var linkSwiper = new Swiper('.link-swiper', {
+
+                    //初始化菜单轮播
+                    App.initLinkSeiper();
+                    //以下是销毁
+                    setTimeout(function () {
+                        App.linkSwiper.destroy(false);
+                    }, 3000)
+                    //重新初始化
+                    setTimeout(function () {
+                        App.initLinkSeiper();
+                    }, 6000)
+                },
+
+                initLinkSeiper: function () {
+                    App.linkSwiper = new Swiper('.link-swiper', {
                         spaceBetween: 0,
                         nextButton: '.swiper-button-next',
                         prevButton: '.swiper-button-prev',
