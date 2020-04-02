@@ -9,6 +9,7 @@
 
     .swiper-slide {
         img {
+            border-radius: .1rem;
             width: 100%;
         }
     }
@@ -80,12 +81,12 @@
         .desc {
             display: none;
             line-height: 1.667;
-            font-size: 12px;
+            font-size: 13px;
             padding-top: 10px;
 
             .dtitle {
                 color: rgb(42, 42, 42);
-                font-size: 13px;
+                font-size: 14px;
             }
 
             .txt {
@@ -128,6 +129,7 @@
         .desc {
             line-height: 1.667;
             font-size: 12px;
+            padding: 0px .1rem;
             padding-top: .12rem;
 
             .dtitle {
@@ -136,7 +138,7 @@
 
             .txt {
                 color: rgb(42, 42, 42);
-                font-size: 13px;
+                font-size: 14px;
             }
         }
     }
@@ -159,18 +161,21 @@
     }
 }
 
+.headerTop{
+    padding-top: .2rem;
+}
 .info-box {
     position: relative;
     z-index: 10;
     margin-top: -0.4rem;
 
-    .main-navs {
+    & .main-navs {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background: white;
         border-radius: .1rem;
-        padding: .26rem .2rem;
+        padding: .26rem .1rem;
 
         a {
             display: block;
@@ -220,7 +225,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
+            font-size: 13px;
 
             &::after {
                 content: '';
@@ -250,13 +255,43 @@
 
             a {
                 color: rgb(143, 143, 143);
-                font-size: 12px;
+                font-size: 13px;
                 display: block;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
             }
         }
+    }
+}
+
+.main-info {
+    &.info-box {
+        margin-top: 0px;
+        margin-bottom: .4rem;
+
+        .myinfo {
+            padding: .4rem 3px;
+
+            >h2 {
+                font-size: 25px;
+                padding-bottom: .1rem;
+            }
+
+            >p {
+                font-size: 15px;
+            }
+        }
+
+        .main-navs {
+            background: transparent;
+            padding-bottom: .4rem;
+        }
+
+    }
+
+    .banner-swiper .swiper-pagination-bullets {
+        bottom: 5px;
     }
 }
 
@@ -267,7 +302,7 @@
 
     .atitle {
         font-size: 16px;
-        line-height: 1.667;        
+        line-height: 1.667;
         padding: 0px .1rem;
         padding-top: 8px;
     }
@@ -363,8 +398,9 @@
             width: 3.16rem;
             margin-bottom: 25px;
             line-height: 1.9;
-           
+
             line-height: 2;
+
             .avt {
                 width: 3.16rem;
                 height: 3.16rem;
@@ -416,6 +452,7 @@
 
         .info {
             text-align: center;
+
             .title {
                 font-size: 14px;
                 padding-top: .2rem;
@@ -480,6 +517,7 @@
                 align-items: center;
                 line-height: 0.5;
                 color: rgb(160, 160, 160);
+
                 img {
                     height: 9px;
                     margin-right: .1rem;
@@ -499,6 +537,7 @@
             display: block;
             margin-bottom: .5rem;
             width: 3.16rem;
+
             .avt {
                 width: 3.16rem;
                 height: 3.16rem;

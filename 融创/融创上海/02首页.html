@@ -17,9 +17,9 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header headerTop">
         <img src="./img/logo.png" alt="" class="logo">
-        <span class="msg">早上好，融创家人们！</span>
+        <!-- <span class="msg">早上好，融创家人们！</span> -->
         <div class="selcity">
             <select>
                 <option value="1" selected>上海</option>
@@ -29,23 +29,20 @@
             <img class="icon-down" src="./img/common/icon-down.png" alt="">
         </div>
     </div>
-    <div class="banner-swiper js-banner-swiper">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
-        </ul>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="rbox info-box">
-        <div class="main-navs">
-            <a href="./181热销楼盘.html"><img src="./img/main/icons/icon-xfzy.png" alt=""><span>幸福置业</span></a>
-            <a href="./171活动.html"><img src="./img/main/icons/icon-jchd.png" alt=""><span>精彩活动</span></a>
-            <a href="./08融创家书（楼盘列表）.html"><img src="./img/main/icons/icon-rcjs.png" alt=""><span>融创家书</span></a>
-            <a href="./09归心LIVE.html"><img src="./img/main/icons/icon-gx.png" alt=""><span>归心LIVE</span></a>
+    <div class="rbox info-box main-info">
+        <div class="myinfo">
+            <h2>Hi, 程浃林</h2>
+            <p>早上好，让我们开启美好一天</p>
         </div>
-        
+        <div class="main-navs">
+            <a href="./181热销楼盘.html"><img src="./img/main/icons/icon-xfzy-1.png" alt=""><span>幸福置业</span></a>
+            <a href="./171活动.html"><img src="./img/main/icons/icon-jchd-1.png" alt=""><span>精彩活动</span></a>
+            <a href="./13权益列表.html"><img src="./img/main/icons/icon-zsqy-1.png" alt=""><span>专属权益</span></a>
+            <a href="./"><img src="./img/main/icons/icon-jfsc-1.png" alt=""><span>积分商城</span></a>
+            <!-- <a href="./08融创家书（楼盘列表）.html"><img src="./img/main/icons/icon-rcjs.png" alt=""><span>融创家书</span></a>
+            <a href="./09归心LIVE.html"><img src="./img/main/icons/icon-gx.png" alt=""><span>归心LIVE</span></a> -->
+        </div>
+
         <div class="notice">
             <span class="notice-title">公告</span>
             <div class="noticeInfo">
@@ -58,6 +55,19 @@
             </div>
         </div>
     </div>
+
+    <div class="rbox main-info">
+        <div class="banner-swiper js-banner-swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
+                <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper-1.png" /></a></li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
     <div class="rbox rexiao">
         <div class="rtitle">
             <span>热销推荐</span>
@@ -187,14 +197,16 @@
                         loop: true,
                         pagination: '.swiper-pagination'
                     });
-                    new Swiper('.js-scale-swiper', {
-                        slidesPerView: 3,
-                        spaceBetween: -6,
-                        centeredSlides: true,
-                        autoplay: 4000,
-                        loop: true,
-                        pagination: '.swiper-pagination'
-                    });
+                    setTimeout(function () {
+                        new Swiper('.js-scale-swiper', {
+                            slidesPerView: 3,
+                            spaceBetween: -6,
+                            centeredSlides: true,
+                            autoplay: 4000,
+                            loop: true,
+                            pagination: '.swiper-pagination'
+                        });
+                    }, 1000)
                     new Swiper('.js-carousel-swiper', {
                         slidesPerView: 'auto',
                         spaceBetween: 20,
