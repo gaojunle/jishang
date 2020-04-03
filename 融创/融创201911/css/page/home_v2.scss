@@ -13,16 +13,27 @@ body {
 
     .arrowUp {
         position: fixed;
-        width: px2rem(44);
-        height: px2rem(44);
-        left: 50%;
+        width: 100%;
         bottom: px2rem(140);
-        margin-left: - px2rem(22);
-        &.hide{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0px .2rem;
+        box-sizing: border-box;
+        transition: bottom 1s;
+
+        &.rotate180 {
+            transform: rotate(180deg);
+            top: .2rem;
+            bottom: auto;
+        }
+
+        &.hide {
             display: none;
         }
+
         img {
-            width: 100%;
+            width: px2rem(44);
+            height: px2rem(44);
         }
     }
 }

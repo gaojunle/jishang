@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="arrowUp"><img src="./img/index/arrowUP.gif" alt=""></div>
+        <div class="arrowUp"><img src="./img/index/arrowUP.gif" alt=""><img src="./img/index/arrowUP.gif" alt=""></div>
     </div>
     <!-- <div class="log" style="position: fixed;top:0px;width: 100%;left: 0px;"></div> -->
     <div class="footer">
@@ -239,7 +239,7 @@
                                         document.body.removeEventListener('touchmove', preventDefaultScrollDown, { passive: true });
                                     }
                                 }, 1000)
-                                $('.arrowUp').fadeOut();
+                                $('.arrowUp').addClass('rotate180');
                                 break;
                             case 2:
                                 //向下
@@ -248,8 +248,7 @@
                                     $('.wrap-box').removeClass('swiperUp');
                                     //$('.container').scrollTop(0);
                                     $('.wrap-box .top').removeClass('swiperUp');
-                                    $('.arrowUp').fadeIn();
-                                    
+                                    $('.arrowUp').removeClass('rotate180');                           
                                 }
 
                                 break;
