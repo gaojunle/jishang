@@ -190,17 +190,18 @@
                 },
 
                 initSwiper: function () {
-                    var swiperBanner = new Swiper('.js-banner-swiper', {
-                        spaceBetween: 0,
+
+                    new Swiper('.js-scale-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: -6,
                         centeredSlides: true,
                         autoplay: 4000,
                         loop: true,
                         pagination: '.swiper-pagination'
                     });
                     setTimeout(function () {
-                        new Swiper('.js-scale-swiper', {
-                            slidesPerView: 3,
-                            spaceBetween: -6,
+                        var swiperBanner = new Swiper('.js-banner-swiper', {
+                            spaceBetween: 0,
                             centeredSlides: true,
                             autoplay: 4000,
                             loop: true,
