@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
     <link rel="stylesheet" href="./css/lib/common.css" />
     <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/lib/mobileSelect.css">
     <link rel="stylesheet" href="./css/page/main.css" />
     <script src="./js/lib/viewbox.js"></script>
 </head>
@@ -20,11 +21,12 @@
     <div class="header headerTop">
         <img src="./img/logo.png" alt="" class="logo">
         <!-- <span class="msg">早上好，融创家人们！</span> -->
-        <div class="selcity">
-            <select>
+        <div class="selcity js-select">
+            <div class="sel-val" style="font-size: 15px;color: #8f8f8f;display: inline-block;width: 100px;text-align: right;"></div>
+            <select class="sel-data" data-title="请选择城市" style="display: none;">
                 <option value="1" selected>上海</option>
                 <option value="2">无锡</option>
-                <option value="3">其它</option>
+                <option value="3">西安</option>
             </select>
             <img class="icon-down" src="./img/common/icon-down.png" alt="">
         </div>
@@ -186,6 +188,7 @@
     </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/mobileSelect.js"></script>
     <script src="./js/lib/swiper.min.js"></script>
     <script>
         jQuery(function ($) {
@@ -196,6 +199,7 @@
                 },
                 bindEvent: function () {
                     this.noticeUp();
+                    this.initSelect();
                 },
                 initData: function () {
                     this.initSwiper();
@@ -235,6 +239,37 @@
                         })
                     }, 3000);
 
+                },
+                initSelect: function () {
+                    $('.js-select').each(function () {
+                        var $this = $(this),
+                            $selData = $this.find('select');
+
+                        if ($selData.length == 0) {
+                            return false;
+                        }
+
+                        var data = [];
+                        $selData.find('option').each(function () {
+                            data.push({ id: $(this).val(), value: $(this).html() })
+                            if ($(this).prop('selected')) {
+                                $this.find('.sel-val').html($(this).html());
+                            }
+                        });
+
+                        new MobileSelect({
+                            trigger: this,
+                            title: $selData.data('title'),
+                            wheels: [
+                                { data: data }
+                            ],
+                            callback: function (indexArr, data) {
+                                console.log(data)
+                                /*TODO 这里处理选择后事件*/
+                                $this.find('.sel-val').html(data[0].value);
+                            }
+                        });
+                    })
                 }
             };
             App.init();
