@@ -1,3 +1,8 @@
+html,
+body {
+    padding-bottom: .8rem;
+}
+
 .header {
     height: .76rem;
     padding: .24rem .4rem;
@@ -31,7 +36,8 @@
     }
 }
 
-.poster-swiper {
+.poster-swiper,
+.tmpPostBox {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -65,7 +71,7 @@
 
             .nick {
                 color: rgb(42, 42, 42);
-                font-size: 15px;
+                font-size: 12px;
                 padding-left: .1rem;
             }
 
@@ -101,6 +107,13 @@
     }
 }
 
+.tmpPostBox {
+    display: inline-block;
+    list-style: none;
+    .swiper-slide {
+        list-style: none;
+    }
+}
 
 .cards-wrapper {
     //position: relative;
@@ -193,6 +206,14 @@
         padding-top: .1rem;
     }
 
+}
+
+.tip {
+    font-size: 12px;
+    color: rgb(143, 143, 143);
+    line-height: 2.083;
+    text-align: center;
+    padding-top: .1rem;
 }
 
 .share_box {

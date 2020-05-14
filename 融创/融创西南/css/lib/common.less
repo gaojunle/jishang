@@ -40,26 +40,62 @@ body {
     align-items: center;
 }
 
-.countsel {
+.pop_box {
+    background-color: rgba(42, 42, 42, 0.702);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+    z-index: 100;
 
-    .reduce,
-    .add {
+    &.show {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: .46rem;
-        height: .46rem;
-        background: url(../../img/common/add.png) 0px 0px no-repeat;
-        background-size: 100% 100%;
     }
-    .reduce{
-        background: url(../../img/common/reduce.png) 0px 0px no-repeat;
-        background-size: 100% 100%;
+
+    .pop_close {
+        position: absolute;
+        right: .2rem;
+        top: .2rem;
+        width: .24rem;
     }
-    .cnt{
-        padding: 0px .34rem;
+
+    .pop_cont {
+        position: relative;
+
+        border-radius: .1rem;
+        background-color: white;
+
+        .pop_wraper {
+            box-sizing: border-box;
+            overflow-y: scroll;
+            padding: .1rem 0px;
+            width: 6.16rem;
+            max-height: 8.48rem;
+            padding: .4rem .5rem .5rem .6rem;
+            box-sizing: border-box;           
+        }
+        .pop_img_wraper{
+            width: 70vw;
+            box-sizing: border-box;  
+        }
+
+        .ptitle {
+            font-size: .3rem;
+            color: rgb(143, 143, 143);
+            text-align: center;
+            padding-bottom: .3rem;
+        }
+
+        p {
+            color: rgb(143, 143, 143);
+            line-height: 2.26;
+            font-size: .24rem;
+        }
     }
 }

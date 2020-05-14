@@ -69,7 +69,9 @@
             </li>
         </ul>
     </div>
+    <div class="tmpPostBox">
 
+    </div>
     <div class="products">
         <div class="tip">▲ 长按上方图片保存 ▲</div>
         <div class="cards-wrapper js-carousel-swiper">
@@ -86,6 +88,16 @@
         </div>
     </div>
     <div class="share_box">分享给好友</div>
+    <div class="pop_box js_pst">
+        <div class="pop_cont">
+            <img class="pop_close" src="./img/common/icon_close.png" alt="">
+
+            <div class="pop_img_wraper">
+                <div class="js_poster_img"></div>
+                <div class="tip">▲ 长按上方图片保存 ▲</div>
+            </div>
+        </div>
+    </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/artDialog.js"></script>
     <script src="./js/lib/mobileSelect.js"></script>
@@ -101,22 +113,24 @@
                 },
                 bindEvent: function () {
                     this.initSelect();
-                    $('.share_box').click(function () {
-                        App.convert2canvas($('.swiper-slide-active a')).then(function ($img) {
-                            $('body').append($img);
-                        })
-                    })
+                    this.bindPopClose();
                 },
                 initData: function () {
                     this.initSwiper();
                 },
-
+                bindPopClose: function () {
+                    $('.pop_close').click(function () {
+                        $('.pop_box').removeClass('show')
+                        return false;
+                    })
+                },
                 initSwiper: function () {
                     var swiperBanner = new Swiper('.js-banner-swiper', {
                         spaceBetween: 0,
                         centeredSlides: true,
                         autoplay: 4000,
                         loop: true,
+                        effect: 'cube',
                         pagination: '.swiper-pagination'
                     });
                     new Swiper('.js-scale-swiper', {
@@ -124,8 +138,25 @@
                         spaceBetween: '3%',
                         centeredSlides: true,
                         autoplay: false,
-                        loop: true,
-                        pagination: '.swiper-pagination'
+                        //loop: true,
+                        initialSlide: 1,
+                        pagination: '.swiper-pagination',
+                        onSlideChangeEnd: function (swiper) {
+                            var $tmpPostBox = $('.tmpPostBox'),
+                                $curSwiperSlide = $(swiper.slides[swiper.activeIndex])
+                            $tmpPostBox.empty().append($curSwiperSlide.clone())
+                            console.log($tmpPostBox)
+
+                        },
+                        onInit: function (swiper) {
+                        },
+                        onClick: function (swiper) {
+                            App.convercanvas($('.tmpPostBox')).then(function ($img) {
+                                //$curSwiperSlide.append($img);
+                                $('.js_poster_img').empty().append($img)
+                            })
+                            $('.js_pst').addClass('show')
+                        }
                     });
                     new Swiper('.js-carousel-swiper', {
                         slidesPerView: 'auto',
@@ -141,7 +172,7 @@
                         $(this).addClass('selected').siblings().removeClass('selected')
                     })
                 },
-                convert2canvas: function ($coverDom) {
+                convercanvas: function ($coverDom, translate) {
                     var width = $coverDom.width(); //获取dom 宽度
                     var height = $coverDom.height(); //获取dom 高度
                     var canvas = document.createElement("canvas"); //创建一个canvas节点
@@ -152,8 +183,7 @@
                     //修改偏移量
                     canvasDom = canvas.getContext("2d");
                     canvasDom.scale(scale, scale); //获取context,设置scale
-                    canvasDom.translate('-' + ($coverDom[0].offsetLeft), '-' + ($coverDom[0].offsetTop));
-                    console.log($coverDom[0].offsetLeft)
+                    //canvasDom.translate('-' + 63, '-' + 62);
                     console.log($coverDom)
                     var opts = {
                         scale: scale, // 添加的scale 参数
@@ -172,11 +202,12 @@
                         context.msImageSmoothingEnabled = false;
                         context.imageSmoothingEnabled = false;
 
+
                         // 【重要】默认转化的格式为png,也可设置为其他格式
                         var $img = $(Canvas2Image.convertToPNG(canvas, canvas.width, canvas.height))
+                            .addClass('ximg')
                             .css({
-                                "width": canvas.width / 2 + "px",
-                                "height": canvas.height / 2 + "px",
+                                width: '100%',
                             })
                         return $img;
                     });

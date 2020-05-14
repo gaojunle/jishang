@@ -32,26 +32,55 @@ body {
   justify-content: center;
   align-items: center;
 }
-.countsel {
+.pop_box {
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+  z-index: 100;
 }
-.countsel .reduce,
-.countsel .add {
+.pop_box.show {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 0.46rem;
-  height: 0.46rem;
-  background: url(../../img/common/add.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
 }
-.countsel .reduce {
-  background: url(../../img/common/reduce.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
+.pop_box .pop_close {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  width: 0.24rem;
 }
-.countsel .cnt {
-  padding: 0px 0.34rem;
+.pop_box .pop_cont {
+  position: relative;
+  border-radius: 0.1rem;
+  background-color: white;
+}
+.pop_box .pop_cont .pop_wraper {
+  overflow-y: scroll;
+  padding: 0.1rem 0px;
+  width: 6.16rem;
+  max-height: 8.48rem;
+  padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+  box-sizing: border-box;
+}
+.pop_box .pop_cont .pop_img_wraper {
+  width: 70vw;
+  box-sizing: border-box;
+}
+.pop_box .pop_cont .ptitle {
+  font-size: 0.3rem;
+  color: #8f8f8f;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+.pop_box .pop_cont p {
+  color: #8f8f8f;
+  line-height: 2.26;
+  font-size: 0.24rem;
 }
 /*# sourceMappingURL=./common.css.map */
