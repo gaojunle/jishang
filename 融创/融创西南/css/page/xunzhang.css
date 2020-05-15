@@ -1,6 +1,8 @@
 .userInfo {
   position: relative;
   text-align: center;
+  background: url(../../img/xunzhang/card_bg.png) center 0.7rem no-repeat;
+  background-size: 5.78rem;
 }
 .userInfo .avt {
   width: 1.5rem;
@@ -81,7 +83,6 @@
 .xzDetail .ops .btn_xz {
   display: inline-block;
   font-size: 17px;
-  font-family: "Microsoft YaHei";
   color: #fffefe;
   width: 2.6rem;
   height: 0.67rem;
