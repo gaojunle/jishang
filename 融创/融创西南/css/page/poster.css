@@ -29,16 +29,14 @@ body {
   height: 8px;
   margin-left: 6px;
 }
-.poster-swiper,
-.tmpPostBox {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
 .poster-swiper .swiper-slide,
 .tmpPostBox .swiper-slide {
   position: relative;
   box-sizing: border-box;
+  text-align: center;
+  transition: 300ms;
+  width: 58%;
+  transform: scale(0.9);
 }
 .poster-swiper .swiper-slide .pavt,
 .tmpPostBox .swiper-slide .pavt {
@@ -83,13 +81,6 @@ body {
   top: -0.3rem;
   width: 0.96rem;
 }
-.poster-swiper .swiper-slide,
-.tmpPostBox .swiper-slide {
-  text-align: center;
-  transition: 300ms;
-  width: 66%;
-  transform: scale(0.94);
-}
 .poster-swiper .swiper-slide-active,
 .tmpPostBox .swiper-slide-active,
 .poster-swiper .swiper-slide-duplicate-active,
@@ -102,12 +93,31 @@ body {
 .tmpPostBox .swiper-slide-duplicate-active .desc {
   display: block;
 }
+.poster-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+.poster-swiper.on {
+  display: block;
+}
 .tmpPostBox {
-  display: inline-block;
-  list-style: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: auto;
 }
 .tmpPostBox .swiper-slide {
   list-style: none;
+  width: 100%;
+}
+.create_poster_box .pop_cont {
+  display: flex;
+  justify-content: center;
+}
+.create_poster_box .pop_cont .inner {
+  z-index: 100;
 }
 .cards-wrapper {
   overflow: hidden;
@@ -190,7 +200,7 @@ body {
   color: #8f8f8f;
   line-height: 2.083;
   text-align: center;
-  padding-top: 0.1rem;
+  padding: 0.1rem 0px;
 }
 .share_box {
   background-color: #2a2a2a;
@@ -203,5 +213,6 @@ body {
   bottom: 0px;
   left: 0px;
   width: 100%;
+  z-index: 10;
 }
 /*# sourceMappingURL=./poster.css.map */

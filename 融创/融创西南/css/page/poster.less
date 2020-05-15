@@ -38,13 +38,13 @@ body {
 
 .poster-swiper,
 .tmpPostBox {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-
     .swiper-slide {
         position: relative;
         box-sizing: border-box;
+        text-align: center;
+        transition: 300ms;
+        width: 58%;
+        transform: scale(0.9);
 
         .pavt {
             width: 100%;
@@ -90,13 +90,6 @@ body {
         }
     }
 
-    .swiper-slide {
-        text-align: center;
-        transition: 300ms;
-        width: 66%;
-        transform: scale(0.94);
-    }
-
     .swiper-slide-active,
     .swiper-slide-duplicate-active {
         transform: scale(1);
@@ -107,11 +100,34 @@ body {
     }
 }
 
+.poster-swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: none;
+    &.on{
+        display: block;
+    }
+}
+
 .tmpPostBox {
-    display: inline-block;
-    list-style: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: auto;
+
     .swiper-slide {
         list-style: none;
+        width: 100%;
+    }
+}
+.create_poster_box{
+    .pop_cont{
+        display: flex;
+        justify-content: center;
+        .inner{
+            z-index: 100;
+        }
     }
 }
 
@@ -213,7 +229,7 @@ body {
     color: rgb(143, 143, 143);
     line-height: 2.083;
     text-align: center;
-    padding-top: .1rem;
+    padding: .1rem 0px;
 }
 
 .share_box {
@@ -227,4 +243,5 @@ body {
     bottom: 0px;
     left: 0px;
     width: 100%;
+    z-index: 10;
 }

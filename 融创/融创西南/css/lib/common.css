@@ -83,4 +83,50 @@ body {
   line-height: 2.26;
   font-size: 0.24rem;
 }
+.tab .tab-menu {
+  position: relative;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  box-sizing: border-box;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+.tab .tab-menu > li,
+.tab .tab-menu > a {
+  float: left;
+  width: 50%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.3rem;
+  color: rgba(42, 42, 42, 0.6);
+}
+.tab .tab-menu > li:nth-last-of-type(1),
+.tab .tab-menu > a:nth-last-of-type(1) {
+  border-right: none;
+}
+.tab .tab-menu > li.on,
+.tab .tab-menu > a.on {
+  position: relative;
+  color: #2a2a2a;
+}
+.tab .tab-menu > li.on::after,
+.tab .tab-menu > a.on::after {
+  content: ' ';
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.06rem;
+  position: absolute;
+  bottom: -0.03rem;
+  left: 50%;
+  margin-left: -0.75rem;
+  background: #ff8b00;
+  border-radius: 4px;
+}
+.tab .tab-cont {
+  display: none;
+}
+.tab .tab-cont:nth-of-type(1) {
+  display: block;
+}
 /*# sourceMappingURL=./common.css.map */
