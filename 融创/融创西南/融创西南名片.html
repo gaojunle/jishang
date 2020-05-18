@@ -333,7 +333,7 @@
                                     $('.js_poster_img').empty().append($img);
                                     $('.inner').show();
                                 })
-                            }, 100)
+                            }, 200)
                         }
                     });
 
@@ -350,7 +350,7 @@
                     //修改偏移量
                     canvasDom = canvas.getContext("2d");
                     canvasDom.scale(scale, scale); //获取context,设置scale
-                    canvasDom.translate('-' + $coverDom.offset().left, '-' + $coverDom.offset().top);
+                    canvasDom.translate('-' + $coverDom.offset().left, '-' + ($coverDom.offset().top - 1 - $(window).scrollTop()));
 
                     console.log($coverDom.offset().left)
                     var opts = {
