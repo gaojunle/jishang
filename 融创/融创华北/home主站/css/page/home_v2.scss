@@ -51,14 +51,6 @@ body {
 }
 
 .wrap-box {
-    height: 100vh;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -ms-flex-direction: column;
-    flex-direction: column;
-
     .top {
         position: relative;
         overflow: hidden;
@@ -83,23 +75,23 @@ body {
 
     .container {
         flex: 1;
-        overflow: hidden;
-
-        &::after {
-            content: " ";
-            display: block;
-            height: 2.5rem;
-            position: relative;
-        }
+        //overflow: hidden;
     }
 
     &.swiperUp {
-        height: auto;
+        height: 100vh;
 
         .container {
-            height: 100vh;
+            //height: 100vh;
             flex: auto;
             overflow: scroll;
+
+            &::after {
+                content: " ";
+                display: block;
+                height: 2.5rem;
+                position: relative;
+            }
         }
     }
 }
@@ -212,7 +204,7 @@ body {
 }
 
 .split {
-    border-bottom: 1px solid rgba(42, 42, 42, 0.15);
+    //border-bottom: 1px solid rgba(42, 42, 42, 0.15);
 }
 
 .link-box {

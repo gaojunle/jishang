@@ -1,0 +1,75 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.aijia {
+  position: relative;
+}
+.aijia .aj_bg {
+  display: block;
+  width: 100%;
+}
+.aijia .link_box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px 0.48rem;
+  padding-top: 10.6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.aijia .link_box .link {
+  display: block;
+  position: relative;
+  border-radius: 0.1rem;
+}
+.aijia .link_box .link.link_1 {
+  height: 3.3rem;
+}
+.aijia .tehui {
+  padding: 0px 0.32rem;
+  padding-top: 2.3rem;
+}
+.aijia .tehui > .link_2 {
+  height: 2.75rem;
+}
+.aijia .tehui > .link_3 {
+  height: 1.85rem;
+}
+.aijia .tehui .flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.1rem 0px;
+}
+.aijia .tehui .flex .link {
+  width: calc(33.5% - 0.05rem);
+  height: 2.5rem;
+}
+.aijia .xiari {
+  padding: 0px 0.32rem;
+  padding-top: 2.75rem;
+}
+.aijia .xiari .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.aijia .xiari .flex.flex_1 {
+  margin-bottom: 0.15rem;
+}
+.aijia .xiari .flex.flex_1 .link {
+  width: calc(50% - 0.05rem);
+  height: 3.74rem;
+}
+.aijia .xiari .flex.flex_2 .link {
+  width: calc(33.5% - 0.05rem);
+  height: 3.85rem;
+}
+.aijia .huiben {
+  padding: 0px 0.32rem;
+  padding-top: 2.7rem;
+}
+.aijia .huiben .link {
+  height: 2.75rem;
+}
+/*# sourceMappingURL=./aijia.css.map */

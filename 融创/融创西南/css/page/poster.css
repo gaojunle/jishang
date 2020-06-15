@@ -144,7 +144,8 @@ body {
   content: '';
   display: inline-block;
   position: absolute;
-  left: 0px;
+  left: 50%;
+  margin-left: -0.51rem;
   top: 0px;
   z-index: 1;
   width: 1.02rem;
@@ -205,9 +206,9 @@ body {
 }
 .share_box {
   background-color: #2a2a2a;
-  height: 0.8rem;
+  height: 1rem;
   text-align: center;
-  line-height: 0.8rem;
+  line-height: 1rem;
   font-size: 18px;
   color: white;
   position: fixed;
