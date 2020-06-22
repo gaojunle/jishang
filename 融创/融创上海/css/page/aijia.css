@@ -72,4 +72,74 @@ body {
 .aijia .huiben .link {
   height: 2.75rem;
 }
+.jiayouzhan {
+  position: relative;
+}
+.jiayouzhan .aj_bg {
+  display: block;
+  width: 100%;
+}
+.jiayouzhan .link_box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px 0.48rem;
+  padding-top: 10.6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.jiayouzhan .link_box .link {
+  display: block;
+  position: relative;
+  border-radius: 0.1rem;
+}
+.jiayouzhan .link_box .link.link_1 {
+  height: 3.3rem;
+}
+.jiayouzhan .tehui {
+  padding: 0px 0.32rem;
+  padding-top: 2.3rem;
+}
+.jiayouzhan .tehui > .link_2 {
+  height: 2.75rem;
+}
+.jiayouzhan .tehui > .link_3 {
+  height: 1.85rem;
+}
+.jiayouzhan .tehui .flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.1rem 0px;
+}
+.jiayouzhan .tehui .flex .link {
+  width: calc(33.5% - 0.05rem);
+  height: 2.5rem;
+}
+.jiayouzhan .xiari {
+  padding: 0px 0.32rem;
+  padding-top: 2.75rem;
+}
+.jiayouzhan .xiari .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.jiayouzhan .xiari .flex.flex_1 {
+  margin-bottom: 0.15rem;
+}
+.jiayouzhan .xiari .flex.flex_1 .link {
+  width: 100%;
+  height: 2.35rem;
+}
+.jiayouzhan .xiari .flex.flex_2 .link {
+  width: calc(33.5% - 0.05rem);
+  height: 3.85rem;
+}
+.jiayouzhan .huiben {
+  padding: 0px 0.32rem;
+  padding-top: 2.7rem;
+}
+.jiayouzhan .huiben .link {
+  height: 2.8rem;
+  margin-bottom: 0.1rem;
+}
 /*# sourceMappingURL=./aijia.css.map */
