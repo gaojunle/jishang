@@ -1,0 +1,157 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.sign {
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 130px;
+}
+.sign .activity .hdimg {
+  width: 100%;
+}
+.sign .activity .info h3 {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 0px;
+  color: #2a2a2a;
+}
+.sign .activity .info p {
+  font-size: 13px;
+  padding: 0 1px;
+  padding-bottom: 4px;
+  color: #8f8f8f;
+}
+.sign .fellow {
+  padding-top: 40px;
+}
+.sign .fellow .title {
+  font-size: 15px;
+  color: #2a2a2a;
+  line-height: 1.667;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.sign .fellow .title::before {
+  content: '';
+  display: inline-block;
+  background-color: #2a2a2a;
+  width: 5px;
+  height: 18px;
+  margin-right: 5px;
+}
+.sign .fellow .item {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 14px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.sign .fellow .item .check input {
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #d2c09e;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign .fellow .item .check input:checked::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  background: url(../../img/sign/icon_checked.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.sign .fellow .item .info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+.sign .fellow .item .info-box .info {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(143, 143, 143, 0.251);
+  padding-bottom: 8px;
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.sign .fellow .item .info-box .info p {
+  margin-right: 15px;
+  line-height: 1;
+}
+.sign .fellow .item .info-box .bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+.sign .fellow .item .info-box .bot .marks span {
+  display: inline-block;
+  background-color: rgba(143, 143, 143, 0.502);
+  border-radius: 20px;
+  font-size: 11px;
+  color: #ffffff;
+  padding: 1px 10px;
+  margin-right: 5px;
+}
+.sign .fellow .item .info-box .bot .ops {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.sign .fellow .item .info-box .bot .ops a {
+  display: inline-block;
+  background-color: #b7a793;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #ffffff;
+  padding: 1px 10px;
+  margin-left: 15px;
+}
+.sign .fellow .add_new {
+  margin-top: 20px;
+}
+.sign .fellow .add_new .btn_add_new {
+  display: inline-block;
+  width: 100%;
+  border-width: 1px;
+  border-color: #b7a793;
+  border-style: solid;
+  border-radius: 50px;
+  text-align: center;
+  color: #b7a793;
+  font-size: 15px;
+  padding: 5px 0px;
+  background: #f4f4f4;
+}
+.bg_box {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 0;
+}
+.bg_box .bg_btn {
+  display: block;
+  background-color: #b7a793;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 17px;
+  color: #ffffff;
+}
+/*# sourceMappingURL=./contact.css.map */

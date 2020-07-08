@@ -62,7 +62,7 @@ a:focus {
 }
 
 /* form style */
-input, textarea, select, button {
+textarea, select, button {
     vertical-align: middle;
     outline: none;
     background: inherit;
