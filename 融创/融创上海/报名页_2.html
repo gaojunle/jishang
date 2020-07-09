@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>活动报名</title>
+    <title>常用联系人</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,71 +17,9 @@
 
 <body>
     <div class="sign">
-        <div class="activity">
-            <div class="banner">
-                <img class="hdimg" src="./img/huodong/hd_list.png" alt="">
-            </div>
-            <div class="info">
-                <h3>探索未知，童梦奇缘——2020果壳嘉年华</h3>
-                <p>活动时间：2019年06月20日 星期日 14:00</p>
-                <p>活动地点：远洋秦皇岛蔚蓝海岸一期鸟语林</p>
-            </div>
-        </div>
         <div class="fellow">
-            <div class="title">请选择同行人员</div>
             <div class="item ">
-                <label class="check"><input type="checkbox"></label>
-                <div class="info-box">
-                    <div class="info">
-                        <p>王小一</p>
-                        <p>135****2345</p>
-                        <p>130***********2115</p>
-                    </div>
-                    <div class="bot">
-                        <div class="marks">
-                            <span>儿童</span>
-                        </div>
-                        <div class="ops">
-                            <a href="./报名页_3_添加联系人.html">编辑</a>
-                            <a class="btn_del" href="#">删除</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item ">
-                <label class="check"><input type="checkbox"></label>
-                <div class="info-box">
-                    <div class="info">
-                        <p>王小一</p>
-                        <p>135****2345</p>
-                        <p>130***********2115</p>
-                    </div>
-                    <div class="bot">
-                        <div class="ops">
-                            <a href="./常用联系人－编辑.html">编辑</a>
-                            <a class="btn_del" href="#">删除</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item ">
-                <label class="check"><input type="checkbox"></label>
-                <div class="info-box">
-                    <div class="info">
-                        <p>王小一</p>
-                        <p>135****2345</p>
-                        <p>130***********2115</p>
-                    </div>
-                    <div class="bot">
-                        <div class="ops">
-                            <a href="./常用联系人－编辑.html">编辑</a>
-                            <a class="btn_del" href="#">删除</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item ">
-                <label class="check"><input type="checkbox"></label>
+                <label class="check"><input type="checkbox" checked></label>
                 <div class="info-box">
                     <div class="info">
                         <p>王小一</p>
@@ -99,8 +37,21 @@
                     </div>
                 </div>
             </div>
-            <div class="add_new">
-                <a href="./报名页_2.html" class="btn_add_new">添加新的同行人</a>
+            <div class="item ">
+                <label class="check"><input type="checkbox"></label>
+                <div class="info-box">
+                    <div class="info">
+                        <p>王小一</p>
+                        <p>135****2345</p>
+                        <p>130***********2115</p>
+                    </div>
+                    <div class="bot">
+                        <div class="ops">
+                            <a href="./常用联系人－编辑.html">编辑</a>
+                            <a class="btn_del" href="#">删除</span></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -108,7 +59,7 @@
         <img src="./img/rc-logo-split.png" alt="">
     </div>
     <div class="bg_box">        
-        <a href="./报名页_4_我的活动.html" class="bg_btn">提交信息</a>
+        <a href="./报名页_1.html" class="bg_btn">添加新联系人</a>
     </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script>
@@ -117,9 +68,7 @@
                 this.bindEvent();
             },
             bindEvent: function () {
-                $('.fellow').on('click', '.btn_del', function () {
-                    alert('删除是第' + $(this).parents('.item').index() + '个')
-                })
+               
             }
         };
         App.init();
