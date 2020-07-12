@@ -30,10 +30,11 @@ body .check input {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1px;
 }
 html .check input:checked::after,
 body .check input:checked::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 16px;
   height: 12px;
@@ -43,7 +44,7 @@ body .check input:checked::after {
 html .check.flex,
 body .check.flex {
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   color: #8f8f8f;
 }
 html .check.flex input,
@@ -54,42 +55,56 @@ body .check.flex input {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  padding-bottom: 120px;
+  padding-bottom: 150px;
   z-index: 1;
 }
 .sign .activity {
-  padding-bottom: 40px;
+  padding: 0rem;
+  padding-bottom: 0.6rem;
+}
+.sign .activity a {
+  display: block;
 }
 .sign .activity .hdimg {
   width: 100%;
 }
-.sign .activity .info h3 {
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 0px;
-  color: #2a2a2a;
+.sign .activity .atitle {
+  font-size: 16px;
+  line-height: 1.667;
+  padding-top: 8px;
+  padding: 0.2rem 0.1rem 0px;
 }
-.sign .activity .info p {
+.sign .activity .ainfo {
   font-size: 13px;
-  padding: 0 1px;
-  padding-bottom: 4px;
   color: #8f8f8f;
+  line-height: 1.667;
+  padding: 0 0.1rem;
+}
+.sign .activity .watch-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1;
+  padding: 0.2rem 0.1rem 0px;
+}
+.sign .activity .watch-box .collect {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #a0a0a0;
+}
+.sign .activity .watch-box .collect img {
+  height: 0.27rem;
+  margin-right: 0.1rem;
+  display: block;
 }
 .sign .fellow .title {
-  font-size: 15px;
+  font-size: 18px;
   color: #2a2a2a;
   line-height: 1.667;
   font-weight: bold;
   display: flex;
   align-items: center;
-}
-.sign .fellow .title::before {
-  content: '';
-  display: inline-block;
-  background-color: #2a2a2a;
-  width: 5px;
-  height: 18px;
-  margin-right: 5px;
 }
 .sign .fellow .item {
   border-radius: 5px;
@@ -109,14 +124,14 @@ body .check.flex input {
 .sign .fellow .item .info-box .info {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(143, 143, 143, 0.251);
+  border-bottom: 1px solid rgba(143, 143, 143, 0.151);
   padding-bottom: 8px;
   font-size: 12px;
-  color: #8f8f8f;
 }
 .sign .fellow .item .info-box .info p {
   margin-right: 15px;
   line-height: 1;
+  color: #8f8f8f;
 }
 .sign .fellow .item .info-box .bot {
   display: flex;
@@ -154,7 +169,7 @@ body .check.flex input {
   display: inline-block;
   width: 100%;
   border-width: 1px;
-  border-color: #b7a793;
+  border-color: rgba(183, 167, 147, 0.6);
   border-style: solid;
   border-radius: 50px;
   text-align: center;
@@ -173,10 +188,12 @@ body .check.flex input {
 }
 .edit_contacts .mform .cline label {
   width: 50%;
+  display: flex;
+  align-items: center;
 }
 .edit_contacts .mform .pline {
   line-height: 2.5;
-  border-bottom: 1px solid rgba(143, 143, 143, 0.2);
+  border-bottom: 1px solid rgba(143, 143, 143, 0.13);
   margin-bottom: 0.2rem;
   display: flex;
   justify-content: flex-start;
@@ -200,7 +217,7 @@ body .check.flex input {
 .edit_contacts .mform .pline input {
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 15px;
   background: transparent;
   height: 40px;
 }
@@ -231,7 +248,7 @@ body .check.flex input {
   color: #2a2a2a;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(143, 143, 143, 0.2);
+  border-bottom: 1px solid rgba(143, 143, 143, 0.13);
   padding-bottom: 11px;
   margin-bottom: 11px;
   white-space: nowrap;
@@ -239,9 +256,9 @@ body .check.flex input {
   overflow: hidden;
 }
 .myAcitiviy .item .title::before {
-  content: '';
+  content: "";
   display: inline-block;
-  background-color: #2a2a2a;
+  background-color: #b7a793;
   width: 5px;
   height: 18px;
   margin-right: 5px;
@@ -277,7 +294,7 @@ body .check.flex input {
   font-size: 13px;
 }
 .mfellow .item .info::before {
-  content: '';
+  content: "";
   display: inline-block;
   background-color: #b7a793;
   width: 3px;
@@ -363,4 +380,3 @@ body .check.flex input {
   font-size: 17px;
   color: #ffffff;
 }
-/*# sourceMappingURL=./contact.css.map */
