@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>Document</title>
+        </meta>
+        <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    </head>
+    <body>
+        <section>
+            <div style="margin:10px 50px;font-size: 18px;font-weight: 700;">
+                <p>动画说明：</p>
+                <p>1. 页面元素(文字)沿指定路径移动</p>
+                <p>2. 点击红蜻蜓，可以飞起来</p>
+                <p>3. 点击炮竹，保持显隐动画并上升</p>
+            </div>
+            <svg width="1200" height="800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <!--指定路径轨迹-->
+                <g name="paozhu" transform="translate(480 0)">
+                  <text font-family="microsoft yahei" font-size="30" x="0" y="0" fill="#f00">小马
+                    <animateMotion path="M10,80 q100,120 120,20 q140,-50 160,0" begin="0s" dur="3s" repeatCount="indefinite"/>
+                  </text>
+                  <path d="M10,80 q100,120 120,20 q140,-50 160,0" stroke="#f00" stroke-width="2" fill="none" />
+                </g>
+
+                <!--红蜻蜓-->
+                <g name="fly" transform="translate(180 80)">
+                    <image alt="" href="https://p2.ssl.qhimg.com/t019dbb4ed7287a12fa.gif" x="0" y="0" width="70" height="112"/>
+                    <animatetransform attributename="transform" begin="click" dur="7s" fill="freeze" type="translate" values="180 80;250 120;290 180;500 220;540 300;640 240;"></animatetransform>
+                </g>
+
+                <!--炮竹-->
+                <g transform="translate(50 400)">
+                    <g name="baozhu">
+                        <path d="M37.1,124.13v3.45a20.83,20.83,0,0,1-3.36,12.28,21.27,21.27,0,0,0-3.54,11.86,3.45,3.45,0,0,0,3.45,3.45h0a3.45,3.45,0,0,0,3.45-3.45h0c0-3.88,1.1-5.78,2.62-8.41A27.61,27.61,0,0,0,44,127.58v-3.45H37.1Z" fill="#c83741" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M50.9,124.13v72.42A3.45,3.45,0,0,0,54.34,200h0a3.45,3.45,0,0,0,3.45-3.45h0V124.13H50.9Z" fill="#963737" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M26.76,37.91v86.22a3.45,3.45,0,0,0,3.45,3.45H57.8a3.45,3.45,0,0,0,3.45-3.45V37.91Z" fill="#ff4b4b" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M26.76,37.91H61.24V51.71H26.76Z" fill="#c83741" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M17.08,36.27A365.1,365.1,0,0,0,40.89,1.75a3.64,3.64,0,0,1,6.23,0,365,365,0,0,0,23.8,34.51,3.14,3.14,0,0,1-2.46,5.09H19.55A3.14,3.14,0,0,1,17.08,36.27Z" fill="#ff4b4b" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M61.24,58.6,26.76,68.95V55.15L61.24,44.81Zm0,27.59L26.76,96.54V82.74L61.24,72.4Zm0,27.59L26.76,124.13V110.33L61.24,100Z" fill="#ffcf65" transform="translate(-16.4 0)">
+                        </path>
+                        <path d="M61.24,51.7v-6.9l-23,6.9Z" fill="#ffb450" transform="translate(-16.4 0)">
+                        </path>
+                    </g>
+                    <animate attributename="opacity" begin="0s" dur="1s" repeatcount="indefinite" values="1;0;1"></animate>
+                    <animatetransform attributename="transform" begin="click" dur="2s" fill="freeze" type="translate" values="50 380;50 300;50 150"></animatetransform>
+                </g>
+            </svg>
+        </section>
+    </body>
+</html>

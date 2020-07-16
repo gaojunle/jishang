@@ -1,0 +1,465 @@
+.daka_box {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+.daka_box.tostudy .jifen {
+  padding-bottom: 2.2rem;
+}
+.daka_box.tostudy .course {
+  margin-top: -1rem;
+}
+.jifen {
+  background: url(../../img/daka/t_bg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  padding-top: 0.7rem;
+  padding-bottom: 1.2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+.jifen .item {
+  text-align: center;
+  font-size: 12px;
+}
+.jifen .item > div {
+  color: #ffffff;
+}
+.jifen .item .count span {
+  font-size: 28px;
+  color: #ffffff;
+}
+.course {
+  margin-top: -0.6rem;
+  padding: 0px 15px;
+}
+.course .myrise {
+  text-align: center;
+  margin-top: -0.9rem;
+}
+.course .myrise > img {
+  width: 1.26rem;
+  height: 1.26rem;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+.course .myrise .info .name {
+  font-size: 18px;
+  padding-bottom: 0.12rem;
+  padding-top: 0.33rem;
+}
+.course .study {
+  padding: 13px;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
+}
+.course .study .btn {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid rgba(42, 42, 42, 0.8);
+  border-radius: 30px;
+  padding: 0px 10px;
+}
+.course .study .item {
+  display: flex;
+  justify-content: space-between;
+}
+.course .study .item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+}
+.course .study .item .avt {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.course .study .item .info {
+  padding: 0.1rem 0.2rem;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.7;
+  box-sizing: border-box;
+  flex: 1;
+}
+.course .study .item .info .txt {
+  color: #8f8f8f;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
+.course .study .item .watches {
+  display: flex;
+  align-items: center;
+  line-height: 0.5;
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.course .study .item .watches img {
+  height: 9px;
+  margin-right: 0.1rem;
+}
+.course .study .tbox {
+  padding: 35px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course .study .tbox .title {
+  font-size: 17px;
+  color: #2a2a2a;
+  line-height: 1.176;
+}
+.course .study .week {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.course .study .week::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(143, 143, 143, 0.12);
+}
+.course .study .week li {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  padding: 0px 4px;
+}
+.course .study .week li img {
+  display: block;
+  width: 20px;
+}
+.course .study .week li span {
+  font-size: 11px;
+  color: #8f8f8f;
+  line-height: 2.5;
+}
+.course .study .ops {
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.course .study .ops a {
+  display: inline-block;
+  color: white;
+  width: 2.92rem;
+  height: 0.68rem;
+  line-height: 0.68rem;
+  text-align: center;
+  font-size: 17px;
+  margin: 0px -0.08rem;
+}
+.course .study .ops a.btn_share {
+  background: url(../../img/daka/bg_black.png) 0px 0px no-repeat;
+  background-size: contain;
+}
+.course .study .ops a.btn_daka {
+  background: url(../../img/daka/bg_red.png) 0px 0px no-repeat;
+  background-size: contain;
+}
+.course .study .ops a.btn_tostudy {
+  width: 4.5rem;
+  margin: 0px;
+  border-radius: 50px;
+  background-color: #d10000;
+}
+.course .study_rise {
+  position: relative;
+  padding: 13px 0px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
+}
+.course .study_rise .guajian {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 1rem;
+  top: -0.53rem;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.course .study_rise .guajian img {
+  height: 0.77rem;
+}
+.course .study_rise .rtitle {
+  padding-top: 0.5rem;
+  padding-bottom: 0.35rem;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.059;
+}
+.course .study_rise .mrise {
+  background: rgba(251, 182, 49, 0.102);
+}
+.course .study_rise .mrise,
+.course .study_rise li {
+  display: flex;
+  align-items: center;
+  padding: 0.23rem 0.45rem;
+  line-height: 1;
+}
+.course .study_rise .mrise.top3 .top,
+.course .study_rise li.top3 .top {
+  color: #d10000;
+}
+.course .study_rise .mrise .top,
+.course .study_rise li .top {
+  font-size: 15px;
+  color: #8f8f8f;
+  padding-right: 0.15rem;
+}
+.course .study_rise .mrise > img,
+.course .study_rise li > img {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+}
+.course .study_rise .mrise .info,
+.course .study_rise li .info {
+  margin-left: 0.2rem;
+  flex: 1;
+}
+.course .study_rise .mrise .info .name,
+.course .study_rise li .info .name {
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 0.12rem;
+}
+.course .study_rise .mrise .info .desc,
+.course .study_rise li .info .desc {
+  font-size: 12px;
+  color: #8f8f8f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course .study_rise .mrise .info .desc span,
+.course .study_rise li .info .desc span {
+  color: #8f8f8f;
+}
+.course .study_rise .ops {
+  text-align: center;
+  padding-top: 0.38rem;
+  padding-bottom: 0.15rem;
+}
+.course .study_rise .ops a {
+  display: inline-block;
+  font-size: 13px;
+  border: 1px solid rgba(42, 42, 42, 0.8);
+  border-radius: 30px;
+  padding: 1px 0.5rem;
+}
+.rise_box .top_box {
+  height: 4rem;
+  background: url(../../img/daka/t_bg_txt.png) 0px -1rem no-repeat;
+  background-size: 100% 100%;
+}
+.rise_box .rises {
+  position: relative;
+  padding: 0.28rem;
+  margin: 0px 0.3rem;
+  margin-top: -2.2rem;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2.347px 4.415px 12.48px 0.52px rgba(42, 42, 42, 0.09);
+}
+.rise_box .rises .myrise {
+  text-align: center;
+  margin-top: -0.9rem;
+}
+.rise_box .rises .myrise > img {
+  width: 1.26rem;
+  height: 1.26rem;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+.rise_box .rises .myrise .info .name {
+  font-size: 17px;
+  padding-bottom: 0.17rem;
+  padding-top: 0.33rem;
+  font-weight: bold;
+}
+.rise_box .rises .myrise .info .desc {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.rise_box .rises .myrise .info .jf {
+  font-size: 12px;
+  color: #8f8f8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rise_box .rises .myrise .info .jf > span {
+  font-size: 20px;
+  color: #d10000;
+  padding: 0px 0.05rem;
+}
+.rise_box .rises .study_rise .rtitle {
+  padding-top: 0.6rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.059;
+}
+.rise_box .rises .study_rise .mrise {
+  background: rgba(251, 182, 49, 0.102);
+}
+.rise_box .rises .study_rise .mrise,
+.rise_box .rises .study_rise li {
+  display: flex;
+  align-items: center;
+  padding: 0.23rem 0.2rem;
+  line-height: 1;
+}
+.rise_box .rises .study_rise .mrise.top3 .top,
+.rise_box .rises .study_rise li.top3 .top {
+  color: #d10000;
+}
+.rise_box .rises .study_rise .mrise .top,
+.rise_box .rises .study_rise li .top {
+  font-size: 15px;
+  color: #8f8f8f;
+  padding-right: 0.15rem;
+}
+.rise_box .rises .study_rise .mrise > img,
+.rise_box .rises .study_rise li > img {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+}
+.rise_box .rises .study_rise .mrise .info,
+.rise_box .rises .study_rise li .info {
+  margin-left: 0.2rem;
+  flex: 1;
+}
+.rise_box .rises .study_rise .mrise .info .name,
+.rise_box .rises .study_rise li .info .name {
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 0.12rem;
+}
+.rise_box .rises .study_rise .mrise .info .desc,
+.rise_box .rises .study_rise li .info .desc {
+  font-size: 12px;
+  color: #8f8f8f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rise_box .rises .study_rise .mrise .info .desc span,
+.rise_box .rises .study_rise li .info .desc span {
+  color: #8f8f8f;
+}
+.rise_box .rises .jf_rise {
+  padding-top: 0.65rem;
+}
+.rise_box .rises .jf_rise li {
+  display: flex;
+  align-items: center;
+  padding: 0.23rem 0.2rem;
+  line-height: 1;
+}
+.rise_box .rises .jf_rise li .info {
+  margin-left: 0.2rem;
+  flex: 1;
+}
+.rise_box .rises .jf_rise li .info .type {
+  font-size: 15px;
+  color: #2a2a2a;
+}
+.rise_box .rises .jf_rise li .info .date {
+  line-height: 1.6;
+  font-size: 12px;
+  color: #8f8f8f;
+  padding-top: 0.1rem;
+}
+.rise_box .rises .jf_rise li .count {
+  font-size: 18px;
+  color: #d10000;
+}
+.pop_box {
+  background: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+  display: none;
+}
+.pop_box.show {
+  display: flex;
+}
+.pop_box .pop_close {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  width: 17px;
+}
+.pop_box .pop_cont {
+  position: relative;
+  margin-top: 1.8rem;
+  border-radius: 0.1rem;
+  background-color: #ffffff;
+  width: 4.5rem;
+}
+.pop_box .pop_cont .pop_close {
+  width: 0.24rem;
+}
+.pop_box .pop_cont .msg_ok {
+  text-align: center;
+}
+.pop_box .pop_cont .msg_ok img {
+  width: 3.48rem;
+}
+.pop_box .pop_cont .msg {
+  padding-top: 0.11rem;
+  font-size: 20px;
+  font-family: "Microsoft YaHei";
+  color: #f37335;
+  line-height: 1.667;
+  text-align: center;
+  -moz-transform: matrix(0.7701076, 0, 0, 0.7701076, 0, 0);
+  -webkit-transform: matrix(0.7701076, 0, 0, 0.7701076, 0, 0);
+  -ms-transform: matrix(0.7701076, 0, 0, 0.7701076, 0, 0);
+}
+.pop_box .pop_cont .ops {
+  text-align: center;
+  padding: 0.6rem 0px;
+  padding-top: 0.4rem;
+}
+.pop_box .pop_cont .ops .btn_canjia {
+  display: block;
+  text-align: center;
+}
+.pop_box .pop_cont .ops .btn_canjia img {
+  display: inline-block;
+  width: 3.1rem;
+}
+.bg-logo {
+  position: fixed;
+  width: 100%;
+  bottom: 2rem;
+  z-index: 0;
+  text-align: center;
+}
+.bg-logo img {
+  width: 2.4rem;
+}
+/*# sourceMappingURL=./daka.css.map */
