@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/fuwu.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="rbox fw-box">
+        <div class="rtitle">
+            <span>项目信息</span>
+        </div>
+        <div class="fw-list js-flex-full" data-cols="4">
+            <a href=""><img class="avt" src="./img/fuwu/xm-1.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/xm-2.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/xm-3.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/xm-4.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/xm-4.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/xm-4.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="rbox fw-box">
+        <div class="rtitle">
+            <span>社区服务</span>
+        </div>
+        <div class="fw-list js-flex-full" data-cols="4">
+            <a href="" class="rec"><img class="avt" src="./img/fuwu/sq-1.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-2.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-1.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-2.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-1.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-2.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="rbox fw-box">
+        <div class="rtitle">
+            <span>生活服务</span>
+        </div>
+        <div class="fw-list js-flex-full" data-cols="4">
+            <a href=""><img class="avt" src="./img/fuwu/sh-1.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sh-2.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sh-3.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sh-4.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sh-4.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sh-4.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="rbox fw-box">
+        <div class="rtitle">
+            <span>共享服务</span>
+        </div>
+        <div class="fw-list js-flex-full" data-cols="4">
+            <a href=""><img class="avt" src="./img/fuwu/sq-1.png" alt=""></a>
+            <a href="" class="rec"><img class="avt" src="./img/fuwu/sq-2.png" alt=""></a>
+            <a href=""><img class="avt" src="./img/fuwu/sq-1.png" alt=""></a>
+            <a href="./15问卷列表.html"><img class="avt" src="./img/fuwu/dywj.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="./02首页.html" class="sy">首页</a>
+        <a href="./04社区.html" class="fl">社区</a>
+        <a href="./03福利.html" class="sq">幸福通</a>
+        <a href="./05服务.html" class="fw on">服务</a>
+        <a href="./06我的.html" class="wd">我的</a>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                },
+                initData: function () {
+                    this.initSwiper();
+                },
+
+                initSwiper: function () {
+                    var swiperBanner = new Swiper('.js-banner-swiper', {
+                        spaceBetween: 0,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                }
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

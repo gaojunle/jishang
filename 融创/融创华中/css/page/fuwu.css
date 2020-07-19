@@ -1,0 +1,196 @@
+@import "../lib/reset.css";
+@import "../lib/popups.css";
+html,
+body {
+  min-height: 100vh;
+  font-size: 0.28rem;
+  color: #2a2a2a;
+  background: white;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+body {
+  max-width: 600px;
+  padding: 0px;
+  margin: 0px auto;
+  background: #f4f4f4;
+  color: #2a2a2a;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+body .flex-full-tmp {
+  display: block;
+}
+.loading {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(42, 42, 42, 0.702);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.header {
+  height: 38px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  height: 20px;
+}
+.header .msg {
+  font-size: 12px;
+}
+.header .selcity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .selcity select {
+  border: none;
+  font-size: 15px;
+  color: #8f8f8f;
+}
+.header .selcity .icon-down {
+  height: 8px;
+  margin-left: 6px;
+}
+.rbox {
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+.rbox .rtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 44px;
+  padding-bottom: 18px;
+}
+.rbox .rtitle > span {
+  font-size: 17px;
+}
+.rbox .rtitle > a > img {
+  width: 17px;
+}
+.rbox.ad {
+  padding-top: 52px;
+}
+.rbox.ad img {
+  width: 100%;
+}
+.split-logo {
+  text-align: center;
+  padding: 20px 0px;
+}
+.split-logo img {
+  width: 2.36rem;
+  opacity: 0.7;
+}
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 82px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background: white;
+  z-index: 100;
+}
+.footer.fullScreen {
+  padding-bottom: 12px;
+}
+.footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8f8f8f;
+  text-align: center;
+}
+.footer a::before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-top: -5px;
+}
+.footer a.sy::before {
+  background: url(../../img/common/navs/sy.png) center center no-repeat;
+  background-size: 26px 25px;
+}
+.footer a.fl::before {
+  background: url(../../img/common/navs/fl.png) center center no-repeat;
+  background-size: 24px 26px;
+}
+.footer a.sq::before {
+  background: url(../../img/common/navs/sq.png) center center no-repeat;
+  background-size: 28px 22px;
+}
+.footer a.fw::before {
+  background: url(../../img/common/navs/fw.png) center center no-repeat;
+  background-size: 29px 28px;
+}
+.footer a.wd::before {
+  background: url(../../img/common/navs/wd.png) center center no-repeat;
+  background-size: 25px 24px;
+}
+.footer a.on {
+  color: #2a2a2a;
+}
+.footer a.on.sy::before {
+  background: url(../../img/common/navs/sy-on.png) center center no-repeat;
+  background-size: 26px 25px;
+}
+.footer a.on.fl::before {
+  background: url(../../img/common/navs/fl-on.png) center center no-repeat;
+  background-size: 24px 26px;
+}
+.footer a.on.sq::before {
+  background: url(../../img/common/navs/sq-on.png) center center no-repeat;
+  background-size: 28px 22px;
+}
+.footer a.on.fw::before {
+  background: url(../../img/common/navs/fw-on.png) center center no-repeat;
+  background-size: 29px 28px;
+}
+.footer a.on.wd::before {
+  background: url(../../img/common/navs/wd-on.png) center center no-repeat;
+  background-size: 25px 24px;
+}
+.fw-box .fw-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fw-box .fw-list a {
+  margin-bottom: 0.15rem;
+  position: relative;
+}
+.fw-box .fw-list a.rec::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.36rem;
+  height: 0.36rem;
+  right: 0.1rem;
+  top: -0.18rem;
+  background: url(../../img/fuwu/icon-rec.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+}
+.fw-box .fw-list img {
+  width: 1.545rem;
+}
+/*# sourceMappingURL=./fuwu.css.map */

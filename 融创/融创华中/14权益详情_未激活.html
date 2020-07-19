@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/artDialog.css" />
+    <link rel="stylesheet" href="./css/page/guixin.css" />
+    <link rel="stylesheet" href="./css/page/quanyi.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body class="dianpingBox">
+    <div class="kayang">
+        <img src="./img/main/kayang_no.png" alt="">
+    </div>
+    <div class="liuyan">
+        <img class="ly-dec" src="./img/main/quanyi.png" alt="">
+    </div>
+    <!-- <div class="rbox kaquan">
+        <div class="rtitle">
+            <span>权益卡券</span>
+        </div>
+        <div class="kaquan_lq">
+            <a class="" href="#"><img src="./img/main/kaquan-lq.png" alt=""></a>
+        </div>
+    </div> -->
+    <div class="dianping">
+        <div class="dplist rbox">
+            <h3>点评</h3>
+            <ul>
+                <li>
+                    <img class="avt" src="./img/avater.png" alt="">
+                    <div class="right">
+                        <div class="lyInfo">
+                            <div class="title">我是一只鱼</div>
+                            <div class="date">2020-03-20</div>
+                        </div>
+                        <div class="lytxt">
+                            <p>非常优惠，通过高品质的酒店设施、书籍、音乐、照片及感悟，获 得舒适的住宿环境，放松的居停空间。</p>
+                        </div>
+                        <div class="reply">
+                            <div class="replay-title">融创华中</div>
+                            <div class="replay-txt">
+                                非常优惠，通过高品质的酒店设施、书籍、音乐、照片及感悟，获 得舒适的住宿环境，放松的居停空间。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img class="avt" src="./img/avater.png" alt="">
+                    <div class="right">
+                        <div class="lyInfo">
+                            <div class="title">我是一只鱼</div>
+                            <div class="date">2020-03-20</div>
+                        </div>
+                        <div class="lytxt">
+                            <p>非常优惠，通过高品质的酒店设施、书籍、音乐、照片及感悟，获 得舒适的住宿环境，放松的居停空间。</p>
+                            <a href="javascript:;" class="ly-del">删除</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="split-logo">
+        <img src="./img/rc-logo-split.png" alt="">
+    </div>
+    <div class="footerBtns">
+        <a href="#" class="home">激活会员卡</a>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/artDialog.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                    $('.js-collect').click(function () {
+                        $(this).addClass('on');
+                        alert('收藏成功')
+                    })
+
+                    $('.js-dianping').click(function () {
+                        var d = dialog({
+                            title: '',
+                            padding: 0,
+                            content: '<div class="pop-cont">' +
+                                '<img class="icon_close" src="./img/common/close.png" alt="">' +
+                                '<div class="liuyan-box">\n' +
+                                '        <textarea id="ipt_liuyan" cols="30" rows="10" placeholder="留言将由平台筛选后对所有人可见。"></textarea>\n' +
+                                '        <div class="limit"><span class="ipt_num">0</span><span>/100</span></div>\n',
+                            backdropOpacity: '0.3',
+                            okValue: '提交留言',
+                            ok: function () {
+                                d.close().remove();
+                                return false;
+                            }
+                        });
+                        d.showModal();
+                        $('.icon_close').click(function () {
+                            d.close().remove();
+                        })
+
+                        $('#ipt_liuyan').on('input', function () {
+                            var _val = $(this).val();
+                            var limitNum = 100;
+                            if (_val.length > limitNum) {
+                                $(this).val(_val.substring(0, limitNum));
+                                $('.ipt_num').text(limitNum)
+                            } else {
+                                $('.ipt_num').text(_val.length)
+                            }
+                        })
+                        return false
+                    })
+
+                    $('.ly-del').click(function () {
+                        alert('删除成功')
+                        $(this).parents('li').remove();
+                    })
+                },
+                initData: function () {
+                    $('.no_lingqu').click(function () {
+                        alert('领取成功')
+                        location.href = '14权益详情_领取.html'
+                    })
+                },
+
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

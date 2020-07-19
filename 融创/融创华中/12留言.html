@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/main.css" />
+    <link rel="stylesheet" href="./css/page/liuyan.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <form action="" class="rbox doLiuyan">
+        <div class="logo-big">
+            <img src="./img/main/logo-big.png" alt="">
+        </div>
+        <div class="ipt-box">
+            <textarea name="ly" id="" cols="30" rows="10" placeholder="请在此处输入文字......"></textarea>
+            <div class="ipt-limit" data-limit="500"><span>0</span>/500</div>
+        </div>
+        <div class="fileUpBox">
+            <input type="file" class="fileup" accept=".jpg ,.png ,jpeg" id="chooseImage">
+            <img id="cropedBigImg" class="cropedBigImg" />
+        </div>
+        <div class="tip">
+            温馨提示：<br>
+            1. 您想了解的问题均可在上方留言，我们将及时为您处理。<br>
+            2. 紧急问题请直接点击“400”，联系融创客服专线。<br>
+            3. 上传图片需小于1MB。
+        </div>
+    </form>
+    <div class="split-logo">
+        <img src="./img/rc-logo-split.png" alt="">
+    </div>
+    <div class="footerBtns">
+        <a href="./02首页.html" class="home">首页</a>
+        <a href="tel:400200400">400</a>
+        <a href="#" class="js-submit">提交</a>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                    $('.ipt-box textarea').on('input', function () {
+                        var $this = $(this);
+                        var txt = $this.val();
+                        var limit = $this.parents('.ipt-box').find('.ipt-limit').data('limit')
+                        if (txt.length >= limit) {
+                            $this.val($this.val().substring(0, limit))
+                        }
+                        $('.ipt-limit span').html($this.val().length)
+                    })
+
+                    $('.js-submit').click(function () {
+                        alert('提交')
+                    })
+
+                    $('#chooseImage').on('change', function () {//当chooseImage的值改变时，执行此函数
+                        var filePath = $(this).val(), //获取到input的value，里面是文件的路径
+                            fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+                            src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+
+                        console.log(src)
+                        // 检查是否是图片
+                        if (!fileFormat.match(/.png|.jpg|.jpeg/)) {
+                            alert('上传错误,文件格式必须为：png/jpg/jpeg');
+                            return;
+                        } else {
+                            $('#cropedBigImg').css('display', 'block');
+                            $('#cropedBigImg').attr('src', src);
+                        }
+                    });
+                },
+                initData: function () {
+
+                },
+
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

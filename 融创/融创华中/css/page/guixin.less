@@ -1,0 +1,513 @@
+@import '../lib/common.less';
+
+body {
+    padding-top: .4rem;
+}
+
+.grid {
+    a {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px;
+        }
+
+        .avt {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        .info {
+            padding: .1rem .2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+            box-sizing: border-box;
+            flex:1;
+
+            .txt {
+                color: #8f8f8f;
+                box-sizing: border-box;
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        .watches {
+            display: flex;
+            align-items: center;
+            line-height: 0.5;
+            font-size: 12px;
+            color: #8f8f8f;
+
+            img {
+                height: 9px;
+                margin-right: .1rem;
+            }
+        }
+    }
+}
+
+.guixinFM {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .item {
+        display: block;
+        width: calc(50% - 0.15rem);
+        margin-bottom: .5rem;
+        border-radius: .1rem;
+        overflow: hidden;
+
+        &:nth-of-type(2n+1) {
+            margin-right: .3rem;
+        }
+
+        .avt {
+            display: block;
+            width: 100%;
+        }
+
+        .desc {
+            color: rgb(143, 143, 143);
+            font-size: 12px;
+            text-align: center;
+            padding-top: .2rem;
+        }
+    }
+}
+
+.datas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .2rem;
+
+    .collect {
+        display: flex;
+        align-items: center;
+        line-height: 0.5;
+        font-size: 12px;
+        color: rgb(160, 160, 160);
+
+        img {
+            height: 9px;
+            margin-right: .1rem;
+        }
+    }
+
+    .watches {
+        display: flex;
+        align-items: center;
+        line-height: 0.5;
+        font-size: 12px;
+        color: rgb(160, 160, 160);
+
+        img {
+            height: 9px;
+            margin-right: .1rem;
+        }
+    }
+}
+
+.guixinLive {
+    padding-top: 0px;
+
+    .gx-banner-swiper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        .swiper-slide {
+            img {
+                width: 100%;
+            }
+        }
+
+        .swiper-pagination-bullets {
+            bottom: 8px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            border-radius: 100%;
+            background: white;
+            opacity: .5;
+
+            &.swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .kecheng {
+        .rtitle {
+            padding-top: 20px;
+        }
+    }
+
+    .gx-carousel-swiper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .swiper-slide {
+            width: 2.3rem;
+            border-radius: .1rem;
+            background-color: #fff;
+            text-align: center;
+            padding: .32rem 0px;
+
+            img {
+                width: 1.54rem;
+                height: 1.54rem;
+                border-radius: 100%;
+            }
+
+            .desc {
+                line-height: 1.667;
+                font-size: 12px;
+                padding-top: .12rem;
+                text-align: center;
+
+                .dtitle {
+                    font-size: 14px;
+                    color: rgb(42, 42, 42);
+                    .ellipsis;
+                }
+
+                .txt {
+                    color: rgb(143, 143, 143);
+                    font-size: 12px;
+                    line-height: 1;
+                    padding-top: .05rem;
+                    .ellipsis;
+                }
+            }
+        }
+
+        .swiper-pagination-bullets {
+            bottom: 30px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            border-radius: 100%;
+            background: white;
+            opacity: .5;
+
+            &.swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .gx-FM {
+        .gx-lbox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                height: 2.36rem;
+
+                &:nth-last-of-type(1) {
+                    flex: 1;
+                    margin-left: .05rem;
+                }
+            }
+        }
+    }
+
+    .gx-Story {
+        .grid {
+            a {
+                margin-bottom: 15px;
+
+                .avt {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.gxClass {
+    .grid {
+        a {
+            margin-bottom: 15px;
+
+            .avt {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }
+}
+
+.liuyanBox {
+    background: white;
+    padding-top: 0px;
+
+    .liuyan {
+        padding: 0px .4rem;
+        .ly-dec {
+            width: 100%;
+        }
+
+        .ly-txt {
+            text-align: center;
+            padding-top: .3rem;
+            padding-bottom: .6rem;
+
+            img {
+                width: 4.2rem;
+            }
+        }
+
+        
+        .ly {
+            .ipt-box {
+                position: relative;
+
+                textarea {
+                    font-size: 13px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border-width: 1px;
+                    border-color: rgba(183, 167, 147, .6);
+                    border-style: solid;
+                    border-radius: .1rem;
+                    background-color: rgb(255, 255, 255);
+                    height: 3.7rem;
+                    padding: .3rem .36rem;
+                    resize: none;
+                    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+                }
+
+                .ipt-limit {
+                    position: absolute;
+                    right: .3rem;
+                    bottom: .3rem;
+                    font-size: 12px;
+                    color: rgb(143, 143, 143);
+
+                    span {
+                        color: rgb(143, 143, 143);
+                    }
+                }
+            }
+
+            .tip {
+                font-size: 13px;
+                padding-top: .4rem;
+                color: rgb(143, 143, 143);
+                line-height: 1.875;
+            }
+        }
+    }
+}
+
+.dianpingBox {
+    padding-top: 0px;
+    .kayang{
+        padding: .4rem;
+        img{
+            width: 100%;
+        }
+    }
+    .liuyan{
+        padding: 0px .4rem;
+        &.bgWhite{
+            background: white;
+        }
+        .ly-dec {
+            width: 100%;
+        }
+    
+    }
+    
+    .dianping {
+        background: white;
+
+        .collectbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background: white;
+            padding-bottom: .6rem;
+           
+            .collect {
+                width: .98rem;
+                height: 1.38rem;
+                background: url(../../img/main/dianping-default.png) 0px 0px no-repeat;
+                background-size:  .97rem .98rem;
+                color: rgb(160, 160, 160);
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                font-size: 13px;
+                margin-left: 1rem;
+
+                &.on {
+                    background: url(../../img/main/dianping-ok.png) 0px 0px no-repeat;
+                    background-size: .97rem .98rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 13px;
+                color: rgb(160, 160, 160);
+                padding-right: .1rem;
+
+                img {
+                    height: 9px;
+                    margin-right: .1rem;
+                }
+            }
+        }
+
+        .dplist {
+            background: #f4f4f4;
+
+            >h3 {
+                font-size: 17px;
+                padding: .4rem 0px;
+            }
+
+            li {
+                position: relative;
+                width: 100%;
+                border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+                padding-bottom: .5rem;
+                margin-bottom: 25px;
+
+                &:nth-last-of-type(1) {
+                    margin-bottom: 0px;
+                    border: none;
+                }
+
+                .avt {
+                    position: absolute;
+                    left: 0rem;
+                    top: 0px;
+                    width: .8rem;
+                    height: .8rem;
+                    border-radius: 100%;
+                }
+
+                .right {
+                    margin-left: 1rem;
+                    line-height: 1.4;
+
+                    .lyInfo {
+                        font-size: 14px;
+                        height: .8rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: .06rem 0px;
+                        box-sizing: border-box;
+
+                        .title {
+                            font-size: 14px;
+                        }
+
+                        .date {
+                            font-size: 14px;
+                            color: rgb(143, 143, 143);
+                        }
+                    }
+
+                    .lytxt {
+                        font-size: 14px;
+                        padding: .1rem 0px;
+
+                        .ly-del {
+                            display: inline-block;
+                            background-color: rgb(183, 167, 147);
+                            width: .86rem;
+                            padding: 1px 0px;
+                            text-align: center;
+                            border-radius: .4rem;
+                            font-size: 14px;
+                            color: white;
+                            line-height: 1.2;
+                            margin-top: .2rem;
+                        }
+                    }
+
+                    .replay-title {
+                        font-size: 14px;
+                        position: relative;
+                        padding: .16rem 0px;
+                        padding-left: .24rem;
+
+                        &::before {
+                            content: '';
+                            background-color: rgb(42, 42, 42);
+                            width: 4px;
+                            height: 12px;
+                            display: inline-block;
+                            position: absolute;
+                            left: 0px;
+                            top: 50%;
+                            margin-top: -6px;
+                        }
+                    }
+
+                    .replay-txt {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.liuyan-box {
+    position: relative;
+
+    textarea {
+        font-size: 12px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgba(0, 0, 0, .05);
+        border-radius: 5px;
+        height: 3rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .14rem .18rem;
+        color: #222222;
+        width: 4.3rem;
+        resize: none;
+
+        &::-webkit-input-placeholder {
+            color: rgba(42, 42, 42, 0.302);
+        }
+    }
+
+    .limit {
+        position: absolute;
+        right: .15rem;
+        bottom: .14rem;
+        font-size: 12px;
+
+        span {
+            color: rgb(143, 143, 143);
+        }
+    }
+}

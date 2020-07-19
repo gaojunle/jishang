@@ -1,0 +1,155 @@
+@import '../lib/common.less';
+
+body {
+    padding-bottom: 60px;
+}
+
+.library {
+    position: relative;
+    height: calc(100vh - 80px);
+
+    background: url(../../img/read/r_bg.jpg) 0px 0px no-repeat;
+    background-size: 100% 100%;
+
+    .txt_box {
+        display: flex;
+        top: .8rem;
+        left: 1.7rem;
+        height: 70vh;
+        position: absolute;
+
+        p {
+            color: white;
+            font-size: 12px;
+            // writing-mode: tb-rl;
+            // writing-mode: vertical-lr;
+            // -webkit-writing-mode: vertical-lr;
+            // *writing-mode: tb-rl;
+            // margin-right: .14rem;
+            // letter-spacing: .04rem;
+            width: 1em;
+            letter-spacing: .01rem;
+            padding-right: .2rem;
+            line-height:1.3;
+            &.txt_line {
+                position: relative;
+                text-align: center;
+                padding-top: 0.5em;
+                &::before {
+                    content: '';
+                    width: 1px;
+                    background: rgba(255, 255, 255, .7);
+                    height: 3em;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .txt_title {
+            font-size: 17px;
+        }
+    }
+
+    .links {
+        position: absolute;
+        top: .8rem;
+        right: 1rem;
+
+        a {
+            display: block;
+            margin-bottom: .4rem;
+
+            img {
+                width: 1.8rem;
+            }
+        }
+    }
+}
+
+.goodBook {
+    padding: .4rem;
+
+    .title_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: .28rem;
+
+        .icon_month {
+            display: block;
+            width: 1rem;
+            margin-right: .26rem;
+        }
+
+        .info {
+            flex: 1;
+
+            .date {
+                font-size: 12px;
+                color: rgb(143, 143, 143);
+                padding-bottom: .1rem;
+            }
+
+            .txt {
+                font-size: 12px;
+                color: rgb(42, 42, 42);
+            }
+        }
+    }
+
+    .list_box {
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: .1rem;
+            background-color: rgb(255, 255, 255);
+            padding: .4rem;
+            margin-bottom: .15rem;
+
+            img {
+                display: block;
+                width: 1.86rem;
+                margin-right: .3rem;
+            }
+
+            .info {
+                flex: 1;
+
+                .title {
+                    font-size: 17px;
+                    color: rgb(42, 42, 42);
+                    padding-bottom: .06rem;
+                }
+
+                .author {
+                    color: rgb(143, 143, 143);
+                    font-size: 13px;
+                    padding-bottom: .25rem;
+                }
+
+                .desc {
+                    color: rgb(143, 143, 143);
+                    font-size: 12px;
+                    padding-bottom: .3rem;
+                }
+
+                .ops {
+                    display: flex;
+
+                    .btn {
+                        display: inline-block;
+                        background-color: rgb(183, 167, 147);
+                        padding: .11rem .4rem;
+                        text-align: center;
+                        color: white;
+                        border-radius: .3rem;
+                        font-size: 12px;
+                        line-height: 1;
+                        margin-right: .2rem;
+                    }
+                }
+            }
+        }
+    }
+}

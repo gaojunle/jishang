@@ -1,0 +1,85 @@
+.avater-box .banner {
+  width: 100%;
+}
+.avater-box .avater {
+  text-align: center;
+  margin-top: -0.87rem;
+  font-size: 13px;
+}
+.avater-box .avater img {
+  width: 1.74rem;
+  margin-bottom: 8px;
+}
+.formbox {
+  padding: 20px 40px;
+}
+.formbox .content .form-line {
+  position: relative;
+  padding-top: 20px;
+}
+.formbox .content .form-line input,
+.formbox .content .form-line select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.3);
+  font-size: 14px;
+  padding: 16px 0px;
+  box-sizing: border-box;
+}
+.formbox .content .form-line select {
+  color: #8F8F8F;
+}
+.formbox .content .form-line .btn-code {
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  top: 50%;
+  margin-top: -0.14rem;
+  border: 1px solid rgba(183, 167, 147, 0.7);
+  font-size: 12px;
+  color: #b7a793;
+  text-align: center;
+  border-radius: 6px;
+  width: 97px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formbox .content .form-line .imgcode-box {
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  top: 50%;
+  margin-top: -0.14rem;
+  border: 1px solid rgba(183, 167, 147, 0.7);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 97px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formbox .content .form-line .imgcode-box .imgcode {
+  height: 28px;
+}
+.formbox .content .form-line .imgcode-box .shuaxin {
+  height: 15px;
+  padding-right: 3px;
+}
+.formbox .submit-line {
+  padding-top: 0.6rem;
+}
+.formbox .submit-line .btn-main {
+  background-color: #b7a793;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 17px;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+}
+/*# sourceMappingURL=./login.css.map */

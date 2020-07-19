@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/main.css" />
+    <link rel="stylesheet" href="./css/page/guixin.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="rbox minH70 gx-Story">
+        <div class="grid">
+            <a href="#">
+                <img class="avt" src="./img/main/gxjj.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">换季衣服这么放节省80%空间</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <img class="avt" src="./img/main/gxjj.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">换季衣服这么放节省80%空间</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <img class="avt" src="./img/main/gxjj.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">换季衣服这么放节省80%空间</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="split-logo">
+        <img src="./img/rc-logo-split.png" alt="">
+    </div>
+    <div class="footerBtns">
+        <a href="./02首页.html" class="home">返回首页</a>
+        <a href="./09归心LIVE参与页.html" class="">我要参与</a>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                    $('.ipt-box textarea').on('input', function () {
+                        var $this = $(this);
+                        var txt = $this.val();
+                        var limit = $this.parents('.ipt-box').find('.ipt-limit').data('limit')
+                        if (txt.length >= limit) {
+                            $this.val($this.val().substring(0, limit))
+                        }
+                        $('.ipt-limit span').html($this.val().length)
+                    })
+                },
+                initData: function () {
+
+                },
+
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

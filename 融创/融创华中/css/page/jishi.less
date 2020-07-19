@@ -1,0 +1,189 @@
+@import "../lib/common.less";
+
+.mtop {
+    position: relative;
+
+    .search-Box {
+        background-color: rgba(255, 255, 255, 0.502);
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+}
+
+.pListBox {
+    .pList {
+        display: none;
+        padding: 0px 0.4rem;
+        margin-bottom: 0.5rem;
+        min-height: 30vh;
+        &.show {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.liuyanBox {
+    background: #f4f4f4;
+}
+
+.grid {
+    min-height: 60vh;
+    a {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px;
+        }
+
+        .avt {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .info {
+            flex:1;
+            padding: 0.1rem 0.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+            box-sizing: border-box;
+            box-sizing: border-box;
+
+            .title {
+                font-size: 14px;
+            }
+
+            .txt {
+                font-size: 14px;
+                color: rgb(160, 160, 160);
+                box-sizing: border-box;
+                line-height: 1;
+                padding-top: 0.05rem;
+            }
+
+            .desc {
+                font-size: 11px;
+                width: 4.5rem;
+                box-sizing: border-box;
+                color: rgb(160, 160, 160);
+                padding-top: 0.2rem;
+                .ellipsis;
+            }
+        }
+
+        .datas {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.2rem;
+
+            .collect {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: 0.1rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: 0.1rem;
+                }
+            }
+        }
+    }
+}
+
+.rListBox {
+    padding: 0.4rem;
+    &.pTop_0 {
+        padding-top: 0px;
+    }
+}
+
+.wenquan {
+    padding: 0px 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 45vh;
+    .item {
+        display: block;
+        width: 2rem;
+        margin-top: 0.4rem;
+        line-height: 1.4;
+
+        .pavt {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.1rem;
+        }
+
+        .title {
+            font-size: 13px;
+            color: rgb(42, 42, 42);
+            padding: 0px 0.1rem;
+            padding-top: 0.1rem;
+        }
+
+        .desc {
+            font-size: 13px;
+            color: rgb(143, 143, 143);
+            padding: 0px 0.1rem;
+            padding-top: 0.1rem;
+        }
+        .watch-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.2rem;
+
+            .collect {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 13px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: 0.1rem;
+                }
+            }
+
+            .watches {
+                display: flex;
+                align-items: center;
+                line-height: 0.5;
+                font-size: 12px;
+                color: rgb(160, 160, 160);
+
+                img {
+                    height: 9px;
+                    margin-right: 0.1rem;
+                }
+            }
+        }
+    }
+}

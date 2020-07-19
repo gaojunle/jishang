@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/main.css" />
+    <link rel="stylesheet" href="./css/page/guixin.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body class="">
+    <div class="rbox gxClass minH70">
+        <div class="grid">
+            <a href="#">
+                <img class="avt" src="./img/main/gxkq.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">宅家美食</div>
+                        <div class="txt">宅在家里制作炸鸡超级简单</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <img class="avt" src="./img/main/gxkq.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">宅家美食</div>
+                        <div class="txt">宅在家里制作炸鸡超级简单</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <img class="avt" src="./img/main/gxkq.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">宅家美食</div>
+                        <div class="txt">宅在家里制作炸鸡超级简单</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <img class="avt" src="./img/main/gxkq.png" alt="">
+                <div class="info">
+                    <div class="top">
+                        <div class="title">宅家美食</div>
+                        <div class="txt">宅在家里制作炸鸡超级简单</div>
+                    </div>
+                    <div class="datas">
+                        <div class="collect"> <img src="./img/main/icon-shoucang.png" alt=""> 100</div>
+                        <div class="watches"> <img src="./img/main/icon-eye.png" alt=""> 5324</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="split-logo">
+        <img src="./img/rc-logo-split.png" alt="">
+    </div>
+
+    <div class="footerBtns">
+        <a href="./02首页.html" class="home">返回首页</a>
+        <a href="./09归心LIVE参与页.html" class="">我要参与</a>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                },
+                initData: function () {
+                    this.initSwiper();
+                },
+
+                initSwiper: function () {
+                    var swiperBanner = new Swiper('.js-banner-swiper', {
+                        spaceBetween: 0,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                    new Swiper('.js-carousel-swiper', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                }
+            };
+            App.init();
+        })
+    </script>
+    </body>
+
+</html>
