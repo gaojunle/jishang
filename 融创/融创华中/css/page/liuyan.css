@@ -42,6 +42,9 @@ body .loading {
   justify-content: center;
   align-items: center;
 }
+body .minH70 {
+  min-height: 70vh;
+}
 body .rbox {
   padding: 0px 0.4rem;
   border-radius: 0.1rem;
@@ -50,18 +53,28 @@ body .rbox .rtitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 44px;
+  padding-top: 38px;
   padding-bottom: 18px;
 }
 body .rbox .rtitle > span {
   font-size: 18px;
   font-weight: bold;
 }
+body .rbox .rtitle > a {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+body .rbox .rtitle > a::before {
+  content: "更多";
+  color: #8f8f8f;
+  padding-right: 5px;
+}
 body .rbox .rtitle > a > img {
-  width: 17px;
+  width: 11px;
 }
 body .rbox.ad {
-  padding-top: 52px;
+  padding-top: 42px;
 }
 body .rbox.ad img {
   width: 100%;
@@ -220,46 +233,46 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .footer a.sy::before {
   background: url(../../img/common/navs/sy.png) center center no-repeat;
-  background-size: 26px 25px;
+  background-size: 27px 25px;
 }
 .footer a.fl::before {
   background: url(../../img/common/navs/fl.png) center center no-repeat;
-  background-size: 24px 26px;
+  background-size: 28px 23px;
 }
 .footer a.sq::before {
   background: url(../../img/common/navs/sq.png) center center no-repeat;
-  background-size: 28px 22px;
+  background-size: 26px 26px;
 }
 .footer a.fw::before {
   background: url(../../img/common/navs/fw.png) center center no-repeat;
-  background-size: 29px 28px;
+  background-size: 26px 25px;
 }
 .footer a.wd::before {
   background: url(../../img/common/navs/wd.png) center center no-repeat;
-  background-size: 25px 24px;
+  background-size: 18px 25px;
 }
 .footer a.on {
   color: #2a2a2a;
 }
 .footer a.on.sy::before {
   background: url(../../img/common/navs/sy-on.png) center center no-repeat;
-  background-size: 26px 25px;
+  background-size: 27px 25px;
 }
 .footer a.on.fl::before {
   background: url(../../img/common/navs/fl-on.png) center center no-repeat;
-  background-size: 24px 26px;
+  background-size: 28px 23px;
 }
 .footer a.on.sq::before {
   background: url(../../img/common/navs/sq-on.png) center center no-repeat;
-  background-size: 28px 22px;
+  background-size: 26px 26px;
 }
 .footer a.on.fw::before {
   background: url(../../img/common/navs/fw-on.png) center center no-repeat;
-  background-size: 29px 28px;
+  background-size: 26px 25px;
 }
 .footer a.on.wd::before {
   background: url(../../img/common/navs/wd-on.png) center center no-repeat;
-  background-size: 25px 24px;
+  background-size: 18px 25px;
 }
 .footerBtns {
   position: fixed;
@@ -393,7 +406,7 @@ body .tab .tab-cont:nth-of-type(1) {
   color: #8f8f8f;
   padding: 0px 0.1rem;
   padding-top: 0.2rem;
-  line-height: 1.67;
+  line-height: 1.4;
 }
 .pList .item .watch-box {
   display: flex;
@@ -423,6 +436,16 @@ body .tab .tab-cont:nth-of-type(1) {
 .pList .item .watch-box .watches img {
   height: 9px;
   margin-right: 0.1rem;
+}
+.kefu {
+  position: fixed;
+  bottom: 100px;
+  right: 0.4rem;
+  z-index: 100;
+}
+.kefu img {
+  display: block;
+  width: 0.96rem;
 }
 .doLiuyan {
   padding-bottom: 0.5rem !important;
