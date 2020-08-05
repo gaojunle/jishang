@@ -1,0 +1,28 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.auth_box {
+  height: 100vh;
+  background: url(../../img/bg.jpg) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.auth_box .logo {
+  width: 3.3rem;
+  margin-top: 0.4rem;
+}
+.auth_box .phone {
+  width: 4.47rem;
+  margin-top: 0.2rem;
+}
+.auth_box .btn_link {
+  width: 3.5rem;
+  margin-bottom: 0.8rem;
+}
+/*# sourceMappingURL=./index.css.map */
