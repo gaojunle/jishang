@@ -65,6 +65,7 @@
                 span {
                     font-size: 12px;
                     line-height: 2.083;
+                    margin-right: .5rem;
                 }
             }
         }
@@ -83,4 +84,63 @@
         }
     }
 
+}
+
+.qz_dt_list {
+
+    .item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        padding: .3rem .4rem;
+        background: white;
+        margin-bottom: .38;
+
+        .avt {
+            width: .8rem;
+            height: .8rem;
+            border-radius: 100%;
+            margin-right: .16rem;
+        }
+
+        .info {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: .8rem;
+
+                h3,
+                .date {
+                    font-size: 13px;
+                    line-height: 2;
+                }
+
+                .date {
+                    color: rgb(143, 143, 143);
+                }
+            }
+
+            .desc {
+                font-size: 12px;
+                line-height: 1.5;
+                padding-top: .3rem;
+                padding-bottom: .25rem;
+                .more {
+                    color: #2c5aa6;
+                }
+            }
+        }
+
+        .qz_imgs {
+            img {
+                width: 20%;
+            }
+        }
+    }
 }

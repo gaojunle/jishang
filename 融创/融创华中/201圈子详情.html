@@ -12,123 +12,86 @@
     <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
     <link rel="stylesheet" href="./css/lib/common.css" />
     <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/lib/photoswipe.css" />
+    <link rel="stylesheet" href="./css/lib/default-skin/default-skin.css" />
     <link rel="stylesheet" href="./css/lib/mobileSelect.css">
     <link rel="stylesheet" href="./css/page/quanzi.css" />
     <script src="./js/lib/viewbox.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <img src="./img/logo.png" alt="" class="logo">
-        <div class="selcity js-select">
-            <div class="sel-val"
-                style="font-size: 15px;color: #8f8f8f;display: inline-block;width: 100px;text-align: right;"></div>
-            <select class="sel-data" data-title="请选择城市" style="display: none;">
-                <option value="1" selected>上海</option>
-                <option value="2">无锡</option>
-                <option value="3">西安</option>
-            </select>
-            <img class="icon-down" src="./img/common/icon-down.png" alt="">
-        </div>
-    </div>
-    <div class="banner-swiper js-banner-swiper">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper_1.jpg" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper_1.jpg" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper_1.jpg" /></a></li>
-            <li class="swiper-slide"><a href="javascript:;"><img src="./img/main/swiper_1.jpg" /></a></li>
-        </ul>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="qz_list">
-        <a href="" class="item">
-            <img class="avt" src="./img/main/fl-1-1.png" alt="">
+    <div class="qz_dt_list ">
+        <div class="item ">
+            <img class="avt" src="./img/main/jxtj_avt.png" alt="">
             <div class="info">
                 <div class="title">
-                    <h3>美食不辜负</h3>
-                    <a class="abtn" href="">+加入</a>
+                    <h3>月亮不点亮</h3>
+                    <span class="date">2020/09/20</span>
                 </div>
-                <div class="desc">
-                    <span>帖子数：864篇</span>
-                    <span>伙伴：143位</span>
-                </div>
-            </div>
-        </a>
-        <div class="item">
-            <img class="avt" src="./img/main/fl-1-1.png" alt="">
-            <div class="info">
-                <div class="title">
-                    <h3>美食不辜负</h3>
-                    <a class="abtn out" href="">- 推出</a>
-                </div>
-                <div class="desc">
-                    <span>帖子数：864篇</span>
-                    <span>伙伴：143位</span>
+                <a href="" class="desc">
+                    《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"
+                    <span class="more">查看全文>></span>
+                </a>
+                <div class="qz_imgs my-gallery">
+                    <figure>
+                        <div class="img_box" data-size="640x480"><img src="./img/main/noraduis.png"></div>
+                    </figure>
+                    <figure>
+                        <div class="img_box" data-size="640x480"><img src="./img/main/noraduis.png"></div>
+                    </figure>
                 </div>
             </div>
         </div>
     </div>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
 
-    <div class="footer">
-        <a href="./02首页.html" class="sy">首页</a>
-        <a href="./03福利.html" class="fl on">社区</a>
-        <a href="./04社区.html" class="sq">幸福通</a>
-        <a href="./05服务.html" class="fw">服务</a>
-        <a href="./06我的.html" class="wd">我的</a>
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/photoswipe.min.js"></script>
+    <script src="./js/lib/photoswipe-ui-default.min.js"></script>
+    <script src="js/lib/gallery.js"></script>
     <script src="./js/lib/mobileSelect.js"></script>
     <script src="./js/lib/swiper.min.js"></script>
+
     <script>
         jQuery(function ($) {
             var App = {
                 init: function () {
-                    this.initData();
                     this.bindEvent();
                 },
                 bindEvent: function () {
-                    this.noticeUp();
                     this.initSelect();
-                },
-                initData: function () {
-                    this.initSwiper();
-                },
-
-                initSwiper: function () {
-                    var swiperBanner = new Swiper('.js-banner-swiper', {
-                        spaceBetween: 0,
-                        centeredSlides: true,
-                        autoplay: 4000,
-                        loop: true,
-                        pagination: '.swiper-pagination'
-                    });
-                    new Swiper('.js-scale-swiper', {
-                        slidesPerView: 3,
-                        spaceBetween: -6,
-                        centeredSlides: true,
-                        autoplay: 4000,
-                        loop: true,
-                        pagination: '.swiper-pagination'
-                    });
-                    new Swiper('.js-carousel-swiper', {
-                        slidesPerView: 'auto',
-                        spaceBetween: 20,
-                        autoplay: 4000,
-                        loop: true,
-                        pagination: '.swiper-pagination'
-                    });
-                },
-
-                noticeUp: function () {
-                    setInterval(function () {
-                        $('.notice ul').animate({
-                            marginTop: '-35px'
-                        }, 500, function () {
-                            $(this).css({ marginTop: "0" }).find(":first").appendTo(this);
-                        })
-                    }, 3000);
-
                 },
                 initSelect: function () {
                     $('.js-select').each(function () {

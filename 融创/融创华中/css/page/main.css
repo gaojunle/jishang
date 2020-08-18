@@ -242,7 +242,7 @@
 }
 .jiashu .ainfo a {
   display: inline-block;
-  margin-bottom: 3px;
+  margin-bottom: 0.16rem;
 }
 .jiashu .ainfo a:nth-last-of-type(1) {
   margin-bottom: 0px;
@@ -281,6 +281,7 @@
   color: #2a2a2a;
   line-height: 1.667;
   padding: 0.1rem 0px;
+  padding-bottom: 0.15rem;
 }
 .huati .list .item .info {
   display: flex;
@@ -308,6 +309,7 @@
 }
 .huati .list .item .info .left > img.zan,
 .huati .list .item .info .right > img.zan {
+  border-radius: 0px;
   height: 0.24rem;
 }
 /*# sourceMappingURL=./main.css.map */

@@ -53,6 +53,7 @@
 .qz_list .item .info .desc span {
   font-size: 12px;
   line-height: 2.083;
+  margin-right: 0.5rem;
 }
 .qz_list .item .abtn {
   display: inline-block;
@@ -64,5 +65,51 @@
 }
 .qz_list .item .abtn.out {
   background-color: #8f8f8f;
+}
+.qz_dt_list .item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 0.3rem 0.4rem;
+  background: white;
+  margin-bottom: 0.38;
+}
+.qz_dt_list .item .avt {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+  margin-right: 0.16rem;
+}
+.qz_dt_list .item .info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.qz_dt_list .item .info .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 0.8rem;
+}
+.qz_dt_list .item .info .title h3,
+.qz_dt_list .item .info .title .date {
+  font-size: 13px;
+  line-height: 2;
+}
+.qz_dt_list .item .info .title .date {
+  color: #8f8f8f;
+}
+.qz_dt_list .item .info .desc {
+  font-size: 12px;
+  line-height: 1.5;
+  padding-top: 0.3rem;
+  padding-bottom: 0.25rem;
+}
+.qz_dt_list .item .info .desc .more {
+  color: #2c5aa6;
+}
+.qz_dt_list .item .qz_imgs img {
+  width: 20%;
 }
 /*# sourceMappingURL=./quanzi.css.map */
