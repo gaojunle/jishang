@@ -51,6 +51,7 @@ body {
     .minH70 {
         min-height: 70vh;
     }
+
     .rbox {
         padding: 0px 0.4rem;
         border-radius: 0.1rem;
@@ -62,21 +63,23 @@ body {
             padding-top: 38px;
             padding-bottom: 18px;
 
-            > span {
+            >span {
                 font-size: 18px;
                 font-weight: bold;
             }
 
-            > a {
+            >a {
                 display: flex;
                 font-size: 12px;
                 align-items: center;
+
                 &::before {
                     content: "更多";
                     color: #8f8f8f;
                     padding-right: 5px;
                 }
-                > img {
+
+                >img {
                     width: 11px;
                 }
             }
@@ -114,8 +117,8 @@ body {
             display: flex;
             justify-content: space-between;
 
-            > li,
-            > a {
+            >li,
+            >a {
                 float: left;
                 width: 50%;
                 height: 0.8rem;
@@ -128,7 +131,7 @@ body {
                     border-right: none;
                 }
 
-                > span {
+                >span {
                     display: inline-block;
                     height: 100%;
                     padding-top: 2px;
@@ -139,7 +142,7 @@ body {
                     position: relative;
                     color: rgba(42, 42, 42, 1);
 
-                    > span {
+                    >span {
                         border-bottom: 1px solid rgba(42, 42, 42, 0.8);
                     }
                 }
@@ -189,9 +192,31 @@ body {
     &.ellipsis2 {
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
     }
 }
+
+.waterfall {
+    -moz-column-count: 2;
+    /* Firefox */
+    -webkit-column-count: 2;
+    /* Safari �� Chrome */
+    column-count: 2;
+    /* 将 div 元素中的文本分为2列，并规定列间1rem像素的间隔。 */
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    column-gap: .1em;
+
+    .item {
+        margin: 0 0 1em 0;
+        -moz-page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+        /*break-inside: avoid; 避免元素内部断行并产生新列*/
+        width: calc(100% - .1rem);
+    }
+}
+
 
 .header {
     height: 0.76rem;
@@ -441,7 +466,7 @@ body {
                 margin-right: 0px;
             }
 
-            > span {
+            >span {
                 transition: all 0.3s ease;
                 display: block;
                 font-size: 15px;
@@ -538,11 +563,13 @@ body {
         }
     }
 }
+
 .kefu {
     position: fixed;
     bottom: 100px;
     right: 0.4rem;
     z-index: 100;
+
     img {
         display: block;
         width: 0.96rem;

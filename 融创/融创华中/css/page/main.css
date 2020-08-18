@@ -153,11 +153,32 @@
   display: flex;
   justify-content: space-between;
 }
+.rongfen .grid a {
+  display: block;
+  position: relative;
+}
+.rongfen .grid a .javt {
+  position: absolute;
+  right: 0.1rem;
+  bottom: 0.1rem;
+  display: flex;
+  align-items: center;
+}
+.rongfen .grid a .javt img {
+  height: 0.4rem;
+  width: 0.4rem;
+  border-radius: 100%;
+}
+.rongfen .grid a .javt span {
+  color: white;
+  padding-left: 0.1rem;
+  font-size: 12px;
+}
 .rongfen .grid .r1 {
   margin-right: 0.15rem;
   width: 100%;
 }
-.rongfen .grid .r1 img {
+.rongfen .grid .r1 > img {
   display: block;
   width: 100%;
   height: 3rem;
@@ -221,10 +242,15 @@
 }
 .jiashu .ainfo a {
   display: inline-block;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 .jiashu .ainfo a:nth-last-of-type(1) {
   margin-bottom: 0px;
+}
+.jiashu .ainfo > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .jiashu .ainfo img {
   width: 3.28rem;
@@ -242,3 +268,46 @@
   color: #8f8f8f;
   line-height: 1.667;
 }
+.huati .list .item {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+.huati .list .item .avt {
+  display: block;
+  width: 100%;
+}
+.huati .list .item .desc {
+  font-size: 12px;
+  color: #2a2a2a;
+  line-height: 1.667;
+  padding: 0.1rem 0px;
+}
+.huati .list .item .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.huati .list .item .info .left,
+.huati .list .item .info .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #8f8f8f;
+  line-height: 2;
+}
+.huati .list .item .info .left > img,
+.huati .list .item .info .right > img {
+  border-radius: 100%;
+  margin-right: 0.06rem;
+}
+.huati .list .item .info .left > img.avater,
+.huati .list .item .info .right > img.avater {
+  width: 0.35rem;
+  height: 0.35rem;
+}
+.huati .list .item .info .left > img.zan,
+.huati .list .item .info .right > img.zan {
+  height: 0.24rem;
+}
+/*# sourceMappingURL=./main.css.map */

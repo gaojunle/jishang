@@ -163,8 +163,21 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+}
+.waterfall {
+  /* Firefox */
+  /* Safari �� Chrome */
+  column-count: 2;
+  /* 将 div 元素中的文本分为2列，并规定列间1rem像素的间隔。 */
+  column-gap: 0.1em;
+}
+.waterfall .item {
+  margin: 0 0 1em 0;
+  -moz-page-break-inside: avoid;
+  break-inside: avoid;
+  /*break-inside: avoid; 避免元素内部断行并产生新列*/
+  width: calc(100% - 0.1rem);
 }
 .header {
   height: 0.76rem;
@@ -448,3 +461,4 @@ body .tab .tab-cont:nth-of-type(1) {
   display: block;
   width: 0.96rem;
 }
+/*# sourceMappingURL=./common.css.map */

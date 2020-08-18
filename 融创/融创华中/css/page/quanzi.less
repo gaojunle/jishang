@@ -1,0 +1,86 @@
+.banner-swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .swiper-slide {
+        img {
+            //border-radius: .1rem;
+            width: 100%;
+        }
+    }
+
+    .swiper-pagination-bullets {
+        bottom: 10px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        border-radius: 100%;
+        background: white;
+        opacity: 0.5;
+
+        &.swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    }
+}
+
+.qz_list {
+    padding-top: .3rem;
+
+    .item {
+        position: relative;
+        display: flex;
+        padding: .3rem .4rem;
+
+        .avt {
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: .1rem;
+            margin-right: .25rem;
+        }
+
+        .info {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 16px;
+                    line-height: 2.5;
+                }
+            }
+
+            .desc {
+                span {
+                    font-size: 12px;
+                    line-height: 2.083;
+                }
+            }
+        }
+
+        .abtn {
+            display: inline-block;
+            background-color: rgb(183, 167, 147);
+            padding: 1px .23rem;
+            color: white;
+            font-size: 11px;
+            border-radius: .4rem;
+
+            &.out {
+                background-color: rgb(143, 143, 143);
+            }
+        }
+    }
+
+}

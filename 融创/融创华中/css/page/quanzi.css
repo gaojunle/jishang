@@ -1,0 +1,68 @@
+.banner-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.banner-swiper .swiper-slide img {
+  width: 100%;
+}
+.banner-swiper .swiper-pagination-bullets {
+  bottom: 10px;
+}
+.banner-swiper .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  border-radius: 100%;
+  background: white;
+  opacity: 0.5;
+}
+.banner-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.qz_list {
+  padding-top: 0.3rem;
+}
+.qz_list .item {
+  position: relative;
+  display: flex;
+  padding: 0.3rem 0.4rem;
+}
+.qz_list .item .avt {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 0.1rem;
+  margin-right: 0.25rem;
+}
+.qz_list .item .info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.qz_list .item .info .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qz_list .item .info .title h3 {
+  font-size: 16px;
+  line-height: 2.5;
+}
+.qz_list .item .info .desc span {
+  font-size: 12px;
+  line-height: 2.083;
+}
+.qz_list .item .abtn {
+  display: inline-block;
+  background-color: #b7a793;
+  padding: 1px 0.23rem;
+  color: white;
+  font-size: 11px;
+  border-radius: 0.4rem;
+}
+.qz_list .item .abtn.out {
+  background-color: #8f8f8f;
+}
+/*# sourceMappingURL=./quanzi.css.map */
