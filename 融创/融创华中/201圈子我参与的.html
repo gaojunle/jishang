@@ -28,8 +28,8 @@
                     <h3>月亮不点亮</h3>
                     <span class="date">2020/09/20</span>
                 </div>
-                <a href="./201圈子详情-带评论.html" class="desc">
-                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"</p>
+                <a href="" class="desc">
+                    《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"
                     <span class="more">查看全文>></span>
                 </a>
                 <div class="qz_imgs my-gallery">
@@ -54,7 +54,7 @@
                     <span class="date">2020/09/20</span>
                 </div>
                 <a href="" class="desc">
-                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"</p>
+                    《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"
                     <span class="more">查看全文>></span>
                 </a>
                 <div class="qz_imgs my-gallery">
@@ -71,12 +71,12 @@
                                 src="./img/main/ad.png" /></a>
                     </figure>
                     <figure>
-                        <a class="img_box" data-size="640x480" href="./img/main/gxsq_2.png"><img
+                        <a class="img_box" data-size="640x480" href="./img/main/ad.png"><img
                                 src="./img/main/gxsq_2.png" /></a>
                     </figure>
                 </div>
                 <div class="notice">
-                    <span class="heart"><img src="./img/main/icon_heart_on.png">45</span>
+                    <span class="heart"><img src="./img/main/icon_heart_on.png" alt="">45</span>
                     <span class="msg"><img src="./img/main/liuyan.png" alt="">4225</span>
                     <span class="view"><img src="./img/main/liulanliang.png" alt="">4225</span>
                 </div>
@@ -90,7 +90,7 @@
                     <span class="date">2020/09/20</span>
                 </div>
                 <a href="" class="desc">
-                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"</p>
+                    《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"
                     <span class="more">查看全文>></span>
                 </a>
                 <div class="qz_imgs my-gallery">
@@ -160,9 +160,12 @@
             </div>
         </div>
     </div>
-    <div class="footerBtns">
-        <a href="./02首页.html" class="home">返回首页</a>
-        <a href="./201发布圈子.html" class="js-submit">我要发布</a>
+    <div class="footer">
+        <a href="./02首页.html" class="sy">首页</a>
+        <a href="./03福利.html" class="fl">社区</a>
+        <a href="./04社区.html" class="sq">幸福通</a>
+        <a href="./05服务.html" class="fw">服务</a>
+        <a href="./06我的.html" class="wd on">我的</a>
     </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/common.js"></script>
@@ -180,10 +183,6 @@
                 },
                 bindEvent: function () {
                     this.initSelect();
-                    $('.heart img').click(function () {
-                        var isOn = $(this).attr('src').indexOf('on.png') > -1;
-                        $(this).attr('src', isOn ? './img/main/icon_heart.png' : './img/main/icon_heart_on.png')
-                    })
                 },
 
                 initSelect: function () {

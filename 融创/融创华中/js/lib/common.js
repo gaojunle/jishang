@@ -44,3 +44,37 @@ function flexFull() {
         $this.addClass('on').siblings().removeClass('on');
     });
 })()
+
+window.onload = function () {
+    setTimeout(function () {
+        //针对图片大小位置压缩处理
+        $('.my-gallery').each(function (idx, ele) {
+            var $this = $(this);
+            $this.addClass('num_' + $this.find('figure').length);
+        })
+        $('.img_box img').each(function () {
+            var $this = $(this);
+            var $parent = $(this).parents('figure');
+            var pw = $parent.width();
+            var ph = $parent.height();
+            var mw = $this.width();
+            var mh = $this.height();
+            $this.parents('a').attr('data-size', screen.width + 'x' + (mh * screen.width / mw))
+            //长图，让高度与外框一样大小，宽取中间
+            if (mw >= mh) {
+                $this.height(ph); //让高度与外框一样大小
+                mw = $this.width();
+                var mLeft = - Math.abs(pw - mw) / 2;
+                //向左平移压缩后图片大小，保证居中
+                $this.css({ left: mLeft })
+            } else {
+                $this.width(pw); //让宽与外框一样大小
+                mh = $this.height();
+                var mTop = - Math.abs(ph - mh) / 2;
+                //向向平移压缩后图片大小，保证居中
+                $this.css({ top: mTop })
+            }
+
+        })
+    }, 400)
+}

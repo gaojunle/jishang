@@ -19,6 +19,10 @@ html textarea:-ms-input-placeholder,
 body textarea:-ms-input-placeholder {
   color: rgba(143, 143, 143, 0.6);
 }
+html a,
+body a {
+  color: #2a2a2a;
+}
 body {
   max-width: 600px;
   padding: 0px;
@@ -27,6 +31,9 @@ body {
   color: #2a2a2a;
   padding-bottom: 100px;
   box-sizing: border-box;
+}
+body.noPb {
+  padding-bottom: 0px;
 }
 body .flex-full-tmp {
   display: block;
@@ -163,7 +170,20 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+}
+.waterfall {
+  /* Firefox */
+  /* Safari �� Chrome */
+  column-count: 2;
+  /* 将 div 元素中的文本分为2列，并规定列间1rem像素的间隔。 */
+  column-gap: 0.1em;
+}
+.waterfall .item {
+  margin: 0 0 1em 0;
+  break-inside: avoid;
+  /*break-inside: avoid; 避免元素内部断行并产生新列*/
+  width: calc(100% - 0.1rem);
 }
 .header {
   height: 0.76rem;
@@ -457,6 +477,39 @@ body .tab .tab-cont:nth-of-type(1) {
 .doLiuyan .logo-big img {
   width: 2.3rem;
 }
+.doLiuyan .logo2 {
+  text-align: center;
+  padding: 0.7rem;
+}
+.doLiuyan .logo2 img {
+  height: 0.51rem;
+}
+.doLiuyan .selbox {
+  padding-bottom: 0.18rem;
+  position: relative;
+}
+.doLiuyan .selbox::after {
+  content: '';
+  position: absolute;
+  right: 0.39rem;
+  top: 0.27rem;
+  background: url(../../img/my/icon-right.png) 0px 0px no-repeat;
+  width: 0.1rem;
+  height: 0.19rem;
+  background-size: 100% 100%;
+}
+.doLiuyan .selbox select {
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  height: 0.74rem;
+  border-radius: 0.1rem;
+  padding-left: 0.38rem;
+  color: #8f8f8f;
+}
+.doLiuyan .selbox select option {
+  color: #8f8f8f;
+}
 .doLiuyan .ipt-box {
   position: relative;
 }
@@ -505,6 +558,64 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
 }
 .doLiuyan .fileUpBox::after {
+  content: " ";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.doLiuyan .fileUpBox.multi .cropedBigImg {
+  position: inherit;
+}
+.doLiuyan .fileUpBox.multi::after {
+  display: inline-block;
+  position: inherit;
+}
+.doLiuyan .fileUp_multi {
+  position: relative;
+  margin: 0px 0.1rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUp_multi .img_list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.doLiuyan .fileUp_multi .img_list .item {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUp_multi .img_list .item .del {
+  width: 0.33rem;
+  position: absolute;
+  top: -0.14rem;
+  right: -0.14rem;
+}
+.doLiuyan .fileUp_multi .img_list .item .imgup {
+  width: 1.22rem;
+  height: 1.22rem;
+  border-radius: 0.1rem;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde {
+  position: relative;
+  display: inline-block;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde .fileup {
+  position: relative;
+  display: block;
+  width: 1.22rem;
+  height: 1.22rem;
+  opacity: 0;
+  z-index: 3;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde::after {
   content: " ";
   position: absolute;
   left: 0px;

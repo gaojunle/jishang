@@ -51,7 +51,7 @@
   line-height: 2.5;
 }
 .qz_list .item .info .desc span {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 2.083;
   margin-right: 0.5rem;
 }
@@ -72,7 +72,7 @@
   align-items: flex-start;
   padding: 0.3rem 0.4rem;
   background: white;
-  margin-bottom: 0.38;
+  margin-bottom: 0.38rem;
 }
 .qz_dt_list .item .avt {
   width: 0.8rem;
@@ -85,6 +85,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  overflow: hidden;
 }
 .qz_dt_list .item .info .title {
   display: flex;
@@ -101,15 +102,194 @@
   color: #8f8f8f;
 }
 .qz_dt_list .item .info .desc {
-  font-size: 12px;
-  line-height: 1.5;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.7;
   padding-top: 0.3rem;
   padding-bottom: 0.25rem;
+}
+.qz_dt_list .item .info .desc > p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
 }
 .qz_dt_list .item .info .desc .more {
   color: #2c5aa6;
 }
-.qz_dt_list .item .qz_imgs img {
-  width: 20%;
+.qz_dt_list .item .qz_imgs figure {
+  display: inline-block;
+  width: 1.56rem;
+  height: 1.56rem;
+  margin-right: 0rem;
+  overflow: hidden;
+  position: relative;
+}
+.qz_dt_list .item .qz_imgs figure a {
+  position: relative;
+  display: block;
+}
+.qz_dt_list .item .qz_imgs figure a img {
+  display: block;
+  position: absolute;
+}
+.qz_dt_list .item .qz_imgs.num_1 figure {
+  width: 4.78rem;
+  height: 4.78rem;
+}
+.qz_dt_list .item .qz_imgs.num_4 figure {
+  width: 2.39rem;
+  height: 2.39rem;
+}
+.qz_dt_list .item .notice {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(216, 216, 216, 0.25);
+  font-size: 12px;
+  color: #8f8f8f;
+  margin-top: 0.4rem;
+  padding-top: 0.34rem;
+  padding-bottom: 0.2rem;
+}
+.qz_dt_list .item .notice span {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+.qz_dt_list .item .notice span img {
+  width: 0.3rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1px;
+}
+.comments {
+  padding: 0.4rem 0.28rem;
+  background: white;
+}
+.comments .ctitle {
+  font-size: 16px;
+  line-height: 1.047;
+  text-align: center;
+}
+.comments .item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+}
+.comments .item:nth-last-of-type(1) {
+  border: none;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+}
+.comments .item .avater {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+  margin-right: 0.17rem;
+}
+.comments .item .right {
+  flex: 1;
+  padding-top: 0.2rem;
+}
+.comments .item .right .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comments .item .right .info h3,
+.comments .item .right .info .date {
+  font-size: 13px;
+  line-height: 2;
+}
+.comments .item .right .info .date {
+  color: #8f8f8f;
+}
+.comments .item .right .ctx {
+  padding: 0.35rem 0px 0rem;
+  font-size: 13px;
+}
+.comments .item .right .btn_del {
+  display: inline-block;
+  background-color: #b7a793;
+  padding: 1px 0.23rem;
+  color: white;
+  font-size: 11px;
+  border-radius: 0.4rem;
+  margin-top: 0.3rem;
+}
+.btn_bottom {
+  position: fixed;
+  bottom: -1px;
+  left: 0px;
+  width: 100%;
+  height: 1.64rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  text-align: center;
+  background: white;
+  padding-bottom: 0.4rem;
+}
+.btn_bottom a {
+  display: block;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #8f8f8f;
+  font-size: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.btn_bottom a > img {
+  height: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+.btn_bottom a:nth-last-of-type(1)::after {
+  content: none;
+}
+.btn_bottom a::after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 39px;
+  background-color: rgba(255, 255, 255, 0.402);
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+.liuyan-box {
+  position: relative;
+}
+.liuyan-box textarea {
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.14rem 0.18rem;
+  color: #222222;
+  width: 4.3rem;
+  resize: none;
+}
+.liuyan-box textarea::-webkit-input-placeholder {
+  color: rgba(42, 42, 42, 0.302);
+}
+.liuyan-box .limit {
+  position: absolute;
+  right: 0.15rem;
+  bottom: 0.14rem;
+  font-size: 12px;
+}
+.liuyan-box .limit span {
+  color: #8f8f8f;
 }
 /*# sourceMappingURL=./quanzi.css.map */

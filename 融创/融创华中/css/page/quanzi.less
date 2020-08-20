@@ -63,7 +63,7 @@
 
             .desc {
                 span {
-                    font-size: 12px;
+                    font-size: 13px;
                     line-height: 2.083;
                     margin-right: .5rem;
                 }
@@ -94,7 +94,7 @@
         align-items: flex-start;
         padding: .3rem .4rem;
         background: white;
-        margin-bottom: .38;
+        margin-bottom: .38rem;
 
         .avt {
             width: .8rem;
@@ -108,6 +108,7 @@
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+            overflow: hidden;
 
             .title {
                 display: flex;
@@ -127,10 +128,20 @@
             }
 
             .desc {
-                font-size: 12px;
-                line-height: 1.5;
+                display: block;
+                width: 100%;
+                font-size: 13px;
+                line-height: 1.7;
                 padding-top: .3rem;
                 padding-bottom: .25rem;
+
+                >p {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    position: relative;
+                }
+
                 .more {
                     color: #2c5aa6;
                 }
@@ -138,9 +149,219 @@
         }
 
         .qz_imgs {
-            img {
-                width: 20%;
+            figure {
+                display: inline-block;
+                width: 1.56rem;
+                height: 1.56rem;
+                margin-right: .0rem;
+                overflow: hidden;
+                position: relative;
+
+                a {
+                    position: relative;
+                    display: block;
+
+                    img {
+                        display: block;
+                        position: absolute;
+                        //width: 100%;
+                    }
+                }
             }
+
+            &.num_1 {
+                figure {
+                    width: 4.78rem;
+                    height: 4.78rem;
+                }
+            }
+
+            &.num_4 {
+                figure {
+                    width: 2.39rem;
+                    height: 2.39rem;
+                }
+            }
+        }
+
+        .notice {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgba(216, 216, 216, 0.25);
+            font-size: 12px;
+            color: rgb(143, 143, 143);
+            margin-top: .4rem;
+            padding-top: .34rem;
+            padding-bottom: .2rem;
+
+            span {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: .3rem;
+                    margin-right: .1rem;
+                    margin-bottom: 1px;
+                }
+
+                margin-right: .5rem;
+            }
+        }
+    }
+}
+
+//评论
+.comments {
+    padding: .4rem .28rem;
+    background: white;
+
+    .ctitle {
+        font-size: 16px;
+        line-height: 1.047;
+        text-align: center;
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: .3rem;
+        padding-bottom: .4rem;
+        border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+
+        &:nth-last-of-type(1) {
+            border: none;
+            margin-bottom: .0rem;
+            padding-bottom: .0rem;
+        }
+
+        .avater {
+            width: .8rem;
+            height: .8rem;
+            border-radius: 100%;
+            margin-right: .17rem;
+        }
+
+        .right {
+            flex: 1;
+            padding-top: .2rem;
+
+            .info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3,
+                .date {
+                    font-size: 13px;
+                    line-height: 2;
+                }
+
+                .date {
+                    color: rgb(143, 143, 143);
+                }
+            }
+
+            .ctx {
+                padding: .35rem 0px 0rem;
+                font-size: 13px;
+            }
+
+            .btn_del {
+                display: inline-block;
+                background-color: rgb(183, 167, 147);
+                padding: 1px .23rem;
+                color: white;
+                font-size: 11px;
+                border-radius: .4rem;
+                margin-top: .3rem;
+            }
+        }
+
+    }
+}
+
+.btn_bottom {
+    position: fixed;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 1.64rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    background: white;
+    padding-bottom: .4rem;
+
+    a {
+        display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        color: rgb(143, 143, 143);
+        font-size: 12px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        >img {
+            height: .6rem;
+            margin-bottom: .1rem;
+        }
+
+        &:nth-last-of-type(1) {
+            &::after {
+                content: none;
+            }
+        }
+
+        &::after {
+            display: block;
+            content: "";
+            width: 1px;
+            height: 39px;
+            background-color: rgba(255, 255, 255, 0.402);
+            position: absolute;
+            top: 10px;
+            right: 0px;
+        }
+    }
+}
+
+.liuyan-box {
+    position: relative;
+
+    textarea {
+        font-size: 12px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgba(0, 0, 0, .05);
+        border-radius: 5px;
+        height: 3rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .14rem .18rem;
+        color: #222222;
+        width: 4.3rem;
+        resize: none;
+
+        &::-webkit-input-placeholder {
+            color: rgba(42, 42, 42, 0.302);
+        }
+    }
+
+    .limit {
+        position: absolute;
+        right: .15rem;
+        bottom: .14rem;
+        font-size: 12px;
+
+        span {
+            color: rgb(143, 143, 143);
         }
     }
 }
