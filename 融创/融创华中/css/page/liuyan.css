@@ -506,6 +506,7 @@ body .tab .tab-cont:nth-of-type(1) {
   border-radius: 0.1rem;
   padding-left: 0.38rem;
   color: #8f8f8f;
+  font-size: 14px;
 }
 .doLiuyan .selbox select option {
   color: #8f8f8f;
