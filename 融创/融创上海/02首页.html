@@ -22,7 +22,8 @@
         <img src="./img/logo.png" alt="" class="logo">
         <!-- <span class="msg">早上好，融创家人们！</span> -->
         <div class="selcity js-select">
-            <div class="sel-val" style="font-size: 15px;color: #8f8f8f;display: inline-block;width: 100px;text-align: right;"></div>
+            <div class="sel-val"
+                style="font-size: 15px;color: #8f8f8f;display: inline-block;width: 100px;text-align: right;"></div>
             <select class="sel-data" data-title="请选择城市" style="display: none;">
                 <option value="1" selected>上海</option>
                 <option value="2">无锡</option>
@@ -179,6 +180,7 @@
     <div class="split-logo">
         <img src="./img/rc-logo-split.png" alt="">
     </div>
+    <a id="roll" href="#" class="baoxiang"><img src="./img/baoxiang.gif" alt=""></a>
     <div class="footer">
         <a href="./02首页.html" class="sy on">首页</a>
         <a href="./03福利.html" class="fl">福利</a>
@@ -196,6 +198,7 @@
                 init: function () {
                     this.initData();
                     this.bindEvent();
+                    this.initAnimate();
                 },
                 bindEvent: function () {
                     this.noticeUp();
@@ -203,6 +206,43 @@
                 },
                 initData: function () {
                     this.initSwiper();
+                },
+                //宝箱动画效果
+                initAnimate: function () {
+                    var BX = {
+                        roll: document.getElementById("roll"),
+                        speed: 20,
+                        statusX: 1,
+                        statusY: 1,
+                        x: 100,
+                        y: 300,
+                        winW: document.documentElement.clientWidth - document.getElementById("roll").offsetWidth,
+                        winH: document.documentElement.clientHeight - 80 * 1.2,
+                        Go: function () {
+                            this.roll.style.left = this.x + 'px';
+                            this.roll.style.top = this.y + 'px';
+
+                            this.x = this.x + (this.statusX ? -1 : 1)
+                            if (this.x < 0) {
+                                this.statusX = 0
+                            }
+                            if (this.x > this.winW) {
+                                this.statusX = 1
+                            }
+
+                            this.y = this.y + (this.statusY ? -1 : 1)
+                            if (this.y < 0) {
+                                this.statusY = 0
+                            }
+                            if (this.y > this.winH) {
+                                this.statusY = 1
+                            }
+                        },
+                        Play: function () {
+                            setInterval(BX.Go.bind(BX), BX.speed);
+                        }
+                    }
+                    BX.Play();
                 },
 
                 initSwiper: function () {

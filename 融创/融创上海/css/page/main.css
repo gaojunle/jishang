@@ -900,4 +900,13 @@ body .tab .tab-cont:nth-of-type(1) {
 .read .grid a img {
   width: 100%;
 }
+.baoxiang {
+  position: fixed;
+  z-index: 2000;
+  right: 0px;
+  bottom: 3.5;
+}
+.baoxiang img {
+  width: 1.6rem;
+}
 /*# sourceMappingURL=./main.css.map */
