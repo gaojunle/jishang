@@ -29,7 +29,8 @@
                     <span class="date">2020/09/20</span>
                 </div>
                 <a href="./201圈子详情-带评论.html" class="desc">
-                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"</p>
+                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"
+                    </p>
                     <span class="more">查看全文>></span>
                 </a>
                 <div class="qz_imgs my-gallery">
@@ -90,7 +91,7 @@
                     <span class="date">2020/09/20</span>
                 </div>
                 <a href="" class="desc">
-                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》"</p>
+                    <p> 《韩非子·六反》：“今家人之治产也，相忍以饥寒，相强以劳苦，虽犯军旅之难，饥馑之患，温衣美食者必是家也。”《晋书·傅咸传》</p>
                     <span class="more">查看全文>></span>
                 </a>
                 <div class="qz_imgs my-gallery">
@@ -177,12 +178,24 @@
             var App = {
                 init: function () {
                     this.bindEvent();
+                    this.initCommLen();
                 },
                 bindEvent: function () {
                     this.initSelect();
                     $('.heart img').click(function () {
                         var isOn = $(this).attr('src').indexOf('on.png') > -1;
                         $(this).attr('src', isOn ? './img/main/icon_heart.png' : './img/main/icon_heart_on.png')
+                    })
+                },
+
+                initCommLen: function () {
+                    $('.desc p').each(function () {
+                        var $this = $(this);
+                        var txtLen = $this.text().length;
+                        var maxLen = 85;
+                        if (txtLen > maxLen) {
+                            $this.html($this.text().substring(0, maxLen) + '...')
+                        }
                     })
                 },
 

@@ -109,12 +109,6 @@
   padding-top: 0.3rem;
   padding-bottom: 0.25rem;
 }
-.qz_dt_list .item .info .desc > p {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  position: relative;
-}
 .qz_dt_list .item .info .desc .more {
   color: #2c5aa6;
 }
