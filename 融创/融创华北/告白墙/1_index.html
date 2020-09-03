@@ -29,7 +29,16 @@
         </div>
         <div class="rank_box">
             <div class="rank_top3">
-                <div class="item">
+                <a href="./2_detail.html" class="item">
+                    <div class="avt_box">
+                        <img class="avater" src="./img/avater.png" alt="">
+                        <img class="nbg" src="./img/gaobai/number_2.png" alt="">
+                    </div>
+                    <div class="name">黎语冰</div>
+                    <div class="hp">好评值：985</div>
+                    <div class="his">Ta的好评</div>
+                </a>
+                <a href="./2_detail.html" class="item">
                     <div class="avt_box">
                         <img class="avater" src="./img/avater.png" alt="">
                         <img class="nbg" src="./img/gaobai/number_1.png" alt="">
@@ -37,28 +46,19 @@
                     <div class="name">黎语冰</div>
                     <div class="hp">好评值：985</div>
                     <div class="his">Ta的好评</div>
-                </div>
-                <div class="item">
+                </a>
+                <a href="./2_detail.html" class="item">
                     <div class="avt_box">
                         <img class="avater" src="./img/avater.png" alt="">
-                        <img class="nbg" src="./img/gaobai/number_1.png" alt="">
+                        <img class="nbg" src="./img/gaobai/number_3.png" alt="">
                     </div>
                     <div class="name">黎语冰</div>
                     <div class="hp">好评值：985</div>
                     <div class="his">Ta的好评</div>
-                </div>
-                <div class="item">
-                    <div class="avt_box">
-                        <img class="avater" src="./img/avater.png" alt="">
-                        <img class="nbg" src="./img/gaobai/number_1.png" alt="">
-                    </div>
-                    <div class="name">黎语冰</div>
-                    <div class="hp">好评值：985</div>
-                    <div class="his">Ta的好评</div>
-                </div>
+                </a>
             </div>
             <div class="rank_ohter">
-                <div class="item">
+                <a href="2_detail.html" class="item">
                     <span class="number">No.4</span>
                     <div class="info">
                         <img src="./img/avater.png" alt="">
@@ -68,7 +68,62 @@
                         </div>
                     </div>
                     <div class="like"></div>
-                </div>
+                </a>
+                <a href="2_detail.html" class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like liked"></div>
+                </a>
+                <a href="2_detail.html" class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like"></div>
+                </a>
+                <a href="2_detail.html" class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like liked"></div>
+                </a>
+                <a href="2_detail.html" class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like"></div>
+                </a>
+                <a href="2_detail.html" class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like liked"></div>
+                </a>
             </div>
         </div>
         <div class="pop_box js_rule">
@@ -89,10 +144,8 @@
         </div>
     </div>
     <div class="footer">
-        <a href="./首页.html" class="bg_btn"><img src="./img/shouye.png">首页</a>
-        <a href="tel:4008001234" class="bg_btn js-reply"><img src="./img/shuxie.png">我要评价</a>
-        <span class="vline"></span>
-        <a href="#" class="bg_btn"><img src="./img/shou.png">点击预约</a>
+        <a href="./1_index.html" class="bg_btn"><img src="./img/shouye.png">首页</a>
+        <a href="./3_comment.html" class="bg_btn"><img src="./img/shuxie.png">我要评价</a>
     </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/artDialog.js"></script>
@@ -102,44 +155,10 @@
                 this.bindEvent();
                 this.bindPopClose();
                 this.bindRuleShow();
+                this.bindLikeToggle();
             },
             bindEvent: function () {
-                $('.liuyan').on('click', '.btn_del', function () {
-                    alert('删除是第' + $(this).parents('.qa').index() + '个');
-                    return false;
-                })
-                $('.js-reply').click(function () {
-                    var d = dialog({
-                        title: ' ',
-                        padding: 0,
-                        content: '<div class="pop-cont">' +
-                            '<div class="liuyan-box">\n' +
-                            '        <textarea id="ipt_liuyan" cols="30" rows="10" placeholder="留言将由会筛选后显示，对所有人可见。"></textarea>\n' +
-                            '        <div class="limit"><span class="ipt_num">0</span><span>/100</span></div>\n',
-                        backdropOpacity: '0.3',
-                        okValue: '提交留言',
-                        ok: function () {
-                            d.close().remove();
-                            return false;
-                        }
-                    });
-                    d.showModal();
-                    $('.icon_close').click(function () {
-                        d.close().remove();
-                    })
-
-                    $('#ipt_liuyan').on('input', function () {
-                        var _val = $(this).val();
-                        var limitNum = 100;
-                        if (_val.length > limitNum) {
-                            $(this).val(_val.substring(0, limitNum));
-                            $('.ipt_num').text(limitNum)
-                        } else {
-                            $('.ipt_num').text(_val.length)
-                        }
-                    })
-                    return false
-                })
+               
             },
             bindRuleShow: function () {
                 $('.show_rule').click(function () {
@@ -153,6 +172,14 @@
                     return false;
                 })
             },
+            bindLikeToggle: function () {
+                $('.rank_ohter').on('click', '.like', function () {
+                    $(this).toggleClass('liked');
+                    //根据是否有liked样式判断，是否已经高亮
+                    console.log($(this).hasClass('liked'))
+                    return false;
+                })
+            }
         };
         App.init();
     </script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>写评论</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/artDialog.css" />
+    <link rel="stylesheet" href="./css/page/comment.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="comment">
+        <div class="selection">
+            <select name="" id="">
+                <option value="-1">请选择所属城市</option>
+                <option value="1">天津</option>
+                <option value="2">北京</option>
+            </select>
+            <img src="./img/common/icon_right.png" alt="">
+        </div>
+        <div class="selection">
+            <select name="" id="">
+                <option value="-1">请选择所属楼盘</option>
+                <option value="1">观澜壹号1</option>
+                <option value="2">观澜壹号2</option>
+                <option value="3">观澜壹号3</option>
+            </select>
+            <img src="./img/common/icon_right.png" alt="">
+        </div>
+        <div class="selection">
+            <select name="" id="">
+                <option value="-1">请选择房修师</option>
+                <option value="1">观澜壹号1</option>
+                <option value="2">观澜壹号2</option>
+                <option value="3">观澜壹号3</option>
+            </select>
+            <img src="./img/common/icon_right.png" alt="">
+        </div>
+        <div class="liuyan-box">
+            <textarea id="ipt_liuyan" cols="30" rows="10" placeholder="请在此处输入评论......"></textarea>
+            <div class="limit"><span class="ipt_num">0</span><span>/100</span></div>
+            <div class="tip">＊您的留言将在审核后予以发布。</div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="./1_index.html" class="bg_btn"><img src="./img/shouye.png">首页</a>
+        <a href="" class="bg_btn js-reply"><img src="./img/shuxie.png">提交评论</a>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+            },
+            bindEvent: function () {
+                $('#ipt_liuyan').on('input', function () {
+                    var _val = $(this).val();
+                    var limitNum = 100;
+                    if (_val.length > limitNum) {
+                        $(this).val(_val.substring(0, limitNum));
+                        $('.ipt_num').text(limitNum)
+                    } else {
+                        $('.ipt_num').text(_val.length)
+                    }
+                })
+
+                $('.js-reply').click(function(){
+                    alert('评论')
+                    return false;
+                })
+            },
+
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

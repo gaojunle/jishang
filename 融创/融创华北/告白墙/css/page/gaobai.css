@@ -11,6 +11,7 @@ body {
   padding: 0.3rem 0.2rem;
   background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
   background-size: 100%;
+  padding-bottom: 1.4rem;
 }
 .gaobaiList .banner_box {
   position: relative;
@@ -68,17 +69,16 @@ body {
 .gaobaiList .rank_box .rank_top3 .item {
   font-size: 12px;
   text-align: center;
-  width: 33.3%;
 }
 .gaobaiList .rank_box .rank_top3 .item:nth-of-type(2) {
-  width: 40%;
+  width: 45%;
   background: url(../../img/gaobai/number_1_bg.png) 0px 0px no-repeat;
   background-size: 100%;
   margin-top: -1rem;
+  padding-top: 0.6rem;
 }
 .gaobaiList .rank_box .rank_top3 .item .avt_box {
   position: relative;
-  height: 1.67rem;
 }
 .gaobaiList .rank_box .rank_top3 .item .avt_box .avater {
   width: 1.26rem;
@@ -88,12 +88,12 @@ body {
   position: absolute;
   z-index: 1;
   left: 50%;
-  margin-left: -0.75rem;
-  top: 0px;
+  margin-left: -0.8rem;
+  top: -0.3rem;
   width: 1.5rem;
 }
 .gaobaiList .rank_box .rank_top3 .item .name {
-  padding-top: 0.15rem;
+  padding-top: 0.25rem;
   font-size: 14px;
   color: #633114;
   line-height: 1.667;
@@ -103,6 +103,7 @@ body {
   line-height: 1.667;
 }
 .gaobaiList .rank_box .rank_top3 .item .his {
+  display: inline-block;
   border-width: 1px;
   border-color: #8e1e12;
   border-style: solid;
@@ -112,6 +113,167 @@ body {
   border-radius: 20px;
   font-size: 12px;
   color: #8e1e12;
+}
+.gaobaiList .rank_box .rank_ohter {
+  padding-top: 0.4rem;
+}
+.gaobaiList .rank_box .rank_ohter .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #633114;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding: 0.3rem 0px;
+}
+.gaobaiList .rank_box .rank_ohter .item:nth-last-of-type(1) {
+  border: none;
+}
+.gaobaiList .rank_box .rank_ohter .item .number {
+  font-size: 14px;
+}
+.gaobaiList .rank_box .rank_ohter .item .info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 0.3rem;
+}
+.gaobaiList .rank_box .rank_ohter .item .info > img {
+  width: 0.68rem;
+  border-radius: 100%;
+  margin-right: 0.1rem;
+}
+.gaobaiList .rank_box .rank_ohter .item .info .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.gaobaiList .rank_box .rank_ohter .item .info .detail .hp {
+  font-weight: bold;
+}
+.gaobaiList .rank_box .rank_ohter .item .like {
+  width: 0.45rem;
+  height: 0.39rem;
+  background: url(../../img/gaobai/heart.png) 0px 0px no-repeat;
+  background-size: 100%;
+}
+.gaobaiList .rank_box .rank_ohter .item .like.liked {
+  background: url(../../img/gaobai/heart_on.png) 0px 0px no-repeat;
+  background-size: 100%;
+}
+.gaobaiDetail {
+  padding: 0.3rem 0.2rem;
+  background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
+  background-size: 100%;
+  padding-bottom: 1.4rem;
+  color: white;
+}
+.gaobaiDetail .uinfo {
+  display: flex;
+  padding-left: 0.45rem;
+}
+.gaobaiDetail .uinfo > img {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 100%;
+  border: 0.1rem solid #70737d;
+}
+.gaobaiDetail .uinfo .desc {
+  font-size: 15px;
+  padding-top: 0.8rem;
+  padding-left: 0.4rem;
+  line-height: 1.5;
+}
+.gaobaiDetail .describe {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  padding: 0.6rem 0.3rem;
+  padding-bottom: 0.4rem;
+  margin-top: 0.73rem;
+  line-height: 1.55;
+  font-size: 12px;
+}
+.gaobaiDetail .describe .jc {
+  position: absolute;
+  left: 50%;
+  margin-left: -0.89rem;
+  top: -0.24rem;
+  width: 1.78rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  text-align: center;
+  border-radius: 40px;
+  background-color: #888b94;
+}
+.gaobaiDetail .hp_list {
+  border-radius: 0.1rem;
+  background-color: #ffffff;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.44rem;
+}
+.gaobaiDetail .hp_list .title {
+  font-size: 17px;
+  color: #633114;
+  line-height: 1.176;
+  text-align: center;
+  padding-bottom: 0.4rem;
+}
+.gaobaiDetail .hp_list li {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding: 0.3rem 0.08rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #633114;
+}
+.gaobaiDetail .hp_list li:nth-last-of-type(1) {
+  border: none;
+}
+.gaobaiDetail .hp_list li > img {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  margin-right: 0.1rem;
+}
+.gaobaiDetail .hp_list li > span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gaobaiDetail .hp_list li .btn {
+  margin-left: 0.4rem;
+  border: 1px solid rgba(142, 30, 18, 0.7);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #8e1e12;
+  padding: 1px 0.3rem;
+}
+.gaobaiDetail .hp_list li .hide {
+  display: none;
+}
+.js_rule .minfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  margin-top: 0.2rem;
+}
+.js_rule .minfo .avt {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  margin-right: 0.08rem;
+}
+.js_rule .minfo .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.js_rule .minfo .desc p {
+  line-height: 1.5;
 }
 .footer {
   position: fixed;
@@ -144,10 +306,10 @@ body {
   width: 2rem;
   background: #2a2a2a;
 }
-.footer a:nth-of-type(n+2) {
+.footer a:nth-of-type(n + 2) {
   flex: 1;
 }
-.footer a:nth-of-type(n+2)::after {
+.footer a:nth-of-type(n + 2)::after {
   display: inline-block;
   width: 1px;
   height: 0.7rem;
@@ -195,6 +357,7 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
+  z-index: 10;
 }
 .pop_box.show {
   display: flex;
@@ -215,7 +378,7 @@ body {
   overflow-y: scroll;
   padding: 0.1rem 0px;
   width: 6.16rem;
-  height: 8.48rem;
+  max-height: 8.48rem;
   padding: 0.4rem 0.5rem 0.5rem 0.6rem;
   box-sizing: border-box;
 }
@@ -233,4 +396,3 @@ body {
 .ui-dialog-body .pop-cont {
   padding: 1rem 0.35rem;
 }
-/*# sourceMappingURL=./gaobai.css.map */
