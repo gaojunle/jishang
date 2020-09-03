@@ -1,0 +1,37 @@
+@import "../lib/reset.css";
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #fff;
+  font-size: px2rem(24);
+}
+
+.wrapper {
+  position: relative;
+  max-width: px2rem(750);
+  min-height: 100%;
+  margin: 0px auto;
+}
+
+.btn_defualt {
+  display: block;
+  width: 100%;
+  height: px2rem(65);
+  line-height: px2rem(65);
+  border-radius: 33px;
+  background-color: #ffa800;
+  border: none;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+.btn_defualt.nobg {
+  background: transparent;
+  border: 1px solid #ffa800;
+  color: #ffa800;
+}
+.btn_defualt.light {
+  background-color: rgba(40, 194, 252, 0.2);
+  color: #ffa800;
+}

@@ -1,0 +1,236 @@
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: white;
+  min-height: 100vh;
+  font-size: 13px;
+  background-color: #101626;
+}
+.gaobaiList {
+  padding: 0.3rem 0.2rem;
+  background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
+  background-size: 100%;
+}
+.gaobaiList .banner_box {
+  position: relative;
+}
+.gaobaiList .banner_box .banner {
+  width: 100%;
+}
+.gaobaiList .banner_box .show_rule {
+  position: absolute;
+  right: 0px;
+  top: 0.43rem;
+  width: 1.3rem;
+}
+.gaobaiList .search_box {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 0.1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 0.7rem;
+  margin-top: 0.36rem;
+}
+.gaobaiList .search_box img {
+  width: 0.4rem;
+  position: absolute;
+  left: 0.28rem;
+  top: 0.15rem;
+}
+.gaobaiList .search_box input {
+  flex: 1;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.302);
+  padding-left: 0.8rem;
+  margin-right: 1px;
+  font-size: 14px;
+}
+.gaobaiList .search_box a {
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 0px 0.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.gaobaiList .rank_box {
+  margin-top: 0.7rem;
+  background: white;
+  border-radius: 0.1rem;
+  padding: 0.68rem 0.45rem;
+}
+.gaobaiList .rank_box .rank_top3 {
+  display: flex;
+  justify-content: space-between;
+}
+.gaobaiList .rank_box .rank_top3 .item {
+  font-size: 12px;
+  text-align: center;
+  width: 33.3%;
+}
+.gaobaiList .rank_box .rank_top3 .item:nth-of-type(2) {
+  width: 40%;
+  background: url(../../img/gaobai/number_1_bg.png) 0px 0px no-repeat;
+  background-size: 100%;
+  margin-top: -1rem;
+}
+.gaobaiList .rank_box .rank_top3 .item .avt_box {
+  position: relative;
+  height: 1.67rem;
+}
+.gaobaiList .rank_box .rank_top3 .item .avt_box .avater {
+  width: 1.26rem;
+  border-radius: 100%;
+}
+.gaobaiList .rank_box .rank_top3 .item .avt_box .nbg {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -0.75rem;
+  top: 0px;
+  width: 1.5rem;
+}
+.gaobaiList .rank_box .rank_top3 .item .name {
+  padding-top: 0.15rem;
+  font-size: 14px;
+  color: #633114;
+  line-height: 1.667;
+}
+.gaobaiList .rank_box .rank_top3 .item .hp {
+  color: #633114;
+  line-height: 1.667;
+}
+.gaobaiList .rank_box .rank_top3 .item .his {
+  border-width: 1px;
+  border-color: #8e1e12;
+  border-style: solid;
+  width: 1.44rem;
+  padding: 0.02rem 0px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #8e1e12;
+}
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 0.88rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffa800;
+}
+.footer .vline {
+  display: inline-block;
+  width: 1px;
+  height: 0.7rem;
+  background: rgba(243, 240, 240, 0.8);
+}
+.footer a {
+  height: 0.88rem;
+  font-size: 15px;
+  background: #ffa800;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer a:nth-of-type(1) {
+  width: 2rem;
+  background: #2a2a2a;
+}
+.footer a:nth-of-type(n+2) {
+  flex: 1;
+}
+.footer a:nth-of-type(n+2)::after {
+  display: inline-block;
+  width: 1px;
+  height: 0.7rem;
+  background: rgba(243, 240, 240, 0.8);
+}
+.footer a > img {
+  width: 0.3rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1px;
+}
+.liuyan-box {
+  position: relative;
+}
+.liuyan-box textarea {
+  font-size: 13px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.14rem 0.18rem;
+  color: #2a2a2a;
+  width: 5.8rem;
+}
+.liuyan-box textarea::-webkit-input-placeholder {
+  color: rgba(42, 42, 42, 0.302);
+}
+.liuyan-box .limit {
+  position: absolute;
+  right: 0.15rem;
+  bottom: 0.14rem;
+  color: rgba(42, 42, 42, 0.5);
+  font-size: 13px;
+}
+.pop_box {
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.pop_box.show {
+  display: flex;
+}
+.pop_box .pop_close {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  width: 0.24rem;
+}
+.pop_box .pop_cont {
+  position: relative;
+  border-radius: 0.1rem;
+  background-color: white;
+}
+.pop_box .pop_cont .pop_wraper {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0.1rem 0px;
+  width: 6.16rem;
+  height: 8.48rem;
+  padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+  box-sizing: border-box;
+}
+.pop_box .pop_cont .ptitle {
+  font-size: 0.3rem;
+  color: #8f8f8f;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+.pop_box .pop_cont p {
+  color: #8f8f8f;
+  line-height: 2.26;
+  font-size: 0.24rem;
+}
+.ui-dialog-body .pop-cont {
+  padding: 1rem 0.35rem;
+}
+/*# sourceMappingURL=./gaobai.css.map */

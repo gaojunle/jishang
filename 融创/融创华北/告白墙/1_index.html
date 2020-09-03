@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>告白墙</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/artDialog.css" />
+    <link rel="stylesheet" href="./css/page/gaobai.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="gaobaiList">
+        <div class="banner_box">
+            <img class="banner" src="./img/gaobai/banner.png" alt="">
+            <img class="show_rule" src="./img/guize.png" />
+        </div>
+        <div class="search_box">
+            <img src="./img/gaobai/icon_search.png" alt="">
+            <input type="text" placeholder="请输入房修师姓名">
+            <a href="">搜索</a>
+        </div>
+        <div class="rank_box">
+            <div class="rank_top3">
+                <div class="item">
+                    <div class="avt_box">
+                        <img class="avater" src="./img/avater.png" alt="">
+                        <img class="nbg" src="./img/gaobai/number_1.png" alt="">
+                    </div>
+                    <div class="name">黎语冰</div>
+                    <div class="hp">好评值：985</div>
+                    <div class="his">Ta的好评</div>
+                </div>
+                <div class="item">
+                    <div class="avt_box">
+                        <img class="avater" src="./img/avater.png" alt="">
+                        <img class="nbg" src="./img/gaobai/number_1.png" alt="">
+                    </div>
+                    <div class="name">黎语冰</div>
+                    <div class="hp">好评值：985</div>
+                    <div class="his">Ta的好评</div>
+                </div>
+                <div class="item">
+                    <div class="avt_box">
+                        <img class="avater" src="./img/avater.png" alt="">
+                        <img class="nbg" src="./img/gaobai/number_1.png" alt="">
+                    </div>
+                    <div class="name">黎语冰</div>
+                    <div class="hp">好评值：985</div>
+                    <div class="his">Ta的好评</div>
+                </div>
+            </div>
+            <div class="rank_ohter">
+                <div class="item">
+                    <span class="number">No.4</span>
+                    <div class="info">
+                        <img src="./img/avater.png" alt="">
+                        <div class="detail">
+                            <div>蒋世嘉｜天津房修公司</div>
+                            <div class="hp">好评值：985</div>
+                        </div>
+                    </div>
+                    <div class="like"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pop_box js_rule">
+            <div class="pop_cont">
+                <img class="pop_close" src="./img/common/icon_close.png" alt="">
+
+                <div class="pop_wraper">
+                    <div class="ptitle">活动规则</div>
+                    <p> 1.服务条款的接受与修改</p>
+                    <p>1.1
+                        本协议是VIP会员与北京爱奇艺科技有限公司（下称“爱奇艺”）之间关于用户成为爱奇艺VIP会员且使用爱奇艺提供的VIP会员服务所订立的协议。本协议描述爱奇艺与VIP会员之间关于软件许可以及服务使用及相关方面的权利义务。“VIP会员”或“您”是指完成了成为爱奇艺VIP会员的全部程序（包括会员费用的支付、同意本协议全部内容等），且在遵守爱奇艺相关使用规则下使用爱奇艺提供的VIP会员服务的自然人。
+                    </p>
+                    <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+                    <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+                    <p>1.2 本服务协议构成您使用爱奇艺所提供的VIP会员服务之先决条件，爱奇艺已经以字体加粗或</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="./首页.html" class="bg_btn"><img src="./img/shouye.png">首页</a>
+        <a href="tel:4008001234" class="bg_btn js-reply"><img src="./img/shuxie.png">我要评价</a>
+        <span class="vline"></span>
+        <a href="#" class="bg_btn"><img src="./img/shou.png">点击预约</a>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/artDialog.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.bindPopClose();
+                this.bindRuleShow();
+            },
+            bindEvent: function () {
+                $('.liuyan').on('click', '.btn_del', function () {
+                    alert('删除是第' + $(this).parents('.qa').index() + '个');
+                    return false;
+                })
+                $('.js-reply').click(function () {
+                    var d = dialog({
+                        title: ' ',
+                        padding: 0,
+                        content: '<div class="pop-cont">' +
+                            '<div class="liuyan-box">\n' +
+                            '        <textarea id="ipt_liuyan" cols="30" rows="10" placeholder="留言将由会筛选后显示，对所有人可见。"></textarea>\n' +
+                            '        <div class="limit"><span class="ipt_num">0</span><span>/100</span></div>\n',
+                        backdropOpacity: '0.3',
+                        okValue: '提交留言',
+                        ok: function () {
+                            d.close().remove();
+                            return false;
+                        }
+                    });
+                    d.showModal();
+                    $('.icon_close').click(function () {
+                        d.close().remove();
+                    })
+
+                    $('#ipt_liuyan').on('input', function () {
+                        var _val = $(this).val();
+                        var limitNum = 100;
+                        if (_val.length > limitNum) {
+                            $(this).val(_val.substring(0, limitNum));
+                            $('.ipt_num').text(limitNum)
+                        } else {
+                            $('.ipt_num').text(_val.length)
+                        }
+                    })
+                    return false
+                })
+            },
+            bindRuleShow: function () {
+                $('.show_rule').click(function () {
+                    $('.js_rule').addClass('show')
+                    return false;
+                })
+            },
+            bindPopClose: function () {
+                $('.pop_close').click(function () {
+                    $('.pop_box').removeClass('show')
+                    return false;
+                })
+            },
+        };
+        App.init();
+    </script>
+</body>
+
+</html>
