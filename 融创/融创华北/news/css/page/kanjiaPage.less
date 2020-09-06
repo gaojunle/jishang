@@ -1,0 +1,325 @@
+@fontGray: #8f8f8f;
+@lineGray: rgba(216, 216, 216, 0.25);
+@cBlack: #2a2a2a;
+@cGray: rgba(42, 42, 42, 0.502);
+@cBlue: #ffa800;
+
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: #f4f4f4;
+  min-height: 100vh;
+  font-size: 13px;
+  .countdown_num {
+    > span {
+      background-color: rgba(143, 143, 143, 0.2);
+      font-size: 0.24rem;
+      padding: 4px 2px;
+      border-radius: 0.06rem;
+      margin: 0px 5px;
+    }
+    &.plain {
+      > span {
+        background: none;
+        color: #2a2a2a;
+        font-size: 16px;
+      }
+    }
+  }
+  .footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0.86rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(42, 42, 42);
+
+    .vline {
+      display: inline-block;
+      width: 1px;
+      height: 0.7rem;
+      background: rgba(243, 240, 240, 0.8);
+    }
+
+    a {
+      height: 100%;
+      font-size: 15px;
+      color: white;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-of-type(1) {
+        width: 2rem;
+        background: #2a2a2a;
+      }
+
+      &:nth-of-type(n + 2) {
+        flex: 1;
+
+        &::after {
+          //content: "";
+          display: inline-block;
+          width: 1px;
+          height: 0.7rem;
+          background: rgba(243, 240, 240, 0.8);
+        }
+      }
+
+      > img {
+        width: 0.3rem;
+        margin-right: 0.1rem;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+//砍价页
+.kanjia {
+  .kbox {
+    background: white;
+    padding: 0rem 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.28rem;
+    padding-top: 0.45rem;
+    .countdown_num {
+      flex: 1;
+      margin-left: 0.2rem;
+    }
+    > img {
+      width: 0.74rem;
+      height: 0.74rem;
+      border-radius: 100%;
+    }
+  }
+  .banner {
+    .bimg {
+      width: 100%;
+    }
+    .dec {
+      padding: 0.34rem 0px;
+      font-size: 14px;
+      color: rgb(42, 42, 42);
+      line-height: 1.6;
+      .dt {
+        font-size: 12px;
+        color: rgb(143, 143, 143);
+        line-height: 1.833;
+      }
+    }
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(255, 168, 0);
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .kan_record {
+    padding-bottom: 0.4rem;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.35rem;
+      .js_show_kan {
+        font-size: 12px;
+        color: rgb(143, 143, 143);
+      }
+    }
+    .kanlist {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > div,
+      > img {
+        width: 1.2rem;
+        &.hao {
+          width: 0.73rem;
+        }
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img {
+          width: 0.98rem;
+          border-radius: 100%;
+        }
+        > span {
+          font-size: 12px;
+          color: rgb(143, 143, 143);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 1.815;
+          padding-top: 0.05rem;
+        }
+        > i {
+          font-style: normal;
+          font-size: 13px;
+          color: rgb(206, 6, 6);
+        }
+      }
+    }
+  }
+  .detail {
+    padding-bottom: 0.45rem;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.35rem;
+      .js_show_kan {
+        font-size: 12px;
+        color: rgb(143, 143, 143);
+      }
+    }
+    > img {
+      width: 100%;
+    }
+  }
+}
+.pop_box {
+  .kan_pop {
+    margin-bottom: 1.2rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    .msg_ok {
+      margin: 0.9rem 0px 0.5rem 0px;
+      img {
+        width: 2.46rem;
+      }
+    }
+    .msg {
+      font-size: 16px;
+      margin-bottom: 0.3rem;
+    }
+    .kanq {
+      font-size: 34px;
+      color: rgb(206, 6, 6);
+    }
+  }
+  .record_pop {
+    &.pop_cont .pop_wraper {
+      padding: 0.6rem 0.4rem;
+    }
+    .ktitle {
+      font-size: 15px;
+      color: rgb(143, 143, 143);
+      text-align: center;
+      line-height: 2;
+      padding-bottom: .35rem;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: .44rem;
+      &:nth-last-of-type(1){
+        padding-bottom: 0px;
+      }
+      > img {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 100%;
+      }
+      > div {
+        flex: 1;
+        padding: 0px 0.08rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      span {
+        color: rgb(206, 6, 6);
+      }
+    }
+  }
+}
+
+.pop_box {
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10;
+  &.show {
+    display: flex;
+  }
+
+  .pop_close {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    width: 0.24rem;
+  }
+
+  .pop_cont {
+    position: relative;
+
+    border-radius: 0.1rem;
+    background-color: white;
+
+    .pop_wraper {
+      height: 100%;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      padding: 0.1rem 0px;
+      width: 6.16rem;
+      max-height: 8.48rem;
+      padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+      box-sizing: border-box;
+      &.w450 {
+        width: 4.5rem;
+      }
+    }
+
+    .ptitle {
+      font-size: 0.3rem;
+      color: rgb(143, 143, 143);
+      text-align: center;
+      padding-bottom: 0.3rem;
+    }
+
+    p,
+    td {
+      color: rgb(143, 143, 143);
+      line-height: 2;
+      font-size: 0.24rem;
+    }
+  }
+}
+
+.ui-dialog-body .pop-cont {
+  padding: 1rem 0.35rem;
+}

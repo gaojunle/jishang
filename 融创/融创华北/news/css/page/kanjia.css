@@ -1,0 +1,216 @@
+body {
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: white;
+  min-height: 100vh;
+  font-size: 13px;
+  padding-bottom: 1rem;
+}
+body .countdown_num > span {
+  background-color: rgba(143, 143, 143, 0.2);
+  font-size: 0.24rem;
+  padding: 4px 2px;
+  border-radius: 0.06rem;
+  margin: 0px 5px;
+}
+body .countdown_num.plain {
+  margin-left: -0.15rem;
+}
+body .countdown_num.plain > span {
+  background: none;
+  color: #2a2a2a;
+  font-size: 16px;
+}
+body .footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 0.86rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2a2a2a;
+}
+body .footer .vline {
+  display: inline-block;
+  width: 1px;
+  height: 0.7rem;
+  background: rgba(243, 240, 240, 0.8);
+}
+body .footer a {
+  height: 100%;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .footer a:nth-of-type(1) {
+  width: 2rem;
+  background: #2a2a2a;
+}
+body .footer a:nth-of-type(n + 2) {
+  flex: 1;
+}
+body .footer a:nth-of-type(n + 2)::after {
+  display: inline-block;
+  width: 1px;
+  height: 0.7rem;
+  background: rgba(243, 240, 240, 0.8);
+}
+body .footer a > img {
+  width: 0.3rem;
+  margin-right: 0.1rem;
+  margin-bottom: 1px;
+}
+.kanjiaList .item {
+  display: block;
+  padding: 0.47rem 0rem;
+  margin: 0rem 0.3rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+}
+.kanjiaList .item:nth-last-of-type(1) {
+  border: none;
+}
+.kanjiaList .item .title {
+  font-size: 16px;
+  color: #2a2a2a;
+  padding-bottom: 0.26rem;
+}
+.kanjiaList .item .cont {
+  display: flex;
+  justify-content: space-between;
+}
+.kanjiaList .item .cont > img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.22rem;
+}
+.kanjiaList .item .cont .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.1rem 0px;
+}
+.kanjiaList .item .cont .detail .dec {
+  font-size: 14px;
+  color: #2a2a2a;
+  line-height: 1.4;
+}
+.kanjiaList .item .cont .detail .dec .dt {
+  font-size: 12px;
+  color: #8f8f8f;
+  line-height: 1.833;
+}
+.kanjiaList .item .cont .detail .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kanjiaList .item .cont .detail .info .price {
+  font-size: 16px;
+  color: #2a2a2a;
+}
+.kanjiaList .item .cont .detail .info .price.red {
+  color: #ce0606;
+}
+.kanjiaList .item .cont .detail .info span {
+  background-color: #ffa800;
+  padding: 2px 0.2rem;
+  font-size: 12px;
+  color: white;
+  border-radius: 20px;
+}
+.pop_box .minfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  margin-top: 0.2rem;
+}
+.pop_box .minfo .avt {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  margin-right: 0.08rem;
+}
+.pop_box .minfo .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pop_box .minfo .desc p {
+  line-height: 1.5;
+}
+.pop_box .kanjian_pop {
+  padding-bottom: 0.4rem;
+}
+.pop_box .kanjian_pop .icon_quan {
+  width: 0.94rem;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 0.4rem;
+}
+.pop_box .kanjian_pop tr td {
+  vertical-align: top;
+}
+.pop_box .kanjian_pop tr td:nth-of-type(1) {
+  white-space: nowrap;
+}
+.pop_box {
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10;
+}
+.pop_box.show {
+  display: flex;
+}
+.pop_box .pop_close {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  width: 0.24rem;
+}
+.pop_box .pop_cont {
+  position: relative;
+  border-radius: 0.1rem;
+  background-color: white;
+}
+.pop_box .pop_cont .pop_wraper {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0.1rem 0px;
+  width: 6.16rem;
+  max-height: 8.48rem;
+  padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+  box-sizing: border-box;
+}
+.pop_box .pop_cont .pop_wraper.w450 {
+  width: 4.5rem;
+}
+.pop_box .pop_cont .ptitle {
+  font-size: 0.3rem;
+  color: #8f8f8f;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+.pop_box .pop_cont p,
+.pop_box .pop_cont td {
+  color: #8f8f8f;
+  line-height: 2;
+  font-size: 0.24rem;
+}
+.ui-dialog-body .pop-cont {
+  padding: 1rem 0.35rem;
+}

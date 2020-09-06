@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华北</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/artDialog.css" />
+    <link rel="stylesheet" href="./css/page/kanjia.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+
+    <div class="kanjiaList">
+        <a href="./4_砍价详情页.html" class="item">
+            <div id="countdown_num" class="countdown_num plain title" data-time="2020-12-12 12:12:24">
+                <span class="h">00</span>:<span class="m">00</span>:<span class="s">00</span> 后结束
+            </div>
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">
+                        野兽派告白兔-18K玫瑰金珍珠包包礼盒
+                        <div class="dt">已砍¥8.68 可砍¥300</div>
+                    </div>
+                    <div class="info">
+                        <div class="price red">已砍¥8.68</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="./4_砍价详情页.html" class="item">
+            <div class="title">砍价活动已结束</div>
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">
+                        野兽派告白兔-18K玫瑰金珍珠包包礼盒
+                        <div class="dt">已砍¥8.68 可砍¥300</div>
+                    </div>
+                    <div class="info">
+                        <div class="price red">已砍¥8.68</div>
+                        <span class="kan">查看详情</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="./4_砍价详情页.html" class="item">
+            <div class="title">砍价活动已结束</div>
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">
+                        野兽派告白兔-18K玫瑰金珍珠包包礼盒
+                        <div class="dt">售价¥4658 可砍¥300 已砍¥8.68</div>
+                    </div>
+                    <div class="info">
+                        <span class="kan js-quan">查看券码</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="./4_砍价详情页.html" class="item">
+            <div class="title">砍价活动已结束</div>
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">
+                        野兽派告白兔-18K玫瑰金珍珠包包礼盒
+                        <div class="dt">售价¥4658 可砍¥300 已砍¥8.68</div>
+                    </div>
+                    <div class="info">
+                        <span class="kan js-detail">查看订单</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="footer">
+        <a href="./3_comment.html" class="bg_btn">我的砍价</a>
+    </div>
+    <div class="pop_box js_kaquanPop">
+        <div class="pop_cont">
+            <img class="pop_close" src="./img/common/icon_close.png" alt="">
+
+            <div class="pop_wraper w450">
+                <div class="kanjian_pop">
+                    <img class="icon_quan" src="./img/kanjia/icon_quan.png" alt="">
+                    <table class="desc">
+                        <tr>
+                            <td>送货方式 : </td>
+                            <td>普通快递</td>
+                        </tr>
+                        <tr>
+                            <td>收货姓名 : </td>
+                            <td>程浃林</td>
+                        </tr>
+                        <tr>
+                            <td>联系方式 : </td>
+                            <td>18611223344</td>
+                        </tr>
+                        <tr>
+                            <td>收货地址 : </td>
+                            <td>天津市南开区红旗路278号A区308楼3门2004室</td>
+                        </tr>
+                </div>
+
+            </div>
+            <p class="pcont"></p>
+        </div>
+    </div>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/artDialog.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.bindPopClose();
+                this.bindRuleShow();
+                this.bindLikeToggle();
+            },
+            bindEvent: function () {
+
+            },
+            bindRuleShow: function () {
+                $('.js-quan').click(function () {
+                    $('.js_kaquanPop').addClass('show')
+                    return false;
+                })
+            },
+            bindPopClose: function () {
+                $('.pop_close').click(function () {
+                    $('.pop_box').removeClass('show')
+                    return false;
+                })
+            },
+            bindLikeToggle: function () {
+                $('.rank_ohter').on('click', '.like', function () {
+                    $(this).toggleClass('liked');
+                    //根据是否有liked样式判断，是否已经高亮
+                    console.log($(this).hasClass('liked'))
+                    return false;
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

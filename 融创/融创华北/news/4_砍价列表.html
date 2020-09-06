@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华北</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/artDialog.css" />
+    <link rel="stylesheet" href="./css/page/kanjia.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="kanjiaList">
+        <a href="./4_砍价详情页.html" class="item">
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">野兽派告白兔-18K玫瑰金珍珠包包礼盒</div>
+                    <div class="info">
+                        <div class="price">售价¥3549</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="./4_砍价详情页.html" class="item">
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">野兽派告白兔-18K玫瑰金珍珠包包礼盒</div>
+                    <div class="info">
+                        <div class="price">售价¥3549</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a><a href="./4_砍价详情页.html" class="item">
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">野兽派告白兔-18K玫瑰金珍珠包包礼盒</div>
+                    <div class="info">
+                        <div class="price">售价¥3549</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a><a href="./4_砍价详情页.html" class="item">
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">野兽派告白兔-18K玫瑰金珍珠包包礼盒</div>
+                    <div class="info">
+                        <div class="price">售价¥3549</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a><a href="./4_砍价详情页.html" class="item">
+            <div class="cont">
+                <img src="./img/avater.png" alt="">
+                <div class="detail">
+                    <div class="dec">野兽派告白兔-18K玫瑰金珍珠包包礼盒</div>
+                    <div class="info">
+                        <div class="price">售价¥3549</div>
+                        <span class="kan">可砍¥300</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="footer">
+        <a href="./4_我的砍价列表.html" class="bg_btn">我的砍价</a>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/artDialog.js"></script>
+    <script>
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.bindPopClose();
+                this.bindRuleShow();
+                this.bindLikeToggle();
+            },
+            bindEvent: function () {
+
+            },
+            bindRuleShow: function () {
+                $('.show_rule').click(function () {
+                    $('.js_rule').addClass('show')
+                    return false;
+                })
+            },
+            bindPopClose: function () {
+                $('.pop_close').click(function () {
+                    $('.pop_box').removeClass('show')
+                    return false;
+                })
+            },
+            bindLikeToggle: function () {
+                $('.rank_ohter').on('click', '.like', function () {
+                    $(this).toggleClass('liked');
+                    //根据是否有liked样式判断，是否已经高亮
+                    console.log($(this).hasClass('liked'))
+                    return false;
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>
