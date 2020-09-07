@@ -47,6 +47,10 @@ body {
   padding-left: 0.8rem;
   margin-right: 1px;
   font-size: 14px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0px;
+  color: white;
 }
 .gaobaiList .search_box a {
   border-left: 1px solid rgba(255, 255, 255, 0.7);
@@ -62,9 +66,19 @@ body {
   border-radius: 0.1rem;
   padding: 0.68rem 0.45rem;
 }
+.gaobaiList .rank_box.searching .rank_top3 {
+  display: none;
+}
+.gaobaiList .rank_box.searching .rank_ohter {
+  display: none;
+}
+.gaobaiList .rank_box.searching .rank_search_box {
+  display: block;
+}
 .gaobaiList .rank_box .rank_top3 {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0.4rem;
 }
 .gaobaiList .rank_box .rank_top3 .item {
   font-size: 12px;
@@ -105,17 +119,14 @@ body {
 .gaobaiList .rank_box .rank_top3 .item .his {
   display: inline-block;
   border-width: 1px;
-  border-color: #8e1e12;
+  border-color: #633114;
   border-style: solid;
   width: 1.44rem;
   padding: 0.02rem 0px;
   text-align: center;
   border-radius: 20px;
   font-size: 12px;
-  color: #8e1e12;
-}
-.gaobaiList .rank_box .rank_ohter {
-  padding-top: 0.4rem;
+  color: #633114;
 }
 .gaobaiList .rank_box .rank_ohter .item {
   display: flex;
@@ -130,12 +141,12 @@ body {
 }
 .gaobaiList .rank_box .rank_ohter .item .number {
   font-size: 14px;
+  margin-right: 0.3rem;
 }
 .gaobaiList .rank_box .rank_ohter .item .info {
   flex: 1;
   display: flex;
   align-items: center;
-  margin-left: 0.3rem;
 }
 .gaobaiList .rank_box .rank_ohter .item .info > img {
   width: 0.68rem;
@@ -159,6 +170,9 @@ body {
 .gaobaiList .rank_box .rank_ohter .item .like.liked {
   background: url(../../img/gaobai/heart_on.png) 0px 0px no-repeat;
   background-size: 100%;
+}
+.gaobaiList .rank_box .rank_search_box {
+  display: none;
 }
 .gaobaiDetail {
   padding: 0.3rem 0.2rem;
@@ -246,10 +260,10 @@ body {
 }
 .gaobaiDetail .hp_list li .btn {
   margin-left: 0.4rem;
-  border: 1px solid rgba(142, 30, 18, 0.7);
+  border: 1px solid #633114;
   border-radius: 20px;
   font-size: 12px;
-  color: #8e1e12;
+  color: #633114;
   padding: 1px 0.3rem;
 }
 .gaobaiDetail .hp_list li .hide {
@@ -262,8 +276,8 @@ body {
   margin-top: 0.2rem;
 }
 .js_rule .minfo .avt {
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 100%;
   margin-right: 0.08rem;
 }

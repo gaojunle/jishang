@@ -5,443 +5,461 @@
 @cBlue: #ffa800;
 
 body {
-    max-width: 500px;
-    position: relative;
-    margin: 0px auto;
-    background: white;
-    min-height: 100vh;
-    font-size: 13px;
-    background-color: #101626;
+  max-width: 500px;
+  position: relative;
+  margin: 0px auto;
+  background: white;
+  min-height: 100vh;
+  font-size: 13px;
+  background-color: #101626;
 }
 
 .gaobaiList {
-    padding: 0.3rem 0.2rem;
-    background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
-    background-size: 100%;
-    padding-bottom: 1.4rem;
-    //banner块
-    .banner_box {
-        position: relative;
+  padding: 0.3rem 0.2rem;
+  background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
+  background-size: 100%;
+  padding-bottom: 1.4rem;
+  //banner块
+  .banner_box {
+    position: relative;
 
-        .banner {
-            width: 100%;
-        }
-
-        .show_rule {
-            position: absolute;
-            right: 0px;
-            top: 0.43rem;
-            width: 1.3rem;
-        }
+    .banner {
+      width: 100%;
     }
 
-    //search块
-    .search_box {
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        border-radius: 0.1rem;
-        position: relative;
+    .show_rule {
+      position: absolute;
+      right: 0px;
+      top: 0.43rem;
+      width: 1.3rem;
+    }
+  }
+
+  //search块
+  .search_box {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 0.1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 0.7rem;
+    margin-top: 0.36rem;
+
+    img {
+      width: 0.4rem;
+      position: absolute;
+      left: 0.28rem;
+      top: 0.15rem;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.302);
+      padding-left: 0.8rem;
+      margin-right: 1px;
+      font-size: 14px;
+      height: 100%;
+      width: 100%;
+      border-radius: 0px;
+      color: white;
+    }
+
+    a {
+      border-left: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 0px 0.5rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+
+  //排名块
+  .rank_box {
+    margin-top: 0.7rem;
+    background: white;
+    border-radius: 0.1rem;
+    padding: 0.68rem 0.45rem;
+
+    &.searching {
+      .rank_top3 {
+        display: none;
+      }
+      .rank_ohter {
+        display: none;
+      }
+      .rank_search_box {
+        display: block;
+      }
+    }
+    .rank_top3 {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0.4rem;
+      .item {
+        font-size: 12px;
+        text-align: center;
+
+        &:nth-of-type(2) {
+          width: 45%;
+          background: url(../../img/gaobai/number_1_bg.png) 0px 0px no-repeat;
+          background-size: 100%;
+          margin-top: -1rem;
+          padding-top: 0.6rem;
+        }
+
+        .avt_box {
+          position: relative;
+
+          .avater {
+            width: 1.26rem;
+            border-radius: 100%;
+          }
+
+          .nbg {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            margin-left: -0.8rem;
+            top: -0.3rem;
+            width: 1.5rem;
+          }
+        }
+
+        .name {
+          padding-top: 0.25rem;
+          font-size: 14px;
+          color: rgb(99, 49, 20);
+          line-height: 1.667;
+        }
+
+        .hp {
+          color: rgb(99, 49, 20);
+          line-height: 1.667;
+        }
+
+        .his {
+          display: inline-block;
+          border-width: 1px;
+          border-color: #633114;
+          border-style: solid;
+          width: 1.44rem;
+          padding: 0.02rem 0px;
+          text-align: center;
+          border-radius: 20px;
+          font-size: 12px;
+          color: #633114;
+        }
+      }
+    }
+    .rank_ohter {
+      .item {
         display: flex;
         justify-content: space-between;
-        height: 0.7rem;
-        margin-top: 0.36rem;
-
-        img {
-            width: 0.4rem;
-            position: absolute;
-            left: 0.28rem;
-            top: 0.15rem;
-        }
-
-        input {
-            flex: 1;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.302);
-            padding-left: 0.8rem;
-            margin-right: 1px;
-            font-size: 14px;
-        }
-
-        a {
-            border-left: 1px solid rgba(255, 255, 255, 0.7);
-            padding: 0px 0.5rem;
-            color: white;
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-        }
-    }
-
-    //排名块
-    .rank_box {
-        margin-top: 0.7rem;
-        background: white;
-        border-radius: 0.1rem;
-        padding: 0.68rem 0.45rem;
-
-        .rank_top3 {
-            display: flex;
-            justify-content: space-between;
-
-            .item {
-                font-size: 12px;
-                text-align: center;
-
-                &:nth-of-type(2) {
-                    width: 45%;
-                    background: url(../../img/gaobai/number_1_bg.png) 0px 0px no-repeat;
-                    background-size: 100%;
-                    margin-top: -1rem;
-                    padding-top: 0.6rem;
-                }
-
-                .avt_box {
-                    position: relative;
-
-                    .avater {
-                        width: 1.26rem;
-                        border-radius: 100%;
-                    }
-
-                    .nbg {
-                        position: absolute;
-                        z-index: 1;
-                        left: 50%;
-                        margin-left: -0.8rem;
-                        top: -0.3rem;
-                        width: 1.5rem;
-                    }
-                }
-
-                .name {
-                    padding-top: 0.25rem;
-                    font-size: 14px;
-                    color: rgb(99, 49, 20);
-                    line-height: 1.667;
-                }
-
-                .hp {
-                    color: rgb(99, 49, 20);
-                    line-height: 1.667;
-                }
-
-                .his {
-                    display: inline-block;
-                    border-width: 1px;
-                    border-color: rgb(142, 30, 18);
-                    border-style: solid;
-                    width: 1.44rem;
-                    padding: 0.02rem 0px;
-                    text-align: center;
-                    border-radius: 20px;
-                    font-size: 12px;
-                    color: rgb(142, 30, 18);
-                }
-            }
-        }
-        .rank_ohter {
-            padding-top: 0.4rem;
-            .item {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: rgb(99, 49, 20);
-                border-bottom: 1px solid @lineGray;
-                padding: 0.3rem 0px;
-                &:nth-last-of-type(1) {
-                    border: none;
-                }
-                .number {
-                    font-size: 14px;
-                }
-                .info {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 0.3rem;
-                    > img {
-                        width: 0.68rem;
-                        border-radius: 100%;
-                        margin-right: 0.1rem;
-                    }
-                    .detail {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        .hp {
-                            font-weight: bold;
-                        }
-                    }
-                }
-                .like {
-                    width: 0.45rem;
-                    height: 0.39rem;
-                    background: url(../../img/gaobai/heart.png) 0px 0px no-repeat;
-                    background-size: 100%;
-                    &.liked {
-                        background: url(../../img/gaobai/heart_on.png) 0px 0px no-repeat;
-                        background-size: 100%;
-                    }
-                }
-            }
-        }
-    }
-}
-.gaobaiDetail {
-    padding: 0.3rem 0.2rem;
-    background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
-    background-size: 100%;
-    padding-bottom: 1.4rem;
-    color: white;
-    .uinfo {
-        display: flex;
-        padding-left: .45rem;
-        > img {
-            width: 2.1rem;
-            height: 2.1rem;
-            border-radius: 100%;
-            border: 0.1rem solid #70737d;
-        }
-        .desc {
-            font-size: 15px;
-            padding-top: 0.8rem;
-            padding-left: 0.4rem;
-            line-height: 1.5;
-        }
-    }
-    .describe {
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        border-radius: 0.2rem;
-        background-color: rgba(255, 255, 255, 0.5);
-        position: relative;
-        padding: 0.6rem 0.3rem;
-        padding-bottom: 0.4rem;
-        margin-top: 0.73rem;
-        line-height: 1.55;
-        font-size: 12px;
-        .jc {
-            position: absolute;
-            left: 50%;
-            margin-left: -0.89rem;
-            top: -0.24rem;
-            width: 1.78rem;
-            height: 0.48rem;
-            line-height: 0.48rem;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            text-align: center;
-            border-radius: 40px;
-            background-color: rgb(136, 139, 148);
-        }
-    }
-    .hp_list {
-        border-radius: 0.1rem;
-        background-color: rgb(255, 255, 255);
-        margin-top: 0.5rem;
-        padding: 0.5rem 0.44rem;
-        .title {
-            font-size: 17px;
-            color: rgb(99, 49, 20);
-            line-height: 1.176;
-            text-align: center;
-            padding-bottom: 0.4rem;
-        }
-        li {
-            border-bottom: 1px solid @lineGray;
-            padding: 0.3rem 0.08rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: rgb(99, 49, 20);
-            &:nth-last-of-type(1) {
-                border: none;
-            }
-            > img {
-                width: 0.6rem;
-                height: 0.6rem;
-                border-radius: 100%;
-                margin-right: 0.1rem;
-            }
-            > span {
-                flex: 1;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .btn {
-                margin-left: 0.4rem;
-                border: 1px solid rgba(142, 30, 18, 0.7);
-                border-radius: 20px;
-                font-size: 12px;
-                color: rgb(142, 30, 18);
-                padding: 1px 0.3rem;
-            }
-            .hide{
-                display: none;
-            }
-        }
-    }
-}
-.js_rule {
-    .minfo {
-        display: flex;
         align-items: center;
-        margin-bottom: .7rem;
-        margin-top: .2rem;
-        .avt {
-            width: 0.6rem;
-            height: 0.6rem;
-            border-radius: 100%;
-            margin-right: 0.08rem;
+        color: rgb(99, 49, 20);
+        border-bottom: 1px solid @lineGray;
+        padding: 0.3rem 0px;
+        &:nth-last-of-type(1) {
+          border: none;
         }
-        .desc {
+        .number {
+          font-size: 14px;
+          margin-right: 0.3rem;
+        }
+        .info {
+          flex: 1;
+          display: flex;
+          align-items: center;
+
+          > img {
+            width: 0.68rem;
+            border-radius: 100%;
+            margin-right: 0.1rem;
+          }
+          .detail {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            p {
-                line-height: 1.5;
+            .hp {
+              font-weight: bold;
             }
+          }
         }
+        .like {
+          width: 0.45rem;
+          height: 0.39rem;
+          background: url(../../img/gaobai/heart.png) 0px 0px no-repeat;
+          background-size: 100%;
+          &.liked {
+            background: url(../../img/gaobai/heart_on.png) 0px 0px no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
     }
+    .rank_search_box {
+      display: none;
+    }
+  }
+}
+.gaobaiDetail {
+  padding: 0.3rem 0.2rem;
+  background: url(../../img/gaobai/wenli_bg.png) 0px 0px no-repeat;
+  background-size: 100%;
+  padding-bottom: 1.4rem;
+  color: white;
+  .uinfo {
+    display: flex;
+    padding-left: 0.45rem;
+    > img {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 100%;
+      border: 0.1rem solid #70737d;
+    }
+    .desc {
+      font-size: 15px;
+      padding-top: 0.8rem;
+      padding-left: 0.4rem;
+      line-height: 1.5;
+    }
+  }
+  .describe {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    padding: 0.6rem 0.3rem;
+    padding-bottom: 0.4rem;
+    margin-top: 0.73rem;
+    line-height: 1.55;
+    font-size: 12px;
+    .jc {
+      position: absolute;
+      left: 50%;
+      margin-left: -0.89rem;
+      top: -0.24rem;
+      width: 1.78rem;
+      height: 0.48rem;
+      line-height: 0.48rem;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      text-align: center;
+      border-radius: 40px;
+      background-color: rgb(136, 139, 148);
+    }
+  }
+  .hp_list {
+    border-radius: 0.1rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.44rem;
+    .title {
+      font-size: 17px;
+      color: rgb(99, 49, 20);
+      line-height: 1.176;
+      text-align: center;
+      padding-bottom: 0.4rem;
+    }
+    li {
+      border-bottom: 1px solid @lineGray;
+      padding: 0.3rem 0.08rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgb(99, 49, 20);
+      &:nth-last-of-type(1) {
+        border: none;
+      }
+      > img {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 100%;
+        margin-right: 0.1rem;
+      }
+      > span {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .btn {
+        margin-left: 0.4rem;
+        border: 1px solid #633114;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #633114;
+        padding: 1px 0.3rem;
+      }
+      .hide {
+        display: none;
+      }
+    }
+  }
+}
+.js_rule {
+  .minfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    margin-top: 0.2rem;
+    .avt {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 100%;
+      margin-right: 0.08rem;
+    }
+    .desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
 }
 .footer {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 0.88rem;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #ffa800;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 0.88rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffa800;
 
-    .vline {
+  .vline {
+    display: inline-block;
+    width: 1px;
+    height: 0.7rem;
+    background: rgba(243, 240, 240, 0.8);
+  }
+
+  a {
+    height: 0.88rem;
+    font-size: 15px;
+    color: white;
+    background: #ffa800;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-of-type(1) {
+      width: 2rem;
+      background: #2a2a2a;
+    }
+
+    &:nth-of-type(n + 2) {
+      flex: 1;
+
+      &::after {
+        //content: "";
         display: inline-block;
         width: 1px;
         height: 0.7rem;
         background: rgba(243, 240, 240, 0.8);
+      }
     }
 
-    a {
-        height: 0.88rem;
-        font-size: 15px;
-        color: white;
-        background: #ffa800;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:nth-of-type(1) {
-            width: 2rem;
-            background: #2a2a2a;
-        }
-
-        &:nth-of-type(n + 2) {
-            flex: 1;
-
-            &::after {
-                //content: "";
-                display: inline-block;
-                width: 1px;
-                height: 0.7rem;
-                background: rgba(243, 240, 240, 0.8);
-            }
-        }
-
-        > img {
-            width: 0.3rem;
-            margin-right: 0.1rem;
-            margin-bottom: 1px;
-        }
+    > img {
+      width: 0.3rem;
+      margin-right: 0.1rem;
+      margin-bottom: 1px;
     }
+  }
 }
 
 .liuyan-box {
-    position: relative;
+  position: relative;
 
-    textarea {
-        font-size: 13px;
-        background-color: rgb(255, 255, 255);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        height: 3rem;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0.14rem 0.18rem;
-        color: @cBlack;
-        width: 5.8rem;
+  textarea {
+    font-size: 13px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    height: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.14rem 0.18rem;
+    color: @cBlack;
+    width: 5.8rem;
 
-        &::-webkit-input-placeholder {
-            color: rgba(42, 42, 42, 0.302);
-        }
+    &::-webkit-input-placeholder {
+      color: rgba(42, 42, 42, 0.302);
     }
+  }
 
-    .limit {
-        position: absolute;
-        right: 0.15rem;
-        bottom: 0.14rem;
-        color: rgba(42, 42, 42, 0.5);
-        font-size: 13px;
-    }
+  .limit {
+    position: absolute;
+    right: 0.15rem;
+    bottom: 0.14rem;
+    color: rgba(42, 42, 42, 0.5);
+    font-size: 13px;
+  }
 }
 
 .pop_box {
-    background-color: rgba(42, 42, 42, 0.702);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
+  background-color: rgba(42, 42, 42, 0.702);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10;
+  &.show {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    z-index: 10;
-    &.show {
-        display: flex;
+  }
+
+  .pop_close {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    width: 0.24rem;
+  }
+
+  .pop_cont {
+    position: relative;
+
+    border-radius: 0.1rem;
+    background-color: white;
+
+    .pop_wraper {
+      height: 100%;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      padding: 0.1rem 0px;
+      width: 6.16rem;
+      max-height: 8.48rem;
+      padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+      box-sizing: border-box;
     }
 
-    .pop_close {
-        position: absolute;
-        right: 0.2rem;
-        top: 0.2rem;
-        width: 0.24rem;
+    .ptitle {
+      font-size: 0.3rem;
+      color: rgb(143, 143, 143);
+      text-align: center;
+      padding-bottom: 0.3rem;
     }
 
-    .pop_cont {
-        position: relative;
-
-        border-radius: 0.1rem;
-        background-color: white;
-
-        .pop_wraper {
-            height: 100%;
-            box-sizing: border-box;
-            overflow-y: scroll;
-            padding: 0.1rem 0px;
-            width: 6.16rem;
-            max-height: 8.48rem;
-            padding: 0.4rem 0.5rem 0.5rem 0.6rem;
-            box-sizing: border-box;
-        }
-
-        .ptitle {
-            font-size: 0.3rem;
-            color: rgb(143, 143, 143);
-            text-align: center;
-            padding-bottom: 0.3rem;
-        }
-
-        p {
-            color: rgb(143, 143, 143);
-            line-height: 2.26;
-            font-size: 0.24rem;
-        }
+    p {
+      color: rgb(143, 143, 143);
+      line-height: 2.26;
+      font-size: 0.24rem;
     }
+  }
 }
 
 .ui-dialog-body .pop-cont {
-    padding: 1rem 0.35rem;
+  padding: 1rem 0.35rem;
 }
