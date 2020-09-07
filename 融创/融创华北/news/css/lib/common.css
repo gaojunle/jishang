@@ -35,3 +35,82 @@ body {
   background-color: rgba(40, 194, 252, 0.2);
   color: #ffa800;
 }
+
+.progress {
+  height: 0.08rem;
+  background: #ededed;
+  position: relative;
+  margin-top: 0.4rem;
+  margin-bottom: 0.84rem;
+}
+.progress.pstart .pbar:nth-of-type(1)::before {
+  background-color: #ce0606;
+}
+.progress.pend .pbar:nth-last-of-type(1)::before {
+  background-color: #ce0606;
+}
+.progress .pbar {
+  position: absolute;
+  top: -0.08rem;
+  color: #2a2a2a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+}
+.progress .pbar:nth-of-type(1) {
+  left: -2px;
+}
+.progress .pbar:nth-last-of-type(1) {
+  right: -2px;
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.progress .pbar::before {
+  display: block;
+  content: "";
+  margin-bottom: 0.1rem;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 100%;
+  background: #ededed;
+}
+.progress .progress_bar {
+  display: inline-block;
+  height: 100%;
+  background-color: #ce0606;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.progress .progress_bar .ptip {
+  display: none;
+  position: absolute;
+  right: -0.74rem;
+  top: -0.5rem;
+  background-color: #ce0606;
+  width: 1.38rem;
+  color: white;
+  font-size: 12px;
+  padding: 0.02rem 0rem;
+  border-radius: 0.08rem;
+  text-align: center;
+}
+.progress .progress_bar .ptip.show {
+  display: inline-block;
+}
+.progress .progress_bar .ptip:after {
+  content: "";
+  position: absolute;
+  border: 0.1rem solid transparent;
+  border-top-color: #ce0606;
+  top: 100%;
+  margin-left: -0.69rem;
+}
+/*# sourceMappingURL=common.css.map */

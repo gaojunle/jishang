@@ -34,15 +34,16 @@
                 </div>
             </div>
             <!--  data-progress 进度比例 -->
-            <div class="progress js-progress" data-progress="0">
+            <div class="progress js-progress" data-progress="10">
                 <span class="pbar"><span>¥0</span></span>
                 <span class="progress_bar">
                     <div class="ptip">已砍¥8.63</div>
                 </span>
                 <span class="pbar"><span>¥300</span></span>
             </div>
-            <div class="btn_box">
-                <div class="btn btn_help">找人帮砍</div>
+            <div class="btn_box multible">
+                <a class="btn btn_buy">立即购买</a>
+                <a class="btn">找人帮砍</a>
             </div>
         </div>
         <div class="kan_record kbox">
@@ -147,6 +148,24 @@
             </div>
         </div>
     </div>
+    <div class="pop_box pop_address">
+        <div class="pop_cont">
+            <img src="./img/common/icon_close.png" alt="" class="pop_close">
+            <div class="addr_title">• 请填写收货信息 •</div>
+            <form action="#">
+                <div class="fline">
+                    <label>•</label><input type="text" placeholder="请填写收货人姓名">
+                </div>
+                <div class="fline">
+                    <label>•</label><input type="number" placeholder="请填写收货人手机号">
+                </div>
+                <div class="fline">
+                    <label>•</label><input type="text" placeholder="请填写收货地址">
+                </div>
+            </form>
+            <div class="ops"><a href="./活动页.html" class="btn_canjia">提交信息</a></div>
+        </div>
+    </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/artDialog.js"></script>
     <script src="./js/lib/moment.min.js"></script>
@@ -171,7 +190,9 @@
                         }
                     }
                 }
-
+                $('.btn_buy').click(function () {
+                    $('.pop_address').addClass('show')
+                })
             },
             bindEvent: function () {
 

@@ -97,7 +97,11 @@ body .footer a > img {
   color: #8f8f8f;
   line-height: 1.833;
 }
-.kanjia .btn {
+.kanjia .btn_box {
+  padding-bottom: 0.5rem;
+  display: flex;
+}
+.kanjia .btn_box .btn {
   display: inline-block;
   width: 100%;
   background-color: #ffa800;
@@ -107,7 +111,15 @@ body .footer a > img {
   color: #ffffff;
   border-radius: 40px;
   text-align: center;
-  margin-bottom: 0.5rem;
+}
+.kanjia .btn_box.multible .btn:nth-of-type(1) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0.04rem;
+}
+.kanjia .btn_box.multible .btn:nth-last-of-type(1) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .kanjia .kan_record {
   padding-bottom: 0.4rem;
@@ -286,4 +298,55 @@ body .footer a > img {
 }
 .ui-dialog-body .pop-cont {
   padding: 1rem 0.35rem;
+}
+.pop_address .pop_cont {
+  width: 4.5rem;
+  padding: 0.55rem;
+  height: initial;
+  overflow-y: initial;
+}
+.pop_address .pop_cont .addr_title {
+  text-align: center;
+  padding-bottom: 0.2rem;
+  font-size: 0.3rem;
+}
+.pop_address .pop_cont form {
+  padding-bottom: 1rem;
+}
+.pop_address .pop_cont .fline {
+  padding-top: 0.55rem;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.25);
+  padding-bottom: 0.15rem;
+}
+.pop_address .pop_cont .fline label {
+  color: rgba(42, 42, 42, 0.4);
+  padding-right: 0.08rem;
+}
+.pop_address .pop_cont .fline input {
+  font-size: 0.24rem;
+  border: none;
+}
+.pop_address .pop_cont .msg {
+  text-align: center;
+  font-size: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.66rem;
+}
+.pop_address .pop_cont .ops {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pop_address .pop_cont .ops .btn_canjia {
+  display: inline-block;
+  font-size: 0.34rem;
+  color: white;
+  width: 2.5rem;
+  height: 0.68rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffa800;
+  border-radius: 1rem;
 }

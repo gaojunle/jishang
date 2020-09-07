@@ -120,17 +120,34 @@ body {
       }
     }
   }
-  .btn {
-    display: inline-block;
-    width: 100%;
-    background-color: rgb(255, 168, 0);
-    height: 0.9rem;
-    line-height: 0.9rem;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    border-radius: 40px;
-    text-align: center;
-    margin-bottom: 0.5rem;
+  .btn_box {
+    padding-bottom: 0.5rem;
+    display: flex;
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background-color: rgb(255, 168, 0);
+      height: 0.9rem;
+      line-height: 0.9rem;
+      font-size: 20px;
+      color: rgb(255, 255, 255);
+      border-radius: 40px;
+      text-align: center;
+    }
+    &.multible {
+      .btn {
+        &:nth-of-type(1) {
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+          margin-right: 0.04rem;
+        }
+        &:nth-last-of-type(1) {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
+      }
+    }
   }
   .kan_record {
     padding-bottom: 0.4rem;
@@ -231,14 +248,14 @@ body {
       color: rgb(143, 143, 143);
       text-align: center;
       line-height: 2;
-      padding-bottom: .35rem;
+      padding-bottom: 0.35rem;
     }
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: .44rem;
-      &:nth-last-of-type(1){
+      padding-bottom: 0.44rem;
+      &:nth-last-of-type(1) {
         padding-bottom: 0px;
       }
       > img {
@@ -322,4 +339,66 @@ body {
 
 .ui-dialog-body .pop-cont {
   padding: 1rem 0.35rem;
+}
+
+.pop_address {
+  .pop_cont {
+    width: 4.5rem;
+    padding: 0.55rem;
+    height: initial;
+    overflow-y: initial;
+
+    .addr_title {
+      text-align: center;
+      padding-bottom: 0.2rem;
+      font-size: 0.3rem;
+    }
+
+    form {
+      padding-bottom: 1rem;
+    }
+
+    .fline {
+      padding-top: 0.55rem;
+      border-bottom: 1px solid @lineGray;
+      padding-bottom: 0.15rem;
+
+      label {
+        color: rgba(42, 42, 42, 0.4);
+        padding-right: 0.08rem;
+      }
+
+      input {
+        font-size: 0.24rem;
+        border: none;
+      }
+    }
+
+    .msg {
+      text-align: center;
+      font-size: 0.3rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.66rem;
+    }
+
+    .ops {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .btn_canjia {
+        display: inline-block;
+        font-size: 0.34rem;
+        color: white;
+        width: 2.5rem;
+        height: 0.68rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffa800;
+        border-radius: 1rem;
+      }
+    }
+  }
 }
