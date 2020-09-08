@@ -102,6 +102,7 @@ body .footer a > img {
   font-size: 12px;
   color: #8f8f8f;
   line-height: 1.833;
+  padding-top: 0.08rem;
 }
 .kanjiaList .item .cont .detail .info {
   display: flex;
