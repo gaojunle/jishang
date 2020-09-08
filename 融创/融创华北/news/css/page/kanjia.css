@@ -14,13 +14,11 @@ body .countdown_num > span {
   border-radius: 0.06rem;
   margin: 0px 5px;
 }
-body .countdown_num.plain {
-  margin-left: -0.15rem;
-}
 body .countdown_num.plain > span {
   background: none;
   color: #2a2a2a;
   font-size: 16px;
+  margin-left: 0rem;
 }
 body .footer {
   position: fixed;
@@ -214,3 +212,4 @@ body .footer a > img {
 .ui-dialog-body .pop-cont {
   padding: 1rem 0.35rem;
 }
+/*# sourceMappingURL=./kanjia.css.map */
