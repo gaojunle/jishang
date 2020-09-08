@@ -29,8 +29,8 @@ Ticts.prototype = {
             //这里可以做一个格式化的处理,甚至做毫秒级的页面渲染,基于DOM操作,太多个倒计时一起会导致页面性能下降
             var hh = d * 24 + h;
             hh = hh >= 10 ? hh : '0' + hh;
-            m = m > 10 ? m : '0' + m;
-            s = s > 10 ? s : '0' + s;
+            m = m >= 10 ? m : '0' + m;
+            s = s >= 10 ? s : '0' + s;
 
             var innerHTML = `<span class="h">${hh}</span>:<span class="m">${m}</span>:<span class="s">${s}</span> 后结束`;
 
