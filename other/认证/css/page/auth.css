@@ -1,0 +1,14 @@
+.m-cell {
+  background-color: #FFF;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.35rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.auth_box {
+  height: 100vh;
+  background: white;
+}
+/*# sourceMappingURL=./auth.css.map */
