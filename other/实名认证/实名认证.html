@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>实名认证</title>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+
+		<link rel="stylesheet" href="./css/lib/common.css" />
+		<link rel="stylesheet" href="./css/lib/mobileSelect.css" />
+		<link rel="stylesheet" href="./css/page/auth.css" />
+		<script src="./js/lib/viewbox.js"></script>
+	</head>
+
+	<body>
+		<div class="auth_box">
+			<div class="m-cell">
+				<div class="cell-item">
+					<div class="cell-left">姓名</div>
+					<div class="cell-right">
+						<input
+							type="text"
+							class="cell-input"
+							placeholder="请输入姓名"
+							autocomplete="off"
+						/>
+					</div>
+				</div>
+				<div class="cell-item">
+					<div class="cell-left">证件类型</div>
+					<div class="cell-right cell-arrow">
+						<select class="cell-select">
+							<option value="0">身份证</option>
+							<option value="1">护照</option>
+						</select>
+					</div>
+				</div>
+				<div class="cell-item">
+					<div class="cell-left">证件号码</div>
+					<div class="cell-right">
+						<input
+							type="text"
+							class="cell-input"
+							placeholder="请输入证件号码"
+							autocomplete="off"
+						/>
+					</div>
+				</div>
+				<div class="cell-item">
+					<div class="cell-left">性别</div>
+					<div class="cell-right">
+						<label class="cell-radio">
+							<input
+								checked
+								type="radio"
+								value="1"
+								name="sex"
+							/><span>男</span>
+						</label>
+						<label class="cell-radio">
+							<input type="radio" value="2" name="sex" /><span
+								>女</span
+							>
+						</label>
+					</div>
+				</div>
+				<div class="cell-item">
+					<div class="cell-left">出生日期</div>
+					<div class="cell-right cell-arrow">
+						<div id="date" class="cell-date" placeholder="">
+							<input type="hidden" name="date" />
+							<span class="date-text">请选择出生日期</span>
+						</div>
+					</div>
+				</div>
+				<div class="cell-item btn-box">
+					<button class="cell-btn btn_red js-submit disabled">
+						进行实名认证
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="./js/lib/jquery.min.js"></script>
+		<script src="./js/lib/mobileSelect.js"></script>
+		<script src="./js/lib/selectDate.js"></script>
+		<script>
+			jQuery(function ($) {
+				$('.auth_box input').on('input', function () {
+					var isCanSubmit = true
+					$('.auth_box input').each(function () {
+						if ($.trim($(this).val()) == '') {
+							isCanSubmit = false
+						}
+					})
+					if (isCanSubmit) {
+						$('.js-submit').removeClass('disabled')
+					} else {
+						$('.js-submit').addClass('disabled')
+					}
+				})
+
+				var sel = $.selectDate(
+					'#date',
+					{
+						start: 1939,
+						end: 2025,
+						select: [2000, 8, 8],
+						title: ' ',
+					},
+					function (data) {
+						//        获取年月日
+						console.log(data)
+						var dateTxt =
+							data.year +
+							'年' +
+							data.month +
+							'月' +
+							data.day +
+							'日'
+						$('#date .date-text').text(dateTxt)
+						//改变字颜色，并加入到隐藏input中值
+						$('#date').addClass('holder').find('input').val(dateTxt)
+						sel.hide()
+					}
+				)
+			})
+		</script>
+	</body>
+</html>
