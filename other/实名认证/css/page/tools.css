@@ -1,5 +1,5 @@
 .toolbox {
-  padding: 16px;
+  padding: 0.32rem;
   background: #f8f8f8;
   min-height: 100vh;
   box-sizing: border-box;
@@ -25,7 +25,7 @@
   background: transparent;
 }
 .toolbox .weather .item img {
-  width: 32px;
+  width: 0.63rem;
   margin-right: 8px;
 }
 .toolbox .weather .item h2 {
@@ -59,7 +59,7 @@
   align-items: center;
 }
 .toolbox .quick_search .item img {
-  width: 32px;
+  width: 0.64rem;
 }
 .toolbox .quick_search .item:nth-last-of-type(1) {
   flex: 1;
@@ -79,7 +79,7 @@
   padding: 14px 0px;
 }
 .toolbox .vips .item img {
-  height: 44px;
+  height: 0.88rem;
   margin-bottom: 5px;
 }
 .toolbox .hot {
@@ -87,8 +87,8 @@
   justify-content: space-between;
 }
 .toolbox .hot > a {
-  width: 143px;
-  height: 120px;
+  width: 2.86rem;
+  height: 2.4rem;
   background: #feffff;
   border-radius: 10px;
   position: relative;
@@ -118,7 +118,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 55px;
+  height: 1.1rem;
   background: #feffff;
   border-radius: 10px;
   font-weight: bold;
@@ -127,7 +127,7 @@
   box-sizing: border-box;
 }
 .toolbox .hot .right a img {
-  width: 32px;
+  width: 0.64rem;
 }
 .toolbox .somes {
   display: flex;
@@ -135,14 +135,14 @@
   justify-content: space-between;
   padding: 15px;
   background: #feffff;
-  border-radius: 10px;
+  border-radius: 15px;
   padding-bottom: 5px;
 }
 .toolbox .somes .item {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .toolbox .somes .item img {
-  width: 100px;
+  width: 2rem;
 }
 .toolbox .libao {
   display: flex;
@@ -159,6 +159,7 @@
   font-weight: bold;
   color: #333333;
   line-height: 25px;
+  padding-bottom: 0.1rem;
 }
 .toolbox .libao .left h2 span {
   color: #d81e06;
@@ -174,9 +175,9 @@
   font-size: 12px;
   color: #ffffff;
   line-height: 17px;
-  padding: 1px 8px;
+  padding: 1px 0.16rem;
   margin-left: 8px;
 }
 .toolbox .libao img {
-  width: 96px;
+  width: 1.92rem;
 }
