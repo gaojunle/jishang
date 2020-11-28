@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>专属权益</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/mobileSelect.css">
+    <link rel="stylesheet" href="./css/page/quanyi.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="search_header">
+        <div class="selcity js-select">
+            <div class="sel-val"></div>
+            <select class="sel-data" data-title="请选择城市" style="display: none;">
+                <option value="1" selected>天津</option>
+                <option value="2">无锡</option>
+                <option value="3">西安</option>
+            </select>
+            <img class="icon-down" src="./img/home/icon_down.png" alt="">
+        </div>
+        <div class="ipt_search">
+            <input type="text">
+            <img src="./img/home/icon_search.png" alt="">
+        </div>
+    </div>
+    <div class="quanyi">
+        <ul class="q_left">
+            <li class="on">全部权益</li>
+            <li>生活服务</li>
+            <li>酒店餐饮</li>
+            <li>食品百货</li>
+            <li>美容保健</li>
+            <li>电子数码</li>
+            <li>娱乐休闲</li>
+            <li>其他类型</li>
+        </ul>
+        <div class="q_right">
+            <div class="list">
+                <a class="item" href="">
+                    <img class="avt" src="./img/avater.png">
+                    <div class="info">
+                        <div class="tinfo">
+                            <div class="ctitle">滴滴代驾</div>
+                            <p>外部合作品牌</p>
+                        </div>
+                        <div class="clink">专享折扣优惠<img src="./img/home/icon_right.png"></div>
+                    </div>
+                </a>
+                <a class="item unregist" href="">
+                    <img class="avt" src="./img/avater.png">
+                    <div class="info">
+                        <div class="tinfo">
+                            <div class="ctitle">滴滴代驾</div>
+                            <p>外部合作品牌</p>
+                        </div>
+                        <div class="clink">专享折扣优惠<img src="./img/home/icon_right.png"></div>
+                    </div>
+                </a>
+                <a class="item unregist" href="">
+                    <img class="avt" src="./img/avater.png">
+                    <div class="info">
+                        <div class="tinfo">
+                            <div class="ctitle">滴滴代驾</div>
+                            <p>外部合作品牌</p>
+                        </div>
+                        <div class="clink">专享折扣优惠<img src="./img/home/icon_right.png"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/mobileSelect.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        var mySwiper = null;
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.initSelect();
+            },
+            bindEvent: function () {
+                this.initCates();
+            },
+            initCates: function () {
+                $('.q_left').on('click', 'li', function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    console.log($(this).index())
+                })
+            },
+            initSelect: function () {
+                $('.js-select').each(function () {
+                    var $this = $(this),
+                        $selData = $this.find('select');
+
+                    if ($selData.length == 0) {
+                        return false;
+                    }
+
+                    var data = [];
+                    $selData.find('option').each(function () {
+                        data.push({ id: $(this).val(), value: $(this).html() })
+                        if ($(this).prop('selected')) {
+                            $this.find('.sel-val').html($(this).html());
+                        }
+                    });
+
+                    new MobileSelect({
+                        trigger: this,
+                        title: $selData.data('title'),
+                        wheels: [
+                            { data: data }
+                        ],
+                        callback: function (indexArr, data) {
+                            console.log(data)
+                            /*TODO 这里处理选择后事件*/
+                            $this.find('.sel-val').html(data[0].value);
+                        }
+                    });
+                })
+            }
+
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

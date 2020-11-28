@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融粉活动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/mobileSelect.css">
+    <link rel="stylesheet" href="./css/page/huodong.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="search_header">
+        <div class="selcity js-select">
+            <div class="sel-val"></div>
+            <select class="sel-data" data-title="请选择城市" style="display: none;">
+                <option value="1" selected>天津</option>
+                <option value="2">无锡</option>
+                <option value="3">西安</option>
+            </select>
+            <img class="icon-down" src="./img/home/icon_down.png" alt="">
+        </div>
+        <div class="ipt_search">
+            <input type="text">
+            <img src="./img/home/icon_search.png" alt="">
+        </div>
+    </div>
+    <div class="tab js-tab">
+        <ul class="tab-menu">
+            <li class="on"><span>热门活动</span></li>
+            <li><span>活动报道</span></li>
+        </ul>
+        <div class="tab-cont-box js-op-box">
+            <div class="tab-cont">
+                <div class="list">
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                </div>
+            </div>
+            <div class="tab-cont">
+                <div class="list">
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                    <a href="" class="item">
+                        <img class="hdimg" src="./img/main/swiper_1.jpg" alt="">
+                        <div class="atitle">惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</div>
+                        <div class="ainfo"> 融粉俱乐部   2020-10-30 22:08:38</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/mobileSelect.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        var mySwiper = null;
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.initSelect();
+            },
+            bindEvent: function () {
+                this.initCates();
+            },
+            initCates: function () {
+                $('.q_left').on('click', 'li', function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    console.log($(this).index())
+                })
+            },
+            initSelect: function () {
+                $('.js-select').each(function () {
+                    var $this = $(this),
+                        $selData = $this.find('select');
+
+                    if ($selData.length == 0) {
+                        return false;
+                    }
+
+                    var data = [];
+                    $selData.find('option').each(function () {
+                        data.push({ id: $(this).val(), value: $(this).html() })
+                        if ($(this).prop('selected')) {
+                            $this.find('.sel-val').html($(this).html());
+                        }
+                    });
+
+                    new MobileSelect({
+                        trigger: this,
+                        title: $selData.data('title'),
+                        wheels: [
+                            { data: data }
+                        ],
+                        callback: function (indexArr, data) {
+                            console.log(data)
+                            /*TODO 这里处理选择后事件*/
+                            $this.find('.sel-val').html(data[0].value);
+                        }
+                    });
+                })
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>

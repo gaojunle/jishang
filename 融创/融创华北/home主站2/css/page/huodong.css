@@ -1,0 +1,24 @@
+.hdHeader {
+  background: white;
+  height: 0.96rem;
+}
+.list .item {
+  display: block;
+  padding: 0.4rem;
+  margin-top: 20px;
+  padding: 0px 16px;
+}
+.list .item .hdimg {
+  width: 100%;
+  border-radius: 5px;
+  height: 94px;
+}
+.list .item .atitle {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.list .item .ainfo {
+  font-size: 13px;
+  color: #939393;
+}

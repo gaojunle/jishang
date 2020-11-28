@@ -1,0 +1,315 @@
+html,
+body {
+  background: #f5f5f5;
+  margin-bottom: 50px;
+}
+.banner-swiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.banner-swiper .swiper-slide img {
+  width: 100%;
+}
+.banner-swiper .swiper-pagination-bullets {
+  bottom: 10px;
+}
+.banner-swiper .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  border-radius: 100%;
+  background: white;
+  opacity: 0.5;
+}
+.banner-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary {
+  background-color: white;
+  background-image: url(../../img/home/top_bg.png);
+  background-position: center;
+  background-size: contain;
+}
+.summary .top {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary .top .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333333;
+}
+.summary .top .item img {
+  width: 20px;
+}
+.summary .top .item.kefu_item {
+  font-weight: normal;
+}
+.summary .list {
+  padding: 8px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary .list .item {
+  width: 25%;
+  text-align: center;
+  font-size: 13px;
+  color: #333333;
+  line-height: 17px;
+}
+.summary .list .item img {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+}
+.summary .list .item span {
+  display: block;
+  padding-top: 5px;
+}
+.tools {
+  padding: 12px 0px;
+}
+.tools .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.tools .list .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+}
+.tools .list .item img {
+  width: 44px;
+}
+.hot_qy {
+  margin: 10px 16px;
+  padding: 10px;
+  background-color: white;
+}
+.hot_qy .mtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hot_qy .mtitle > span {
+  font-size: 17px;
+  font-weight: bold;
+  color: #333333;
+  line-height: 22px;
+}
+.hot_qy .mtitle > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #999999;
+}
+.hot_qy .mtitle > a img {
+  width: 20px;
+  margin-top: -2px;
+}
+.hot_qy .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.hot_qy .list .item img {
+  width: 100px;
+  height: 100px;
+}
+.apps .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.apps .list .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.apps .list .item img {
+  width: 44px;
+}
+.projects {
+  padding: 10px 16px;
+}
+.projects.waterfall {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  /* 将 div 元素中的文本分为2列，并规定列间1rem像素的间隔。 */
+  -moz-column-gap: 1px;
+  -webkit-column-gap: 1px;
+  column-gap: 10px;
+}
+.projects.waterfall .item {
+  break-inside: avoid;
+  /*避免元素内部断行并产生新列*/
+  width: 100%;
+}
+.projects .item {
+  display: inline-block;
+  margin-bottom: 10px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+.projects .item > .avt {
+  width: 100%;
+  height: 167px;
+  border-radius: 5px 5px 0px 0px;
+}
+.projects .item > .rch {
+  width: 100%;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 5px;
+}
+.projects .item .ibox {
+  padding: 10px;
+}
+.projects .item .ibox .desc {
+  font-size: 15px;
+}
+.projects .item .ibox .labels {
+  padding: 8px 0px;
+}
+.projects .item .ibox .labels span {
+  background: #fff7e8;
+  border-radius: 2px;
+  color: #f86332;
+  line-height: 17px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+.projects .item .ibox .txt {
+  color: #999999;
+  height: 20px;
+  padding-bottom: 5px;
+}
+.projects .item .ibox .prices {
+  font-size: 15px;
+  color: #d10606;
+  line-height: 20px;
+}
+.dongtai {
+  margin: 10px 16px;
+  padding: 10px;
+  background-color: white;
+}
+.dongtai .mtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dongtai .mtitle > span {
+  font-size: 17px;
+  font-weight: bold;
+  color: #333333;
+  line-height: 22px;
+}
+.dongtai .mtitle > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #999999;
+}
+.dongtai .mtitle > a img {
+  width: 20px;
+  margin-top: -2px;
+}
+.dongtai .list {
+  padding: 10px 0px;
+}
+.dongtai .list .item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.dongtai .list .item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+}
+.dongtai .list .item .left {
+  position: relative;
+}
+.dongtai .list .item .left > img {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+}
+.dongtai .list .item .left .mark {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px 0px 5px 0px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  padding: 1px 4px;
+}
+.dongtai .list .item .left .mark img {
+  width: 15px;
+}
+.dongtai .list .item .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin: 1px 0px;
+}
+.dongtai .list .item .right h2 {
+  font-size: 13px;
+}
+.dongtai .list .item .right p {
+  font-size: 12px;
+  color: #939393;
+}
+.fbottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+}
+.fbottom > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-size: 11px;
+  color: #333333;
+}
+.fbottom > a img {
+  width: 25px;
+}

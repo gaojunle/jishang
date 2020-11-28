@@ -1,0 +1,145 @@
+body {
+  background: #f5f4f7;
+  padding: 0px 16px;
+}
+.marks {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.marks .item {
+  display: flex;
+  align-items: center;
+}
+.marks .item img {
+  width: 20px;
+}
+.my_card {
+  background-color: white;
+  background-image: url(../../img/ucenter/bg_card.png);
+  background-size: 100% 100%;
+  height: 175px;
+  position: relative;
+  margin-top: 28px;
+  border-radius: 5px;
+}
+.my_card .avt {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -30px;
+  left: 50%;
+  top: -30px;
+}
+.my_card .info {
+  text-align: center;
+  padding-top: 40px;
+}
+.my_card .info .name {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.my_card .info .phone {
+  font-size: 15px;
+  line-height: 20px;
+}
+.my_card .info .role {
+  display: inline-block;
+  background: #ffa902;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 13px;
+  color: #ffffff;
+  margin-top: 3px;
+}
+.my_card .desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #8f8f8f;
+  position: absolute;
+  bottom: 16px;
+  width: 100%;
+  padding: 0px 16px;
+  box-sizing: border-box;
+}
+.my_card .desc .complete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #999999;
+}
+.my_card .desc .complete img {
+  width: 20px;
+}
+.my_card .scode {
+  width: 50px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+.libao {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.libao .info {
+  flex: 1;
+}
+.libao .info h2 {
+  font-size: 18px;
+}
+.libao .info h2 span {
+  color: #d81e06;
+}
+.libao .info p {
+  font-size: 12px;
+  color: #999999;
+  padding-top: 5px;
+}
+.libao .info p a {
+  width: 65px;
+  height: 17px;
+  background: #ffb415;
+  border-radius: 9px;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 16px;
+  padding: 2px 10px;
+  margin-left: 10px;
+}
+.libao img {
+  width: 96px;
+}
+.my_list {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.my_list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.61);
+  padding-top: 12px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.my_list a:nth-last-of-type(1) {
+  border: none;
+}
+.my_list a img {
+  width: 20px;
+}
