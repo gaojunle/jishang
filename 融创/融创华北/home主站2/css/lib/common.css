@@ -112,6 +112,7 @@ body .search_header .ipt_search input {
 body .logo-bottom {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 14px 0px;
 }
 body .logo-bottom img {
