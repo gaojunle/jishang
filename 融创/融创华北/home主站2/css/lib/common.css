@@ -109,6 +109,14 @@ body .search_header .ipt_search input {
   padding: 0px 10px;
   box-sizing: border-box;
 }
+body .logo-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 14px 0px;
+}
+body .logo-bottom img {
+  width: 98px;
+}
 .search-Box {
   padding: 0.15rem 0.4rem;
   position: relative;
@@ -138,7 +146,6 @@ body .search_header .ipt_search input {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 .header {
@@ -423,3 +430,4 @@ body .search_header .ipt_search input {
   display: block;
   width: 0.96rem;
 }
+/*# sourceMappingURL=./common.css.map */

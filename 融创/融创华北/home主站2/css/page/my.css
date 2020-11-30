@@ -17,11 +17,13 @@ body {
 .my_card {
   background-color: white;
   background-image: url(../../img/ucenter/bg_card.png);
-  background-size: 100% 100%;
+  background-size: contain;
   height: 175px;
   position: relative;
   margin-top: 28px;
   border-radius: 5px;
+  background-position-x: center;
+  background-position-y: center;
 }
 .my_card .avt {
   width: 60px;
@@ -143,3 +145,4 @@ body {
 .my_list a img {
   width: 20px;
 }
+/*# sourceMappingURL=./my.css.map */
