@@ -38,15 +38,46 @@
         <div class="swiper-pagination"></div>
     </div>
     <div class="rbox info-box">
-        <div class="main-navs">
-            <a href="./171活动.html"><img src="./img/main/icons/icon-sq-jchd.png" alt=""><span>精彩活动</span></a>
-            <a href="./11幸福合伙人.html"><img src="./img/main/icons/icon-sq-hhr.png" alt=""><span>幸福合伙人</span></a>
-            <a href="#"><img src="./img/main/icons/icon-sq-zxjf.png" alt=""><span>在线缴费</span></a>
-            <a href="#"><img src="./img/main/icons/icon-sq-bsbx.png" alt=""><span>报事报修</span></a>
+        <div class="main-navs new_main_navs">
+            <a href="./171活动.html"><img src="./img/main/icons/icon_sqdt.png" alt=""><span>社群动态</span></a>
+            <a href="./11幸福合伙人.html"><img src="./img/main/icons/icon_htgc.png" alt=""><span>话题广场</span></a>
+            <a href="#"><img src="./img/main/icons/icon_rfkt.png" alt=""><span>融粉课堂</span></a>
         </div>
     </div>
 
-    <div class="rbox activity">
+    <div class="rbox rexiao">
+        <div class="rtitle">
+        </div>
+        <div class="scale-swiper js-scale-swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide" data-swiper-autoplay="2000">
+                    <a href="./182热销楼盘详情.html">
+                        <img src="./img/main/s1.png" />
+                        <div class="desc">
+                            <div class="dtitle">学习</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="./182热销楼盘详情.html">
+                        <img src="./img/main/s2.png" />
+                        <div class="desc">
+                            <div class="dtitle">生活</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="./182热销楼盘详情.html">
+                        <img src="./img/main/s2.png" />
+                        <div class="desc">
+                            <div class="dtitle">娱乐</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="rbox activity">
         <div class="rtitle" style="padding-top:30px">
             <span>精彩活动</span>
             <a href="./171活动.html"><img src="./img/common/icon-more.png" alt=""></a>
@@ -57,7 +88,7 @@
             活动时间：2020年5月15日至20日<br>
             活动地点：上海市闵行区红松东路1116号
         </div>
-    </div>
+    </div> -->
     <div class="rbox hhr">
         <div class="rtitle">
             <span>幸福合伙人</span>
@@ -80,7 +111,7 @@
                 <div class="info">
                     <h3 class="title">彩妆达人</h3>
                     <p class="dec">融创无锡壹号院业主</p>
-                </div>            
+                </div>
             </a>
         </div>
     </div>
@@ -112,7 +143,7 @@
             </a>
         </div>
     </div>
-    <div class="rbox lljs">
+    <!-- <div class="rbox lljs">
         <div class="rtitle">
             <span>邻里市集</span>
             <a href="./10邻里市集.html"><img src="./img/common/icon-more.png" alt=""></a>
@@ -135,6 +166,9 @@
                 <div class="desc">九成新婴儿车，非常适合带宝宝出</div>
             </a>
         </div>
+    </div> -->
+    <div class="rbox ad">
+        <a href="#"><img src="./img/ad.png" alt=""></a>
     </div>
     <div class="split-logo">
         <img src="./img/rc-logo-split.png" alt="">
@@ -142,7 +176,7 @@
     <div class="footer">
         <a href="./02首页.html" class="sy">首页</a>
         <a href="./03福利.html" class="fl">福利</a>
-        <a href="./04社区.html" class="sq on">社区</a>
+        <a href="./04社群.html" class="sq on">社群</a>
         <a href="./05服务.html" class="fw">服务</a>
         <a href="./06我的.html" class="wd">我的</a>
     </div>
@@ -165,6 +199,14 @@
                 initSwiper: function () {
                     var swiperBanner = new Swiper('.js-banner-swiper', {
                         spaceBetween: 0,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                    new Swiper('.js-scale-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: -6,
                         centeredSlides: true,
                         autoplay: 4000,
                         loop: true,
