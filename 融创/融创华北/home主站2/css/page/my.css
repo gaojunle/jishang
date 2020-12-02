@@ -3,7 +3,7 @@ body {
   padding: 0px 16px;
 }
 .marks {
-  padding: 10px;
+  padding: 10px 0px;
   display: flex;
   align-items: center;
 }
@@ -17,11 +17,14 @@ body {
 .my_card {
   background-color: white;
   background-image: url(../../img/ucenter/bg_card.png);
-  background-size: 100% 100%;
+  background-size: 150px auto;
   height: 175px;
   position: relative;
   margin-top: 28px;
   border-radius: 5px;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 .my_card .avt {
   width: 60px;
@@ -140,6 +143,14 @@ body {
 .my_list a:nth-last-of-type(1) {
   border: none;
 }
+.my_list a > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .my_list a img {
   width: 20px;
+  margin-top: -2px;
+  margin-right: 7px;
 }
+/*# sourceMappingURL=./my.css.map */
