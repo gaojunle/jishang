@@ -37,26 +37,32 @@
         <a href="./04_3话题列表.html"><img src="./img/common/icon-more.png" alt="" /></a>
       </div>
       <a href="./04_5话题讨论.html" class="ht_item">
-        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
-        <div class="info">
-          <div class="title">#落叶的瞬间＃</div>
-          <div class="desc">我们一起记录秋日的美好...</div>
+        <div class="left">
+          <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+          <div class="info">
+            <div class="title">#落叶的瞬间＃</div>
+            <div class="desc">我们一起记录秋日的美好...</div>
+          </div>
         </div>
         <img class="icon_tl" src="./img/shequn/icon_tl.png" />
       </a>
       <a href="./04_5话题讨论.html" class="ht_item">
-        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
-        <div class="info">
-          <div class="title">#落叶的瞬间＃</div>
-          <div class="desc">我们一起记录秋日的美好...</div>
+        <div class="left">
+          <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+          <div class="info">
+            <div class="title">#落叶的瞬间＃</div>
+            <div class="desc">我们一起记录秋日的美好...</div>
+          </div>
         </div>
         <img class="icon_tl" src="./img/shequn/icon_tl.png" />
       </a>
       <a href="./04_5话题讨论.html" class="ht_item">
-        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
-        <div class="info">
-          <div class="title">#落叶的瞬间＃</div>
-          <div class="desc">我们一起记录秋日的美好...</div>
+        <div class="left">
+          <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+          <div class="info">
+            <div class="title">#落叶的瞬间＃</div>
+            <div class="desc">我们一起记录秋日的美好...</div>
+          </div>
         </div>
         <img class="icon_tl" src="./img/shequn/icon_tl.png" />
       </a>
@@ -88,7 +94,7 @@
           <div class="pl_list">
             <div class="p_title">＃落叶的瞬间＃</div>
             <div class="p_desc js_comments_box">
-              <p>和平路毕业生：哪里的九溪？</p>
+              <p>和平路毕业生：哪里的九溪？<a class="btn_del js_comment_del">删除</a></p>
               <p>3CATSSS：太美了！</p>
               <p>3CATSSS：太美了！</p>
               <p>3CATSSS：太美了！</p>
@@ -103,7 +109,7 @@
             </div>
           </div>
           <div class="notice">
-            <input class="js-comment" type="text" placeholder="说点什么...">
+            <input readonly class="js-comment" type="text" placeholder="说点什么...">
             <span class="heart"><img src="./img/main/icon_heart.png">45</span>
             <span class="view"><img src="./img/main/liulanliang.png">4225</span>
           </div>
@@ -148,7 +154,7 @@
             </div>
           </div>
           <div class="notice">
-            <input class="js-comment" type="text" placeholder="说点什么...">
+            <input readonly class="js-comment" type="text" placeholder="说点什么...">
             <span class="heart"><img src="./img/main/icon_heart.png">45</span>
             <span class="view"><img src="./img/main/liulanliang.png">4225</span>
           </div>
@@ -197,7 +203,7 @@
             </div>
           </div>
           <div class="notice">
-            <input class="js-comment" type="text" placeholder="说点什么...">
+            <input readonly class="js-comment" type="text" placeholder="说点什么...">
             <span class="heart"><img src="./img/main/icon_heart.png">45</span>
             <span class="view"><img src="./img/main/liulanliang.png">4225</span>
           </div>
@@ -306,11 +312,22 @@
             var $this = $(this);
             if ($this.find('p').length > 2) {
               $this.find('p:nth-child(n+3)').hide();
-              $this.find('.show_more').show().click(function () {
-                $(this).hide()
-                $(this).parents('.js_comments_box').find('p').show()
+              $this.find('.show_more').click(function () {
+                $(this).data('isFold', !$(this).data('isFold'))
+                if ($(this).data('isFold')) {
+                  $(this).addClass('fold')
+                  $(this).find('span').html('收起评论')
+                  $(this).parents('.js_comments_box').find('p').show()
+                } else {
+                  $(this).removeClass('fold')
+                  $(this).find('span').html('查看更多评论')
+                  $(this).parents('.js_comments_box').find('p:nth-child(n+3)').hide()
+                }
               })
             }
+          })
+          $('.js_comment_del').click(function(){
+            alert('delete')
           })
         },
         initData: function () {

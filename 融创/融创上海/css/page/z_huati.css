@@ -34,10 +34,17 @@
   padding: 0.3rem;
   margin-bottom: 0.14rem;
 }
+.z_huati .ht_list .ht_item .left {
+  display: flex;
+  align-items: center;
+}
 .z_huati .ht_list .ht_item .icon_ht {
   width: 1rem;
   height: 1rem;
   border-radius: 1rem;
+}
+.z_huati .ht_list .ht_item .info {
+  padding-left: 0.3rem;
 }
 .z_huati .ht_list .ht_item .info .title {
   color: #2a2a2a;

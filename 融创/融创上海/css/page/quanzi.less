@@ -218,16 +218,35 @@
           font-size: 0.24rem;
           color: #8f8f8f;
           line-height: 1.7;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .btn_del {
+            display: inline-block;
+            color: white;
+            font-size: 12px;
+            border-radius: 20px;
+            background: #b7a793;
+            padding: 0.04rem 0.15rem;
+            font-weight: normal;
+            line-height: 1;
+          }
         }
         .show_more {
           // display: none;
           text-align: center;
-          padding-top: .3rem;
-          >span{
-            padding: 0px .17rem;
+          padding-top: 0.3rem;
+
+          > span {
+            padding: 0px 0.17rem;
           }
-          .icon_down{
-            width: .2rem;
+          &.fold {
+            .icon_down {
+              transform: rotate(180deg);
+            }
+          }
+          .icon_down {
+            width: 0.2rem;
             vertical-align: middle;
           }
         }

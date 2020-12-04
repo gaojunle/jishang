@@ -168,6 +168,19 @@
   font-size: 0.24rem;
   color: #8f8f8f;
   line-height: 1.7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.qz_dt_list .item .pl_list .p_desc p .btn_del {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  border-radius: 20px;
+  background: #b7a793;
+  padding: 0.04rem 0.15rem;
+  font-weight: normal;
+  line-height: 1;
 }
 .qz_dt_list .item .pl_list .p_desc .show_more {
   text-align: center;
@@ -175,6 +188,9 @@
 }
 .qz_dt_list .item .pl_list .p_desc .show_more > span {
   padding: 0px 0.17rem;
+}
+.qz_dt_list .item .pl_list .p_desc .show_more.fold .icon_down {
+  transform: rotate(180deg);
 }
 .qz_dt_list .item .pl_list .p_desc .show_more .icon_down {
   width: 0.2rem;
