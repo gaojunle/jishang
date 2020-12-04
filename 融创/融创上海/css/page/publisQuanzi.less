@@ -1,0 +1,308 @@
+@import "../lib/common.less";
+
+.doLiuyan {
+  padding-bottom: 0.5rem !important;
+
+  .logo-big {
+    text-align: center;
+    padding: 0.7rem;
+
+    img {
+      width: 2.3rem;
+    }
+  }
+
+  .logo2 {
+    text-align: center;
+    padding: 0.7rem;
+
+    img {
+      height: 0.51rem;
+    }
+  }
+
+  .selbox {
+    padding-bottom: 0.18rem;
+    position: relative;
+    input {
+      border: none;
+      width: 100%;
+      border-radius: 0.1rem;
+      background: #ffffff;
+      height: 0.74rem;
+      line-height: 0.74rem;
+      padding-left: 0.38rem;
+      box-sizing: border-box;
+    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     right: .39rem;
+    //     top: .27rem;
+    //     background: url(../../img/my/icon-right.png) 0px 0px no-repeat;
+    //     width: .1rem;
+    //     height: .19rem;
+    //     background-size: 100% 100%;
+    // }
+
+    // select {
+    //     width: 100%;
+    //     border: none;
+    //     background-color: rgb(255, 255, 255);
+    //     height: .74rem;
+    //     border-radius: .1rem;
+    //     padding-left: .38rem;
+    //     color: rgb(143, 143, 143);
+    //     font-size: 14px;
+
+    //     option {
+    //         color: rgb(143, 143, 143);
+    //     }
+    // }
+  }
+
+  .ipt-box {
+    position: relative;
+
+    textarea {
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0.1rem;
+      background-color: rgb(255, 255, 255);
+      height: 3.7rem;
+      padding: 0.3rem 0.36rem;
+      resize: none;
+      font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    }
+
+    .ipt-limit {
+      position: absolute;
+      right: 0.3rem;
+      bottom: 0.3rem;
+      font-size: 13px;
+      color: rgb(143, 143, 143);
+
+      span {
+        color: rgb(143, 143, 143);
+      }
+    }
+  }
+
+  .fileUpBox {
+    position: relative;
+    margin: 0px 0.1rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.2rem;
+
+    .fileup {
+      position: relative;
+      display: block;
+      width: 1.22rem;
+      height: 1.22rem;
+      opacity: 0;
+      z-index: 3;
+    }
+
+    .cropedBigImg {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1.22rem;
+      height: 1.22rem;
+      z-index: 2;
+      border-radius: 0.1rem;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1.22rem;
+      height: 1.22rem;
+      background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+      background-size: 100% 100%;
+      z-index: 1;
+    }
+
+    &.multi {
+      .cropedBigImg {
+        position: inherit;
+      }
+
+      &::after {
+        display: inline-block;
+        position: inherit;
+      }
+    }
+  }
+
+  .fileUp_multi {
+    position: relative;
+    margin: 0px 0.1rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.2rem;
+
+    .img_list {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      .item {
+        display: inline-block;
+        position: relative;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+
+        .del {
+          width: 0.33rem;
+          position: absolute;
+          top: -0.14rem;
+          right: -0.14rem;
+        }
+
+        .imgup {
+          width: 1.22rem;
+          height: 1.22rem;
+          border-radius: 0.1rem;
+        }
+      }
+
+      .fileHanlde {
+        position: relative;
+        display: inline-block;
+
+        .fileup {
+          position: relative;
+          display: block;
+          width: 1.22rem;
+          height: 1.22rem;
+          opacity: 0;
+          z-index: 3;
+        }
+
+        &::after {
+          content: " ";
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 1.22rem;
+          height: 1.22rem;
+          background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+          background-size: 100% 100%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .tip {
+    margin: 0px 0.1rem;
+    font-size: 14px;
+    padding-top: 0.4rem;
+    color: rgb(143, 143, 143);
+    line-height: 1.875;
+  }
+}
+
+.myLiuyan {
+  padding: 0.4rem;
+
+  .item {
+    margin-bottom: 0.7rem;
+
+    .summ {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .date {
+        font-size: 14px;
+        position: relative;
+        padding-left: 0.24rem;
+        color: rgb(143, 143, 143);
+        display: block;
+        height: 12px;
+        line-height: 12px;
+
+        &::before {
+          content: "";
+          background-color: rgb(42, 42, 42);
+          width: 4px;
+          height: 12px;
+          display: inline-block;
+          position: absolute;
+          left: 0px;
+          top: 50%;
+          margin-top: -6px;
+        }
+      }
+
+      .ly-del {
+        display: inline-block;
+        background-color: rgb(183, 167, 147);
+        width: 0.86rem;
+        padding: 1px 0px;
+        text-align: center;
+        border-radius: 0.4rem;
+        font-size: 14px;
+        color: white;
+        line-height: 1.2;
+      }
+    }
+
+    .ly-txt {
+      font-size: 14px;
+      color: rgb(143, 143, 143);
+      line-height: 1.667;
+      margin-top: 0.2rem;
+      margin-left: 0.24rem;
+    }
+
+    .avts {
+      padding: 0.24rem;
+      padding-top: 0.1rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      .img-box {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.08rem;
+        overflow: hidden;
+        position: relative;
+        margin-right: 0.1rem;
+      }
+
+      img {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        display: block;
+      }
+    }
+
+    .reply {
+      font-size: 14px;
+      padding-top: 0.2rem;
+      padding-left: 0.24rem;
+      line-height: 1.667;
+      background-repeat: no-repeat;
+      background: url(../../img/main/reply_arrow.png) 0.6rem 2px no-repeat;
+      background-size: 0.3rem 0.18rem;
+
+      .reply-cont {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 0.3rem 0.25rem;
+        font-size: 14px;
+      }
+
+      .rc {
+        font-size: 14px;
+        color: #b7a793;
+      }
+    }
+  }
+}

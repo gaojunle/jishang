@@ -68,17 +68,33 @@
 }
 .qz_dt_list .item {
   position: relative;
-  display: flex;
-  align-items: flex-start;
   padding: 0.3rem 0.4rem;
   background: white;
-  margin-bottom: 0.38rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0.1rem;
 }
-.qz_dt_list .item .avt {
+.qz_dt_list .item .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.qz_dt_list .item .user .uinfo .avt {
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 100%;
   margin-right: 0.16rem;
+}
+.qz_dt_list .item .user .uinfo .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qz_dt_list .item .user .uinfo .title .uname {
+  font-size: 16px;
+  line-height: 2.5;
+}
+.qz_dt_list .item .user .date {
+  color: #8f8f8f;
 }
 .qz_dt_list .item .info {
   flex: 1;
@@ -111,14 +127,20 @@
 }
 .qz_dt_list .item .info .desc .more {
   color: #2c5aa6;
+  padding-left: 10px;
 }
 .qz_dt_list .item .qz_imgs figure {
   display: inline-block;
   width: 1.56rem;
   height: 1.56rem;
-  margin-right: 0rem;
+  margin-right: 0.04rem;
   overflow: hidden;
   position: relative;
+  border-radius: 0.1rem;
+  margin-top: 0.04rem;
+}
+.qz_dt_list .item .qz_imgs figure img {
+  display: block;
 }
 .qz_dt_list .item .qz_imgs figure a {
   position: relative;
@@ -136,20 +158,52 @@
   width: 2.39rem;
   height: 2.39rem;
 }
+.qz_dt_list .item .pl_list .p_title {
+  color: #2a2a2a;
+  font-size: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.14rem;
+}
+.qz_dt_list .item .pl_list .p_desc p {
+  font-size: 0.24rem;
+  color: #8f8f8f;
+  line-height: 1.7;
+}
+.qz_dt_list .item .pl_list .p_desc .show_more {
+  text-align: center;
+  padding-top: 0.3rem;
+}
+.qz_dt_list .item .pl_list .p_desc .show_more > span {
+  padding: 0px 0.17rem;
+}
+.qz_dt_list .item .pl_list .p_desc .show_more .icon_down {
+  width: 0.2rem;
+  vertical-align: middle;
+}
 .qz_dt_list .item .notice {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(216, 216, 216, 0.25);
   font-size: 12px;
   color: #8f8f8f;
   margin-top: 0.4rem;
-  padding-top: 0.34rem;
   padding-bottom: 0.2rem;
+}
+.qz_dt_list .item .notice input {
+  border: none;
+  background: #f4f4f4;
+  width: 2.8rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  border-radius: 40px;
+  font-size: 11px;
+  padding-left: 0.45rem;
+  box-sizing: border-box;
 }
 .qz_dt_list .item .notice span {
   display: flex;
   align-items: center;
-  margin-right: 0.5rem;
+  color: #8f8f8f;
 }
 .qz_dt_list .item .notice span img {
   width: 0.3rem;
@@ -260,173 +314,6 @@
   top: 10px;
   right: 0px;
 }
-.doLiuyan {
-  padding-bottom: 0.5rem !important;
-}
-.doLiuyan .logo-big {
-  text-align: center;
-  padding: 0.7rem;
-}
-.doLiuyan .logo-big img {
-  width: 2.3rem;
-}
-.doLiuyan .logo2 {
-  text-align: center;
-  padding: 0.7rem;
-}
-.doLiuyan .logo2 img {
-  height: 0.51rem;
-}
-.doLiuyan .selbox {
-  padding-bottom: 0.18rem;
-  position: relative;
-}
-.doLiuyan .selbox::after {
-  content: '';
-  position: absolute;
-  right: 0.39rem;
-  top: 0.27rem;
-  background: url(../../img/my/icon-right.png) 0px 0px no-repeat;
-  width: 0.1rem;
-  height: 0.19rem;
-  background-size: 100% 100%;
-}
-.doLiuyan .selbox select {
-  width: 100%;
-  border: none;
-  background-color: #ffffff;
-  height: 0.74rem;
-  border-radius: 0.1rem;
-  padding-left: 0.38rem;
-  color: #8f8f8f;
-  font-size: 14px;
-}
-.doLiuyan .selbox select option {
-  color: #8f8f8f;
-}
-.doLiuyan .ipt-box {
-  position: relative;
-}
-.doLiuyan .ipt-box textarea {
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 0.1rem;
-  background-color: #ffffff;
-  height: 3.7rem;
-  padding: 0.3rem 0.36rem;
-  resize: none;
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-}
-.doLiuyan .ipt-box .ipt-limit {
-  position: absolute;
-  right: 0.3rem;
-  bottom: 0.3rem;
-  font-size: 13px;
-  color: #8f8f8f;
-}
-.doLiuyan .ipt-box .ipt-limit span {
-  color: #8f8f8f;
-}
-.doLiuyan .fileUpBox {
-  position: relative;
-  margin: 0px 0.1rem;
-  margin-top: 0.35rem;
-  margin-bottom: 0.2rem;
-}
-.doLiuyan .fileUpBox .fileup {
-  position: relative;
-  display: block;
-  width: 1.22rem;
-  height: 1.22rem;
-  opacity: 0;
-  z-index: 3;
-}
-.doLiuyan .fileUpBox .cropedBigImg {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1.22rem;
-  height: 1.22rem;
-  z-index: 2;
-  border-radius: 0.1rem;
-}
-.doLiuyan .fileUpBox::after {
-  content: " ";
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1.22rem;
-  height: 1.22rem;
-  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
-  z-index: 1;
-}
-.doLiuyan .fileUpBox.multi .cropedBigImg {
-  position: inherit;
-}
-.doLiuyan .fileUpBox.multi::after {
-  display: inline-block;
-  position: inherit;
-}
-.doLiuyan .fileUp_multi {
-  position: relative;
-  margin: 0px 0.1rem;
-  margin-top: 0.35rem;
-  margin-bottom: 0.2rem;
-}
-.doLiuyan .fileUp_multi .img_list {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.doLiuyan .fileUp_multi .img_list .item {
-  display: inline-block;
-  position: relative;
-  margin-right: 0.2rem;
-  margin-bottom: 0.2rem;
-}
-.doLiuyan .fileUp_multi .img_list .item .del {
-  width: 0.33rem;
-  position: absolute;
-  top: -0.14rem;
-  right: -0.14rem;
-}
-.doLiuyan .fileUp_multi .img_list .item .imgup {
-  width: 1.22rem;
-  height: 1.22rem;
-  border-radius: 0.1rem;
-}
-.doLiuyan .fileUp_multi .img_list .fileHanlde {
-  position: relative;
-  display: inline-block;
-}
-.doLiuyan .fileUp_multi .img_list .fileHanlde .fileup {
-  position: relative;
-  display: block;
-  width: 1.22rem;
-  height: 1.22rem;
-  opacity: 0;
-  z-index: 3;
-}
-.doLiuyan .fileUp_multi .img_list .fileHanlde::after {
-  content: " ";
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1.22rem;
-  height: 1.22rem;
-  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
-  z-index: 1;
-}
-.doLiuyan .tip {
-  margin: 0px 0.1rem;
-  font-size: 14px;
-  padding-top: 0.4rem;
-  color: #8f8f8f;
-  line-height: 1.875;
-}
 .liuyan-box {
   position: relative;
 }
@@ -454,4 +341,17 @@
 }
 .liuyan-box .limit span {
   color: #8f8f8f;
+}
+.fb_ht {
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: white;
+  font-size: 0.34rem;
+  background: #b7a793;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
 }

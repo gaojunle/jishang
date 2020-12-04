@@ -1,434 +1,500 @@
 @import "../lib/common.less";
 
 .hdHeader {
-    background: white;
-    height: 0.96rem;
+  background: white;
+  height: 0.96rem;
 }
 
 .tab {
-    padding-top: 0.2rem;
+  padding-top: 0.2rem;
 }
 
 .hdList {
-    .activity {
-        padding: 0.4rem;
+  .activity {
+    padding: 0.4rem;
 
-        a {
-            display: block;
-        }
-
-        .hdimg {
-            width: 100%;
-        }
-
-        .atitle {
-            font-size: 16px;
-            line-height: 1.667;
-            padding-top: 8px;
-            padding: .2rem .1rem 0px;
-        }
-
-        .ainfo {
-            font-size: 13px;
-            color: rgb(143, 143, 143);
-            line-height: 1.667;
-            padding: 0 .1rem;
-        }
-
-        .watch-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            line-height: 1;
-            padding: 0.2rem .1rem 0px;
-
-            .collect {
-                display: flex;
-                align-items: center;
-                font-size: 13px;
-                color: rgb(160, 160, 160);
-
-                img {
-                    height: 0.27rem;
-                    margin-right: 0.1rem;
-                    display: block;
-                }
-            }
-
-            .watches {
-                display: flex;
-                align-items: center;
-                font-size: 12px;
-                color: rgb(160, 160, 160);
-
-                img {
-                    height: 0.2rem;
-                    margin-right: 0.1rem;
-                    display: block;
-                }
-            }
-
-            //取消收藏
-            .cancel {
-                display: inline-block;
-                background-color: rgb(183, 167, 147);
-                padding: 1px 0.15rem;
-                text-align: center;
-                border-radius: 0.4rem;
-                font-size: 11px;
-                color: white;
-                line-height: 1.2;
-            }
-        }
+    a {
+      display: block;
     }
-}
 
-.hdDetail {
-    .ly-dec {
-        width: 100%;
-        background: #fff;
+    .hdimg {
+      width: 100%;
+    }
+
+    .atitle {
+      font-size: 16px;
+      line-height: 1.667;
+      padding-top: 8px;
+      padding: 0.2rem 0.1rem 0px;
+    }
+
+    .ainfo {
+      font-size: 13px;
+      color: rgb(143, 143, 143);
+      line-height: 1.667;
+      padding: 0 0.1rem;
     }
 
     .watch-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: 1;
+      padding: 0.2rem 0.1rem 0px;
+
+      .collect {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        color: rgb(160, 160, 160);
+
+        img {
+          height: 0.27rem;
+          margin-right: 0.1rem;
+          display: block;
+        }
+      }
+
+      .watches {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: rgb(160, 160, 160);
+
+        img {
+          height: 0.2rem;
+          margin-right: 0.1rem;
+          display: block;
+        }
+      }
+
+      //取消收藏
+      .cancel {
+        display: inline-block;
+        background-color: rgb(183, 167, 147);
+        padding: 1px 0.15rem;
+        text-align: center;
+        border-radius: 0.4rem;
+        font-size: 11px;
+        color: white;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+.replay_List {
+  padding: 0.3rem;
+  .activity {
+    display: block;
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 0.35rem 0.25rem;
+    margin-bottom: .36rem;
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .a_title {
+        font-size: 15px;
+        padding-bottom: 0.12rem;
+      }
+
+      .a_info {
+        font-size: 13px;
+        color: rgb(143, 143, 143);
+      }
+      .date {
+        font-size: 10px;
+        color: rgb(143, 143, 143);
+        padding-left: 10px;
+      }
+      .watch_box {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.4rem;
         line-height: 1;
-
-        &.on {
-            .collect {
-                display: none;
-
-                &.collected {
-                    display: flex;
-                }
-            }
-        }
-
-        .collect {
-            display: flex;
-            align-items: center;
-            font-size: 13px;
-            color: rgb(160, 160, 160);
-
-            &.collected {
-                display: none;
-            }
-
-            img {
-                height: 0.26rem;
-                margin-right: 0.1rem;
-                display: block;
-            }
-        }
-
+        padding: 0.5rem 0rem 0px;
         .watches {
-            display: flex;
-            align-items: center;
-            font-size: 12px;
-            color: rgb(160, 160, 160);
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          color: rgb(160, 160, 160);
 
-            img {
-                height: 0.2rem;
-                margin-right: 0.1rem;
-                display: block;
-            }
+          img {
+            height: 0.2rem;
+            margin-right: 0.1rem;
+            display: block;
+          }
         }
+      }
+      .right {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.05rem;
+      }
     }
-
-    .dianping {
-        background: white;
-
-        .dplist {
-            background: #f4f4f4;
-
-            >h3 {
-                font-size: 17px;
-                padding: 0.4rem 0px;
-            }
-
-            li {
-                position: relative;
-                width: 100%;
-                border-bottom: 1px solid rgba(42, 42, 42, 0.1);
-                padding-bottom: 0.5rem;
-                margin-bottom: 25px;
-
-                &:nth-last-of-type(1) {
-                    margin-bottom: 0px;
-                    border: none;
-                }
-
-                .avt {
-                    position: absolute;
-                    left: 0rem;
-                    top: 0px;
-                    width: 0.8rem;
-                    height: 0.8rem;
-                    border-radius: 100%;
-                }
-
-                .right {
-                    margin-left: 1rem;
-                    line-height: 1.4;
-
-                    .lyInfo {
-                        font-size: 14px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        padding: 0.06rem 0px;
-                        box-sizing: border-box;
-
-                        .title {
-                            font-size: 14px;
-                        }
-
-                        .date {
-                            font-size: 13px;
-                            color: rgb(143, 143, 143);
-                            padding-top:.1rem;
-                        }
-                    }
-
-                    .lytxt {
-                        font-size: 13px;
-                        padding: 0.1rem 0px;
-
-                        .ly-del {
-                            display: inline-block;
-                            background-color: rgb(183, 167, 147);
-                            width: 0.86rem;
-                            padding: 1px 0px;
-                            text-align: center;
-                            border-radius: 0.4rem;
-                            font-size: 12px;
-                            color: white;
-                            line-height: 1.2;
-                            margin-top: 0.2rem;
-                        }
-                    }
-
-                    .replay-title {
-                        font-size: 14px;
-                        position: relative;
-                        padding: 0.16rem 0px;
-                        padding-left: 0.24rem;
-
-                        &::before {
-                            content: "";
-                            background-color: rgb(42, 42, 42);
-                            width: 4px;
-                            height: 13px;
-                            display: inline-block;
-                            position: absolute;
-                            left: 0px;
-                            top: 50%;
-                            margin-top: -6px;
-                        }
-                    }
-
-                    .replay-txt {
-                        font-size: 13px;
-                    }
-                }
-            }
-        }
+    .marks {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .24rem;
+      padding-top: 0.24rem;
+      border-top: 1px solid rgba(143, 143, 143, 0.151);
+      .icon_mark {
+        width: 0.34rem;
+      }
+      .icon_bm {
+        width: 1.3rem;
+      }
     }
+  }
 }
+.hdDetail {
+  .ly-dec {
+    width: 100%;
+    background: #fff;
+  }
 
-.loupanList {
+  .watch-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0.4rem;
-    min-height: 40vh;
-    a {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+    line-height: 1;
+
+    &.on {
+      .collect {
+        display: none;
+
+        &.collected {
+          display: flex;
+        }
+      }
+    }
+
+    .collect {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: rgb(160, 160, 160);
+
+      &.collected {
+        display: none;
+      }
+
+      img {
+        height: 0.26rem;
+        margin-right: 0.1rem;
+        display: block;
+      }
+    }
+
+    .watches {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: rgb(160, 160, 160);
+
+      img {
+        height: 0.2rem;
+        margin-right: 0.1rem;
+        display: block;
+      }
+    }
+  }
+
+  .dianping {
+    background: white;
+
+    .dplist {
+      background: #f4f4f4;
+
+      > h3 {
+        font-size: 17px;
+        padding: 0.4rem 0px;
+      }
+
+      li {
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+        padding-bottom: 0.5rem;
+        margin-bottom: 25px;
 
         &:nth-last-of-type(1) {
-            margin-bottom: 0px;
+          margin-bottom: 0px;
+          border: none;
         }
 
         .avt {
-            width: 2.38rem;
-            height: 1.8rem;
+          position: absolute;
+          left: 0rem;
+          top: 0px;
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 100%;
         }
 
-        .info {
-            font-size: 12px;
-            padding-left: 10px;
+        .right {
+          margin-left: 1rem;
+          line-height: 1.4;
+
+          .lyInfo {
+            font-size: 14px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            line-height: 1.7;
+            padding: 0.06rem 0px;
             box-sizing: border-box;
-            overflow: hidden;
-            flex: 1;
 
             .title {
-                font-size: 15px;
-                color: rgb(42, 42, 42);
-
-                &:nth-of-type(1) {
-                    font-weight: bold;
-                }
+              font-size: 14px;
             }
 
-            .txt {
-                color: rgb(160, 160, 160);
-                box-sizing: border-box;
-                font-size: 14px;
-                .ellipsis;
+            .date {
+              font-size: 13px;
+              color: rgb(143, 143, 143);
+              padding-top: 0.1rem;
             }
+          }
+
+          .lytxt {
+            font-size: 13px;
+            padding: 0.1rem 0px;
+
+            .ly-del {
+              display: inline-block;
+              background-color: rgb(183, 167, 147);
+              width: 0.86rem;
+              padding: 1px 0px;
+              text-align: center;
+              border-radius: 0.4rem;
+              font-size: 12px;
+              color: white;
+              line-height: 1.2;
+              margin-top: 0.2rem;
+            }
+          }
+
+          .replay-title {
+            font-size: 14px;
+            position: relative;
+            padding: 0.16rem 0px;
+            padding-left: 0.24rem;
+
+            &::before {
+              content: "";
+              background-color: rgb(42, 42, 42);
+              width: 4px;
+              height: 13px;
+              display: inline-block;
+              position: absolute;
+              left: 0px;
+              top: 50%;
+              margin-top: -6px;
+            }
+          }
+
+          .replay-txt {
+            font-size: 13px;
+          }
         }
+      }
     }
+  }
+}
+
+.loupanList {
+  padding: 0.4rem;
+  min-height: 40vh;
+  a {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0px;
+    }
+
+    .avt {
+      width: 2.38rem;
+      height: 1.8rem;
+    }
+
+    .info {
+      font-size: 12px;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 1.7;
+      box-sizing: border-box;
+      overflow: hidden;
+      flex: 1;
+
+      .title {
+        font-size: 15px;
+        color: rgb(42, 42, 42);
+
+        &:nth-of-type(1) {
+          font-weight: bold;
+        }
+      }
+
+      .txt {
+        color: rgb(160, 160, 160);
+        box-sizing: border-box;
+        font-size: 14px;
+        .ellipsis;
+      }
+    }
+  }
 }
 
 .loupanDetail {
-    background-color: white;
+  background-color: white;
 
-    .btn-toggle {
-        display: block;
-        background-color: rgb(183, 167, 147);
-        padding: 0.2rem 0px;
-        text-align: center;
-        border-radius: 1rem;
-        font-size: 17px;
-        color: white;
-        line-height: 1.2;
-        margin-top: 0.5rem;
+  .btn-toggle {
+    display: block;
+    background-color: rgb(183, 167, 147);
+    padding: 0.2rem 0px;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 17px;
+    color: white;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+
+  .lpDetail {
+    .rtitle {
+      padding-top: 0.5rem;
     }
 
-    .lpDetail {
-        .rtitle {
-            padding-top: 0.5rem;
+    .detail {
+      font-size: 14px;
+      height: 3.5rem;
+      overflow: hidden;
+
+      &.unfold {
+        height: auto;
+      }
+
+      p {
+        line-height: 2;
+
+        > span {
+          color: #8f8f8f;
         }
 
-        .detail {
-            font-size: 14px;
-            height: 3.5rem;
-            overflow: hidden;
-
-            &.unfold {
-                height: auto;
-            }
-
-            p {
-                line-height: 2;
-
-                >span {
-                    color: #8f8f8f;
-                }
-
-                >i {
-                    font-style: normal;
-                }
-            }
+        > i {
+          font-style: normal;
         }
+      }
     }
+  }
 
-    .carousel-swiper {
+  .carousel-swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .swiper-slide {
+      width: 3.92rem;
+      border-radius: 5px;
+
+      figcaption {
+        display: none;
+      }
+
+      img {
         width: 100%;
-        position: relative;
-        overflow: hidden;
+        height: 2.92rem;
+        border-radius: 5px;
+      }
 
-        .swiper-slide {
-            width: 3.92rem;
-            border-radius: 5px;
+      .desc {
+        line-height: 1.667;
+        font-size: 12px;
+        padding-top: 0.12rem;
 
-            figcaption {
-                display: none;
-            }
-
-            img {
-                width: 100%;
-                height: 2.92rem;
-                border-radius: 5px;
-            }
-
-            .desc {
-                line-height: 1.667;
-                font-size: 12px;
-                padding-top: 0.12rem;
-
-                .dtitle {
-                    color: rgb(143, 143, 143);
-                    font-size: 14px;
-                }
-
-                .txt {
-                    color: rgb(42, 42, 42);
-                    font-size: 14px;
-                }
-            }
+        .dtitle {
+          color: rgb(143, 143, 143);
+          font-size: 14px;
         }
+
+        .txt {
+          color: rgb(42, 42, 42);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .liangdian {
+    .detail {
+      font-size: 14px;
+      color: rgb(143, 143, 143);
+      line-height: 2.083;
+      height: 2.2rem;
+      overflow: hidden;
+
+      &.unfold {
+        height: auto;
+      }
+    }
+  }
+
+  .peitao {
+    .map {
+      border-radius: 0.1rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
     }
 
-    .liangdian {
-        .detail {
-            font-size: 14px;
-            color: rgb(143, 143, 143);
-            line-height: 2.083;
-            height: 2.2rem;
-            overflow: hidden;
+    .detail {
+      padding-top: 0.5rem;
 
-            &.unfold {
-                height: auto;
-            }
+      .item {
+        line-height: 1.8;
+        font-size: 14px;
+        display: flex;
+
+        > span {
+          color: #8f8f8f;
         }
+
+        p {
+          padding-left: 0.04rem;
+          flex: 1;
+        }
+      }
     }
-
-    .peitao {
-        .map {
-            border-radius: .1rem;
-            overflow: hidden;
-            img {
-                width: 100%;
-            }
-        }
-
-        .detail {
-            padding-top: 0.5rem;
-
-            .item {
-                line-height: 1.8;
-                font-size: 14px;
-                display: flex;
-
-                >span {
-                    color: #8f8f8f;
-                }
-
-                p {
-                    padding-left: 0.04rem;
-                    flex: 1;
-                }
-            }
-        }
-    }
+  }
 }
 
 .baoDaoList {
-    padding: 0.4rem;
+  padding: 0.4rem;
 
-    .item {
-        display: flex;
-        margin-bottom: .45rem;
+  .item {
+    display: flex;
+    margin-bottom: 0.45rem;
 
-        .avt {
-            width: 1.8rem;
-            height: 1.8rem;
-            border-radius: 0.1rem;
-        }
-
-        .info {
-            padding-left: 0.2rem;
-            flex: 1;
-            font-size: 14px;
-            color: #2a2a2a;
-            line-height: 1.786;
-            padding-top: .1rem;
-        }
+    .avt {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 0.1rem;
     }
+
+    .info {
+      padding-left: 0.2rem;
+      flex: 1;
+      font-size: 14px;
+      color: #8f8f8f;
+      line-height: 1.786;
+      padding-top: 0.1rem;
+    }
+  }
 }

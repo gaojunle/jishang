@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>融创上海</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="shortcut icon" href="./img/common/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+  <link rel="stylesheet" href="./css/lib/common.css" />
+  <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+  <link rel="stylesheet" href="./css/lib/photoswipe.css" />
+  <link rel="stylesheet" href="./css/lib/artDialog.css" />
+  <link rel="stylesheet" href="./css/lib/default-skin/default-skin.css" />
+  <link rel="stylesheet" href="./css/page/z_huati.css" />
+  <link rel="stylesheet" href="./css/page/quanzi.css" />
+  <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+  <div class="z_huati">
+    <div class="ht_list" style="padding-top: .5rem;">
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+      <a href="" class="ht_item">
+        <img class="icon_ht" src="./img/shequn/icon_ht_1.png" />
+        <div class="info">
+          <div class="title">#落叶的瞬间＃</div>
+          <div class="desc">我们一起记录秋日的美好...</div>
+        </div>
+        <img class="icon_tl" src="./img/shequn/icon_tl.png" />
+      </a>
+    </div>
+  </div>
+
+  <div class="split-logo">
+    <img src="./img/rc-logo-split.png" alt="" />
+  </div>
+  <a href="./04_4发布话题.html" class="fb_ht">发布话题</a>
+  <script src="./js/lib/jquery.min.js"></script>
+  <script src="./js/lib/common.js"></script>
+  <script src="./js/lib/swiper.min.js"></script>
+  <script src="./js/lib/artDialog.js"></script>
+  <script src="./js/lib/photoswipe.min.js"></script>
+  <script src="./js/lib/photoswipe-ui-default.min.js"></script>
+  <script src="js/lib/gallery.js"></script>
+  <script>
+    jQuery(function ($) {
+      var App = {
+        init: function () {
+          this.bindEvent();
+        },
+        bindEvent: function () {
+          $('.js-comment').click(function () {
+            var d = dialog({
+              title: '',
+              padding: 0,
+              content: '<div class="pop-cont">' +
+                '<img class="icon_close" src="./img/common/close.png" alt="">' +
+                '<div class="liuyan-box">\n' +
+                '        <textarea id="ipt_liuyan" cols="30" rows="10" placeholder="留言将由平台筛选后对所有人可见。"></textarea>\n' +
+                '        <div class="limit"><span class="ipt_num">0</span><span>/100</span></div>\n',
+              backdropOpacity: '0.3',
+              okValue: '提交留言',
+              ok: function () {
+                d.close().remove();
+                return false;
+              }
+            });
+            d.showModal();
+            $('.icon_close').click(function () {
+              d.close().remove();
+            })
+
+            $('#ipt_liuyan').on('input', function () {
+              var _val = $(this).val();
+              var limitNum = 100;
+              if (_val.length > limitNum) {
+                $(this).val(_val.substring(0, limitNum));
+                $('.ipt_num').text(limitNum)
+              } else {
+                $('.ipt_num').text(_val.length)
+              }
+            })
+            return false
+          })
+
+        },
+
+      };
+      App.init();
+    });
+  </script>
+
+</body>
+
+</html>
