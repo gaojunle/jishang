@@ -458,6 +458,7 @@ body .tab .tab-cont:nth-of-type(1) {
   line-height: 0.74rem;
   padding-left: 0.38rem;
   box-sizing: border-box;
+  font-size: 14px;
 }
 .doLiuyan .ipt-box {
   position: relative;
