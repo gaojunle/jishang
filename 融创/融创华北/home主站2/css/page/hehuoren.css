@@ -1,0 +1,109 @@
+body .search_header {
+  padding: 0.2rem 0.32rem !important;
+  font-size: 0.3rem;
+}
+.hdHeader {
+  background: white;
+  height: 0.96rem;
+}
+.shop_list.partner_list .item .hdimg {
+  border-radius: 100%;
+}
+.shop_list .item {
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 0.1rem;
+  margin: 0.2rem 0.32rem;
+  padding: 0.2rem 0.32rem;
+}
+.shop_list .item .hdimg {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.1rem;
+}
+.shop_list .item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem 0.2rem;
+}
+.shop_list .item .info .title {
+  font-weight: bold;
+  font-size: 0.3rem;
+}
+.shop_list .item .info .desc {
+  font-size: 0.26rem;
+  color: #939393;
+}
+.menu_1 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background: white;
+  color: #333333;
+}
+.menu_1 .swiper-slide {
+  width: auto;
+  box-sizing: border-box;
+  height: 100%;
+}
+.menu_1 .swiper-slide > span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 0.3rem;
+  padding: 0px 0.4rem;
+}
+.menu_1 .swiper-slide.active {
+  position: relative;
+  color: white;
+  background: #ffa902;
+}
+.cop_info {
+  padding-top: 1px;
+}
+.cop_info .cop_types {
+  padding: 0rem 0.32rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.1rem;
+}
+.cop_info .cop_types img {
+  width: 100%;
+}
+.cop_info .user_info {
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.03);
+  margin: 0.2rem 0.32rem;
+  padding: 0.4rem 0.32rem;
+  border-radius: 0.1rem;
+  padding-bottom: 0.3rem;
+}
+.cop_info .user_info .item {
+  display: flex;
+}
+.cop_info .user_info .hdimg {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.1rem;
+}
+.cop_info .user_info .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.12rem 0.2rem;
+}
+.cop_info .user_info .info .title {
+  font-weight: bold;
+  font-size: 0.3rem;
+}
+.cop_info .user_info .info .desc {
+  font-size: 0.26rem;
+  color: #939393;
+}
+.cop_info .user_info .txt {
+  padding-top: 0.2rem;
+  color: #333333;
+  line-height: 0.46rem;
+  font-size: 0.26rem;
+}

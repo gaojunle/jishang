@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>邻家好店</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
+    <link rel="stylesheet" href="./css/lib/mobileSelect.css">
+    <link rel="stylesheet" href="./css/page/hehuoren.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="search_header">
+        <div class="selcity js-select">
+            <div class="sel-val"></div>
+            <select class="sel-data" data-title="请选择城市" style="display: none;">
+                <option value="1" selected>天津</option>
+                <option value="2">无锡</option>
+                <option value="3">西安</option>
+            </select>
+            <img class="icon-down" src="./img/home/icon_down.png" alt="">
+        </div>
+    </div>
+    <div id="topNav" class="swiper-container menu_1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide active"><span>全部</span></div>
+            <div class="swiper-slide"><span>全运村</span></div>
+            <div class="swiper-slide"><span>时代奥城</span></div>
+            <div class="swiper-slide"><span>星美御</span></div>
+            <div class="swiper-slide"><span>东岸名郡</span></div>
+            <div class="swiper-slide"><span>花园洋都</span></div>
+        </div>
+    </div>
+   <div class="shop_list">
+       <a href="./5_2合伙人列表.html" class="item">
+           <img class="hdimg" src="./img/hehuoren/img_shop.png" alt="">
+           <div class="info">
+               <div class="title">这里是店铺名字</div>
+               <div class="desc">这里是店铺简介这里是店铺简介</div>
+           </div>
+        </a>
+        <a href="./5_2合伙人列表.html" class="item">
+            <img class="hdimg" src="./img/hehuoren/img_shop.png" alt="">
+            <div class="info">
+                <div class="title">这里是店铺名字</div>
+                <div class="desc">这里是店铺简介这里是店铺简介</div>
+            </div>
+         </a>
+         <a href="./5_2合伙人列表.html" class="item">
+            <img class="hdimg" src="./img/hehuoren/img_shop.png" alt="">
+            <div class="info">
+                <div class="title">这里是店铺名字</div>
+                <div class="desc">这里是店铺简介这里是店铺简介</div>
+            </div>
+         </a>
+   </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/mobileSelect.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        var mySwiper = null;
+        var App = {
+            init: function () {
+                this.bindEvent();
+                this.initSelect();
+                this.initMenuSwiper();
+            },
+            bindEvent: function () {
+                this.initCates();
+            },
+            initCates: function () {
+                $('.q_left').on('click', 'li', function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    console.log($(this).index())
+                })
+            },
+            initSelect: function () {
+                $('.js-select').each(function () {
+                    var $this = $(this),
+                        $selData = $this.find('select');
+
+                    if ($selData.length == 0) {
+                        return false;
+                    }
+
+                    var data = [];
+                    $selData.find('option').each(function () {
+                        data.push({ id: $(this).val(), value: $(this).html() })
+                        if ($(this).prop('selected')) {
+                            $this.find('.sel-val').html($(this).html());
+                        }
+                    });
+
+                    new MobileSelect({
+                        trigger: this,
+                        title: $selData.data('title'),
+                        wheels: [
+                            { data: data }
+                        ],
+                        callback: function (indexArr, data) {
+                            console.log(data)
+                            /*TODO 这里处理选择后事件*/
+                            $this.find('.sel-val').html(data[0].value);
+                        }
+                    });
+                })
+            },
+            initMenuSwiper: function () {
+                var that = this;
+
+                mySwiper = new Swiper('#topNav', {
+                    freeMode: true,
+                    freeModeMomentumRatio: 0.5,
+                    slidesPerView: 'auto',
+                    initialSlide: 2,
+                });
+
+                $("#topNav .swiper-container").on('touchstart', function (e) {
+                    e.preventDefault()
+                })
+
+                mySwiper.on('tap', function (swiper, e) {
+                    that.activeSlideByIdx(swiper.clickedIndex)
+                })
+
+                //指定第几个,从0开始，激活
+                that.activeSlideByIdx(0)
+            },
+
+            activeSlideByIdx(index) {
+                var idx = index || 0;
+                var slide = mySwiper.slides[idx]
+                var slideLeft = slide.offsetLeft;
+                var slideWidth = slide.clientWidth;
+                var slideCenter = slideLeft + slideWidth / 2;
+
+                var swiperWidth = mySwiper.container[0].clientWidth;
+                var maxTranslate = mySwiper.maxTranslate();
+                var maxWidth = -maxTranslate + swiperWidth / 2
+
+                // 被点击slide的中心点
+                mySwiper.setWrapperTransition(300)
+                if (slideCenter < swiperWidth / 2) {
+                    mySwiper.setWrapperTranslate(0)
+                } else if (slideCenter > maxWidth) {
+                    mySwiper.setWrapperTranslate(maxTranslate)
+                } else {
+                    var nowTlanslate = slideCenter - swiperWidth / 2
+                    mySwiper.setWrapperTranslate(-nowTlanslate)
+                }
+                $("#topNav  .active").removeClass('active')
+                $("#topNav .swiper-slide").eq(idx).addClass('active');
+                this.updateData(idx)
+            },
+            updateData: function (idx) {
+                console.log(idx);
+            }
+        };
+        App.init();
+    </script>
+</body>
+
+</html>
