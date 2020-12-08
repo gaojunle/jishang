@@ -1,6 +1,9 @@
 body .search_header {
-  padding: 0.2rem 0.32rem !important;
+  padding: 0.1rem 0.32rem !important;
   font-size: 0.3rem;
+}
+body.bt100 {
+  padding-bottom: 1rem;
 }
 .hdHeader {
   background: white;
@@ -106,4 +109,30 @@ body .search_header {
   color: #333333;
   line-height: 0.46rem;
   font-size: 0.26rem;
+}
+.contact_box {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  background: white;
+}
+.contact_box a {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+  color: #333333;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.contact_box a:nth-last-of-type(1) {
+  box-shadow: none;
+}
+.contact_box a img {
+  width: 0.48rem;
+  margin-right: 0.08rem;
 }

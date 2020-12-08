@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创会权益</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/lib/mobileSelect.css">
+    <link rel="stylesheet" href="./css/page/home.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <div class="search_header" style="background: transparent;">
+        <div class="selcity js-select">
+            <div class="sel-val"></div>
+            <select class="sel-data" data-title="请选择城市" style="display: none;">
+                <option value="1" selected>天津</option>
+                <option value="2">无锡</option>
+                <option value="3">西安</option>
+            </select>
+            <img class="icon-down" src="./img/home/icon_down.png" alt="">
+        </div>       
+    </div>
+    <div class="dongtai dt_lsit">
+        <div class="list">
+            <a href="" class="item">
+                <div class="left">
+                    <img src="./img/home/dt_list_1.png" alt="">
+                    <div class="mark">
+                        <img src="./img/home/icon_eye.png" alt="">
+                        <span>2001</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2>惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</h2>
+                    <p>融粉俱乐部 2020-10-30 22:08:38</p>
+                </div>
+            </a>
+            <a href="" class="item">
+                <div class="left">
+                    <img src="./img/home/dt_list_2.png" alt="">
+                    <div class="mark">
+                        <img src="./img/home/icon_eye.png" alt="">
+                        <span>2001</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2>惠民行动 | 中秋佳节赏诗词，融创定制月饼送到家！</h2>
+                    <p>融粉俱乐部 2020-10-30 22:08:38</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="logo-bottom">
+        <img src="./img/home/logo_bottom.png" alt="">
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/mobileSelect.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                },
+                bindEvent: function () {
+                    this.noticeUp();
+                    this.initSelect();
+                },
+                initData: function () {
+                    this.initSwiper();
+                },
+
+                initSwiper: function () {
+                    var swiperBanner = new Swiper('.js-banner-swiper', {
+                        spaceBetween: 0,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                    new Swiper('.js-scale-swiper', {
+                        slidesPerView: 3,
+                        spaceBetween: -6,
+                        centeredSlides: true,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                    new Swiper('.js-carousel-swiper', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        autoplay: 4000,
+                        loop: true,
+                        pagination: '.swiper-pagination'
+                    });
+                },
+
+                noticeUp: function () {
+                    setInterval(function () {
+                        $('.notice ul').animate({
+                            marginTop: '-35px'
+                        }, 500, function () {
+                            $(this).css({ marginTop: "0" }).find(":first").appendTo(this);
+                        })
+                    }, 3000);
+
+                },
+                initSelect: function () {
+                    $('.js-select').each(function () {
+                        var $this = $(this),
+                            $selData = $this.find('select');
+
+                        if ($selData.length == 0) {
+                            return false;
+                        }
+
+                        var data = [];
+                        $selData.find('option').each(function () {
+                            data.push({ id: $(this).val(), value: $(this).html() })
+                            if ($(this).prop('selected')) {
+                                $this.find('.sel-val').html($(this).html());
+                            }
+                        });
+
+                        new MobileSelect({
+                            trigger: this,
+                            title: $selData.data('title'),
+                            wheels: [
+                                { data: data }
+                            ],
+                            callback: function (indexArr, data) {
+                                console.log(data)
+                                /*TODO 这里处理选择后事件*/
+                                $this.find('.sel-val').html(data[0].value);
+                            }
+                        });
+                    })
+                }
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

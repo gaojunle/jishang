@@ -76,7 +76,7 @@ body .tab .tab-cont:nth-of-type(1) {
 }
 body .search_header {
   display: flex;
-  font-size: 13px;
+  font-size: 15px;
   color: #999999;
   padding: 10px 16px;
   background-color: white;
@@ -147,6 +147,7 @@ body .logo-bottom img {
 }
 .ellipsis.ellipsis2 {
   display: -webkit-box;
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 .header {
@@ -431,4 +432,3 @@ body .logo-bottom img {
   display: block;
   width: 0.96rem;
 }
-/*# sourceMappingURL=./common.css.map */
