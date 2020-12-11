@@ -14,6 +14,8 @@ body.bt100 {
 }
 .shop_list .item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #ffffff;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.03);
   border-radius: 0.1rem;
@@ -23,9 +25,9 @@ body.bt100 {
 .shop_list .item .hdimg {
   width: 1.8rem;
   height: 1.8rem;
-  border-radius: 0.1rem;
 }
 .shop_list .item .info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -84,6 +86,8 @@ body.bt100 {
 }
 .cop_info .user_info .item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cop_info .user_info .hdimg {
   width: 1.2rem;
@@ -91,6 +95,7 @@ body.bt100 {
   border-radius: 0.1rem;
 }
 .cop_info .user_info .info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
