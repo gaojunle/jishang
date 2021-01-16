@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>融创华中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./img/common/favicon.ico" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="./css/page/canyu.css" />
+    <script src="./js/lib/viewbox.js"></script>
+</head>
+
+<body>
+    <form action="" class="rbox doLiuyan">
+        <div class="logo-big">
+            <img src="./img/main/logo-big.png" alt="">
+        </div>
+
+        <div class="ipt-box">
+            <textarea name="ly" id="" cols="30" rows="10" placeholder="请在此处输入文字......"></textarea>
+            <div class="ipt-limit" data-limit="500"><span>0</span>/500</div>
+        </div>
+        <div class="fileUp_multi">
+            <div class="img_list">
+                <div class="fileHanlde">
+                    <input type="file" multiple class="fileup" accept=".jpg ,.png ,jpeg" id="chooseImage">
+                </div>
+            </div>
+
+        </div>
+        <div class="tip">
+            温馨提示：<br>
+            1. 您所发布的内容经审核后将于前台发布； <br>
+            2. 图片上传仅限3张，切需单张上传；<br>
+            3. 上传图片需小于1MB。
+        </div>
+    </form>
+
+    <div class="footerBtns">
+        <a href="#" class="js-submit">立即提交</a>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/common.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            var App = {
+                init: function () {
+                    this.initData();
+                    this.bindEvent();
+                    this.uploadImgInit();
+                },
+                bindEvent: function () {
+                    $('.ipt-box textarea').on('input', function () {
+                        var $this = $(this);
+                        var txt = $this.val();
+                        var limit = $this.parents('.ipt-box').find('.ipt-limit').data('limit')
+                        if (txt.length >= limit) {
+                            $this.val($this.val().substring(0, limit))
+                        }
+                        $('.ipt-limit span').html($this.val().length)
+                    })
+
+                    $('.js-submit').click(function () {
+                        alert('提交')
+                    })
+                },
+                uploadImgInit: function () {
+                    $('#chooseImage').on('change', function (e) {//当chooseImage的值改变时，执行此函数
+                        var files = this.files;
+                        console.log(files.length, $('.img_list .item').length)
+                        if ((files.length + $('.img_list .item').length) <= 9) {
+                            $.each(files, function (idx, file) {
+                                var fileFormat = file.name.substring(file.name.lastIndexOf(".")).toLowerCase(),
+                                    src = window.URL.createObjectURL(file); //转成可以在本地预览的格式
+
+                                // 检查是否是图片
+                                if (!fileFormat.match(/.png|.jpg|.jpeg/)) {
+                                    alert('上传错误,文件格式必须为：png/jpg/jpeg');
+                                    return;
+                                } else {
+                                    $('<div class="item"><img class="del" src="./img/main/del.png" alt=""><img class="imgup" src="' + src + '"></div>')
+                                        .insertBefore('.fileHanlde')
+                                    isShowUp();
+                                }
+                            })
+                        } else {
+                            alert('上传图片总数不能超过9个')
+                        }
+
+                    });
+                    $('.img_list').on('click', '.del', function () {
+                        $(this).parents('.item').remove();
+                        isShowUp();
+                    })
+                    function isShowUp() {
+                        if ($('.img_list .item').length >= 9) {
+                            $('.fileHanlde').hide()
+                        } else {
+                            $('.fileHanlde').show()
+                        }
+                    }
+                },
+                initData: function () {
+
+                },
+
+            };
+            App.init();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+.doLiuyan {
+  padding: 0px 0.5rem;
+  padding-bottom: 0.5rem !important;
+}
+.doLiuyan .logo-big {
+  text-align: center;
+  padding: 0.7rem;
+}
+.doLiuyan .logo-big img {
+  width: 2.3rem;
+}
+.doLiuyan .logo2 {
+  text-align: center;
+  padding: 0.7rem;
+}
+.doLiuyan .logo2 img {
+  height: 0.51rem;
+}
+.doLiuyan .selbox {
+  padding-bottom: 0.18rem;
+  position: relative;
+}
+.doLiuyan .selbox::after {
+  content: '';
+  position: absolute;
+  right: 0.39rem;
+  top: 0.27rem;
+  background: url(../../img/my/icon-right.png) 0px 0px no-repeat;
+  width: 0.1rem;
+  height: 0.19rem;
+  background-size: 100% 100%;
+}
+.doLiuyan .selbox select {
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  height: 0.74rem;
+  border-radius: 0.1rem;
+  padding-left: 0.38rem;
+  color: #8f8f8f;
+  font-size: 14px;
+}
+.doLiuyan .selbox select option {
+  color: #8f8f8f;
+}
+.doLiuyan .ipt-box {
+  position: relative;
+}
+.doLiuyan .ipt-box textarea {
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.1rem;
+  background-color: #ffffff;
+  height: 3.7rem;
+  padding: 0.3rem 0.36rem;
+  resize: none;
+  font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+}
+.doLiuyan .ipt-box .ipt-limit {
+  position: absolute;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  font-size: 13px;
+  color: #8f8f8f;
+}
+.doLiuyan .ipt-box .ipt-limit span {
+  color: #8f8f8f;
+}
+.doLiuyan .fileUpBox {
+  position: relative;
+  margin: 0px 0.1rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUpBox .fileup {
+  position: relative;
+  display: block;
+  width: 1.22rem;
+  height: 1.22rem;
+  opacity: 0;
+  z-index: 3;
+}
+.doLiuyan .fileUpBox .cropedBigImg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  z-index: 2;
+  border-radius: 0.1rem;
+}
+.doLiuyan .fileUpBox::after {
+  content: ' ';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.doLiuyan .fileUpBox.multi .cropedBigImg {
+  position: inherit;
+}
+.doLiuyan .fileUpBox.multi::after {
+  display: inline-block;
+  position: inherit;
+}
+.doLiuyan .fileUp_multi {
+  position: relative;
+  margin: 0px 0.1rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUp_multi .img_list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.doLiuyan .fileUp_multi .img_list .item {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.doLiuyan .fileUp_multi .img_list .item .del {
+  width: 0.33rem;
+  position: absolute;
+  top: -0.14rem;
+  right: -0.14rem;
+}
+.doLiuyan .fileUp_multi .img_list .item .imgup {
+  width: 1.22rem;
+  height: 1.22rem;
+  border-radius: 0.1rem;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde {
+  position: relative;
+  display: inline-block;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde .fileup {
+  position: relative;
+  display: block;
+  width: 1.22rem;
+  height: 1.22rem;
+  opacity: 0;
+  z-index: 3;
+}
+.doLiuyan .fileUp_multi .img_list .fileHanlde::after {
+  content: ' ';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1.22rem;
+  height: 1.22rem;
+  background: url(../../img/main/icon-addImg.png) 0px 0px no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.doLiuyan .tip {
+  margin: 0px 0.1rem;
+  font-size: 14px;
+  padding-top: 0.4rem;
+  color: #8f8f8f;
+  line-height: 1.875;
+}
+.myLiuyan {
+  padding: 0.4rem;
+}
+.myLiuyan .item {
+  margin-bottom: 0.7rem;
+}
+.myLiuyan .item .summ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myLiuyan .item .summ .date {
+  font-size: 14px;
+  position: relative;
+  padding-left: 0.24rem;
+  color: #8f8f8f;
+  display: block;
+  height: 12px;
+  line-height: 12px;
+}
+.myLiuyan .item .summ .date::before {
+  content: '';
+  background-color: #2a2a2a;
+  width: 4px;
+  height: 12px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  margin-top: -6px;
+}
+.myLiuyan .item .summ .ly-del {
+  display: inline-block;
+  background-color: #b7a793;
+  width: 0.86rem;
+  padding: 1px 0px;
+  text-align: center;
+  border-radius: 0.4rem;
+  font-size: 14px;
+  color: white;
+  line-height: 1.2;
+}
+.myLiuyan .item .ly-txt {
+  font-size: 14px;
+  color: #8f8f8f;
+  line-height: 1.667;
+  margin-top: 0.2rem;
+  margin-left: 0.24rem;
+}
+.myLiuyan .item .avts {
+  padding: 0.24rem;
+  padding-top: 0.1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.myLiuyan .item .avts .img-box {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.08rem;
+  overflow: hidden;
+  position: relative;
+  margin-right: 0.1rem;
+}
+.myLiuyan .item .avts img {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  display: block;
+}
+.myLiuyan .item .reply {
+  font-size: 14px;
+  padding-top: 0.2rem;
+  padding-left: 0.24rem;
+  line-height: 1.667;
+  background-repeat: no-repeat;
+  background: url(../../img/main/reply_arrow.png) 0.6rem 2px no-repeat;
+  background-size: 0.3rem 0.18rem;
+}
+.myLiuyan .item .reply .reply-cont {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.3rem 0.25rem;
+  font-size: 14px;
+}
+.myLiuyan .item .reply .rc {
+  font-size: 14px;
+  color: #b7a793;
+}

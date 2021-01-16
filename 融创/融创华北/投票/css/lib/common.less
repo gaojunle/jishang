@@ -1,0 +1,317 @@
+@import '../lib/reset.css';
+@import '../lib/popups.css';
+
+@fontGray: #8f8f8f;
+@lineGray: rgba(216, 216, 216, 0.25);
+
+html,
+body {
+	min-height: 100vh;
+	font-size: 0.28rem;
+	color: #2a2a2a;
+
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder {
+		color: rgba(143, 143, 143, 0.6);
+	}
+
+	input:-ms-input-placeholder,
+	textarea:-ms-input-placeholder {
+		color: rgba(143, 143, 143, 0.6);
+	}
+
+	a {
+		color: #2a2a2a;
+	}
+}
+
+body {
+	max-width: 600px;
+	padding: 0px;
+	margin: 0px auto;
+	background: #f4f4f4;
+	color: rgb(42, 42, 42);
+	box-sizing: border-box;
+	padding-bottom: 1rem;
+	&.noPb {
+		padding-bottom: 0px;
+	}
+
+	//补齐flex元素
+	.flex-full-tmp {
+		display: block;
+	}
+	.split-logo {
+		text-align: center;
+		padding: 40px 0px 20px;
+
+		img {
+			width: 2.36rem;
+			opacity: 0.7;
+		}
+	}
+}
+
+.ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	&.ellipsis2 {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+}
+
+.waterfall {
+	-moz-column-count: 2;
+	/* Firefox */
+	-webkit-column-count: 2;
+	/* Safari �� Chrome */
+	column-count: 2;
+	/* 将 div 元素中的文本分为2列，并规定列间1rem像素的间隔。 */
+	-moz-column-gap: 0.1rem;
+	-webkit-column-gap: 0.1rem;
+	column-gap: 0.2rem;
+
+	.item {
+		break-inside: avoid; /*避免元素内部断行并产生新列*/
+		width: 100%;
+	}
+}
+
+.header {
+	height: 0.76rem;
+	padding: 0px 0.4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&.headerH {
+		height: 0.86rem;
+	}
+
+	&.headerHH {
+		height: 1.2rem;
+	}
+
+	.logo {
+		height: 20px;
+	}
+
+	.msg {
+		font-size: 12px;
+	}
+
+	.selcity {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		select {
+			border: none;
+			font-size: 15px;
+			color: rgb(143, 143, 143);
+		}
+
+		.icon-down {
+			height: 8px;
+			margin-left: 6px;
+		}
+	}
+}
+
+.footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 82px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 20px;
+	background: white;
+	z-index: 100;
+
+	&.fullScreen {
+		padding-bottom: 12px;
+	}
+
+	a {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 12px;
+		color: rgb(143, 143, 143);
+		text-align: center;
+
+		&::before {
+			content: '';
+			width: 38px;
+			height: 38px;
+			display: inline-block;
+			padding-bottom: 5px;
+			margin-top: -5px;
+		}
+
+		&.sy {
+			&::before {
+				background: url(../../img/common/navs/sy.png) center center
+					no-repeat;
+				background-size: 27px 25px;
+			}
+		}
+
+		&.fl {
+			&::before {
+				background: url(../../img/common/navs/fl.png) center center
+					no-repeat;
+				background-size: 28px 23px;
+			}
+		}
+
+		&.sq {
+			&::before {
+				background: url(../../img/common/navs/sq.png) center center
+					no-repeat;
+				background-size: 26px 26px;
+			}
+		}
+
+		&.fw {
+			&::before {
+				background: url(../../img/common/navs/fw.png) center center
+					no-repeat;
+				background-size: 26px 25px;
+			}
+		}
+
+		&.wd {
+			&::before {
+				background: url(../../img/common/navs/wd.png) center center
+					no-repeat;
+				background-size: 18px 25px;
+			}
+		}
+
+		&.on {
+			color: rgb(42, 42, 42);
+
+			&.sy {
+				&::before {
+					background: url(../../img/common/navs/sy-on.png) center
+						center no-repeat;
+					background-size: 27px 25px;
+				}
+			}
+
+			&.fl {
+				&::before {
+					background: url(../../img/common/navs/fl-on.png) center
+						center no-repeat;
+					background-size: 28px 23px;
+				}
+			}
+
+			&.sq {
+				&::before {
+					background: url(../../img/common/navs/sq-on.png) center
+						center no-repeat;
+					background-size: 26px 26px;
+				}
+			}
+
+			&.fw {
+				&::before {
+					background: url(../../img/common/navs/fw-on.png) center
+						center no-repeat;
+					background-size: 26px 25px;
+				}
+			}
+
+			&.wd {
+				&::before {
+					background: url(../../img/common/navs/wd-on.png) center
+						center no-repeat;
+					background-size: 18px 25px;
+				}
+			}
+		}
+	}
+}
+
+.footerBtns {
+	position: fixed;
+	bottom: -1px;
+	left: 0px;
+	width: 100%;
+	height: .86rem;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+	text-align: center;
+	background-color: rgb(42, 42, 42);
+
+	a {
+		display: block;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		color: rgb(255, 255, 255);
+		font-size: 15px;
+		position: relative;
+
+		&:nth-last-of-type(1) {
+			&::after {
+				content: none;
+			}
+		}
+
+		&::after {
+			display: block;
+			content: '';
+			width: 1px;
+			height: 39px;
+			background-color: rgba(255, 255, 255, 0.402);
+			position: absolute;
+			top: 10px;
+			right: 0px;
+		}
+	}
+}
+
+.banner-swiper {
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	.swiper-slide {
+		img {
+			width: 100%;
+		}
+	}
+
+	.swiper-pagination-bullets {
+		bottom: 5px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 4px;
+		height: 4px;
+		display: inline-block;
+		border-radius: 100%;
+		background: white;
+		opacity: 0.5;
+
+		&.swiper-pagination-bullet-active {
+			opacity: 1;
+		}
+	}
+}
