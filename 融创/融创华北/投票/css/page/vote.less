@@ -40,8 +40,9 @@
 .huati {
 	padding: 0px 0.32rem !important;
 	.item {
+		position: relative;
 		display: inline-block;
-		margin-bottom: 0.1rem;
+		margin-bottom: 0.2rem;
 		background-color: #fff;
 		border-radius: 0.1rem;
 		overflow: hidden;
@@ -49,7 +50,17 @@
 			display: block;
 			width: 100%;
 		}
-
+		.num_box {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			color: white;
+			background-color: rgb(209, 0, 0);
+			border-radius: 0.1rem 0px 0.1rem 0px;
+			font-size: 11px;
+			text-align: center;
+			padding: 1px 0.13rem;
+		}
 		.info {
 			padding: 0.1rem 0.2rem;
 			line-height: 1.667;
@@ -90,7 +101,8 @@
 			}
 			.abandon {
 				font-size: 12px;
-				border: 1px solid #444;
+				border: 1px solid rgba(110, 110, 110, 0.8);
+				color: rgb(68, 68, 68);
 				border-radius: 10px;
 				padding: 1px 0.15rem;
 				transform: scale(0.9);
@@ -131,10 +143,10 @@
 		font-size: 14px;
 		width: 100%;
 		border-radius: 0px;
-		color: white;
 		height: 0.62rem;
 		border-radius: 0.1rem;
 		background-color: rgb(244, 244, 244);
+		outline: none;
 	}
 
 	a {
@@ -227,7 +239,7 @@
 		.ht {
 			display: inline-block;
 			border-width: 1px;
-			border-color: rgb(143, 143, 143);
+			border-color: rgba(143, 143, 143, 0.5);
 			border-style: solid;
 			border-radius: 50%;
 			padding: 0.2rem;

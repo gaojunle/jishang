@@ -31,7 +31,7 @@
         <div class="vote_heart">
             <div class="ht">
                 <!-- <img src="./img/vote/heart.png" alt=""> -->
-                <img src="./img/vote/heart_on.png" alt="">
+                <img src="./img/vote/heart.png" alt="">
             </div>
             <p>1020</p>
         </div>
@@ -42,6 +42,12 @@
             </div>
         </div>
     </div>
+    <div class="footerBtns">
+        <a href="./01首页.html">首页</a>
+        <a href="">分享</a>
+        <a href="" class="js_heart">点赞</a>
+        <a href="./03我要参与.html">参与</a>
+    </div>
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/common.js"></script>
     <script src="./js/lib/mobileSelect.js"></script>
@@ -51,6 +57,7 @@
             var App = {
                 init: function () {
                     this.initSwiper()
+                    this.bindHeart()
                 },
                 initSwiper: function () {
                     var swiperBanner = new Swiper('.js-banner-swiper', {
@@ -61,7 +68,18 @@
                         pagination: '.swiper-pagination'
                     });
 
-                }
+                },
+                bindHeart() {
+                    $('.js_heart').click(function () {
+                        var $hBox = $('.vote_heart')
+                        if ($hBox.find('img').attr('src').indexOf('heart_on') == -1) {
+                            $hBox.find('img').attr('src', './img/vote/heart_on.png')
+                            $hBox.find('p').text(+$.trim($hBox.find('p').text()) + 1)
+                        }
+
+                        return false
+                    })
+                },
             };
             App.init();
         })
