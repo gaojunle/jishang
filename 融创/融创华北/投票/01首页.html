@@ -87,6 +87,66 @@
                     <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
                 </div>
             </a>
+            <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/3.png" alt="">
+                <span class="num_box">5</span>
+                <div class="info">
+                    <div class="name">马小冰</div>
+                    <div class="pname">天津融创观澜壹号</div>
+                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                </div>
+            </a>
+            <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/4.png" alt="">
+                <span class="num_box">6</span>
+                <div class="info">
+                    <div class="name">马小冰</div>
+                    <div class="pname">天津融创观澜壹号</div>
+                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                </div>
+            </a>
+            <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/4.png" alt="">
+                <span class="num_box">7</span>
+                <div class="info">
+                    <div class="name">马小冰</div>
+                    <div class="pname">天津融创观澜壹号</div>
+                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                </div>
+            </a>
+            <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/4.png" alt="">
+                <span class="num_box">8</span>
+                <div class="info">
+                    <div class="name">马小冰</div>
+                    <div class="pname">天津融创观澜壹号</div>
+                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                </div>
+            </a>
+            <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/4.png" alt="">
+                <span class="num_box">9</span>
+                <div class="info">
+                    <div class="name">马小冰</div>
+                    <div class="pname">天津融创观澜壹号</div>
+                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
+                </div>
+                <div class="hearts">
+                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="pop_box js_rule">
@@ -121,6 +181,16 @@
                     this.bindPopClose()
                     this.bindHeart()
                     this.bindAbandon()
+                    this.resetWatherItem()
+                },
+                resetWatherItem() {
+                    var items = $('.waterfall .item')
+                    var temp = [];
+                    var temp1 = []
+                    for (var i = 0; i < items.length; i++) {
+                        i % 2 == 0 ? temp.push(items[i]) : temp1.push(items[i])
+                    }
+                    $('.waterfall').empty().append(temp.concat(temp1))
                 },
                 initSwiper: function () {
                     var swiperBanner = new Swiper('.js-banner-swiper', {
