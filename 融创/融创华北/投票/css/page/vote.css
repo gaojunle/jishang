@@ -30,15 +30,16 @@
   z-index: 10;
 }
 .huati {
-  padding: 0px 0.32rem !important;
+  padding: 0px 16px !important;
 }
 .huati .item {
   position: relative;
   display: inline-block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 16px;
   background-color: #fff;
   border-radius: 0.1rem;
   overflow: hidden;
+  width: calc(50% - 8px);
 }
 .huati .item .avt {
   display: block;

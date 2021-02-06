@@ -35,7 +35,7 @@
         <a href="javascript:;" class="js-search">搜索</a>
     </div>
     <div class="rbox huati">
-        <div class="list waterfall">
+        <div id="masonry" class="list js-waterfall">
             <a href="./02投票助力.html" class="item">
                 <img class="avt" src="./img/vote/1.png" alt="">
                 <span class="num_box">1</span>
@@ -62,9 +62,8 @@
                         <span href="javascript:;" class="abandon">退出</span>
                     </div>
                 </div>
-            </a>
-            <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/3.png" alt="">
+            </a> <a href="./02投票助力.html" class="item">
+                <img class="avt" src="./img/vote/1.png" alt="">
                 <span class="num_box">3</span>
                 <div class="info">
                     <div class="name">马小冰</div>
@@ -76,7 +75,7 @@
                 </div>
             </a>
             <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/4.png" alt="">
+                <img class="avt" src="./img/vote/2.png" alt="">
                 <span class="num_box">4</span>
                 <div class="info">
                     <div class="name">马小冰</div>
@@ -85,10 +84,13 @@
                 </div>
                 <div class="hearts">
                     <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
+                    <div class="ab_box">
+                        <span href="javascript:;" class="abandon">退出</span>
+                    </div>
                 </div>
             </a>
             <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/3.png" alt="">
+                <img class="avt" src="./img/vote/1.png" alt="">
                 <span class="num_box">5</span>
                 <div class="info">
                     <div class="name">马小冰</div>
@@ -100,7 +102,7 @@
                 </div>
             </a>
             <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/4.png" alt="">
+                <img class="avt" src="./img/vote/1.png" alt="">
                 <span class="num_box">6</span>
                 <div class="info">
                     <div class="name">马小冰</div>
@@ -112,32 +114,8 @@
                 </div>
             </a>
             <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/4.png" alt="">
+                <img class="avt" src="./img/vote/1.png" alt="">
                 <span class="num_box">7</span>
-                <div class="info">
-                    <div class="name">马小冰</div>
-                    <div class="pname">天津融创观澜壹号</div>
-                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
-                </div>
-                <div class="hearts">
-                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
-                </div>
-            </a>
-            <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/4.png" alt="">
-                <span class="num_box">8</span>
-                <div class="info">
-                    <div class="name">马小冰</div>
-                    <div class="pname">天津融创观澜壹号</div>
-                    <div class="desc ellipsis">美丽的花朵，我的家园楼美丽的花朵，我的家园楼</div>
-                </div>
-                <div class="hearts">
-                    <div class="heart"><img src="./img/vote/heart.png" alt=""><span>2440</span></div>
-                </div>
-            </a>
-            <a href="./02投票助力.html" class="item">
-                <img class="avt" src="./img/vote/4.png" alt="">
-                <span class="num_box">9</span>
                 <div class="info">
                     <div class="name">马小冰</div>
                     <div class="pname">天津融创观澜壹号</div>
@@ -172,6 +150,8 @@
     <script src="./js/lib/common.js"></script>
     <script src="./js/lib/swiper.min.js"></script>
     <script src="./js/lib/popups.js"></script>
+    <script src="./js/lib/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/lib/masonry.min.js"></script>
     <script>
         jQuery(function ($) {
             var App = {
@@ -184,13 +164,32 @@
                     this.resetWatherItem()
                 },
                 resetWatherItem() {
-                    var items = $('.waterfall .item')
-                    var temp = [];
-                    var temp1 = []
-                    for (var i = 0; i < items.length; i++) {
-                        i % 2 == 0 ? temp.push(items[i]) : temp1.push(items[i])
-                    }
-                    $('.waterfall').empty().append(temp.concat(temp1))
+                    var $objbox = $("#masonry");
+                    var gutter = 15;
+                    var centerFunc, $top0;
+                    $objbox.imagesLoaded(function () {
+                        $objbox.masonry({
+                            itemSelector: "#masonry > .item",
+                            gutter: gutter,
+                            isAnimated: true
+                        });
+                        centerFunc = function () {
+                            $top0 = $objbox.children("[style*='top: 0']");
+                            $objbox.css("left", ($objbox.width() - ($top0.width() * $top0.length + gutter * ($top0.length - 1))) / 2).parent().css("overflow", "hidden");
+                        };
+                        centerFunc();
+                    });
+                    var tur = true;
+                    $(window).resize(function () {
+                        if (tur) {
+                            setTimeout(function () {
+                                tur = true;
+                                centerFunc();
+                            },
+                                1000);
+                            tur = false;
+                        }
+                    });
                 },
                 initSwiper: function () {
                     var swiperBanner = new Swiper('.js-banner-swiper', {
