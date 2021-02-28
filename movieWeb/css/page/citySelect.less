@@ -1,0 +1,73 @@
+.v-search {
+	background: transparent;
+	.van-search__content {
+		background: #fff;
+	}
+}
+.hostCityBox {
+	width: 100%;
+	font-size: 14px;
+	.base-wrap {
+		overflow: hidden;
+		.title {
+			display: flex;
+			align-items: center;
+			box-sizing: border-box;
+			padding: 0.24rem 0.24rem 0.16rem;
+			color: #999;
+			// background: #ccc;
+		}
+		.icon-refresh {
+			font-size: 17px;
+			margin-top: 0.15rem;
+			color: #bbb;
+		}
+		.panel {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 0.48rem;
+			.item {
+				text-align: center;
+				background: rgba(255, 255, 255, 1);
+				border-radius: 0.08rem;
+				border: 0.01rem solid rgba(229, 229, 229, 1);
+				padding: 0.1rem 0.25rem;
+				margin-right: 0.1rem;
+				&.active {
+					border-color: #ee3d37;
+					color: #ee3d37;
+				}
+			}
+			&::after {
+				display: block;
+				content: '';
+				width: 200px;
+				border: 1px solid transparent;
+			}
+		}
+	}
+}
+body {
+	background-color: #f3f5f7;
+}
+
+.van-index-bar {
+	background-color: #f3f5f7;
+	padding: 0px;
+	.van-index-anchor {
+		padding: 0px;
+	}
+
+	.van-index-anchor .indexWord {
+		padding-left: 15px;
+	}
+
+	.van-index-anchor .van-cell::after {
+		right: 25px;
+	}
+
+	.van-index-bar__index {
+		padding: 1px 8px 1px 16px;
+		font-size: 13px;
+	}
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>影片详情</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/filmDetail.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="film_detail">
+        <div class="bg">
+            <img src="./img/home/m1.jpg" alt="" class="film_img_bg">
+            <div class="shareIcon">
+                <van-icon name="share-o" />
+            </div>
+        </div>
+        <div class="info_box">
+            <div class="info_main">
+                <div class="video_box">
+                    <img src="./img/home/m1.jpg" alt="">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAEZElEQVRoQ+Wb32tcRRTHPzWpIq0PSmuV2h+2iD4IQlF8kLQbLI2piljoQxED2cSHhEAg0McQ8ugfEEhgQ4h5KFaxrdVN1rYJrNpC2k0eFMU2iiGp2qZtaBal6aaNfMu95XazP+7u3tlf9zwuM2fOZ2Zn7jlnzqzDnDwObAE2A08DTwEbAP1eaw27AiwD/wFx4BZwA7gG3DVh2jqPlW4EdgEvWqCP5an/PnAd+BP4Hfg3Tz1runkF/ALwKrAN8Eqnbazg54GfgKuFghdq3FbgDeDZQg1x2V+rPgn85bK9ZyusvfgWsDPfgQvs9wdw3tr7OanKZ4VfsmB1+JRSdKj9AMzkYkQuwDUW6Cu5DFCEtr8CPwLa61nFLfATQAPwXFaNpWnwN/Cd9YnLaIEb4CeBd4FnSsPietSbwLfAnUw9sgFrZd+vAFibUdCnMzktmYDlNAhW3lIliT5Z4XR7OhPwPuDlSiJ12KqD7PtUtqcD1qenvkJhbbPHU32yUgHLqThsOfmVzKyg5Itk5yQV8IESelBeT7A8srNOpcnA8o31Caom+cbpeycDf2iFddUErNj6lA3kBFaId7CaSB0sD1fZCdxoxbPVyDwLRARmAytTccRA8F4uk6fA4pgyJzbwa8CbJqxraGjY1NjYuHNkZORyLBZbMjGGS50XlDWxgT8w4UIGg8EdAwMDR2tra9evrKwsj46OjrW0tJxZWFhIuDTSy2b/AF8LWAHCx0C+Cbe0Ro2Pjx+qr69XWPlQ4vH4zaGhoROdnZ0XvaRxoUt/688EvB14x0WHnJtEo9HDdXV1+1N1nJ+fn+nt7T0eCoV0oBRLwgLeA7xuYsRMwBpvdXV1dXp6+kJbW9vJycnJ2yZsSNJ5UcBaAeWSPZdswPaAiUTiTiQSGWtqajqzuLio5LwpmRGwMe/KLbBNt7S0dGNwcPCrrq6umCHiawL+yLoC8XyMXIFtA+bm5q50d3d/Pjw8POexUXEBBx13PZ7qzxfY2t/3o9HouUAg8KWHRiUE/IkpD6sQYBuyo6Pj076+PoV5Xsg9XwL77i9ddofW7Ozs5Z6enuOmDi3ffZbeBnZ7cSIk63B7aMnxCIfDY83NzUVxPErqWk5NTZ1vb28/VUzX0nfBg7HwcGJi4lAgEFgTHoZCIbmPl0xsoww6FR4OG00AtLa27ujv7z9aU1OzPpFILEcikdFgMHi2RAkAXameLmaK57dYLKbSpFLJIyke3yXxNOu+StMK2HeJeEEb87pKtXGtMsaUVy2yqRov01QCoRP6gfj+ulST4LsLcUFXQ8nDOasS95HjI1NRy16g3Kru3J59v1hliWvaZytbeq+Mq+/SweddtiSFvipMs2fQV6WHNrRWWtU9z7vdREVu52lxqW27r8qHnQtWLgXiKjxTgbgegbiWbNW06RT56gmAcxJ888gjeeVNP+PRLeLP5fCMJxlcf3XluKv+oVaqvW4/xdtkVdQ7n+LpxJfcczzFU0nToumneP8D0oqQTRl74ikAAAAASUVORK5CYII="
+                        class="icon_play">
+                </div>
+                <div class="f_desc_box">
+                    <div class="f_name">你好，李焕英</div>
+                    <div class="f_desc">中国大陆/128分钟/喜剧</div>
+                    <div class="f_desc">上映时间：2021-02-12</div>
+                </div>
+            </div>
+            <div class="info_more">
+                <div class="item">
+                    <div class="title">简介</div>
+                    <div class="desc" :class="{unfold:unFoldStatus}"> 刚考上大学的女孩贾晓玲（贾玲 饰）意外穿越回1981年，与正值青春的母亲李焕英（张小斐
+                        饰）相遇。为了让妈妈更高兴，她变身亲妈闺蜜，给亲妈张罗对象。不仅用激将法催妈谈恋爱，还神助攻“厂二代”沈光林（沈腾 饰）向李焕英表达爱意，并因此开启了一段啼笑皆非、新奇有趣的意外之旅……
+                    </div>
+                    <div class="toggle_box" :class="{unfold:unFoldStatus}" @click="toggleDesc">
+                        <van-icon class="icon_fold" name="arrow-up" />
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">演职人员</div>
+                    <div class="role_img_list scrollXBox">
+                        <van-image v-for="(item,idx) in roleImgList" fit="cover" :src="item"
+                            @click="imagePreview(idx)" />
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">剧照</div>
+                    <div class="jz_img_list scrollXBox">
+                        <van-image v-for="(item,idx) in jzImgList" fit="cover" :src="item" @click="imagePreview(idx)" />
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_tip">没有更多数据～</div>
+        </div>
+        <a href="./01-2选择地址.html" class="btn-box">
+            <van-button round type="danger" style="width: 100%;">选座购票</van-button>
+        </a>
+    </div>
+
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                unFoldStatus: false,
+                roleImgList: [
+                    'https://img01.yzcdn.cn/vant/cat.jpeg',
+                    './img/home/m1.jpg'
+                ],
+                jzImgList: [
+                    'https://img01.yzcdn.cn/vant/cat.jpeg',
+                    'https://img01.yzcdn.cn/vant/cat.jpeg',
+                    'https://img01.yzcdn.cn/vant/cat.jpeg',
+                    'https://img01.yzcdn.cn/vant/cat.jpeg',
+                    './img/home/m1.jpg'
+                ]
+            },
+            mounted() {
+                // 调用函数组件，弹出一个 Toast
+                //vant.Toast('提示');
+            },
+            methods: {
+                toggleDesc() {
+                    this.unFoldStatus = !this.unFoldStatus
+                },
+                imagePreview(idx) {
+                    vant.ImagePreview({
+                        images: this.roleImgList,
+                        startPosition: idx,
+                        closeable: true,
+                    });
+                }
+            }
+        });
+
+        // 可以通过下面的方式手动注册
+        Vue.use(vant.Lazyload);
+    </script>
+</body>
+
+</html>

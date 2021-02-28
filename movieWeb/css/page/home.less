@@ -1,0 +1,122 @@
+.wraper {
+	padding: 0.1rem 0.3rem;
+	font-size: 0.28rem;
+	background: white;
+	min-height: 90vh;
+}
+
+.bannerSwipe {
+	.swipe-link {
+		img {
+			width: 100%;
+			border-radius: 3px;
+		}
+	}
+}
+.tabList {
+	padding-top: 0.2rem;
+	.van-tabs__nav {
+		width: 50%;
+		margin: 0px auto;
+		.van-tab__text {
+			font-size: 0.36rem;
+			font-weight: 700;
+		}
+	}
+}
+
+.hot_list {
+	box-sizing: border-box;
+	background: #fff;
+
+	.item {
+		display: flex;
+		padding-top: 0.3rem;
+		.imgBox {
+			width: 1.4rem;
+			position: relative;
+			margin-right: 0.2rem;
+		}
+		.desc_box {
+			display: flex;
+			flex: 1;
+			align-items: center;
+			.content-main-content {
+				height: 100%;
+				box-sizing: border-box;
+				margin-right: 0.15rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding-bottom: 0.1rem;
+				.content-name {
+					font-size: 0.36rem;
+					color: #333;
+					font-weight: 700;
+				}
+				.tip1 {
+					color: #ffb415;
+					font-size: 0.22rem;
+					padding-top: 0.1rem;
+					.num {
+						font-weight: 700;
+						font-size: 0.26rem;
+						margin-left: 0.1rem;
+					}
+				}
+				.desc {
+					font-size: 0.26rem;
+					color: #aaa;
+					line-height: 1.5;
+				}
+			}
+		}
+		&:after {
+			content: '';
+			display: block;
+			border-bottom: 1px solid #eee;
+			-webkit-transform: translateY(0.18rem);
+			transform: translateY(0.18rem);
+		}
+	}
+
+	.CinemaBtn {
+		color: #fff;
+		font-size: 0.28rem;
+		background: #ee3d37;
+		display: table;
+		padding: 0.14rem 0.28rem;
+		box-shadow: 0 0.03rem 0.06rem 0 #d8a7a5;
+		border-radius: 0.35rem;
+		&.warning {
+			background: #ffb415 !important;
+			box-shadow: 0 0.03rem 0.06rem 0 rgba(255, 180, 21, 0.4) !important;
+		}
+	}
+
+	.scrollXBox {
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+		overflow-y: hidden;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		background: #fff;
+		.date-item {
+			display: inline-block;
+			font-size: 0.26rem;
+			color: #aaa;
+			padding: 0.05rem 0.3rem;
+			border: 1px solid #eee;
+			border-radius: 0.5rem;
+			margin-right: 0.2rem;
+			&.active {
+				border-color: #ee3d37;
+				color: #ee3d37;
+			}
+		}
+	}
+}

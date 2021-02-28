@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>电影站</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/page/home.css" />
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/page/citySelect.css" />
+    <script src="./js/lib/bak/viewbox.js"></script>
+
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/city.js"></script>
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <van-search class="v-search" v-model="searchVal" shape="round" placeholder="输入城市名或拼音"></van-search>
+        <div class="hostCityBox">
+            <div class="base-wrap" v-for="(item, index) in quickPanelData" :classesAttr="item" :key="index">
+                <div class="title">{{item.title}}</div>
+                <div class="panel host" ref="host">
+                    <span class="item ellipsis" :class="{active:curCity==cy}" v-for="(cy,idx) in item.data" :key="idx"
+                        @click="selectCity(cy)">{{cy}}</span>
+                    <van-icon name="replay" @click="refreshCurCity" v-if="item.title=='当前城市'" class="icon-refresh" />
+                </div>
+            </div>
+        </div>
+        <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
+            <van-index-anchor v-if="item.list.length>0" v-for="(item,index) in cityList" :key="index"
+                :index="item.initial">
+                <span class="indexWord">{{item.initial}}</span>
+                <van-cell @click="chooseCity(citem)" v-for="(citem,cindex) in item.list" :key="cindex"
+                    :title="citem.name" />
+            </van-index-anchor>
+        </van-index-bar>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                searchVal: '',
+                curCity: '北京',
+                quickPanelData: [
+                    {
+                        title: "当前城市",
+                        data: ['北京'],
+                    },
+                    {
+                        title: "历史城市",
+                        data: ['北京', '杭州'],
+                    },
+                    {
+                        title: "热门城市",
+                        data: ["北京", '杭州'],
+                    }
+                ],
+            },
+            computed: {
+                cityList() {
+                    var filterCitys = [];
+                    cityDts.city.forEach(c => {
+                        let tempCitys = {
+                            initial: c.initial,
+                            list: c.list.filter(item => {
+                                return item.name.indexOf(this.searchVal) > -1 || item.pinyin.toLowerCase().indexOf(this.searchVal) > -1
+                            })
+                        }
+                        filterCitys.push(tempCitys)
+                    })
+                    console.log(filterCitys)
+                    return filterCitys
+                }
+            },
+            mounted() {
+                // 调用函数组件，弹出一个 Toast
+                //vant.Toast('提示');
+            },
+            methods: {
+                selectCity(citem) {
+                    console.log(citem)
+                },
+                chooseCity(citem) {
+                    console.log(citem.name)
+                },
+                refreshCurCity() {
+                    console.log('refreshCurCity')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

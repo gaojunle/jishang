@@ -1,0 +1,68 @@
+.v-search {
+  background: transparent;
+}
+.v-search .van-search__content {
+  background: #fff;
+}
+.hostCityBox {
+  width: 100%;
+  font-size: 14px;
+}
+.hostCityBox .base-wrap {
+  overflow: hidden;
+}
+.hostCityBox .base-wrap .title {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.24rem 0.24rem 0.16rem;
+  color: #999;
+}
+.hostCityBox .base-wrap .icon-refresh {
+  font-size: 17px;
+  margin-top: 0.15rem;
+  color: #bbb;
+}
+.hostCityBox .base-wrap .panel {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.48rem;
+}
+.hostCityBox .base-wrap .panel .item {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 0.08rem;
+  border: 0.01rem solid #e5e5e5;
+  padding: 0.1rem 0.25rem;
+  margin-right: 0.1rem;
+}
+.hostCityBox .base-wrap .panel .item.active {
+  border-color: #ee3d37;
+  color: #ee3d37;
+}
+.hostCityBox .base-wrap .panel::after {
+  display: block;
+  content: '';
+  width: 200px;
+  border: 1px solid transparent;
+}
+body {
+  background-color: #f3f5f7;
+}
+.van-index-bar {
+  background-color: #f3f5f7;
+  padding: 0px;
+}
+.van-index-bar .van-index-anchor {
+  padding: 0px;
+}
+.van-index-bar .van-index-anchor .indexWord {
+  padding-left: 15px;
+}
+.van-index-bar .van-index-anchor .van-cell::after {
+  right: 25px;
+}
+.van-index-bar .van-index-bar__index {
+  padding: 1px 8px 1px 16px;
+  font-size: 13px;
+}

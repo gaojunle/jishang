@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>选择地址</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/addrSelect.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+</head>
+
+<body class="mt10">
+    <div id="app" class="sel_addr">
+        <div class="topSearchBar">
+            <a href="./选择城市.html" class="address-text flex flex-m">
+                <span class="lable">北京市</span>
+                <i class="icon-down van-icon van-icon-play"></i>
+            </a>
+            <van-search class="v-search" v-model="filter.searchVal" shape="round" placeholder="搜影片、影院" />
+        </div>
+        <div class="scrollXBox">
+            <div class="date-item" :class="{active:filter.selectedDate==item}" v-for="(item,idx) in dateItemList"
+                @click="handleSelDate(item)">{{formatDate(item)}}</div>
+        </div>
+        <div class="select_bar">
+            <div v-for="(item,idx) in filterTypes" :key="idx" class="s_item" @click="popFilterBox(item,idx)">
+                <span>{{item.name}}</span>
+                <van-icon class="icon_arrow" name="play" />
+            </div>
+        </div>
+        <div class="film_list">
+            <div class="item" @click="selAddr(item)" v-for="(item,idx) in filmList" :key="idx">
+                <div class="left">
+                    <div class="title">{{item.f_title}}</div>
+                    <div class="desc">{{item.f_addr}}</div>
+                    <div class="desc">近期场次：<span>{{item.f_date.join(' | ')}}</span></div>
+                </div>
+                <div class="right">
+                    <div class="price"><span class="orange">{{item.f_price}}元</span>起</div>
+                    <div class="distance">{{item.f_distance}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 弹出过滤框 -->
+        <van-popup v-model="showFilterPop" position="top" class="filter_pop_box"
+            :style="{ height: filter.typeIdx == 1?'auto':'50%' }">
+            <div class="select_bar">
+                <div v-for="(item,idx) in filterTypes" :key="idx" class="s_item" :class="{active:filter.typeIdx==idx}"
+                    @click="popFilterBox(item,idx)">
+                    <span>{{item.name}}</span>
+                    <van-icon class="icon_arrow" name="play" />
+                </div>
+            </div>
+            <van-list class="list_areas" v-show="filter.typeIdx == 0">
+                <van-cell class="l_item" v-for="(item,idx) in listAreas" :key="idx" @click="selectArea(item)">
+                    <span class="i_label">{{item.label}}</span><span class="i_value">{{item.num}}家</span>
+                </van-cell>
+            </van-list>
+            <van-list class="list_areas" v-show="filter.typeIdx == 1">
+                <van-cell class="l_item" v-for="(item,idx) in listDistances" :key="idx" @click="selectArea(item)">
+                    <span class="i_label">{{item.label}}</span>
+                </van-cell>
+            </van-list>
+            <van-list class="list_others" v-show="filter.typeIdx == 2">
+                <div class="item" v-for="(item,idx) in listOthers">
+                    <div class="title">{{item.title}}</div>
+                    <div class="o_list">
+                        <span class="choose-item" :class="{active:filter.othersIds.indexOf(citem.m_id)>-1}"
+                            v-for="(citem,index) in item.list" :key="index"
+                            @click="selectOther(citem)">{{citem.label}}</span>
+                    </div>
+                </div>
+            </van-list>
+        </van-popup>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showFilterPop: true,
+                filter: {
+                    city: '北京市',
+                    searchVal: '',
+                    selectedDate: '2021-03-01',
+                    typeIdx: 2, // 弹出层选中是哪项
+                    areaIds: 0,
+                    distanceId: 0,
+                    othersIds: []
+                },
+                othersIds: [0, 2],
+                filterTypes: [
+                    {
+                        type: 'all',
+                        name: '区域'
+                    },
+                    {
+                        type: 'distance',
+                        name: '距离近'
+                    },
+                    {
+                        type: 'area',
+                        name: '筛选'
+                    }
+                ],
+                listAreas: [{
+                    id: 0,
+                    label: '全部',
+                    num: 100
+                }, {
+                    id: 1,
+                    label: '东城区',
+                    num: 12
+                }, {
+                    id: 2,
+                    label: '西城区',
+                    num: 4
+                }],
+                listDistances: [{
+                    id: 0,
+                    label: '距离最近'
+                }, {
+                    id: 1,
+                    label: '价格最低'
+                }],
+                listOthers: [
+                    {
+                        title: '开放时间',
+                        list: [
+                            {
+                                m_id: 0,
+                                label: '12点以前'
+                            },
+                            {
+                                m_id: 1,
+                                label: '2点到18点'
+                            },
+                        ]
+                    },
+                    {
+                        title: '放映影厅',
+                        list: [
+                            {
+                                m_id: 2,
+                                label: '普通厅'
+                            },
+                            {
+                                m_id: 3,
+                                label: '特殊厅'
+                            },
+                        ]
+                    },
+                    {
+                        title: '品牌',
+                        list: [
+                            {
+                                m_id: 4,
+                                label: '大地影院'
+                            },
+                            {
+                                m_id: 5,
+                                label: '中影国际影城'
+                            }
+                        ]
+                    }
+                ],
+                dateItemList: ['2021-03-01', '2021-03-02', '2021-03-03', '2021-03-04'],
+                filmList: [
+                    {
+                        f_id: '111',
+                        f_title: '北京百老汇影城apm购物中心店',
+                        f_addr: '东城区王府井大街新东安广场6层',
+                        f_date: ['14:10', '15:10'],
+                        f_price: '36.00',
+                        f_distance: '891m'
+                    },
+                    {
+                        f_id: '222',
+                        f_title: '北京百丽宫影城金宝汇店 ',
+                        f_addr: '东城区王府井大街新东安广场6层',
+                        f_date: ['14:10', '15:10'],
+                        f_price: '36.00',
+                        f_distance: '1.6Km'
+                    },
+                ]
+            },
+            watch: {
+                filter: {
+                    deep: true,
+                    handler() {
+                        console.log(this.filter)
+                    }
+                }
+            },
+            mounted() {
+
+            },
+            methods: {
+                formatDate(dateStr) {
+                    var weekday = ['一', '二', '三', '四', '五', '六', '日'][(parseInt(moment(dateStr).format('e')) - 1)]
+                    return moment(dateStr).format('MM月DD日') + ' 周' + weekday;
+                },
+                handleSelDate(item) {
+                    this.filter.selectedDate = item
+                },
+                selAddr(item) {
+                    console.log(item)
+                    //选择后可根据item.f_id跳转
+                },
+                // 弹出过滤框
+                popFilterBox(item, idx) {
+                    this.showFilterPop = true;
+                    this.filter.typeIdx = idx;
+                },
+                selectArea(item) {
+                    this.showFilterPop = false
+                },
+                selectOther(item) {
+                    var idx = this.filter.othersIds.indexOf(item.m_id)
+                    console.log(this.filter.othersIds, item.m_id, idx)
+                    if (idx == -1) {
+                        this.filter.othersIds.push(item.m_id)
+                    } else {
+                        this.filter.othersIds.splice(idx, 1)
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

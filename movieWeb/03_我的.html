@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>影片详情</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/page/detail.css" />
+    
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="wraper">
+        <div class="topSearchBar">
+            <a href="./选择城市.html" class="address-text flex flex-m">
+                <span class="lable">北京市</span>
+                <i class="icon-down van-icon van-icon-play"></i>
+            </a>
+            <van-search class="v-search" v-model="searchVal" shape="round" placeholder="搜影片、影院" />
+        </div>
+
+        <van-swipe class="bannerSwipe" :autoplay="3000" indicator-color="white">
+            <van-swipe-item>
+                <a class="swipe-link" href="">
+                    <van-image width="100%" src="./img/home/act.png" />
+                </a>
+            </van-swipe-item>
+            <van-swipe-item>
+                <a class="swipe-link" href="">
+                    <van-image width="100%" src="./img/home/act.png" />
+                </a>
+            </van-swipe-item>
+        </van-swipe>
+        <van-tabs class="tabList" v-model="active">
+            <van-tab title="热映" class="hot_list">
+                <a href="" class="item">
+                    <div class="imgBox">
+                        <div class="img van-image">
+                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="desc_box">
+                        <div class="content-main-content flex-1 overflow-hide">
+                            <div class="flex flex-m content-name ">
+                                <div class="flex-1 name">你好，李焕英</div>
+                            </div>
+                            <div class="tip1"><span>评分</span><span class="num">9.3</span></div>
+                            <div class="desc">
+                                <div class="desc-item"><span>导演:</span>贾玲</div>
+                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
+                                <div class="desc-item"></div>
+                            </div>
+                        </div>
+                        <div class="CinemaBtn" @click.prevent="doBuy('mid_1')"> 购票</div>
+                    </div>
+                </a>
+                <a href="" class="item">
+                    <div class="imgBox">
+                        <div class="img van-image">
+                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="desc_box">
+                        <div class="content-main-content flex-1 overflow-hide">
+                            <div class="flex flex-m content-name ">
+                                <div class="flex-1 name">你好，李焕英</div>
+                            </div>
+                            <div class="tip1"><span>4116</span><span class="num">人想看</span></div>
+                            <div class="desc">
+                                <div class="desc-item"><span>导演:</span>贾玲</div>
+                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
+                                <div class="desc-item"></div>
+                            </div>
+                        </div>
+                        <div class="CinemaBtn warning" @click.prevent="doPresell('mid_2')"> 预售 </div>
+                    </div>
+                </a>
+            </van-tab>
+            <van-tab title="待映" class="hot_list">
+                <div class="scrollXBox">
+                    <div class="date-item" :class="{active:selectedDate==item}" v-for="(item,idx) in dateItemList"
+                        @click="handleSelDate(item)">{{item}}</div>
+                </div>
+                <a href="" class="item">
+                    <div class="imgBox">
+                        <div class="img van-image">
+                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="desc_box">
+                        <div class="content-main-content flex-1 overflow-hide">
+                            <div class="flex flex-m content-name ">
+                                <div class="flex-1 name">你好，李焕英</div>
+                            </div>
+                            <div class="tip1"><span>评分</span><span class="num">9.3</span></div>
+                            <div class="desc">
+                                <div class="desc-item"><span>导演:</span>贾玲</div>
+                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
+                                <div class="desc-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </van-tab>
+        </van-tabs>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                searchVal: '',
+                active: '热映',
+                selectedDate: '2021-01',
+                dateItemList: ['2021-01', '2021-02']
+            },
+            mounted() {
+                // 调用函数组件，弹出一个 Toast
+                //vant.Toast('提示');
+            },
+            methods: {
+                doBuy(mid) {
+                    alert(mid)
+                    //location.href
+                },
+                doPresell(mid) {
+                    alert(mid)
+                },
+                handleSelDate(item) {
+                    this.selectedDate = item
+                    console.log(item)
+                }
+            }
+        });
+
+        // 可以通过下面的方式手动注册
+        Vue.use(vant.Lazyload);
+    </script>
+</body>
+
+</html>
