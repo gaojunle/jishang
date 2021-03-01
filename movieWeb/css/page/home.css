@@ -23,9 +23,12 @@
   box-sizing: border-box;
   background: #fff;
 }
+.hot_list .preview_item .dateDesc {
+  padding-top: 0.2rem;
+}
 .hot_list .item {
   display: flex;
-  padding-top: 0.3rem;
+  padding-top: 0.2rem;
 }
 .hot_list .item .imgBox {
   width: 1.4rem;
@@ -67,7 +70,7 @@
   line-height: 1.5;
 }
 .hot_list .item:after {
-  content: '';
+  content: "";
   display: block;
   border-bottom: 1px solid #eee;
   -webkit-transform: translateY(0.18rem);

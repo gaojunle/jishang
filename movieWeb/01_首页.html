@@ -18,6 +18,7 @@
     <script src="./js/lib/vue.min.js"></script>
     <script src="./js/lib/vant.min.js"></script>
     <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
 </head>
 
 <body class="pb10 mt10">
@@ -44,46 +45,27 @@
         </van-swipe>
         <van-tabs class="tabList" v-model="active">
             <van-tab title="热映" class="hot_list">
-                <a href="./01-1影片详情.html" class="item">
+                <a v-for="(item,idx) in hotList" :href="'./01-1影片详情.html?film_id='+item.f_id" class="item">
                     <div class="imgBox">
                         <div class="img van-image">
-                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
+                            <img class="van-image__img" :src="item.f_img" style="object-fit: cover;">
                         </div>
                     </div>
                     <div class="desc_box">
                         <div class="content-main-content flex-1 overflow-hide">
                             <div class="flex flex-m content-name ">
-                                <div class="flex-1 name">你好，李焕英</div>
+                                <div class="flex-1 name">{{item.f_name}}</div>
                             </div>
-                            <div class="tip1"><span>评分</span><span class="num">9.3</span></div>
+                            <div class="tip1"><span>评分</span><span class="num">{{item.f_score}}</span></div>
                             <div class="desc">
-                                <div class="desc-item"><span>导演:</span>贾玲</div>
-                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
-                                <div class="desc-item"></div>
+                                <div class="desc-item"><span>导演:</span>{{item.f_director.join('/')}}</div>
+                                <div class="desc-item"><span>主演:</span>{{item.f_actor.join('/')}}</div>
                             </div>
                         </div>
-                        <div class="CinemaBtn" @click.prevent="doBuy('mid_1')"> 购票</div>
-                    </div>
-                </a>
-                <a href="" class="item">
-                    <div class="imgBox">
-                        <div class="img van-image">
-                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
+                        <div v-if="item.f_status==0" class="CinemaBtn" @click.prevent="doBuy(item.f_id,item.f_name)">购票
                         </div>
-                    </div>
-                    <div class="desc_box">
-                        <div class="content-main-content flex-1 overflow-hide">
-                            <div class="flex flex-m content-name ">
-                                <div class="flex-1 name">你好，李焕英</div>
-                            </div>
-                            <div class="tip1"><span>4116</span><span class="num">人想看</span></div>
-                            <div class="desc">
-                                <div class="desc-item"><span>导演:</span>贾玲</div>
-                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
-                                <div class="desc-item"></div>
-                            </div>
-                        </div>
-                        <div class="CinemaBtn warning" @click.prevent="doPresell('mid_2')"> 预售 </div>
+                        <div v-if="item.f_status==1" class="CinemaBtn warning"
+                            @click.prevent="doBuy(item.f_id,item.f_name)">预售</div>
                     </div>
                 </a>
                 <div class="bottom_tip">已经到底啦~</div>
@@ -93,34 +75,41 @@
                     <div class="date-item" :class="{active:selectedDate==item}" v-for="(item,idx) in dateItemList"
                         @click="handleSelDate(item)">{{item}}</div>
                 </div>
-                <a href="" class="item">
-                    <div class="imgBox">
-                        <div class="img van-image">
-                            <img class="van-image__img" src="./img/home/m1.jpg" style="object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="desc_box">
-                        <div class="content-main-content flex-1 overflow-hide">
-                            <div class="flex flex-m content-name ">
-                                <div class="flex-1 name">你好，李焕英</div>
-                            </div>
-                            <div class="tip1"><span>评分</span><span class="num">9.3</span></div>
-                            <div class="desc">
-                                <div class="desc-item"><span>导演:</span>贾玲</div>
-                                <div class="desc-item"><span>主演:</span>贾玲/张小斐/沈腾/陈赫</div>
-                                <div class="desc-item"></div>
+                <div class="preview_item" v-for="(item,idx) in previewList" :key="idx">
+                    <div class="dateDesc">{{formatDate(item.f_date)}} </div>
+                    <a :href="'./01-1影片详情.html?film_id='+item.f_id" class="item">
+                        <div class="imgBox">
+                            <div class="img van-image">
+                                <img class="van-image__img" :src="item.f_img" style="object-fit: cover;">
                             </div>
                         </div>
-                    </div>
-                </a>
+                        <div class="desc_box">
+                            <div class="content-main-content flex-1 overflow-hide">
+                                <div class="flex flex-m content-name ">
+                                    <div class="flex-1 name">{{item.f_name}}</div>
+                                </div>
+                                <div class="tip1"><span>评分</span><span class="num">{{item.f_score}}</span></div>
+                                <div class="desc">
+                                    <div class="desc-item"><span>导演:</span>{{item.f_director.join('/')}}</div>
+                                    <div class="desc-item"><span>主演:</span>{{item.f_actor.join('/')}}</div>
+                                </div>
+                            </div>
+                            <div v-if="item.f_status==0" class="CinemaBtn"
+                                @click.prevent="doBuy(item.f_id,item.f_name)">购票</div>
+                            <div v-if="item.f_status==1" class="CinemaBtn warning"
+                                @click.prevent="doBuy(item.f_id,item.f_name)">预售</div>
+                        </div>
+                    </a>
+                </div>
             </van-tab>
         </van-tabs>
     </div>
     <div class="footer-nav">
         <a href="./01_首页.html" class="home on">首页</a>
-        <a href="./02_影院.html" class="cinema">影院</a>
+        <a href="./02_0影院.html" class="cinema">影院</a>
         <a href="./03_我的.html" class="my">我的</a>
     </div>
+
     <script>
         new Vue({
             el: '#app',
@@ -128,23 +117,104 @@
                 searchVal: '',
                 active: '热映',
                 selectedDate: '2021-01',
-                dateItemList: ['2021-01', '2021-02']
+                // 预演月份，可动态生成
+                dateItemList: ['2021-01', '2021-02'],
+                // 热映数据
+                hotList: [
+                    {
+                        f_id: 0,
+                        f_img: './img/home/m1.jpg',
+                        f_name: '你好，李焕英',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 1,
+                        f_img: './img/home/m1.jpg',
+                        f_name: 'xxx你好',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 1,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 2,
+                        f_img: './img/home/m1.jpg',
+                        f_name: '你好。。。',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    }
+                ],
+                // 待映数据
+                previewList: [
+                    {
+                        f_id: 0,
+                        f_img: './img/home/m2.jpg',
+                        f_name: '你好，李焕英',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 10,
+                        f_img: './img/home/m2.jpg',
+                        f_name: '你好，李焕英1111',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 1,
+                        f_img: './img/home/m1.jpg',
+                        f_name: 'xxx你好',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-04-06',
+                        f_status: 0,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 2,
+                        f_img: './img/home/m1.jpg',
+                        f_name: '你好。。。',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-05-06',
+                        f_status: 1,// 0可购票，1预售
+                    }
+                ],
+                fGroupDateMap: []
             },
             mounted: function () {
                 // 调用函数组件，弹出一个 Toast
                 //vant.Toast('提示');
             },
             methods: {
-                doBuy: function (mid) {
-                    alert(mid)
-                    //location.href
+                formatDate: function (dateStr) {
+                    var weekday = ['一', '二', '三', '四', '五', '六', '日'][(parseInt(moment(dateStr).format('e')) - 1)]
+                    return moment(dateStr).format('MM月DD日') + ' 周' + weekday;
                 },
-                doPresell: function (mid) {
-                    alert(mid)
+                // 跳转到影院页
+                doBuy: function (f_id, f_name) {
+                    location.href = './02_0影院.html?f_id=' + f_id + '&f_name=' + f_name
                 },
+                // 选择月份，调用接口，加载待映电影数据去
                 handleSelDate: function (item) {
                     this.selectedDate = item
                     console.log(item)
+
                 }
             }
         });
