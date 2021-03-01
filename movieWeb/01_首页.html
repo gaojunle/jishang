@@ -130,19 +130,19 @@
                 selectedDate: '2021-01',
                 dateItemList: ['2021-01', '2021-02']
             },
-            mounted() {
+            mounted: function () {
                 // 调用函数组件，弹出一个 Toast
                 //vant.Toast('提示');
             },
             methods: {
-                doBuy(mid) {
+                doBuy: function (mid) {
                     alert(mid)
                     //location.href
                 },
-                doPresell(mid) {
+                doPresell: function (mid) {
                     alert(mid)
                 },
-                handleSelDate(item) {
+                handleSelDate: function (item) {
                     this.selectedDate = item
                     console.log(item)
                 }

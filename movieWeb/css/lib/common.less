@@ -4,205 +4,192 @@
 
 html,
 body {
-	min-height: 100vh;
-	font-size: 0.28rem;
-	color: #2a2a2a;
-	padding: 0px;
-	margin: 0px;
+    min-height: 100vh;
+    font-size: 0.28rem;
+    color: #2a2a2a;
+    padding: 0px;
+    margin: 0px;
+    a {
+        color: #2a2a2a;
+    }
 }
 
 body {
-	background: #f3f5f5;
-	box-sizing: border-box;
-	position: relative;
-	&.mt10 {
-		padding-top: 1rem;
-	}
-	&.pb10 {
-		padding-bottom: 1rem;
-	}
-	input::-webkit-input-placeholder,
-	textarea::-webkit-input-placeholder {
-		color: rgba(143, 143, 143, 0.6);
-	}
-	.flex {
-		display: flex;
-	}
-	.flex-m {
-		align-items: center;
-	}
-	.flex-1 {
-		flex: 1;
-	}
-	.scrollXBox {
-		width: 100%;
-		white-space: nowrap;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		box-sizing: border-box;
-		background: #fff;
-	}
-	.ellipsis {
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
+    background: #f3f5f5;
+    box-sizing: border-box;
+    position: relative;
+    &.mt10 {
+        padding-top: 1rem;
+    }
+    &.pb10 {
+        padding-bottom: 1rem;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: rgba(143, 143, 143, 0.6);
+    }
+    .flex {
+        display: flex;
+    }
+    .flex-m {
+        align-items: center;
+    }
+    .flex-1 {
+        flex: 1;
+    }
+    .scrollXBox {
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        background: #fff;
+    }
+    .ellipsis {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
-		&.ellipsis2 {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
-		}
-	}
+        &.ellipsis2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+    }
 }
 .topSearchBar {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	height: 0.98rem;
-	padding: 0px 0.3rem;
-	width: 100%;
-	background: #fff;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	top: 0;
-	left: 0;
-	z-index: 88;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	.address-text {
-		font-size: 0.28rem;
-		color: #222;
-		font-weight: 700;
-		margin-right: 0.2rem;
-		-ms-flex-negative: 0;
-		flex-shrink: 0;
-		.icon-down {
-			transform: rotate(90deg);
-			margin-left: 0.05rem;
-		}
-	}
-	.v-search {
-		padding: 0px;
-		flex: 1;
-		border: 1px solid #ccc;
-		border-radius: 999px;
-		.van-search__content {
-			background-color: #fff;
-		}
-		.van-cell {
-			padding: 3px;
-			padding-right: 12px;
-		}
-	}
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 0.98rem;
+    padding: 0px 0.3rem;
+    width: 100%;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 88;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .address-text {
+        font-size: 0.28rem;
+        color: #222;
+        font-weight: 700;
+        margin-right: 0.2rem;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        .icon-down {
+            transform: rotate(90deg);
+            margin-left: 0.05rem;
+        }
+    }
+    .v-search {
+        padding: 0px;
+        flex: 1;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        .van-search__content {
+            background-color: #fff;
+        }
+        .van-cell {
+            padding: 3px;
+            padding-right: 12px;
+        }
+    }
 }
 .bottom_tip {
-	color: #aaa;
-	text-align: center;
-	padding: 0.3rem;
+    color: #aaa;
+    text-align: center;
+    padding: 0.3rem;
+}
+// 当前位置
+.cur_location {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: calc(100% - 0.4rem);
+    margin: 0.2rem;
+    box-sizing: border-box;
+    background: #f3f5f7;
+    border-radius: 0.28rem;
+    padding: 0.06rem 0.2rem;
+    .location_desc {
+        flex: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 0.26rem;
+        color: #888;
+        width: 100%;
+        margin: 0px 0.1rem;
+    }
+    img {
+        width: 0.32rem;
+        height: 0.32rem;
+    }
 }
 .footer-nav {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	background: white;
-	z-index: 100;
-	padding: 0.1rem 0px;
-	a {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		font-size: 12px;
-		color: rgb(143, 143, 143);
-		text-align: center;
-		&.on {
-			color: @activeColor;
-		}
-		&::before {
-			content: '';
-			display: inline-block;
-			width: 0.45rem;
-			height: 0.45rem;
-			background-size: 0.44rem 0.44rem;
-			background-repeat: no-repeat;
-			background-position: center center;
-			padding-bottom: 2px;
-		}
-		// 首页
-		&.home {
-			&::before {
-				background-image: url(../../img/common/navs/home.png);
-			}
-			&.on::before {
-				background-image: url(../../img/common/navs/home_on.png);
-			}
-		}
-		// 影院
-		&.cinema {
-			&::before {
-				background-image: url(../../img/common/navs/cinema.png);
-			}
-			&.on::before {
-				background-image: url(../../img/common/navs/cinema_on.png);
-			}
-		}
-		// 我的
-		&.my {
-			&::before {
-				background-image: url(../../img/common/navs/my.png);
-			}
-			&.on::before {
-				background-image: url(../../img/common/navs/my_on.png);
-			}
-		}
-	}
-}
-
-.footerBtns {
-	position: fixed;
-	bottom: -1px;
-	left: 0px;
-	width: 100%;
-	height: 0.86rem;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	z-index: 100;
-	text-align: center;
-	background-color: rgb(42, 42, 42);
-
-	a {
-		display: block;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex: 1;
-		color: rgb(255, 255, 255);
-		font-size: 15px;
-		position: relative;
-
-		&:nth-last-of-type(1) {
-			&::after {
-				content: none;
-			}
-		}
-
-		&::after {
-			display: block;
-			content: '';
-			width: 1px;
-			height: 70%;
-			background-color: rgba(255, 255, 255, 0.7);
-			position: absolute;
-			top: 15%;
-			right: 0px;
-		}
-	}
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    z-index: 100;
+    padding: 0.1rem 0px;
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 12px;
+        color: rgb(143, 143, 143);
+        text-align: center;
+        &.on {
+            color: @activeColor;
+        }
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 0.45rem;
+            height: 0.45rem;
+            background-size: 0.44rem 0.44rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding-bottom: 2px;
+        }
+        // 首页
+        &.home {
+            &::before {
+                background-image: url(../../img/common/navs/home.png);
+            }
+            &.on::before {
+                background-image: url(../../img/common/navs/home_on.png);
+            }
+        }
+        // 影院
+        &.cinema {
+            &::before {
+                background-image: url(../../img/common/navs/cinema.png);
+            }
+            &.on::before {
+                background-image: url(../../img/common/navs/cinema_on.png);
+            }
+        }
+        // 我的
+        &.my {
+            &::before {
+                background-image: url(../../img/common/navs/my.png);
+            }
+            &.on::before {
+                background-image: url(../../img/common/navs/my_on.png);
+            }
+        }
+    }
 }

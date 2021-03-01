@@ -1,8 +1,5 @@
-.wraper {
-  padding: 0.1rem 0.3rem;
-  font-size: 0.28rem;
+body {
   background: white;
-  min-height: 90vh;
 }
 .scrollXBox {
   width: 100%;
@@ -30,7 +27,7 @@
   color: #333333;
 }
 .scrollXBox .date-item.active::after {
-  content: '';
+  content: "";
   width: 0.5rem;
   height: 3px;
   position: absolute;
@@ -88,21 +85,24 @@
   color: #888;
   font-size: 0.26rem;
 }
-.filter_pop_box .list_others {
+.filter_pop_box .list_others .cont_other_box {
+  height: 5rem;
   padding: 0.3rem;
+  overflow-y: scroll;
+  padding-bottom: 1.5rem;
 }
-.filter_pop_box .list_others .item .title {
+.filter_pop_box .list_others .cont_other_box .item .title {
   font-size: 0.3rem;
   color: #222;
 }
-.filter_pop_box .list_others .item .o_list {
-  display: flex;
-  justify-content: space-between;
+.filter_pop_box .list_others .cont_other_box .item .o_list {
   padding-bottom: 0.2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 0.2rem;
 }
-.filter_pop_box .list_others .item .o_list .choose-item {
-  width: 2.06rem;
+.filter_pop_box .list_others .cont_other_box .item .o_list .choose-item {
+  width: 100%;
   height: 0.64rem;
   line-height: 0.64rem;
   text-align: center;
@@ -114,9 +114,21 @@
   overflow: hidden;
   color: #888;
 }
-.filter_pop_box .list_others .item .o_list .choose-item.active {
+.filter_pop_box .list_others .cont_other_box .item .o_list .choose-item.active {
   color: #ee0a24;
   border-color: #ee0a24;
+}
+.filter_pop_box .list_others .search-footer {
+  position: absolute;
+  padding: 0.3rem;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.4rem;
 }
 .film_list {
   padding-top: 0.1rem;
