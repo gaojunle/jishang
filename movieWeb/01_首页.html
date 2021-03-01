@@ -121,36 +121,7 @@
                 dateItemList: ['2021-01', '2021-02'],
                 // 热映数据
                 hotList: [
-                    {
-                        f_id: 0,
-                        f_img: './img/home/m1.jpg',
-                        f_name: '你好，李焕英',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 0,// 0可购票，1预售
-                    },
-                    {
-                        f_id: 1,
-                        f_img: './img/home/m1.jpg',
-                        f_name: 'xxx你好',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 1,// 0可购票，1预售
-                    },
-                    {
-                        f_id: 2,
-                        f_img: './img/home/m1.jpg',
-                        f_name: '你好。。。',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 0,// 0可购票，1预售
-                    }
+                   
                 ],
                 // 待映数据
                 previewList: [
@@ -200,6 +171,41 @@
             mounted: function () {
                 // 调用函数组件，弹出一个 Toast
                 //vant.Toast('提示');
+                var self = this;
+                setTimeout(function(){
+                    self.hotList = [
+                    {
+                        f_id: 0,
+                        f_img: './img/home/m1.jpg',
+                        f_name: '你好，李焕英',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 1,
+                        f_img: './img/home/m1.jpg',
+                        f_name: 'xxx你好',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 1,// 0可购票，1预售
+                    },
+                    {
+                        f_id: 2,
+                        f_img: './img/home/m1.jpg',
+                        f_name: '你好。。。',
+                        f_score: '9.3',
+                        f_director: ['贾玲'],
+                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                        f_date: '2021-03-06',
+                        f_status: 0,// 0可购票，1预售
+                    }
+                    ]
+                },2000)
             },
             methods: {
                 formatDate: function (dateStr) {
@@ -214,7 +220,6 @@
                 handleSelDate: function (item) {
                     this.selectedDate = item
                     console.log(item)
-
                 }
             }
         });
