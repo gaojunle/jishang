@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>订单详情</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/my.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="order_list">
+        <div class="bg_top"></div>
+        <div class="order">
+            <div class="pay_staus">
+                <div v-if="orderDetail.f_pay_status == 0" class="no_pay">
+                    <van-icon name="warning"></van-icon><span>未支付</span>
+                </div>
+                <div v-if="orderDetail.f_pay_status == 1" class="payed">
+                    <van-icon name="checked"> </van-icon><span>支付成功</span>
+                </div>
+            </div>
+            <div class="title">{{orderDetail.f_name}} <span class="type">{{orderDetail.f_type}}</span></div>
+            <div class="addr">{{orderDetail.f_cinema}}</div>
+            <div class="date_box">
+                <div><span class="date">{{orderDetail.f_sdate}}</span>开场</div>
+                <div class="split">
+                    <div class="status">{{orderDetail.f_status}}</div>
+                    <img class="arrow-icon"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAGCAYAAACij5zfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpivHv3LgMdACcQewDxenQJJgb6gP9AvA6IdwCx1kA44AeUdgfii0A8FYiF6ekAGPgJxJ+BOBKIjwOxJws0eOgF2KEYBASBeBu9QwADAAQYABCHDhURR2PYAAAAAElFTkSuQmCC">
+                </div>
+                <div><span class="date">{{orderDetail.f_edate}}</span>散场</div>
+            </div>
+            <div class="month">{{orderDetail.f_month}}</div>
+            <div class="pos">{{orderDetail.f_pos}}</div>
+            <div class="srcode">
+                <div class="q_title">取票码</div>
+                <div class="q_num">{{orderDetail.f_num}}张电影票</div>
+                <div class="q_img_box">
+                    <div><img :src="orderDetail.f_scode_url" alt=""></div>
+                    <van-button class="btn_gb" size="small" round type="danger" @click="gbCode()">查看国标二维码</van-button>
+                </div>
+                <div class="q_code">取票码：<span>{{orderDetail.f_code}}</span></div>
+                <div class="desc">发票说明xxxxx</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                orderDetail: {
+                    f_id: '111',
+                    f_name: '你好，李烦英',
+                    f_cinema: '中影CFR国际影城（望京商业中心店）4号-普通厅',
+                    f_pos: '5排3座',
+                    f_month: '03月01日',
+                    f_sdate: '14:10',
+                    f_edate: '15:33',
+                    f_price: '36.00',
+                    f_type: '2D',
+                    f_status: '待放映',
+                    f_pay_status: 0,//支付状态，0未支付，可在html对应修改即可
+                    f_code: '1564847651321321',//取票码
+                    f_scode_url: './img/my/srcode.png',//二维码
+                    f_num: 2,//电影票数
+                }
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                gbCode: function () {
+                    alert('查看国标二维码')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

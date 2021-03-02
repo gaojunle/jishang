@@ -251,8 +251,8 @@
                     this.filter.selectedDate = item
                 },
                 selAddr(item) {
-                    console.log(item)
                     //选择后可根据item.f_id跳转
+                    location.href = './02_1影院详情.html?id=' + item.f_id
                 },
                 // 弹出过滤框
                 popFilterBox(item, idx) {

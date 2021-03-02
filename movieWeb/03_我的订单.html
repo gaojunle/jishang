@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>我的</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/my.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="order_list">
+        <!--订单列表 -->
+        <div class="order" v-for="(item,idx) in orderList" :key="idx" @click="goOrderDetail(item.f_id)">
+            <div class="title">{{item.f_name}} <span class="type">{{item.f_type}}</span></div>
+            <div class="addr">{{item.f_cinema}}</div>
+            <div class="date_box">
+                <div><span class="date">{{item.f_sdate}}</span>开场</div>
+                <div class="split">
+                    <div class="status">{{item.f_status}}</div>
+                    <img class="arrow-icon"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAGCAYAAACij5zfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpivHv3LgMdACcQewDxenQJJgb6gP9AvA6IdwCx1kA44AeUdgfii0A8FYiF6ekAGPgJxJ+BOBKIjwOxJws0eOgF2KEYBASBeBu9QwADAAQYABCHDhURR2PYAAAAAElFTkSuQmCC">
+                </div>
+                <div><span class="date">{{item.f_edate}}</span>散场</div>
+            </div>
+            <div class="month">{{item.f_month}}</div>
+            <div class="pos">{{item.f_pos}}</div>
+        </div>
+        <div class="bottom_tip">没有更多数据啦~</div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="footer-nav">
+        <a href="./01_首页.html" class="home">首页</a>
+        <a href="./02_0影院.html" class="cinema">影院</a>
+        <a href="./03_我的.html" class="my on">我的</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                orderList: [
+                    {
+                        f_id: '111',
+                        f_name: '你好，李烦英',
+                        f_cinema: '中影CFR国际影城（望京商业中心店）4号-普通厅',
+                        f_pos: '5排3座',
+                        f_month: '03月01日',
+                        f_sdate: '14:10',
+                        f_edate: '15:33',
+                        f_price: '36.00',
+                        f_type: '2D',
+                        f_status: '待放映'
+                    },
+                    {
+                        f_id: '222',
+                        f_name: '你好，李烦英111',
+                        f_cinema: '中影CFR国际影城（望京商业中心店）4号-普通厅',
+                        f_pos: '5排3座',
+                        f_month: '03月01日',
+                        f_sdate: '14:10',
+                        f_edate: '15:33',
+                        f_price: '36.00',
+                        f_type: '2D',
+                        f_status: '待放映'
+                    }
+                ]
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                doLogin: function () {
+                    alert('去登录')
+                },
+                goOrderDetail: function (id) {
+                    location.href = './03_我的订单-详情.html?id=' + id
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

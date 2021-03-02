@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>选择地址</title>
+    <title>影院详情</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="./css/lib/vant.css" />
     <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/lib/swiper.min.css">
     <link rel="stylesheet" href="./css/page/cinemaDetail.css" />
 
     <script src="./js/lib/bak/viewbox.js"></script>
@@ -17,93 +18,70 @@
     <script src="./js/lib/vue.min.js"></script>
     <script src="./js/lib/vant.min.js"></script>
     <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/swiper.min.5.3.6.js"></script>
     <script src="./js/lib/moment.min.js"></script>
 </head>
 
-<body class="mt10">
-    <div id="app" class="sel_addr">
+<body>
+    <div id="app">
         <!-- 影院位置信息 -->
-        <div class="topSearchBar">
-            <a href="./选择城市.html" class="address-text flex flex-m">
-                <span class="lable">北京市</span>
-                <i class="icon-down van-icon van-icon-play"></i>
-            </a>
-            <van-search class="v-search" v-model="filter.searchVal" shape="round" placeholder="搜影片、影院" />
+        <div class="addr_top">
+            <div class="left">
+                <div class="title_box">
+                    <div class="title ellipsis">中影CFR国际影城（望京商业中心店）中影CFR国际影城（望京商业中心店）</div>
+                    <img @click="doLocation"
+                        src="data:image/png;base64,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"
+                        class="img-icon">
+                </div>
+                <div class="addr_detail">朝阳区望京街9号商业楼-1层01</div>
+            </div>
         </div>
+        <!-- 电影列表 -->
+        <div class="films-swiper-box">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="(item,idx) in filmList" @click="changeSwiper(idx)"><img
+                            src="./img/home/m1.jpg" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="film_desc">
+                <div class="title">{{selFilm.f_title}}</div>
+                <div class="desc">{{selFilm.f_desc}}</div>
+            </div>
+        </div>
+
         <!-- 日期选择 -->
         <div class="scrollXBox">
             <div class="date-item" :class="{active:filter.selectedDate==item}" v-for="(item,idx) in dateItemList"
                 @click="handleSelDate(item)">{{formatDate(item)}}</div>
         </div>
-        <!-- 过滤项：区域、距离、筛选 -->
-        <div class="select_bar">
-            <div v-for="(item,idx) in filterTypes" :key="idx" class="s_item" @click="popFilterBox(item,idx)">
-                <span>{{item.name}}</span>
-                <van-icon class="icon_arrow" name="play" />
-            </div>
-        </div>
-        <!-- 影院列表 -->
-        <div class="film_list">
-            <a href="./02_1影院详情.html" class="item" @click="selAddr(item)" v-for="(item,idx) in filmList" :key="idx">
+
+        <!-- 场次列表 -->
+        <div class="movie_list">
+            <div class="item" v-for="(item,idx) in movieList" :key="idx">
                 <div class="left">
-                    <div class="title">{{item.f_title}}</div>
-                    <div class="desc">{{item.f_addr}}</div>
-                    <div class="desc">近期场次：<span>{{item.f_date.join(' | ')}}</span></div>
-                </div>
-                <div class="right">
-                    <div class="price"><span class="orange">{{item.f_price}}元</span>起</div>
-                    <div class="distance">{{item.f_distance}}</div>
-                </div>
-            </a>
-        </div>
-        <!-- 过滤弹出框 -->
-        <van-popup v-model="showFilterPop" position="top" class="filter_pop_box"
-            :style="{ height: filter.typeIdx == 1?'auto':'50%' }">
-            <div class="select_bar">
-                <div v-for="(item,idx) in filterTypes" :key="idx" class="s_item" :class="{active:filter.typeIdx==idx}"
-                    @click="popFilterBox(item,idx)">
-                    <span>{{item.name}}</span>
-                    <van-icon class="icon_arrow" name="play" />
-                </div>
-            </div>
-            <!-- 区域 -->
-            <van-list class="list_areas" v-show="filter.typeIdx == 0">
-                <van-cell class="l_item" v-for="(item,idx) in listAreas" :key="idx" @click="selectArea(item)">
-                    <span class="i_label">{{item.label}}</span><span class="i_value">{{item.num}}家</span>
-                </van-cell>
-            </van-list>
-            <!-- 距离 -->
-            <van-list class="list_areas" v-show="filter.typeIdx == 1">
-                <van-cell class="l_item" v-for="(item,idx) in listDistances" :key="idx" @click="selectDistance(item)">
-                    <span class="i_label">{{item.label}}</span>
-                </van-cell>
-            </van-list>
-            <!-- 筛选其它 -->
-            <van-list class="list_others" v-show="filter.typeIdx == 2">
-                <div class="cont_other_box">
-                    <div class="item" v-for="(item,idx) in listOthers">
-                        <div class="title">{{item.title}}</div>
-                        <div class="o_list">
-                            <span class="choose-item" :class="{active:tempFilterOtherIds.indexOf(citem.m_id)>-1}"
-                                v-for="(citem,index) in item.list" :key="index"
-                                @click="selectOther(citem)">{{citem.label}}</span>
-                        </div>
+                    <div class="line">
+                        <p><span class="date">{{item.f_sdate}}</span>开场</p>
+                        <p>{{item.f_lang}} {{item.f_type}}</p>
+                    </div>
+                    <img class="arrow-icon"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAGCAYAAACij5zfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpivHv3LgMdACcQewDxenQJJgb6gP9AvA6IdwCx1kA44AeUdgfii0A8FYiF6ekAGPgJxJ+BOBKIjwOxJws0eOgF2KEYBASBeBu9QwADAAQYABCHDhURR2PYAAAAAElFTkSuQmCC">
+                    <div class="line">
+                        <p><span class="date">{{item.f_edate}}</span>开场</p>
+                        <p>{{item.f_num}} {{item.f_pos}}</p>
                     </div>
                 </div>
-                <div class="search-footer">
-                    <van-button type="default" round @click="resetOtherItems">重置</van-button>
-                    <van-button type="danger" round @click="confirmOtherItems">确定</van-button>
+                <div class="center">
+                    ¥<span class="price">{{item.f_price}}</span>
                 </div>
-            </van-list>
-        </van-popup>
-        <!-- 当前位置 -->
-        <div class="cur_location">
-            <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACHElEQVRYR+2Wv4sTURDHv/OamKRJoaAIR04Pf4IWdnb+RNHYZdaAOW0kejaevWBxra0Sm4Bp8iZpLCwEz3/BysJCxMpCJJVCirwnTyIsyWb37eXFa+7BdrMzn/3OzPctYZcP7XJ97AH8DwWo3+9fs9ZuAqgy87F425cGICJFpdQdY8xjAKcmRd8z85WlAojIQSLasNY+AHBgashvMvPbpQAMBoMzxhgncwNAIWG7Ptfr9ZNEZIMBWGtJRK4T0RMAF4HUrdpg5pfTYDuaAddfY8y6Usr194SHl/wYDofVVqv1eyGAbrd7qFAoPALQArDfo/DfEGvtVhRFT5PivRTo9XpniWiTiG7P6W8ay2g0Gq02m83vuQBcf7XWN5RSbrAuZPR3LoC19nUURXfnBcwo0G63S5VKZZ2IXH+P+8o8J86Ox+NzjUbjozeA1vorEVUXLPzv9W1mvpyWa0YBEblHROeNMWtEtAbgMAC1Q6AZ48m9BZ1OZ1+5XD4CwMHEn6MAVlNmI9F4cgOkfbmIfAHg4JJOovGEBngH4GpC9Z/FYnGlVqvNGE9ogBcAHk4nTTOe0ADuDng+lTTVeEID3ALwJp40y3hCA7gfjU+xpJnGExRgsqK/Yj7xgZkv5fEMr8soYxW/AViZxGQaT1AFXDIR2Z78jHgZT3AArfUrIroPwMt4lgHgrtpnpVLptI/xBAfIM3BJsQsP4R7Aogr8Ab34syGuANBnAAAAAElFTkSuQmCC">
-            <div class="location_desc"> 当前位置：北京市朝阳区酒仙桥街道高家园一区10号楼高家园社区1区 </div>
-            <img @click="refreshLocation()"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADoklEQVRYR8VXS2sUWRT+zu2utDFkNi58QaI4404dmwiKLlxHg6aT3KoJcVxk40KZjaBuBjKD4gOHUf+BgaRyuxNf2M5OGBBnxrhQJ4yIiAaFYVQwJDp2quoeubE7VLcJ/UgZC3rRt+4957tfncd3CF/4oUr9K6WaiGgPM+8EsBHASgANzPyWiF4w8wMANz3Pu9LT0/O8UrtlAbiumxRC/MjMbUQkKjAcALgshPips7Pzfrn98wJQStUT0RlmPgAgBuB/IrrGzDe01qP19fXPcrncu+np6Ya6urpmImph5l0AzG8JgICZLzQ2Nh5tbW3NzQdkTgBKqdUArgPYBGAawDkAZ6SUL8vdaGBgYLllWUe01geJyAIwCqBNSvnvXGc/ATA4OLhKCHGLiNYw8z/MLB3H+buc49L3SqlvASgA3zDzY8uytqdSqf9K9xUBMLQDuJ2/+W3Lslrb29vfVOu8sH9kZGSZ7/u/AWgBcAfADs/zmi3L+kVK2Wb2lQK4AOAggIeWZW1biPMwCM/z/iSidQD+ALAZQEJKOeN7FkA+2v8C4APYIqU0aRXFQ0NDQ8eJ6FjY2CcAlFKXAOxl5tO2bR+JwnMmk2nRWp8HsK3UXhGAfNQ/MxHv+35Td3f3qygAKKXaAZwFsLbEXk5KaVL14ydwXfeQEOI8M7u2bX8XhfOCjWw2m5iamjoMwLDamF9/L6U0Af8RgFIqA6BDa73fcZyLUQIo2DIsM/MJItoHwDBQBOCRyVet9YZacr4awK7rbhVCnJRSmp4yy8CUaSyTk5Nf9fb2TlZjsMa9hnkOA5j5MzY2Fuvr69M1Gq3pWCEGFpuBWbAzANLp9CNmXpQYKKWpKAsAfC+l7K+JyxoPffY6EMaVTqePaa1/t237VmG9wEATgCdRV8Kw8/7+/pWJROIpABGPx1ekUqnXs1mQL0ZXjXAgolNdXV1Ha2R03mNKqV8B/MDMGdu2u4oYyJdjo/0+RzfE8PBwMggC04pJa705XOwWRQ/4vm+cf83MZ23bNn2hOA1D9drUZ7PZyO6oFZHRhtullEZjzg3ArEalCV3X3SSEMJpwfcWaMMSEUcXZPBNVq+JYLGZa74wqZua7RLS7YlUc/hxzzQVa62wsFhudmJgYHx8ff5tMJhuCIGgOgmBLZHNB+BvlI7jqyUhr/bPjOPfKpXPZ0SzESOlsuArAUgDvAJjZ0IxhN+Px+JWOjo7oZsNyN1jo+4oZWKij+c5/AEMtxzC+626mAAAAAElFTkSuQmCC">
+                <div class="right">
+                    <div class="btn" @click="doBuy(item.f_id)">购票</div>
+                </div>
+            </div>
         </div>
+
         <!-- 底部导航 -->
         <div class="footer-nav">
             <a href="./01_首页.html" class="home">首页</a>
@@ -116,119 +94,66 @@
         new Vue({
             el: '#app',
             data: {
-                showFilterPop: false,
                 filter: {
                     city: '北京市',
-                    searchVal: '',
+                    selectFilmId: '1',
                     selectedDate: '2021-03-01',
-                    typeIdx: 2, // 弹出层选中是哪项
-                    areaIds: 0,
-                    distanceId: 0,
-                    othersIds: [0, 1]
                 },
-                tempFilterOtherIds: [],
-                othersIds: [0, 2],
-                filterTypes: [
-                    {
-                        type: 'all',
-                        name: '区域'
-                    },
-                    {
-                        type: 'distance',
-                        name: '距离最近'
-                    },
-                    {
-                        type: 'area',
-                        name: '筛选'
-                    }
-                ],
-                listAreas: [{
-                    id: 0,
-                    label: '全部',
-                    num: 100
-                }, {
-                    id: 1,
-                    label: '东城区',
-                    num: 12
-                }, {
-                    id: 2,
-                    label: '西城区',
-                    num: 4
-                }],
-                listDistances: [{
-                    id: 0,
-                    label: '距离最近'
-                }, {
-                    id: 1,
-                    label: '价格最低'
-                }],
-                listOthers: [
-                    {
-                        title: '开放时间',
-                        list: [
-                            {
-                                m_id: 0,
-                                label: '12点以前'
-                            },
-                            {
-                                m_id: 1,
-                                label: '2点到18点'
-                            },
-                            {
-                                m_id: 10,
-                                label: '12点以前'
-                            },
-                            {
-                                m_id: 11,
-                                label: '2点到18点'
-                            },
-                        ]
-                    },
-                    {
-                        title: '放映影厅',
-                        list: [
-                            {
-                                m_id: 2,
-                                label: '普通厅'
-                            },
-                            {
-                                m_id: 3,
-                                label: '特殊厅'
-                            },
-                        ]
-                    },
-                    {
-                        title: '品牌',
-                        list: [
-                            {
-                                m_id: 4,
-                                label: '大地影院'
-                            },
-                            {
-                                m_id: 5,
-                                label: '中影国际影城'
-                            }
-                        ]
-                    }
-                ],
+                selFilm: {},//当前选中电影项
                 dateItemList: ['2021-03-01', '2021-03-02', '2021-03-03', '2021-03-04'],
                 filmList: [
                     {
                         f_id: '111',
-                        f_title: '北京百老汇影城apm购物中心店',
-                        f_addr: '东城区王府井大街新东安广场6层',
-                        f_date: ['14:10', '15:10'],
-                        f_price: '36.00',
-                        f_distance: '891m'
+                        f_title: '猫和老鼠1',
+                        f_desc: '美国/101分钟/喜剧,动画,冒险'
                     },
                     {
-                        f_id: '222',
-                        f_title: '北京百丽宫影城金宝汇店 ',
-                        f_addr: '东城区王府井大街新东安广场6层',
-                        f_date: ['14:10', '15:10'],
-                        f_price: '36.00',
-                        f_distance: '1.6Km'
+                        f_id: '2',
+                        f_title: '猫和老鼠2',
+                        f_desc: '美国/101分钟/喜剧,动画,冒险'
                     },
+                    {
+                        f_id: '3',
+                        f_title: '猫和老鼠3',
+                        f_desc: '美国/101分钟/喜剧,动画,冒险'
+                    },
+                    {
+                        f_id: '4',
+                        f_title: '猫和老鼠4',
+                        f_desc: '美国/101分钟/喜剧,动画,冒险'
+                    },
+                ],
+                movieList: [
+                    {
+                        f_id: '111',
+                        f_sdate: '14:10',
+                        f_edate: '15:33',
+                        f_price: '36.00',
+                        f_lang: '国语',
+                        f_type: '2D',
+                        f_num: '4号厅',
+                        f_pos: ' 普通厅'
+                    },
+                    {
+                        f_id: '111',
+                        f_sdate: '14:10',
+                        f_edate: '15:33',
+                        f_price: '36.00',
+                        f_lang: '国语',
+                        f_type: '2D',
+                        f_num: '4号厅',
+                        f_pos: ' 普通厅'
+                    },
+                    {
+                        f_id: '111',
+                        f_sdate: '14:10',
+                        f_edate: '15:33',
+                        f_price: '36.00',
+                        f_lang: '国语',
+                        f_type: '2D',
+                        f_num: '4号厅',
+                        f_pos: ' 普通厅'
+                    }
                 ]
             },
             watch: {
@@ -240,7 +165,7 @@
                 }
             },
             mounted() {
-
+                this.initSwiper()
             },
             methods: {
                 formatDate(dateStr) {
@@ -250,44 +175,29 @@
                 handleSelDate(item) {
                     this.filter.selectedDate = item
                 },
-                selAddr(item) {
-                    console.log(item)
-                    //选择后可根据item.f_id跳转
+                // 初始化轮播，一定要在获取数据后调用
+                initSwiper() {
+                    var self = this;
+                    setTimeout(function () {
+                        self.swiper = new Swiper('.swiper-container', {
+                            slidesPerView: 5,
+                            spaceBetween: 10,
+                            centeredSlides: true,
+                            loop: false
+                        });
+                        self.selFilm = self.filmList[0]
+                    }, 100)
                 },
-                // 弹出过滤框
-                popFilterBox(item, idx) {
-                    this.showFilterPop = true;
-                    this.tempFilterOtherIds = [].concat(this.filter.othersIds)
-                    this.filter.typeIdx = idx;
+                changeSwiper(idx) {
+                    var self = this;
+                    this.swiper.slideTo(idx)
+                    this.filter.selectFilmId = self.filmList[idx].f_id
+                    setTimeout(function () {
+                        self.selFilm = self.filmList[idx]
+                    }, 200)
                 },
-                selectArea(item) {
-                    this.showFilterPop = false
-                    this.filterTypes[0].name = item.label
-                },
-                selectDistance(item) {
-                    this.showFilterPop = false
-                    this.filterTypes[1].name = item.label
-                },
-                selectOther(item) {
-                    var idx = this.tempFilterOtherIds.indexOf(item.m_id)
-                    if (idx == -1) {
-                        this.tempFilterOtherIds.push(item.m_id)
-                    } else {
-                        this.tempFilterOtherIds.splice(idx, 1)
-                    }
-                },
-                // 重置
-                resetOtherItems() {
-                    this.tempFilterOtherIds = [].concat(this.filter.othersIds)
-                },
-                // 确定选择
-                confirmOtherItems() {
-                    this.filter.othersIds = [].concat(this.tempFilterOtherIds)
-                    this.resetOtherItems()
-                    this.showFilterPop = false
-                },
-                refreshLocation() {
-                    alert('refreshLocation')
+                doLocation() {
+                    alert('doLocation')
                 }
             }
         });

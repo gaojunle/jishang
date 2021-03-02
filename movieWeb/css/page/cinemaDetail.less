@@ -1,6 +1,81 @@
 body {
     background: white;
 }
+.addr_top {
+    padding: 0.3rem;
+    padding-bottom: 0px;
+    display: flex;
+
+    .title_box {
+        display: flex;
+        align-items: center;
+        .title {
+            overflow: hidden;
+            font-size: 0.3rem;
+            color: #222;
+            width: calc(100vw - 1.5rem);
+            font-weight: 700;
+        }
+        img {
+            width: 0.32rem;
+            margin-left: 0.1rem;
+        }
+    }
+    .addr_detail {
+        padding-top: 0.1rem;
+    }
+}
+.films-swiper-box {
+    background-color: #f3f5f7;
+    .swiper-container {
+        width: 100%;
+        height: 2.6rem;
+        .swiper-slide {
+            text-align: center;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            transition: 300ms;
+            transform: scale(0.8);
+            img {
+                margin-top: 0.2rem;
+                width: 1.4rem;
+                height: 1.86rem;
+                display: block;
+                transition: all 0.2s;
+                border-radius: 0.06rem;
+            }
+        }
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active {
+            transform: scale(1);
+        }
+    }
+    .film_desc {
+        text-align: center;
+        .title {
+            font-size: 0.36rem;
+            color: #222;
+            font-weight: bold;
+            padding-top: 0.2rem;
+        }
+        .desc {
+            color: #888;
+            padding: 0.2rem;
+        }
+    }
+}
+
 .scrollXBox {
     width: 100%;
     white-space: nowrap;
@@ -12,6 +87,7 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #fff;
+    border-bottom: 1px solid #eee;
     .date-item {
         display: inline-block;
         position: relative;
@@ -37,134 +113,53 @@ body {
         }
     }
 }
-.select_bar {
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    .s_item {
-        display: flex;
-        align-items: center;
-        width: 50%;
-        justify-content: center;
-        color: #888;
-        height: 0.8rem;
-        .icon_arrow {
-            font-size: 12px;
-            transform: rotate(90deg) scale(0.7);
-            color: #888;
-        }
-        &.active {
-            color: #ee0a24;
-            .icon_arrow {
-                color: #ee0a24;
-                transform: rotate(-90deg) scale(0.7);
-            }
-        }
-    }
-}
-.filter_pop_box {
-    padding-top: 0.9rem;
-    .select_bar {
-        border-bottom: 1px solid #eee;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-    }
-    .list_areas {
-        .van-cell__value {
-            display: flex;
-            justify-content: space-between;
-            .i_label {
-                flex: 1;
-                font-size: 0.3rem;
-                color: #222;
-            }
-            .i_value {
-                color: #888;
-                font-size: 0.26rem;
-            }
-        }
-    }
-    .list_others {
-        .cont_other_box {
-            height: 5rem;
-            padding: 0.3rem;
-            overflow-y: scroll;
-            padding-bottom: 1.5rem;
-            .item {
-                .title {
-                    font-size: 0.3rem;
-                    color: #222;
-                }
-                .o_list {
-                    padding-bottom: 0.2rem;
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    grid-column-gap: 0.2rem;
-                    .choose-item {
-                        width: 100%;
-                        height: 0.64rem;
-                        line-height: 0.64rem;
-                        text-align: center;
-                        border: 1px solid #eee;
-                        margin-top: 0.2rem;
-                        display: block;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        color: #888;
-                        &.active {
-                            color: #ee0a24;
-                            border-color: #ee0a24;
-                        }
-                    }
-                }
-            }
-        }
-
-        .search-footer {
-            position: absolute;
-            padding: 0.3rem;
-            bottom: 0px;
-            left: 0px;
-            background-color: white;
-            width: 100%;
-            box-sizing: border-box;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 0.4rem;
-        }
-    }
-}
-.film_list {
-    padding-top: 0.1rem;
-    border-top: 1px solid #eee;
-    background: white;
-    font-size: 0.26rem;
-    color: #888;
+.movie_list {
+    line-height: 1;
+    padding: 0px 0.3rem;
+    --main-color: #ee3d37;
     .item {
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        padding: 0.4rem 0px;
+        color: #888;
+        font-size: .24rem;
         border-bottom: 1px solid #eee;
-        padding: 0.2rem 0.3rem;
-        padding-bottom: 0.4rem;
-        line-height: 2;
         .left {
-            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            .arrow-icon {
+                width: 0.32rem;
+                margin: 0px 0.2rem;
+                margin-top: 0.2rem;
+            }
+            p {
+                padding: 0.06rem 0px;
+                margin: 0px;
+            }
+            .date {
+                font-size: 0.36rem;
+                color: #222;
+                margin-right: 0.1rem;
+            }
+        }
+        .center {
+            color: #ffb415;
+            .price {
+                font-size: 0.36rem;
+                font-weight: 700;
+            }
         }
         .right {
-            text-align: right;
-        }
-        .title {
-            font-weight: bold;
-            font-size: 0.3rem;
-            color: #222;
-        }
-        .price {
-            .orange {
-                color: #ffb415;
-                font-size: 0.3rem;
+            .btn {
+                color: #fff;
+                font-size: 0.28rem;
+                background: var(--main-color);
+                display: table;
+                padding: 0.14rem 0.28rem;
+                -webkit-box-shadow: 0 0.03rem 0.06rem 0 rgba(var(--main-color), 0.4);
+                box-shadow: 0 0.03rem 0.06rem 0 rgba(var(--main-color), 0.4);
+                border-radius: 0.35rem;
             }
         }
     }
