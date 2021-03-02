@@ -18,6 +18,32 @@ body {
     background: #f3f5f5;
     box-sizing: border-box;
     position: relative;
+    #app.loading {
+        &::before {
+            content: "加载中";
+            width: 2rem;
+            height: 1.6rem;
+            background: url("../../img/common/loading.gif") center bottom no-repeat;
+            position: absolute;
+            left: 50%;
+            margin-left: -1rem;
+            top: 30vh;
+            text-align: center;
+            font-size: 0.36rem;
+            color: #888;
+            z-index: 1001;
+        }
+        &::after {
+            content: "";
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100vh;
+            height: 100vh;
+            background-color: white;
+            z-index: 1000;
+        }
+    }
     &.mt10 {
         padding-top: 1rem;
     }

@@ -22,7 +22,7 @@
 </head>
 
 <body class="pb10 mt10">
-    <div id="app" class="wraper">
+    <div id="app" class="wraper" :class="{loading:isLoading}">
         <div class="topSearchBar">
             <a href="./选择城市.html" class="address-text flex flex-m">
                 <span class="lable">北京市</span>
@@ -103,6 +103,9 @@
                 </div>
             </van-tab>
         </van-tabs>
+        <!-- 通用无数据提示 -->
+        <van-empty image="error" description="暂无数据~" />
+
     </div>
     <div class="footer-nav">
         <a href="./01_首页.html" class="home on">首页</a>
@@ -114,6 +117,7 @@
         new Vue({
             el: '#app',
             data: {
+                isLoading: true,
                 searchVal: '',
                 active: '热映',
                 selectedDate: '2021-01',
@@ -121,7 +125,7 @@
                 dateItemList: ['2021-01', '2021-02'],
                 // 热映数据
                 hotList: [
-                   
+
                 ],
                 // 待映数据
                 previewList: [
@@ -172,40 +176,41 @@
                 // 调用函数组件，弹出一个 Toast
                 //vant.Toast('提示');
                 var self = this;
-                setTimeout(function(){
+                setTimeout(function () {
+                    self.isLoading = false
                     self.hotList = [
-                    {
-                        f_id: 0,
-                        f_img: './img/home/m1.jpg',
-                        f_name: '你好，李焕英',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 0,// 0可购票，1预售
-                    },
-                    {
-                        f_id: 1,
-                        f_img: './img/home/m1.jpg',
-                        f_name: 'xxx你好',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 1,// 0可购票，1预售
-                    },
-                    {
-                        f_id: 2,
-                        f_img: './img/home/m1.jpg',
-                        f_name: '你好。。。',
-                        f_score: '9.3',
-                        f_director: ['贾玲'],
-                        f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
-                        f_date: '2021-03-06',
-                        f_status: 0,// 0可购票，1预售
-                    }
+                        {
+                            f_id: 0,
+                            f_img: './img/home/m1.jpg',
+                            f_name: '你好，李焕英',
+                            f_score: '9.3',
+                            f_director: ['贾玲'],
+                            f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                            f_date: '2021-03-06',
+                            f_status: 0,// 0可购票，1预售
+                        },
+                        {
+                            f_id: 1,
+                            f_img: './img/home/m1.jpg',
+                            f_name: 'xxx你好',
+                            f_score: '9.3',
+                            f_director: ['贾玲'],
+                            f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                            f_date: '2021-03-06',
+                            f_status: 1,// 0可购票，1预售
+                        },
+                        {
+                            f_id: 2,
+                            f_img: './img/home/m1.jpg',
+                            f_name: '你好。。。',
+                            f_score: '9.3',
+                            f_director: ['贾玲'],
+                            f_actor: ['贾玲', '张小斐', '沈腾', '陈赫'],
+                            f_date: '2021-03-06',
+                            f_status: 0,// 0可购票，1预售
+                        }
                     ]
-                },2000)
+                }, 1000)
             },
             methods: {
                 formatDate: function (dateStr) {
