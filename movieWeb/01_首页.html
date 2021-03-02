@@ -104,7 +104,7 @@
             </van-tab>
         </van-tabs>
         <!-- 通用无数据提示 -->
-        <van-empty image="error" description="暂无数据~" />
+        <van-empty v-show="noData" image="error" description="暂无数据~" />
 
     </div>
     <div class="footer-nav">
@@ -118,6 +118,7 @@
             el: '#app',
             data: {
                 isLoading: true,
+                noData: false,
                 searchVal: '',
                 active: '热映',
                 selectedDate: '2021-01',
@@ -211,6 +212,11 @@
                         }
                     ]
                 }, 1000)
+
+                // 改变显示无数据状态
+                setTimeout(function () {
+                    self.noData = true
+                }, 2000)
             },
             methods: {
                 formatDate: function (dateStr) {
