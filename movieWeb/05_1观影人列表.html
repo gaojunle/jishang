@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>观影人列表</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/watcher.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="watcher">
+        <div class="w_title">观影人列表</div>
+        <div class="list">
+            <div class="item" v-for="(item,idx) in watcherList">
+                <van-checkbox v-model="item.checked" shape="square"></van-checkbox>
+                <div class="info">
+                    <span class="name">{{item.name}}</span>
+                    <span class="ids">{{item.ids}}</span>
+                </div>
+                <van-icon class="icon_del" name="delete-o" @click="delWatcher(idx)"></van-icon>
+            </div>
+        </div>
+        <div class="add_box" @click="addWatcher()"> + 新增观影人</div>
+        <div class="confim_add" @click="confirmAdd()">
+            <van-button round type="danger">确定</van-button>
+        </div>
+        <van-dialog v-model="showAddPop" title="添加观影人" style="width: 50vh;" @confirm="addNewWatcher">
+            <van-cell-group>
+                <van-field v-model="newWatcher.name" label="姓名" placeholder="请输入真实姓名"></van-field>
+                <van-field v-model="newWatcher.ids" label="身份证号码" placeholder="用于进场核验，请正确填写"></van-field>
+            </van-cell-group>
+        </van-dialog>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showAddPop: false,
+                watcherList: [
+                    {
+                        checked: false,
+                        name: '高军',
+                        ids: '130292115444715'
+                    }
+                ],
+                newWatcher: {
+                    name: '',
+                    ids: ''
+                }
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                addNewWatcher() {
+                    this.watcherList.push({
+                        checked: false,
+                        name: this.newWatcher.name,
+                        ids: this.newWatcher.ids
+                    })
+                },
+                addWatcher: function () {
+                    alert('去登录')
+                },
+                delWatcher: function (idx) {
+                    var self = this;
+                    vant.Dialog.confirm({
+                        title: '温馨提示',
+                        message: '是否删除该观影人信息?',
+                    }).then(() => {
+                        self.watcherList.splice(idx, 1)
+                    }).catch(() => {
+                        console.log('cancel')
+                    });
+                },
+                confirmAdd: function () {
+                    var sels = this.watcherList.filter(w => {
+                        return w.checked
+                    })
+                    if (sels.length == 0) {
+                        vant.Toast('请选择观影人');
+                    } else {
+                        alert('观影人' + JSON.stringify(sels))
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

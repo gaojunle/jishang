@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>我的</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/my.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="my">
+        <div class="my-box">
+            <div class="card">
+                <div class="info">
+                    <img class="avt" src="./img/my/avt-1.png" alt="">
+                    <div v-if="isLogin" class="txt">
+                        <div class="mvip">
+                            <i class="icon_vip"></i>
+                            <a class="hy" href="#">畅享会员 ></a>
+                        </div>
+                    </div>
+                    <div v-else class="noLogin" @click="doLogin">未登录</div>
+                </div>
+                <div v-if="isLogin" class="card_num">
+                    <span class="num">账户：186****2021</span>
+                    <span class="scode"></span>
+                </div>
+
+            </div>
+        </div>
+        <!-- 列表 -->
+        <van-cell-group class="my_list">
+            <van-cell icon="balance-list" title="我的订单" is-link value="全部" @click="myOrders()" />
+        </van-cell-group>
+    </div>
+    <!-- 底部导航 -->
+    <div class="footer-nav">
+        <a href="./01_首页.html" class="home">首页</a>
+        <a href="./02_0影院.html" class="cinema">影院</a>
+        <a href="./03_我的.html" class="my on">我的</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isLogin: true
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                doLogin: function () {
+                    alert('去登录')
+                },
+                myOrders: function () {
+                    location.href = './03_我的订单.html'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>选座</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/cinemaSeatChoose.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/moment.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="cinema-wrapper">
+        <div class="summary">
+            <div class="film_name">{{filmName}}</div>
+            <div class="date_box">
+                <span class="date">{{selFilmItem.week}} {{selFilmItem.month}} {{selFilmItem.stime}}</span>
+                <img class="arrow-icon"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAGCAYAAACij5zfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpivHv3LgMdACcQewDxenQJJgb6gP9AvA6IdwCx1kA44AeUdgfii0A8FYiF6ekAGPgJxJ+BOBKIjwOxJws0eOgF2KEYBASBeBu9QwADAAQYABCHDhURR2PYAAAAAElFTkSuQmCC">
+                <span class="date">{{selFilmItem.etime}}</span>
+            </div>
+            <div class="scrollXBox m_list">
+                <div class="vtitle">{{formatWeek(movieList[0].sdate)}}</div>
+                <div v-for="(item,idx) in movieList" class="vcont" :class="{on:idx==selMovieIdx}"
+                    @click="doSelectMovie(item,idx)">
+                    <div class="time">{{formatTime(item.sdate)}}</div>
+                    <div class="type">{{item.f_type}}</div>
+                    <div class="price">¥{{item.f_price}}</div>
+                </div>
+            </div>
+            <div class="m_desc">
+                <div class="pos">{{selFilmItem.f_home}} （观看3D眼镜请自备或购买3D眼镜）</div>
+                <div class="seat-status-list">
+                    <div class="seat-item">可选</div>
+                    <div class="seat-item selected">已选</div>
+                    <div class="seat-item disabled">不可选</div>
+                    <div class="seat-item sell">已售</div>
+                </div>
+            </div>
+        </div>
+        <div class="seat-wrapper">
+            <div class="screen-center">
+                银幕中央
+                <div class="mid-line"></div>
+            </div>
+            <div class="inner-seat-wrapper" ref="innerSeatWrapper">
+                <div v-for="row in seatRow">
+                    <!--这里的v-if很重要，如果没有则会导致报错，因为seatArray初始状态为空-->
+                    <div v-for="col in seatCol" v-if="seatArray.length>0" class="seat"
+                        :style="{width:seatSize+'px',height:seatSize*0.83+'px'}">
+                        <div class="inner-seat" @click="handleChooseSeat(row-1,col-1)"
+                            v-if="seatArray[row-1][col-1]!==-1"
+                            :class="seatArray[row-1][col-1]===2?'bought-seat':(seatArray[row-1][col-1]===1?'selected-seat':'unselected-seat')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seat-select-info">
+            <div class="desc">
+                <span class="title">选择座位</span>
+                <div> 取票手机号码：{{phone}}
+                    <van-icon name="edit" @click="visibleEditPhone=true" />
+                </div>
+            </div>
+            <div class="seats-cell-4">
+                <div v-for="(item,idx) in selectedSeatsList" class="item">
+                    <div v-if="item.positon" class="info">
+                        <div class="s_pos">{{item.positon}}</div>
+                        <div class="s_price">¥{{item.price}}</div>
+                    </div>
+                    <span v-else class="def">{{idx+1}}人</span>
+                    <van-icon v-show="item.positon" name="cross" @click="cancelSelectSeat(idx)" />
+                </div>
+            </div>
+            <van-button type="danger" round class="btn_sel" @click="confirmSelSeat()">确定选座</van-button>
+        </div>
+        <van-dialog v-model="visibleEditPhone" title="请输入取票手机号" type="tel" show-cancel-button show-confirm-button>
+            <van-field v-model="phone" label="" placeholder="输入手机号" />
+        </van-dialog>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            name: 'cinemaSeatChoose',
+            data() {
+                return {
+                    visibleEditPhone: false,
+                    phone: '13716732040',
+                    filmName: '你好，李焕英',
+                    movieList: [
+                        {
+                            m_id: '111',
+                            sdate: '2021-03-04 12:20:00',
+                            edate: '2021-03-04 12:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '3号激光厅'
+                        },
+                        {
+                            m_id: '222',
+                            sdate: '2021-03-04 14:20:00',
+                            edate: '2021-03-04 16:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '7号激光厅'
+                        },
+                        {
+                            m_id: '333',
+                            sdate: '2021-03-04 16:20:00',
+                            edate: '2021-03-04 17:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '3号激光厅'
+                        },
+                        {
+                            m_id: '44',
+                            sdate: '2021-03-04 12:20:00',
+                            edate: '2021-03-04 12:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '7号激光厅'
+                        },
+                        {
+                            m_id: '55',
+                            sdate: '2021-03-04 12:20:00',
+                            edate: '2021-03-04 12:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '3号激光厅'
+                        },
+                        {
+                            m_id: '66',
+                            sdate: '2021-03-04 12:20:00',
+                            edate: '2021-03-04 12:50:00',
+                            f_type: '国语2D',
+                            f_price: 49.00,
+                            f_home: '7号激光厅'
+                        },
+                    ],
+                    selMovieIdx: 0, //默认选中movieList中第1个，
+
+                    selectedSeatsList: [
+                        { positon: '', row: '', col: '', price: '' },
+                        { positon: '', row: '', col: '', price: '' },
+                        { positon: '', row: '', col: '', price: '' },
+                        { positon: '', row: '', col: '', price: '' },
+                    ],
+
+                    //影院座位的二维数组,-1为非座位，0为未购座位，1为已选座位(绿色),2为已购座位(红色)
+                    seatArray: [],
+                    //影院座位行数
+                    seatRow: 10,
+                    //影院座位列数
+                    seatCol: 20,
+                    //座位尺寸
+                    seatSize: ''
+                }
+            },
+            computed: {
+                // 选中哪个场次，并根据场次信息计算要显示信息
+                selFilmItem: function () {
+                    var selItem = this.movieList[this.selMovieIdx]
+                    var sData = moment(selItem.sdate)
+                    return {
+                        week: this.formatWeek(sData),
+                        month: sData.format('MM月DD日'),
+                        stime: sData.format('HH:mm'),
+                        etime: moment(selItem.edate).format('HH:mm'),
+                        f_home: selItem.f_home,
+                        f_price: selItem.f_price
+                    }
+                },
+            },
+            methods: {
+                //辅助函数:智能推荐的选座操作
+                chooseSeat: function (result) {
+                    console.log(result)
+                    let oldArray = this.seatArray.slice();
+                    for (let i = 0; i < result.length; i++) {
+                        //选定座位
+                        oldArray[result[i][0]][result[i][1]] = 1
+                    }
+                    this.seatArray = oldArray;
+                },
+                //选定且购买座位
+                buySeat: function () {
+                    //遍历seatArray，将值为1的座位变为2
+                    let oldArray = this.seatArray.slice();
+                    for (let i = 0; i < this.seatRow; i++) {
+                        for (let j = 0; j < this.seatCol; j++) {
+                            if (oldArray[i][j] === 1) {
+                                oldArray[i][j] = 2
+                            }
+                        }
+                    }
+                    this.seatArray = oldArray;
+                },
+                //处理座位选择逻辑
+                handleChooseSeat: function (row, col) {
+                    let seatValue = this.seatArray[row][col];
+                    let newArray = this.seatArray;
+                    //如果是已购座位，直接返回
+                    if (seatValue === 2) {
+                        return
+                    }
+                    //如果是已选座位点击后变未选
+                    if (seatValue === 1) {
+                        newArray[row][col] = 0
+                    } else if (seatValue === 0) {
+                        newArray[row][col] = 1
+                    }
+                    //必须整体更新二维数组，Vue无法检测到数组某一项更新,必须slice复制一个数组才行
+                    this.seatArray = newArray.slice();
+                    console.log(row, col)
+
+                    // 选座判断
+                    if (this.selectedSeatsList[3].positon) {
+                        vant.Toast('最多只能选择4个座位');
+                    }
+                    this.selectedSeatsList.some((item, idx) => {
+                        if (!item.positon) {
+                            item.positon = (row + 1) + '排' + (col + 1) + '座'
+                            item.price = this.selFilmItem.f_price
+                            item.row = row
+                            item.col = col
+                            return true
+                        }
+                        return false
+                    })
+                },
+                //初始座位数组
+                initSeatArray: function () {
+                    let seatArray = Array(this.seatRow).fill(0).map(() => Array(this.seatCol).fill(0));
+                    this.seatArray = seatArray;
+                    this.seatSize = this.$refs.innerSeatWrapper
+                        ? parseInt(parseInt(window.getComputedStyle(this.$refs.innerSeatWrapper).width, 10) / this.seatCol, 10)
+                        : 0;
+                    //初始化不是座位的地方
+                    this.initNonSeatPlace();
+                },
+                //初始化不是座位的地方
+                initNonSeatPlace: function () {
+                    for (let i = 0; i < 9; i++) {
+                        this.seatArray[i][0] = -1;
+                    }
+                    for (let i = 0; i < 8; i++) {
+                        this.seatArray[i][this.seatArray[0].length - 1] = -1;
+                        this.seatArray[i][this.seatArray[0].length - 2] = -1;
+                    }
+                    for (let i = 0; i < 9; i++) {
+                        this.seatArray[i][this.seatArray[0].length - 3] = -1;
+                    }
+                    for (let i = 0; i < this.seatArray[0].length; i++) {
+                        this.seatArray[2][i] = -1;
+                    }
+                },
+
+                // 选择电影场次
+                doSelectMovie(item, idx) {
+                    this.selMovieIdx = idx
+                },
+                confirmSelSeat() {
+                    vant.Toast.success('确认选择');
+                },
+                // 格式化成周x，今天、明天
+                formatWeek: function (dateStr) {
+                    var weekday = '周' + ['一', '二', '三', '四', '五', '六', '日'][(parseInt(moment(dateStr).format('e')) - 1)]
+                    if (moment().format('YYYY:MM:DD') === moment(dateStr).format('YYYY:MM:DD')) {
+                        weekday = '今天'
+                    }
+                    if (moment().format('YYYY:MM:DD') === moment(dateStr).subtract(1, 'days').format('YYYY:MM:DD')) {
+                        weekday = '明天'
+                    }
+                    return weekday;
+                },
+                formatTime: function (dateStr) {
+                    return moment(dateStr).format('HH:MM')
+                },
+                cancelSelectSeat: function (idx) {
+                    this.selectedSeatsList.splice(idx, 1)
+                    this.selectedSeatsList.push({ positon: '', row: '', col: '', price: '' })
+                }
+            },
+
+            mounted: function () {
+                this.initSeatArray(10, 20)
+
+            }
+        });
+    </script>
+</body>
+
+</html>
