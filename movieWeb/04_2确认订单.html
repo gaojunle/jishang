@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>确认订单</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./css/lib/vant.css" />
+    <link rel="stylesheet" href="./css/lib/common.css" />
+    <link rel="stylesheet" href="./css/page/order.css" />
+
+    <script src="./js/lib/bak/viewbox.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./js/lib/vue.min.js"></script>
+    <script src="./js/lib/vant.min.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="order_list">
+        <div class="bg_top"></div>
+        <div class="order bt1">
+            <div class="title">{{orderDetail.f_name}} <span class="type">{{orderDetail.f_type}}</span></div>
+            <div class="addr">{{orderDetail.f_cinema}}</div>
+            <div class="date_box">
+                <div><span class="date">{{orderDetail.f_sdate}}</span>开场</div>
+                <div class="split">
+                    <img class="arrow-icon"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAGCAYAAACij5zfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpivHv3LgMdACcQewDxenQJJgb6gP9AvA6IdwCx1kA44AeUdgfii0A8FYiF6ekAGPgJxJ+BOBKIjwOxJws0eOgF2KEYBASBeBu9QwADAAQYABCHDhURR2PYAAAAAElFTkSuQmCC">
+                </div>
+                <div><span class="date">{{orderDetail.f_edate}}</span>散场</div>
+            </div>
+            <div class="month">{{orderDetail.f_month}}</div>
+            <div class="pos">{{orderDetail.f_pos}}</div>
+            <div class="cell_box">
+                <van-cell title="电影票小计">
+                    <div class="price-box">¥ <span class="price">44.9</span></div>
+                </van-cell>
+                <van-cell title="手机号">{{phone}}</van-cell>
+                <div class="phone_tip">此处手机号仅用于短信接受取票码使用！</div>
+            </div>
+        </div>
+        <div class="order">
+            <div class="cell_box">
+                <van-cell class="viewer-box" title="观影人信息"><a href="./05_1观影人列表.html" class="sel_viewer">选择</a>
+                </van-cell>
+                <van-cell v-for="(item,idx) in watcherList">
+                    <div slot="title">
+                        {{item.name}}<span class="ids">{{item.ids}}</span>
+                    </div>
+                    <van-icon @click="delViewer(idx)" name="delete-o"></van-icon>
+                </van-cell>
+            </div>
+        </div>
+        <div class="order desc">
+            <h3 class="title">退改签说明</h3>
+            <div class="tip_desc">
+                1、当前影院不支持退票；<br>2、原订单参与优惠活动购票的将无法提供退票、改签服务，台风、地震、疫情等不可抗力场景下除外；<br>3、使用电影兑换券、电影卡、现金平台支付的且属于正常价格购票的订票，用户在确认退票后，系统将在1-3个工作日内为其原路账户退回；<br>4、用户在购票时在选座页面请正确填写取票信息接收手机号；<br>5、请持购票凭证到购票影城，使用取票机取票后，方可进场观影；<br>6、为了给您带来更好观影体验，请在开映前入座；<br>7、部分影城儿童观影需凭票入场，具体规定可致电影城或以影城现场公告为准。
+            </div>
+        </div>
+        <div class="price_info">
+            <div class="price_box">
+                <span class="title">总价</span>
+                <span class="price">{{totelPrice}}</span>
+            </div>
+            <div class="btn_box">
+                <van-button round type="danger">立即购买</van-button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                phone: '13716732501',
+                totelPrice: '49.00',
+                orderDetail: {
+                    f_id: '111',
+                    f_name: '你好，李烦英',
+                    f_cinema: '中影CFR国际影城（望京商业中心店）',
+                    f_pos: '5排3座',
+                    f_month: '03月01日',
+                    f_sdate: '14:10',
+                    f_edate: '15:33',
+                    f_price: '36.00',
+                    f_type: '2D',
+                    f_num: 2,//电影票数
+                },
+                watcherList: [
+                    {
+                        checked: false,
+                        name: '高军',
+                        ids: '130292115444715'
+                    }
+                ],
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                delViewer: function (idx) {
+                    this.watcherList.splice(idx, 1)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
